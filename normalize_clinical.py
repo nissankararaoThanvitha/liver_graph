@@ -42,12 +42,31 @@ prefix, not a characteristic, and its 106/58 split does not match the 116/48
 split of the sample titles. So it encodes a file batch, not a patient, and
 the study is left unlabelled.
 
+GSE130970 states no diagnosis, but GEO carries its full Kleiner panel
+(steatosis / ballooning / lobular inflammation), which is what a pathologist
+scores the diagnosis FROM. Applying the standard NASH-CRN definition:
+
+    steatosis 0                -> control   (no steatosis, no fatty liver)
+    ballooning >= 1            -> NASH      (hepatocyte ballooning is the
+                                             defining lesion of steatohepatitis)
+    steatosis >=1, ballooning 0 -> NAFL     (steatosis without steatohepatitis)
+
+This is a derivation, not a stated label, so it is marked
+derived_from_histology and can be excluded with one filter.
+
 Deliberately left blank
 -----------------------
-    GSE130970  (78)  numeric sample codes only, no diagnosis anywhere
-    GSE269412  (262) GEO characteristics are just {"tissue": "Liver"}
-    GSE240729  (67)  staged F0-F4 but never diagnosed
-    GSE193066  (164) see rejected recovery above
+    GSE269412  (262) GEO stores only {"tissue": "Liver"} -- confirmed at the
+                     sample record itself, not just in our parse. The paper
+                     (JCI Insight 2025, PMID 39998893) reports the cohort only
+                     in aggregate, and the GEO titles are anonymised codes
+                     (KYL112), so no join key exists. Needs the authors.
+    GSE240729  (67)  GEO carries fibrosisscore only, no diagnosis field
+    GSE167523  (98)  diagnosed but never staged
+    GSE126848  (57)  diagnosed but never staged
+    GSE193066  (164) see rejected recovery above. Its NAS is present but NAS
+                     alone cannot separate NASH from NAFL -- Kleiner is
+                     explicit that the score is not a diagnostic criterion.
 A blank field is a known unknown. A guessed label is an unknown unknown, and
 would quietly contaminate every group comparison built on it.
 
@@ -113,6 +132,16 @@ def norm_disease(row):
     # GSE193066 intentionally omitted here -- see the rejected-recovery note
     # in the module docstring.
 
+    # -- derived from the Kleiner histology panel ---------------------------
+    if gse == "GSE130970":
+        h = row.get("_hist") or {}
+        steat = h.get("steatosis grade")
+        ball = h.get("cytological ballooning grade")
+        if steat is not None and ball is not None:
+            if steat == 0:
+                return "control", "derived_from_histology"
+            return ("NASH" if ball >= 1 else "NAFL"), "derived_from_histology"
+
     # -- stated outright ----------------------------------------------------
     key = raw.upper()
     if key in DISEASE_MAP:
@@ -143,6 +172,25 @@ def main():
         return None
 
     meta["fibrosis_stage"] = meta.apply(fibrosis_of, axis=1)
+
+    # Parse the histology panel out of raw_characteristics once, so
+    # norm_disease can read integer grades rather than re-parsing JSON.
+    def hist_of(blob):
+        if not blob.startswith("{"):
+            return {}
+        try:
+            d = json.loads(blob)
+        except ValueError:
+            return {}
+        out = {}
+        for k in ("steatosis grade", "cytological ballooning grade",
+                  "lobular inflammation grade"):
+            v = str(d.get(k, "")).strip()
+            if v.isdigit():
+                out[k] = int(v)
+        return out
+
+    meta["_hist"] = meta["raw_characteristics"].apply(hist_of)
     derived = meta.apply(norm_disease, axis=1, result_type="expand")
     meta["disease_group"] = derived[0]
     meta["disease_provenance"] = derived[1]
