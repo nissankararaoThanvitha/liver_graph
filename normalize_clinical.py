@@ -24,6 +24,14 @@ translation stays auditable:
 
     fibrosis_stage   integer 0-4, or blank when the study never staged it
     disease_group    one of: control, obese, NAFL, NASH, NAFLD
+    patient_id       the person the biopsy came from
+    biopsy_number    1 or 2, for studies that re-biopsied
+
+patient_id matters because GSE193066's 164 samples are NOT 164 people: they
+are 106 patients, 58 of whom were biopsied twice ("1st biopsy" / "2nd
+biopsy" in its GEO characteristics, confirmed by the paper, PMID 35731891).
+Treating them as independent is pseudo-replication and inflates significance
+in any test run across that study. No other dataset repeats a patient.
 
 Recovered labels
 ----------------
@@ -192,12 +200,30 @@ def main():
 
     meta["_hist"] = meta["raw_characteristics"].apply(hist_of)
     derived = meta.apply(norm_disease, axis=1, result_type="expand")
+
+    # -- patient identity ---------------------------------------------------
+    # Only GSE193066 re-biopsies; everywhere else one sample is one person,
+    # so the sample's own accession is the patient key.
+    def biopsy_no(blob):
+        if blob.startswith("{"):
+            try:
+                v = str(json.loads(blob).get("biopsy", "")).strip().lower()
+            except ValueError:
+                return 1
+            if v.startswith("2"):
+                return 2
+        return 1
+
+    meta["biopsy_number"] = meta["raw_characteristics"].apply(biopsy_no)
+    pid = meta["sample_title"].str.extract(r"^(HUnafld\d+)")[0]
+    meta["patient_id"] = pid.where(meta["dataset_id"] == "GSE193066",
+                                   meta["sample_id"]).fillna(meta["sample_id"])
     meta["disease_group"] = derived[0]
     meta["disease_provenance"] = derived[1]
 
-    out = meta[["sample_id", "dataset_id", "fibrosis_stage", "disease_group",
-                "disease_provenance", "fibrosis_stage_raw",
-                "disease_group_raw"]].copy()
+    out = meta[["sample_id", "dataset_id", "patient_id", "biopsy_number",
+                "fibrosis_stage", "disease_group", "disease_provenance",
+                "fibrosis_stage_raw", "disease_group_raw"]].copy()
     out["fibrosis_stage"] = out["fibrosis_stage"].apply(
         lambda v: "" if pd.isna(v) else str(int(v)))
     out["disease_group"] = out["disease_group"].fillna("")
@@ -232,6 +258,16 @@ def main():
         grouped=("disease_group", lambda s: int(s.notna().sum())),
     ).reset_index()
     print(cov.to_string(index=False))
+
+    print("\n=== PATIENT IDENTITY ===")
+    pat = meta.groupby("dataset_id").agg(
+        samples=("sample_id", "size"),
+        patients=("patient_id", "nunique")).reset_index()
+    pat["repeated"] = pat["samples"] - pat["patients"]
+    print(pat.to_string(index=False))
+    print(f"\ntotal: {len(meta):,} samples from "
+          f"{meta['patient_id'].nunique():,} patients")
+
     print(f"\nwrote {path}  ({len(out):,} rows)")
 
 
