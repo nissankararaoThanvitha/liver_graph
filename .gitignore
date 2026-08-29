@@ -3,3 +3,11 @@ share/
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+
+# Regenerable bulk data, far too large for git.
+# data/primekg   937M  downloaded: dataverse.harvard.edu DOI 10.7910/DVN/IXA7BM
+# data/graph_all 1.6G  rebuild:    python build_graph_all.py
+# data/graph_kg   25M  rebuild:    python build_primekg_layer.py
+data/primekg/
+data/graph_all/
+data/graph_kg/
