@@ -39,16 +39,21 @@ Usage:
     python build_graph_all.py
 """
 
+import argparse
 import glob
 import os
 
 import numpy as np
 import pandas as pd
 
-INTERIM = "data/interim"
 PROC = "data/processed"
-OUT = "data/graph_all"
 CHUNK = 1_000_000
+
+# Set by main() from the command line. data/interim was parsed with
+# --drop-zeros; data/interim_full keeps them, which is what the progression
+# work needs -- a gene switching off IS the signal there.
+INTERIM = "data/interim"
+OUT = "data/graph_all"
 
 
 def library_sizes(path):
@@ -67,6 +72,14 @@ def library_sizes(path):
 
 
 def main():
+    global INTERIM, OUT
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--interim", default=INTERIM)
+    ap.add_argument("--out", default=OUT)
+    args = ap.parse_args()
+    INTERIM, OUT = args.interim, args.out
+    print(f"reading {INTERIM}  ->  writing {OUT}\n")
+
     os.makedirs(OUT, exist_ok=True)
 
     gene_map = pd.read_csv(os.path.join(PROC, "gene_id_map.csv"), dtype=str)
