@@ -22,3 +22,7 @@ data/graph_okg/
 data/interim_full/
 # data/graph_full  2.1G  rebuild: python build_graph_all.py --interim data/interim_full --out data/graph_full
 data/graph_full/
+# data/kg_triples  138M  rebuild: python export_triples.py --min-assoc 0.3
+# data/prediction   54M  rebuild: python train_link_prediction.py
+data/kg_triples/
+data/prediction/
