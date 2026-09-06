@@ -44,6 +44,7 @@ Usage:
     python find_progression_genes.py
 """
 
+import argparse
 import glob
 import os
 
@@ -51,8 +52,12 @@ import numpy as np
 import pandas as pd
 from scipy import stats
 
-GRAPH_ALL = "data/graph_all"
 CLINICAL = "data/graph/nodes_sample_clinical.csv"
+
+# Set by main(). data/graph_all was built from the zero-dropped parse;
+# data/graph_full keeps measured zeros, which matters here because a gene
+# switching off as disease advances is itself a progression signal.
+GRAPH_ALL = "data/graph_all"
 OUT = "data/progression"
 
 DISEASE_LADDER = {"control": 0, "NAFL": 1, "NASH": 2}
@@ -145,6 +150,14 @@ def run_axis(axis, labels, core):
 
 
 def main():
+    global GRAPH_ALL, OUT
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--graph", default=GRAPH_ALL)
+    ap.add_argument("--out", default=OUT)
+    args = ap.parse_args()
+    GRAPH_ALL, OUT = args.graph, args.out
+    print(f"reading {GRAPH_ALL}  ->  writing {OUT}\n")
+
     os.makedirs(OUT, exist_ok=True)
     labels = load_labels()
     genes = pd.read_csv(f"{GRAPH_ALL}/nodes_gene.csv", dtype=str).fillna("")
