@@ -3,3 +3,33 @@ share/
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+
+# Regenerable bulk data, far too large for git.
+# data/primekg   937M  downloaded: dataverse.harvard.edu DOI 10.7910/DVN/IXA7BM
+# data/optimuskg 161M  downloaded: dataverse.harvard.edu DOI 10.7910/DVN/IYNGEV
+# data/graph_all 1.6G  rebuild:    python build_graph_all.py
+# data/graph_kg   25M  rebuild:    python build_primekg_layer.py   (superseded)
+# data/graph_okg 132M  rebuild:    python build_optimuskg_layer.py
+# data/interim_full  ~250M  rebuild: python parse_expression.py --out-dir data/interim_full
+#   Same parse as data/interim but WITHOUT --drop-zeros. A measured zero is
+#   real data: IL6 is detected in 10% of stage-1 patients and 64% of stage-4,
+#   so dropping zeros removes the switching-on that IS the progression signal.
+data/primekg/
+data/optimuskg/
+data/graph_all/
+data/graph_kg/
+data/graph_okg/
+data/interim_full/
+# data/graph_full  2.1G  rebuild: python build_graph_all.py --interim data/interim_full --out data/graph_full
+data/graph_full/
+# data/kg_triples  138M  rebuild: python export_triples.py --min-assoc 0.3
+# data/prediction   54M  rebuild: python train_link_prediction.py
+data/kg_triples/
+data/prediction/
+# data/genesets  5.7M  MSigDB v2024.1 gene sets (h.all, c5.go.bp, c2.cp.kegg_legacy,
+#   c2.cp.reactome; *.v2024.1.Hs.symbols.gmt) from
+#   https://data.broadinstitute.org/gsea-msigdb/msigdb/release/2024.1.Hs/
+#   Not committed: KEGG-derived sets may not be redistributed.
+data/genesets/
+# Zipped copy of Paper1_Results/ for emailing.
+Paper1_Results.zip
