@@ -1,0 +1,21 @@
+﻿cluster,cluster_name,transition,median_beta,n_sig_up,n_sig_down,n_genes
+1,"Early increase (F0→F1), then continued",F0→F1,0.3283020758509773,679,0,927
+1,"Early increase (F0→F1), then continued",F1→F2,0.1578532449210932,201,0,927
+1,"Early increase (F0→F1), then continued",F2→F3,0.18212533676310735,193,0,927
+1,"Early increase (F0→F1), then continued",F3→F4,0.3091893865675045,55,0,927
+2,Late increase (largest at F3→F4),F0→F1,0.15045440319007197,287,0,1514
+2,Late increase (largest at F3→F4),F1→F2,0.15863386004077928,412,1,1514
+2,Late increase (largest at F3→F4),F2→F3,0.2807314646253722,693,0,1514
+2,Late increase (largest at F3→F4),F3→F4,0.6035093139928394,809,0,1514
+3,"Early rise, then plateau",F0→F1,0.32245800290078386,138,0,197
+3,"Early rise, then plateau",F1→F2,0.1562092524586482,41,0,197
+3,"Early rise, then plateau",F2→F3,0.14476094468727452,20,0,197
+3,"Early rise, then plateau",F3→F4,-0.03552110854534167,0,0,197
+4,Mid decrease (largest at F1→F2),F0→F1,0.005779084782606969,3,16,309
+4,Mid decrease (largest at F1→F2),F1→F2,-0.27304477931579324,0,185,309
+4,Mid decrease (largest at F1→F2),F2→F3,-0.16946041397943368,0,47,309
+4,Mid decrease (largest at F1→F2),F3→F4,0.04467128249746425,1,0,309
+5,Late decrease (largest at F3→F4),F0→F1,0.04389433012653382,31,14,698
+5,Late decrease (largest at F3→F4),F1→F2,-0.24727128098900406,0,342,698
+5,Late decrease (largest at F3→F4),F2→F3,-0.20578613644510696,0,164,698
+5,Late decrease (largest at F3→F4),F3→F4,-0.2750815113740754,0,71,698

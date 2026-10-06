@@ -1,0 +1,4 @@
+﻿check,value
+study-adjusted profiles: ARI vs main clusters,0.844
+study-adjusted profiles: median per-gene curve correlation,0.998
+patient bootstrap ARI at chosen k=5 (mean),0.526
