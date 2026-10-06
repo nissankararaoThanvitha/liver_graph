@@ -7,6 +7,8 @@ the project's decisions were actually argued out.
 decisions, known limits. Read that first; it takes five minutes and it is what
 you need to *work* on the project.
 
+See `SETUP.md` to get Neo4j, the code and the data running from scratch.
+
 These transcripts are the reasoning behind those conclusions, including the
 things that were tried and rejected. Read them when you want to know *why*
 something is the way it is, or before reopening a decision.
