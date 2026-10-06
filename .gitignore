@@ -26,3 +26,10 @@ data/graph_full/
 # data/prediction   54M  rebuild: python train_link_prediction.py
 data/kg_triples/
 data/prediction/
+# data/genesets  5.7M  MSigDB v2024.1 gene sets (h.all, c5.go.bp, c2.cp.kegg_legacy,
+#   c2.cp.reactome; *.v2024.1.Hs.symbols.gmt) from
+#   https://data.broadinstitute.org/gsea-msigdb/msigdb/release/2024.1.Hs/
+#   Not committed: KEGG-derived sets may not be redistributed.
+data/genesets/
+# Zipped copy of Paper1_Results/ for emailing.
+Paper1_Results.zip
