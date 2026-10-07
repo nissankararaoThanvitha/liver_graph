@@ -33,3 +33,9 @@ data/prediction/
 data/genesets/
 # Zipped copy of Paper1_Results/ for emailing.
 Paper1_Results.zip
+
+# ---- Paper 2 (Team 2): drug repurposing ----
+# data/kg_triples and data/prediction are already excluded above.
+# Designated output root for Team 2, so nothing lands in Team 1's folders.
+# data/paper2  rebuild: see the paper2_ script that writes it
+data/paper2/
