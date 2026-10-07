@@ -79,10 +79,12 @@ data/paper2_embeddings/
   dependencies at the bottom under a `# Paper 2` comment; do not reorder.
 - **`CLAUDE.md`, `README.md`** — add a new marked section rather than rewriting
   Team 1's prose. Same-line edits are what produce merge conflicts.
-- **The Neo4j database** — a shared server, not a file, so no branch isolates it.
-  Write only *new* relationship types; never modify or delete existing nodes or
-  edges. Team 1's 6,384 `TRACKS_*` edges and the 32.5M `EXPRESSES` edges are
-  load-bearing.
+- **The Neo4j database** — only if the team moves to a shared instance. A graph
+  loaded from the dump is a private copy (`handover/SETUP.md` §8): changes stay
+  on your machine and never reach anyone else, so experiment freely. On a shared
+  instance that stops being true — then write only *new* relationship types and
+  never modify or delete existing ones, because Team 1's 6,384 `TRACKS_*` edges
+  and the 32.5M `EXPRESSES` edges are load-bearing.
 
 ### Branch, then merge
 
