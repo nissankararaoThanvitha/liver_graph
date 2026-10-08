@@ -9,6 +9,14 @@ Task 4 said WHICH processes are over-represented among fibrosis genes. It
 could not say which gene connects to which mechanism, or where several genes
 land on the same one. That wiring is what the graph holds.
 
+WHICH KNOWLEDGE LAYER
+data/graph_okg -- the OptimusKG layer that is actually loaded into Neo4j. Its
+counts match the live graph exactly (IN_PATHWAY 46,751, INVOLVED_IN 157,081,
+Pathway 2,220, BioProcess 12,203). An earlier version of this script read
+data/graph_kg, which is the superseded PrimeKG-era layer (42,478 / 143,156)
+that OptimusKG replaced; its numbers do not match the graph and it should not
+be used.
+
 STRUCTURE, WHICH IS NOT THE CHAIN THE BRIEF DESCRIBES
 The brief writes "Gene -> Pathway -> Biological Process". In this graph
 Pathways (Reactome) and BioProcesses (GO) are both attached to genes and not
@@ -81,7 +89,7 @@ from scipy.stats import false_discovery_control, hypergeom
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
-KG = ROOT / "data/graph_kg"
+KG = ROOT / "data/graph_okg"   # the layer actually loaded into Neo4j
 
 SHORTLIST = HERE / "11_FINAL_shortlist_25_genes.csv"
 TIER1 = HERE / "11_final_tier1_507_genes.csv"
@@ -118,8 +126,10 @@ print(f"  enrichment background: {len(background):,} eligible genes "
       f"(the same one Task 4 used)")
 
 edges = pd.concat([
-    pd.read_csv(KG / "edges_in_pathway.csv").assign(rel="IN_PATHWAY"),
-    pd.read_csv(KG / "edges_involved_in.csv").assign(rel="INVOLVED_IN"),
+    pd.read_csv(KG / "edges_pathway_gene.csv",
+                usecols=["from_id", "to_id"]).assign(rel="IN_PATHWAY"),
+    pd.read_csv(KG / "edges_biological_process_gene.csv",
+                usecols=["from_id", "to_id"]).assign(rel="INVOLVED_IN"),
 ], ignore_index=True)
 edges["to_id"] = edges.to_id.astype(str)
 edges = edges[edges.to_id.isin(name_of)]
