@@ -43,13 +43,14 @@ Then, as needed:
 | `00_START_HERE/04_DECISIONS.md` | The non-obvious choices and the evidence for each — settled, not open |
 | `00_START_HERE/06_HOW_TO_VERIFY.md` | How to re-check any number, and how to re-run any stage |
 | `00_START_HERE/07_FILE_MANIFEST.csv` | Every file with size and SHA-256, for checking the copy is intact |
+| `00_START_HERE/08_FOR_TEAM2.md` | **Hand this to Team 2 before they start.** What the gene list is, how to query the knowledge graph, and the six traps that produce plausible-looking garbage |
 
 ---
 
 ## What is in the folder
 
 ```
-00_START_HERE/     the six documents above, plus the file manifest
+00_START_HERE/     the seven documents above, plus the file manifest
 01_FIGURES/        main/ Figures 1-9, supplementary/ Figures S1-S20,
                    all 300 dpi PNG, plus FIGURE_CAPTIONS.md
 02_TABLES/         main/ Tables 1-6, supplementary/ Tables S1-S17,
