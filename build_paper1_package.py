@@ -293,11 +293,11 @@ DATA_COPIES = [
     ("data/processed", "04_DATA/harmonisation"),
     # BOTH knowledge layers ship, deliberately. data/graph_okg (OptimusKG) is
     # the layer actually loaded into Neo4j -- its counts match the graph
-    # described in the paper exactly. data/graph_kg (PrimeKG) is superseded,
+    # described in the paper exactly. data/graph_primekg_superseded is superseded,
     # but hc4_kg_subgraph.py reads it, so Figure 9 cannot be reproduced
     # without it. See 05_LIMITATIONS.md section 14.
     ("data/graph_okg", "04_DATA/knowledge_layer_optimuskg"),
-    ("data/graph_kg", "04_DATA/knowledge_layer_primekg_superseded"),
+    ("data/graph_primekg_superseded", "04_DATA/knowledge_layer_primekg_superseded"),
 ]
 DATA_FILES = [
     ("data/graph_full/gene_progression_scores.csv",

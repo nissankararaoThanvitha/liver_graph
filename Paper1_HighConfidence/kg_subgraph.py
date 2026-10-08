@@ -15,7 +15,7 @@ WHICH KNOWLEDGE LAYER
 data/graph_okg -- the OptimusKG layer that is actually loaded into Neo4j. Its
 counts match the live graph exactly (IN_PATHWAY 46,751, INVOLVED_IN 157,081,
 Pathway 2,220, BioProcess 12,203). An earlier version of this script read
-data/graph_kg, which is the superseded PrimeKG-era layer (42,478 / 143,156)
+data/graph_kg, the superseded PrimeKG-era layer (42,478 / 143,156 edges;
 that OptimusKG replaced; its numbers do not match the graph and it should not
 be used.
 
