@@ -79,9 +79,19 @@ process covering more than 12% of the list.
 
 THE KNOWLEDGE-GRAPH SUBGRAPH
 ----------------------------
-The graph is NOT rebuilt. kg_subgraph.py reads the same CSVs that were
-loaded into Neo4j (data/graph_kg) and filters them, so it needs no running
-database.
+The graph is NOT rebuilt. kg_subgraph.py reads the same CSVs that are
+loaded into Neo4j -- data/graph_okg, the OptimusKG layer -- and filters
+them, so it needs no running database. That layer's counts match the live
+graph exactly: IN_PATHWAY 46,751, INVOLVED_IN 157,081, Pathway 2,220,
+BioProcess 12,203.
+  Correction: an earlier version of this script read data/graph_kg, which is
+  the superseded PrimeKG-era layer (42,478 / 143,156 edges) that OptimusKG
+  replaced. Its counts do not match the graph. Seven of the twelve
+  mechanisms are the same either way, and the terms that dropped out --
+  Signaling by PDGF, collagen fibril organization, Neutrophil degranulation
+  -- are still eligible on the correct layer at ranks 14, 21 and 18, so the
+  conclusion did not change. The figure and workbook here are from
+  data/graph_okg.
 
 What it adds over Task 4: enrichment said WHICH processes are
 over-represented among fibrosis genes. It could not say which gene connects
@@ -208,13 +218,14 @@ LIMITATIONS -- state these, do not paper over them
 
 9. THE FINAL 25 BARELY CONVERGE, AND THE FIGURE MUST NOT BE READ AS IF THEY
    DO. Among the 25, only 2 pathways connect to two or more of them and
-   none to three or more; of the twelve mechanisms in the figure, 8 of the
-   25 reach at least one and NOT ONE reaches three. This follows directly
-   from the shortlist rule, which selected genes to be as unlike each other
-   as possible. The convergence visible in the figure comes from the other
-   Tier 1 genes: 168 of the 507 reach at least one of the twelve, and 24
-   reach three or more. The hubs doing that connecting are COL1A1, COL1A2,
-   COL3A1, COL4A1/2/4, COL16A1, ITGAX, ITGB2, ITGB8 and TGFB1 -- Tier 1
+   none to three or more; of the twelve mechanisms in the figure, 6 of the
+   25 reach at least one and only one of them reaches three. This follows
+   directly from the shortlist rule, which selected genes to be as unlike
+   each other as possible. The convergence visible in the figure comes from
+   the other Tier 1 genes: 178 of the 507 reach at least one of the twelve,
+   and 41 reach three or more. The hubs doing that connecting are ITGAX,
+   ITGB2, ITGA2, ITGB5, TGFB1, THBS1, MMP2, MMP14 and the collagens
+   COL1A2, COL3A1, COL4A2, COL5A1, COL8A2 -- Tier 1
    genes the cluster cap kept out of the shortlist. That is the strongest
    form of limitation 6: the genes structurally central to this mechanism
    network are precisely the ones the shortlist excludes.
