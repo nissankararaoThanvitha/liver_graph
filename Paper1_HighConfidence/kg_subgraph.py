@@ -1,8 +1,10 @@
 """Focused mechanistic subgraph for the high-confidence fibrosis genes.
 
-The knowledge graph is NOT rebuilt. This reads the same CSVs that were loaded
-into Neo4j (data/graph_kg) and filters them, which is what the brief asks for
-and does not need the database running. Counts can be checked against Cypher.
+The knowledge graph is NOT rebuilt. This reads the same CSVs that are loaded
+into Neo4j (data/graph_okg) and filters them, which is what the brief asks for
+and does not need the database running. That equality is checked rather than
+asserted: verify_against_neo4j.py diffs the two, down to the gene IDs of every
+mechanism in the figure.
 
 WHAT ENRICHMENT ALREADY SAID, AND WHAT THIS ADDS
 Task 4 said WHICH processes are over-represented among fibrosis genes. It
@@ -464,8 +466,12 @@ caveats = pd.DataFrame({"Caveat": [
     "12 mechanisms, plus every one of the final 25 that reaches any. Genes "
     "absent from the figure are not absent from the analysis - sheets 1 and "
     "2 carry every connection.",
-    "THE KNOWLEDGE GRAPH WAS NOT REBUILT. This reads the same CSVs that were "
-    "loaded into Neo4j (data/graph_kg)."]})
+    "THE KNOWLEDGE GRAPH WAS NOT REBUILT. This reads the same CSVs that are "
+    "loaded into Neo4j: data/graph_okg, the OptimusKG layer. Checked, not "
+    "assumed -- verify_against_neo4j.py diffs the files against the live "
+    "database at four levels, down to the gene IDs of each mechanism shown "
+    "here, and all of them matched. An earlier version read data/graph_kg, "
+    "the superseded PrimeKG layer, whose counts do not match the graph."]})
 
 out_xlsx = HERE / "12_KG_supplementary.xlsx"
 with pd.ExcelWriter(out_xlsx, engine="openpyxl") as xl:
