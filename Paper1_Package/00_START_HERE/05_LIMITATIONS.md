@@ -266,7 +266,10 @@ otherwise all along:
 | INVOLVED_IN edges | **157,081** | 143,156 | 157,081 |
 | IN_PATHWAY edges | **46,751** | 42,478 | 46,751 |
 
-Nothing caught it because nothing compared the two.
+Nothing caught it because nothing compared the two. The naming invited the
+error: `graph_kg` read as "the knowledge graph" while `graph_okg` read as a
+variant of it. That directory has since been renamed
+`data/graph_primekg_superseded`, so the path itself now says what it is.
 
 **What the fix changed.** Seven of the twelve mechanisms are the same on
 either layer, and the conclusion — convergence on extracellular matrix,

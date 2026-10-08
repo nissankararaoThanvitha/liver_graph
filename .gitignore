@@ -8,7 +8,7 @@ __pycache__/
 # data/primekg   937M  downloaded: dataverse.harvard.edu DOI 10.7910/DVN/IXA7BM
 # data/optimuskg 161M  downloaded: dataverse.harvard.edu DOI 10.7910/DVN/IYNGEV
 # data/graph_all 1.6G  rebuild:    python build_graph_all.py
-# data/graph_kg   25M  rebuild:    python build_primekg_layer.py   (superseded)
+# data/graph_primekg_superseded   25M  rebuild:  python build_primekg_layer.py   (superseded)
 # data/graph_okg 132M  rebuild:    python build_optimuskg_layer.py
 # data/interim_full  ~250M  rebuild: python parse_expression.py --out-dir data/interim_full
 #   Same parse as data/interim but WITHOUT --drop-zeros. A measured zero is
@@ -17,7 +17,7 @@ __pycache__/
 data/primekg/
 data/optimuskg/
 data/graph_all/
-data/graph_kg/
+data/graph_primekg_superseded/
 data/graph_okg/
 data/interim_full/
 # data/graph_full  2.1G  rebuild: python build_graph_all.py --interim data/interim_full --out data/graph_full

@@ -37,7 +37,7 @@ Both can be added later; they would triple the graph for little gain here.
 PrimeKG stores every edge twice (once per direction). We keep one direction
 and let Cypher traverse undirected where that is the right reading.
 
-Output (data/graph_kg/):
+Output (data/graph_primekg_superseded/):
     nodes_disease.csv  nodes_drug.csv  nodes_pathway.csv
     nodes_bioprocess.csv  nodes_phenotype.csv
     edges_<relation>.csv  -- one file per relation type
@@ -54,7 +54,7 @@ import pandas as pd
 
 PRIMEKG = "data/primekg/kg.csv"
 GENES = "data/graph_all/nodes_gene.csv"
-OUT = "data/graph_kg"
+OUT = "data/graph_primekg_superseded"
 
 # PrimeKG node type -> our label and output file
 NODE_LABEL = {
