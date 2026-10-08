@@ -51,6 +51,7 @@ Scripts, in order:
   high_confidence_genes.py          -> 01_, 03_, 04_, 08_, 09_, 11_
   loso_validation.py                -> 10_   (reads data/graph_full, slow)
   kg_subgraph.py                    -> 12_
+  verify_against_neo4j.py           checks 12_ against the live database
   Run powermatched first, then high_confidence_genes, then loso_validation,
   then high_confidence_genes again so step 11 picks up the LOSO columns,
   then kg_subgraph.
@@ -106,6 +107,16 @@ and BioProcesses (GO) are both attached to genes and not to each other:
 So "Gene -> Pathway -> Biological Process" is two separate connections per
 gene, not a path. Nothing is missing; convergence still reads normally as
 Gene A -> node <- Gene B.
+
+Verified against the live database on 2026-10-08. verify_against_neo4j.py
+queries Neo4j and diffs it against the CSVs at four levels: node counts
+(Pathway 2,220, BioProcess 12,203), edge counts (IN_PATHWAY 46,751,
+INVOLVED_IN 157,081), gene counts per mechanism, and the actual gene IDs of
+each of the twelve. All matched exactly -- for example the pancreatic ductal
+pathway holds the same 48 genes in both, and the same 16 Tier 1 genes. So
+reading the CSVs is not merely assumed to equal the graph; it was checked.
+The script needs Neo4j running and NEO4J_PASSWORD in the environment;
+kg_subgraph.py needs neither, which is why it reads the files.
 
 Choosing the 12 mechanisms. Each graph node was tested the way Task 4 tested
 its gene sets: a hypergeometric test of the Tier 1 genes against the same
