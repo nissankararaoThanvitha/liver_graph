@@ -249,60 +249,51 @@ mentions this direction, it belongs in future work, not results.
 
 ---
 
-## 14. Figure 9 is built on the superseded knowledge layer
+## 14. Figure 9 was built on the superseded knowledge layer — now fixed
 
-**This one needs resolving before the paper is submitted, not just
-disclosing.**
+**Resolved on 2026-10-08.** Recorded here because the error reached a
+committed figure, and because the way it survived is worth knowing.
 
-The project replaced PrimeKG with OptimusKG as a settled decision
-(`04_DECISIONS.md` §8), and the graph described in the paper **is** the
-OptimusKG layer — its counts match exactly:
+`hc4_kg_subgraph.py` read `data/graph_kg`, the PrimeKG layer this project
+replaced, while its own docstring and the workbook's caveats sheet both said
+it read "the same CSVs that were loaded into Neo4j". The counts had said
+otherwise all along:
 
-| | OptimusKG (`graph_okg`) | PrimeKG (`graph_kg`) | Paper / graph |
+| | OptimusKG (`graph_okg`) | PrimeKG (`graph_kg`) | The graph |
 |---|---|---|---|
 | BioProcess nodes | **12,203** | 12,430 | 12,203 |
 | Pathway nodes | **2,220** | 2,516 | 2,220 |
 | INVOLVED_IN edges | **157,081** | 143,156 | 157,081 |
 | IN_PATHWAY edges | **46,751** | 42,478 | 46,751 |
 
-But `hc4_kg_subgraph.py` reads `data/graph_kg` — **the PrimeKG layer.** Its
-own docstring, and the caveats sheet of
-`TableS17_knowledge_graph_connections.xlsx`, both state that it reads "the
-same CSVs that were loaded into Neo4j". **That statement is incorrect.**
+Nothing caught it because nothing compared the two.
 
-**What this does and does not affect.**
+**What the fix changed.** Seven of the twelve mechanisms are the same on
+either layer, and the conclusion — convergence on extracellular matrix,
+integrin signalling and inflammation — is unchanged. The three that left the
+top twelve are still eligible on the correct layer, at ranks 14 (Signaling by
+PDGF), 18 (Neutrophil degranulation) and 21 (collagen fibril organization).
+Nothing disappeared; the ranking moved.
 
-- It does **not** invalidate the enrichment test itself. The nodes are real
-  GO and Reactome gene-set memberships, the hypergeometric test is correct,
-  and the background is the same 14,794 genes.
-- It **does** mean that the twelve mechanisms, their fold enrichments and
-  q-values, the 46 genes and 169 edges of Figure 9, and every number in
-  `03_STATISTICS.md` §7 derive from PrimeKG's annotations — **not** from the
-  graph the rest of the paper describes.
-- So a Methods sentence saying Figure 9 was filtered from the project's
-  knowledge graph would be **wrong as currently written**.
+**One new mechanism needs a caption, not deletion.** "Developmental Lineage
+of Pancreatic Ductal Cells" reads oddly in a liver paper. Its sixteen Tier 1
+genes are ANXA2, AQP1, CD74, CLDN10, COL1A1, COL1A2, COL3A1, COL5A1, KRT23,
+KRT7, LAMA2, LAMC2, LAMC3, PDX1, PROM1 and SOX9 — KRT7, SOX9, PROM1, AQP1 and
+CLDN10 being cholangiocyte markers. Liver and pancreas share a foregut
+origin, so the Reactome set is largely the generic ductal-epithelial
+programme, which in liver is the **ductular reaction**, a known feature of
+advancing fibrosis. The biology is apt; say so in the caption.
 
-**Three options, in order of preference.**
+**The check that should have existed now does.** `verify_against_neo4j.py`
+queries the live database and diffs it against the CSVs at four levels: node
+counts, edge counts, gene counts per mechanism, and the gene IDs themselves —
+the last being the one that matters, since counts can agree while sets
+differ. Run on 2026-10-08, every level passed; the pancreatic pathway, for
+instance, holds the same 48 genes in both, and the same 16 Tier 1 genes among
+them. So Figure 9's provenance is now **checked**, not assumed, and a Methods
+sentence saying it was filtered from the project's knowledge graph is correct
+as written.
 
-1. **Re-run `hc4_kg_subgraph.py` against `data/graph_okg`** and regenerate
-   Figure 9 and TableS17. Both layers ship in this package
-   (`04_DATA/knowledge_layer_optimuskg/` and
-   `knowledge_layer_primekg_superseded/`), so this is a path change and a
-   re-run. The mechanisms are very likely to come back substantially the
-   same — both layers draw GO BP and Reactome from the same ontologies — but
-   the numbers will move and must be re-read from the new output.
-2. Keep the figure and **state in Methods that the mechanism subgraph was
-   derived from PrimeKG**, naming it, while the expression graph uses
-   OptimusKG. Defensible but awkward, and it invites the question of why.
-3. Drop Figure 9 and the stage-14 mechanism analysis. Not recommended — it is
-   the only part of the work that shows which gene connects to which
-   mechanism.
-
-**Option 1 is the right answer.** Until it is done, treat Figure 9's
-provenance as PrimeKG and do not describe it as coming from the project
-graph.
-
----
 
 ## 15. Four genes have internally inconsistent direction
 
