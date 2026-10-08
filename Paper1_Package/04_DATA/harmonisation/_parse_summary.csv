@@ -1,0 +1,9 @@
+dataset_id,n_genes,n_samples,gene_id_type,unit,n_edges,out
+GSE126848,19786,57,ensembl,raw_count,1127802,GSE126848_expression_long.csv.gz
+GSE130970,19585,78,entrez,TPM,1527630,GSE130970_expression_long.csv.gz
+GSE135251,64258,216,ensembl,raw_count,13879728,GSE135251_expression_long.csv.gz
+GSE162694,31683,143,ensembl,raw_count,4530669,GSE162694_expression_long.csv.gz
+GSE167523,26364,98,symbol,raw_count,2583476,GSE167523_expression_long.csv.gz
+GSE193066,17231,164,symbol,unknown,2825884,GSE193066_expression_long.csv.gz
+GSE240729,42364,67,ensembl,raw_count,2838388,GSE240729_expression_long.csv.gz
+GSE269412,43285,262,ensembl,raw_count,11340670,GSE269412_expression_long.csv.gz

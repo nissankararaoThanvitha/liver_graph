@@ -1,0 +1,18 @@
+# Built and run on Python 3.13.7. Versions are the ones the committed results
+# were actually produced with -- pinned because Paper 1's numbers should be
+# reproducible, not approximately reproducible.
+
+pandas==2.3.3
+numpy==2.2.4
+scipy==1.16.3
+scikit-learn==1.7.2
+matplotlib==3.10.7
+
+# Pathway enrichment (Task 4).
+gseapy==1.3.1
+
+# Link prediction only. torch is a ~2 GB install; skip both if you are not
+# running train_link_prediction.py. See CLAUDE.md -- that model failed its own
+# validation and its output is unverified.
+pykeen==1.11.1
+torch==2.14.0
