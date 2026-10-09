@@ -307,6 +307,11 @@ DATA_FILES = [
      "04_DATA/graph_nodes/nodes_dataset.csv"),
     ("data/interim_full/_parse_summary.csv",
      "04_DATA/harmonisation/_parse_summary.csv"),
+    # The CURRENT progression edges (6,384). The copy inside data/graph_okg
+    # is stale at 5,576 -- it predates keeping measured zeros -- so both ship
+    # and DATA_DICTIONARY.md says which to use. See 05_LIMITATIONS.md s16.
+    ("data/graph_full/edges_my_progression.csv",
+     "04_DATA/graph_nodes/edges_my_progression.csv"),
 ]
 
 # ------------------------------------------------------------------- code
@@ -349,6 +354,9 @@ CODE_COPIES = [
     ("export_triples.py", "05_CODE/unresolved/export_triples.py"),
     ("train_link_prediction.py",
      "05_CODE/unresolved/train_link_prediction.py"),
+    ("verify_graph_counts.py", "05_CODE/verify/verify_graph_counts.py"),
+    ("Paper1_HighConfidence/verify_against_neo4j.py",
+     "05_CODE/verify/verify_against_neo4j.py"),
     ("requirements.txt", "05_CODE/requirements.txt"),
     ("build_paper1_package.py", "05_CODE/build_paper1_package.py"),
 ]

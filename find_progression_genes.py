@@ -33,8 +33,30 @@ studies agree on the direction.
 
 PSEUDO-REPLICATION GUARD
 GSE193066 biopsied 58 patients twice. Counting those as 116 independent
-people would give them double weight. Samples are collapsed to one row per
-patient_id per study before any statistics are computed.
+people would give them double weight, so each patient contributes one
+row.
+
+REPEAT BIOPSIES -- WHY "FIRST" AND NOT "AVERAGE"
+This script used to average a patient's two biopsies and keep one of the
+two stage labels. For 28 of the 58 that is harmless: both biopsies sat at
+the same stage. For the other 30 it is not. Their stage moved between
+biopsies (24 by one stage, 6 by two), so the averaged profile belonged to
+two different stages while the label named only one of them.
+
+The question here is how expression differs BETWEEN stages, so a
+measurement has to be paired with the stage recorded at the same biopsy.
+--repeat-policy first keeps the first biopsy and drops the second, which
+restores that pairing. All 58 patients have a first biopsy carrying a
+stage, so no patient is lost. GSE193066 has no disease labels at all, so
+only the fibrosis ladder is affected, and no other study has repeats.
+
+Task 3 already handled this correctly -- it averages same-stage repeats
+and keeps one sample where a patient straddles a transition. The old
+behaviour here made the pipeline inconsistent with itself on the same
+issue.
+
+--repeat-policy average reproduces the superseded behaviour, so the two
+can be compared rather than the difference being asserted.
 
 Only genes measured in all 8 studies (n_datasets == 8) are tested: every
 study then contributes to every gene, and 100% of them carry the PrimeKG
@@ -59,6 +81,7 @@ CLINICAL = "data/graph/nodes_sample_clinical.csv"
 # switching off as disease advances is itself a progression signal.
 GRAPH_ALL = "data/graph_all"
 OUT = "data/progression"
+REPEAT_POLICY = "first"    # see REPEAT BIOPSIES below; set by main()
 
 DISEASE_LADDER = {"control": 0, "NAFL": 1, "NASH": 2}
 MIN_PATIENTS = 25          # per study, else that study is skipped for the axis
@@ -69,7 +92,8 @@ def load_labels():
     c = pd.read_csv(CLINICAL, dtype=str).fillna("")
     c["fibrosis"] = pd.to_numeric(c["fibrosis_stage"], errors="coerce")
     c["disease"] = c["disease_group"].map(DISEASE_LADDER)
-    return c[["sample_id", "dataset_id", "patient_id", "fibrosis", "disease"]]
+    return c[["sample_id", "dataset_id", "patient_id", "biopsy_number",
+              "fibrosis", "disease"]]
 
 
 def spearman_matrix(mat, y):
@@ -102,14 +126,21 @@ def run_axis(axis, labels, core):
         if len(lab) < MIN_PATIENTS:
             continue
 
+        if REPEAT_POLICY == "first":
+            # Drop second biopsies before anything is read. Only
+            # GSE193066 has them (58 of its 106 patients); every other
+            # study is all biopsy 1, so this is a no-op elsewhere.
+            lab = lab[lab.biopsy_number != "2"]
+
         e = pd.read_csv(path, usecols=["sample_id", "ensembl_id", "value_z"])
         e = e[e.ensembl_id.isin(core)]
         e = e.merge(lab[["sample_id", "patient_id", axis]], on="sample_id")
         if e.empty:
             continue
 
-        # One row per patient: the 58 twice-biopsied people must not count
-        # twice. Averaging their two biopsies keeps both measurements.
+        # One row per patient. Under "first" the filter above already
+        # left one row each and this only reshapes; under "average" it
+        # averages the two biopsies, which is the superseded behaviour.
         e = (e.groupby(["patient_id", "ensembl_id"], as_index=False)
                .agg(value_z=("value_z", "mean"), y=(axis, "first")))
 
@@ -150,13 +181,22 @@ def run_axis(axis, labels, core):
 
 
 def main():
-    global GRAPH_ALL, OUT
+    global GRAPH_ALL, OUT, REPEAT_POLICY
     ap = argparse.ArgumentParser()
     ap.add_argument("--graph", default=GRAPH_ALL)
     ap.add_argument("--out", default=OUT)
+    ap.add_argument("--repeat-policy", default=REPEAT_POLICY,
+                    choices=["first", "average"],
+                    help="how to handle the 58 twice-biopsied "
+                         "GSE193066 patients: 'first' uses the first "
+                         "biopsy only (default); 'average' is the "
+                         "superseded behaviour, kept so the earlier "
+                         "numbers can be reproduced")
     args = ap.parse_args()
     GRAPH_ALL, OUT = args.graph, args.out
-    print(f"reading {GRAPH_ALL}  ->  writing {OUT}\n")
+    REPEAT_POLICY = args.repeat_policy
+    print(f"reading {GRAPH_ALL}  ->  writing {OUT}")
+    print(f"repeat-biopsy policy: {REPEAT_POLICY}\n")
 
     os.makedirs(OUT, exist_ok=True)
     labels = load_labels()

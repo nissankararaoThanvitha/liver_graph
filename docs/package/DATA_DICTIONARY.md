@@ -115,17 +115,32 @@ files are `from_id, to_id, rel_type, score`.
 | `edges_biological_process_gene.csv` | 157,081 | INVOLVED_IN |
 | `edges_disease_phenotype.csv` | 149,960 | HAS_PHENOTYPE |
 | `edges_pathway_gene.csv` | 46,751 | IN_PATHWAY |
-| `edges_drug_disease.csv` | 43,636 + 722 | TREATS, OFF_LABEL_FOR |
+| `edges_drug_disease.csv` | 57,601 / 11,718 / 1,061 | TREATS, CONTRAINDICATED_IN, OFF_LABEL_FOR, split by `rel_type` |
 | `edges_disease_disease.csv` | 28,919 | PARENT_OF |
 | `edges_drug_gene.csv` | 20,674 | ACTS_ON — **carries the mode of action** (INHIBITOR, AGONIST, BLOCKER and 20 more) |
-| `edges_my_progression.csv` | 6,384 | **TRACKS_FIBROSIS (3,645) and TRACKS_INFLAMMATION (2,739)** |
+| `edges_my_progression.csv` | 5,576 | **stale copy — see the warning below** |
 
 **`score` on gene–disease edges is the Open Targets association score.**
 Links below 0.1 were not loaded; the score is kept on the edge so a query can
 tighten further without a reload (`04_DECISIONS.md` §9).
 
-**`edges_my_progression.csv` is the project's own contribution** — the only
-edges here derived from these patients rather than imported.
+**Two warnings about this folder.**
+
+**The `edges_my_progression.csv` in this folder is stale.** It holds 5,576
+edges (3,253 fibrosis + 2,323 inflammation) from the parse that dropped
+measured zeros. The current version is
+`graph_nodes/edges_my_progression.csv`, with **6,384** edges (3,645 + 2,739),
+and that is the one the graph holds and the one every analysis uses. The
+difference is the 514 progression genes that keeping measured zeros
+recovered. Use the `graph_nodes/` copy.
+
+**The drug–disease, disease–disease and disease–phenotype counts here exceed
+what the live graph reports**, by 40,247 links in total. The CSVs are right
+and the database is short — see `05_LIMITATIONS.md` §16, and run
+`python verify_graph_counts.py` to see the full reconciliation.
+
+`edges_my_progression.csv` is the project's own contribution — the only edges
+here derived from these patients rather than imported.
 
 ## `knowledge_layer_primekg_superseded/` — PrimeKG, kept for one reason
 

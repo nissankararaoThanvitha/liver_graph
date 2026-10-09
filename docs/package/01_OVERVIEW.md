@@ -60,27 +60,33 @@ overlap between them is itself a result (Figures 2 and 3).
 
 ## The graph
 
-The harmonised measurements and curated biology were loaded into a Neo4j
-property graph: **126,244 nodes and 35,091,066 relationships.**
+The harmonised measurements and curated biology were organised as a Neo4j
+property graph of **126,244 nodes and 35,131,313 relationships.**
 
-| Nodes | | Edges | |
-|---|---|---|---|
-| Gene | 53,993 | EXPRESSES | 32,471,042 |
-| Disease | 36,044 | ASSOCIATED_WITH | 1,832,441 |
-| BioProcess | 12,203 | INTERACTS_WITH | 324,116 |
-| Drug | 12,025 | INVOLVED_IN | 157,081 |
-| Phenotype | 8,666 | HAS_PHENOTYPE | 149,960 |
-| Pathway | 2,220 | IN_PATHWAY | 46,751 |
-| Sample | 1,085 | TREATS | 43,636 |
-| Dataset | 8 | PARENT_OF | 28,919 |
-| | | ACTS_ON | 20,674 |
-| | | CONTRAINDICATED_IN | 8,255 |
-| | | **TRACKS_FIBROSIS** | **3,645** |
-| | | **TRACKS_INFLAMMATION** | **2,739** |
-| | | IN_DATASET | 1,085 |
-| | | OFF_LABEL_FOR | 722 |
+**Quote the "dataset" column below, not the "live graph" column.** The CSVs
+are the reproducible build output and are the dataset; the running database
+on the original machine is short by 40,247 links across five relationship
+types, for reasons documented in `05_LIMITATIONS.md` §16. Verify the whole
+table yourself with `python verify_graph_counts.py`.
 
-`EXPRESSES` is 93% of the graph and is **measurement**, not knowledge. The
+| Nodes | | Relationship | Dataset (CSV) | Live graph | |
+|---|---|---|---|---|---|
+| Gene | 53,993 | EXPRESSES | 32,471,042 | 32,471,042 | ok |
+| Disease | 36,044 | ASSOCIATED_WITH | 1,832,441 | 1,832,441 | ok |
+| BioProcess | 12,203 | INTERACTS_WITH | 324,116 | 324,116 | ok |
+| Drug | 12,025 | HAS_PHENOTYPE | **157,144** | 149,960 | −7,184 |
+| Phenotype | 8,666 | INVOLVED_IN | 157,081 | 157,081 | ok |
+| Pathway | 2,220 | TREATS | **57,601** | 43,636 | −13,965 |
+| Sample | 1,085 | IN_PATHWAY | 46,751 | 46,751 | ok |
+| Dataset | 8 | PARENT_OF | **44,215** | 28,919 | −15,296 |
+| | | ACTS_ON | 20,674 | 20,674 | ok |
+| | | CONTRAINDICATED_IN | **11,718** | 8,255 | −3,463 |
+| | | **TRACKS_FIBROSIS** | **3,645** | 3,645 | ok |
+| | | **TRACKS_INFLAMMATION** | **2,739** | 2,739 | ok |
+| | | IN_DATASET | 1,085 | 1,085 | ok |
+| | | OFF_LABEL_FOR | **1,061** | 722 | −339 |
+
+`EXPRESSES` is 92% of the graph and is **measurement**, not knowledge. The
 `TRACKS_FIBROSIS` and `TRACKS_INFLAMMATION` edges — 6,384 in total, derived
 from these patients — are what those measurements *mean*, and they are the
 project's own contribution to the graph rather than something imported.

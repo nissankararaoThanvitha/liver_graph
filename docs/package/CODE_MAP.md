@@ -76,8 +76,16 @@ be regenerated from this package alone — but note which layer it reads
 | | File | Purpose |
 |---|---|---|
 | 01 | `create_kg_constraints.cypher` | uniqueness constraints and indexes. **Run first** |
-| 02 | `load_edges.cypher` | the knowledge layer and the per-study expression edges |
+| 02 | `load_edges.cypher` | **only** the eight per-study `EXPRESSES` files. Despite its name it does *not* load the knowledge layer |
 | 03 | `reload_expression.cypher` | re-loads only the expression edges, leaving the knowledge layer intact |
+
+**There is no committed script that loads the knowledge layer.** The three
+files above cover constraints and expression edges only, yet
+`create_kg_constraints.cypher` states the constraints "must exist before the
+knowledge-layer edges are loaded". That loader was never committed; the layer
+was loaded ad hoc through a session. This is the reproducibility gap that let
+the live graph fall 40,247 links short without anyone noticing — see
+`00_START_HERE/05_LIMITATIONS.md` §16. **Writing that loader is the fix.**
 
 Loading is Cypher, not Python, and is entirely optional: **no result in this
 package requires a running database.**
