@@ -1,3 +1,5 @@
+> **Promoted to active paths:** Corrected outputs now live in the standard root data/, Paper1_Results/, Paper1_HighConfidence/ and rebuilt Paper1_Package/. Links under this audit directory are aliases to those active folders. Superseded results/draft are only in archives/previous_results_2026-10-10.tar.gz. This document records the correction run; use the active package for current methods and numbers.
+
 # Corrected mechanism subgraph
 
 Rebuilt from the corrected491 Tier1 genes and OptimusKG annotations.

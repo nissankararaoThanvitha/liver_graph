@@ -37,12 +37,13 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+from biopsy_policy import select_biopsies, expression_directory
 from scipy.optimize import linear_sum_assignment
 from sklearn.cluster import KMeans
 
 SRC = Path("data/for_mentor/genes_by_fibrosis_stage.csv")
 SAMPLES = Path("data/for_mentor/sample_demographics.csv")
-GRAPH = "data/graph_full"
+GRAPH = str(expression_directory())
 STAGES = [f"stage_{i}" for i in range(5)]
 K_RANGE = range(3, 9)
 N_SUBSAMPLES, SUBSAMPLE_FRAC, SEED, N_BOOT = 50, 0.8, 42, 100
@@ -67,7 +68,7 @@ print(f"{len(fib):,} fibrosis-associated genes, k = {K}\n")
 
 # --- patient-level matrix, same construction as Task 2 -------------------
 import glob
-sm = pd.read_csv(SAMPLES)
+sm = select_biopsies(pd.read_csv(SAMPLES))
 sm = sm[sm.fibrosis_stage.notna()]
 frames = []
 for path in sorted(glob.glob(f"{GRAPH}/edges_GSE*.csv")):

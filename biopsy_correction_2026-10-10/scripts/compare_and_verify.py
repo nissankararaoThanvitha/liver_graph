@@ -7,12 +7,18 @@ from biopsy_policy import select_biopsies,patient_expression
 checks=[]
 def check(label,ok,detail=''):
  checks.append({'check':label,'passed':bool(ok),'detail':detail});print(('PASS ' if ok else 'FAIL ')+label,detail)
-def rd(base,path):return pd.read_csv(base/path)
+def rd(base,path):
+    if base == R:
+        import tarfile,io
+        with tarfile.open(R/'archives/previous_results_2026-10-10.tar.gz','r:gz') as archive:
+            return pd.read_csv(io.BytesIO(archive.extractfile(path).read()))
+    return pd.read_csv(base/path)
 def sig(t):return t[(t.q_value<.05)&(t.n_agree==t.n_studies)]
 changed=[]
-for p,h in json.loads((D/'baseline_hashes.json').read_text()).items():
- if hashlib.sha256((R/p).read_bytes()).hexdigest()!=h:changed.append(p)
-check('All original result/package files preserved',not changed,changed)
+with __import__('tarfile').open(R/'archives/previous_results_2026-10-10.tar.gz','r:gz') as archive:
+    for p,h in json.loads((D/'baseline_hashes.json').read_text()).items():
+        if hashlib.sha256(archive.extractfile(p).read()).hexdigest()!=h:changed.append(p)
+check('All original result/package files preserved in recovery archive',not changed,changed)
 oldf=sig(rd(R,'data/progression_full/progression_fibrosis.csv'));newf=sig(rd(D,'data/progression_full/progression_fibrosis.csv'));oldd=sig(rd(R,'data/progression_full/progression_disease.csv'));newd=sig(rd(D,'data/progression_full/progression_disease.csv'))
 comparison={}
 for axis,a,b in [('fibrosis',oldf,newf),('disease',oldd,newd)]:
@@ -25,7 +31,7 @@ clinical=rd(D,'data/graph/nodes_sample_clinical.csv');selected=select_biopsies(c
 perstudy=rd(D,'Paper1_HighConfidence/10_loso_per_study_all_eligible.csv');check('LOSO uses full 14794-gene eligible universe',len(perstudy)==14794)
 runs=rd(D,'Paper1_HighConfidence/10_loso_all_eligible_runs.csv');check('LOSO records all eligible genes in five omitted-study fits',len(runs)==14794*5 and runs.left_out.nunique()==5)
 # Independently verify the repeat-policy Spearman results for 20 genes, rather than mirroring vector code.
-ids=clusters.ensembl_id.head(20).tolist();raw=rd(D,'data/graph_full/edges_GSE193066.csv');raw=raw[raw.ensembl_id.isin(ids)];lab=clinical[clinical.dataset_id=='GSE193066'];obs=patient_expression(raw,lab);key=perstudy.columns[0];rho_table=perstudy.set_index(key)
+ids=clusters.ensembl_id.head(20).tolist();raw=rd(D,'data/expression_analysis_core/edges_GSE193066.csv');raw=raw[raw.ensembl_id.isin(ids)];lab=clinical[clinical.dataset_id=='GSE193066'];obs=patient_expression(raw,lab);key=perstudy.columns[0];rho_table=perstudy.set_index(key)
 errors=[]
 for gid,g in obs.groupby('ensembl_id'):
  rho,p=spearmanr(g.value_z,g.fibrosis_stage);expected=float(rho_table.loc[gid,'GSE193066_rho'])
@@ -43,7 +49,7 @@ comparison['eligible_gene_universe']=14794;comparison['patient_policy']={'same_s
 edge=rd(D,'data/graph_full/edges_my_progression.csv');check('Regenerated progression edges exactly reflect corrected selections',set(edge[edge.rel=='TRACKS_FIBROSIS'].ensembl_id)==set(newf.ensembl_id) and set(edge[edge.rel=='TRACKS_INFLAMMATION'].ensembl_id)==set(newd.ensembl_id))
 # Export aggregation independently checked against one-patient stage averages for the audit genes.
 stage=rd(D,'data/for_mentor/genes_by_fibrosis_stage.csv').set_index('ensembl_id');parts=[]
-for file in sorted((D/'data/graph_full').glob('edges_GSE*.csv')):
+for file in sorted((D/'data/expression_analysis_core').glob('edges_GSE*.csv')):
  x=pd.read_csv(file);parts.append(x[x.ensembl_id.isin(ids)])
 observations=patient_expression(pd.concat(parts,ignore_index=True),clinical);mean=observations[observations.fibrosis_stage.notna()].pivot_table(index='ensembl_id',columns='fibrosis_stage',values='value_z',aggfunc='mean').round(3)
 check('Exported stage means equal one-patient averages',all(np.allclose(mean[c].loc[ids],stage.loc[ids,f'stage_{int(c)}'],atol=1e-12) for c in mean.columns))

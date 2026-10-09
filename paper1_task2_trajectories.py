@@ -26,14 +26,14 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from biopsy_policy import select_biopsies
+from biopsy_policy import select_biopsies, expression_directory
 from sklearn.cluster import KMeans
 from scipy.optimize import linear_sum_assignment
 from sklearn.metrics import adjusted_rand_score, silhouette_score
 
 SRC = Path("data/for_mentor/genes_by_fibrosis_stage.csv")
 SAMPLES = Path("data/for_mentor/sample_demographics.csv")
-GRAPH = "data/graph_full"
+GRAPH = str(expression_directory())
 # Output folder. Defaults to the committed location; --out redirects
 # it so a re-run can be compared against the previous version instead
 # of overwriting it.

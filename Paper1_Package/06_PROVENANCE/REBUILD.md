@@ -1,122 +1,39 @@
-# Rebuilding what this package does not ship
+# Rebuild current outputs
 
-You do not need any of this to read the results, check a number, or write the
-paper. Everything the paper states traces to a file inside `04_DATA/`,
-`02_TABLES/` or `03_RESULTS/`.
+Run source scripts from the repository root; packaged copies retain relative-path assumptions. Keep outputs paired and archive a current run before replacing it. The correction audit records the actual verified run, inputs, timings and environment.
 
-You need this only to **re-run the pipeline from the raw data**, or to re-run
-the analyses that read the full expression graph.
+## Inputs and limits
 
----
+The active checkout has clinical/mapping metadata, current derived tables and a14,794-gene expression analysis core recovered from Neo4j. Original raw downloads,HGNC/OptimusKG reference assets and the complete expression-load export remain unavailable locally. Recover original inputs according to DATA_SOURCES before primary reprocessing; the metadata acquisition chain is not fully scripted in this checkout.
 
-## What is missing and what it costs
+Use requirements.txt for Paper1. Optional failed link-prediction work has a separate requirements file and is not needed.
 
-| Folder | Size | How to get it | Needed by |
-|---|---|---|---|
-| `data/raw/` | 104 MB | download from GEO — see `DATA_SOURCES.md` | parsing |
-| `data/interim_full/` | 197 MB | `python parse_expression.py --raw-dir data/raw` | gene mapping, graph build |
-| `data/graph_full/` | 2.1 GB | `python build_graph_all.py --interim data/interim_full --out data/graph_full` | progression genes, Tasks 2 and 3, hc1 and hc3 |
-| `data/optimuskg/` | 161 MB | Dataverse DOI `10.7910/DVN/IYNGEV` | rebuilding the knowledge layer |
-| `data/genesets/` | 5.7 MB | MSigDB — URL in `DATA_SOURCES.md` | enrichment |
+## Existing recovered-core analysis
 
-The built knowledge layer **is** shipped, as `04_DATA/knowledge_layer/`, so
-`data/optimuskg/` is only needed to rebuild it from source.
-
----
-
-## Full pipeline, from nothing to the results
+The scripts choose data/expression_analysis_core when available; otherwise they expect data/graph_full. The recovered subset is sufficient for eligible-gene analyses, not full graph expression loading.
 
 ```bash
-pip install -r 05_CODE/requirements.txt
-```
-
-Then, in order:
-
-```bash
-python parse_expression.py --raw-dir data/raw --out-dir data/interim_full
-python map_gene_ids.py
-python build_crosswalk.py
-python normalize_clinical.py
-python build_graph_all.py --interim data/interim_full --out data/graph_full
-python build_optimuskg_layer.py
-python find_progression_genes.py --graph data/graph_full --out data/progression_full
+python find_progression_genes.py --repeat-policy same_stage_mean --graph data/expression_analysis_core --out data/progression_full
 python export_for_mentor.py
-python paper1_task1_groups.py          --out Paper1_Results/Task1
-python paper1_task2_trajectories.py    --out Paper1_Results/Task2
-python paper1_task3_transitions.py     --out Paper1_Results/Task3 --clusters Paper1_Results/Task2/task2_gene_clusters.csv
-python paper1_task4_enrichment.py      --out Paper1_Results/Task4 --clusters Paper1_Results/Task2/task2_gene_clusters.csv
+python paper1_task1_groups.py --out Paper1_Results/Task1
+python paper1_task2_trajectories.py --out Paper1_Results/Task2 5
+python paper1_task3_transitions.py --out Paper1_Results/Task3 --clusters Paper1_Results/Task2/task2_gene_clusters.csv
+python paper1_task4_enrichment.py --out Paper1_Results/Task4 --clusters Paper1_Results/Task2/task2_gene_clusters.csv
+python scripts/00_all_4692_progression_genes.py --out Paper1_HighConfidence --results Paper1_Results
+python scripts/powermatched_transitions.py --out Paper1_HighConfidence --results Paper1_Results
+python scripts/high_confidence_genes.py --out Paper1_HighConfidence --results Paper1_Results
+python scripts/loso_validation.py --out Paper1_HighConfidence --results Paper1_Results
+python scripts/high_confidence_genes.py --out Paper1_HighConfidence --results Paper1_Results
+python scripts/kg_subgraph.py --out Paper1_HighConfidence --results Paper1_Results
+python build_progression_edges.py --progression data/progression_full --knowledge data/graph_okg --out data/graph_full
 python scripts/make_fig1.py
-```
-
-Then the prioritisation, noting that the scoring script runs **twice**:
-
-```bash
-python scripts/00_all_4692_progression_genes.py --out Paper1_HighConfidence
-python scripts/powermatched_transitions.py      --out Paper1_HighConfidence --results Paper1_Results
-python scripts/high_confidence_genes.py         --out Paper1_HighConfidence --results Paper1_Results
-python scripts/loso_validation.py               --out Paper1_HighConfidence --results Paper1_Results
-python scripts/high_confidence_genes.py         --out Paper1_HighConfidence --results Paper1_Results
-python scripts/kg_subgraph.py                   --out Paper1_HighConfidence --results Paper1_Results
-```
-
-The repeat is required: the final tables need the leave-one-study-out columns
-that `loso_validation.py` writes.
-
-Finally:
-
-```bash
 python build_paper1_package.py
 ```
 
----
+The historical source name00_all_4692_progression_genes.py remains for caller compatibility; its output is now00_all_progression_genes.csv and contains5,904 genes. Old first/average discovery options remain only for explicit historical comparisons. Neither top25 nor top12 selection rules changed.
 
-## Three things worth knowing
+## Loading and verification
 
-**Pass `--out`, `--results` and `--clusters` explicitly.** The defaults are
-convenient, not safe: if more than one version of the results exists, a
-default can pair new inputs with old intermediates and the run will report
-success.
+The live graph already contains corrected progression links. Only restore/reload them from verified current CSVs using a saved backup. MERGE alone does not remove obsolete selected edges; the correction used atomic type-limited replacement after checking endpoints. The full expression loader uses CREATE and expects all53,993 union-gene measurements; do not execute it on the core-only recovery.
 
-**`powermatched_transitions.py` and `loso_validation.py` are slow.** They read
-2.1 GB and refit per gene — 50 draws × 4 transitions × 3,681 genes, and 2,625
-leave-one-study-out runs. Plan for a long wall time.
-
-**`parse_expression.py` keeps measured zeros by default, and should.** A gene
-reading zero is a measurement, and the progression signal includes genes
-switching on with stage.
-
----
-
-## Loading the graph (optional)
-
-Nothing in this package needs it.
-
-```
-1. create_kg_constraints.cypher     constraints and indexes, first
-2. reload_expression.cypher         the per-study expression edges
-3. load_knowledge_layer.cypher      the curated layer and the TRACKS_* edges
-```
-
-The CSVs must be reachable from Neo4j's import directory. Copy
-`data/graph_okg/*.csv` and `data/graph_full/edges_my_progression.csv` into it
-under `liverkg/`.
-
-**Every statement in step 3 uses MERGE**, so running it twice duplicates
-nothing and a partial load can simply be re-run.
-
-Afterwards:
-
-```bash
-NEO4J_PASSWORD=... python verify_graph_counts.py --live
-```
-
-which reconciles every relationship type against the CSVs.
-`expected_graph_counts.py` says what each type should reach once edges with
-an absent endpoint are dropped: every type loads complete except PARENT_OF,
-at 44,073 of 44,215.
-
-**The store format is Enterprise-only.** A dump will not load into Community
-Edition; rebuild from the CSVs instead.
-
-**Do not count all relationships by type in one query** — it times out on a
-small heap. Count per type, which hits the count store and returns instantly.
+Mechanism CSVs and current selected memberships match the live graph at final verification. Source-node constraints and imported annotations are preserved. The archive holds historical outputs and is excluded from normal analysis paths.

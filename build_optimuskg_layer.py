@@ -57,7 +57,7 @@ import os
 import pandas as pd
 
 OKG = "data/optimuskg"
-GENES = "data/graph_all/nodes_gene.csv"
+GENES = "data/graph_full/nodes_gene.csv"
 OUT = "data/graph_okg"
 MIN_SCORE = 0.1
 

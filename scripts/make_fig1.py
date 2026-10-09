@@ -52,11 +52,14 @@ _samples = _rows(_PG / "sample_demographics.csv")
 N_SAMPLES = len(_samples)
 N_PATIENTS = len({r["patient_id"] for r in _samples})
 N_STAGED = sum(1 for r in _samples if r["fibrosis_stage"])
+N_STAGED_PATIENTS = len({r["patient_id"] for r in _samples if r["fibrosis_stage"]})
+N_TIER1 = len(_rows(_ROOT / "Paper1_HighConfidence/11_final_tier1_genes.csv"))
+N_SHORTLIST = len(_rows(_ROOT / "Paper1_HighConfidence/11_FINAL_shortlist_25_genes.csv"))
 N_CLUSTERS = len(_rows(_RES / "Task2/task2_cluster_sizes.csv"))
 N_GENES = len(_rows(_ROOT / "data/graph_full/nodes_gene.csv"))
 
 fig, ax = plt.subplots(figsize=(7.4, 9.5))
-ax.set_xlim(-9, 100); ax.set_ylim(0, 124)
+ax.set_xlim(-9, 100); ax.set_ylim(-13, 124)
 ax.axis("off")
 
 
@@ -133,7 +136,7 @@ box(50, 58.0, 42, 12.6,
     "Open Targets score ≥ 0.1", BANDS["graph"], fs=7.4)
 arrow(46.5, 64.3, 49.5, 64.3, style="<|-|>")
 box(6, 47.0, 84, 7.2,
-    f"Neo4j property graph   ·   {N_GENES:,} genes   ·   {N_STAGED:,} staged samples\n"
+    f"Neo4j   ·   {N_GENES:,} genes   ·   {N_STAGED:,} staged samples / {N_STAGED_PATIENTS} patients\n"
     "measurement and curated knowledge queryable together", BANDS["graph"], fs=7.5)
 arrow(25, 58.0, 40, 54.4, lw=0.6)
 arrow(71, 58.0, 56, 54.4, lw=0.6)
@@ -145,8 +148,8 @@ box(6, 30.0, 84, 13.6,
     "Progression-gene identification   ·   find_progression_genes.py\n"
     "per-study Spearman ρ against each ladder → median ρ, Fisher combination,\n"
     f"BH q < 0.05, all studies agreeing on direction   →   {N_PROGRESSION:,} genes\n"
-    "two ladders scored separately — fibrosis F0→F4 (scarring)\n"
-    "and disease control→NAFL→NASH (inflammation)",
+    "same-stage biopsies averaged; otherwise first biopsy only\n"
+    "fibrosis F0→F4 and disease control→NAFL→NASH analysed separately",
     BANDS["disc"], fs=7.4)
 arrow(48, 30.0, 48, 27.0)
 
@@ -167,10 +170,13 @@ for i, txt in enumerate(an):
 # ---------------------------------------------------------------- OUTPUT
 band(4.4, "OUTPUT")
 box(12, 0.8, 72, 7.2,
-    "Stage-resolved map of fibrosis progression\n"
-    "gene sets, trajectory clusters, transition statistics\n"
-    "and pathway context, released as per-analysis CSVs",
+    f"Task 5: evidence scoring  →  {N_TIER1} Tier 1 genes; {N_SHORTLIST} shortlisted\n"
+    "LOSO robustness + enriched gene–mechanism subgraph\n"
+    "stage-informed resource supporting downstream drug repurposing",
     BANDS["out"], fs=7.6)
+
+arrow(48, 0.8, 48, -2.8)
+box(12, -11, 72, 7.2, "Next team: stage-specific drug repurposing\nPredict candidates; validate therapeutic efficacy", BANDS["out"], fs=7.6)
 
 out = _RES / "Figure1" / "figure1_pipeline.png"
 out.parent.mkdir(parents=True, exist_ok=True)

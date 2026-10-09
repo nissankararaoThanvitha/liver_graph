@@ -1,50 +1,14 @@
 # Corrected 2026-10-10: common biopsy policy and BH across all eligible
 # genes within each omitted-study run. This is internal robustness of an
 # already selected set, not independent clinical or predictive validation.
-"""Leave-one-study-out robustness for the Tier 1 genes.
+"""Internal leave-one-study-out robustness of the corrected Tier1 gene set.
 
-Repeats the fibrosis progression analysis once per discovery study, leaving
-that study out, and asks whether each gene's result survives.
-
-FIVE RUNS, NOT EIGHT. The brief asks for eight, one per study, but only five
-of the eight studies stage fibrosis at all -- GSE130970, GSE135251,
-GSE162694, GSE193066 and GSE240729. The other three carry no F0-F4 labels,
-so there is nothing to leave out. Robustness is therefore R = n/5 and is
-reported as such rather than padded to look like eight.
-
-WHY THREE MEASURES AND NOT THE ONE ASKED FOR
-The brief defines R as the number of runs retaining the same progression
-direction. For this gene set that test cannot fail: every Tier 1 gene already
-has all five studies agreeing on direction, so dropping one leaves four that
-still agree and the median keeps its sign by arithmetic. All 507 genes would
-score 5/5 without anything being run.
-
-The fragility the test is meant to catch is real but invisible to it. TPM4
-has a median rho of 0.403 and a rho of 0.040 in one cohort -- that study
-shows almost nothing, and the gene rests on the other four. It still retains
-its direction in every run, scoring identically to MYC, which is strong in
-all five.
-
-So direction is reported as asked, flagged as structurally guaranteed, and
-two measures that CAN fail are reported beside it:
-
-    direction_kept     the brief's R. Expected 5/5 throughout.
-    still_significant  combined p recomputed over the remaining four studies,
-                       BH-FDR across genes within each run, q < 0.05.
-    still_strong       median |rho| over the remaining four studies stays at
-                       or above 0.30, the bar the gene needed for its P score.
-
-With four studies instead of five, significance is naturally harder to reach,
-so some loss is expected and is not by itself evidence against a gene. What
-matters is which genes lose it.
-
-Per-study rho was never saved by find_progression_genes.py -- only the median,
-min and max -- so the correlations are recomputed here from data/graph_full,
-by the same method: Spearman of value_z against fibrosis stage, within each
-study, one row per patient.
-
-Usage:
-    python Paper1_HighConfidence/loso_validation.py
+Use the shared equal-stage mean/otherwise biopsy1 policy. Recompute per-study
+Spearman on all14,794 eligible genes; omit one of five fibrosis-staged studies;
+combine Fisher p and correct BH over the full eligible family per run. Report
+Tier1 direction, significance and median|rho|>=.30 retention. Discovery and
+prioritisation are not refit in nested held-out prediction; this is not external
+clinical validation. Direction retention follows initial consistency.
 """
 import glob
 import pathlib
@@ -58,7 +22,7 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 import sys
 sys.path.insert(0, str(ROOT))
-from biopsy_policy import select_biopsies
+from biopsy_policy import select_biopsies, expression_directory
 import argparse as _argparse
 import sys as _sys
 
@@ -81,7 +45,7 @@ RESULTS = pathlib.Path(_args.results) if _args.results else ROOT / "Paper1_Resul
 
 TIER1 = HERE / "09a_tier1_genes.csv"
 CLINICAL = ROOT / "data/graph/nodes_sample_clinical.csv"
-GRAPH = ROOT / "data/graph_full"
+GRAPH = expression_directory(ROOT)
 
 Q_CUT, RHO_CUT = 0.05, 0.30   # the same bars used in steps 3 and 8
 

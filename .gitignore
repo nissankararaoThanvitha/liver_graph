@@ -1,4 +1,4 @@
-﻿data/raw/
+data/raw/
 share/
 __pycache__/
 *.pyc
@@ -39,3 +39,7 @@ Paper1_Results.zip
 # Designated output root for Team 2, so nothing lands in Team 1's folders.
 # data/paper2  rebuild: see the paper2_ script that writes it
 data/paper2/
+
+# Verified historical recovery archives and regenerated analysis-core measurements.
+archives/*.tar.gz
+data/expression_analysis_core/

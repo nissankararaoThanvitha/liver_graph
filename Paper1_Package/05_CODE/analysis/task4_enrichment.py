@@ -172,7 +172,16 @@ DB_COLOR = {"GO_BP": "#2471a3", "KEGG": "#c0392b", "Reactome": "#7d3c98", "Hallm
 def dot_plot(grp, path):
     d = sig[sig.group == grp].sort_values("p_value").groupby("database").head(5)
     if d.empty:
-        return False
+        n = len(all_groups[grp] & background)
+        fig, ax = plt.subplots(figsize=(7, 2.2))
+        ax.axis("off")
+        message = (f"Enrichment not tested: {n} gene(s); minimum {MIN_GROUP_GENES} required."
+                   if n < MIN_GROUP_GENES else f"Tested: no enriched terms at FDR < {FDR}.")
+        ax.text(0.5, 0.65, grp, ha="center", va="center", fontsize=13, fontweight="bold")
+        ax.text(0.5, 0.35, message, ha="center", va="center", fontsize=11)
+        fig.savefig(path, dpi=300, bbox_inches="tight")
+        plt.close(fig)
+        return True
     d = d.assign(db=pd.Categorical(d.database, list(DATABASES), ordered=True)).sort_values(
         ["db", "gene_ratio"], ascending=[False, True])
     labels = [f"{t[:60]}{'…' if len(t) > 60 else ''}  [{db}]" for t, db in zip(d.term_label, d.database)]

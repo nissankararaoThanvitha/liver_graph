@@ -11,7 +11,7 @@ def query(s,p=None):
 counts={}
 for rel in ['EXPRESSES','IN_DATASET','ASSOCIATED_WITH','INTERACTS_WITH','INVOLVED_IN','IN_PATHWAY','ACTS_ON','TREATS','CONTRAINDICATED_IN','OFF_LABEL_FOR','HAS_PHENOTYPE','PARENT_OF','TRACKS_FIBROSIS','TRACKS_INFLAMMATION']:
  counts[rel]=query(f'MATCH ()-[r:{rel}]->() RETURN count(r)')[0][0]
-old=json.loads((D.parent/'manuscript_planning_2026-10-09_audit/audit/live_graph_readonly.json').read_text());expected={}
+old=json.loads((D/'source_graph_at_intake.json').read_text());expected={}
 for q in old['queries']:
  s=q['statement']
  if s.startswith('MATCH ()-'):expected[s.split('r:')[1].split(']')[0]]=q['result']['data']['values'][0][0]

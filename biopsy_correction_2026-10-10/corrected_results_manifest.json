@@ -1,4 +1,32 @@
 {
+  "Paper1_Results/README.md": {
+    "bytes": 834,
+    "sha256": "e2b67e5a107593a8bf743e40b4b0ac89d239829caf0f7df4abb51de58e76d2ea"
+  },
+  "Paper1_Results/00_progression_genes/genes_by_disease_group.csv": {
+    "bytes": 636583,
+    "sha256": "7d444309af03bd1fb86d68b019258493e1ca2950173914aee670427dfba1e633"
+  },
+  "Paper1_Results/00_progression_genes/progression_fibrosis.csv": {
+    "bytes": 1914906,
+    "sha256": "89bc062517d330246fe16eb4a34107c09b0219398937d79d6b219d517d6b0fe3"
+  },
+  "Paper1_Results/00_progression_genes/diagnostic_both_q_significant.csv": {
+    "bytes": 1391330,
+    "sha256": "6d5660341bbaa3fc4aee45672fdf2171792011b4a7cffa0c160e02a5cd258852"
+  },
+  "Paper1_Results/00_progression_genes/progression_disease.csv": {
+    "bytes": 1899831,
+    "sha256": "bbaa283da25f2d4bd6c942d7483142367da7834d8d83b09edadea64faa5c8e47"
+  },
+  "Paper1_Results/00_progression_genes/genes_by_fibrosis_stage.csv": {
+    "bytes": 635270,
+    "sha256": "91e4fbec0fa49cd171a8417a17211c9c9b209c1f33aad6ad4922b7cdb12abed5"
+  },
+  "Paper1_Results/00_progression_genes/sample_demographics.csv": {
+    "bytes": 51853,
+    "sha256": "0b75b802253ff6a3854427f10fddca5aef63befa499db74bfb7b143f52ca2678"
+  },
   "Paper1_Results/Task2/task2_gene_clusters.csv": {
     "bytes": 500693,
     "sha256": "053ed3c35d219afe1bd30eca7deb062d34b2ba3745a9246e8fd3eb5eedd63bd2"
@@ -82,6 +110,10 @@
   "Paper1_Results/Task1/task1_summary.csv": {
     "bytes": 493,
     "sha256": "566d7bf46a82351549df34d2a1a3a6eaa0267f15f68e4574a1271c681097ede2"
+  },
+  "Paper1_Results/Figure1/figure1_pipeline.png": {
+    "bytes": 617460,
+    "sha256": "37a147eed63ad829501b813e7a938e7f34141f1d867371476211e61b62a65ecf"
   },
   "Paper1_Results/Task4/task4_heatmap_go_bp.png": {
     "bytes": 689667,
@@ -387,6 +419,10 @@
     "bytes": 404211,
     "sha256": "8bce8022d553b3708208625ba00626771dbd6d75f8a6c310197864cb5737770a"
   },
+  "Paper1_Results/Task4/dot_plots/dot_inflammation_only_down.png": {
+    "bytes": 31816,
+    "sha256": "78e8f5f6dced7031d590e4b97ae404f9ea1070dc97212dd1ef0b3dd4195e0cea"
+  },
   "Paper1_Results/Task4/dot_plots/dot_fibrosis_only_up.png": {
     "bytes": 422384,
     "sha256": "e49eb20c19e4b7ffa466bc6dee3faa41f1fa33a82d12c32860bce3a9d814eb0a"
@@ -406,6 +442,10 @@
   "Paper1_Results/Task4/dot_plots/dot_C4_core.png": {
     "bytes": 184267,
     "sha256": "11aac9292c53d70232ca48d3642ed8f2545a307a2b4a523cb60db68722b544bc"
+  },
+  "Paper1_Results/Task4/dot_plots/dot_C3_core.png": {
+    "bytes": 28351,
+    "sha256": "73d0d51487c5e37d8760970f795637894379f340a4638a3d7bbae5c9c45d2233"
   },
   "Paper1_Results/Task4/dot_plots/dot_C2_all.png": {
     "bytes": 407606,
@@ -439,13 +479,13 @@
     "bytes": 142,
     "sha256": "3984b508a44b9526d9c38bdd7c0ee0e2fab7581a49da38fea4f039576680c0da"
   },
-  "Paper1_HighConfidence/00_all_4692_progression_genes.csv": {
-    "bytes": 877489,
-    "sha256": "155c91602b6b88d294135732af8b6000dd7af0bbc58af28ef7565deda1ecc94c"
-  },
   "Paper1_HighConfidence/03_rho_sensitivity.csv": {
     "bytes": 143,
     "sha256": "3c2994e49fd88d604200527a8ed40b87f126f3c586661c59304e749e161c5573"
+  },
+  "Paper1_HighConfidence/README.md": {
+    "bytes": 862,
+    "sha256": "c746e8dc7f8eb2f4f8de1556f6153de37b3965eda9de2e1b28c8aef33c3af630"
   },
   "Paper1_HighConfidence/10_loso_summary.csv": {
     "bytes": 42032,
@@ -462,6 +502,10 @@
   "Paper1_HighConfidence/08_leave_one_score_out.csv": {
     "bytes": 209,
     "sha256": "e4e9cba01d313f1c675db42e25fc18e9490093bbb8d19520ebd94d282c8d8e8e"
+  },
+  "Paper1_HighConfidence/00_all_progression_genes.csv": {
+    "bytes": 877489,
+    "sha256": "155c91602b6b88d294135732af8b6000dd7af0bbc58af28ef7565deda1ecc94c"
   },
   "Paper1_HighConfidence/10_loso_per_study_all_eligible.csv": {
     "bytes": 3226132,
@@ -503,13 +547,13 @@
     "bytes": 1914906,
     "sha256": "89bc062517d330246fe16eb4a34107c09b0219398937d79d6b219d517d6b0fe3"
   },
+  "data/progression_full/diagnostic_both_q_significant.csv": {
+    "bytes": 1391330,
+    "sha256": "6d5660341bbaa3fc4aee45672fdf2171792011b4a7cffa0c160e02a5cd258852"
+  },
   "data/progression_full/progression_disease.csv": {
     "bytes": 1899831,
     "sha256": "bbaa283da25f2d4bd6c942d7483142367da7834d8d83b09edadea64faa5c8e47"
-  },
-  "data/progression_full/progression_both.csv": {
-    "bytes": 1391330,
-    "sha256": "6d5660341bbaa3fc4aee45672fdf2171792011b4a7cffa0c160e02a5cd258852"
   },
   "data/for_mentor/genes_by_disease_group.csv": {
     "bytes": 636583,

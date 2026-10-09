@@ -140,9 +140,9 @@ Top five terms per database. x = gene ratio, point size = number of genes, colou
 
 ## Figure S9
 
-**Enrichment dot plot: inflammation-only decreasing genes.**
+**Enrichment tested with no significant terms: inflammation-only decreasing genes.**
 
-Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR.
+Tested 422 genes; no terms at FDR < 0.05 in the four collections.
 
 `FigureS9_dotplot_inflammation_only_down.png`
 
@@ -204,9 +204,9 @@ Top five terms per database. x = gene ratio, point size = number of genes, colou
 
 ## Figure S17
 
-**Enrichment dot plot: cluster C3, high-confidence members only.**
+**Enrichment not tested: cluster C3, high-confidence members only.**
 
-Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR.
+Not tested: 1 confidently assigned gene(s), below the minimum of five.
 
 `FigureS17_dotplot_C3_core.png`
 

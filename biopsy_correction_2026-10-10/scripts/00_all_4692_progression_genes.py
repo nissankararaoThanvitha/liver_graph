@@ -109,7 +109,7 @@ t = t.merge(stage.rename(columns={f"stage_{i}": f"F{i}" for i in range(5)}),
 
 t["in_fibrosis_starting_set"] = t.ladder.ne("inflammation_only")
 
-out = HERE / "00_all_4692_progression_genes.csv"
+out = HERE / "00_all_progression_genes.csv"
 t.to_csv(out, index=False)
 
 print(f"\nunion = {len(t):,} progression genes")

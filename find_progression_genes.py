@@ -1,72 +1,13 @@
 # Patient policy (corrected 2026-10-10): average repeat measurements only
 # when fibrosis stage is identical; otherwise retain biopsy 1. Existing
 # packaged results are historical and are not overwritten by the isolated run.
-"""
-find_progression_genes.py
--------------------------
-Finds the genes whose expression tracks disease progression, which is the
-mentor's stated primary aim: "our aim is to predict the stages".
+"""Progression-gene discovery supporting stage-informed drug repurposing.
 
-TWO LADDERS, NOT ONE
-Liver disease progresses along two axes that pathologists score separately
-because they are not the same thing:
-
-    fibrosis   0 -> 1 -> 2 -> 3 -> 4     how much scarring (largely permanent)
-    disease    control -> NAFL -> NASH   how much inflammation (reversible)
-
-40 of our NASH patients have fibrosis stage 0 -- inflamed but not yet
-scarred. That is the most treatable moment in the disease, and it is
-invisible if you only look at the fibrosis ladder. So both are run.
-
-METHOD
-For each gene, within each study separately, correlate value_z against the
-ladder position (Spearman, because the stages are ordered ranks and the
-spacing between them is not meaningful).
-
-Running per study and combining afterwards, rather than pooling all patients,
-is deliberate. Studies differ in cohort, sequencing depth and centre; a gene
-that climbs beautifully in one study and does nothing in the other four is a
-quirk of that study, not biology. Requiring agreement across independent
-studies is the same rule that validated the recovered GSE162694 labels and
-caught the bad GSE193066 ones.
-
-Per-study rho values are combined by their median, and significance by
-Fisher's method over the per-study p-values. Genes are kept only when most
-studies agree on the direction.
-
-PSEUDO-REPLICATION GUARD
-GSE193066 biopsied 58 patients twice. Counting those as 116 independent
-people would give them double weight, so each patient contributes one
-row.
-
-REPEAT BIOPSIES -- WHY "FIRST" AND NOT "AVERAGE"
-This script used to average a patient's two biopsies and keep one of the
-two stage labels. For 28 of the 58 that is harmless: both biopsies sat at
-the same stage. For the other 30 it is not. Their stage moved between
-biopsies (24 by one stage, 6 by two), so the averaged profile belonged to
-two different stages while the label named only one of them.
-
-The question here is how expression differs BETWEEN stages, so a
-measurement has to be paired with the stage recorded at the same biopsy.
---repeat-policy first keeps the first biopsy and drops the second, which
-restores that pairing. All 58 patients have a first biopsy carrying a
-stage, so no patient is lost. GSE193066 has no disease labels at all, so
-only the fibrosis ladder is affected, and no other study has repeats.
-
-Task 3 already handled this correctly -- it averages same-stage repeats
-and keeps one sample where a patient straddles a transition. The old
-behaviour here made the pipeline inconsistent with itself on the same
-issue.
-
---repeat-policy average reproduces the superseded behaviour, so the two
-can be compared rather than the difference being asserted.
-
-Only genes measured in all 8 studies (n_datasets == 8) are tested: every
-study then contributes to every gene, and 100% of them carry the PrimeKG
-biology needed for the drug step that follows.
-
-Usage:
-    python find_progression_genes.py
+Analyse the14,794 all-eight-study genes by Spearman within study, median rho,
+Fisher p and BH per clinical axis. Select q<.05 and unanimous direction.
+Default repeat policy averages equal-stage biopsies; otherwise retains biopsy1.
+Historical first/average options remain available explicitly. Expression comes
+from the recovered analysis core when present; raw graph measurements remain intact.
 """
 
 import argparse
@@ -75,7 +16,7 @@ import os
 
 import numpy as np
 import pandas as pd
-from biopsy_policy import select_biopsies
+from biopsy_policy import select_biopsies, expression_directory
 from scipy import stats
 
 CLINICAL = "data/graph/nodes_sample_clinical.csv"
@@ -88,7 +29,7 @@ CLINICAL = "data/graph/nodes_sample_clinical.csv"
 # zero is real data, and deleting those zeros deletes the switching-on that
 # IS the progression signal. Keeping them added 9.1M measurements and 514
 # progression genes, TREM2 among them. graph_all has been deleted.
-GRAPH_ALL = "data/graph_full"
+GRAPH_ALL = str(expression_directory())
 # Writes where everything else reads. The old default, data/progression,
 # was computed from the zero-dropped graph and is missing the 514
 # progression genes that keeping measured zeros revealed, TREM2 among
@@ -272,7 +213,7 @@ def main():
         both = both.reindex(
             both[["median_rho_fib", "median_rho_dis"]].abs().min(axis=1)
             .sort_values(ascending=False).index)
-        both.to_csv(f"{OUT}/progression_both.csv", index=False)
+        both.to_csv(f"{OUT}/diagnostic_both_q_significant.csv", index=False)
         print(f"=== GENES ON *BOTH* LADDERS: {len(both):,} ===")
         print(both.head(20)[["symbol_fib", "median_rho_fib",
                              "median_rho_dis"]].to_string(index=False))

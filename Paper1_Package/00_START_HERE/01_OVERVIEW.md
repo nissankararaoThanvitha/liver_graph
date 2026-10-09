@@ -1,104 +1,29 @@
-# 1. Overview
+# Objective and completed outputs
 
-## The aim
+Corrected active version: 10 October 2026. Eight human liver transcriptome studies contain1,085 samples from1,027 patient IDs. Fibrosis analysis uses610 independent staged patients; the disease-group axis uses221 patients from three studies. Repeat biopsies are averaged only if fibrosis stage matches; otherwise biopsy1 is retained before any stage filtering.
 
-**Predict the stage of liver disease progression.** Everything here serves
-that: the harmonisation exists so eight cohorts can be read on one scale, the
-knowledge graph exists so measurement and biology can be queried together,
-and the analyses establish which genes carry stage information, what shape
-that information takes across stages, where along the ladder the largest
-change happens, what biology it corresponds to, and which genes survive every
-independent check.
+Selected genes: **3,688 fibrosis**, **4,018 disease**, **1,802 shared**, **5,904 union**. Tier1 has **491 genes**, with25 shortlisted. The network displays **42 genes**, **12 mechanisms**, **154 connections**, with5 shortlisted genes shown.
 
-## The cohort
+## Research objective
 
-Eight human liver transcriptome studies from the Gene Expression Omnibus:
-**1,085 samples from 1,027 patients.**
+Build a stage-informed biomedical graph linking human liver expression to OptimusKG genes, diseases, drugs, pathways, biological processes and phenotypes, supporting the next team's stage-specific drug-repurposing analysis. Association, prioritisation and annotation are completed; therapeutic prediction/effectiveness remains downstream work.
 
-| Study | Samples | Patients | Fibrosis staged | Disease labelled |
-|---|---|---|---|---|
-| GSE126848 | 57 | 57 | — | yes |
-| GSE130970 | 78 | 78 | F0–F4 | derived from histology |
-| GSE135251 | 216 | 216 | F0–F4 | spectrum only (NAFLD) |
-| GSE162694 | 143 | 143 | F0–F4 | spectrum only (NAFLD) |
-| GSE167523 | 98 | 98 | — | yes |
-| GSE193066 | 164 | **106** | F0–F4 | — |
-| GSE240729 | 67 | 67 | F0–F4 | — |
-| GSE269412 | 262 | 262 | — | — |
+## Clinical axes and sample units
 
-The full version, with per-stage breakdown and demographic coverage, is
-`02_TABLES/main/Table1_cohort.csv`.
+Fibrosis is F0–F4. Disease-group ordering is control→NAFL→NASH. Broad NAFLD of unspecified subtype is excluded from that ordering. Five studies stage fibrosis; three provide varying disease labels. The full resource contains668 staged biopsies, but the corrected analysis gives each of610 staged patients one contribution. Stage-by-age/sex summaries use327 patients. Raw metadata and measurements remain intact.
 
-Four facts about this cohort govern most of what follows:
+## Current graph
 
-- **668 samples carry a fibrosis stage**, from five studies. The distribution
-  is uneven: F0 152, F1 168, F2 186, F3 127, **F4 only 35.**
-- **The disease ladder rests on three studies and 221 patients.** Two further
-  studies label patients as NAFLD without stating the NAFL/NASH subtype, so
-  they cannot be placed on a control → NAFL → NASH ordering.
-- **GSE193066's 164 samples are 106 people** — 58 were biopsied twice. The
-  first biopsy is used, so each patient contributes once and the expression
-  is paired with the stage recorded at that same biopsy.
-- **Demographics cover part of the cohort.** Sex for 540 samples, age for
-  483, and only **385 samples have demographics *and* a fibrosis stage.**
+Eight labels,126,244 nodes; 35,132,493 relationships at final correction verification. Patient identity is a Sample property, not a Patient node. Curated gene/disease/drug/annotation relationships remain unchanged; only7,706 patient-derived progression links were replaced. The graph is not trimmed to liver diseases only.
 
-## The two ladders
+## Outputs
 
-Liver disease progresses along two axes that pathologists score separately,
-and they are never merged here:
+Task1 groups genes by qualifying axis/direction; Task2 clusters five stage profiles; Task3 models four adjacent-stage contrasts; Task4 performs local over-representation; Task5 scores genes, checks internal LOSO robustness and maps gene–mechanism connections. Top25 and top12 selection rules were not changed by the correction. Their input gene profiles/scores changed.
 
-| Ladder | Scale | What it measures |
-|---|---|---|
-| **Fibrosis** | F0 → F1 → F2 → F3 → F4 | Scarring. Largely permanent. |
-| **Disease** | control → NAFL → NASH | Inflammation. Reversible. |
-
-They are not interchangeable, and the overlap between them is itself a result
-(Figures 2 and 3).
-
-## The knowledge graph
-
-Harmonised measurements and curated biology are held together in a Neo4j
-property graph: **53,993 genes**, 1,085 samples, and the curated layer —
-diseases, drugs, pathways, biological processes and phenotypes — joined on
-the same Ensembl identifiers.
-
-The measurement edges are 32.5 million `EXPRESSES` relationships. The
-**`TRACKS_FIBROSIS` (3,645) and `TRACKS_INFLAMMATION` (2,739)** edges are
-derived from these patients and are the project's own contribution to the
-graph rather than something imported.
-
-**You do not need the database to use this package.** Every analysis here
-reads CSV files, including the knowledge-graph figure. The graph is how the
-data is organised, not a dependency of the results. The curated layer ships
-in full as `04_DATA/knowledge_layer/`.
-
-## What was produced
-
-| Stage | Output | Where |
-|---|---|---|
-| Harmonisation and integration | harmonised data, the graph, 5,884 progression genes | `04_DATA/` |
-| Task 1 | genes split into fibrosis-only / inflammation-only / shared | `03_RESULTS/Task1_gene_groups/` |
-| Task 2 | five reproducible F0→F4 trajectory shapes | `03_RESULTS/Task2_trajectories/` |
-| Task 3 | the four stage transitions compared at patient level | `03_RESULTS/Task3_transitions/` |
-| Task 4 | pathway enrichment per group and per cluster | `03_RESULTS/Task4_enrichment/` |
-| Task 5 | 525 high-confidence genes, a prioritised 25, mechanism network | `03_RESULTS/Task5_gene_prioritisation/` |
-
-## The headline results
-
-1. **5,884 genes track progression** across eight independent studies:
-   1,866 fibrosis-only, 2,203 inflammation-only, 1,815 both. **3,681 track
-   fibrosis.**
-2. **Fibrosis genes follow five reproducible shapes**, not one. Immune
-   activation is established early; matrix remodelling accelerates late.
-3. **The largest transcriptional change is at F3→F4**, the transition into
-   cirrhosis — and this only becomes visible once statistical power is
-   equalised across transitions.
-4. **Each programme carries distinct biology.** Rising fibrosis-only genes
-   are immune; falling genes are the loss of normal liver metabolism; genes
-   shared by both ladders are the core fibrogenic programme.
-5. **525 genes are supported by every independent kind of evidence
-   available**, from which 25 were prioritised to span all five trajectory
-   shapes and both directions.
-
-Each is stated with its own caveats in `04_LIMITATIONS.md`. Result 3 in
-particular depends on a design choice that is explained rather than assumed.
+| cluster | cluster_name | n_genes | pct_of_fibrosis_genes | mean_F0 | mean_F1 | mean_F2 | mean_F3 | mean_F4 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | Early increase (F0→F1), then continued | 953 | 25.8 | -0.297 | -0.052 | 0.066 | 0.242 | 0.502 |
+| 2 | Late increase (largest at F3→F4) | 1452 | 39.4 | -0.232 | -0.146 | -0.016 | 0.278 | 0.846 |
+| 3 | Early rise, then plateau | 272 | 7.4 | -0.271 | -0.016 | 0.103 | 0.225 | 0.14 |
+| 4 | Mid decrease (largest at F1→F2) | 322 | 8.7 | 0.194 | 0.175 | -0.084 | -0.248 | -0.356 |
+| 5 | Late decrease (largest at F3→F4) | 689 | 18.7 | 0.173 | 0.208 | -0.023 | -0.246 | -0.699 |

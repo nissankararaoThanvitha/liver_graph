@@ -1,50 +1,10 @@
-"""
-export_for_mentor.py
---------------------
-Builds the CSVs the mentor asked for in the 2026-09-07 meeting:
+"""Independent-patient gene summaries for stage-informed liver analysis.
 
-    "send me those genes ... that is for stage wise genes. I just want to see
-     how the genes are progressing ... do a CSV, first stage, second stage,
-     each and every should give this, I will do analysis"
-
-    "phenotypes are not very useful, if you have age and sex, only add those
-     things ... sample having a gene, and maybe its age is from 30 to 35, and
-     the gender is male, same gene, for fibrosis, the age is from 20 to 25 --
-     you understand the comparison we are doing"
-
-    "do not send me any pathway information"
-    "don't send me 54,000 [genes]"
-
-So: only the 4,692 progression genes, their expression per stage, split by
-sex and by age band. No pathways, no drugs, no phenotype nodes.
-
-SEX NEEDS HARMONISING FIRST
-The eight studies write sex six different ways -- Female, female, F, Male,
-male, M -- so grouping on the raw value silently splits every group in two.
-Same class of bug as the F4/4 fibrosis mismatch fixed earlier.
-
-AGE COVERAGE IS THE REAL LIMIT
-Age and sex are only recorded by five of the eight studies, and only three of
-those also stage fibrosis. So the stage x age x sex comparison rests on 385
-samples from GSE130970, GSE162694 and GSE193066 -- not the full 1,085. The
-per-stage gene table itself uses all 668 staged samples; only the demographic
-splits are restricted. Every output file carries its own n so the limit is
-visible rather than assumed.
-
-Values are value_z: expression standardised per gene within each study, which
-is what makes the eight cohorts comparable at all. A positive number means
-above average for that gene in that study.
-
-Output (data/for_mentor/):
-    genes_by_fibrosis_stage.csv      4,692 rows x stages 0-4
-    genes_by_disease_group.csv       control / NAFL / NASH
-    genes_by_stage_and_sex.csv       stage x sex
-    genes_by_stage_and_age.csv       stage x age band
-    sample_demographics.csv          one row per sample
-    README.txt                       what each column means
-
-Usage:
-    python export_for_mentor.py
+Export the corrected selected union by fibrosis stage, disease group, sex and
+age. Shared biopsy policy averages equal-stage repeats; differing stages retain
+biopsy1. Each patient contributes once to means. Raw sample metadata remains a
+separate table with biopsy order. Actual counts are written from inputs, not
+hardcoded. Values are within-study value_z, not fold changes.
 """
 
 import glob
@@ -52,9 +12,9 @@ import os
 
 import numpy as np
 import pandas as pd
-from biopsy_policy import select_biopsies, patient_expression
+from biopsy_policy import select_biopsies, patient_expression, expression_directory
 
-GRAPH = "data/graph_full"
+GRAPH = str(expression_directory())
 PROG = "data/progression_full"
 META = "data/processed/samples_metadata.csv"
 CLIN = "data/graph/nodes_sample_clinical.csv"

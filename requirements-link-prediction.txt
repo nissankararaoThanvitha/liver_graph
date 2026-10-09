@@ -1,0 +1,4 @@
+# Optional historical link-prediction dependencies; failed model not a Paper1 result.
+-r requirements.txt
+pykeen==1.11.1
+torch==2.14.0

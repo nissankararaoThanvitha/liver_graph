@@ -1,22 +1,13 @@
 # Patient policy (corrected 2026-10-10): average repeat measurements only
 # when fibrosis stage is identical; otherwise retain biopsy 1. Existing
 # packaged results are historical and are not overwritten by the isolated run.
-"""Paper 1, Task 3 -- where does the major fibrosis-stage change occur?
+"""Adjacent-stage expression contrasts among corrected fibrosis-selected genes.
 
-For every fibrosis-associated gene and every consecutive transition
-(F0->F1, F1->F2, F2->F3, F3->F4):
-  * delta_mean   difference of stage means (from genes_by_fibrosis_stage.csv)
-  * beta         patient-level effect from  value_z ~ stage + study, fitted on
-                 the samples of the two stages only, so stages are compared
-                 within study. Studies lacking either stage are dropped.
-                 One row per patient per stage (repeat biopsies at the same
-                 stage averaged); patients whose stage changed retain biopsy 1
-                 before any transition is selected.
-  * p, q         t-test on beta, BH-FDR across genes within each transition
-"Substantially changing" = q < 0.05 and |beta| >= 0.2 (SD units).
-
-F4 has far fewer samples than other stages, so a power-matched check refits
-every transition on equal-size random subsamples. Outputs: Paper1_Results/Task3/.
+Shared patient policy is applied before any stage contrast: equal-stage mean,
+otherwise biopsy1. Fit higher-stage indicator plus study effects, t-test and
+BH per contrast; substantial q<.05 and|beta|>=.2. Equal-study-cell matched refits
+compare transitions under repeated sampling. Counts remain inside a selected
+set and do not establish longitudinal progression or unbiased genome totals.
 """
 import sys
 import argparse
@@ -28,14 +19,14 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from biopsy_policy import select_biopsies
+from biopsy_policy import select_biopsies, expression_directory
 from scipy import stats
 
 
 STAGE_FILE = Path("data/for_mentor/genes_by_fibrosis_stage.csv")
 SAMPLES = Path("data/for_mentor/sample_demographics.csv")
 CLUSTERS = None  # set below from --clusters; see the argparse block
-GRAPH = "data/graph_full"
+GRAPH = str(expression_directory())
 # Output folder. Defaults to the committed location; --out redirects
 # it so a re-run can be compared against the previous version instead
 # of overwriting it.

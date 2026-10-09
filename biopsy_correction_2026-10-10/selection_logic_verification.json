@@ -1,0 +1,20 @@
+{
+  "score_and_shortlist_functions_identical_to_original": [
+    "score_progression",
+    "score_trajectory",
+    "score_transition",
+    "score_specificity",
+    "score_biology",
+    "total_score",
+    "shortlist_a",
+    "shortlist_b"
+  ],
+  "mechanism_thresholds_and_display_rule_unchanged": [
+    "N_MAJOR_NODES",
+    "MIN_TIER1_GENES",
+    "FDR",
+    "JACCARD_DUP",
+    "MIN_GENE_DEGREE"
+  ],
+  "verified": true
+}

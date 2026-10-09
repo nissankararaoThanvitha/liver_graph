@@ -1,0 +1,85 @@
+[
+  {
+    "check": "Every rebuilt package manifest hash matches",
+    "passed": true,
+    "detail": {
+      "files": 264,
+      "mismatches": []
+    }
+  },
+  {
+    "check": "Corrected active counts",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "All four current progression-edge CSVs agree",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "CSV endpoints/types equal saved verified live graph",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "Package shortlist includes current confidence",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "Package fibrosis progression matches active CSV",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "Package disease progression matches active CSV",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "Current clustering covers exactly corrected fibrosis set",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "Current workbook/network counts",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "Old result naming removed from active data/package",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "Shared biopsy helper is shipped",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "Older draft and HTML absent from active folders",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "Recovery archive verification retained",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "All result/data aliases point to canonical active paths",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "Current evidence planning contains all four deliverables",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "Top25/top12 selection logic verification retained",
+    "passed": true,
+    "detail": null
+  }
+]

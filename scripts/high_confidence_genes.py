@@ -1,32 +1,11 @@
-"""High-confidence fibrosis gene prioritisation.
+"""Rank fibrosis-associated genes using complementary evidence features.
 
-Re-ranks the 3,645 fibrosis-associated genes by how many INDEPENDENT kinds of
-evidence agree about them, rather than by p-value. Every gene in the starting
-set already passes fibrosis FDR < 0.05 -- that is how it got into the set --
-so sorting them by q-value again only re-reads the same number. The point of
-this analysis is to ask five different questions of each gene and reward
-agreement between the answers:
-
-    P  progression strength   how steep is the fibrosis correlation
-    T  trajectory             does the F0->F4 shape agree with that direction
-    X  transition             is there a real patient-level jump somewhere
-    F  fibrosis specificity   fibrosis-only, or shared with inflammation
-    B  biological support     does it sit in enriched pathways
-
-    HighConfidenceScore = P + T + X + F + B,  maximum 9
-
-Leave-one-study-out robustness is deliberately NOT part of the score. It is
-run afterwards as a separate validation, so prioritisation and robustness
-testing stay separable.
-
-Every scoring rule is frozen as a named constant before the ranked list is
-inspected. That is the defence against picking a cutoff because it yields a
-convenient number of genes.
-
-Inputs are the finished Task 1-4 outputs. Outputs go to this folder.
-
-Usage:
-    python Paper1_HighConfidence/high_confidence_genes.py
+P/T/X/F/B scores and cutoff constants are unchanged. Input discovery, stage
+profiles, clusters, transitions and enrichment use corrected patient handling.
+These features share data and are not independent validation experiments.
+Select Tier1 at score>=7. Top25 is five Tier1 genes per cluster, descending
+score then absolute rho; alternative cluster-top-score list is not selected.
+LOSO is merged after refitting and is deliberately not part of the score.
 """
 import pathlib
 from pathlib import Path
