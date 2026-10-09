@@ -1,3 +1,6 @@
+# Corrected 2026-10-10: common biopsy policy and BH across all eligible
+# genes within each omitted-study run. This is internal robustness of an
+# already selected set, not independent clinical or predictive validation.
 """Leave-one-study-out robustness for the Tier 1 genes.
 
 Repeats the fibrosis progression analysis once per discovery study, leaving
@@ -53,6 +56,9 @@ from scipy import stats
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
+import sys
+sys.path.insert(0, str(ROOT))
+from biopsy_policy import select_biopsies
 import argparse as _argparse
 import sys as _sys
 
@@ -94,10 +100,13 @@ def spearman_matrix(Y, y):
 
 
 t1 = pd.read_csv(TIER1)
-keep = set(t1.ensembl_id)
-print(f"Tier 1 genes: {len(keep):,}")
+report_genes = set(t1.ensembl_id)
+core_nodes = pd.read_csv(GRAPH / "nodes_gene.csv")
+keep = set(core_nodes.loc[core_nodes.n_datasets == 8, "ensembl_id"])
+print(f"Tier 1 genes reported: {len(report_genes):,}; BH universe: {len(keep):,}")
 
 lab = pd.read_csv(CLINICAL, low_memory=False)
+lab = select_biopsies(lab)
 lab = lab[lab.fibrosis_stage.notna()]
 
 print("\nper-study Spearman (recomputed; find_progression_genes.py keeps only "
@@ -152,7 +161,10 @@ for left_out in studies:
         "still_strong": (med.abs() >= RHO_CUT).to_numpy(),
     }))
 runs = pd.concat(rows, ignore_index=True)
+runs.to_csv(HERE / "10_loso_all_eligible_runs.csv", index=False)
+runs = runs[runs.ensembl_id.isin(report_genes)].copy()
 runs.to_csv(HERE / "10_loso_runs.csv", index=False)
+RHO.join(PV, lsuffix="_rho", rsuffix="_p").to_csv(HERE / "10_loso_per_study_all_eligible.csv")
 
 n = len(studies)
 summ = (runs.groupby("ensembl_id")

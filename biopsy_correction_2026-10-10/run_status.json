@@ -1,0 +1,181 @@
+{
+  "runtime": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "stages": [
+    {
+      "stage": "00_reproduce_discovery",
+      "command": [
+        "/tmp/liver-biopsy-venv/bin/python",
+        "find_progression_genes.py",
+        "--repeat-policy",
+        "first",
+        "--out",
+        "data/baseline_reproduced"
+      ],
+      "seconds": 17.51,
+      "exit_code": 0
+    },
+    {
+      "stage": "01_corrected_discovery",
+      "command": [
+        "/tmp/liver-biopsy-venv/bin/python",
+        "find_progression_genes.py",
+        "--repeat-policy",
+        "same_stage_mean",
+        "--out",
+        "data/progression_full"
+      ],
+      "seconds": 16.74,
+      "exit_code": 0
+    },
+    {
+      "stage": "02_patient_exports",
+      "command": [
+        "/tmp/liver-biopsy-venv/bin/python",
+        "export_for_mentor.py"
+      ],
+      "seconds": 18.68,
+      "exit_code": 0
+    },
+    {
+      "stage": "03_groups",
+      "command": [
+        "/tmp/liver-biopsy-venv/bin/python",
+        "paper1_task1_groups.py",
+        "--out",
+        "Paper1_Results/Task1"
+      ],
+      "seconds": 1.96,
+      "exit_code": 0
+    },
+    {
+      "stage": "04_trajectories",
+      "command": [
+        "/tmp/liver-biopsy-venv/bin/python",
+        "paper1_task2_trajectories.py",
+        "--out",
+        "Paper1_Results/Task2",
+        "5"
+      ],
+      "seconds": 28.56,
+      "exit_code": 0
+    },
+    {
+      "stage": "05_transitions",
+      "command": [
+        "/tmp/liver-biopsy-venv/bin/python",
+        "paper1_task3_transitions.py",
+        "--out",
+        "Paper1_Results/Task3",
+        "--clusters",
+        "Paper1_Results/Task2/task2_gene_clusters.csv"
+      ],
+      "seconds": 9.67,
+      "exit_code": 0
+    },
+    {
+      "stage": "06_enrichment",
+      "command": [
+        "/tmp/liver-biopsy-venv/bin/python",
+        "paper1_task4_enrichment.py",
+        "--out",
+        "Paper1_Results/Task4",
+        "--clusters",
+        "Paper1_Results/Task2/task2_gene_clusters.csv"
+      ],
+      "seconds": 17.33,
+      "exit_code": 0
+    },
+    {
+      "stage": "07_union",
+      "command": [
+        "/tmp/liver-biopsy-venv/bin/python",
+        "scripts/00_all_4692_progression_genes.py",
+        "--out",
+        "Paper1_HighConfidence",
+        "--results",
+        "Paper1_Results"
+      ],
+      "seconds": 0.35,
+      "exit_code": 0
+    },
+    {
+      "stage": "08_matched",
+      "command": [
+        "/tmp/liver-biopsy-venv/bin/python",
+        "scripts/powermatched_transitions.py",
+        "--out",
+        "Paper1_HighConfidence",
+        "--results",
+        "Paper1_Results"
+      ],
+      "seconds": 8.67,
+      "exit_code": 0
+    },
+    {
+      "stage": "09_score",
+      "command": [
+        "/tmp/liver-biopsy-venv/bin/python",
+        "scripts/high_confidence_genes.py",
+        "--out",
+        "Paper1_HighConfidence",
+        "--results",
+        "Paper1_Results"
+      ],
+      "seconds": 1.19,
+      "exit_code": 0
+    },
+    {
+      "stage": "10_loso",
+      "command": [
+        "/tmp/liver-biopsy-venv/bin/python",
+        "scripts/loso_validation.py",
+        "--out",
+        "Paper1_HighConfidence",
+        "--results",
+        "Paper1_Results"
+      ],
+      "seconds": 12.15,
+      "exit_code": 0
+    },
+    {
+      "stage": "11_final_score",
+      "command": [
+        "/tmp/liver-biopsy-venv/bin/python",
+        "scripts/high_confidence_genes.py",
+        "--out",
+        "Paper1_HighConfidence",
+        "--results",
+        "Paper1_Results"
+      ],
+      "seconds": 1.2,
+      "exit_code": 0
+    },
+    {
+      "stage": "12_mechanisms",
+      "command": [
+        "/tmp/liver-biopsy-venv/bin/python",
+        "scripts/kg_subgraph.py",
+        "--out",
+        "Paper1_HighConfidence",
+        "--results",
+        "Paper1_Results"
+      ],
+      "seconds": 4.45,
+      "exit_code": 0
+    },
+    {
+      "stage": "13_progression_edges",
+      "command": [
+        "/tmp/liver-biopsy-venv/bin/python",
+        "build_progression_edges.py",
+        "--knowledge",
+        "data/graph_okg",
+        "--out",
+        "data/graph_full"
+      ],
+      "seconds": 0.16,
+      "exit_code": 0
+    }
+  ],
+  "scope": "patient-policy correction and LOSO eligible-universe BH; no live graph mutation"
+}

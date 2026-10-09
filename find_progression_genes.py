@@ -1,3 +1,6 @@
+# Patient policy (corrected 2026-10-10): average repeat measurements only
+# when fibrosis stage is identical; otherwise retain biopsy 1. Existing
+# packaged results are historical and are not overwritten by the isolated run.
 """
 find_progression_genes.py
 -------------------------
@@ -72,6 +75,7 @@ import os
 
 import numpy as np
 import pandas as pd
+from biopsy_policy import select_biopsies
 from scipy import stats
 
 CLINICAL = "data/graph/nodes_sample_clinical.csv"
@@ -91,7 +95,7 @@ GRAPH_ALL = "data/graph_full"
 # them. Two output folders with no marker of which is current is how a
 # superseded result gets quoted by mistake.
 OUT = "data/progression_full"
-REPEAT_POLICY = "first"    # see REPEAT BIOPSIES below; set by main()
+REPEAT_POLICY = "same_stage_mean"    # first/average retained for historical comparisons
 
 DISEASE_LADDER = {"control": 0, "NAFL": 1, "NASH": 2}
 MIN_PATIENTS = 25          # per study, else that study is skipped for the axis
@@ -145,6 +149,9 @@ def run_axis(axis, labels, core):
             print(f"  {axis:9s} {gse}: skipped, no variation on this ladder")
             continue
 
+        if REPEAT_POLICY == "same_stage_mean":
+            lab = select_biopsies(lab, axis)
+
         if REPEAT_POLICY == "first":
             # Drop second biopsies before anything is read. Only
             # GSE193066 has them (58 of its 106 patients); every other
@@ -157,9 +164,9 @@ def run_axis(axis, labels, core):
         if e.empty:
             continue
 
-        # One row per patient. Under "first" the filter above already
-        # left one row each and this only reshapes; under "average" it
-        # averages the two biopsies, which is the superseded behaviour.
+        # One row per patient. same_stage_mean retained only equal-stage
+        # repeats, so averaging cannot pair two different stages. The first
+        # and average options reproduce earlier policies explicitly.
         e = (e.groupby(["patient_id", "ensembl_id"], as_index=False)
                .agg(value_z=("value_z", "mean"), y=(axis, "first")))
 
@@ -205,10 +212,11 @@ def main():
     ap.add_argument("--graph", default=GRAPH_ALL)
     ap.add_argument("--out", default=OUT)
     ap.add_argument("--repeat-policy", default=REPEAT_POLICY,
-                    choices=["first", "average"],
+                    choices=["same_stage_mean", "first", "average"],
                     help="how to handle the 58 twice-biopsied "
                          "GSE193066 patients: 'first' uses the first "
-                         "biopsy only (default); 'average' is the "
+                         "biopsy only; 'same_stage_mean' (default) averages same-stage repeats "
+                         "and otherwise keeps biopsy 1; 'average' is the "
                          "superseded behaviour, kept so the earlier "
                          "numbers can be reproduced")
     args = ap.parse_args()

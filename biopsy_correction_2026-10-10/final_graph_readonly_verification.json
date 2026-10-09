@@ -1,0 +1,82 @@
+{
+  "counts": {
+    "EXPRESSES": 32471042,
+    "IN_DATASET": 1085,
+    "ASSOCIATED_WITH": 1832441,
+    "INTERACTS_WITH": 324116,
+    "INVOLVED_IN": 157081,
+    "IN_PATHWAY": 46751,
+    "ACTS_ON": 20674,
+    "TREATS": 57601,
+    "CONTRAINDICATED_IN": 11718,
+    "OFF_LABEL_FOR": 1061,
+    "HAS_PHENOTYPE": 157144,
+    "PARENT_OF": 44073,
+    "TRACKS_FIBROSIS": 3688,
+    "TRACKS_INFLAMMATION": 4018
+  },
+  "total_relationships": 35132493,
+  "other_relationship_counts_preserved": true,
+  "corrected_mechanism_memberships": [
+    {
+      "mechanism_id": "GO_0030198",
+      "members": 143,
+      "exact_match": true
+    },
+    {
+      "mechanism_id": "GO_0001525",
+      "members": 282,
+      "exact_match": true
+    },
+    {
+      "mechanism_id": "GO_0030335",
+      "members": 270,
+      "exact_match": true
+    },
+    {
+      "mechanism_id": "GO_0098609",
+      "members": 216,
+      "exact_match": true
+    },
+    {
+      "mechanism_id": "REACT:R-HSA-9925563",
+      "members": 48,
+      "exact_match": true
+    },
+    {
+      "mechanism_id": "REACT:R-HSA-3000178",
+      "members": 76,
+      "exact_match": true
+    },
+    {
+      "mechanism_id": "GO_0007229",
+      "members": 100,
+      "exact_match": true
+    },
+    {
+      "mechanism_id": "REACT:R-HSA-216083",
+      "members": 85,
+      "exact_match": true
+    },
+    {
+      "mechanism_id": "GO_0016477",
+      "members": 302,
+      "exact_match": true
+    },
+    {
+      "mechanism_id": "GO_0007179",
+      "members": 107,
+      "exact_match": true
+    },
+    {
+      "mechanism_id": "GO_0070374",
+      "members": 187,
+      "exact_match": true
+    },
+    {
+      "mechanism_id": "REACT:R-HSA-8874081",
+      "members": 30,
+      "exact_match": true
+    }
+  ]
+}

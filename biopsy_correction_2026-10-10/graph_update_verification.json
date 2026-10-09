@@ -1,0 +1,69 @@
+{
+  "result": {
+    "data": {
+      "fields": [
+        "removed",
+        "fibrosis_written",
+        "disease_written"
+      ],
+      "values": [
+        [
+          7699,
+          3688,
+          4018
+        ]
+      ]
+    },
+    "notifications": [
+      {
+        "code": "Neo.ClientNotification.Statement.FeatureDeprecationWarning",
+        "description": "CALL subquery without a variable scope clause is deprecated. Use CALL () { ... }",
+        "severity": "WARNING",
+        "title": "This feature is deprecated and will be removed in future versions.",
+        "position": {
+          "offset": 0,
+          "line": 1,
+          "column": 1
+        },
+        "category": "DEPRECATION"
+      },
+      {
+        "code": "Neo.ClientNotification.Statement.FeatureDeprecationWarning",
+        "description": "CALL subquery without a variable scope clause is deprecated. Use CALL () { ... }",
+        "severity": "WARNING",
+        "title": "This feature is deprecated and will be removed in future versions.",
+        "position": {
+          "offset": 98,
+          "line": 2,
+          "column": 1
+        },
+        "category": "DEPRECATION"
+      },
+      {
+        "code": "Neo.ClientNotification.Statement.FeatureDeprecationWarning",
+        "description": "CALL subquery without a variable scope clause is deprecated. Use CALL () { ... }",
+        "severity": "WARNING",
+        "title": "This feature is deprecated and will be removed in future versions.",
+        "position": {
+          "offset": 293,
+          "line": 3,
+          "column": 1
+        },
+        "category": "DEPRECATION"
+      }
+    ],
+    "queryType": "rw",
+    "resultAvailableAfter": 851,
+    "resultConsumedAfter": 2623,
+    "bookmarks": [
+      "FB:kcwQxmU0Kp/ySQ2i1gfoK5O7GMkHUZA="
+    ]
+  },
+  "verified_relationships": 7706,
+  "identity_and_all_properties_match": true,
+  "backup": "/home/nikitha07/Projects/liver_graph/biopsy_correction_2026-10-10/live_graph_before_progression_update.json",
+  "only_mutated_types": [
+    "TRACKS_FIBROSIS",
+    "TRACKS_INFLAMMATION"
+  ]
+}

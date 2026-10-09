@@ -1,0 +1,114 @@
+reading data/graph_full  ->  writing data/progression_full
+repeat-biopsy policy: same_stage_mean
+
+testing 14,794 genes measured in all 8 studies
+
+--- FIBROSIS LADDER ---
+  fibrosis  GSE130970:   78 patients, 14,794 genes
+  fibrosis  GSE135251:  216 patients, 14,794 genes
+  fibrosis  GSE162694:  143 patients, 14,794 genes
+  fibrosis  GSE193066:  106 patients, 14,794 genes
+  fibrosis  GSE240729:   67 patients, 14,794 genes
+  -> 14,794 genes tested, 3,688 significant with ALL studies agreeing
+
+--- DISEASE LADDER ---
+  disease   GSE126848:   45 patients, 14,794 genes
+  disease   GSE130970:   78 patients, 14,794 genes
+  disease   GSE162694: skipped, no variation on this ladder
+  disease   GSE167523:   98 patients, 14,794 genes
+  -> 14,784 genes tested, 4,018 significant with ALL studies agreeing
+
+=== FIBROSIS: strongest RISING genes ===
+  symbol  median_rho  n_studies      q_value
+   NALCN    0.583159          5 1.285824e-39
+   GABRE    0.574420          5 3.090282e-34
+   STMN2    0.574118          5 6.910747e-52
+    DTNA    0.564001          5 2.016040e-46
+   LAMC3    0.558537          5 6.769398e-41
+    PODN    0.542330          5 7.719714e-39
+   PLPP4    0.532812          5 1.289287e-30
+   NFASC    0.532322          5 8.155405e-35
+ SPATA21    0.531549          5 3.329845e-31
+   LTBP2    0.530614          5 4.696750e-42
+   CCL20    0.525670          5 3.941309e-33
+    IL32    0.521884          5 3.059061e-33
+   EPHA3    0.521034          5 2.506177e-29
+ADAMTSL2    0.515108          5 1.011272e-34
+   THBS2    0.514163          5 1.728238e-39
+
+=== FIBROSIS: strongest FALLING genes ===
+  symbol  median_rho  n_studies      q_value
+   KCNN2   -0.469435          5 3.118335e-25
+SLC16A10   -0.469433          5 2.959511e-22
+  COBLL1   -0.458145          5 4.778502e-18
+    SORD   -0.447220          5 6.099798e-19
+ CYP2C19   -0.438793          5 3.648626e-29
+  ACADSB   -0.434618          5 8.134486e-25
+     LPA   -0.432467          5 1.971985e-13
+ SLC38A4   -0.429180          5 1.566602e-13
+  ANXA10   -0.426907          5 1.303750e-12
+ PPP1R1A   -0.418557          5 6.693773e-25
+    HAAO   -0.415140          5 2.176611e-18
+   DCAF6   -0.413912          5 6.149239e-18
+ DNAJC12   -0.413625          5 7.770309e-23
+   ABCC9   -0.413612          5 1.255774e-14
+   ASXL3   -0.406394          5 2.275096e-14
+
+=== DISEASE: strongest RISING genes ===
+  symbol  median_rho  n_studies      q_value
+  COL1A2    0.746214          3 3.362648e-25
+   CAPN2    0.734025          3 1.241756e-22
+   ANXA2    0.729608          3 1.150080e-22
+  COL3A1    0.719499          3 1.241756e-22
+SERPINB8    0.703271          3 2.792784e-22
+     UBC    0.695583          3 2.112416e-17
+    RFX5    0.692438          3 5.320019e-20
+    CAPG    0.689896          3 1.338145e-22
+    RTCB    0.689174          3 2.086133e-18
+   LOXL4    0.681954          3 7.787021e-20
+   FCAMR    0.676900          3 7.638660e-19
+   BCAT1    0.673077          3 7.346219e-16
+    FAT1    0.668954          3 6.483771e-21
+   DUSP8    0.663903          3 2.745684e-19
+    DTNA    0.662468          3 2.963020e-24
+
+=== DISEASE: strongest FALLING genes ===
+ symbol  median_rho  n_studies      q_value
+DNAJC12   -0.624914          3 1.467457e-15
+   NAAA   -0.619138          3 2.846431e-16
+HSBP1L1   -0.618071          3 1.108261e-14
+   HAAO   -0.612639          3 3.571095e-17
+PACSIN3   -0.594587          3 3.308342e-19
+  PXMP2   -0.593259          3 1.495660e-13
+   CA14   -0.587369          3 8.173792e-13
+ ACADSB   -0.587369          3 6.160871e-14
+  CENPV   -0.585202          3 2.133785e-12
+ST3GAL6   -0.545451          3 5.251984e-15
+   GNMT   -0.541159          3 1.152541e-14
+   LCAT   -0.529606          3 1.152249e-09
+   AHCY   -0.523830          3 2.868315e-14
+  GLYAT   -0.518776          3 2.622525e-09
+   AASS   -0.513573          3 9.212263e-14
+
+=== GENES ON *BOTH* LADDERS: 5,705 ===
+symbol_fib  median_rho_fib  median_rho_dis
+     NALCN        0.583159        0.628625
+      DTNA        0.564001        0.662468
+     LTBP2        0.530614        0.588813
+     CCL20        0.525670        0.587757
+     STMN2        0.574118        0.524804
+      IL32        0.521884        0.634300
+     THBS2        0.514163        0.533849
+     CAPN2        0.513286        0.734025
+       GSN        0.512745        0.538462
+     LOXL4        0.508826        0.681954
+      THY1        0.507906        0.609029
+     LOXL1        0.497308        0.512112
+    ITGBL1        0.507392        0.494359
+ TNFRSF12A        0.491465        0.628524
+      TYMS        0.488577        0.642965
+       LUM        0.487723        0.595311
+    SAMD11        0.487430        0.519498
+       AEN        0.486796        0.577043
+     ZMAT3        0.482454        0.576538
+    EFEMP1        0.479719        0.573650

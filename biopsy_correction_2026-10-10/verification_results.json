@@ -1,0 +1,67 @@
+[
+  {
+    "check": "All original result/package files preserved",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "check": "Disease-axis gene membership unchanged",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "check": "Corrected cluster IDs exactly match fibrosis selection",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "check": "Exactly 610 independent staged patients",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "check": "LOSO uses full 14794-gene eligible universe",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "check": "LOSO records all eligible genes in five omitted-study fits",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "check": "Independent scipy Spearman agrees for repeated-biopsy cohort",
+    "passed": true,
+    "detail": []
+  },
+  {
+    "check": "Shortlist contains 25 unique corrected Tier1 genes",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "check": "Regenerated progression edges exactly reflect corrected selections",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "check": "Exported stage means equal one-patient averages",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "check": "Recovery script obtains credentials interactively",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "check": "Discovery and LOSO median per-study rhos agree over all 14794 genes",
+    "passed": true,
+    "detail": "Independent whole-universe comparison completed"
+  },
+  {
+    "check": "Live graph update identities/properties and corrected mechanism memberships verified",
+    "passed": true,
+    "detail": "7706 progression links; all other relationship counts preserved; twelve memberships exact"
+  }
+]

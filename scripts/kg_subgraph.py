@@ -399,15 +399,15 @@ for n in chosen:
 ax.legend(handles=[
     mpatches.Patch(color="#2e6e9e", label="Pathway (Reactome)"),
     mpatches.Patch(color="#4a9a6f", label="Biological process (GO)"),
-    mpatches.Patch(color="#e8743b", label="Final 25 high-confidence genes"),
+    mpatches.Patch(color="#e8743b", label=f"Shortlisted genes shown ({n_short_in_fig}/{len(short_ids)})"),
     mpatches.Patch(color="#8c99a6",
                    label="Other Tier 1 genes (size = mechanisms reached, "
                          f"{min(deg.values())}-{max(deg.values())})"),
 ], loc="upper left", frameon=False, fontsize=10)
 ax.set_title(
     f"Where the high-confidence fibrosis genes converge\n"
-    f"{len(major)} most-connected mechanisms in the knowledge graph, "
-    f"the Tier 1 genes reaching them, and the final 25 highlighted",
+    f"{len(major)} enrichment-ranked mechanisms in the knowledge graph, "
+    f"Tier 1 genes reaching them, with {n_short_in_fig} of {len(short_ids)} shortlisted genes highlighted",
     fontsize=13, pad=16)
 ax.axis("off")
 ax.margins(0.20)   # room for the outward-pushed mechanism and leaf labels
@@ -440,11 +440,11 @@ def long_table(ids, label):
 
 
 notes = pd.DataFrame({"Sheet": [
-    "1_shortlist_25_KG", "2_tier1_507_KG", "3_all_mechanisms_ranked",
+    "1_shortlist_25_KG", f"2_tier1_{len(tier1_ids)}_KG", "3_all_mechanisms_ranked",
     "4_figure_edges", "5_figure_nodes", "6_duplicates_collapsed"], "Contents": [
     "The brief's table for the final 25 genes: one row per gene per "
     "connected pathway or biological process.",
-    "The same for all 507 Tier 1 genes.",
+    f"The same for all {len(tier1_ids)} Tier 1 genes.",
     "Every mechanism the Tier 1 genes reach, with its fold enrichment, "
     "p and q, and the size / major / enriched flags - so the choice of 12 "
     "is auditable.",
@@ -452,11 +452,10 @@ notes = pd.DataFrame({"Sheet": [
     "The nodes drawn in Figure 12.",
     "Near-duplicate mechanisms collapsed, and which was kept instead."]})
 caveats = pd.DataFrame({"Caveat": [
-    "THE FINAL 25 BARELY CONVERGE, AND THE FIGURE SHOULD NOT BE READ AS IF "
-    "THEY DO. Among the 25, only 2 pathways connect to two or more of them "
-    "and none to three or more. This follows directly from step 9, which "
-    "selected genes to be as unlike each other as possible. Most convergence "
-    "visible in the figure comes from the other Tier 1 genes.",
+    f"THE NETWORK IS A SUBSET OF TIER 1, NOT A VALIDATION OF THE SHORTLIST. "
+    f"Only {n_short_in_fig} of {len(short_ids)} shortlisted genes appear among "
+    f"the {len(keep_genes)} drawn genes. All shortlist connections are in sheet 1; "
+    f"all {len(tier1_ids)} Tier 1 connections are in sheet 2.",
     "PATHWAYS AND BIOLOGICAL PROCESSES ARE NOT CONNECTED TO EACH OTHER in "
     "this graph. Both attach to genes. The brief's 'Gene -> Pathway -> "
     "Biological Process' is therefore two separate connections per gene, not "
@@ -473,28 +472,23 @@ caveats = pd.DataFrame({"Caveat": [
     "significant here too, but only 2.3-3.0x enriched against 4-13x for the "
     "mechanisms shown, and q weighs size and fold together, so they fall "
     "away without a hand-picked fold cutoff.",
-    "ENRICHMENT WAS TESTED ON THE GRAPH'S OWN NODES RATHER THAN BY MATCHING "
-    "THEIR NAMES TO TASK 4'S TERMS. Name matching was tried first and is "
-    "brittle: MSigDB 2024.1 has no GOBP_EXTRACELLULAR_MATRIX_ORGANIZATION "
-    "because GO renamed that term to external encapsulating structure "
-    "organization, so the most connected mechanism in the graph - 56 Tier 1 "
-    "genes, 7.5x enriched, q = 8e-30 - was marked 'not enriched' and dropped "
-    "from the figure over a vocabulary change. Matching on gene membership "
-    "was no better: that node's best Jaccard against any significant term is "
-    "0.45. Testing each node directly needs no vocabulary at all.",
+    "ENRICHMENT WAS TESTED ON GRAPH NODE MEMBERSHIPS, NOT NAME MATCHES TO "
+    "MSigDB TERMS. The graph and MSigDB can differ in vocabulary and membership; "
+    "direct hypergeometric tests avoid treating a failed name match as no enrichment.",
     "NEAR-DUPLICATE MECHANISMS WERE COLLAPSED at Jaccard > 0.5 of their Tier "
     "1 members, so the figure shows distinct mechanisms rather than one "
     "mechanism worded several ways. Sheet 6 lists what was collapsed.",
-    "THE FIGURE DRAWS A SUBSET OF GENES: those reaching two or more of the "
+    "THE FIGURE DRAWS A SUBSET OF GENES: those reaching three or more of the "
     "12 mechanisms, plus every one of the final 25 that reaches any. Genes "
     "absent from the figure are not absent from the analysis - sheets 1 and "
     "2 carry every connection.",
-    "THE KNOWLEDGE GRAPH WAS NOT REBUILT. This reads the same CSVs that are "
-    "loaded into Neo4j: data/graph_okg, the OptimusKG layer. Checked, not "
-    "assumed -- verify_against_neo4j.py diffs the files against the live "
-    "database at four levels, down to the gene IDs of each mechanism shown "
-    "here, and all of them matched. An earlier version read data/graph_kg, "
-    "the superseded PrimeKG layer, whose counts do not match the graph."]})
+    "THIS NETWORK WAS RECOMPUTED ON THE CORRECTED PATIENT-DERIVED GENE SET. "
+    "It uses OptimusKG pathway/process CSVs whose source counts and twelve "
+    "baseline mechanism membership sets were checked against the live graph. "
+    "The correction updates only patient-derived progression links, not "
+    "curated pathway/process memberships. Numerical verification of this "
+    "run is documented separately in verification_results.json."
+]})
 
 out_xlsx = HERE / "12_KG_supplementary.xlsx"
 with pd.ExcelWriter(out_xlsx, engine="openpyxl") as xl:
@@ -502,8 +496,8 @@ with pd.ExcelWriter(out_xlsx, engine="openpyxl") as xl:
     caveats.to_excel(xl, sheet_name="0_README", index=False, startrow=9)
     long_table(short_ids, "shortlist 25").to_excel(
         xl, sheet_name="1_shortlist_25_KG", index=False)
-    long_table(tier1_ids, "tier 1 507").to_excel(
-        xl, sheet_name="2_tier1_507_KG", index=False)
+    long_table(tier1_ids, f"tier 1 {len(tier1_ids)}").to_excel(
+        xl, sheet_name=f"2_tier1_{len(tier1_ids)}_KG", index=False)
     rank.assign(selected_for_figure=rank.to_id.isin(chosen)).rename(
         columns={"to_id": "Mechanism_ID"}).to_excel(
         xl, sheet_name="3_all_mechanisms_ranked", index=False)

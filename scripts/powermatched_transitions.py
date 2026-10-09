@@ -46,6 +46,9 @@ from scipy import stats
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
+import sys
+sys.path.insert(0, str(ROOT))
+from biopsy_policy import select_biopsies
 import argparse as _argparse
 import sys as _sys
 
@@ -83,7 +86,7 @@ genes = pd.read_csv(STAGE_FILE)
 genes = genes[genes.fibrosis_rho.notna()].reset_index(drop=True)
 gene_ids = set(genes.ensembl_id)
 
-samples = pd.read_csv(SAMPLES)
+samples = select_biopsies(pd.read_csv(SAMPLES))
 samples = samples[samples.fibrosis_stage.notna()].copy()
 samples["fibrosis_stage"] = samples.fibrosis_stage.astype(int)
 
@@ -145,10 +148,8 @@ def transition_rows(a, b):
     m = meta[meta.fibrosis_stage.isin([a, b])]
     both = m.groupby("dataset_id").fibrosis_stage.nunique()
     m = m[m.dataset_id.isin(both[both == 2].index)]
-    dup = m.patient_id.duplicated(keep=False)
-    drop = [rng.choice(g.index.to_numpy())
-            for _, g in m[dup].groupby("patient_id")]
-    return m.drop(index=drop).index.to_numpy()
+    assert not m.patient_id.duplicated().any(), "Biopsy policy left duplicate patients"
+    return m.index.to_numpy()
 
 
 # --- the matched design: equal patients per stage per study ---

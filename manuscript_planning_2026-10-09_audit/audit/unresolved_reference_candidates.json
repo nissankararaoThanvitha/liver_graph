@@ -1,0 +1,1676 @@
+[
+  {
+    "source": "Paper1_Package/README.md",
+    "line": 70,
+    "reference": "02_METHODS.md",
+    "basename_matches": [
+      "Paper1_Package/00_START_HERE/02_METHODS.md",
+      "docs/package/02_METHODS.md"
+    ]
+  },
+  {
+    "source": "Paper1_Package/README.md",
+    "line": 71,
+    "reference": "03_STATISTICS.md",
+    "basename_matches": [
+      "Paper1_Package/00_START_HERE/03_STATISTICS.md",
+      "docs/package/03_STATISTICS.md"
+    ]
+  },
+  {
+    "source": "Paper1_Package/README.md",
+    "line": 72,
+    "reference": "README.txt",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/README.txt",
+      "data/for_mentor/README.txt"
+    ]
+  },
+  {
+    "source": "Paper1_Package/README.md",
+    "line": 74,
+    "reference": "04_LIMITATIONS.md",
+    "basename_matches": [
+      "Paper1_Package/00_START_HERE/04_LIMITATIONS.md",
+      "docs/package/04_LIMITATIONS.md"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 20,
+    "reference": "progression_fibrosis.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/progression_genes/progression_fibrosis.csv",
+      "Paper1_Results/00_progression_genes/progression_fibrosis.csv",
+      "data/progression_full/progression_fibrosis.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 21,
+    "reference": "progression_disease.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/progression_genes/progression_disease.csv",
+      "Paper1_Results/00_progression_genes/progression_disease.csv",
+      "data/progression_full/progression_disease.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 22,
+    "reference": "progression_both.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/progression_genes/progression_both.csv",
+      "Paper1_Results/00_progression_genes/progression_both.csv",
+      "data/progression_full/progression_both.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 23,
+    "reference": "genes_by_fibrosis_stage.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/genes_by_fibrosis_stage.csv",
+      "Paper1_Package/04_DATA/progression_genes/genes_by_fibrosis_stage.csv",
+      "Paper1_Results/00_progression_genes/genes_by_fibrosis_stage.csv",
+      "data/for_mentor/genes_by_fibrosis_stage.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 24,
+    "reference": "genes_by_disease_group.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/genes_by_disease_group.csv",
+      "Paper1_Package/04_DATA/progression_genes/genes_by_disease_group.csv",
+      "Paper1_Results/00_progression_genes/genes_by_disease_group.csv",
+      "data/for_mentor/genes_by_disease_group.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 25,
+    "reference": "sample_demographics.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/sample_demographics.csv",
+      "Paper1_Package/04_DATA/progression_genes/sample_demographics.csv",
+      "Paper1_Results/00_progression_genes/sample_demographics.csv",
+      "data/for_mentor/sample_demographics.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 56,
+    "reference": "genes_by_fibrosis_stage.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/genes_by_fibrosis_stage.csv",
+      "Paper1_Package/04_DATA/progression_genes/genes_by_fibrosis_stage.csv",
+      "Paper1_Results/00_progression_genes/genes_by_fibrosis_stage.csv",
+      "data/for_mentor/genes_by_fibrosis_stage.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 57,
+    "reference": "genes_by_disease_group.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/genes_by_disease_group.csv",
+      "Paper1_Package/04_DATA/progression_genes/genes_by_disease_group.csv",
+      "Paper1_Results/00_progression_genes/genes_by_disease_group.csv",
+      "data/for_mentor/genes_by_disease_group.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 58,
+    "reference": "genes_by_stage_and_sex.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/genes_by_stage_and_sex.csv",
+      "data/for_mentor/genes_by_stage_and_sex.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 59,
+    "reference": "genes_by_stage_and_age.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/genes_by_stage_and_age.csv",
+      "data/for_mentor/genes_by_stage_and_age.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 63,
+    "reference": "sample_demographics.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/sample_demographics.csv",
+      "Paper1_Package/04_DATA/progression_genes/sample_demographics.csv",
+      "Paper1_Results/00_progression_genes/sample_demographics.csv",
+      "data/for_mentor/sample_demographics.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 76,
+    "reference": "04_LIMITATIONS.md",
+    "basename_matches": [
+      "Paper1_Package/00_START_HERE/04_LIMITATIONS.md",
+      "docs/package/04_LIMITATIONS.md"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 84,
+    "reference": "_parse_summary.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/harmonisation/_parse_summary.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 85,
+    "reference": "gene_id_map.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/harmonisation/gene_id_map.csv",
+      "data/processed/gene_id_map.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 86,
+    "reference": "_mapping_summary.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/harmonisation/_mapping_summary.csv",
+      "data/processed/_mapping_summary.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 87,
+    "reference": "unmapped_genes.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/harmonisation/unmapped_genes.csv",
+      "data/processed/unmapped_genes.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 88,
+    "reference": "sample_crosswalk.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/harmonisation/sample_crosswalk.csv",
+      "data/processed/sample_crosswalk.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 89,
+    "reference": "samples_metadata.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/harmonisation/samples_metadata.csv",
+      "data/processed/samples_metadata.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 90,
+    "reference": "nodes_sample_clinical.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/harmonisation/nodes_sample_clinical.csv",
+      "data/graph/nodes_sample_clinical.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 92,
+    "reference": "samples_metadata.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/harmonisation/samples_metadata.csv",
+      "data/processed/samples_metadata.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 93,
+    "reference": "nodes_sample_clinical.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/harmonisation/nodes_sample_clinical.csv",
+      "data/graph/nodes_sample_clinical.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 94,
+    "reference": "sample_demographics.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/sample_demographics.csv",
+      "Paper1_Package/04_DATA/progression_genes/sample_demographics.csv",
+      "Paper1_Results/00_progression_genes/sample_demographics.csv",
+      "data/for_mentor/sample_demographics.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 106,
+    "reference": "nodes_disease.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/knowledge_layer/nodes_disease.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 107,
+    "reference": "nodes_drug.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/knowledge_layer/nodes_drug.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 108,
+    "reference": "nodes_bioprocess.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/knowledge_layer/nodes_bioprocess.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 109,
+    "reference": "nodes_phenotype.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/knowledge_layer/nodes_phenotype.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 110,
+    "reference": "nodes_pathway.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/knowledge_layer/nodes_pathway.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 111,
+    "reference": "edges_disease_gene.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/knowledge_layer/edges_disease_gene.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 112,
+    "reference": "edges_gene_gene.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/knowledge_layer/edges_gene_gene.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 113,
+    "reference": "edges_disease_phenotype.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/knowledge_layer/edges_disease_phenotype.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 114,
+    "reference": "edges_biological_process_gene.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/knowledge_layer/edges_biological_process_gene.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 115,
+    "reference": "edges_drug_disease.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/knowledge_layer/edges_drug_disease.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 116,
+    "reference": "edges_pathway_gene.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/knowledge_layer/edges_pathway_gene.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 117,
+    "reference": "edges_disease_disease.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/knowledge_layer/edges_disease_disease.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 118,
+    "reference": "edges_drug_gene.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/knowledge_layer/edges_drug_gene.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 131,
+    "reference": "nodes_gene.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/graph_nodes/nodes_gene.csv",
+      "data/graph/nodes_gene.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 145,
+    "reference": "edges_my_progression.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/knowledge_layer/edges_my_progression.csv",
+      "Paper1_Package/04_DATA/graph_nodes/edges_my_progression.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 150,
+    "reference": "gene_progression_scores.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/graph_nodes/gene_progression_scores.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/04_DATA/DATA_DICTIONARY.md",
+    "line": 160,
+    "reference": "REBUILD.md",
+    "basename_matches": [
+      "Paper1_Package/06_PROVENANCE/REBUILD.md",
+      "docs/provenance/REBUILD.md"
+    ]
+  },
+  {
+    "source": "Paper1_Package/02_TABLES/TABLE_CAPTIONS.md",
+    "line": 11,
+    "reference": "Table1_cohort.csv",
+    "basename_matches": [
+      "Paper1_Package/02_TABLES/main/Table1_cohort.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/02_TABLES/TABLE_CAPTIONS.md",
+    "line": 19,
+    "reference": "Table2_gene_groups.csv",
+    "basename_matches": [
+      "Paper1_Package/02_TABLES/main/Table2_gene_groups.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/02_TABLES/TABLE_CAPTIONS.md",
+    "line": 27,
+    "reference": "Table3_trajectory_clusters.csv",
+    "basename_matches": [
+      "Paper1_Package/02_TABLES/main/Table3_trajectory_clusters.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/02_TABLES/TABLE_CAPTIONS.md",
+    "line": 35,
+    "reference": "Table4_stage_transitions.csv",
+    "basename_matches": [
+      "Paper1_Package/02_TABLES/main/Table4_stage_transitions.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/02_TABLES/TABLE_CAPTIONS.md",
+    "line": 43,
+    "reference": "Table5_enrichment_counts.csv",
+    "basename_matches": [
+      "Paper1_Package/02_TABLES/main/Table5_enrichment_counts.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/02_TABLES/TABLE_CAPTIONS.md",
+    "line": 51,
+    "reference": "Table6_prioritised_genes.csv",
+    "basename_matches": [
+      "Paper1_Package/02_TABLES/main/Table6_prioritised_genes.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/02_TABLES/TABLE_CAPTIONS.md",
+    "line": 59,
+    "reference": "TableS1_top20_fibrosis_genes.csv",
+    "basename_matches": [
+      "Paper1_Package/02_TABLES/supplementary/TableS1_top20_fibrosis_genes.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/02_TABLES/TABLE_CAPTIONS.md",
+    "line": 67,
+    "reference": "TableS2_gene_cluster_assignments.csv",
+    "basename_matches": [
+      "Paper1_Package/02_TABLES/supplementary/TableS2_gene_cluster_assignments.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/02_TABLES/TABLE_CAPTIONS.md",
+    "line": 75,
+    "reference": "TableS3_representative_genes.csv",
+    "basename_matches": [
+      "Paper1_Package/02_TABLES/supplementary/TableS3_representative_genes.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/02_TABLES/TABLE_CAPTIONS.md",
+    "line": 83,
+    "reference": "TableS4_choosing_k.csv",
+    "basename_matches": [
+      "Paper1_Package/02_TABLES/supplementary/TableS4_choosing_k.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/02_TABLES/TABLE_CAPTIONS.md",
+    "line": 91,
+    "reference": "TableS5_cluster_stability.csv",
+    "basename_matches": [
+      "Paper1_Package/02_TABLES/supplementary/TableS5_cluster_stability.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/02_TABLES/TABLE_CAPTIONS.md",
+    "line": 99,
+    "reference": "TableS6_all_genes_all_transitions.csv",
+    "basename_matches": [
+      "Paper1_Package/02_TABLES/supplementary/TableS6_all_genes_all_transitions.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/02_TABLES/TABLE_CAPTIONS.md",
+    "line": 107,
+    "reference": "TableS7_top_genes_per_transition.csv",
+    "basename_matches": [
+      "Paper1_Package/02_TABLES/supplementary/TableS7_top_genes_per_transition.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/02_TABLES/TABLE_CAPTIONS.md",
+    "line": 115,
+    "reference": "TableS8_top_pathways_per_group.csv",
+    "basename_matches": [
+      "Paper1_Package/02_TABLES/supplementary/TableS8_top_pathways_per_group.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/02_TABLES/TABLE_CAPTIONS.md",
+    "line": 123,
+    "reference": "TableS9_all_significant_terms.csv",
+    "basename_matches": [
+      "Paper1_Package/02_TABLES/supplementary/TableS9_all_significant_terms.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/02_TABLES/TABLE_CAPTIONS.md",
+    "line": 131,
+    "reference": "TableS10_cluster_core_check.csv",
+    "basename_matches": [
+      "Paper1_Package/02_TABLES/supplementary/TableS10_cluster_core_check.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/02_TABLES/TABLE_CAPTIONS.md",
+    "line": 139,
+    "reference": "TableS11_evidence_scores_all_genes.csv",
+    "basename_matches": [
+      "Paper1_Package/02_TABLES/supplementary/TableS11_evidence_scores_all_genes.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/02_TABLES/TABLE_CAPTIONS.md",
+    "line": 147,
+    "reference": "TableS12_tier1_genes.csv",
+    "basename_matches": [
+      "Paper1_Package/02_TABLES/supplementary/TableS12_tier1_genes.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/02_TABLES/TABLE_CAPTIONS.md",
+    "line": 155,
+    "reference": "TableS13_leave_one_study_out.csv",
+    "basename_matches": [
+      "Paper1_Package/02_TABLES/supplementary/TableS13_leave_one_study_out.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/02_TABLES/TABLE_CAPTIONS.md",
+    "line": 163,
+    "reference": "TableS14_tier_cutoff_sensitivity.csv",
+    "basename_matches": [
+      "Paper1_Package/02_TABLES/supplementary/TableS14_tier_cutoff_sensitivity.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/02_TABLES/TABLE_CAPTIONS.md",
+    "line": 171,
+    "reference": "TableS15_leave_one_score_out.csv",
+    "basename_matches": [
+      "Paper1_Package/02_TABLES/supplementary/TableS15_leave_one_score_out.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/02_TABLES/TABLE_CAPTIONS.md",
+    "line": 179,
+    "reference": "TableS16_rho_cutoff_sensitivity.csv",
+    "basename_matches": [
+      "Paper1_Package/02_TABLES/supplementary/TableS16_rho_cutoff_sensitivity.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/02_TABLES/TABLE_CAPTIONS.md",
+    "line": 187,
+    "reference": "TableS17_trajectory_cutoff.csv",
+    "basename_matches": [
+      "Paper1_Package/02_TABLES/supplementary/TableS17_trajectory_cutoff.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/02_TABLES/TABLE_CAPTIONS.md",
+    "line": 195,
+    "reference": "TableS18_shortlist_rule.csv",
+    "basename_matches": [
+      "Paper1_Package/02_TABLES/supplementary/TableS18_shortlist_rule.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/02_TABLES/TABLE_CAPTIONS.md",
+    "line": 203,
+    "reference": "TableS19_knowledge_graph_connections.xlsx",
+    "basename_matches": [
+      "Paper1_Package/02_TABLES/supplementary/TableS19_knowledge_graph_connections.xlsx"
+    ]
+  },
+  {
+    "source": "Paper1_Package/05_CODE/CODE_MAP.md",
+    "line": 22,
+    "reference": "unmapped_genes.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/harmonisation/unmapped_genes.csv",
+      "data/processed/unmapped_genes.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/05_CODE/CODE_MAP.md",
+    "line": 28,
+    "reference": "export_gene_tables.py",
+    "basename_matches": []
+  },
+  {
+    "source": "Paper1_Package/05_CODE/CODE_MAP.md",
+    "line": 39,
+    "reference": "make_figure1.py",
+    "basename_matches": [
+      "Paper1_Package/05_CODE/analysis/make_figure1.py"
+    ]
+  },
+  {
+    "source": "Paper1_Package/05_CODE/CODE_MAP.md",
+    "line": 40,
+    "reference": "task1_groups.py",
+    "basename_matches": [
+      "Paper1_Package/05_CODE/analysis/task1_groups.py"
+    ]
+  },
+  {
+    "source": "Paper1_Package/05_CODE/CODE_MAP.md",
+    "line": 41,
+    "reference": "task2_trajectories.py",
+    "basename_matches": [
+      "Paper1_Package/05_CODE/analysis/task2_trajectories.py"
+    ]
+  },
+  {
+    "source": "Paper1_Package/05_CODE/CODE_MAP.md",
+    "line": 42,
+    "reference": "task3_transitions.py",
+    "basename_matches": [
+      "Paper1_Package/05_CODE/analysis/task3_transitions.py"
+    ]
+  },
+  {
+    "source": "Paper1_Package/05_CODE/CODE_MAP.md",
+    "line": 43,
+    "reference": "task4_enrichment.py",
+    "basename_matches": [
+      "Paper1_Package/05_CODE/analysis/task4_enrichment.py"
+    ]
+  },
+  {
+    "source": "Paper1_Package/05_CODE/CODE_MAP.md",
+    "line": 45,
+    "reference": "task2_trajectories.py",
+    "basename_matches": [
+      "Paper1_Package/05_CODE/analysis/task2_trajectories.py"
+    ]
+  },
+  {
+    "source": "Paper1_Package/05_CODE/CODE_MAP.md",
+    "line": 54,
+    "reference": "hc0_master_gene_table.py",
+    "basename_matches": [
+      "Paper1_Package/05_CODE/prioritisation/hc0_master_gene_table.py"
+    ]
+  },
+  {
+    "source": "Paper1_Package/05_CODE/CODE_MAP.md",
+    "line": 55,
+    "reference": "hc1_powermatched_transitions.py",
+    "basename_matches": [
+      "Paper1_Package/05_CODE/prioritisation/hc1_powermatched_transitions.py"
+    ]
+  },
+  {
+    "source": "Paper1_Package/05_CODE/CODE_MAP.md",
+    "line": 56,
+    "reference": "hc2_evidence_scores.py",
+    "basename_matches": [
+      "Paper1_Package/05_CODE/prioritisation/hc2_evidence_scores.py"
+    ]
+  },
+  {
+    "source": "Paper1_Package/05_CODE/CODE_MAP.md",
+    "line": 57,
+    "reference": "hc3_leave_one_study_out.py",
+    "basename_matches": [
+      "Paper1_Package/05_CODE/prioritisation/hc3_leave_one_study_out.py"
+    ]
+  },
+  {
+    "source": "Paper1_Package/05_CODE/CODE_MAP.md",
+    "line": 58,
+    "reference": "hc4_mechanism_subgraph.py",
+    "basename_matches": [
+      "Paper1_Package/05_CODE/prioritisation/hc4_mechanism_subgraph.py"
+    ]
+  },
+  {
+    "source": "Paper1_Package/05_CODE/CODE_MAP.md",
+    "line": 80,
+    "reference": "check_gene_mapping.py",
+    "basename_matches": [
+      "Paper1_Package/05_CODE/validation/check_gene_mapping.py"
+    ]
+  },
+  {
+    "source": "Paper1_Package/05_CODE/CODE_MAP.md",
+    "line": 81,
+    "reference": "inspect_parsed_files.py",
+    "basename_matches": [
+      "Paper1_Package/05_CODE/validation/inspect_parsed_files.py"
+    ]
+  },
+  {
+    "source": "Paper1_Package/05_CODE/CODE_MAP.md",
+    "line": 84,
+    "reference": "verify_subgraph_against_neo4j.py",
+    "basename_matches": [
+      "Paper1_Package/05_CODE/validation/verify_subgraph_against_neo4j.py"
+    ]
+  },
+  {
+    "source": "Paper1_Package/05_CODE/CODE_MAP.md",
+    "line": 85,
+    "reference": "compare_result_versions.py",
+    "basename_matches": [
+      "Paper1_Package/05_CODE/validation/compare_result_versions.py"
+    ]
+  },
+  {
+    "source": "Paper1_Package/05_CODE/CODE_MAP.md",
+    "line": 96,
+    "reference": "01_create_constraints.cypher",
+    "basename_matches": [
+      "Paper1_Package/05_CODE/cypher/01_create_constraints.cypher"
+    ]
+  },
+  {
+    "source": "Paper1_Package/05_CODE/CODE_MAP.md",
+    "line": 97,
+    "reference": "02_load_expression_edges.cypher",
+    "basename_matches": [
+      "Paper1_Package/05_CODE/cypher/02_load_expression_edges.cypher"
+    ]
+  },
+  {
+    "source": "Paper1_Package/05_CODE/CODE_MAP.md",
+    "line": 98,
+    "reference": "03_load_knowledge_layer.cypher",
+    "basename_matches": [
+      "Paper1_Package/05_CODE/cypher/03_load_knowledge_layer.cypher"
+    ]
+  },
+  {
+    "source": "Paper1_Package/05_CODE/CODE_MAP.md",
+    "line": 107,
+    "reference": "expected_graph_counts.py",
+    "basename_matches": [
+      "scripts/expected_graph_counts.py",
+      "Paper1_Package/05_CODE/validation/expected_graph_counts.py"
+    ]
+  },
+  {
+    "source": "Paper1_Package/00_START_HERE/03_STATISTICS.md",
+    "line": 55,
+    "reference": "03_RESULTS/Task1_gene_groups/README.txt",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/README.txt",
+      "data/for_mentor/README.txt"
+    ]
+  },
+  {
+    "source": "Paper1_Package/00_START_HERE/05_HOW_TO_VERIFY.md",
+    "line": 29,
+    "reference": "README.txt",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/README.txt",
+      "data/for_mentor/README.txt"
+    ]
+  },
+  {
+    "source": "Paper1_Package/00_START_HERE/05_HOW_TO_VERIFY.md",
+    "line": 32,
+    "reference": "03_RESULTS/Task4_enrichment/enrichment_tables/<group>__<database>.csv",
+    "basename_matches": []
+  },
+  {
+    "source": "Paper1_Package/00_START_HERE/05_HOW_TO_VERIFY.md",
+    "line": 39,
+    "reference": "README.txt",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/README.txt",
+      "data/for_mentor/README.txt"
+    ]
+  },
+  {
+    "source": "Paper1_Package/00_START_HERE/05_HOW_TO_VERIFY.md",
+    "line": 125,
+    "reference": "check_gene_mapping.py",
+    "basename_matches": [
+      "Paper1_Package/05_CODE/validation/check_gene_mapping.py"
+    ]
+  },
+  {
+    "source": "Paper1_Package/00_START_HERE/05_HOW_TO_VERIFY.md",
+    "line": 126,
+    "reference": "inspect_parsed_files.py",
+    "basename_matches": [
+      "Paper1_Package/05_CODE/validation/inspect_parsed_files.py"
+    ]
+  },
+  {
+    "source": "Paper1_Package/00_START_HERE/05_HOW_TO_VERIFY.md",
+    "line": 129,
+    "reference": "verify_subgraph_against_neo4j.py",
+    "basename_matches": [
+      "Paper1_Package/05_CODE/validation/verify_subgraph_against_neo4j.py"
+    ]
+  },
+  {
+    "source": "Paper1_Package/00_START_HERE/05_HOW_TO_VERIFY.md",
+    "line": 130,
+    "reference": "compare_result_versions.py",
+    "basename_matches": [
+      "Paper1_Package/05_CODE/validation/compare_result_versions.py"
+    ]
+  },
+  {
+    "source": "Paper1_Package/06_PROVENANCE/DATA_SOURCES.md",
+    "line": 22,
+    "reference": "GSE126848_Gene_counts_raw.txt.gz",
+    "basename_matches": []
+  },
+  {
+    "source": "Paper1_Package/06_PROVENANCE/DATA_SOURCES.md",
+    "line": 23,
+    "reference": "GSE130970_all_sample_salmon_tximport_TPM_entrez_gene_ID.csv.gz",
+    "basename_matches": []
+  },
+  {
+    "source": "Paper1_Package/06_PROVENANCE/DATA_SOURCES.md",
+    "line": 24,
+    "reference": "GSE135251_RAW.tar",
+    "basename_matches": []
+  },
+  {
+    "source": "Paper1_Package/06_PROVENANCE/DATA_SOURCES.md",
+    "line": 25,
+    "reference": "GSE162694_raw_counts.csv.gz",
+    "basename_matches": []
+  },
+  {
+    "source": "Paper1_Package/06_PROVENANCE/DATA_SOURCES.md",
+    "line": 26,
+    "reference": "GSE167523_Raw_gene_counts_matrix.txt.gz",
+    "basename_matches": []
+  },
+  {
+    "source": "Paper1_Package/06_PROVENANCE/DATA_SOURCES.md",
+    "line": 27,
+    "reference": "GSE193066_NAFLD.HUn164.gct.gz",
+    "basename_matches": []
+  },
+  {
+    "source": "Paper1_Package/06_PROVENANCE/DATA_SOURCES.md",
+    "line": 28,
+    "reference": "GSE240729_merged.counts.67samp.txt.gz",
+    "basename_matches": []
+  },
+  {
+    "source": "Paper1_Package/06_PROVENANCE/DATA_SOURCES.md",
+    "line": 29,
+    "reference": "GSE269412_DRX0FLO_rnaseq_count_mat.txt.gz",
+    "basename_matches": []
+  },
+  {
+    "source": "Paper1_Package/06_PROVENANCE/DATA_SOURCES.md",
+    "line": 42,
+    "reference": "hgnc_complete_set.txt",
+    "basename_matches": []
+  },
+  {
+    "source": "Paper1_Package/06_PROVENANCE/DATA_SOURCES.md",
+    "line": 45,
+    "reference": "02_map_gene_ids.py",
+    "basename_matches": [
+      "Paper1_Package/05_CODE/pipeline/02_map_gene_ids.py"
+    ]
+  },
+  {
+    "source": "Paper1_Package/06_PROVENANCE/DATA_SOURCES.md",
+    "line": 73,
+    "reference": "c5.go.bp.v2024.1.Hs.symbols.gmt",
+    "basename_matches": []
+  },
+  {
+    "source": "Paper1_Package/06_PROVENANCE/DATA_SOURCES.md",
+    "line": 74,
+    "reference": "c2.cp.kegg_legacy.v2024.1.Hs.symbols.gmt",
+    "basename_matches": []
+  },
+  {
+    "source": "Paper1_Package/06_PROVENANCE/DATA_SOURCES.md",
+    "line": 75,
+    "reference": "c2.cp.reactome.v2024.1.Hs.symbols.gmt",
+    "basename_matches": []
+  },
+  {
+    "source": "Paper1_Package/06_PROVENANCE/DATA_SOURCES.md",
+    "line": 76,
+    "reference": "h.all.v2024.1.Hs.symbols.gmt",
+    "basename_matches": []
+  },
+  {
+    "source": "Paper1_Package/06_PROVENANCE/DATA_SOURCES.md",
+    "line": 80,
+    "reference": "task4_enrichment.py",
+    "basename_matches": [
+      "Paper1_Package/05_CODE/analysis/task4_enrichment.py"
+    ]
+  },
+  {
+    "source": "Paper1_Package/06_PROVENANCE/DATA_SOURCES.md",
+    "line": 84,
+    "reference": "05_LIMITATIONS.md",
+    "basename_matches": []
+  },
+  {
+    "source": "Paper1_Package/06_PROVENANCE/DATA_SOURCES.md",
+    "line": 85,
+    "reference": "02_STAGE_BY_STAGE.md",
+    "basename_matches": []
+  },
+  {
+    "source": "Paper1_Package/06_PROVENANCE/REBUILD.md",
+    "line": 63,
+    "reference": "loso_validation.py",
+    "basename_matches": [
+      "scripts/loso_validation.py"
+    ]
+  },
+  {
+    "source": "Paper1_Package/06_PROVENANCE/REBUILD.md",
+    "line": 80,
+    "reference": "powermatched_transitions.py",
+    "basename_matches": [
+      "scripts/powermatched_transitions.py"
+    ]
+  },
+  {
+    "source": "Paper1_Package/06_PROVENANCE/REBUILD.md",
+    "line": 80,
+    "reference": "loso_validation.py",
+    "basename_matches": [
+      "scripts/loso_validation.py"
+    ]
+  },
+  {
+    "source": "Paper1_Package/06_PROVENANCE/REBUILD.md",
+    "line": 101,
+    "reference": "data/graph_okg/*.csv",
+    "basename_matches": []
+  },
+  {
+    "source": "Paper1_Package/06_PROVENANCE/REBUILD.md",
+    "line": 101,
+    "reference": "data/graph_full/edges_my_progression.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/knowledge_layer/edges_my_progression.csv",
+      "Paper1_Package/04_DATA/graph_nodes/edges_my_progression.csv"
+    ]
+  },
+  {
+    "source": "Paper1_Package/06_PROVENANCE/REBUILD.md",
+    "line": 114,
+    "reference": "expected_graph_counts.py",
+    "basename_matches": [
+      "scripts/expected_graph_counts.py",
+      "Paper1_Package/05_CODE/validation/expected_graph_counts.py"
+    ]
+  },
+  {
+    "source": "handover/SETUP.md",
+    "line": 104,
+    "reference": "Paper1_Results/Task*/README.txt",
+    "basename_matches": []
+  },
+  {
+    "source": "handover/README.md",
+    "line": 22,
+    "reference": "Paper1_Results/Task*/README.txt",
+    "basename_matches": []
+  },
+  {
+    "source": "handover/README.md",
+    "line": 33,
+    "reference": "C:\\Users\\nissa\\Downloads\\session-export-*.zip",
+    "basename_matches": []
+  },
+  {
+    "source": "handover/sessions/03-paper1-work-steps.md",
+    "line": 48,
+    "reference": "genes_by_fibrosis_stage.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/genes_by_fibrosis_stage.csv",
+      "Paper1_Package/04_DATA/progression_genes/genes_by_fibrosis_stage.csv",
+      "Paper1_Results/00_progression_genes/genes_by_fibrosis_stage.csv",
+      "data/for_mentor/genes_by_fibrosis_stage.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/03-paper1-work-steps.md",
+    "line": 150,
+    "reference": "task1_summary.csv",
+    "basename_matches": [
+      "Paper1_Package/03_RESULTS/Task1_gene_groups/task1_summary.csv",
+      "Paper1_Results/Task1/task1_summary.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/03-paper1-work-steps.md",
+    "line": 153,
+    "reference": "task1_top20_fibrosis_genes.csv",
+    "basename_matches": [
+      "Paper1_Package/03_RESULTS/Task1_gene_groups/task1_top20_fibrosis_genes.csv",
+      "Paper1_Results/Task1/task1_top20_fibrosis_genes.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/03-paper1-work-steps.md",
+    "line": 262,
+    "reference": "genes_by_fibrosis_stage.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/genes_by_fibrosis_stage.csv",
+      "Paper1_Package/04_DATA/progression_genes/genes_by_fibrosis_stage.csv",
+      "Paper1_Results/00_progression_genes/genes_by_fibrosis_stage.csv",
+      "data/for_mentor/genes_by_fibrosis_stage.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/03-paper1-work-steps.md",
+    "line": 958,
+    "reference": "liver_kg/Paper1_Results.zip",
+    "basename_matches": []
+  },
+  {
+    "source": "handover/sessions/03-paper1-work-steps.md",
+    "line": 982,
+    "reference": "Paper1_Results.zip",
+    "basename_matches": []
+  },
+  {
+    "source": "handover/sessions/03-paper1-work-steps.md",
+    "line": 1442,
+    "reference": "task2_choosing_k.csv",
+    "basename_matches": [
+      "Paper1_Package/03_RESULTS/Task2_trajectories/task2_choosing_k.csv",
+      "Paper1_Results/Task2/task2_choosing_k.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/03-paper1-work-steps.md",
+    "line": 1458,
+    "reference": "task2_bootstrap_shape_stability.csv",
+    "basename_matches": [
+      "Paper1_Package/03_RESULTS/Task2_trajectories/task2_bootstrap_shape_stability.csv",
+      "Paper1_Results/Task2/task2_bootstrap_shape_stability.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/03-paper1-work-steps.md",
+    "line": 1519,
+    "reference": "task2_gene_clusters.csv",
+    "basename_matches": [
+      "Paper1_Package/03_RESULTS/Task2_trajectories/task2_gene_clusters.csv",
+      "Paper1_Results/Task2/task2_gene_clusters.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/03-paper1-work-steps.md",
+    "line": 1537,
+    "reference": "task2_choosing_k.csv",
+    "basename_matches": [
+      "Paper1_Package/03_RESULTS/Task2_trajectories/task2_choosing_k.csv",
+      "Paper1_Results/Task2/task2_choosing_k.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/03-paper1-work-steps.md",
+    "line": 1882,
+    "reference": "task3_transition_summary.csv",
+    "basename_matches": [
+      "Paper1_Package/03_RESULTS/Task3_transitions/task3_transition_summary.csv",
+      "Paper1_Results/Task3/task3_transition_summary.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/03-paper1-work-steps.md",
+    "line": 2151,
+    "reference": "genes_by_fibrosis_stage.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/genes_by_fibrosis_stage.csv",
+      "Paper1_Package/04_DATA/progression_genes/genes_by_fibrosis_stage.csv",
+      "Paper1_Results/00_progression_genes/genes_by_fibrosis_stage.csv",
+      "data/for_mentor/genes_by_fibrosis_stage.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/03-paper1-work-steps.md",
+    "line": 2434,
+    "reference": "task2_choosing_k.csv",
+    "basename_matches": [
+      "Paper1_Package/03_RESULTS/Task2_trajectories/task2_choosing_k.csv",
+      "Paper1_Results/Task2/task2_choosing_k.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/03-paper1-work-steps.md",
+    "line": 2434,
+    "reference": "task2_gene_clusters.csv",
+    "basename_matches": [
+      "Paper1_Package/03_RESULTS/Task2_trajectories/task2_gene_clusters.csv",
+      "Paper1_Results/Task2/task2_gene_clusters.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/03-paper1-work-steps.md",
+    "line": 2636,
+    "reference": "task2_robustness.csv",
+    "basename_matches": [
+      "Paper1_Package/03_RESULTS/Task2_trajectories/task2_robustness.csv",
+      "Paper1_Results/Task2/task2_robustness.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/03-paper1-work-steps.md",
+    "line": 2671,
+    "reference": "task2_robustness_crosstab.csv",
+    "basename_matches": [
+      "Paper1_Package/03_RESULTS/Task2_trajectories/task2_robustness_crosstab.csv",
+      "Paper1_Results/Task2/task2_robustness_crosstab.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/03-paper1-work-steps.md",
+    "line": 2943,
+    "reference": "task3_all_genes_all_transitions.csv",
+    "basename_matches": [
+      "Paper1_Package/03_RESULTS/Task3_transitions/task3_all_genes_all_transitions.csv",
+      "Paper1_Results/Task3/task3_all_genes_all_transitions.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/03-paper1-work-steps.md",
+    "line": 3015,
+    "reference": "task3_all_genes_all_transitions.csv",
+    "basename_matches": [
+      "Paper1_Package/03_RESULTS/Task3_transitions/task3_all_genes_all_transitions.csv",
+      "Paper1_Results/Task3/task3_all_genes_all_transitions.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/03-paper1-work-steps.md",
+    "line": 3117,
+    "reference": "Paper1_Results.zip",
+    "basename_matches": []
+  },
+  {
+    "source": "handover/sessions/03-paper1-work-steps.md",
+    "line": 3119,
+    "reference": "task3_cluster_by_transition.csv",
+    "basename_matches": [
+      "Paper1_Package/03_RESULTS/Task3_transitions/task3_cluster_by_transition.csv",
+      "Paper1_Results/Task3/task3_cluster_by_transition.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/03-paper1-work-steps.md",
+    "line": 3450,
+    "reference": "task4_top_pathways_per_group.csv",
+    "basename_matches": [
+      "Paper1_Package/03_RESULTS/Task4_enrichment/task4_top_pathways_per_group.csv",
+      "Paper1_Results/Task4/task4_top_pathways_per_group.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/03-paper1-work-steps.md",
+    "line": 3530,
+    "reference": "task4_top_pathways_per_group.csv",
+    "basename_matches": [
+      "Paper1_Package/03_RESULTS/Task4_enrichment/task4_top_pathways_per_group.csv",
+      "Paper1_Results/Task4/task4_top_pathways_per_group.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/03-paper1-work-steps.md",
+    "line": 3561,
+    "reference": "task4_all_significant.csv",
+    "basename_matches": [
+      "Paper1_Package/03_RESULTS/Task4_enrichment/task4_all_significant.csv",
+      "Paper1_Results/Task4/task4_all_significant.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/03-paper1-work-steps.md",
+    "line": 3748,
+    "reference": "enrichment_tables/shared_down__GO_BP.csv",
+    "basename_matches": [
+      "Paper1_Package/03_RESULTS/Task4_enrichment/enrichment_tables/shared_down__GO_BP.csv",
+      "Paper1_Results/Task4/enrichment_tables/shared_down__GO_BP.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/03-paper1-work-steps.md",
+    "line": 3814,
+    "reference": "Paper1_Results.zip",
+    "basename_matches": []
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 22,
+    "reference": "RAW.tar",
+    "basename_matches": []
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 30,
+    "reference": "_mapping_summary.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/harmonisation/_mapping_summary.csv",
+      "data/processed/_mapping_summary.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 38,
+    "reference": "unmapped_genes.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/harmonisation/unmapped_genes.csv",
+      "data/processed/unmapped_genes.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 484,
+    "reference": "samples_metadata.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/harmonisation/samples_metadata.csv",
+      "data/processed/samples_metadata.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 911,
+    "reference": "GSE126848_Gene_counts_raw.txt.gz",
+    "basename_matches": []
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 912,
+    "reference": "GSE130970_all_sample_salmon_tximport_TPM_entrez_gene_ID.csv.gz",
+    "basename_matches": []
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 913,
+    "reference": "GSE135251_RAW.tar",
+    "basename_matches": []
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 914,
+    "reference": "GSE162694_raw_counts.csv.gz",
+    "basename_matches": []
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 915,
+    "reference": "GSE167523_Raw_gene_counts_matrix.txt.gz",
+    "basename_matches": []
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 916,
+    "reference": "GSE193066_NAFLD.HUn164.gct.gz",
+    "basename_matches": []
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 917,
+    "reference": "GSE240729_merged.counts.67samp.txt.gz",
+    "basename_matches": []
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 918,
+    "reference": "GSE269412_DRX0FLO_rnaseq_count_mat.txt.gz",
+    "basename_matches": []
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 922,
+    "reference": "hgnc_complete_set.txt",
+    "basename_matches": []
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 930,
+    "reference": ".txt.gz",
+    "basename_matches": []
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 930,
+    "reference": ".csv.gz",
+    "basename_matches": []
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 936,
+    "reference": "hgnc_complete_set.txt",
+    "basename_matches": []
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 1132,
+    "reference": "hgnc_complete_set.txt",
+    "basename_matches": []
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 1181,
+    "reference": "unmapped_genes.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/harmonisation/unmapped_genes.csv",
+      "data/processed/unmapped_genes.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 1220,
+    "reference": "gene_id_map.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/harmonisation/gene_id_map.csv",
+      "data/processed/gene_id_map.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 1269,
+    "reference": "unmapped_genes.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/harmonisation/unmapped_genes.csv",
+      "data/processed/unmapped_genes.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 1526,
+    "reference": "sample_crosswalk.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/harmonisation/sample_crosswalk.csv",
+      "data/processed/sample_crosswalk.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 1537,
+    "reference": "samples_metadata.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/harmonisation/samples_metadata.csv",
+      "data/processed/samples_metadata.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 1704,
+    "reference": "sample_crosswalk.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/harmonisation/sample_crosswalk.csv",
+      "data/processed/sample_crosswalk.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 1857,
+    "reference": "nodes_dataset.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/graph_nodes/nodes_dataset.csv",
+      "data/graph/nodes_dataset.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 1858,
+    "reference": "nodes_gene.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/graph_nodes/nodes_gene.csv",
+      "data/graph/nodes_gene.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 1859,
+    "reference": "nodes_sample.csv",
+    "basename_matches": [
+      "data/graph/nodes_sample.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 1860,
+    "reference": "edges_expresses.csv",
+    "basename_matches": [
+      "data/graph/edges_expresses.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 2155,
+    "reference": "samples_metadata.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/harmonisation/samples_metadata.csv",
+      "data/processed/samples_metadata.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 2204,
+    "reference": "GSE185051_Gene_count.csv.gz",
+    "basename_matches": []
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 2701,
+    "reference": "build_graph_csv.py",
+    "basename_matches": []
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 3032,
+    "reference": "load_edges.cypher",
+    "basename_matches": []
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 3254,
+    "reference": "kg.csv",
+    "basename_matches": []
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 3266,
+    "reference": "kg.csv",
+    "basename_matches": []
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 7520,
+    "reference": "disease_gene.parquet",
+    "basename_matches": []
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 9023,
+    "reference": "gene_id_map.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/harmonisation/gene_id_map.csv",
+      "data/processed/gene_id_map.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 11847,
+    "reference": "genes_by_fibrosis_stage.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/genes_by_fibrosis_stage.csv",
+      "Paper1_Package/04_DATA/progression_genes/genes_by_fibrosis_stage.csv",
+      "Paper1_Results/00_progression_genes/genes_by_fibrosis_stage.csv",
+      "data/for_mentor/genes_by_fibrosis_stage.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 11848,
+    "reference": "genes_by_disease_group.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/genes_by_disease_group.csv",
+      "Paper1_Package/04_DATA/progression_genes/genes_by_disease_group.csv",
+      "Paper1_Results/00_progression_genes/genes_by_disease_group.csv",
+      "data/for_mentor/genes_by_disease_group.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 11849,
+    "reference": "genes_by_stage_and_sex.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/genes_by_stage_and_sex.csv",
+      "data/for_mentor/genes_by_stage_and_sex.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 11850,
+    "reference": "genes_by_stage_and_age.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/genes_by_stage_and_age.csv",
+      "data/for_mentor/genes_by_stage_and_age.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 11851,
+    "reference": "sample_demographics.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/sample_demographics.csv",
+      "Paper1_Package/04_DATA/progression_genes/sample_demographics.csv",
+      "Paper1_Results/00_progression_genes/sample_demographics.csv",
+      "data/for_mentor/sample_demographics.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 11852,
+    "reference": "README.txt",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/README.txt",
+      "data/for_mentor/README.txt"
+    ]
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 11983,
+    "reference": "genes_by_fibrosis_stage.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/genes_by_fibrosis_stage.csv",
+      "Paper1_Package/04_DATA/progression_genes/genes_by_fibrosis_stage.csv",
+      "Paper1_Results/00_progression_genes/genes_by_fibrosis_stage.csv",
+      "data/for_mentor/genes_by_fibrosis_stage.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 11995,
+    "reference": "genes_by_disease_group.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/genes_by_disease_group.csv",
+      "Paper1_Package/04_DATA/progression_genes/genes_by_disease_group.csv",
+      "Paper1_Results/00_progression_genes/genes_by_disease_group.csv",
+      "data/for_mentor/genes_by_disease_group.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 12007,
+    "reference": "genes_by_stage_and_sex.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/genes_by_stage_and_sex.csv",
+      "data/for_mentor/genes_by_stage_and_sex.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 12019,
+    "reference": "genes_by_stage_and_age.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/genes_by_stage_and_age.csv",
+      "data/for_mentor/genes_by_stage_and_age.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 12034,
+    "reference": "sample_demographics.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/sample_demographics.csv",
+      "Paper1_Package/04_DATA/progression_genes/sample_demographics.csv",
+      "Paper1_Results/00_progression_genes/sample_demographics.csv",
+      "data/for_mentor/sample_demographics.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 12199,
+    "reference": "genes_by_fibrosis_stage.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/genes_by_fibrosis_stage.csv",
+      "Paper1_Package/04_DATA/progression_genes/genes_by_fibrosis_stage.csv",
+      "Paper1_Results/00_progression_genes/genes_by_fibrosis_stage.csv",
+      "data/for_mentor/genes_by_fibrosis_stage.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 12211,
+    "reference": "genes_by_stage_and_sex.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/genes_by_stage_and_sex.csv",
+      "data/for_mentor/genes_by_stage_and_sex.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 12211,
+    "reference": "genes_by_stage_and_age.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/genes_by_stage_and_age.csv",
+      "data/for_mentor/genes_by_stage_and_age.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/04-geo-dispatch-and-unmapped-genes.md",
+    "line": 12369,
+    "reference": "data/graph_okg/nodes_disease.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/knowledge_layer/nodes_disease.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/02-problem-statement-clarification.md",
+    "line": 319,
+    "reference": "genes_by_fibrosis_stage.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/genes_by_fibrosis_stage.csv",
+      "Paper1_Package/04_DATA/progression_genes/genes_by_fibrosis_stage.csv",
+      "Paper1_Results/00_progression_genes/genes_by_fibrosis_stage.csv",
+      "data/for_mentor/genes_by_fibrosis_stage.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/02-problem-statement-clarification.md",
+    "line": 320,
+    "reference": "genes_by_disease_group.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/genes_by_disease_group.csv",
+      "Paper1_Package/04_DATA/progression_genes/genes_by_disease_group.csv",
+      "Paper1_Results/00_progression_genes/genes_by_disease_group.csv",
+      "data/for_mentor/genes_by_disease_group.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/02-problem-statement-clarification.md",
+    "line": 321,
+    "reference": "genes_by_stage_and_sex.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/genes_by_stage_and_sex.csv",
+      "data/for_mentor/genes_by_stage_and_sex.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/02-problem-statement-clarification.md",
+    "line": 322,
+    "reference": "genes_by_stage_and_age.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/genes_by_stage_and_age.csv",
+      "data/for_mentor/genes_by_stage_and_age.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/02-problem-statement-clarification.md",
+    "line": 323,
+    "reference": "sample_demographics.csv",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/sample_demographics.csv",
+      "Paper1_Package/04_DATA/progression_genes/sample_demographics.csv",
+      "Paper1_Results/00_progression_genes/sample_demographics.csv",
+      "data/for_mentor/sample_demographics.csv"
+    ]
+  },
+  {
+    "source": "handover/sessions/02-problem-statement-clarification.md",
+    "line": 324,
+    "reference": "README.txt",
+    "basename_matches": [
+      "Paper1_Package/04_DATA/gene_tables/README.txt",
+      "data/for_mentor/README.txt"
+    ]
+  }
+]

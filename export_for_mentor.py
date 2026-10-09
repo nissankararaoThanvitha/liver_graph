@@ -52,6 +52,7 @@ import os
 
 import numpy as np
 import pandas as pd
+from biopsy_policy import select_biopsies, patient_expression
 
 GRAPH = "data/graph_full"
 PROG = "data/progression_full"
@@ -78,7 +79,7 @@ def load_samples():
     m = pd.read_csv(META, dtype=str).fillna("")
     c = pd.read_csv(CLIN, dtype=str).fillna("")
     s = m[["sample_id", "dataset_id", "sex", "age"]].merge(
-        c[["sample_id", "patient_id", "fibrosis_stage", "disease_group"]],
+        c[["sample_id", "patient_id", "fibrosis_stage", "disease_group", "biopsy_number"]],
         on="sample_id")
     s["sex"] = s["sex"].str.strip().str.upper().map(SEX_MAP).fillna("")
     s["age_years"] = pd.to_numeric(s["age"], errors="coerce")
@@ -119,7 +120,7 @@ def main():
           f"(fibrosis {len(fib):,}, inflammation {len(dis):,})")
 
     print("reading expression ...", flush=True)
-    e = load_expression(genes).merge(samples, on="sample_id")
+    e = patient_expression(load_expression(genes), samples)
     print(f"  {len(e):,} measurements over {e.sample_id.nunique():,} samples")
 
     label = pd.concat([
@@ -178,44 +179,26 @@ def main():
 
     # ---- 5. sample demographics -------------------------------------------
     d5 = samples[["sample_id", "patient_id", "dataset_id", "sex", "age_years",
-                  "age_band", "fibrosis_stage", "disease_group"]]
+                  "age_band", "fibrosis_stage", "disease_group", "biopsy_number"]]
     d5.to_csv(f"{OUT}/sample_demographics.csv", index=False)
     print(f"sample_demographics.csv      {len(d5):,} samples")
 
     with open(f"{OUT}/README.txt", "w") as fh:
         fh.write(
-            "PROGRESSION GENES -- for analysis\n"
-            "=================================\n\n"
-            "4,692 genes whose expression tracks liver disease progression,\n"
-            "from 1,027 patients across 8 GEO studies. Only genes measured in\n"
-            "ALL 8 studies were tested, and a gene is included only where every\n"
-            "study agreed on the direction (Spearman per study, combined by\n"
-            "Fisher's method, Benjamini-Hochberg q < 0.05).\n\n"
-            "VALUES\n"
-            "  All numbers are value_z: expression standardised per gene within\n"
-            "  each study (mean 0, sd 1). This is what makes 8 cohorts\n"
-            "  comparable. Positive = above average for that gene.\n\n"
-            "COLUMNS\n"
-            "  fibrosis_rho       correlation with fibrosis stage 0-4 (-1..+1)\n"
-            "  inflammation_rho   correlation with control->NAFL->NASH\n"
-            "  n_studies          how many studies the gene was tested in\n"
-            "  ladder             fibrosis_only / inflammation_only / both\n"
-            "  blank rho          gene not significant on that ladder\n\n"
-            "FILES\n"
-            "  genes_by_fibrosis_stage.csv   mean per stage 0,1,2,3,4\n"
-            "  genes_by_disease_group.csv    mean per control/NAFL/NASH etc\n"
-            "  genes_by_stage_and_sex.csv    stage x M/F\n"
-            "  genes_by_stage_and_age.csv    stage x age band\n"
-            "  sample_demographics.csv       one row per sample\n\n"
-            "COVERAGE LIMIT -- important\n"
-            "  Age and sex are recorded by 5 of the 8 studies, and only 3 of\n"
-            "  those also stage fibrosis. The stage x age and stage x sex files\n"
-            "  therefore rest on 385 samples (GSE130970, GSE162694, GSE193066),\n"
-            "  not all 1,085. The per-stage file uses all 668 staged samples.\n"
-            "  Sex was written six ways across studies (Female/female/F/Male/\n"
-            "  male/M) and has been harmonised to M/F.\n\n"
-            "  GSE193066 contributes 164 samples from 106 patients -- 58 were\n"
-            "  biopsied twice. Group by patient_id, not sample_id, for stats.\n")
+            f"PROGRESSION GENES — corrected patient-level summaries\n\n"
+            f"{len(genes):,} unique genes qualifying on at least one axis.\n"
+            "Association is Spearman within each study, Fisher combined p,\n"
+            "BH q < 0.05 and unanimous direction among testable studies.\n\n"
+            "Biopsy policy: average when stages match; otherwise keep biopsy 1.\n"
+            "Stage means give each patient one observation, not each biopsy.\n"
+            f"Staged patients: {st.patient_id.nunique()}; with sex: {ss.patient_id.nunique()}; "
+            f"with age: {sa.patient_id.nunique()}.\n"
+            "Samples in sample_demographics.csv remain raw sample records and\n"
+            "include biopsy_number; the biopsy policy is applied before analysis.\n\n"
+            "Values are within-study gene-standardised value_z, not fold changes.\n"
+            "Blank rho means that gene did not qualify on that axis.\n"
+            "Files: stage means, disease-group means, stage x sex, stage x age\n"
+            "and the raw sample-demographics table.\n")
 
     print(f"\nwritten to {OUT}/")
 

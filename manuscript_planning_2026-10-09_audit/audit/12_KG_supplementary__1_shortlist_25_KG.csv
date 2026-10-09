@@ -1,0 +1,479 @@
+Gene,Direction,Cluster,Cluster_pattern,Fibrosis_only_or_shared,Total_score,Pathway,Biological_Process,Ensembl_ID,Mechanism_ID
+ACADSB,decreasing,C4,Mid decrease (largest at F1→F2),shared,8,,L-isoleucine catabolic process,ENSG00000196177,GO_0006550
+ACADSB,decreasing,C4,Mid decrease (largest at F1→F2),shared,8,,carboxylic acid catabolic process,ENSG00000196177,GO_0046395
+ACADSB,decreasing,C4,Mid decrease (largest at F1→F2),shared,8,,fatty acid metabolic process,ENSG00000196177,GO_0006631
+ACADSB,decreasing,C4,Mid decrease (largest at F1→F2),shared,8,,lipid metabolic process,ENSG00000196177,GO_0006629
+ACADSB,decreasing,C4,Mid decrease (largest at F1→F2),shared,8,Branched-chain amino acid catabolism,,ENSG00000196177,REACT:R-HSA-70895
+ACADSB,decreasing,C4,Mid decrease (largest at F1→F2),shared,8,Mitochondrial protein degradation,,ENSG00000196177,REACT:R-HSA-9837999
+ADAMTSL2,increasing,C1,"Early increase (F0→F1), then continued",shared,8,,extracellular matrix organization,ENSG00000197859,GO_0030198
+ADAMTSL2,increasing,C1,"Early increase (F0→F1), then continued",shared,8,,lobar bronchus epithelium development,ENSG00000197859,GO_0060481
+ADAMTSL2,increasing,C1,"Early increase (F0→F1), then continued",shared,8,,negative regulation of transforming growth factor beta receptor signaling pathway,ENSG00000197859,GO_0030512
+ADAMTSL2,increasing,C1,"Early increase (F0→F1), then continued",shared,8,Defective B3GALTL causes PpS,,ENSG00000197859,REACT:R-HSA-5083635
+ADAMTSL2,increasing,C1,"Early increase (F0→F1), then continued",shared,8,O-glycosylation of TSR domain-containing proteins,,ENSG00000197859,REACT:R-HSA-5173214
+ADCY1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,adenylate cyclase-activating G protein-coupled receptor signaling pathway,ENSG00000164742,GO_0007189
+ADCY1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,axonogenesis,ENSG00000164742,GO_0007409
+ADCY1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,cAMP biosynthetic process,ENSG00000164742,GO_0006171
+ADCY1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,cellular response to calcium ion,ENSG00000164742,GO_0071277
+ADCY1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,cellular response to forskolin,ENSG00000164742,GO_1904322
+ADCY1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,cyclic nucleotide biosynthetic process,ENSG00000164742,GO_0009190
+ADCY1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,intracellular signal transduction,ENSG00000164742,GO_0035556
+ADCY1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,long-term memory,ENSG00000164742,GO_0007616
+ADCY1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,modulation of chemical synaptic transmission,ENSG00000164742,GO_0050804
+ADCY1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,neuroinflammatory response,ENSG00000164742,GO_0150076
+ADCY1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,positive regulation of CREB transcription factor activity,ENSG00000164742,GO_0032793
+ADCY1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,positive regulation of long-term synaptic potentiation,ENSG00000164742,GO_1900273
+ADCY1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,presynaptic modulation of chemical synaptic transmission,ENSG00000164742,GO_0099171
+ADCY1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,regulation of circadian rhythm,ENSG00000164742,GO_0042752
+ADCY1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,rhythmic process,ENSG00000164742,GO_0048511
+ADCY1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,ADORA2B mediated anti-inflammatory cytokines production,,ENSG00000164742,REACT:R-HSA-9660821
+ADCY1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,Adenylate cyclase activating pathway,,ENSG00000164742,REACT:R-HSA-170660
+ADCY1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,Adenylate cyclase inhibitory pathway,,ENSG00000164742,REACT:R-HSA-170670
+ADCY1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,CREB1 phosphorylation through the activation of Adenylate Cyclase,,ENSG00000164742,REACT:R-HSA-442720
+ADCY1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,FCGR3A-mediated IL10 synthesis,,ENSG00000164742,REACT:R-HSA-9664323
+ADCY1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,G alpha (i) signalling events,,ENSG00000164742,REACT:R-HSA-418594
+ADCY1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,G alpha (s) signalling events,,ENSG00000164742,REACT:R-HSA-418555
+ADCY1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,G alpha (z) signalling events,,ENSG00000164742,REACT:R-HSA-418597
+ADCY1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,GPER1 signaling,,ENSG00000164742,REACT:R-HSA-9634597
+ADCY1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,Glucagon signaling in metabolic regulation,,ENSG00000164742,REACT:R-HSA-163359
+ADCY1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,Hedgehog 'off' state,,ENSG00000164742,REACT:R-HSA-5610787
+ADCY1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,High laminar flow shear stress activates signaling by PIEZO1 and PECAM1:CDH5:KDR in endothelial cells,,ENSG00000164742,REACT:R-HSA-9856530
+ADCY1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,PKA activation,,ENSG00000164742,REACT:R-HSA-163615
+ADCY1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,PKA activation in glucagon signalling,,ENSG00000164742,REACT:R-HSA-164378
+ADCY1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,Vasopressin regulates renal water homeostasis via Aquaporins,,ENSG00000164742,REACT:R-HSA-432040
+AKR1D1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,C21-steroid hormone metabolic process,ENSG00000122787,GO_0008207
+AKR1D1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,alcohol metabolic process,ENSG00000122787,GO_0006066
+AKR1D1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,androgen metabolic process,ENSG00000122787,GO_0008209
+AKR1D1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,bile acid biosynthetic process,ENSG00000122787,GO_0006699
+AKR1D1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,bile acid catabolic process,ENSG00000122787,GO_0030573
+AKR1D1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,cholesterol catabolic process,ENSG00000122787,GO_0006707
+AKR1D1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,digestion,ENSG00000122787,GO_0007586
+AKR1D1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,hormone metabolic process,ENSG00000122787,GO_0042445
+AKR1D1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,lipid catabolic process,ENSG00000122787,GO_0016042
+AKR1D1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,lipid metabolic process,ENSG00000122787,GO_0006629
+AKR1D1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,monocarboxylic acid metabolic process,ENSG00000122787,GO_0032787
+AKR1D1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,steroid metabolic process,ENSG00000122787,GO_0008202
+AKR1D1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,Synthesis of bile acids and bile salts via 24-hydroxycholesterol,,ENSG00000122787,REACT:R-HSA-193775
+AKR1D1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,Synthesis of bile acids and bile salts via 27-hydroxycholesterol,,ENSG00000122787,REACT:R-HSA-193807
+AKR1D1,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,Synthesis of bile acids and bile salts via 7alpha-hydroxycholesterol,,ENSG00000122787,REACT:R-HSA-193368
+CACNA1C,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,calcium ion import across plasma membrane,ENSG00000151067,GO_0098703
+CACNA1C,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,calcium ion transmembrane transport,ENSG00000151067,GO_0070588
+CACNA1C,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,calcium ion transmembrane transport via high voltage-gated calcium channel,ENSG00000151067,GO_0061577
+CACNA1C,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,calcium ion transport,ENSG00000151067,GO_0006816
+CACNA1C,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,calcium ion transport into cytosol,ENSG00000151067,GO_0060402
+CACNA1C,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,camera-type eye development,ENSG00000151067,GO_0043010
+CACNA1C,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,cardiac conduction,ENSG00000151067,GO_0061337
+CACNA1C,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,cardiac muscle cell action potential involved in contraction,ENSG00000151067,GO_0086002
+CACNA1C,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,cell communication by electrical coupling involved in cardiac conduction,ENSG00000151067,GO_0086064
+CACNA1C,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,embryonic forelimb morphogenesis,ENSG00000151067,GO_0035115
+CACNA1C,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,heart development,ENSG00000151067,GO_0007507
+CACNA1C,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,immune system development,ENSG00000151067,GO_0002520
+CACNA1C,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,membrane depolarization during AV node cell action potential,ENSG00000151067,GO_0086045
+CACNA1C,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,membrane depolarization during atrial cardiac muscle cell action potential,ENSG00000151067,GO_0098912
+CACNA1C,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,membrane depolarization during cardiac muscle cell action potential,ENSG00000151067,GO_0086012
+CACNA1C,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,monoatomic ion transmembrane transport,ENSG00000151067,GO_0034220
+CACNA1C,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,monoatomic ion transport,ENSG00000151067,GO_0006811
+CACNA1C,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,muscle contraction,ENSG00000151067,GO_0006936
+CACNA1C,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,positive regulation of adenylate cyclase activity,ENSG00000151067,GO_0045762
+CACNA1C,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,positive regulation of cytosolic calcium ion concentration,ENSG00000151067,GO_0007204
+CACNA1C,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,positive regulation of muscle contraction,ENSG00000151067,GO_0045933
+CACNA1C,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,regulation of cardiac muscle contraction by regulation of the release of sequestered calcium ion,ENSG00000151067,GO_0010881
+CACNA1C,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,regulation of heart rate by cardiac conduction,ENSG00000151067,GO_0086091
+CACNA1C,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,regulation of ventricular cardiac muscle cell action potential,ENSG00000151067,GO_0098911
+CACNA1C,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,transmembrane transport,ENSG00000151067,GO_0055085
+CACNA1C,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,"Adrenaline,noradrenaline inhibits insulin secretion",,ENSG00000151067,REACT:R-HSA-400042
+CACNA1C,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,NCAM1 interactions,,ENSG00000151067,REACT:R-HSA-419037
+CACNA1C,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,Phase 0 - rapid depolarisation,,ENSG00000151067,REACT:R-HSA-5576892
+CACNA1C,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,Phase 2 - plateau phase,,ENSG00000151067,REACT:R-HSA-5576893
+CACNA1C,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,Regulation of insulin secretion,,ENSG00000151067,REACT:R-HSA-422356
+CDC45,increasing,C3,"Early rise, then plateau",shared,7,,DNA replication,ENSG00000093009,GO_0006260
+CDC45,increasing,C3,"Early rise, then plateau",shared,7,,DNA replication checkpoint signaling,ENSG00000093009,GO_0000076
+CDC45,increasing,C3,"Early rise, then plateau",shared,7,,DNA replication initiation,ENSG00000093009,GO_0006270
+CDC45,increasing,C3,"Early rise, then plateau",shared,7,,double-strand break repair via break-induced replication,ENSG00000093009,GO_0000727
+CDC45,increasing,C3,"Early rise, then plateau",shared,7,,mitotic DNA replication preinitiation complex assembly,ENSG00000093009,GO_1902977
+CDC45,increasing,C3,"Early rise, then plateau",shared,7,Activation of ATR in response to replication stress,,ENSG00000093009,REACT:R-HSA-176187
+CDC45,increasing,C3,"Early rise, then plateau",shared,7,Activation of the pre-replicative complex,,ENSG00000093009,REACT:R-HSA-68962
+CDC45,increasing,C3,"Early rise, then plateau",shared,7,G1/S-Specific Transcription,,ENSG00000093009,REACT:R-HSA-69205
+CDC45,increasing,C3,"Early rise, then plateau",shared,7,Unwinding of DNA,,ENSG00000093009,REACT:R-HSA-176974
+CLPX,decreasing,C4,Mid decrease (largest at F1→F2),fibrosis_only,7,,ATP metabolic process,ENSG00000166855,GO_0046034
+CLPX,decreasing,C4,Mid decrease (largest at F1→F2),fibrosis_only,7,,protein folding,ENSG00000166855,GO_0006457
+CLPX,decreasing,C4,Mid decrease (largest at F1→F2),fibrosis_only,7,,proteolysis,ENSG00000166855,GO_0006508
+CLPX,decreasing,C4,Mid decrease (largest at F1→F2),fibrosis_only,7,,proteolysis involved in protein catabolic process,ENSG00000166855,GO_0051603
+CLPX,decreasing,C4,Mid decrease (largest at F1→F2),fibrosis_only,7,Mitochondrial protein degradation,,ENSG00000166855,REACT:R-HSA-9837999
+CYP2C19,decreasing,C4,Mid decrease (largest at F1→F2),shared,8,,epoxygenase P450 pathway,ENSG00000165841,GO_0019373
+CYP2C19,decreasing,C4,Mid decrease (largest at F1→F2),shared,8,,fatty acid metabolic process,ENSG00000165841,GO_0006631
+CYP2C19,decreasing,C4,Mid decrease (largest at F1→F2),shared,8,,lipid metabolic process,ENSG00000165841,GO_0006629
+CYP2C19,decreasing,C4,Mid decrease (largest at F1→F2),shared,8,,long-chain fatty acid metabolic process,ENSG00000165841,GO_0001676
+CYP2C19,decreasing,C4,Mid decrease (largest at F1→F2),shared,8,,monocarboxylic acid metabolic process,ENSG00000165841,GO_0032787
+CYP2C19,decreasing,C4,Mid decrease (largest at F1→F2),shared,8,,monoterpenoid metabolic process,ENSG00000165841,GO_0016098
+CYP2C19,decreasing,C4,Mid decrease (largest at F1→F2),shared,8,,omega-hydroxylase P450 pathway,ENSG00000165841,GO_0097267
+CYP2C19,decreasing,C4,Mid decrease (largest at F1→F2),shared,8,,steroid metabolic process,ENSG00000165841,GO_0008202
+CYP2C19,decreasing,C4,Mid decrease (largest at F1→F2),shared,8,,terpenoid metabolic process,ENSG00000165841,GO_0006721
+CYP2C19,decreasing,C4,Mid decrease (largest at F1→F2),shared,8,,xenobiotic catabolic process,ENSG00000165841,GO_0042178
+CYP2C19,decreasing,C4,Mid decrease (largest at F1→F2),shared,8,,xenobiotic metabolic process,ENSG00000165841,GO_0006805
+CYP2C19,decreasing,C4,Mid decrease (largest at F1→F2),shared,8,Aspirin ADME,,ENSG00000165841,REACT:R-HSA-9749641
+CYP2C19,decreasing,C4,Mid decrease (largest at F1→F2),shared,8,CYP2E1 reactions,,ENSG00000165841,REACT:R-HSA-211999
+CYP2C19,decreasing,C4,Mid decrease (largest at F1→F2),shared,8,Synthesis of (16-20)-hydroxyeicosatetraenoic acids (HETE),,ENSG00000165841,REACT:R-HSA-2142816
+CYP2C19,decreasing,C4,Mid decrease (largest at F1→F2),shared,8,Synthesis of epoxy (EET) and dihydroxyeicosatrienoic acids (DHET),,ENSG00000165841,REACT:R-HSA-2142670
+CYP2C19,decreasing,C4,Mid decrease (largest at F1→F2),shared,8,Xenobiotics,,ENSG00000165841,REACT:R-HSA-211981
+CYP4F3,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,arachidonate metabolic process,ENSG00000186529,GO_0019369
+CYP4F3,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,fatty acid metabolic process,ENSG00000186529,GO_0006631
+CYP4F3,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,icosanoid metabolic process,ENSG00000186529,GO_0006690
+CYP4F3,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,leukotriene B4 catabolic process,ENSG00000186529,GO_0036101
+CYP4F3,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,leukotriene metabolic process,ENSG00000186529,GO_0006691
+CYP4F3,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,lipid metabolic process,ENSG00000186529,GO_0006629
+CYP4F3,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,menaquinone catabolic process,ENSG00000186529,GO_0042361
+CYP4F3,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,phylloquinone catabolic process,ENSG00000186529,GO_0042376
+CYP4F3,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,Eicosanoids,,ENSG00000186529,REACT:R-HSA-211979
+CYP4F3,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,Fatty acids,,ENSG00000186529,REACT:R-HSA-211935
+CYP4F3,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,Miscellaneous substrates,,ENSG00000186529,REACT:R-HSA-211958
+CYP4F3,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,Synthesis of Leukotrienes (LT) and Eoxins (EX),,ENSG00000186529,REACT:R-HSA-2142691
+DAGLA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,acylglycerol metabolic process,ENSG00000134780,GO_0006639
+DAGLA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,arachidonate metabolic process,ENSG00000134780,GO_0019369
+DAGLA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,cannabinoid biosynthetic process,ENSG00000134780,GO_1901696
+DAGLA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,diacylglycerol catabolic process,ENSG00000134780,GO_0046340
+DAGLA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,lipid catabolic process,ENSG00000134780,GO_0016042
+DAGLA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,lipid metabolic process,ENSG00000134780,GO_0006629
+DAGLA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,monoacylglycerol biosynthetic process,ENSG00000134780,GO_0006640
+DAGLA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,neuroblast proliferation,ENSG00000134780,GO_0007405
+DAGLA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,neurogenesis,ENSG00000134780,GO_0022008
+DAGLA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,regulation of neuroinflammatory response,ENSG00000134780,GO_0150077
+DAGLA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,retrograde trans-synaptic signaling by endocannabinoid,ENSG00000134780,GO_0098921
+DAGLA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,Arachidonate production from DAG,,ENSG00000134780,REACT:R-HSA-426048
+FABP5,increasing,C3,"Early rise, then plateau",shared,7,,epidermis development,ENSG00000164687,GO_0008544
+FABP5,increasing,C3,"Early rise, then plateau",shared,7,,fatty acid transport,ENSG00000164687,GO_0015908
+FABP5,increasing,C3,"Early rise, then plateau",shared,7,,glucose homeostasis,ENSG00000164687,GO_0042593
+FABP5,increasing,C3,"Early rise, then plateau",shared,7,,glucose metabolic process,ENSG00000164687,GO_0006006
+FABP5,increasing,C3,"Early rise, then plateau",shared,7,,lipid metabolic process,ENSG00000164687,GO_0006629
+FABP5,increasing,C3,"Early rise, then plateau",shared,7,,lipid transport,ENSG00000164687,GO_0006869
+FABP5,increasing,C3,"Early rise, then plateau",shared,7,,lipid transport across blood-brain barrier,ENSG00000164687,GO_1990379
+FABP5,increasing,C3,"Early rise, then plateau",shared,7,,long-chain fatty acid transport,ENSG00000164687,GO_0015909
+FABP5,increasing,C3,"Early rise, then plateau",shared,7,,negative regulation of D-glucose transmembrane transport,ENSG00000164687,GO_0010829
+FABP5,increasing,C3,"Early rise, then plateau",shared,7,,phosphatidylcholine biosynthetic process,ENSG00000164687,GO_0006656
+FABP5,increasing,C3,"Early rise, then plateau",shared,7,,positive regulation of cold-induced thermogenesis,ENSG00000164687,GO_0120162
+FABP5,increasing,C3,"Early rise, then plateau",shared,7,,positive regulation of peroxisome proliferator activated receptor signaling pathway,ENSG00000164687,GO_0035360
+FABP5,increasing,C3,"Early rise, then plateau",shared,7,,regulation of prostaglandin biosynthetic process,ENSG00000164687,GO_0031392
+FABP5,increasing,C3,"Early rise, then plateau",shared,7,,regulation of retrograde trans-synaptic signaling by endocanabinoid,ENSG00000164687,GO_0099178
+FABP5,increasing,C3,"Early rise, then plateau",shared,7,,regulation of sensory perception of pain,ENSG00000164687,GO_0051930
+FABP5,increasing,C3,"Early rise, then plateau",shared,7,,retrograde trans-synaptic signaling by endocannabinoid,ENSG00000164687,GO_0098921
+FABP5,increasing,C3,"Early rise, then plateau",shared,7,Differentiation of Keratinocytes in Interfollicular Epidermis in Mammalian Skin,,ENSG00000164687,REACT:R-HSA-9725554
+FABP5,increasing,C3,"Early rise, then plateau",shared,7,Neutrophil degranulation,,ENSG00000164687,REACT:R-HSA-6798695
+FABP5,increasing,C3,"Early rise, then plateau",shared,7,Signaling by Retinoic Acid,,ENSG00000164687,REACT:R-HSA-5362517
+FABP5,increasing,C3,"Early rise, then plateau",shared,7,Triglyceride catabolism,,ENSG00000164687,REACT:R-HSA-163560
+HTR7,increasing,C3,"Early rise, then plateau",shared,7,,G protein-coupled receptor signaling pathway,ENSG00000148680,GO_0007186
+HTR7,increasing,C3,"Early rise, then plateau",shared,7,,"G protein-coupled receptor signaling pathway, coupled to cyclic nucleotide second messenger",ENSG00000148680,GO_0007187
+HTR7,increasing,C3,"Early rise, then plateau",shared,7,,G protein-coupled serotonin receptor signaling pathway,ENSG00000148680,GO_0098664
+HTR7,increasing,C3,"Early rise, then plateau",shared,7,,adenylate cyclase-activating serotonin receptor signaling pathway,ENSG00000148680,GO_0007192
+HTR7,increasing,C3,"Early rise, then plateau",shared,7,,blood circulation,ENSG00000148680,GO_0008015
+HTR7,increasing,C3,"Early rise, then plateau",shared,7,,chemical synaptic transmission,ENSG00000148680,GO_0007268
+HTR7,increasing,C3,"Early rise, then plateau",shared,7,,circadian rhythm,ENSG00000148680,GO_0007623
+HTR7,increasing,C3,"Early rise, then plateau",shared,7,,signal transduction,ENSG00000148680,GO_0007165
+HTR7,increasing,C3,"Early rise, then plateau",shared,7,,smooth muscle contraction,ENSG00000148680,GO_0006939
+HTR7,increasing,C3,"Early rise, then plateau",shared,7,,vasoconstriction,ENSG00000148680,GO_0042310
+HTR7,increasing,C3,"Early rise, then plateau",shared,7,G alpha (s) signalling events,,ENSG00000148680,REACT:R-HSA-418555
+HTR7,increasing,C3,"Early rise, then plateau",shared,7,RHOBTB3 ATPase cycle,,ENSG00000148680,REACT:R-HSA-9706019
+HTR7,increasing,C3,"Early rise, then plateau",shared,7,Serotonin receptors,,ENSG00000148680,REACT:R-HSA-390666
+IL32,increasing,C1,"Early increase (F0→F1), then continued",shared,8,,cell adhesion,ENSG00000008517,GO_0007155
+IL32,increasing,C1,"Early increase (F0→F1), then continued",shared,8,,defense response,ENSG00000008517,GO_0006952
+IL32,increasing,C1,"Early increase (F0→F1), then continued",shared,8,,immune response,ENSG00000008517,GO_0006955
+IL32,increasing,C1,"Early increase (F0→F1), then continued",shared,8,,signal transduction,ENSG00000008517,GO_0007165
+IL32,increasing,C1,"Early increase (F0→F1), then continued",shared,8,Other interleukin signaling,,ENSG00000008517,REACT:R-HSA-449836
+IL32,increasing,C1,"Early increase (F0→F1), then continued",shared,8,RAC3 GTPase cycle,,ENSG00000008517,REACT:R-HSA-9013423
+KCNN2,decreasing,C5,Late decrease (largest at F3→F4),shared,8,,membrane repolarization during atrial cardiac muscle cell action potential,ENSG00000080709,GO_0098914
+KCNN2,decreasing,C5,Late decrease (largest at F3→F4),shared,8,,monoatomic ion transmembrane transport,ENSG00000080709,GO_0034220
+KCNN2,decreasing,C5,Late decrease (largest at F3→F4),shared,8,,monoatomic ion transport,ENSG00000080709,GO_0006811
+KCNN2,decreasing,C5,Late decrease (largest at F3→F4),shared,8,,potassium ion transmembrane transport,ENSG00000080709,GO_0071805
+KCNN2,decreasing,C5,Late decrease (largest at F3→F4),shared,8,,potassium ion transport,ENSG00000080709,GO_0006813
+KCNN2,decreasing,C5,Late decrease (largest at F3→F4),shared,8,,regulation of potassium ion transmembrane transport,ENSG00000080709,GO_1901379
+KCNN2,decreasing,C5,Late decrease (largest at F3→F4),shared,8,Acetylcholine inhibits contraction of outer hair cells,,ENSG00000080709,REACT:R-HSA-9667769
+KCNN2,decreasing,C5,Late decrease (largest at F3→F4),shared,8,Ca2+ activated K+ channels,,ENSG00000080709,REACT:R-HSA-1296052
+KNG1,decreasing,C4,Mid decrease (largest at F1→F2),fibrosis_only,7,,blood coagulation,ENSG00000113889,GO_0007596
+KNG1,decreasing,C4,Mid decrease (largest at F1→F2),fibrosis_only,7,,blood vessel diameter maintenance,ENSG00000113889,GO_0097746
+KNG1,decreasing,C4,Mid decrease (largest at F1→F2),fibrosis_only,7,,hemostasis,ENSG00000113889,GO_0007599
+KNG1,decreasing,C4,Mid decrease (largest at F1→F2),fibrosis_only,7,,inflammatory response,ENSG00000113889,GO_0006954
+KNG1,decreasing,C4,Mid decrease (largest at F1→F2),fibrosis_only,7,,negative regulation of blood coagulation,ENSG00000113889,GO_0030195
+KNG1,decreasing,C4,Mid decrease (largest at F1→F2),fibrosis_only,7,,negative regulation of cell adhesion,ENSG00000113889,GO_0007162
+KNG1,decreasing,C4,Mid decrease (largest at F1→F2),fibrosis_only,7,,negative regulation of multicellular organismal process,ENSG00000113889,GO_0051241
+KNG1,decreasing,C4,Mid decrease (largest at F1→F2),fibrosis_only,7,,negative regulation of proteolysis,ENSG00000113889,GO_0045861
+KNG1,decreasing,C4,Mid decrease (largest at F1→F2),fibrosis_only,7,,positive regulation of apoptotic process,ENSG00000113889,GO_0043065
+KNG1,decreasing,C4,Mid decrease (largest at F1→F2),fibrosis_only,7,,positive regulation of cytosolic calcium ion concentration,ENSG00000113889,GO_0007204
+KNG1,decreasing,C4,Mid decrease (largest at F1→F2),fibrosis_only,7,,signal transduction,ENSG00000113889,GO_0007165
+KNG1,decreasing,C4,Mid decrease (largest at F1→F2),fibrosis_only,7,,vasodilation,ENSG00000113889,GO_0042311
+KNG1,decreasing,C4,Mid decrease (largest at F1→F2),fibrosis_only,7,G alpha (i) signalling events,,ENSG00000113889,REACT:R-HSA-418594
+KNG1,decreasing,C4,Mid decrease (largest at F1→F2),fibrosis_only,7,G alpha (q) signalling events,,ENSG00000113889,REACT:R-HSA-416476
+KNG1,decreasing,C4,Mid decrease (largest at F1→F2),fibrosis_only,7,Intrinsic Pathway of Fibrin Clot Formation,,ENSG00000113889,REACT:R-HSA-140837
+KNG1,decreasing,C4,Mid decrease (largest at F1→F2),fibrosis_only,7,Peptide ligand-binding receptors,,ENSG00000113889,REACT:R-HSA-375276
+KNG1,decreasing,C4,Mid decrease (largest at F1→F2),fibrosis_only,7,Platelet degranulation ,,ENSG00000113889,REACT:R-HSA-114608
+KNG1,decreasing,C4,Mid decrease (largest at F1→F2),fibrosis_only,7,Post-translational protein phosphorylation,,ENSG00000113889,REACT:R-HSA-8957275
+KNG1,decreasing,C4,Mid decrease (largest at F1→F2),fibrosis_only,7,Regulation of Insulin-like Growth Factor (IGF) transport and uptake by Insulin-like Growth Factor Binding Proteins (IGFBPs),,ENSG00000113889,REACT:R-HSA-381426
+LYZ,increasing,C1,"Early increase (F0→F1), then continued",shared,8,,antimicrobial humoral response,ENSG00000090382,GO_0019730
+LYZ,increasing,C1,"Early increase (F0→F1), then continued",shared,8,,defense response to Gram-negative bacterium,ENSG00000090382,GO_0050829
+LYZ,increasing,C1,"Early increase (F0→F1), then continued",shared,8,,defense response to Gram-positive bacterium,ENSG00000090382,GO_0050830
+LYZ,increasing,C1,"Early increase (F0→F1), then continued",shared,8,,defense response to bacterium,ENSG00000090382,GO_0042742
+LYZ,increasing,C1,"Early increase (F0→F1), then continued",shared,8,,inflammatory response,ENSG00000090382,GO_0006954
+LYZ,increasing,C1,"Early increase (F0→F1), then continued",shared,8,,killing of cells of another organism,ENSG00000090382,GO_0031640
+LYZ,increasing,C1,"Early increase (F0→F1), then continued",shared,8,Amyloid fiber formation,,ENSG00000090382,REACT:R-HSA-977225
+LYZ,increasing,C1,"Early increase (F0→F1), then continued",shared,8,Antimicrobial peptides,,ENSG00000090382,REACT:R-HSA-6803157
+LYZ,increasing,C1,"Early increase (F0→F1), then continued",shared,8,Neutrophil degranulation,,ENSG00000090382,REACT:R-HSA-6798695
+NCAM2,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,axonal fasciculation,ENSG00000154654,GO_0007413
+NCAM2,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,cell adhesion,ENSG00000154654,GO_0007155
+NCAM2,decreasing,C5,Late decrease (largest at F3→F4),fibrosis_only,8,,neuron cell-cell adhesion,ENSG00000154654,GO_0007158
+NFASC,increasing,C1,"Early increase (F0→F1), then continued",shared,8,,axon guidance,ENSG00000163531,GO_0007411
+NFASC,increasing,C1,"Early increase (F0→F1), then continued",shared,8,,brain development,ENSG00000163531,GO_0007420
+NFASC,increasing,C1,"Early increase (F0→F1), then continued",shared,8,,cell adhesion,ENSG00000163531,GO_0007155
+NFASC,increasing,C1,"Early increase (F0→F1), then continued",shared,8,,cell-cell adhesion,ENSG00000163531,GO_0098609
+NFASC,increasing,C1,"Early increase (F0→F1), then continued",shared,8,,myelination,ENSG00000163531,GO_0042552
+NFASC,increasing,C1,"Early increase (F0→F1), then continued",shared,8,,peripheral nervous system development,ENSG00000163531,GO_0007422
+NFASC,increasing,C1,"Early increase (F0→F1), then continued",shared,8,Interaction between L1 and Ankyrins,,ENSG00000163531,REACT:R-HSA-445095
+NFASC,increasing,C1,"Early increase (F0→F1), then continued",shared,8,Neurofascin interactions,,ENSG00000163531,REACT:R-HSA-447043
+NFASC,increasing,C1,"Early increase (F0→F1), then continued",shared,8,Neutrophil degranulation,,ENSG00000163531,REACT:R-HSA-6798695
+OAT,decreasing,C4,Mid decrease (largest at F1→F2),shared,7,,L-arginine catabolic process to L-glutamate,ENSG00000065154,GO_0019544
+OAT,decreasing,C4,Mid decrease (largest at F1→F2),shared,7,,L-arginine catabolic process to proline via ornithine,ENSG00000065154,GO_0010121
+OAT,decreasing,C4,Mid decrease (largest at F1→F2),shared,7,,L-proline biosynthetic process,ENSG00000065154,GO_0055129
+OAT,decreasing,C4,Mid decrease (largest at F1→F2),shared,7,,visual perception,ENSG00000065154,GO_0007601
+OAT,decreasing,C4,Mid decrease (largest at F1→F2),shared,7,Glutamate and glutamine metabolism,,ENSG00000065154,REACT:R-HSA-8964539
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,Leydig cell differentiation,ENSG00000134853,GO_0033327
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,adrenal gland development,ENSG00000134853,GO_0030325
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,anatomical structure morphogenesis,ENSG00000134853,GO_0009653
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,animal organ morphogenesis,ENSG00000134853,GO_0009887
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,cardiac myofibril assembly,ENSG00000134853,GO_0055003
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,cell activation,ENSG00000134853,GO_0001775
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,cell chemotaxis,ENSG00000134853,GO_0060326
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,cell migration,ENSG00000134853,GO_0016477
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,cell surface receptor protein tyrosine kinase signaling pathway,ENSG00000134853,GO_0007169
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,cellular response to amino acid stimulus,ENSG00000134853,GO_0071230
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,cellular response to reactive oxygen species,ENSG00000134853,GO_0034614
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,chemotaxis,ENSG00000134853,GO_0006935
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,embryonic cranial skeleton morphogenesis,ENSG00000134853,GO_0048701
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,embryonic digestive tract morphogenesis,ENSG00000134853,GO_0048557
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,embryonic skeletal system morphogenesis,ENSG00000134853,GO_0048704
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,estrogen metabolic process,ENSG00000134853,GO_0008210
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,extracellular matrix organization,ENSG00000134853,GO_0030198
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,face morphogenesis,ENSG00000134853,GO_0060325
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,female gonad development,ENSG00000134853,GO_0008585
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,hematopoietic progenitor cell differentiation,ENSG00000134853,GO_0002244
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,in utero embryonic development,ENSG00000134853,GO_0001701
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,lung development,ENSG00000134853,GO_0030324
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,luteinization,ENSG00000134853,GO_0001553
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,male genitalia development,ENSG00000134853,GO_0030539
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,metanephric glomerular capillary formation,ENSG00000134853,GO_0072277
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,negative regulation of platelet activation,ENSG00000134853,GO_0010544
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,odontogenesis of dentin-containing tooth,ENSG00000134853,GO_0042475
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,peptidyl-tyrosine phosphorylation,ENSG00000134853,GO_0018108
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,platelet aggregation,ENSG00000134853,GO_0070527
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,platelet-derived growth factor receptor signaling pathway,ENSG00000134853,GO_0048008
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,platelet-derived growth factor receptor-alpha signaling pathway,ENSG00000134853,GO_0035790
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,positive regulation of ERK1 and ERK2 cascade,ENSG00000134853,GO_0070374
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,positive regulation of calcium-mediated signaling,ENSG00000134853,GO_0050850
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,positive regulation of cell migration,ENSG00000134853,GO_0030335
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,positive regulation of cell population proliferation,ENSG00000134853,GO_0008284
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,positive regulation of cell proliferation by VEGF-activated platelet derived growth factor receptor signaling pathway,ENSG00000134853,GO_0038091
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,positive regulation of chemotaxis,ENSG00000134853,GO_0050921
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,positive regulation of fibroblast proliferation,ENSG00000134853,GO_0048146
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,positive regulation of phosphatidylinositol 3-kinase/protein kinase B signal transduction,ENSG00000134853,GO_0051897
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,protein autophosphorylation,ENSG00000134853,GO_0046777
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,regulation of actin cytoskeleton organization,ENSG00000134853,GO_0032956
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,regulation of mesenchymal stem cell differentiation,ENSG00000134853,GO_2000739
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,retina vasculature development in camera-type eye,ENSG00000134853,GO_0061298
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,roof of mouth development,ENSG00000134853,GO_0060021
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,signal transduction involved in regulation of gene expression,ENSG00000134853,GO_0023019
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,skeletal system morphogenesis,ENSG00000134853,GO_0048705
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,white fat cell differentiation,ENSG00000134853,GO_0050872
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,wound healing,ENSG00000134853,GO_0042060
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,Constitutive Signaling by Aberrant PI3K in Cancer,,ENSG00000134853,REACT:R-HSA-2219530
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,Downstream signal transduction,,ENSG00000134853,REACT:R-HSA-186763
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,Imatinib-resistant PDGFR mutants,,ENSG00000134853,REACT:R-HSA-9674396
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,PDGFR mutants bind TKIs,,ENSG00000134853,REACT:R-HSA-9674428
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,"PI5P, PP2A and IER3 Regulate PI3K/AKT Signaling",,ENSG00000134853,REACT:R-HSA-6811558
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,PIP3 activates AKT signaling,,ENSG00000134853,REACT:R-HSA-1257604
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,RAF/MAP kinase cascade,,ENSG00000134853,REACT:R-HSA-5673001
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,Regorafenib-resistant PDGFR mutants,,ENSG00000134853,REACT:R-HSA-9674403
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,Signaling by PDGF,,ENSG00000134853,REACT:R-HSA-186797
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,Signaling by PDGFRA extracellular domain mutants,,ENSG00000134853,REACT:R-HSA-9673770
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,"Signaling by PDGFRA transmembrane, juxtamembrane and kinase domain mutants",,ENSG00000134853,REACT:R-HSA-9673767
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,Sorafenib-resistant PDGFR mutants,,ENSG00000134853,REACT:R-HSA-9674404
+PDGFRA,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,Sunitinib-resistant PDGFR mutants,,ENSG00000134853,REACT:R-HSA-9674401
+PLK3,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,DNA damage response,ENSG00000173846,GO_0006974
+PLK3,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,"DNA damage response, signal transduction by p53 class mediator",ENSG00000173846,GO_0030330
+PLK3,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,G1/S transition of mitotic cell cycle,ENSG00000173846,GO_0000082
+PLK3,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,G2/M transition of mitotic cell cycle,ENSG00000173846,GO_0000086
+PLK3,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,Golgi disassembly,ENSG00000173846,GO_0090166
+PLK3,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,apoptotic process,ENSG00000173846,GO_0006915
+PLK3,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,cytoplasmic microtubule organization,ENSG00000173846,GO_0031122
+PLK3,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,endomitotic cell cycle,ENSG00000173846,GO_0007113
+PLK3,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,mitotic G1/S transition checkpoint signaling,ENSG00000173846,GO_0044819
+PLK3,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,mitotic spindle organization,ENSG00000173846,GO_0007052
+PLK3,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,negative regulation of apoptotic process,ENSG00000173846,GO_0043066
+PLK3,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,negative regulation of phosphatidylinositol 3-kinase/protein kinase B signal transduction,ENSG00000173846,GO_0051898
+PLK3,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,negative regulation of transcription by RNA polymerase II,ENSG00000173846,GO_0000122
+PLK3,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,positive regulation of autophagy,ENSG00000173846,GO_0010508
+PLK3,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,positive regulation of chaperone-mediated autophagy,ENSG00000173846,GO_1904716
+PLK3,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,positive regulation of intracellular protein transport,ENSG00000173846,GO_0090316
+PLK3,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,positive regulation of proteasomal ubiquitin-dependent protein catabolic process,ENSG00000173846,GO_0032436
+PLK3,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,positive regulation of protein catabolic process,ENSG00000173846,GO_0045732
+PLK3,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,protein phosphorylation,ENSG00000173846,GO_0006468
+PLK3,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,regulation of cell communication,ENSG00000173846,GO_0010646
+PLK3,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,regulation of cell cycle process,ENSG00000173846,GO_0010564
+PLK3,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,regulation of cell division,ENSG00000173846,GO_0051302
+PLK3,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,regulation of cytokinesis,ENSG00000173846,GO_0032465
+PLK3,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,regulation of signal transduction by p53 class mediator,ENSG00000173846,GO_1901796
+PLK3,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,regulation of signaling,ENSG00000173846,GO_0023051
+PLK3,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,response to osmotic stress,ENSG00000173846,GO_0006970
+PLK3,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,response to radiation,ENSG00000173846,GO_0009314
+PLK3,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,response to reactive oxygen species,ENSG00000173846,GO_0000302
+PLK3,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,Regulation of TP53 Activity through Phosphorylation,,ENSG00000173846,REACT:R-HSA-6804756
+PLK3,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,TP53 regulates transcription of additional cell cycle genes whose exact role in the p53 pathway remain uncertain,,ENSG00000173846,REACT:R-HSA-6804115
+PLPP4,increasing,C1,"Early increase (F0→F1), then continued",shared,8,,Fc-gamma receptor signaling pathway involved in phagocytosis,ENSG00000203805,GO_0038096
+PLPP4,increasing,C1,"Early increase (F0→F1), then continued",shared,8,,blastocyst hatching,ENSG00000203805,GO_0001835
+PLPP4,increasing,C1,"Early increase (F0→F1), then continued",shared,8,,lipid metabolic process,ENSG00000203805,GO_0006629
+PLPP4,increasing,C1,"Early increase (F0→F1), then continued",shared,8,,phospholipid dephosphorylation,ENSG00000203805,GO_0046839
+PLPP4,increasing,C1,"Early increase (F0→F1), then continued",shared,8,,phospholipid metabolic process,ENSG00000203805,GO_0006644
+PLPP4,increasing,C1,"Early increase (F0→F1), then continued",shared,8,,regulation of calcium ion import,ENSG00000203805,GO_0090279
+PLPP4,increasing,C1,"Early increase (F0→F1), then continued",shared,8,Role of phospholipids in phagocytosis,,ENSG00000203805,REACT:R-HSA-2029485
+STC1,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,bone development,ENSG00000159167,GO_0060348
+STC1,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,cellular response to cAMP,ENSG00000159167,GO_0071320
+STC1,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,cellular response to glucocorticoid stimulus,ENSG00000159167,GO_0071385
+STC1,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,cellular response to hypoxia,ENSG00000159167,GO_0071456
+STC1,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,chondrocyte proliferation,ENSG00000159167,GO_0035988
+STC1,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,decidualization,ENSG00000159167,GO_0046697
+STC1,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,embryo implantation,ENSG00000159167,GO_0007566
+STC1,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,endothelial cell morphogenesis,ENSG00000159167,GO_0001886
+STC1,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,growth plate cartilage axis specification,ENSG00000159167,GO_0003421
+STC1,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,intracellular calcium ion homeostasis,ENSG00000159167,GO_0006874
+STC1,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,negative regulation of calcium ion transport,ENSG00000159167,GO_0051926
+STC1,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,negative regulation of cell migration,ENSG00000159167,GO_0030336
+STC1,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,negative regulation of endothelial cell migration,ENSG00000159167,GO_0010596
+STC1,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,negative regulation of renal phosphate excretion,ENSG00000159167,GO_1903403
+STC1,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,ossification,ENSG00000159167,GO_0001503
+STC1,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,positive regulation of calcium ion import,ENSG00000159167,GO_0090280
+STC1,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,regulation of cardiac muscle cell contraction,ENSG00000159167,GO_0086004
+STC1,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,regulation of monoatomic anion transport,ENSG00000159167,GO_0044070
+STC1,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,response to vitamin D,ENSG00000159167,GO_0033280
+STC1,increasing,C2,Late increase (largest at F3→F4),fibrosis_only,9,,signal transduction,ENSG00000159167,GO_0007165
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,CXCL12-activated CXCR4 signaling pathway,ENSG00000095970,GO_0038160
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,T cell activation via T cell receptor contact with antigen bound to MHC molecule on antigen presenting cell,ENSG00000095970,GO_0002291
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,amyloid-beta clearance,ENSG00000095970,GO_0097242
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,amyloid-beta clearance by cellular catabolic process,ENSG00000095970,GO_0150094
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,apoptotic cell clearance,ENSG00000095970,GO_0043277
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,astrocyte activation,ENSG00000095970,GO_0048143
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,cell development,ENSG00000095970,GO_0048468
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,cell surface receptor signaling pathway,ENSG00000095970,GO_0007166
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,cellular response to amyloid-beta,ENSG00000095970,GO_1904646
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,cellular response to glucose stimulus,ENSG00000095970,GO_0071333
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,cellular response to hypoxia,ENSG00000095970,GO_0071456
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,cellular response to lipid,ENSG00000095970,GO_0071396
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,cellular response to lipoprotein particle stimulus,ENSG00000095970,GO_0071402
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,cellular response to lipoteichoic acid,ENSG00000095970,GO_0071223
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,cellular response to oxidised low-density lipoprotein particle stimulus,ENSG00000095970,GO_0140052
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,cellular response to peptidoglycan,ENSG00000095970,GO_0071224
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,complement-mediated synapse pruning,ENSG00000095970,GO_0150062
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,defense response to Gram-negative bacterium,ENSG00000095970,GO_0050829
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,defense response to bacterium,ENSG00000095970,GO_0042742
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,dendritic cell differentiation,ENSG00000095970,GO_0097028
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,dendritic spine maintenance,ENSG00000095970,GO_0097062
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,detection of lipopolysaccharide,ENSG00000095970,GO_0032497
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,detection of lipoteichoic acid,ENSG00000095970,GO_0070392
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,detection of peptidoglycan,ENSG00000095970,GO_0032499
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,excitatory synapse pruning,ENSG00000095970,GO_1905805
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,humoral immune response,ENSG00000095970,GO_0006959
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,immune response,ENSG00000095970,GO_0006955
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,import into cell,ENSG00000095970,GO_0098657
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,lipid homeostasis,ENSG00000095970,GO_0055088
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,memory,ENSG00000095970,GO_0007613
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,microglial cell activation,ENSG00000095970,GO_0001774
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,microglial cell activation involved in immune response,ENSG00000095970,GO_0002282
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,microglial cell proliferation,ENSG00000095970,GO_0061518
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,negative regulation of NLRP3 inflammasome complex assembly,ENSG00000095970,GO_1900226
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,negative regulation of amyloid fibril formation,ENSG00000095970,GO_1905907
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,negative regulation of apoptotic process,ENSG00000095970,GO_0043066
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,negative regulation of astrocyte activation,ENSG00000095970,GO_0061889
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,negative regulation of autophagic cell death,ENSG00000095970,GO_1904093
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,negative regulation of autophagy,ENSG00000095970,GO_0010507
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,negative regulation of canonical NF-kappaB signal transduction,ENSG00000095970,GO_0043124
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,negative regulation of cell activation,ENSG00000095970,GO_0050866
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,negative regulation of cholesterol storage,ENSG00000095970,GO_0010887
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,negative regulation of cytokine production involved in inflammatory response,ENSG00000095970,GO_1900016
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,negative regulation of fat cell proliferation,ENSG00000095970,GO_0070345
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,negative regulation of glial cell apoptotic process,ENSG00000095970,GO_0034351
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,negative regulation of inflammatory response to antigenic stimulus,ENSG00000095970,GO_0002862
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,negative regulation of interleukin-1 beta production,ENSG00000095970,GO_0032691
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,negative regulation of macrophage colony-stimulating factor signaling pathway,ENSG00000095970,GO_1902227
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,negative regulation of neuroinflammatory response,ENSG00000095970,GO_0150079
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,negative regulation of p38MAPK cascade,ENSG00000095970,GO_1903753
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,negative regulation of phosphatidylinositol 3-kinase/protein kinase B signal transduction,ENSG00000095970,GO_0051898
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,negative regulation of toll-like receptor 2 signaling pathway,ENSG00000095970,GO_0034136
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,negative regulation of toll-like receptor 4 signaling pathway,ENSG00000095970,GO_0034144
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,negative regulation of triglyceride storage,ENSG00000095970,GO_0010891
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,negative regulation of tumor necrosis factor production,ENSG00000095970,GO_0032720
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,neuroinflammatory response,ENSG00000095970,GO_0150076
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,osteoclast differentiation,ENSG00000095970,GO_0030316
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,phagocytosis,ENSG00000095970,GO_0006909
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,"phagocytosis, engulfment",ENSG00000095970,GO_0006911
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,"phagocytosis, recognition",ENSG00000095970,GO_0006910
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,positive regulation of ATP biosynthetic process,ENSG00000095970,GO_2001171
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,positive regulation of C-C chemokine receptor CCR7 signaling pathway,ENSG00000095970,GO_1903082
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,positive regulation of CAMKK-AMPK signaling cascade,ENSG00000095970,GO_1905291
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,positive regulation of CD40 signaling pathway,ENSG00000095970,GO_2000350
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,positive regulation of ERK1 and ERK2 cascade,ENSG00000095970,GO_0070374
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,positive regulation of TOR signaling,ENSG00000095970,GO_0032008
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,positive regulation of amyloid-beta clearance,ENSG00000095970,GO_1900223
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,positive regulation of antigen processing and presentation of peptide antigen via MHC class II,ENSG00000095970,GO_0002588
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,positive regulation of calcium-mediated signaling,ENSG00000095970,GO_0050850
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,positive regulation of chemotaxis,ENSG00000095970,GO_0050921
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,positive regulation of cholesterol efflux,ENSG00000095970,GO_0010875
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,"positive regulation of complement activation, classical pathway",ENSG00000095970,GO_0045960
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,positive regulation of engulfment of apoptotic cell,ENSG00000095970,GO_1901076
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,positive regulation of establishment of protein localization,ENSG00000095970,GO_1904951
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,positive regulation of gene expression,ENSG00000095970,GO_0010628
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,positive regulation of high-density lipoprotein particle clearance,ENSG00000095970,GO_0010983
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,positive regulation of interleukin-10 production,ENSG00000095970,GO_0032733
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,positive regulation of intracellular signal transduction,ENSG00000095970,GO_1902533
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,positive regulation of low-density lipoprotein particle clearance,ENSG00000095970,GO_1905581
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,positive regulation of macrophage fusion,ENSG00000095970,GO_0034241
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,positive regulation of microglial cell activation,ENSG00000095970,GO_1903980
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,positive regulation of microglial cell migration,ENSG00000095970,GO_1904141
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,positive regulation of neuroinflammatory response,ENSG00000095970,GO_0150078
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,positive regulation of non-canonical NF-kappaB signal transduction,ENSG00000095970,GO_1901224
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,positive regulation of osteoclast differentiation,ENSG00000095970,GO_0045672
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,positive regulation of phagocytosis,ENSG00000095970,GO_0050766
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,"positive regulation of phagocytosis, engulfment",ENSG00000095970,GO_0060100
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,positive regulation of phosphatidylinositol 3-kinase/protein kinase B signal transduction,ENSG00000095970,GO_0051897
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,positive regulation of potassium ion transport,ENSG00000095970,GO_0043268
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,positive regulation of proteasomal protein catabolic process,ENSG00000095970,GO_1901800
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,positive regulation of protein localization to plasma membrane,ENSG00000095970,GO_1903078
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,positive regulation of protein secretion,ENSG00000095970,GO_0050714
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,positive regulation of synapse pruning,ENSG00000095970,GO_1905808
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,pyroptotic inflammatory response,ENSG00000095970,GO_0070269
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,regulation of TOR signaling,ENSG00000095970,GO_0032006
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,regulation of biological quality,ENSG00000095970,GO_0065008
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,regulation of cytokine production involved in inflammatory response,ENSG00000095970,GO_1900015
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,regulation of gene expression,ENSG00000095970,GO_0010468
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,regulation of hippocampal neuron apoptotic process,ENSG00000095970,GO_0110089
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,regulation of innate immune response,ENSG00000095970,GO_0045088
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,regulation of interleukin-6 production,ENSG00000095970,GO_0032675
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,regulation of lipid metabolic process,ENSG00000095970,GO_0019216
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,regulation of macrophage inflammatory protein 1 alpha production,ENSG00000095970,GO_0071640
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,regulation of oxidative stress-induced neuron intrinsic apoptotic signaling pathway,ENSG00000095970,GO_1903376
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,regulation of plasma membrane bounded cell projection organization,ENSG00000095970,GO_0120035
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,regulation of primary metabolic process,ENSG00000095970,GO_0080090
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,regulation of resting membrane potential,ENSG00000095970,GO_0060075
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,regulation of toll-like receptor 6 signaling pathway,ENSG00000095970,GO_0034151
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,respiratory burst after phagocytosis,ENSG00000095970,GO_0045728
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,response to axon injury,ENSG00000095970,GO_0048678
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,response to ischemia,ENSG00000095970,GO_0002931
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,semaphorin-plexin signaling pathway,ENSG00000095970,GO_0071526
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,signal transduction,ENSG00000095970,GO_0007165
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,,social behavior,ENSG00000095970,GO_0035176
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,DAP12 interactions,,ENSG00000095970,REACT:R-HSA-2172127
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,DAP12 signaling,,ENSG00000095970,REACT:R-HSA-2424491
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,Immunoregulatory interactions between a Lymphoid and a non-Lymphoid cell,,ENSG00000095970,REACT:R-HSA-198933
+TREM2,increasing,C3,"Early rise, then plateau",shared,8,Other semaphorin interactions,,ENSG00000095970,REACT:R-HSA-416700
+TYMS,increasing,C3,"Early rise, then plateau",shared,7,,DNA biosynthetic process,ENSG00000176890,GO_0071897
+TYMS,increasing,C3,"Early rise, then plateau",shared,7,,dTMP biosynthetic process,ENSG00000176890,GO_0006231
+TYMS,increasing,C3,"Early rise, then plateau",shared,7,,dTTP biosynthetic process,ENSG00000176890,GO_0006235
+TYMS,increasing,C3,"Early rise, then plateau",shared,7,,methylation,ENSG00000176890,GO_0032259
+TYMS,increasing,C3,"Early rise, then plateau",shared,7,,negative regulation of translation,ENSG00000176890,GO_0017148
+TYMS,increasing,C3,"Early rise, then plateau",shared,7,,nucleotide biosynthetic process,ENSG00000176890,GO_0009165
+TYMS,increasing,C3,"Early rise, then plateau",shared,7,,tetrahydrofolate interconversion,ENSG00000176890,GO_0035999
+TYMS,increasing,C3,"Early rise, then plateau",shared,7,,tetrahydrofolate metabolic process,ENSG00000176890,GO_0046653
+TYMS,increasing,C3,"Early rise, then plateau",shared,7,G1/S-Specific Transcription,,ENSG00000176890,REACT:R-HSA-69205
+TYMS,increasing,C3,"Early rise, then plateau",shared,7,Interconversion of nucleotide di- and triphosphates,,ENSG00000176890,REACT:R-HSA-499943

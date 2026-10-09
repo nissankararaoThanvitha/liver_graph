@@ -1,3 +1,6 @@
+# Patient policy (corrected 2026-10-10): average repeat measurements only
+# when fibrosis stage is identical; otherwise retain biopsy 1. Existing
+# packaged results are historical and are not overwritten by the isolated run.
 """Paper 1, Task 3 -- where does the major fibrosis-stage change occur?
 
 For every fibrosis-associated gene and every consecutive transition
@@ -7,8 +10,8 @@ For every fibrosis-associated gene and every consecutive transition
                  the samples of the two stages only, so stages are compared
                  within study. Studies lacking either stage are dropped.
                  One row per patient per stage (repeat biopsies at the same
-                 stage averaged); a patient with biopsies on both sides of a
-                 transition keeps one, chosen at random.
+                 stage averaged); patients whose stage changed retain biopsy 1
+                 before any transition is selected.
   * p, q         t-test on beta, BH-FDR across genes within each transition
 "Substantially changing" = q < 0.05 and |beta| >= 0.2 (SD units).
 
@@ -25,6 +28,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+from biopsy_policy import select_biopsies
 from scipy import stats
 
 
@@ -65,7 +69,7 @@ gene_ids = set(genes.ensembl_id)
 symbol = genes.set_index("ensembl_id").symbol
 cluster = pd.read_csv(CLUSTERS).set_index("ensembl_id")[["cluster", "cluster_name"]]
 
-samples = pd.read_csv(SAMPLES)
+samples = select_biopsies(pd.read_csv(SAMPLES))
 samples = samples[samples.fibrosis_stage.notna()].copy()
 samples["fibrosis_stage"] = samples.fibrosis_stage.astype(int)
 
@@ -128,12 +132,8 @@ def transition_rows(a, b, rows_pool=None):
     m = m[m.fibrosis_stage.isin([a, b])]
     both_studies = m.groupby("dataset_id").fibrosis_stage.nunique()
     m = m[m.dataset_id.isin(both_studies[both_studies == 2].index)]
-    # a patient on both sides keeps one stage, chosen at random
-    dup = m.patient_id.duplicated(keep=False)
-    drop = []
-    for pid, g in m[dup].groupby("patient_id"):
-        drop.append(rng.choice(g.index.to_numpy()))
-    return m.drop(index=drop).index.to_numpy()
+    assert not m.patient_id.duplicated().any(), "Biopsy policy left duplicate patients"
+    return m.index.to_numpy()
 
 
 delta_mean = {t: genes[f"stage_{t[1]}"] - genes[f"stage_{t[0]}"] for t in TRANSITIONS}

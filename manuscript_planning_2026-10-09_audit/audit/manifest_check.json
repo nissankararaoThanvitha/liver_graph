@@ -1,0 +1,1843 @@
+[
+  {
+    "path": "README.md",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": true
+  },
+  {
+    "path": "00_START_HERE/01_OVERVIEW.md",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": true
+  },
+  {
+    "path": "00_START_HERE/02_METHODS.md",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": true
+  },
+  {
+    "path": "00_START_HERE/03_STATISTICS.md",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": true
+  },
+  {
+    "path": "00_START_HERE/04_LIMITATIONS.md",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": true
+  },
+  {
+    "path": "00_START_HERE/05_HOW_TO_VERIFY.md",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": true
+  },
+  {
+    "path": "01_FIGURES/FIGURE_CAPTIONS.md",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "01_FIGURES/main/Figure1_study_design.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "01_FIGURES/main/Figure2_ladder_overlap.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "01_FIGURES/main/Figure3_shared_gene_agreement.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "01_FIGURES/main/Figure4_trajectory_shapes.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "01_FIGURES/main/Figure5_stage_heatmap.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "01_FIGURES/main/Figure6_choosing_k.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "01_FIGURES/main/Figure7_stage_transitions.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "01_FIGURES/main/Figure8_hallmark_enrichment.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "01_FIGURES/main/Figure9_mechanism_network.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "01_FIGURES/supplementary/FigureS10_dotplot_shared_up.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "01_FIGURES/supplementary/FigureS11_dotplot_shared_down.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "01_FIGURES/supplementary/FigureS12_dotplot_C1_all.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "01_FIGURES/supplementary/FigureS13_dotplot_C1_core.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "01_FIGURES/supplementary/FigureS14_dotplot_C2_all.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "01_FIGURES/supplementary/FigureS15_dotplot_C2_core.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "01_FIGURES/supplementary/FigureS16_dotplot_C3_all.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "01_FIGURES/supplementary/FigureS17_dotplot_C3_core.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "01_FIGURES/supplementary/FigureS18_dotplot_C4_all.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "01_FIGURES/supplementary/FigureS19_dotplot_C4_core.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "01_FIGURES/supplementary/FigureS1_all_gene_trajectories.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "01_FIGURES/supplementary/FigureS20_dotplot_C5_all.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "01_FIGURES/supplementary/FigureS21_dotplot_C5_core.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "01_FIGURES/supplementary/FigureS2_transition_deltas.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "01_FIGURES/supplementary/FigureS3_enrichment_GO_BP.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "01_FIGURES/supplementary/FigureS4_enrichment_Reactome.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "01_FIGURES/supplementary/FigureS5_enrichment_KEGG.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "01_FIGURES/supplementary/FigureS6_dotplot_fibrosis_only_up.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "01_FIGURES/supplementary/FigureS7_dotplot_fibrosis_only_down.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "01_FIGURES/supplementary/FigureS8_dotplot_inflammation_only_up.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "01_FIGURES/supplementary/FigureS9_dotplot_inflammation_only_down.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "02_TABLES/TABLE_CAPTIONS.md",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "02_TABLES/main/Table1_cohort.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "02_TABLES/main/Table2_gene_groups.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "02_TABLES/main/Table3_trajectory_clusters.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "02_TABLES/main/Table4_stage_transitions.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "02_TABLES/main/Table5_enrichment_counts.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "02_TABLES/main/Table6_prioritised_genes.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "02_TABLES/supplementary/TableS10_cluster_core_check.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "02_TABLES/supplementary/TableS11_evidence_scores_all_genes.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "02_TABLES/supplementary/TableS12_tier1_genes.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "02_TABLES/supplementary/TableS13_leave_one_study_out.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "02_TABLES/supplementary/TableS14_tier_cutoff_sensitivity.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "02_TABLES/supplementary/TableS15_leave_one_score_out.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "02_TABLES/supplementary/TableS16_rho_cutoff_sensitivity.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "02_TABLES/supplementary/TableS17_trajectory_cutoff.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "02_TABLES/supplementary/TableS18_shortlist_rule.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "02_TABLES/supplementary/TableS19_knowledge_graph_connections.xlsx",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "02_TABLES/supplementary/TableS1_top20_fibrosis_genes.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "02_TABLES/supplementary/TableS2_gene_cluster_assignments.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "02_TABLES/supplementary/TableS3_representative_genes.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "02_TABLES/supplementary/TableS4_choosing_k.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "02_TABLES/supplementary/TableS5_cluster_stability.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "02_TABLES/supplementary/TableS6_all_genes_all_transitions.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "02_TABLES/supplementary/TableS7_top_genes_per_transition.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "02_TABLES/supplementary/TableS8_top_pathways_per_group.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "02_TABLES/supplementary/TableS9_all_significant_terms.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task1_gene_groups/task1_shared_rho_scatter.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task1_gene_groups/task1_summary.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task1_gene_groups/task1_top20_fibrosis_genes.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task1_gene_groups/task1_venn.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task2_trajectories/task2_bootstrap_shape_stability.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task2_trajectories/task2_choosing_k.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task2_trajectories/task2_choosing_k.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task2_trajectories/task2_cluster_means.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task2_trajectories/task2_cluster_sizes.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task2_trajectories/task2_cluster_trajectories.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task2_trajectories/task2_gene_clusters.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task2_trajectories/task2_heatmap.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task2_trajectories/task2_representative_genes.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task2_trajectories/task2_robustness.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task2_trajectories/task2_robustness_crosstab.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task3_transitions/task3_all_genes_all_transitions.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task3_transitions/task3_cluster_by_transition.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task3_transitions/task3_delta_distributions.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task3_transitions/task3_top_genes_per_transition.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task3_transitions/task3_transition_comparison.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task3_transitions/task3_transition_summary.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/task4_all_significant.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/task4_cluster_core_check.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/task4_heatmap_go_bp.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/task4_heatmap_hallmark.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/task4_heatmap_kegg.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/task4_heatmap_reactome.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/task4_significant_counts.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/task4_top_pathways_per_group.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/dot_plots/dot_C1_all.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/dot_plots/dot_C1_core.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/dot_plots/dot_C2_all.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/dot_plots/dot_C2_core.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/dot_plots/dot_C3_all.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/dot_plots/dot_C3_core.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/dot_plots/dot_C4_all.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/dot_plots/dot_C4_core.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/dot_plots/dot_C5_all.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/dot_plots/dot_C5_core.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/dot_plots/dot_fibrosis_only_down.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/dot_plots/dot_fibrosis_only_up.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/dot_plots/dot_inflammation_only_down.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/dot_plots/dot_inflammation_only_up.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/dot_plots/dot_shared_down.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/dot_plots/dot_shared_up.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C1_all__GO_BP.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C1_all__Hallmark.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C1_all__KEGG.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C1_all__Reactome.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C1_core__GO_BP.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C1_core__Hallmark.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C1_core__KEGG.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C1_core__Reactome.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C2_all__GO_BP.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C2_all__Hallmark.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C2_all__KEGG.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C2_all__Reactome.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C2_core__GO_BP.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C2_core__Hallmark.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C2_core__KEGG.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C2_core__Reactome.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C3_all__GO_BP.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C3_all__Hallmark.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C3_all__KEGG.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C3_all__Reactome.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C3_core__GO_BP.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C3_core__Hallmark.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C3_core__KEGG.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C3_core__Reactome.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C4_all__GO_BP.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C4_all__Hallmark.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C4_all__KEGG.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C4_all__Reactome.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C4_core__GO_BP.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C4_core__Hallmark.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C4_core__KEGG.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C4_core__Reactome.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C5_all__GO_BP.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C5_all__Hallmark.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C5_all__KEGG.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C5_all__Reactome.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C5_core__GO_BP.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C5_core__Hallmark.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C5_core__KEGG.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/C5_core__Reactome.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/fibrosis_only_down__GO_BP.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/fibrosis_only_down__Hallmark.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/fibrosis_only_down__KEGG.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/fibrosis_only_down__Reactome.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/fibrosis_only_up__GO_BP.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/fibrosis_only_up__Hallmark.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/fibrosis_only_up__KEGG.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/fibrosis_only_up__Reactome.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/inflammation_only_down__GO_BP.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/inflammation_only_down__Hallmark.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/inflammation_only_down__KEGG.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/inflammation_only_down__Reactome.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/inflammation_only_up__GO_BP.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/inflammation_only_up__Hallmark.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/inflammation_only_up__KEGG.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/inflammation_only_up__Reactome.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/shared_down__GO_BP.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/shared_down__Hallmark.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/shared_down__KEGG.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/shared_down__Reactome.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/shared_up__GO_BP.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/shared_up__Hallmark.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/shared_up__KEGG.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task4_enrichment/enrichment_tables/shared_up__Reactome.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task5_gene_prioritisation/00_all_4692_progression_genes.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task5_gene_prioritisation/01_master_table.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task5_gene_prioritisation/03_rho_sensitivity.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task5_gene_prioritisation/04_delta_sensitivity.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task5_gene_prioritisation/05_powermatched_per_gene.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task5_gene_prioritisation/08_leave_one_score_out.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task5_gene_prioritisation/08_tier_sensitivity.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task5_gene_prioritisation/09a_tier1_genes.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task5_gene_prioritisation/09a_tier1_pathway_dominance.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task5_gene_prioritisation/09b_option_A_top5_per_cluster.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task5_gene_prioritisation/09b_option_B_cluster_top_score.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task5_gene_prioritisation/09b_option_comparison.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task5_gene_prioritisation/10_loso_runs.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task5_gene_prioritisation/10_loso_summary.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task5_gene_prioritisation/11_FINAL_shortlist_25_genes.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task5_gene_prioritisation/11_final_all_3681_genes.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task5_gene_prioritisation/11_final_tier1_genes.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task5_gene_prioritisation/12_KG_supplementary.xlsx",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "03_RESULTS/Task5_gene_prioritisation/12_mechanistic_subgraph.png",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/DATA_DICTIONARY.md",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/gene_tables/README.txt",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/gene_tables/genes_by_disease_group.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/gene_tables/genes_by_fibrosis_stage.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/gene_tables/genes_by_stage_and_age.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/gene_tables/genes_by_stage_and_sex.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/gene_tables/sample_demographics.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/graph_nodes/edges_my_progression.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/graph_nodes/gene_progression_scores.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/graph_nodes/nodes_dataset.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/graph_nodes/nodes_gene.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/harmonisation/_mapping_summary.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/harmonisation/_parse_summary.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/harmonisation/gene_id_map.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/harmonisation/nodes_sample_clinical.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/harmonisation/sample_crosswalk.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/harmonisation/samples_metadata.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/harmonisation/unmapped_genes.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/knowledge_layer/edges_biological_process_gene.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/knowledge_layer/edges_disease_disease.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/knowledge_layer/edges_disease_gene.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/knowledge_layer/edges_disease_phenotype.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/knowledge_layer/edges_drug_disease.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/knowledge_layer/edges_drug_gene.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/knowledge_layer/edges_gene_gene.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/knowledge_layer/edges_my_progression.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/knowledge_layer/edges_pathway_gene.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/knowledge_layer/nodes_bioprocess.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/knowledge_layer/nodes_disease.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/knowledge_layer/nodes_drug.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/knowledge_layer/nodes_pathway.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/knowledge_layer/nodes_phenotype.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/progression_genes/genes_by_disease_group.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/progression_genes/genes_by_fibrosis_stage.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/progression_genes/progression_both.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/progression_genes/progression_disease.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/progression_genes/progression_fibrosis.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "04_DATA/progression_genes/sample_demographics.csv",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "05_CODE/CODE_MAP.md",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "05_CODE/build_paper1_package.py",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "05_CODE/requirements.txt",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "05_CODE/analysis/make_figure1.py",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "05_CODE/analysis/task1_groups.py",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "05_CODE/analysis/task2_trajectories.py",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "05_CODE/analysis/task3_transitions.py",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "05_CODE/analysis/task4_enrichment.py",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "05_CODE/cypher/01_create_constraints.cypher",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "05_CODE/cypher/02_load_expression_edges.cypher",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "05_CODE/cypher/03_load_knowledge_layer.cypher",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "05_CODE/pipeline/01_parse_expression.py",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "05_CODE/pipeline/02_map_gene_ids.py",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "05_CODE/pipeline/03_build_crosswalk.py",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "05_CODE/pipeline/04_normalize_clinical.py",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "05_CODE/pipeline/05_build_graph_all.py",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "05_CODE/pipeline/06_build_optimuskg_layer.py",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "05_CODE/pipeline/07_find_progression_genes.py",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "05_CODE/pipeline/08_export_gene_tables.py",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "05_CODE/pipeline/09_build_progression_edges.py",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": true
+  },
+  {
+    "path": "05_CODE/prioritisation/hc0_master_gene_table.py",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "05_CODE/prioritisation/hc1_powermatched_transitions.py",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "05_CODE/prioritisation/hc2_evidence_scores.py",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "05_CODE/prioritisation/hc3_leave_one_study_out.py",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "05_CODE/prioritisation/hc4_mechanism_subgraph.py",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "05_CODE/validation/check_gene_mapping.py",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "05_CODE/validation/compare_result_versions.py",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "05_CODE/validation/diagnose_membership_confidence.py",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": true
+  },
+  {
+    "path": "05_CODE/validation/expected_graph_counts.py",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": true
+  },
+  {
+    "path": "05_CODE/validation/inspect_parsed_files.py",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "05_CODE/validation/verify_graph_counts.py",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "05_CODE/validation/verify_subgraph_against_neo4j.py",
+    "exists": true,
+    "hash_matches": true,
+    "matches_with_crlf": false,
+    "matches_with_lf": true
+  },
+  {
+    "path": "06_PROVENANCE/DATA_SOURCES.md",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  },
+  {
+    "path": "06_PROVENANCE/REBUILD.md",
+    "exists": true,
+    "hash_matches": false,
+    "matches_with_crlf": true,
+    "matches_with_lf": false
+  }
+]

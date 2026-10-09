@@ -1,0 +1,5 @@
+# Regenerable recovery subset and licensed gene sets; keep manifests and logs.
+data/graph_full/edges_GSE*.csv
+data/genesets/*.gmt
+__pycache__/
+logs/matplotlib/
