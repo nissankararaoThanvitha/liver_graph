@@ -51,6 +51,8 @@ RECORDED = {
     "EXPRESSES": 32471042, "ASSOCIATED_WITH": 1832441,
     "INTERACTS_WITH": 324116, "INVOLVED_IN": 157081,
     "HAS_PHENOTYPE": 149960, "IN_PATHWAY": 46751, "TREATS": 43636,
+    # 44,215 rows, of which 142 point at a disease id that is not a
+    # node in this layer and cannot load. 44,073 is complete.
     "PARENT_OF": 28919, "ACTS_ON": 20674, "CONTRAINDICATED_IN": 8255,
     "TRACKS_FIBROSIS": 3645, "TRACKS_INFLAMMATION": 2739,
     "IN_DATASET": 1085, "OFF_LABEL_FOR": 722,

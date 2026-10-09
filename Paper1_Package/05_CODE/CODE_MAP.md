@@ -95,12 +95,19 @@ behind it has moved, and comparing counts alone would miss it.
 |---|---|---|
 | 01 | `01_create_constraints.cypher` | uniqueness constraints and indexes. **Run first** |
 | 02 | `02_load_expression_edges.cypher` | the per-study expression edges |
+| 03 | `03_load_knowledge_layer.cypher` | the curated layer and the project's own `TRACKS_*` edges |
 
-**There is no committed loader for the knowledge layer.** The constraints
-file states that constraints must exist before those edges are loaded, but
-the loader itself was never written — the layer was loaded interactively.
-`verify_graph_counts.py` exists to detect the consequence: a loaded graph can
-be short of what the CSVs contain, and nothing else would report it.
+**Every statement in the knowledge-layer loader uses MERGE, not CREATE.**
+Running it twice duplicates nothing, so it is safe to re-run after a
+partial load. Gene nodes are MATCHed rather than created: a knowledge
+edge pointing at a gene this project never measured is dropped, not
+invented.
+
+`validation/verify_graph_counts.py` reconciles a loaded graph against the
+CSVs per relationship type, and `expected_graph_counts.py` says what each
+type should reach once edges with absent endpoints are dropped. Every
+type loads complete except PARENT_OF, at 44,073 of 44,215 — 142 rows
+point at a disease that is not a node in this layer.
 
 **The CSVs are the authoritative source.** No result in this package requires
 a running database.

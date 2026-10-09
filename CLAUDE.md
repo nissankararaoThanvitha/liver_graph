@@ -60,8 +60,11 @@ are convenient, not safe: when more than one version of the results exists, a
 default can pair new inputs with old intermediates and the run reports
 success. That failure has happened here more than once.
 
-Loading into Neo4j is Cypher: `create_kg_constraints.cypher`, then
-`reload_expression.cypher`.
+Loading into Neo4j is Cypher, in order: `create_kg_constraints.cypher`,
+`reload_expression.cypher` (the measurement edges), then
+`load_knowledge_layer.cypher` (the curated layer and the project's own
+`TRACKS_*` edges). Every statement in the last uses MERGE, so it is safe
+to re-run against a partly populated store.
 
 ## The graph
 
@@ -84,9 +87,10 @@ and they are the project's own contribution to the graph.
 
 **No analysis reads the database.** Every result comes from CSVs, including
 the mechanism subgraph. `verify_graph_counts.py` reconciles a loaded graph
-against the CSVs per relationship type — the live graph is currently short by
-40,247 links across five Disease-touching types, and there is no committed
-loader for the knowledge layer. Neither affects any result.
+against the CSVs per relationship type, and
+`scripts/expected_graph_counts.py` says what each type *should* reach
+once edges with absent endpoints are dropped — every type loads complete
+except PARENT_OF, which lands at 44,073 of 44,215.
 
 The server is configured with a 1 GB heap against a 2.5 GB store. Counting
 all relationships by type in one query times out — count per type, which hits

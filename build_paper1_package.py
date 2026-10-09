@@ -317,6 +317,10 @@ CODE_COPIES = [
      "05_CODE/cypher/01_create_constraints.cypher"),
     ("reload_expression.cypher",
      "05_CODE/cypher/02_load_expression_edges.cypher"),
+    ("load_knowledge_layer.cypher",
+     "05_CODE/cypher/03_load_knowledge_layer.cypher"),
+    ("scripts/expected_graph_counts.py",
+     "05_CODE/validation/expected_graph_counts.py"),
     ("requirements.txt", "05_CODE/requirements.txt"),
     ("build_paper1_package.py", "05_CODE/build_paper1_package.py"),
 ]

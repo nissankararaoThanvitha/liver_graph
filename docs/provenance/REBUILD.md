@@ -94,14 +94,26 @@ Nothing in this package needs it.
 ```
 1. create_kg_constraints.cypher     constraints and indexes, first
 2. reload_expression.cypher         the per-study expression edges
+3. load_knowledge_layer.cypher      the curated layer and the TRACKS_* edges
 ```
 
-The CSVs must be reachable from Neo4j's import directory.
+The CSVs must be reachable from Neo4j's import directory. Copy
+`data/graph_okg/*.csv` and `data/graph_full/edges_my_progression.csv` into it
+under `liverkg/`.
 
-**There is no committed loader for the knowledge layer** — it was loaded
-interactively. `verify_graph_counts.py` reconciles a loaded graph against the
-CSVs per relationship type and reports any shortfall, which is the check that
-makes that gap detectable.
+**Every statement in step 3 uses MERGE**, so running it twice duplicates
+nothing and a partial load can simply be re-run.
+
+Afterwards:
+
+```bash
+NEO4J_PASSWORD=... python verify_graph_counts.py --live
+```
+
+which reconciles every relationship type against the CSVs.
+`expected_graph_counts.py` says what each type should reach once edges with
+an absent endpoint are dropped: every type loads complete except PARENT_OF,
+at 44,073 of 44,215.
 
 **The store format is Enterprise-only.** A dump will not load into Community
 Edition; rebuild from the CSVs instead.
