@@ -35,9 +35,56 @@ in any test run across that study. No other dataset repeats a patient.
 
 Recovered labels
 ----------------
-    GSE162694  "nash12_F3" -> NASH,  "nash100_N" -> control
-               The suffix was cross-checked against fibrosis_stage_raw for all
-               143 samples and agreed on every one, so it is trustworthy.
+    GSE162694  "nash100_N" -> control,  "nash12_F3" -> NAFLD
+
+    CORRECTED. This study previously read every "_F0".."_F4" sample as
+    NASH, labelling 112 of its 143 samples NASH. That was wrong, and the
+    check that was supposed to catch it tested the wrong thing.
+
+    GEO records only {tissue, age, sex, fibrosis stage, nas score} for
+    this series -- no diagnosis field at all. The suffix is the fibrosis
+    stage. Reading a stage as a diagnosis assumes that anyone whose
+    scarring was measured has steatohepatitis, which is not true: 35 of
+    these samples sit at F0, with no scarring, and were all called NASH.
+
+    The old justification -- "the suffix was cross-checked against
+    fibrosis_stage_raw for all 143 samples and agreed on every one" --
+    is circular. The suffix IS the fibrosis stage, so that check only
+    confirmed that "_F3" means stage 3. It never tested the diagnosis.
+
+    The source paper (Sci Rep 2021, PMC8433177, this series' own
+    publication) gives the real counts in its Table 1, and its group
+    sizes match this cohort exactly:
+
+        normal histology  31 samples,  0 NASH
+        NAFLD stage 0     35 samples,  9 NASH   (26%)
+        NAFLD stage 1     30 samples, 21 NASH   (70%)
+        NAFLD stage 2     27 samples, 26 NASH   (96%)
+        NAFLD stage 3      8 samples,  7 NASH   (88%)
+        NAFLD stage 4     12 samples,  6 NASH   (50%)
+        total            143 samples, 69 NASH
+
+    So 69 of 143, not 112 -- 43 samples were mislabelled, and the error
+    is concentrated where it does most damage: 26 of the 35 stage-0
+    samples are not NASH.
+
+    Table 1 is a summary by group, and no supplementary file lists
+    samples individually (checked: all four of the paper's supplements
+    hold figures, gene signatures and methods, no sample IDs). Knowing
+    that 9 of 35 stage-0 samples are NASH does not say WHICH 9, so the
+    labels cannot be repaired, only corrected downward to what the data
+    supports.
+
+    NAFLD is what the paper itself calls these patients, and it is true
+    of all 112. It does not place them on the control -> NAFL -> NASH
+    ladder, because it does not say which rung -- which is the honest
+    position, since nobody knows. This study therefore no longer
+    contributes to the disease ladder, leaving three studies there.
+    Its fibrosis staging is unaffected and still contributes in full.
+
+    The NAS score cannot rescue this either, for the reason already
+    given below for GSE193066: Kleiner is explicit that NAS alone is not
+    a diagnostic criterion and cannot separate NASH from NAFL.
 
 Recovery that was tried and REJECTED
 ------------------------------------
@@ -117,6 +164,7 @@ DISEASE_MAP = {
 # NAFLD-spectrum patients whose NAFL/NASH subtype the series never states.
 SEVERITY_BAND = {"EARLY": "NAFLD", "MODERATE": "NAFLD"}
 
+# The suffix encodes normal histology or a fibrosis stage, nothing more.
 GSE162694_SUFFIX = re.compile(r"_(F\d|N)$")
 
 
@@ -134,7 +182,12 @@ def norm_disease(row):
     if gse == "GSE162694" and desc:
         m = GSE162694_SUFFIX.search(desc)
         if m:
-            return ("control" if m.group(1) == "N" else "NASH",
+            # "_N" is normal liver histology, which is a stated finding.
+            # "_F0".."_F4" is a FIBROSIS STAGE, not a diagnosis, so the
+            # most it supports is NAFLD -- the same label GSE135251
+            # carries for patients whose NAFL/NASH subtype is unstated.
+            # See the module docstring for why NASH was wrong here.
+            return ("control" if m.group(1) == "N" else "NAFLD",
                     "recovered_from_description")
 
     # GSE193066 intentionally omitted here -- see the rejected-recovery note

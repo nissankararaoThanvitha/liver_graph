@@ -1,27 +1,26 @@
 # Rebuilding what this package does not ship
 
 You do not need any of this to read the results, check a number, or write the
-paper. Everything the paper states is traceable to a file inside
-`04_DATA/`, `02_TABLES/` or `03_RESULTS/`.
+paper. Everything the paper states traces to a file inside `04_DATA/`,
+`02_TABLES/` or `03_RESULTS/`.
 
-You need this only to **re-run stages 2–9**, or stages 12 and 14, which read
-bulk intermediates too large to ship (5.5 GB in total).
+You need this only to **re-run the pipeline from the raw data**, or to re-run
+the analyses that read the full expression graph.
 
 ---
 
-## What is missing and what it costs to rebuild
+## What is missing and what it costs
 
-| Folder | Size | Rebuild command | Needed by |
+| Folder | Size | How to get it | Needed by |
 |---|---|---|---|
-| `data/raw/` | 104 MB | download from GEO — `DATA_SOURCES.md` | stage 2 |
-| `data/interim_full/` | 197 MB | `python parse_expression.py --raw-dir data/raw --out-dir data/interim_full` | stages 3, 5, 7 |
-| `data/graph_full/` | 2.1 GB | `python build_graph_all.py --interim data/interim_full --out data/graph_full` | stages 9, 12, 14 (`hc1`, `hc3`) |
-| `data/optimuskg/` | 161 MB | Dataverse DOI `10.7910/DVN/IYNGEV` | stage 8 |
-| `data/primekg/` | 937 MB | Dataverse DOI `10.7910/DVN/IXA7BM` | only to rebuild the superseded layer |
-| `data/genesets/` | 5.7 MB | MSigDB URL in `DATA_SOURCES.md` | stage 13 |
-| `data/graph_all/` | 1.6 GB | `python build_graph_all.py` | nothing — superseded by `graph_full` |
-| `data/kg_triples/` | 138 MB | `python export_triples.py --min-assoc 0.3` | unresolved link prediction only |
-| `data/prediction/` | 54 MB | `python train_link_prediction.py` | unresolved link prediction only |
+| `data/raw/` | 104 MB | download from GEO — see `DATA_SOURCES.md` | parsing |
+| `data/interim_full/` | 197 MB | `python parse_expression.py --raw-dir data/raw` | gene mapping, graph build |
+| `data/graph_full/` | 2.1 GB | `python build_graph_all.py --interim data/interim_full --out data/graph_full` | progression genes, Tasks 2 and 3, hc1 and hc3 |
+| `data/optimuskg/` | 161 MB | Dataverse DOI `10.7910/DVN/IYNGEV` | rebuilding the knowledge layer |
+| `data/genesets/` | 5.7 MB | MSigDB — URL in `DATA_SOURCES.md` | enrichment |
+
+The built knowledge layer **is** shipped, as `04_DATA/knowledge_layer/`, so
+`data/optimuskg/` is only needed to rebuild it from source.
 
 ---
 
@@ -40,28 +39,30 @@ python build_crosswalk.py
 python normalize_clinical.py
 python build_graph_all.py --interim data/interim_full --out data/graph_full
 python build_optimuskg_layer.py
-python find_progression_genes.py
+python find_progression_genes.py --graph data/graph_full --out data/progression_full
 python export_for_mentor.py
-python paper1_task1_groups.py
-python paper1_task2_trajectories.py
-python paper1_task3_transitions.py
-python paper1_task4_enrichment.py
+python paper1_task1_groups.py          --out Paper1_Results/Task1
+python paper1_task2_trajectories.py    --out Paper1_Results/Task2
+python paper1_task3_transitions.py     --out Paper1_Results/Task3 --clusters Paper1_Results/Task2/task2_gene_clusters.csv
+python paper1_task4_enrichment.py      --out Paper1_Results/Task4 --clusters Paper1_Results/Task2/task2_gene_clusters.csv
+python scripts/make_fig1.py
 ```
 
-Then stage 14, noting that the second script runs **twice**:
+Then the prioritisation, noting that the scoring script runs **twice**:
 
 ```bash
-python Paper1_HighConfidence/powermatched_transitions.py
-python Paper1_HighConfidence/high_confidence_genes.py
-python Paper1_HighConfidence/loso_validation.py
-python Paper1_HighConfidence/high_confidence_genes.py
-python Paper1_HighConfidence/kg_subgraph.py
+python scripts/00_all_4692_progression_genes.py --out Paper1_HighConfidence
+python scripts/powermatched_transitions.py      --out Paper1_HighConfidence --results Paper1_Results
+python scripts/high_confidence_genes.py         --out Paper1_HighConfidence --results Paper1_Results
+python scripts/loso_validation.py               --out Paper1_HighConfidence --results Paper1_Results
+python scripts/high_confidence_genes.py         --out Paper1_HighConfidence --results Paper1_Results
+python scripts/kg_subgraph.py                   --out Paper1_HighConfidence --results Paper1_Results
 ```
 
-The repeat is required: step 11 of `high_confidence_genes.py` needs the
-leave-one-study-out columns that `loso_validation.py` writes.
+The repeat is required: the final tables need the leave-one-study-out columns
+that `loso_validation.py` writes.
 
-Finally, to rebuild this package:
+Finally:
 
 ```bash
 python build_paper1_package.py
@@ -69,38 +70,41 @@ python build_paper1_package.py
 
 ---
 
-## Two things that will bite you
+## Three things worth knowing
 
-**Do not pass `--drop-zeros` to the parser.** Measured zeros are kept
-deliberately — dropping them removes the switching-on that *is* the
-progression signal (IL6 is detected in 10% of stage-1 and 64% of stage-4
-patients), and costs 9.1 M measurements and 514 progression genes. The
-analyses read `data/interim_full`, the no-flag output, not `data/interim`.
+**Pass `--out`, `--results` and `--clusters` explicitly.** The defaults are
+convenient, not safe: if more than one version of the results exists, a
+default can pair new inputs with old intermediates and the run will report
+success.
 
-**`powermatched_transitions.py` and `loso_validation.py` are slow.** They
-read `data/graph_full` (2.1 GB) and refit per gene: 50 draws × 4 transitions
-× 3,645 genes, and 2,535 leave-one-study-out runs. Expect a long wall time
-and plan accordingly.
+**`powermatched_transitions.py` and `loso_validation.py` are slow.** They read
+2.1 GB and refit per gene — 50 draws × 4 transitions × 3,681 genes, and 2,625
+leave-one-study-out runs. Plan for a long wall time.
+
+**`parse_expression.py` keeps measured zeros by default, and should.** A gene
+reading zero is a measurement, and the progression signal includes genes
+switching on with stage.
 
 ---
 
 ## Loading the graph (optional)
 
-Only if you want the database itself. Nothing in this package needs it.
+Nothing in this package needs it.
 
 ```
-1. create_kg_constraints.cypher      constraints and indexes, first
-2. load_edges.cypher                 knowledge layer + expression edges
-3. reload_expression.cypher          expression edges only, later re-loads
+1. create_kg_constraints.cypher     constraints and indexes, first
+2. reload_expression.cypher         the per-study expression edges
 ```
 
-The CSVs must be reachable from Neo4j's import directory — the load scripts
-read `file:///liverkg/...`, so copy the generated CSVs there first.
+The CSVs must be reachable from Neo4j's import directory.
 
-**The store format is `block-block-1.1`, which is Enterprise-only.** A dump
-of this graph will not load into Community Edition. Rebuild from the CSVs
-instead if you only have Community.
+**There is no committed loader for the knowledge layer** — it was loaded
+interactively. `verify_graph_counts.py` reconciles a loaded graph against the
+CSVs per relationship type and reports any shortfall, which is the check that
+makes that gap detectable.
 
-**Do not count all relationships by type in one query.** On a 1 GB heap
-against a 2.5 GB store it times out. Count per type instead — that hits the
-count store and returns instantly.
+**The store format is Enterprise-only.** A dump will not load into Community
+Edition; rebuild from the CSVs instead.
+
+**Do not count all relationships by type in one query** — it times out on a
+small heap. Count per type, which hits the count store and returns instantly.

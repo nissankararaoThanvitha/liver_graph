@@ -1,20 +1,20 @@
 # Figure captions
 
-Captions for every figure in this package, ready to paste. Main figures are in `main/`, supplementary in `supplementary/`. All are PNG at 300 dpi. The numbering is set in `build_paper1_package.py` and nowhere else, so figures cannot be renumbered in one place and not another.
+Captions for every figure, ready to paste. Main figures are in `main/`, supplementary in `supplementary/`. All are PNG at 300 dpi.
 
 ## Figure 1
 
 **Study design and analysis pipeline.**
 
-Eight public GEO liver transcriptome studies parsed to a common long format, harmonised on the gene axis (identifier mapping to Ensembl) and the patient axis (fibrosis stage, disease group, patient identity), standardised within study, and loaded into a Neo4j property graph together with a curated knowledge layer. Every number shown on the figure is read from the committed outputs.
+Eight public GEO liver transcriptome studies parsed to a common long format, harmonised on the gene axis (identifier mapping to Ensembl) and the patient axis (fibrosis stage, disease group, patient identity), standardised within study, and integrated with a curated knowledge layer. Every count shown is read from the committed outputs at draw time.
 
-`Figure1_pipeline.png`
+`Figure1_study_design.png`
 
 ## Figure 2
 
 **Overlap between the two progression ladders.**
 
-Genes significantly associated with fibrosis stage and with disease group, giving the fibrosis-only (1,953), inflammation-only (1,047) and shared (1,692) partitions used throughout the paper.
+Genes significantly associated with fibrosis stage and with disease group, giving the fibrosis-only, inflammation-only and shared partitions used throughout.
 
 `Figure2_ladder_overlap.png`
 
@@ -22,7 +22,7 @@ Genes significantly associated with fibrosis stage and with disease group, givin
 
 **Agreement between ladders among shared genes.**
 
-Fibrosis correlation against inflammation correlation for the 1,692 shared genes. The two clouds are concordantly rising and concordantly falling genes; one gene (GPD1) is discordant. Spearman rho = 0.725 overall, 0.453 within rising genes and 0.354 within falling genes.
+Fibrosis correlation against inflammation correlation for genes significant on both ladders. The two clouds are concordantly rising and concordantly falling genes.
 
 `Figure3_shared_gene_agreement.png`
 
@@ -36,7 +36,7 @@ Mean standardised expression of each cluster at fibrosis stages F0 to F4. Cluste
 
 ## Figure 5
 
-**Stage profiles of all 3,645 fibrosis-associated genes.**
+**Stage profiles of all fibrosis-associated genes.**
 
 Genes in rows grouped by cluster, stages F0-F4 in columns. Values are mean standardised expression per stage.
 
@@ -44,9 +44,9 @@ Genes in rows grouped by cluster, stages F0-F4 in columns. Values are mean stand
 
 ## Figure 6
 
-**Choice of cluster number.**
+**Selection of the cluster number.**
 
-Silhouette score, gene-subsample stability and patient-bootstrap stability for k = 3 to 8. k = 5 is the largest k retaining a gene-subsample adjusted Rand index of at least 0.95.
+Silhouette score, gene-subsample stability and patient-bootstrap stability for k = 3 to 8. See 04_LIMITATIONS.md for the basis of the k = 5 choice, which must be stated in the Methods.
 
 `Figure6_choosing_k.png`
 
@@ -54,7 +54,7 @@ Silhouette score, gene-subsample stability and patient-bootstrap stability for k
 
 **Comparison of the four stage transitions.**
 
-Counts of substantially changing genes on the full data, the same counts under the power-matched design of 30 patients per stage, and the distribution of effect sizes. Equalising power isolates F3-F4 as the transition carrying the largest transcriptional change.
+Numbers of substantially changing genes on the full data, the same counts under the power-matched design of 30 patients per stage, and the distribution of effect sizes. Equalising power isolates F3-F4 as the transition carrying the largest transcriptional change.
 
 `Figure7_stage_transitions.png`
 
@@ -62,23 +62,23 @@ Counts of substantially changing genes on the full data, the same counts under t
 
 **Hallmark process enrichment across groups and clusters.**
 
-All significantly enriched Hallmark processes (FDR < 0.05) by gene group and trajectory cluster, tested against the 14,794-gene eligible background.
+All significantly enriched Hallmark processes (false-discovery rate below 0.05) by gene group and trajectory cluster, tested against the eligible-gene background.
 
 `Figure8_hallmark_enrichment.png`
 
 ## Figure 9
 
-**Where the high-confidence fibrosis genes converge.**
+**Mechanisms shared by the high-confidence fibrosis genes.**
 
-The twelve mechanisms significantly over-represented among the 507 Tier 1 genes, with the genes reaching three or more of them plus every one of the final 25 reaching any: 46 genes, 12 mechanisms, 169 edges. Edges are INVOLVED_IN for biological processes (126) and IN_PATHWAY for pathways (43). Read the convergence as coming from Tier 1 as a whole, not from the final 25 -- see 05_LIMITATIONS.md.
+The twelve mechanisms significantly over-represented among the Tier 1 genes, with the genes reaching three or more of them and every shortlisted gene reaching any. Read the convergence as a property of Tier 1 as a whole, not of the shortlist -- see 04_LIMITATIONS.md.
 
-`Figure9_mechanism_subgraph.png`
+`Figure9_mechanism_network.png`
 
 ## Figure S1
 
 **Every fibrosis gene's trajectory, by cluster.**
 
-All 3,645 genes in grey with the cluster average overlaid, one panel per cluster. Shows the spread behind each averaged shape in Figure 4.
+All genes in grey with the cluster average overlaid, one panel per cluster. Shows the spread behind each averaged shape in Figure 4.
 
 `FigureS1_all_gene_trajectories.png`
 
@@ -94,7 +94,7 @@ Per-transition distribution of expression change, at stage-mean level and at pat
 
 **GO Biological Process enrichment across groups and clusters.**
 
-Top five GO BP terms per group, FDR < 0.05, against the 14,794-gene background.
+Top five GO BP terms per group at FDR < 0.05.
 
 `FigureS3_enrichment_GO_BP.png`
 
@@ -102,7 +102,7 @@ Top five GO BP terms per group, FDR < 0.05, against the 14,794-gene background.
 
 **Reactome enrichment across groups and clusters.**
 
-Top five Reactome terms per group, FDR < 0.05, against the 14,794-gene background.
+Top five Reactome terms per group at FDR < 0.05.
 
 `FigureS4_enrichment_Reactome.png`
 
@@ -110,130 +110,138 @@ Top five Reactome terms per group, FDR < 0.05, against the 14,794-gene backgroun
 
 **KEGG enrichment across groups and clusters.**
 
-Top five KEGG terms per group, FDR < 0.05, against the 14,794-gene background.
+Top five KEGG terms per group at FDR < 0.05.
 
 `FigureS5_enrichment_KEGG.png`
 
 ## Figure S6
 
-**Enrichment dot plot: fibrosis-only rising genes.**
+**Enrichment dot plot: fibrosis-only increasing genes.**
 
-Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR. Tested against the 14,794-gene eligible background.
+Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR.
 
 `FigureS6_dotplot_fibrosis_only_up.png`
 
 ## Figure S7
 
-**Enrichment dot plot: fibrosis-only falling genes.**
+**Enrichment dot plot: fibrosis-only decreasing genes.**
 
-Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR. Tested against the 14,794-gene eligible background.
+Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR.
 
 `FigureS7_dotplot_fibrosis_only_down.png`
 
 ## Figure S8
 
-**Enrichment dot plot: inflammation-only rising genes.**
+**Enrichment dot plot: inflammation-only increasing genes.**
 
-Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR. Tested against the 14,794-gene eligible background.
+Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR.
 
 `FigureS8_dotplot_inflammation_only_up.png`
 
 ## Figure S9
 
-**Enrichment dot plot: genes rising on both ladders.**
+**Enrichment dot plot: inflammation-only decreasing genes.**
 
-Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR. Tested against the 14,794-gene eligible background.
+Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR.
 
-`FigureS9_dotplot_shared_up.png`
+`FigureS9_dotplot_inflammation_only_down.png`
 
 ## Figure S10
 
-**Enrichment dot plot: genes falling on both ladders.**
+**Enrichment dot plot: genes increasing on both ladders.**
 
-Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR. Tested against the 14,794-gene eligible background.
+Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR.
 
-`FigureS10_dotplot_shared_down.png`
+`FigureS10_dotplot_shared_up.png`
 
 ## Figure S11
 
-**Enrichment dot plot: cluster C1 (early increase), all genes.**
+**Enrichment dot plot: genes decreasing on both ladders.**
 
-Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR. Tested against the 14,794-gene eligible background.
+Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR.
 
-`FigureS11_dotplot_C1_all.png`
+`FigureS11_dotplot_shared_down.png`
 
 ## Figure S12
 
-**Enrichment dot plot: cluster C1, high-confidence members only.**
+**Enrichment dot plot: cluster C1 (early increase), all genes.**
 
-Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR. Tested against the 14,794-gene eligible background.
+Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR.
 
-`FigureS12_dotplot_C1_core.png`
+`FigureS12_dotplot_C1_all.png`
 
 ## Figure S13
 
-**Enrichment dot plot: cluster C2 (late increase), all genes.**
+**Enrichment dot plot: cluster C1, high-confidence members only.**
 
-Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR. Tested against the 14,794-gene eligible background.
+Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR.
 
-`FigureS13_dotplot_C2_all.png`
+`FigureS13_dotplot_C1_core.png`
 
 ## Figure S14
 
-**Enrichment dot plot: cluster C2, high-confidence members only.**
+**Enrichment dot plot: cluster C2 (late increase), all genes.**
 
-Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR. Tested against the 14,794-gene eligible background.
+Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR.
 
-`FigureS14_dotplot_C2_core.png`
+`FigureS14_dotplot_C2_all.png`
 
 ## Figure S15
 
-**Enrichment dot plot: cluster C3 (early rise, then plateau), all genes.**
+**Enrichment dot plot: cluster C2, high-confidence members only.**
 
-Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR. Tested against the 14,794-gene eligible background.
+Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR.
 
-`FigureS15_dotplot_C3_all.png`
+`FigureS15_dotplot_C2_core.png`
 
 ## Figure S16
 
-**Enrichment dot plot: cluster C3, high-confidence members only.**
+**Enrichment dot plot: cluster C3 (early rise, then plateau), all genes.**
 
-Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR. Tested against the 14,794-gene eligible background.
+Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR.
 
-`FigureS16_dotplot_C3_core.png`
+`FigureS16_dotplot_C3_all.png`
 
 ## Figure S17
 
-**Enrichment dot plot: cluster C4 (mid decrease), all genes.**
+**Enrichment dot plot: cluster C3, high-confidence members only.**
 
-Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR. Tested against the 14,794-gene eligible background.
+Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR.
 
-`FigureS17_dotplot_C4_all.png`
+`FigureS17_dotplot_C3_core.png`
 
 ## Figure S18
 
-**Enrichment dot plot: cluster C4, high-confidence members only.**
+**Enrichment dot plot: cluster C4 (mid decrease), all genes.**
 
-Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR. Tested against the 14,794-gene eligible background.
+Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR.
 
-`FigureS18_dotplot_C4_core.png`
+`FigureS18_dotplot_C4_all.png`
 
 ## Figure S19
 
-**Enrichment dot plot: cluster C5 (late decrease), all genes.**
+**Enrichment dot plot: cluster C4, high-confidence members only.**
 
-Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR. Tested against the 14,794-gene eligible background.
+Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR.
 
-`FigureS19_dotplot_C5_all.png`
+`FigureS19_dotplot_C4_core.png`
 
 ## Figure S20
 
+**Enrichment dot plot: cluster C5 (late decrease), all genes.**
+
+Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR.
+
+`FigureS20_dotplot_C5_all.png`
+
+## Figure S21
+
 **Enrichment dot plot: cluster C5, high-confidence members only.**
 
-Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR. Tested against the 14,794-gene eligible background.
+Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR.
 
-`FigureS20_dotplot_C5_core.png`
+`FigureS21_dotplot_C5_core.png`
 
 ---
 
-Every figure above is reproduced by the script named for it in `05_CODE/`; the numbers quoted in the captions come from the committed result tables in `03_RESULTS/`, not from memory.
+Each figure is produced by the script named for it in `05_CODE/`, and the numbering is set in one place in `build_paper1_package.py`.

@@ -4,6 +4,8 @@ Groups come from the `ladder` column of genes_by_fibrosis_stage.csv:
 fibrosis_only / inflammation_only / both (shared). Each group is split by
 direction of its rho. Outputs go to Paper1_Results/Task1/.
 """
+import sys
+import argparse
 from pathlib import Path
 
 import matplotlib
@@ -14,7 +16,14 @@ import pandas as pd
 from scipy.stats import spearmanr
 
 SRC = Path("data/for_mentor/genes_by_fibrosis_stage.csv")
-OUT = Path("Paper1_Results/Task1")
+# Output folder. Defaults to the committed location; --out redirects
+# it so a re-run can be compared against the previous version instead
+# of overwriting it.
+_ap = argparse.ArgumentParser(add_help=False)
+_ap.add_argument("--out", default="Paper1_Results/Task1")
+_args, _rest = _ap.parse_known_args()
+sys.argv = [sys.argv[0]] + _rest
+OUT = Path(_args.out)
 OUT.mkdir(parents=True, exist_ok=True)
 
 df = pd.read_csv(SRC)
@@ -27,7 +36,10 @@ shared = df[df.ladder == "both"]
 def row(group, subset, direction, n):
     return {"group": group, "direction": direction, "n_genes": n,
             "pct_of_group": round(100 * n / len(subset), 1) if len(subset) else 0,
-            "pct_of_all_4692": round(100 * n / total, 1)}
+            # Named from `total`, not hardcoded: the gene count has
+            # changed twice already and a frozen name in the header
+            # silently misreports which denominator was used.
+            f"pct_of_all_{total}": round(100 * n / total, 1)}
 
 
 rows = []
@@ -46,7 +58,7 @@ rows.append(row("shared", shared, "discordant (fib down, inf up)", int(((f < 0) 
 
 summary = pd.DataFrame(rows)
 summary.to_csv(OUT / "task1_summary.csv", index=False, encoding="utf-8-sig")
-print(summary.to_string(index=False, encoding="utf-8-sig"))
+print(summary.to_string(index=False))
 
 # --- Venn (two sets: fibrosis-associated vs inflammation-associated) ---
 fig, ax = plt.subplots(figsize=(7, 5))
