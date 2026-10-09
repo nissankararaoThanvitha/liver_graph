@@ -1,3 +1,0 @@
-option,n_genes,n_C1,n_C2,n_C3,n_C4,n_C5,n_increasing,n_decreasing,n_fibrosis_only,n_shared,n_F0→F1,n_F1→F2,n_F2→F3,n_F3→F4,min_score,max_score,top_pathway,top_pathway_n,top_pathway_pct
-A - top 5 per cluster,25,5,5,5,5,5,15,10,12,13,5,4,9,7,7,9,Positive regulation of hydrolase activity,3,12.0
-B - cluster top score,43,29,6,1,1,6,36,7,19,24,11,3,15,14,8,9,T cell activation,6,14.0

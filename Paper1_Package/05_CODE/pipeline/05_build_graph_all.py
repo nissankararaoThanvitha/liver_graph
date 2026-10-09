@@ -52,7 +52,7 @@ CHUNK = 1_000_000
 # Set by main() from the command line. data/interim was parsed with
 # --drop-zeros; data/interim_full keeps them, which is what the progression
 # work needs -- a gene switching off IS the signal there.
-INTERIM = "data/interim"
+INTERIM = "data/interim_full"
 OUT = "data/graph_all"
 
 

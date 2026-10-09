@@ -24,6 +24,37 @@ BANDS = {            # muted fills; text stays near-black so colour is never loa
     "disc":  "#fdf0e3", "anal": "#eaf1f5", "out":   "#f0f0f0",
 }
 
+
+# ---------------------------------------------------------- live numbers
+# Read from the committed outputs at draw time. These counts have each
+# changed at least once; typed into the figure they go stale silently.
+import csv as _csv
+from pathlib import Path as _Path
+
+_ROOT = _Path(__file__).resolve().parent.parent
+_RES = _ROOT / "Paper1_Results"
+_PG = _RES / "00_progression_genes"
+
+
+def _rows(path):
+    with open(path, newline="", encoding="utf-8-sig") as fh:
+        return list(_csv.DictReader(fh))
+
+
+_g = {r["group"]: int(r["n_genes"]) for r in
+      _rows(_RES / "Task1/task1_summary.csv") if r["direction"] == "all"}
+N_FIB_ONLY, N_INFL_ONLY, N_SHARED = (_g["fibrosis_only"],
+                                     _g["inflammation_only"], _g["shared"])
+N_PROGRESSION = N_FIB_ONLY + N_INFL_ONLY + N_SHARED
+N_FIBROSIS = N_FIB_ONLY + N_SHARED
+N_ELIGIBLE = len(_rows(_PG / "progression_fibrosis.csv"))
+_samples = _rows(_PG / "sample_demographics.csv")
+N_SAMPLES = len(_samples)
+N_PATIENTS = len({r["patient_id"] for r in _samples})
+N_STAGED = sum(1 for r in _samples if r["fibrosis_stage"])
+N_CLUSTERS = len(_rows(_RES / "Task2/task2_cluster_sizes.csv"))
+N_GENES = len(_rows(_ROOT / "data/graph_full/nodes_gene.csv"))
+
 fig, ax = plt.subplots(figsize=(7.4, 9.5))
 ax.set_xlim(-9, 100); ax.set_ylim(0, 124)
 ax.axis("off")
@@ -55,7 +86,7 @@ def band(y, label):
 # ------------------------------------------------------------------ DATA
 ax.text(48, 122.3, "Eight public human liver transcriptome studies (GEO)",
         ha="center", va="center", fontsize=9.4, fontweight="bold", color=INK)
-ax.text(48, 119.2, "1,085 samples from 1,027 patients",
+ax.text(48, 119.2, f"{N_SAMPLES:,} samples from {N_PATIENTS:,} patients",
         ha="center", va="center", fontsize=8.4, color="#555")
 
 band(113.8, "DATA")
@@ -78,7 +109,7 @@ box(4, 99.0, 88, 7.0,
     BANDS["harm"])
 arrow(48, 99.0, 48, 95.8)
 
-hb = ["Gene identifiers\nHGNC → Ensembl\n53,993 genes\nmap_gene_ids.py",
+hb = [f"Gene identifiers\nHGNC → Ensembl\n{N_GENES:,} genes\nmap_gene_ids.py",
       "Sample crosswalk\nsample_key → GSM\nmatch rate checked\nbuild_crosswalk.py",
       "Clinical labels\nfibrosis 0–4, disease group\n*_raw never modified\nnormalize_clinical.py"]
 w3 = 28.0
@@ -102,7 +133,7 @@ box(50, 58.0, 42, 12.6,
     "Open Targets score ≥ 0.1", BANDS["graph"], fs=7.4)
 arrow(46.5, 64.3, 49.5, 64.3, style="<|-|>")
 box(6, 47.0, 84, 7.2,
-    "Neo4j property graph   ·   126,244 nodes   ·   35,091,066 relationships\n"
+    f"Neo4j property graph   ·   {N_GENES:,} genes   ·   {N_STAGED:,} staged samples\n"
     "measurement and curated knowledge queryable together", BANDS["graph"], fs=7.5)
 arrow(25, 58.0, 40, 54.4, lw=0.6)
 arrow(71, 58.0, 56, 54.4, lw=0.6)
@@ -113,7 +144,7 @@ band(37, "DISCOVERY")
 box(6, 30.0, 84, 13.6,
     "Progression-gene identification   ·   find_progression_genes.py\n"
     "per-study Spearman ρ against each ladder → median ρ, Fisher combination,\n"
-    "BH q < 0.05, all tested studies agreeing on direction   →   4,692 genes\n"
+    f"BH q < 0.05, all studies agreeing on direction   →   {N_PROGRESSION:,} genes\n"
     "two ladders scored separately — fibrosis F0→F4 (scarring)\n"
     "and disease control→NAFL→NASH (inflammation)",
     BANDS["disc"], fs=7.4)
@@ -121,10 +152,10 @@ arrow(48, 30.0, 48, 27.0)
 
 # -------------------------------------------------------------- ANALYSES
 band(19.6, "ANALYSES")
-an = ["Task 1\nProgression groups\nfibrosis-only 1,953\ninflammation-only 1,047\nshared 1,692",
-      "Task 2\nF0–F4 trajectories\n3,645 fibrosis genes\nk-means, k = 5\nfive shapes",
+an = [f"Task 1\nProgression groups\nfibrosis-only {N_FIB_ONLY:,}\ninflammation-only {N_INFL_ONLY:,}\nshared {N_SHARED:,}",
+      f"Task 2\nF0–F4 trajectories\n{N_FIBROSIS:,} fibrosis genes\nk-means, k = {N_CLUSTERS}\n{N_CLUSTERS} shapes",
       "Task 3\nStage transitions\nvalue_z ~ stage + study\npower-matched design\nF3→F4 largest",
-      "Task 4\nPathway enrichment\nGO, KEGG, Reactome\nand Hallmark\nbackground = 14,794"]
+      f"Task 4\nPathway enrichment\nGO, KEGG, Reactome\nand Hallmark\nbackground = {N_ELIGIBLE:,}"]
 w4, g4 = 21.6, 1.8
 x4 = (96 - (4 * w4 + 3 * g4)) / 2
 for i, txt in enumerate(an):
@@ -141,6 +172,7 @@ box(12, 0.8, 72, 7.2,
     "and pathway context, released as per-analysis CSVs",
     BANDS["out"], fs=7.6)
 
-out = r"Paper1_Results/Figure1/figure1_pipeline.png"
+out = _RES / "Figure1" / "figure1_pipeline.png"
+out.parent.mkdir(parents=True, exist_ok=True)
 fig.savefig(out, dpi=300, bbox_inches="tight", facecolor="white")
 print("wrote", out)

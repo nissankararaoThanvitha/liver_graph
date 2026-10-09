@@ -50,13 +50,10 @@ Ensembl ID onto one canonical Ensembl gene ID with the version stripped.
 ## Knowledge graphs
 
 **OptimusKG** — Harvard Dataverse, DOI `10.7910/DVN/IYNGEV`, 161 MB.
-The layer actually used, and the one loaded into the graph.
-
-**PrimeKG** — Harvard Dataverse, DOI `10.7910/DVN/IXA7BM`, 937 MB.
-Superseded and replaced; see `00_START_HERE/04_DECISIONS.md` §8 for the
-table that decided it (0 drugs treating NASH/NAFLD/cirrhosis against 74/95/71).
-Still required to reproduce Figure 9 as currently built — see
-`00_START_HERE/05_LIMITATIONS.md` §14.
+The source of the curated knowledge layer: diseases, drugs, pathways,
+biological processes, phenotypes and the relationships between them.
+Genes are identified by Ensembl ID, the same namespace this pipeline
+standardises on, so the join needs no translation.
 
 Underlying gene–disease association scores are Open Targets, carried through
 OptimusKG. Links are kept at score ≥ 0.1 and the score is stored on every

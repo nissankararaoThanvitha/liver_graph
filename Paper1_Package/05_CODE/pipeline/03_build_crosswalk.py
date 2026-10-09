@@ -25,7 +25,9 @@ import re
 
 import pandas as pd
 
-INTERIM = "data/interim"
+# data/interim_full, not data/interim: the project keeps measured
+# zeros, and data/interim was the zero-dropped parse, now deleted.
+INTERIM = "data/interim_full"
 META = "data/processed/samples_metadata.csv"
 OUT = "data/processed/sample_crosswalk.csv"
 

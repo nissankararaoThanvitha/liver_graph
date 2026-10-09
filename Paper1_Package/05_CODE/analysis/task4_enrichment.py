@@ -13,6 +13,8 @@ then kept if it has 10-500 background genes; enrichment is a one-sided
 hypergeometric test (gseapy.enrich), BH-FDR within each group x database.
 Outputs go to Paper1_Results/Task4/.
 """
+import sys
+import argparse
 from pathlib import Path
 import re
 
@@ -25,12 +27,33 @@ import pandas as pd
 from scipy.stats import hypergeom
 
 STAGE_FILE = Path("data/for_mentor/genes_by_fibrosis_stage.csv")
-CLUSTERS = Path("Paper1_Results/Task2/task2_gene_clusters.csv")
+CLUSTERS = None  # set below from --clusters; see the argparse block
 BACKGROUND = Path("data/progression_full/progression_fibrosis.csv")
 GMT_DIR = Path("data/genesets")
+# Below this a group cannot support an enrichment test. The
+# corrected membership-confidence metric leaves C1_core and
+# C3_core at 3 and 1 genes, which is a finding in itself rather
+# than something to test.
+MIN_GROUP_GENES = 5
 DATABASES = {"GO_BP": "c5.go.bp", "KEGG": "c2.cp.kegg_legacy",
              "Reactome": "c2.cp.reactome", "Hallmark": "h.all"}
-OUT = Path("Paper1_Results/Task4")
+# Output folder. Defaults to the committed location; --out redirects
+# it so a re-run can be compared against the previous version instead
+# of overwriting it.
+# One parse for both options. Parsing twice strips --out from
+# sys.argv on the first call, so the second call silently falls
+# back to the default and the run writes to the wrong folder.
+_ap = argparse.ArgumentParser(add_help=False)
+_ap.add_argument("--out", default="Paper1_Results/Task4")
+_ap.add_argument("--clusters",
+                 default="Paper1_Results/Task2/task2_gene_clusters.csv")
+_args, _rest = _ap.parse_known_args()
+sys.argv = [sys.argv[0]] + _rest
+# Task 2's clusters were read from a hardcoded v1 path, so a v2
+# re-run silently mixed v2 gene groups with v1 cluster
+# assignments. --clusters makes the pairing explicit.
+CLUSTERS = Path(_args.clusters)
+OUT = Path(_args.out)
 PER_RUN = OUT / "enrichment_tables"
 DOTS = OUT / "dot_plots"
 for d in (OUT, PER_RUN, DOTS):
@@ -90,8 +113,17 @@ rows = []
 for grp, genes in all_groups.items():
     glist = sorted(genes & background)
     for db, sets in genesets.items():
+        if len(glist) < MIN_GROUP_GENES:
+            print(f"  {grp:22s} {db:9s} skipped: only {len(glist)} "
+                  f"gene(s) in the background")
+            continue
         res = gp.enrich(gene_list=glist, gene_sets=sets, background=sorted(background),
                         outdir=None, cutoff=1.0, no_plot=True, verbose=False).results
+        if not isinstance(res, pd.DataFrame) or res.empty:
+            # gseapy returns a plain list, not an empty frame, when a
+            # gene list is too small to overlap any set.
+            print(f"  {grp:22s} {db:9s} no testable overlap")
+            continue
         res = res.rename(columns={"P-value": "p_value", "Adjusted P-value": "q_value",
                                   "Genes": "genes", "Term": "term"})
         k = res.Overlap.str.split("/").str[0].astype(int)
@@ -117,8 +149,12 @@ print(f"\nhypergeometric check ({r0.group}, {r0.term}): gseapy p={r0.p_value:.3e
 
 sig = allres[allres.significant]
 sig.to_csv(OUT / "task4_all_significant.csv", index=False, encoding="utf-8-sig")
+# fillna(0): a group skipped for being too small has no rows at all, and
+# reindexing it back in yields NaN. Zero is the honest count -- it was not
+# tested, and task4_cluster_core_check.csv records which groups those were.
 summary = (allres.groupby(["group", "database"]).significant.sum().unstack()
-           .reindex(list(all_groups))[list(DATABASES)].astype(int))
+           .reindex(list(all_groups))[list(DATABASES)]
+           .fillna(0).astype(int))
 summary.insert(0, "n_genes", [len(all_groups[k] & background) for k in summary.index])
 summary.to_csv(OUT / "task4_significant_counts.csv", encoding="utf-8-sig")
 print("\nSignificant terms (FDR < 0.05):\n" + summary.to_string())
@@ -212,7 +248,7 @@ for c in sorted(cluster_names):
                       "top10_all_also_sig_in_core": sum(t in b for t in top_all)})
 check = pd.DataFrame(check)
 check.to_csv(OUT / "task4_cluster_core_check.csv", index=False, encoding="utf-8-sig")
-print("\nCluster check, all genes vs high-confidence genes:\n" + check.to_string(index=False, encoding="utf-8-sig"))
+print("\nCluster check, all genes vs high-confidence genes:\n" + check.to_string(index=False))
 
 print("\nTop Hallmark / GO_BP per main group:")
 for grp in MAIN:
