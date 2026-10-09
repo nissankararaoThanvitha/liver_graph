@@ -1,0 +1,11 @@
+progression genes: 5,904  (fibrosis 3,688, inflammation 4,018)
+reading expression ...
+  6,063,408 measurements over 1,027 samples
+
+genes_by_fibrosis_stage.csv  5,904 genes  patients per stage: {0: 152, 1: 160, 2: 152, 3: 112, 4: 34}
+genes_by_disease_group.csv   5,904 genes  patients: {'NAFL': 89, 'NAFLD': 318, 'NASH': 110, 'control': 63, 'obese': 12}
+genes_by_stage_and_sex.csv   5,904 genes  327 samples
+genes_by_stage_and_age.csv   5,904 genes  327 samples
+sample_demographics.csv      1,085 samples
+
+written to data/for_mentor/

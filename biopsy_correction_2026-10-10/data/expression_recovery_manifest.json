@@ -1,0 +1,65 @@
+{
+  "source": "http://127.0.0.1:7474/db/neo4j/query/v2",
+  "database": "neo4j",
+  "subset": "genes with n_datasets=8, all samples",
+  "genes": 14794,
+  "studies": [
+    {
+      "dataset_id": "GSE126848",
+      "samples": 57,
+      "rows": 843258,
+      "path": "data/graph_full/edges_GSE126848.csv",
+      "sha256": "d1248768e01681ab984afce81511664978bdc8f8fcbf0687165f4b0029722586"
+    },
+    {
+      "dataset_id": "GSE130970",
+      "samples": 78,
+      "rows": 1153932,
+      "path": "data/graph_full/edges_GSE130970.csv",
+      "sha256": "799a78844a884e9a476249cae220022c8461b8c9015bea7592bfd67e7e421d57"
+    },
+    {
+      "dataset_id": "GSE135251",
+      "samples": 216,
+      "rows": 3195504,
+      "path": "data/graph_full/edges_GSE135251.csv",
+      "sha256": "ee58084dc0a27d6e72f434d4dc99e64085977ef555bc9ff0c5e4e4044d9494ff"
+    },
+    {
+      "dataset_id": "GSE162694",
+      "samples": 143,
+      "rows": 2115542,
+      "path": "data/graph_full/edges_GSE162694.csv",
+      "sha256": "a9403d78e4bc00c0fe9013e2b8b4c7a6718c5874f0eccf409b3f4abab34eac07"
+    },
+    {
+      "dataset_id": "GSE167523",
+      "samples": 98,
+      "rows": 1449812,
+      "path": "data/graph_full/edges_GSE167523.csv",
+      "sha256": "62a2a3402d188af44afef5043ceed32ebd9e6317346dd4564679946709546f18"
+    },
+    {
+      "dataset_id": "GSE193066",
+      "samples": 164,
+      "rows": 2426216,
+      "path": "data/graph_full/edges_GSE193066.csv",
+      "sha256": "858738b961af6583a4948b9ccac33d9bdd817e8107ad18c76c450e6ea67168f1"
+    },
+    {
+      "dataset_id": "GSE240729",
+      "samples": 67,
+      "rows": 991198,
+      "path": "data/graph_full/edges_GSE240729.csv",
+      "sha256": "e07825e46d6d2acbf969c7e2928a48ca3e2386d669d10953ea28e1fc787b1b1c"
+    },
+    {
+      "dataset_id": "GSE269412",
+      "samples": 262,
+      "rows": 3876028,
+      "path": "data/graph_full/edges_GSE269412.csv",
+      "sha256": "9832474ba0e446cf261c8f10830ddbe167f80efc8adb9812624b89ad5ba4a0ce"
+    }
+  ],
+  "read_only": true
+}

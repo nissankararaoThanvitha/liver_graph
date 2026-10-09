@@ -1,0 +1,26 @@
+[
+  {
+    "file": "c5.go.bp.v2024.1.Hs.symbols.gmt",
+    "url": "https://data.broadinstitute.org/gsea-msigdb/msigdb/release/2024.1.Hs/c5.go.bp.v2024.1.Hs.symbols.gmt",
+    "bytes": 4940222,
+    "sha256": "71df041c352cc810c11847db328bb94925c5448a009f310d224f2e8baa60b792"
+  },
+  {
+    "file": "c2.cp.kegg_legacy.v2024.1.Hs.symbols.gmt",
+    "url": "https://data.broadinstitute.org/gsea-msigdb/msigdb/release/2024.1.Hs/c2.cp.kegg_legacy.v2024.1.Hs.symbols.gmt",
+    "bytes": 100223,
+    "sha256": "06a5d7f82d90a0a6a2e464579d049fc42d279fc23fa9f79a956e56c4a442447f"
+  },
+  {
+    "file": "c2.cp.reactome.v2024.1.Hs.symbols.gmt",
+    "url": "https://data.broadinstitute.org/gsea-msigdb/msigdb/release/2024.1.Hs/c2.cp.reactome.v2024.1.Hs.symbols.gmt",
+    "bytes": 852693,
+    "sha256": "9ea1b5e656597daf423e41c5ebcaa9892bfedf3292fff768605d7b0d5e5e9703"
+  },
+  {
+    "file": "h.all.v2024.1.Hs.symbols.gmt",
+    "url": "https://data.broadinstitute.org/gsea-msigdb/msigdb/release/2024.1.Hs/h.all.v2024.1.Hs.symbols.gmt",
+    "bytes": 48690,
+    "sha256": "ee2463540042078bfa3f67828e1e223bb354446d9fbb4d22845866835ba5c772"
+  }
+]

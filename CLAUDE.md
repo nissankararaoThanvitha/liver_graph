@@ -1,3 +1,5 @@
+> **10 October 2026 update:** The researcher clarified the final purpose as stage-informed drug repurposing. Biopsy handling and affected analyses have now been corrected and verified. Current outputs are under `biopsy_correction_2026-10-10/`; see `BIOPSY_CORRECTION.md`. Counts and methods below describe the earlier version unless explicitly updated.
+
 # Liver disease knowledge graph
 
 A knowledge graph linking gene expression from eight human liver GEO studies

@@ -1,0 +1,166 @@
+Gene,Ensembl_ID,Mechanism,Mechanism_ID,Mechanism_type,Relationship,In_final_25
+ITGA3,ENSG00000005884,Integrin cell surface interactions,REACT:R-HSA-216083,Pathway,IN_PATHWAY,False
+ITGB5,ENSG00000082781,Integrin cell surface interactions,REACT:R-HSA-216083,Pathway,IN_PATHWAY,False
+ICAM1,ENSG00000090339,Integrin cell surface interactions,REACT:R-HSA-216083,Pathway,IN_PATHWAY,False
+ITGB8,ENSG00000105855,Integrin cell surface interactions,REACT:R-HSA-216083,Pathway,IN_PATHWAY,False
+COL1A1,ENSG00000108821,Integrin cell surface interactions,REACT:R-HSA-216083,Pathway,IN_PATHWAY,False
+ITGA4,ENSG00000115232,Integrin cell surface interactions,REACT:R-HSA-216083,Pathway,IN_PATHWAY,False
+COL5A1,ENSG00000130635,Integrin cell surface interactions,REACT:R-HSA-216083,Pathway,IN_PATHWAY,False
+COL4A2,ENSG00000134871,Integrin cell surface interactions,REACT:R-HSA-216083,Pathway,IN_PATHWAY,False
+THBS1,ENSG00000137801,Integrin cell surface interactions,REACT:R-HSA-216083,Pathway,IN_PATHWAY,False
+ITGAX,ENSG00000140678,Integrin cell surface interactions,REACT:R-HSA-216083,Pathway,IN_PATHWAY,False
+ITGB2,ENSG00000160255,Integrin cell surface interactions,REACT:R-HSA-216083,Pathway,IN_PATHWAY,False
+ITGA2,ENSG00000164171,Integrin cell surface interactions,REACT:R-HSA-216083,Pathway,IN_PATHWAY,False
+COL1A2,ENSG00000164692,Integrin cell surface interactions,REACT:R-HSA-216083,Pathway,IN_PATHWAY,False
+COL3A1,ENSG00000168542,Integrin cell surface interactions,REACT:R-HSA-216083,Pathway,IN_PATHWAY,False
+ITGAM,ENSG00000169896,Integrin cell surface interactions,REACT:R-HSA-216083,Pathway,IN_PATHWAY,False
+COL8A2,ENSG00000171812,Integrin cell surface interactions,REACT:R-HSA-216083,Pathway,IN_PATHWAY,False
+COL4A1,ENSG00000187498,Integrin cell surface interactions,REACT:R-HSA-216083,Pathway,IN_PATHWAY,False
+ITGB5,ENSG00000082781,ECM proteoglycans,REACT:R-HSA-3000178,Pathway,IN_PATHWAY,False
+TGFB1,ENSG00000105329,ECM proteoglycans,REACT:R-HSA-3000178,Pathway,IN_PATHWAY,False
+COL1A1,ENSG00000108821,ECM proteoglycans,REACT:R-HSA-3000178,Pathway,IN_PATHWAY,False
+COL5A1,ENSG00000130635,ECM proteoglycans,REACT:R-HSA-3000178,Pathway,IN_PATHWAY,False
+COL4A2,ENSG00000134871,ECM proteoglycans,REACT:R-HSA-3000178,Pathway,IN_PATHWAY,False
+ITGAX,ENSG00000140678,ECM proteoglycans,REACT:R-HSA-3000178,Pathway,IN_PATHWAY,False
+ITGA2,ENSG00000164171,ECM proteoglycans,REACT:R-HSA-3000178,Pathway,IN_PATHWAY,False
+COL1A2,ENSG00000164692,ECM proteoglycans,REACT:R-HSA-3000178,Pathway,IN_PATHWAY,False
+COL3A1,ENSG00000168542,ECM proteoglycans,REACT:R-HSA-3000178,Pathway,IN_PATHWAY,False
+COL4A1,ENSG00000187498,ECM proteoglycans,REACT:R-HSA-3000178,Pathway,IN_PATHWAY,False
+MMP2,ENSG00000087245,Interleukin-4 and Interleukin-13 signaling,REACT:R-HSA-6785807,Pathway,IN_PATHWAY,False
+ICAM1,ENSG00000090339,Interleukin-4 and Interleukin-13 signaling,REACT:R-HSA-6785807,Pathway,IN_PATHWAY,False
+TGFB1,ENSG00000105329,Interleukin-4 and Interleukin-13 signaling,REACT:R-HSA-6785807,Pathway,IN_PATHWAY,False
+CCL2,ENSG00000108691,Interleukin-4 and Interleukin-13 signaling,REACT:R-HSA-6785807,Pathway,IN_PATHWAY,False
+ITGAX,ENSG00000140678,Interleukin-4 and Interleukin-13 signaling,REACT:R-HSA-6785807,Pathway,IN_PATHWAY,False
+ITGB2,ENSG00000160255,Interleukin-4 and Interleukin-13 signaling,REACT:R-HSA-6785807,Pathway,IN_PATHWAY,False
+COL1A2,ENSG00000164692,Interleukin-4 and Interleukin-13 signaling,REACT:R-HSA-6785807,Pathway,IN_PATHWAY,False
+CXCL8,ENSG00000169429,Interleukin-4 and Interleukin-13 signaling,REACT:R-HSA-6785807,Pathway,IN_PATHWAY,False
+ITGAM,ENSG00000169896,Interleukin-4 and Interleukin-13 signaling,REACT:R-HSA-6785807,Pathway,IN_PATHWAY,False
+BCL2,ENSG00000171791,Interleukin-4 and Interleukin-13 signaling,REACT:R-HSA-6785807,Pathway,IN_PATHWAY,False
+COL1A1,ENSG00000108821,Developmental Lineage of Pancreatic Ductal Cells,REACT:R-HSA-9925563,Pathway,IN_PATHWAY,False
+SOX9,ENSG00000125398,Developmental Lineage of Pancreatic Ductal Cells,REACT:R-HSA-9925563,Pathway,IN_PATHWAY,False
+COL5A1,ENSG00000130635,Developmental Lineage of Pancreatic Ductal Cells,REACT:R-HSA-9925563,Pathway,IN_PATHWAY,False
+COL1A2,ENSG00000164692,Developmental Lineage of Pancreatic Ductal Cells,REACT:R-HSA-9925563,Pathway,IN_PATHWAY,False
+COL3A1,ENSG00000168542,Developmental Lineage of Pancreatic Ductal Cells,REACT:R-HSA-9925563,Pathway,IN_PATHWAY,False
+ANXA2,ENSG00000182718,Developmental Lineage of Pancreatic Ductal Cells,REACT:R-HSA-9925563,Pathway,IN_PATHWAY,False
+MMP2,ENSG00000087245,angiogenesis,GO_0001525,BioProcess,INVOLVED_IN,False
+MYH9,ENSG00000100345,angiogenesis,GO_0001525,BioProcess,INVOLVED_IN,False
+PIK3CG,ENSG00000105851,angiogenesis,GO_0001525,BioProcess,INVOLVED_IN,False
+CCL2,ENSG00000108691,angiogenesis,GO_0001525,BioProcess,INVOLVED_IN,False
+PDGFRB,ENSG00000113721,angiogenesis,GO_0001525,BioProcess,INVOLVED_IN,False
+CCN2,ENSG00000118523,angiogenesis,GO_0001525,BioProcess,INVOLVED_IN,False
+COL4A2,ENSG00000134871,angiogenesis,GO_0001525,BioProcess,INVOLVED_IN,False
+THBS1,ENSG00000137801,angiogenesis,GO_0001525,BioProcess,INVOLVED_IN,False
+EPHA2,ENSG00000142627,angiogenesis,GO_0001525,BioProcess,INVOLVED_IN,False
+THY1,ENSG00000154096,angiogenesis,GO_0001525,BioProcess,INVOLVED_IN,False
+MMP14,ENSG00000157227,angiogenesis,GO_0001525,BioProcess,INVOLVED_IN,False
+CXCL8,ENSG00000169429,angiogenesis,GO_0001525,BioProcess,INVOLVED_IN,False
+COL8A2,ENSG00000171812,angiogenesis,GO_0001525,BioProcess,INVOLVED_IN,False
+ANXA2,ENSG00000182718,angiogenesis,GO_0001525,BioProcess,INVOLVED_IN,False
+COL4A1,ENSG00000187498,angiogenesis,GO_0001525,BioProcess,INVOLVED_IN,False
+PDGFA,ENSG00000197461,angiogenesis,GO_0001525,BioProcess,INVOLVED_IN,False
+LYZ,ENSG00000090382,inflammatory response,GO_0006954,BioProcess,INVOLVED_IN,True
+TGFB1,ENSG00000105329,inflammatory response,GO_0006954,BioProcess,INVOLVED_IN,False
+PIK3CG,ENSG00000105851,inflammatory response,GO_0006954,BioProcess,INVOLVED_IN,False
+CCL2,ENSG00000108691,inflammatory response,GO_0006954,BioProcess,INVOLVED_IN,False
+KNG1,ENSG00000113889,inflammatory response,GO_0006954,BioProcess,INVOLVED_IN,True
+CXCR4,ENSG00000121966,inflammatory response,GO_0006954,BioProcess,INVOLVED_IN,False
+CCL21,ENSG00000137077,inflammatory response,GO_0006954,BioProcess,INVOLVED_IN,False
+THBS1,ENSG00000137801,inflammatory response,GO_0006954,BioProcess,INVOLVED_IN,False
+SEMA7A,ENSG00000138623,inflammatory response,GO_0006954,BioProcess,INVOLVED_IN,False
+EPHA2,ENSG00000142627,inflammatory response,GO_0006954,BioProcess,INVOLVED_IN,False
+ITGB2,ENSG00000160255,inflammatory response,GO_0006954,BioProcess,INVOLVED_IN,False
+F2RL1,ENSG00000164251,inflammatory response,GO_0006954,BioProcess,INVOLVED_IN,False
+CXCL8,ENSG00000169429,inflammatory response,GO_0006954,BioProcess,INVOLVED_IN,False
+CCL19,ENSG00000172724,inflammatory response,GO_0006954,BioProcess,INVOLVED_IN,False
+ITGA3,ENSG00000005884,integrin-mediated signaling pathway,GO_0007229,BioProcess,INVOLVED_IN,False
+ITGB5,ENSG00000082781,integrin-mediated signaling pathway,GO_0007229,BioProcess,INVOLVED_IN,False
+MYH9,ENSG00000100345,integrin-mediated signaling pathway,GO_0007229,BioProcess,INVOLVED_IN,False
+ITGB8,ENSG00000105855,integrin-mediated signaling pathway,GO_0007229,BioProcess,INVOLVED_IN,False
+NEDD9,ENSG00000111859,integrin-mediated signaling pathway,GO_0007229,BioProcess,INVOLVED_IN,False
+ITGA4,ENSG00000115232,integrin-mediated signaling pathway,GO_0007229,BioProcess,INVOLVED_IN,False
+CCN2,ENSG00000118523,integrin-mediated signaling pathway,GO_0007229,BioProcess,INVOLVED_IN,False
+SEMA7A,ENSG00000138623,integrin-mediated signaling pathway,GO_0007229,BioProcess,INVOLVED_IN,False
+ITGAX,ENSG00000140678,integrin-mediated signaling pathway,GO_0007229,BioProcess,INVOLVED_IN,False
+CCN1,ENSG00000142871,integrin-mediated signaling pathway,GO_0007229,BioProcess,INVOLVED_IN,False
+THY1,ENSG00000154096,integrin-mediated signaling pathway,GO_0007229,BioProcess,INVOLVED_IN,False
+ITGB2,ENSG00000160255,integrin-mediated signaling pathway,GO_0007229,BioProcess,INVOLVED_IN,False
+ITGA2,ENSG00000164171,integrin-mediated signaling pathway,GO_0007229,BioProcess,INVOLVED_IN,False
+COL3A1,ENSG00000168542,integrin-mediated signaling pathway,GO_0007229,BioProcess,INVOLVED_IN,False
+ITGAM,ENSG00000169896,integrin-mediated signaling pathway,GO_0007229,BioProcess,INVOLVED_IN,False
+SRC,ENSG00000197122,integrin-mediated signaling pathway,GO_0007229,BioProcess,INVOLVED_IN,False
+ITGBL1,ENSG00000198542,integrin-mediated signaling pathway,GO_0007229,BioProcess,INVOLVED_IN,False
+ITGB5,ENSG00000082781,cell migration,GO_0016477,BioProcess,INVOLVED_IN,False
+MMP2,ENSG00000087245,cell migration,GO_0016477,BioProcess,INVOLVED_IN,False
+PIK3CG,ENSG00000105851,cell migration,GO_0016477,BioProcess,INVOLVED_IN,False
+ITGB8,ENSG00000105855,cell migration,GO_0016477,BioProcess,INVOLVED_IN,False
+NEDD9,ENSG00000111859,cell migration,GO_0016477,BioProcess,INVOLVED_IN,False
+PDGFRB,ENSG00000113721,cell migration,GO_0016477,BioProcess,INVOLVED_IN,False
+CCN2,ENSG00000118523,cell migration,GO_0016477,BioProcess,INVOLVED_IN,False
+CXCR4,ENSG00000121966,cell migration,GO_0016477,BioProcess,INVOLVED_IN,False
+COL5A1,ENSG00000130635,cell migration,GO_0016477,BioProcess,INVOLVED_IN,False
+PDGFRA,ENSG00000134853,cell migration,GO_0016477,BioProcess,INVOLVED_IN,True
+CCL21,ENSG00000137077,cell migration,GO_0016477,BioProcess,INVOLVED_IN,False
+THBS1,ENSG00000137801,cell migration,GO_0016477,BioProcess,INVOLVED_IN,False
+EPHA2,ENSG00000142627,cell migration,GO_0016477,BioProcess,INVOLVED_IN,False
+MMP14,ENSG00000157227,cell migration,GO_0016477,BioProcess,INVOLVED_IN,False
+BCL2,ENSG00000171791,cell migration,GO_0016477,BioProcess,INVOLVED_IN,False
+SRC,ENSG00000197122,cell migration,GO_0016477,BioProcess,INVOLVED_IN,False
+ITGBL1,ENSG00000198542,cell migration,GO_0016477,BioProcess,INVOLVED_IN,False
+MMP2,ENSG00000087245,extracellular matrix organization,GO_0030198,BioProcess,INVOLVED_IN,False
+SOX9,ENSG00000125398,extracellular matrix organization,GO_0030198,BioProcess,INVOLVED_IN,False
+PDGFRA,ENSG00000134853,extracellular matrix organization,GO_0030198,BioProcess,INVOLVED_IN,True
+COL4A2,ENSG00000134871,extracellular matrix organization,GO_0030198,BioProcess,INVOLVED_IN,False
+CCN1,ENSG00000142871,extracellular matrix organization,GO_0030198,BioProcess,INVOLVED_IN,False
+MMP14,ENSG00000157227,extracellular matrix organization,GO_0030198,BioProcess,INVOLVED_IN,False
+ITGA2,ENSG00000164171,extracellular matrix organization,GO_0030198,BioProcess,INVOLVED_IN,False
+COL3A1,ENSG00000168542,extracellular matrix organization,GO_0030198,BioProcess,INVOLVED_IN,False
+COL8A2,ENSG00000171812,extracellular matrix organization,GO_0030198,BioProcess,INVOLVED_IN,False
+ADAMTSL2,ENSG00000197859,extracellular matrix organization,GO_0030198,BioProcess,INVOLVED_IN,True
+MMP2,ENSG00000087245,positive regulation of cell migration,GO_0030335,BioProcess,INVOLVED_IN,False
+TGFB1,ENSG00000105329,positive regulation of cell migration,GO_0030335,BioProcess,INVOLVED_IN,False
+CCL2,ENSG00000108691,positive regulation of cell migration,GO_0030335,BioProcess,INVOLVED_IN,False
+COL1A1,ENSG00000108821,positive regulation of cell migration,GO_0030335,BioProcess,INVOLVED_IN,False
+NEDD9,ENSG00000111859,positive regulation of cell migration,GO_0030335,BioProcess,INVOLVED_IN,False
+PDGFRB,ENSG00000113721,positive regulation of cell migration,GO_0030335,BioProcess,INVOLVED_IN,False
+CXCR4,ENSG00000121966,positive regulation of cell migration,GO_0030335,BioProcess,INVOLVED_IN,False
+PDGFRA,ENSG00000134853,positive regulation of cell migration,GO_0030335,BioProcess,INVOLVED_IN,True
+CCL21,ENSG00000137077,positive regulation of cell migration,GO_0030335,BioProcess,INVOLVED_IN,False
+THBS1,ENSG00000137801,positive regulation of cell migration,GO_0030335,BioProcess,INVOLVED_IN,False
+SEMA7A,ENSG00000138623,positive regulation of cell migration,GO_0030335,BioProcess,INVOLVED_IN,False
+ITGAX,ENSG00000140678,positive regulation of cell migration,GO_0030335,BioProcess,INVOLVED_IN,False
+EPHA2,ENSG00000142627,positive regulation of cell migration,GO_0030335,BioProcess,INVOLVED_IN,False
+CCN1,ENSG00000142871,positive regulation of cell migration,GO_0030335,BioProcess,INVOLVED_IN,False
+MMP14,ENSG00000157227,positive regulation of cell migration,GO_0030335,BioProcess,INVOLVED_IN,False
+F2RL1,ENSG00000164251,positive regulation of cell migration,GO_0030335,BioProcess,INVOLVED_IN,False
+CCL19,ENSG00000172724,positive regulation of cell migration,GO_0030335,BioProcess,INVOLVED_IN,False
+PDGFA,ENSG00000197461,positive regulation of cell migration,GO_0030335,BioProcess,INVOLVED_IN,False
+ICAM1,ENSG00000090339,positive regulation of ERK1 and ERK2 cascade,GO_0070374,BioProcess,INVOLVED_IN,False
+TREM2,ENSG00000095970,positive regulation of ERK1 and ERK2 cascade,GO_0070374,BioProcess,INVOLVED_IN,True
+TGFB1,ENSG00000105329,positive regulation of ERK1 and ERK2 cascade,GO_0070374,BioProcess,INVOLVED_IN,False
+PDGFRB,ENSG00000113721,positive regulation of ERK1 and ERK2 cascade,GO_0070374,BioProcess,INVOLVED_IN,False
+CCN2,ENSG00000118523,positive regulation of ERK1 and ERK2 cascade,GO_0070374,BioProcess,INVOLVED_IN,False
+PDGFRA,ENSG00000134853,positive regulation of ERK1 and ERK2 cascade,GO_0070374,BioProcess,INVOLVED_IN,True
+CCL21,ENSG00000137077,positive regulation of ERK1 and ERK2 cascade,GO_0070374,BioProcess,INVOLVED_IN,False
+SEMA7A,ENSG00000138623,positive regulation of ERK1 and ERK2 cascade,GO_0070374,BioProcess,INVOLVED_IN,False
+F2RL1,ENSG00000164251,positive regulation of ERK1 and ERK2 cascade,GO_0070374,BioProcess,INVOLVED_IN,False
+CCL19,ENSG00000172724,positive regulation of ERK1 and ERK2 cascade,GO_0070374,BioProcess,INVOLVED_IN,False
+SRC,ENSG00000197122,positive regulation of ERK1 and ERK2 cascade,GO_0070374,BioProcess,INVOLVED_IN,False
+PDGFA,ENSG00000197461,positive regulation of ERK1 and ERK2 cascade,GO_0070374,BioProcess,INVOLVED_IN,False
+ITGA3,ENSG00000005884,cell-cell adhesion,GO_0098609,BioProcess,INVOLVED_IN,False
+ITGB5,ENSG00000082781,cell-cell adhesion,GO_0098609,BioProcess,INVOLVED_IN,False
+ICAM1,ENSG00000090339,cell-cell adhesion,GO_0098609,BioProcess,INVOLVED_IN,False
+MYH9,ENSG00000100345,cell-cell adhesion,GO_0098609,BioProcess,INVOLVED_IN,False
+ITGB8,ENSG00000105855,cell-cell adhesion,GO_0098609,BioProcess,INVOLVED_IN,False
+ITGA4,ENSG00000115232,cell-cell adhesion,GO_0098609,BioProcess,INVOLVED_IN,False
+SOX9,ENSG00000125398,cell-cell adhesion,GO_0098609,BioProcess,INVOLVED_IN,False
+ITGAX,ENSG00000140678,cell-cell adhesion,GO_0098609,BioProcess,INVOLVED_IN,False
+CCN1,ENSG00000142871,cell-cell adhesion,GO_0098609,BioProcess,INVOLVED_IN,False
+THY1,ENSG00000154096,cell-cell adhesion,GO_0098609,BioProcess,INVOLVED_IN,False
+ITGB2,ENSG00000160255,cell-cell adhesion,GO_0098609,BioProcess,INVOLVED_IN,False
+NFASC,ENSG00000163531,cell-cell adhesion,GO_0098609,BioProcess,INVOLVED_IN,True
+ITGA2,ENSG00000164171,cell-cell adhesion,GO_0098609,BioProcess,INVOLVED_IN,False
+ITGAM,ENSG00000169896,cell-cell adhesion,GO_0098609,BioProcess,INVOLVED_IN,False
+BCL2,ENSG00000171791,cell-cell adhesion,GO_0098609,BioProcess,INVOLVED_IN,False
+COL8A2,ENSG00000171812,cell-cell adhesion,GO_0098609,BioProcess,INVOLVED_IN,False
+ANXA2,ENSG00000182718,cell-cell adhesion,GO_0098609,BioProcess,INVOLVED_IN,False
+ITGBL1,ENSG00000198542,cell-cell adhesion,GO_0098609,BioProcess,INVOLVED_IN,False
