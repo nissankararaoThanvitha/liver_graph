@@ -288,6 +288,8 @@ CODE_COPIES = [
     ("find_progression_genes.py",
      "05_CODE/pipeline/07_find_progression_genes.py"),
     ("export_for_mentor.py", "05_CODE/pipeline/08_export_gene_tables.py"),
+    ("build_progression_edges.py",
+     "05_CODE/pipeline/09_build_progression_edges.py"),
     ("paper1_task1_groups.py", "05_CODE/analysis/task1_groups.py"),
     ("paper1_task2_trajectories.py", "05_CODE/analysis/task2_trajectories.py"),
     ("paper1_task3_transitions.py", "05_CODE/analysis/task3_transitions.py"),
