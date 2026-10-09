@@ -15,6 +15,8 @@ For every fibrosis-associated gene and every consecutive transition
 F4 has far fewer samples than other stages, so a power-matched check refits
 every transition on equal-size random subsamples. Outputs: Paper1_Results/Task3/.
 """
+import sys
+import argparse
 import glob
 from pathlib import Path
 
@@ -28,9 +30,25 @@ from scipy import stats
 
 STAGE_FILE = Path("data/for_mentor/genes_by_fibrosis_stage.csv")
 SAMPLES = Path("data/for_mentor/sample_demographics.csv")
-CLUSTERS = Path("Paper1_Results/Task2/task2_gene_clusters.csv")
+CLUSTERS = None  # set below from --clusters; see the argparse block
 GRAPH = "data/graph_full"
-OUT = Path("Paper1_Results/Task3")
+# Output folder. Defaults to the committed location; --out redirects
+# it so a re-run can be compared against the previous version instead
+# of overwriting it.
+# One parse for both options. Parsing twice strips --out from
+# sys.argv on the first call, so the second call silently falls
+# back to the default and the run writes to the wrong folder.
+_ap = argparse.ArgumentParser(add_help=False)
+_ap.add_argument("--out", default="Paper1_Results/Task3")
+_ap.add_argument("--clusters",
+                 default="Paper1_Results/Task2/task2_gene_clusters.csv")
+_args, _rest = _ap.parse_known_args()
+sys.argv = [sys.argv[0]] + _rest
+# Task 2's clusters were read from a hardcoded v1 path, so a v2
+# re-run silently mixed v2 gene groups with v1 cluster
+# assignments. --clusters makes the pairing explicit.
+CLUSTERS = Path(_args.clusters)
+OUT = Path(_args.out)
 OUT.mkdir(parents=True, exist_ok=True)
 
 TRANSITIONS = [(0, 1), (1, 2), (2, 3), (3, 4)]
@@ -64,7 +82,7 @@ expr = expr.merge(samples[["sample_id", "patient_id", "dataset_id", "fibrosis_st
 wide = expr.pivot_table(index=["patient_id", "dataset_id", "fibrosis_stage"],
                         columns="ensembl_id", values="value_z", aggfunc="mean")
 wide = wide[genes.ensembl_id[genes.ensembl_id.isin(wide.columns)]]
-meta = wide.index.to_frame(index=False, encoding="utf-8-sig")
+meta = wide.index.to_frame(index=False)
 Y_all = wide.to_numpy()
 print(f"  {len(meta):,} patient-stage rows, {Y_all.shape[1]:,} genes, "
       f"{np.isnan(Y_all).mean()*100:.2f}% missing values")
@@ -252,5 +270,5 @@ cl["transition"] = pd.Categorical(cl.transition, labels, ordered=True)
 cl = cl.sort_values(["cluster", "transition"])
 cl.to_csv(OUT / "task3_cluster_by_transition.csv", index=False, encoding="utf-8-sig")
 print("\nPer-cluster patient-level change:")
-print(cl.to_string(index=False, encoding="utf-8-sig"))
+print(cl.to_string(index=False))
 print(f"\nWrote outputs to {OUT}/")
