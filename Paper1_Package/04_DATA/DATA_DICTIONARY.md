@@ -142,8 +142,8 @@ study and 10,621 appear in exactly one. **Never average across genes without
 checking it.** The progression analysis used only the 14,794 with
 `n_datasets = 8`.
 
-**`edges_my_progression.csv`** — 6,384 rows, the project's own contribution:
-`TRACKS_FIBROSIS` (3,645) and `TRACKS_INFLAMMATION` (2,739), with the rho, q,
+**`edges_my_progression.csv`** — 7,699 rows, the project's own contribution:
+`TRACKS_FIBROSIS` (3,681) and `TRACKS_INFLAMMATION` (4,018), with the rho, q,
 study count and direction on each edge. These are the only edges here derived
 from these patients rather than imported.
 
