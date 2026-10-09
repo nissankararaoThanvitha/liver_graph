@@ -13,6 +13,7 @@ Two robustness checks use patient-level value_z:
     different stage mix of each study cannot shape the curves; recluster and
     compare.
 """
+import argparse
 import glob
 from pathlib import Path
 import sys
@@ -29,7 +30,14 @@ from sklearn.metrics import adjusted_rand_score, silhouette_score
 SRC = Path("data/for_mentor/genes_by_fibrosis_stage.csv")
 SAMPLES = Path("data/for_mentor/sample_demographics.csv")
 GRAPH = "data/graph_full"
-OUT = Path("Paper1_Results/Task2")
+# Output folder. Defaults to the committed location; --out redirects
+# it so a re-run can be compared against the previous version instead
+# of overwriting it.
+_ap = argparse.ArgumentParser(add_help=False)
+_ap.add_argument("--out", default="Paper1_Results/Task2")
+_args, _rest = _ap.parse_known_args()
+sys.argv = [sys.argv[0]] + _rest
+OUT = Path(_args.out)
 OUT.mkdir(parents=True, exist_ok=True)
 STAGES = [f"stage_{i}" for i in range(5)]
 LABELS = ["F0", "F1", "F2", "F3", "F4"]
@@ -65,7 +73,7 @@ expr = pd.concat(parts).merge(
     samples[["sample_id", "patient_id", "dataset_id", "fibrosis_stage"]], on="sample_id")
 pw = expr.pivot_table(index=["patient_id", "dataset_id", "fibrosis_stage"],
                       columns="ensembl_id", values="value_z", aggfunc="mean")[fib.ensembl_id]
-pmeta = pw.index.to_frame(index=False, encoding="utf-8-sig")
+pmeta = pw.index.to_frame(index=False)
 pmeta["fibrosis_stage"] = pmeta.fibrosis_stage.astype(int)
 PY = pw.to_numpy()
 stage_onehot = pd.get_dummies(pmeta.fibrosis_stage).to_numpy(float)
@@ -168,17 +176,48 @@ fib["corr_to_centroid"] = [np.corrcoef(X[i], cent[c - 1])[0, 1] for i, c in enum
 # --- patient bootstrap at chosen k: are the SHAPES stable, and how sure is each gene? ---
 # Bootstrap clusters are matched to the main clusters by centroid shape.
 N_BOOT = 100
+# A bootstrap's clusters come out in arbitrary order, so they are matched to
+# the main ones by Hungarian assignment on centroid correlation. That
+# assignment is forced to be one-to-one: it returns a complete pairing even
+# when no good pairing exists. When a bootstrap merges two clusters and
+# splits a third -- which is what happens when clusters differ only in WHEN a
+# gene rises -- the leftover pairing can be arbitrary, and matched pairs then
+# correlate near zero or negative.
+#
+# Scoring every gene against such a bootstrap measures the failure, not the
+# gene. Measured at k=5: 30 of 100 bootstraps contained a failed pair, 29 of
+# them hitting one cluster, whose 683 genes were consequently reported as 0
+# confidently assigned while its shape was recovered at median r = 0.994.
+#
+# So a gene is scored only in the bootstraps where ITS OWN cluster was
+# matched soundly. Discarding the whole bootstrap would throw away the
+# clusters that did match; this keeps them and records the denominator per
+# gene in confidence_n_bootstraps.
+MIN_MATCH_R = 0.5
 same = np.zeros(len(X))
+assessable = np.zeros(len(X))
+failed_pairs = 0
 shape_r = []
 for b in range(N_BOOT):
     bm = KMeans(n_clusters=K, n_init=10, random_state=b).fit(bootstrap_profiles(rng))
     sim = np.corrcoef(cent, bm.cluster_centers_)[:K, K:]
     ri, ci = linear_sum_assignment(-sim)
-    shape_r.append(sim[ri, ci])
+    corrs = sim[ri, ci]
+    shape_r.append(corrs)
+    failed_pairs += int((corrs < MIN_MATCH_R).sum())
     to_main = {c: r + 1 for r, c in zip(ri, ci)}
-    same += np.array([to_main[l] for l in bm.labels_]) == fib.cluster.to_numpy()
+    hit = np.array([to_main[l] for l in bm.labels_]) == fib.cluster.to_numpy()
+    sound = corrs[fib.cluster.to_numpy() - 1] >= MIN_MATCH_R
+    same += hit & sound
+    assessable += sound
 shape_r = np.array(shape_r)
-fib["membership_confidence"] = (same / N_BOOT).round(2)
+fib["membership_confidence"] = (same / np.maximum(assessable, 1)).round(2)
+fib["confidence_n_bootstraps"] = assessable.astype(int)
+print(f"\nlabel matching: {failed_pairs} of {N_BOOT * K} matched pairs fell "
+      f"below r = {MIN_MATCH_R} and were not scored")
+print(f"                genes assessed in {int(assessable.min())}-"
+      f"{int(assessable.max())} of {N_BOOT} bootstraps "
+      f"(median {int(np.median(assessable))})")
 shape_stab = pd.DataFrame({"cluster": range(1, K + 1), "cluster_name": [names[k] for k in range(1, K + 1)],
                            "median_shape_corr": np.median(shape_r, 0).round(3),
                            "min_shape_corr": shape_r.min(0).round(3),
@@ -186,11 +225,12 @@ shape_stab = pd.DataFrame({"cluster": range(1, K + 1), "cluster_name": [names[k]
                                                      for k in range(1, K + 1)],
                            "n_genes": [int((fib.cluster == k).sum()) for k in range(1, K + 1)]})
 shape_stab.to_csv(OUT / "task2_bootstrap_shape_stability.csv", index=False, encoding="utf-8-sig")
-print(f"\nPatient bootstrap ({N_BOOT}x), shape recovery and gene confidence:\n" + shape_stab.to_string(index=False, encoding="utf-8-sig"))
+print(f"\nPatient bootstrap ({N_BOOT}x), shape recovery and gene confidence:\n" + shape_stab.to_string(index=False))
 
 # --- main CSV ---
 main = fib[["symbol", "ensembl_id", *STAGES, "cluster", "cluster_name",
-            "corr_to_centroid", "membership_confidence", "fibrosis_rho", "ladder"]].rename(
+            "corr_to_centroid", "membership_confidence", "confidence_n_bootstraps",
+            "fibrosis_rho", "ladder"]].rename(
     columns={"symbol": "Gene", **dict(zip(STAGES, LABELS))})
 main = main.sort_values(["cluster", "corr_to_centroid"], ascending=[True, False])
 main.to_csv(OUT / "task2_gene_clusters.csv", index=False, encoding="utf-8-sig")
@@ -201,7 +241,7 @@ sizes["pct_of_fibrosis_genes"] = (100 * sizes.n_genes / len(fib)).round(1)
 for i, lab in enumerate(LABELS):
     sizes[f"mean_{lab}"] = fib.groupby("cluster")[STAGES[i]].mean().round(3).values
 sizes.to_csv(OUT / "task2_cluster_sizes.csv", index=False, encoding="utf-8-sig")
-print("\n" + sizes.to_string(index=False, encoding="utf-8-sig"))
+print("\n" + sizes.to_string(index=False))
 
 # --- representative genes: closest to the cluster's average shape ---
 # ranked by bootstrap membership confidence first, then closeness to the shape
@@ -283,5 +323,5 @@ robust.to_csv(OUT / "task2_robustness.csv", index=False, encoding="utf-8-sig")
 xt = pd.crosstab(fib.cluster.map(lambda c: f"C{c} {names[c]}"), adj_labels,
                  rownames=["main cluster"], colnames=["study-adjusted cluster"])
 xt.to_csv(OUT / "task2_robustness_crosstab.csv", encoding="utf-8-sig")
-print("\nRobustness:\n" + robust.to_string(index=False, encoding="utf-8-sig") + "\n" + xt.to_string())
+print("\nRobustness:\n" + robust.to_string(index=False) + "\n" + xt.to_string())
 print(f"\nWrote outputs to {OUT}/")

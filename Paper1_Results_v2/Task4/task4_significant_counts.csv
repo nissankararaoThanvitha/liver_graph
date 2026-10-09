@@ -1,0 +1,17 @@
+﻿group,n_genes,GO_BP,KEGG,Reactome,Hallmark
+fibrosis_only_up,1212,351,31,29,10
+fibrosis_only_down,654,63,18,20,8
+inflammation_only_up,1782,135,7,190,12
+inflammation_only_down,421,0,0,0,1
+shared_up,1472,419,26,90,26
+shared_down,330,90,27,10,3
+C1_all,948,367,50,70,15
+C2_all,1528,530,20,50,21
+C3_all,209,92,3,33,3
+C4_all,313,9,1,2,2
+C5_all,683,150,33,40,7
+C1_core,3,0,0,0,0
+C2_core,772,344,6,35,22
+C3_core,1,0,0,0,0
+C4_core,130,0,0,0,0
+C5_core,510,160,32,36,7

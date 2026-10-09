@@ -125,6 +125,15 @@ def run_axis(axis, labels, core):
         lab = labels[(labels.dataset_id == gse) & labels[axis].notna()]
         if len(lab) < MIN_PATIENTS:
             continue
+        if lab[axis].nunique() < 2:
+            # Every patient at the same rung: a correlation needs the ladder
+            # to vary. GSE162694 hits this on the disease axis, where its 31
+            # normal-histology samples are the only ones placed on the ladder
+            # and its other 112 are NAFLD of unstated subtype. Without this
+            # guard the rank correlation divides by a zero standard deviation
+            # and returns NaN for every gene in that study.
+            print(f"  {axis:9s} {gse}: skipped, no variation on this ladder")
+            continue
 
         if REPEAT_POLICY == "first":
             # Drop second biopsies before anything is read. Only

@@ -1,0 +1,7 @@
+﻿main cluster,0,1,2,3,4,5
+"C1 Early increase (F0→F1), then continued",0,5,474,1,14,0
+C2 Late increase (largest at F3→F4),0,109,1,1113,0,0
+C3 Mid increase (largest at F2→F3),0,668,107,1,2,0
+"C4 Early rise, then plateau",0,0,1,0,189,0
+C5 Mid decrease (largest at F1→F2),26,0,0,0,0,279
+C6 Late decrease (largest at F3→F4),633,0,0,0,0,58
