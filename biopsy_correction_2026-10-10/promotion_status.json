@@ -1,0 +1,9 @@
+{
+  "archive": "archives/previous_results_2026-10-10.tar.gz",
+  "archive_verified_files": 500,
+  "active_results_promoted": true,
+  "expression_core_path": "data/expression_analysis_core",
+  "package_rebuild_pending": false,
+  "active_package_manifest_files": 264,
+  "promotion_verified": true
+}

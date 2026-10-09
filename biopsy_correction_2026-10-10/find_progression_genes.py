@@ -272,7 +272,7 @@ def main():
         both = both.reindex(
             both[["median_rho_fib", "median_rho_dis"]].abs().min(axis=1)
             .sort_values(ascending=False).index)
-        both.to_csv(f"{OUT}/progression_both.csv", index=False)
+        both.to_csv(f"{OUT}/diagnostic_both_q_significant.csv", index=False)
         print(f"=== GENES ON *BOTH* LADDERS: {len(both):,} ===")
         print(both.head(20)[["symbol_fib", "median_rho_fib",
                              "median_rho_dis"]].to_string(index=False))

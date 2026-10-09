@@ -2,6 +2,8 @@
 import json,os,subprocess,sys,time
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];os.chdir(ROOT)
+if (ROOT/'promotion_status.json').exists():
+    raise SystemExit('This correction run is promoted. Use root source scripts and docs/provenance/REBUILD.md; do not overwrite the baseline audit.')
 PYTHON='/tmp/liver-biopsy-venv/bin/python';env=dict(os.environ,OPENBLAS_NUM_THREADS='1',OMP_NUM_THREADS='1',MKL_NUM_THREADS='1',MPLCONFIGDIR=str(ROOT/'logs/matplotlib'),PYTHONUNBUFFERED='1')
 steps=[
  ('00_reproduce_discovery', ['find_progression_genes.py','--repeat-policy','first','--out','data/baseline_reproduced']),

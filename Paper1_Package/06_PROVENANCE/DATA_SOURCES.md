@@ -81,25 +81,18 @@ re-running `task4_enrichment.py`.
 
 A free MSigDB registration may be required. The version matters: MSigDB
 2024.1 renamed some GO terms relative to earlier releases, which is itself a
-documented finding in this project — see `05_LIMITATIONS.md` §14 and the
-note on name matching in `02_STAGE_BY_STAGE.md` stage 14.
+documented finding in this project — see `00_START_HERE/04_LIMITATIONS.md` and the
+note on name matching in `00_START_HERE/02_METHODS.md`.
 
 ---
 
-## Software
+## Software and recovered expression inputs
 
-Pinned in `05_CODE/requirements.txt`. The committed results were produced
-with exactly these versions:
+Historical upstream results documented Python3.13.7. Corrected analyses used Python3.12.14 with pandas2.3.3,numpy2.2.4,scipy1.16.3,scikit-learn1.7.2,matplotlib3.10.7,gseapy1.3.1. Baseline tested gene IDs/rhos/p/q and agreement counts reproduced before correction. Exact corrected environment is retained in biopsy_correction_2026-10-10/runtime_requirements.txt.
 
-Python 3.13.7 · pandas 2.3.3 · numpy 2.2.4 · scipy 1.16.3 ·
-scikit-learn 1.7.2 · matplotlib 3.10.7 · gseapy 1.3.1
+Graph at correction verification: Neo4j Enterprise2026.09.0. No raw expression or curated links were modified by the biopsy correction; only patient-derived progression links were updated with backup and verified identities/properties.
 
-Graph store: Neo4j Enterprise 2026.07.0 via Neo4j Desktop 2, store format
-`block-block-1.1`, configured with a 1 GB heap and 512 MB page cache against
-a 2.5 GB store. **No result in this package requires a running database.**
-
-Link prediction only (not needed, and its model failed validation):
-pykeen 1.11.1 · torch 2.14.0.
+The recovered input is14,794 eligible genes across1,085 samples:16,051,490 value_z records, at data/expression_analysis_core. Every eligible sample/gene pair was verified. This is not the full32,471,042-measurement export. Do not reload all EXPRESSES edges from it. Download/recovery manifests and hashes are retained in the correction audit. MSigDB2024.1.Hs files were recovered from the documented URLs; local GMTs are excluded from version control/package redistribution.
 
 ---
 

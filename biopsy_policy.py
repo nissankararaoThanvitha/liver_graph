@@ -42,3 +42,11 @@ def patient_expression(expression, labels, stage='fibrosis_stage'):
     aggregate = {c: 'first' for c in selected.columns if c not in keys}
     aggregate['value_z'] = 'mean'
     return merged.groupby(keys, as_index=False, dropna=False).agg(aggregate)
+
+
+def expression_directory(root=None):
+    """Locate the explicitly named recovered core; otherwise use legacy full CSVs."""
+    from pathlib import Path
+    base = Path(root) if root is not None else Path.cwd()
+    core = base / 'data/expression_analysis_core'
+    return core if core.is_dir() else base / 'data/graph_full'

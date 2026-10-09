@@ -127,13 +127,23 @@ _DOTS = [
     ("C5_all", "cluster C5 (late decrease), all genes"),
     ("C5_core", "cluster C5, high-confidence members only"),
 ]
+def dot_caption(slug):
+    with open(os.path.join(ROOT, RES, "Task4", "task4_significant_counts.csv"), encoding="utf-8-sig") as fh:
+        row = next(r for r in csv.DictReader(fh) if r["group"] == slug)
+    n = int(row["n_genes"])
+    if n < 5:
+        return "Enrichment not tested", f"Not tested: {n} confidently assigned gene(s), below the minimum of five."
+    if sum(int(row[c]) for c in ["GO_BP", "KEGG", "Reactome", "Hallmark"]) == 0:
+        return "Enrichment tested with no significant terms", f"Tested {n} genes; no terms at FDR < 0.05 in the four collections."
+    return "Enrichment dot plot", "Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR."
+
+
 for _i, (_slug, _what) in enumerate(_DOTS, start=6):
+    _title, _caption = dot_caption(_slug)
     SUPP_FIGURES.append((
         f"{RES}/Task4/dot_plots/dot_{_slug}.png",
         "FigureS%d_dotplot_%s.png" % (_i, _slug),
-        "Enrichment dot plot: %s." % _what,
-        "Top five terms per database. x = gene ratio, point size = number of "
-        "genes, colour = -log10 FDR."))
+        f"{_title}: {_what}.", _caption))
 
 # ----------------------------------------------------------------- tables
 MAIN_TABLES = [
@@ -160,12 +170,12 @@ MAIN_TABLES = [
      "Significantly enriched terms per group.",
      "Counts of terms at FDR < 0.05 in each database, per gene group and per "
      "trajectory cluster."),
-    (f"{HC}/11_FINAL_shortlist_25_genes.csv",
+    (f"{HC}/shortlist_with_membership_confidence.csv",
      "Table6_prioritised_genes.csv",
      "The prioritised fibrosis genes.",
      "The five highest-scoring Tier 1 genes per trajectory cluster, ties "
      "broken by correlation magnitude, with all five evidence scores, the "
-     "stage of largest change and the leave-one-study-out results."),
+     "stage of largest change, leave-one-study-out results and cluster confidence."),
 ]
 
 SUPP_TABLES = [
@@ -287,6 +297,7 @@ CODE_COPIES = [
      "05_CODE/pipeline/06_build_optimuskg_layer.py"),
     ("find_progression_genes.py",
      "05_CODE/pipeline/07_find_progression_genes.py"),
+    ("biopsy_policy.py", "05_CODE/biopsy_policy.py"),
     ("export_for_mentor.py", "05_CODE/pipeline/08_export_gene_tables.py"),
     ("build_progression_edges.py",
      "05_CODE/pipeline/09_build_progression_edges.py"),

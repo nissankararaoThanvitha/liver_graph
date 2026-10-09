@@ -1,40 +1,8 @@
-"""The full list of 4,692 progression genes, with how each one qualified.
+"""Write the corrected selected-union gene inventory.
 
-This is the input to everything else in this folder, written out explicitly
-so the starting set is auditable rather than implied.
-
-HOW A GENE QUALIFIES
-Of the 53,993 genes in the graph, 14,794 are measured in all eight studies
-and so can be tested at all. Each of those is correlated (Spearman) against
-each ladder separately WITHIN each study, and the per-study results combined
-by median rho and Fisher's method:
-
-    fibrosis ladder   F0 -> F4, scarring       5 studies stage it
-    disease ladder    control -> NAFL -> NASH  4 studies record it
-
-A gene qualifies on a ladder only if BOTH hold:
-
-    q < 0.05                     significant after BH-FDR, and
-    n_agree == n_studies         every study agrees on the direction
-
-The second condition does most of the work. Significance alone passes 10,940
-genes on the fibrosis ladder and 11,102 on the disease ladder; requiring all
-studies to agree on direction cuts those to 3,645 and 2,739. Roughly
-two-thirds of the statistically significant genes are dropped because the
-cohorts disagree about which way the gene goes.
-
-The union of the two lists is the 4,692:
-
-    fibrosis_only      1,953
-    both               1,692
-    inflammation_only  1,047
-
-The fibrosis-associated 3,645 (fibrosis_only + both) are the starting set for
-the high-confidence prioritisation. The 1,047 inflammation-only genes track
-inflammation rather than scarring and are not part of it.
-
-Usage:
-    python Paper1_HighConfidence/00_all_4692_progression_genes.py
+Apply q<.05 and all-study direction agreement on each axis, then union the two
+selected sets. The historical source filename is retained for callers; output
+is00_all_progression_genes.csv. Row count is derived from current inputs.
 """
 import pathlib
 from pathlib import Path
@@ -109,7 +77,7 @@ t = t.merge(stage.rename(columns={f"stage_{i}": f"F{i}" for i in range(5)}),
 
 t["in_fibrosis_starting_set"] = t.ladder.ne("inflammation_only")
 
-out = HERE / "00_all_4692_progression_genes.csv"
+out = HERE / "00_all_progression_genes.csv"
 t.to_csv(out, index=False)
 
 print(f"\nunion = {len(t):,} progression genes")

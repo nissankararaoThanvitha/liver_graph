@@ -1,19 +1,13 @@
-"""Paper 1, Task 3 -- where does the major fibrosis-stage change occur?
+# Patient policy (corrected 2026-10-10): average repeat measurements only
+# when fibrosis stage is identical; otherwise retain biopsy 1. Existing
+# packaged results are historical and are not overwritten by the isolated run.
+"""Adjacent-stage expression contrasts among corrected fibrosis-selected genes.
 
-For every fibrosis-associated gene and every consecutive transition
-(F0->F1, F1->F2, F2->F3, F3->F4):
-  * delta_mean   difference of stage means (from genes_by_fibrosis_stage.csv)
-  * beta         patient-level effect from  value_z ~ stage + study, fitted on
-                 the samples of the two stages only, so stages are compared
-                 within study. Studies lacking either stage are dropped.
-                 One row per patient per stage (repeat biopsies at the same
-                 stage averaged); a patient with biopsies on both sides of a
-                 transition keeps one, chosen at random.
-  * p, q         t-test on beta, BH-FDR across genes within each transition
-"Substantially changing" = q < 0.05 and |beta| >= 0.2 (SD units).
-
-F4 has far fewer samples than other stages, so a power-matched check refits
-every transition on equal-size random subsamples. Outputs: Paper1_Results/Task3/.
+Shared patient policy is applied before any stage contrast: equal-stage mean,
+otherwise biopsy1. Fit higher-stage indicator plus study effects, t-test and
+BH per contrast; substantial q<.05 and|beta|>=.2. Equal-study-cell matched refits
+compare transitions under repeated sampling. Counts remain inside a selected
+set and do not establish longitudinal progression or unbiased genome totals.
 """
 import sys
 import argparse
@@ -25,13 +19,14 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+from biopsy_policy import select_biopsies, expression_directory
 from scipy import stats
 
 
 STAGE_FILE = Path("data/for_mentor/genes_by_fibrosis_stage.csv")
 SAMPLES = Path("data/for_mentor/sample_demographics.csv")
 CLUSTERS = None  # set below from --clusters; see the argparse block
-GRAPH = "data/graph_full"
+GRAPH = str(expression_directory())
 # Output folder. Defaults to the committed location; --out redirects
 # it so a re-run can be compared against the previous version instead
 # of overwriting it.
@@ -65,7 +60,7 @@ gene_ids = set(genes.ensembl_id)
 symbol = genes.set_index("ensembl_id").symbol
 cluster = pd.read_csv(CLUSTERS).set_index("ensembl_id")[["cluster", "cluster_name"]]
 
-samples = pd.read_csv(SAMPLES)
+samples = select_biopsies(pd.read_csv(SAMPLES))
 samples = samples[samples.fibrosis_stage.notna()].copy()
 samples["fibrosis_stage"] = samples.fibrosis_stage.astype(int)
 
@@ -128,12 +123,8 @@ def transition_rows(a, b, rows_pool=None):
     m = m[m.fibrosis_stage.isin([a, b])]
     both_studies = m.groupby("dataset_id").fibrosis_stage.nunique()
     m = m[m.dataset_id.isin(both_studies[both_studies == 2].index)]
-    # a patient on both sides keeps one stage, chosen at random
-    dup = m.patient_id.duplicated(keep=False)
-    drop = []
-    for pid, g in m[dup].groupby("patient_id"):
-        drop.append(rng.choice(g.index.to_numpy()))
-    return m.drop(index=drop).index.to_numpy()
+    assert not m.patient_id.duplicated().any(), "Biopsy policy left duplicate patients"
+    return m.index.to_numpy()
 
 
 delta_mean = {t: genes[f"stage_{t[1]}"] - genes[f"stage_{t[0]}"] for t in TRANSITIONS}

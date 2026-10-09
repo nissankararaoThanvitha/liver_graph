@@ -1,40 +1,9 @@
-"""Per-gene power-matched transition results.
+"""Per-gene matched transition reproducibility on corrected patient data.
 
-Task 3 already ran this analysis. It computed beta and q for all 3,645 genes
-in every repetition and then kept only the count of substantial genes, so the
-per-gene detail existed for a moment and was discarded. This script re-runs
-the identical design and keeps it.
-
-WHY A MATCHED DESIGN AT ALL
-F4 has 34 patients where the other stages have 100-170, so a comparison
-involving F4 rests on far less data than one that does not. The matched design
-takes an equal number of patients from each stage, study by study, so every
-transition is judged on the same amount of evidence. 50 repetitions, different
-random patients each time, so one unlucky draw cannot decide anything.
-
-TWO NUMBERS PER GENE PER TRANSITION, AND THEY MEAN DIFFERENT THINGS
-
-  reps_reproducible  in how many of the 50 draws the jump stayed big
-                     (|beta| >= 0.2) AND kept the sign it has in the
-                     full-patient fit.
-                     -> asks "is this effect reproducible?". A fluke depends on
-                        which patients were drawn, so redrawing kills it. This
-                        is the number the X score uses.
-
-  reps_significant   in how many of the 50 draws it ALSO passed q < 0.05.
-                     -> asks "could this be chance?", which at 30 patients per
-                        stage and BH-FDR across 3,645 genes the design cannot
-                        answer: Task 3 measured a median of ZERO significant
-                        genes per draw at F0->F1. A low value here cannot
-                        distinguish "no effect" from "no power", so it scores
-                        nothing. It is reported because it is evidence about
-                        the study's limits, not about the genes.
-
-The matched design drops GSE193066: it lacks patients at some stage, so it
-cannot contribute an equal cell to every transition. Four studies remain.
-
-Usage:
-    python Paper1_HighConfidence/powermatched_transitions.py
+Apply shared biopsy policy before contrasts. Fifty fixed-size study-balanced
+draws measure effect magnitude/direction reproducibility separately from strict
+significance. X uses reproducibility, not matched significance. Constants and
+scoring rules are unchanged; corrected profiles/memberships are the inputs.
 """
 import glob
 import pathlib
@@ -48,7 +17,7 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 import sys
 sys.path.insert(0, str(ROOT))
-from biopsy_policy import select_biopsies
+from biopsy_policy import select_biopsies, expression_directory
 import argparse as _argparse
 import sys as _sys
 
@@ -72,7 +41,7 @@ RESULTS = pathlib.Path(_args.results) if _args.results else ROOT / "Paper1_Resul
 STAGE_FILE = ROOT / "data/for_mentor/genes_by_fibrosis_stage.csv"
 SAMPLES = ROOT / "data/for_mentor/sample_demographics.csv"
 FULL_FIT = RESULTS / "Task3/task3_all_genes_all_transitions.csv"
-GRAPH = ROOT / "data/graph_full"
+GRAPH = expression_directory(ROOT)
 
 TRANSITIONS = [(0, 1), (1, 2), (2, 3), (3, 4)]
 TLAB = {t: f"F{t[0]}→F{t[1]}" for t in TRANSITIONS}

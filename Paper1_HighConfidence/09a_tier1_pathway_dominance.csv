@@ -1,1499 +1,1463 @@
 database,term,n_tier1_genes,pct_of_tier1
-Hallmark,Epithelial mesenchymal transition,53,10.1
-GO_BP,External encapsulating structure organization,46,8.8
-Reactome,Extracellular matrix organization,45,8.6
-GO_BP,Response to wounding,43,8.2
-GO_BP,Morphogenesis of an epithelium,39,7.4
-GO_BP,Cell substrate adhesion,37,7.0
-GO_BP,Wound healing,36,6.9
-GO_BP,Ossification,35,6.7
-GO_BP,Positive regulation of cell adhesion,35,6.7
-GO_BP,Sensory organ development,35,6.7
-GO_BP,Ameboidal type cell migration,34,6.5
-GO_BP,Taxis,34,6.5
-GO_BP,Leukocyte migration,34,6.5
-GO_BP,Positive regulation of mapk cascade,34,6.5
-Reactome,Signaling by receptor tyrosine kinases,33,6.3
-GO_BP,Positive regulation of programmed cell death,32,6.1
-GO_BP,T cell activation,32,6.1
-Hallmark,Tnfa signaling via nfkb,32,6.1
-GO_BP,Regulation of cell cell adhesion,31,5.9
-GO_BP,Embryonic morphogenesis,31,5.9
-GO_BP,Renal system development,31,5.9
-GO_BP,Regulation of cytoskeleton organization,30,5.7
-GO_BP,Regulation of lymphocyte activation,30,5.7
-GO_BP,Skeletal system development,30,5.7
-GO_BP,Cell matrix adhesion,30,5.7
-GO_BP,Regulation of nervous system development,29,5.5
-GO_BP,Erk1 and erk2 cascade,29,5.5
-GO_BP,Positive regulation of cell development,28,5.3
-GO_BP,Regulation of vasculature development,28,5.3
-GO_BP,Mononuclear cell differentiation,27,5.1
-GO_BP,Negative regulation of immune system process,27,5.1
-GO_BP,Myeloid cell differentiation,27,5.1
-GO_BP,Epithelial cell proliferation,27,5.1
-GO_BP,Wnt signaling pathway,27,5.1
-GO_BP,Positive regulation of cellular component biogenesis,27,5.1
-Reactome,Signaling by interleukins,26,5.0
-GO_BP,Regulation of actin filament based process,26,5.0
-KEGG,Pathways in cancer,26,5.0
-GO_BP,Sensory system development,26,5.0
-GO_BP,Embryonic organ development,26,5.0
-GO_BP,Regulation of t cell activation,26,5.0
-GO_BP,Gliogenesis,26,5.0
-GO_BP,Mesenchyme development,26,5.0
-GO_BP,Actin filament organization,26,5.0
-Reactome,Signaling by gpcr,26,5.0
-GO_BP,Cytokine mediated signaling pathway,25,4.8
-GO_BP,Regulation of kinase activity,25,4.8
-GO_BP,Leukocyte cell cell adhesion,25,4.8
-GO_BP,Negative regulation of locomotion,25,4.8
-GO_BP,Gland development,25,4.8
-GO_BP,Regulation of neurogenesis,24,4.6
-GO_BP,Regulation of body fluid levels,24,4.6
-KEGG,Focal adhesion,24,4.6
-GO_BP,Regulation of anatomical structure size,24,4.6
-KEGG,Cytokine cytokine receptor interaction,24,4.6
-GO_BP,Cell junction assembly,24,4.6
-GO_BP,Regulation of cell substrate adhesion,24,4.6
-GO_BP,Cell surface receptor protein serine threonine kinase signaling pathway,24,4.6
-GO_BP,Axon development,24,4.6
-GO_BP,Positive regulation of cell activation,24,4.6
-GO_BP,Epithelial tube morphogenesis,24,4.6
-GO_BP,Regulation of leukocyte migration,24,4.6
-GO_BP,Positive regulation of cytokine production,23,4.4
-GO_BP,Cell morphogenesis involved in neuron differentiation,23,4.4
-GO_BP,Mesenchymal cell differentiation,23,4.4
-GO_BP,Tissue migration,23,4.4
-GO_BP,Regulation of hemopoiesis,23,4.4
-GO_BP,Regulation of supramolecular fiber organization,23,4.4
-GO_BP,In utero embryonic development,23,4.4
-Hallmark,Inflammatory response,23,4.4
-GO_BP,Muscle cell differentiation,23,4.4
-GO_BP,Cell chemotaxis,23,4.4
-GO_BP,Muscle tissue development,22,4.2
-GO_BP,Negative regulation of cell adhesion,22,4.2
-GO_BP,Morphogenesis of a branching structure,22,4.2
-Hallmark,P53 pathway,22,4.2
-GO_BP,Positive regulation of hydrolase activity,22,4.2
-GO_BP,Negative regulation of transport,22,4.2
-GO_BP,Response to transforming growth factor beta,22,4.2
-GO_BP,Regulation of wnt signaling pathway,22,4.2
-GO_BP,Glial cell differentiation,22,4.2
-GO_BP,Epidermis development,22,4.2
-GO_BP,Regulation of immune effector process,22,4.2
-Hallmark,Hypoxia,22,4.2
-GO_BP,Regulation of leukocyte differentiation,22,4.2
-GO_BP,Response to inorganic substance,22,4.2
-GO_BP,Positive regulation of cell cell adhesion,21,4.0
-GO_BP,Mononuclear cell migration,21,4.0
-GO_BP,Multi multicellular organism process,21,4.0
-GO_BP,Negative regulation of response to external stimulus,21,4.0
-GO_BP,Regulation of cellular response to growth factor stimulus,21,4.0
-GO_BP,Nephron development,21,4.0
-GO_BP,Regulation of secretion,21,4.0
-Hallmark,Apoptosis,21,4.0
-GO_BP,Response to oxygen levels,21,4.0
-GO_BP,Regulation of monoatomic ion transport,20,3.8
-GO_BP,Positive regulation of erk1 and erk2 cascade,20,3.8
-Reactome,Rho gtpase cycle,20,3.8
-GO_BP,Phosphatidylinositol 3 kinase protein kinase b signal transduction,20,3.8
-Hallmark,Apical junction,20,3.8
-Reactome,Neutrophil degranulation,20,3.8
-GO_BP,Positive regulation of proteolysis,20,3.8
-Reactome,Degradation of the extracellular matrix,20,3.8
-GO_BP,Negative regulation of intracellular signal transduction,20,3.8
-GO_BP,Leukocyte proliferation,20,3.8
-GO_BP,Hemostasis,19,3.6
-GO_BP,Regulation of vesicle mediated transport,19,3.6
-GO_BP,Lymphocyte differentiation,19,3.6
-GO_BP,Regulation of neuron projection development,19,3.6
-GO_BP,Regulation of epithelial cell proliferation,19,3.6
-GO_BP,Connective tissue development,19,3.6
-GO_BP,Transforming growth factor beta receptor signaling pathway,19,3.6
-GO_BP,Myeloid leukocyte differentiation,19,3.6
-GO_BP,Positive regulation of leukocyte cell cell adhesion,19,3.6
-GO_BP,Muscle system process,19,3.6
-GO_BP,Osteoblast differentiation,19,3.6
-GO_BP,Leukocyte mediated immunity,18,3.4
-GO_BP,Cellular response to organic cyclic compound,18,3.4
-GO_BP,Respiratory system development,18,3.4
-GO_BP,Regulation of chemotaxis,18,3.4
-GO_BP,Muscle organ development,18,3.4
-GO_BP,Negative regulation of catalytic activity,18,3.4
-GO_BP,Negative regulation of phosphorus metabolic process,18,3.4
-GO_BP,Phagocytosis,18,3.4
-GO_BP,Canonical wnt signaling pathway,18,3.4
-GO_BP,Positive regulation of leukocyte migration,18,3.4
-GO_BP,Positive regulation of nervous system development,18,3.4
-GO_BP,Response to mechanical stimulus,18,3.4
-GO_BP,Regulation of system process,18,3.4
-GO_BP,Epithelial to mesenchymal transition,18,3.4
-Reactome,Platelet activation signaling and aggregation,17,3.2
-GO_BP,Organic hydroxy compound metabolic process,17,3.2
-GO_BP,Regulation of transmembrane receptor protein serine threonine kinase signaling pathway,17,3.2
-GO_BP,Regulation of protein containing complex assembly,17,3.2
-GO_BP,Regulation of leukocyte proliferation,17,3.2
-GO_BP,Humoral immune response,17,3.2
-GO_BP,Regulation of epithelial cell migration,17,3.2
-Hallmark,Coagulation,17,3.2
-GO_BP,Stem cell differentiation,17,3.2
-GO_BP,Cell growth,17,3.2
-GO_BP,Regulation of actin filament organization,17,3.2
-GO_BP,Positive regulation of vasculature development,17,3.2
-GO_BP,Negative regulation of cytokine production,17,3.2
-GO_BP,Myeloid leukocyte migration,17,3.2
-GO_BP,Muscle contraction,17,3.2
-GO_BP,Cell cycle phase transition,17,3.2
-GO_BP,Regulation of cellular component size,17,3.2
-GO_BP,Cell activation involved in immune response,17,3.2
-GO_BP,Branching morphogenesis of an epithelial tube,17,3.2
-GO_BP,Positive regulation of kinase activity,17,3.2
-GO_BP,Regulation of mitotic cell cycle,16,3.0
-GO_BP,Heart morphogenesis,16,3.0
-GO_BP,Kidney epithelium development,16,3.0
-GO_BP,Small gtpase mediated signal transduction,16,3.0
-GO_BP,Integrin mediated signaling pathway,16,3.0
-GO_BP,Sensory organ morphogenesis,16,3.0
-GO_BP,Skin development,16,3.0
-GO_BP,Regulation of protein serine threonine kinase activity,16,3.0
-GO_BP,Endothelial cell migration,16,3.0
-GO_BP,Adaptive immune response,16,3.0
-GO_BP,Regulation of apoptotic signaling pathway,16,3.0
-GO_BP,Positive regulation of transferase activity,16,3.0
-Hallmark,Myogenesis,16,3.0
-GO_BP,Negative regulation of cell projection organization,16,3.0
-GO_BP,Regulation of cell matrix adhesion,16,3.0
-Hallmark,Kras signaling up,16,3.0
-GO_BP,Regulation of inflammatory response,16,3.0
-GO_BP,Leukocyte chemotaxis,16,3.0
-GO_BP,Myeloid leukocyte activation,16,3.0
-GO_BP,Regulation of canonical wnt signaling pathway,16,3.0
-Reactome,Cell cell communication,16,3.0
-GO_BP,Positive regulation of cell projection organization,16,3.0
-GO_BP,Positive regulation of protein localization,16,3.0
-GO_BP,Positive regulation of phosphatidylinositol 3 kinase protein kinase b signal transduction,16,3.0
-Reactome,G alpha i signalling events,16,3.0
-GO_BP,Positive regulation of hemopoiesis,16,3.0
-GO_BP,Establishment or maintenance of cell polarity,15,2.9
-GO_BP,Exocytosis,15,2.9
-GO_BP,Positive regulation of chemotaxis,15,2.9
-GO_BP,Pattern specification process,15,2.9
-GO_BP,Regulation of cell cycle phase transition,15,2.9
-GO_BP,Mitotic cell cycle phase transition,15,2.9
-GO_BP,Negative regulation of cell cycle,15,2.9
-GO_BP,Cell cell junction organization,15,2.9
-GO_BP,Regulation of dna binding transcription factor activity,15,2.9
-Hallmark,Glycolysis,15,2.9
-GO_BP,Striated muscle cell differentiation,15,2.9
-GO_BP,Regulation of peptidase activity,15,2.9
-GO_BP,Regulation of response to wounding,15,2.9
-GO_BP,Immune response regulating signaling pathway,15,2.9
-GO_BP,Regulation of mononuclear cell migration,15,2.9
-GO_BP,Synapse organization,15,2.9
-GO_BP,Gastrulation,15,2.9
-GO_BP,Response to radiation,15,2.9
-Reactome,Response to elevated platelet cytosolic ca2,14,2.7
-GO_BP,Canonical nf kappab signal transduction,14,2.7
-Reactome,Signaling by tgfb family members,14,2.7
-GO_BP,Renal tubule development,14,2.7
-GO_BP,Glomerulus development,14,2.7
-GO_BP,Epithelial cell apoptotic process,14,2.7
-GO_BP,Collagen metabolic process,14,2.7
-GO_BP,Small molecule catabolic process,14,2.7
-Hallmark,Il2 stat5 signaling,14,2.7
-GO_BP,Regulation of gtpase activity,14,2.7
-GO_BP,Intrinsic apoptotic signaling pathway,14,2.7
-GO_BP,Muscle cell development,14,2.7
-GO_BP,Regulation of cell junction assembly,14,2.7
-Hallmark,Uv response dn,14,2.7
-GO_BP,Positive regulation of protein kinase activity,14,2.7
-Reactome,Cell junction organization,14,2.7
-GO_BP,Positive regulation of neurogenesis,14,2.7
-Reactome,Collagen formation,14,2.7
-Reactome,Collagen degradation,14,2.7
-GO_BP,Positive regulation of immune effector process,14,2.7
-Reactome,Diseases of glycosylation,14,2.7
-KEGG,Ecm receptor interaction,14,2.7
-GO_BP,Cartilage development,14,2.7
-GO_BP,Negative regulation of cell cycle process,14,2.7
-GO_BP,Cell adhesion mediated by integrin,14,2.7
-GO_BP,Negative regulation of cell cell adhesion,14,2.7
-Reactome,Interleukin 4 and interleukin 13 signaling,14,2.7
-GO_BP,Positive regulation of cytoskeleton organization,14,2.7
-GO_BP,Nephron epithelium development,14,2.7
-GO_BP,Negative regulation of phosphorylation,14,2.7
-GO_BP,Regulation of wound healing,14,2.7
-GO_BP,T cell proliferation,14,2.7
-GO_BP,Eye morphogenesis,14,2.7
-GO_BP,Response to tumor necrosis factor,14,2.7
-Reactome,Ecm proteoglycans,13,2.5
-KEGG,Regulation of actin cytoskeleton,13,2.5
-GO_BP,Negative regulation of cell activation,13,2.5
-GO_BP,Negative regulation of defense response,13,2.5
-Reactome,Integrin cell surface interactions,13,2.5
-GO_BP,Negative regulation of wnt signaling pathway,13,2.5
-GO_BP,Positive regulation of cell substrate adhesion,13,2.5
-Reactome,Elastic fibre formation,13,2.5
-GO_BP,Calcium ion homeostasis,13,2.5
-Reactome,Cell cycle mitotic,13,2.5
-Reactome,Class a 1 rhodopsin like receptors,13,2.5
-GO_BP,Notch signaling pathway,13,2.5
-GO_BP,Regulation of cell growth,13,2.5
-GO_BP,T cell differentiation,13,2.5
-GO_BP,Tissue remodeling,13,2.5
-GO_BP,Regulation of leukocyte mediated immunity,13,2.5
-GO_BP,Tissue homeostasis,13,2.5
-GO_BP,Regulation of epithelial to mesenchymal transition,13,2.5
-GO_BP,Regulation of epithelial cell differentiation,13,2.5
-GO_BP,Cognition,13,2.5
-GO_BP,Regulation of mitotic cell cycle phase transition,13,2.5
-GO_BP,Immune response regulating cell surface receptor signaling pathway,13,2.5
-GO_BP,Regulation of t cell proliferation,13,2.5
-GO_BP,Extrinsic apoptotic signaling pathway,13,2.5
-GO_BP,Endothelial cell proliferation,13,2.5
-GO_BP,Response to bmp,13,2.5
-Reactome,Transcriptional regulation by tp53,13,2.5
-GO_BP,Actin filament bundle organization,13,2.5
-GO_BP,Peptidyl tyrosine modification,12,2.3
-GO_BP,Response to molecule of bacterial origin,12,2.3
-GO_BP,Alcohol metabolic process,12,2.3
-GO_BP,Artery development,12,2.3
-GO_BP,Response to xenobiotic stimulus,12,2.3
-GO_BP,Gland morphogenesis,12,2.3
-GO_BP,Epithelial cell development,12,2.3
-GO_BP,Collagen fibril organization,12,2.3
-KEGG,Mapk signaling pathway,12,2.3
-GO_BP,Striated muscle tissue development,12,2.3
-GO_BP,Negative regulation of cell development,12,2.3
-Reactome,Biological oxidations,12,2.3
-GO_BP,Regulation of cellular response to transforming growth factor beta stimulus,12,2.3
-GO_BP,Placenta development,12,2.3
-GO_BP,Positive regulation of apoptotic signaling pathway,12,2.3
-Reactome,Non integrin membrane ecm interactions,12,2.3
-GO_BP,Regulation of endothelial cell migration,12,2.3
-GO_BP,Cell fate commitment,12,2.3
-GO_BP,Cellular response to abiotic stimulus,12,2.3
-GO_BP,Regulation of endocytosis,12,2.3
-GO_BP,Regulation of glial cell differentiation,12,2.3
-GO_BP,Muscle cell proliferation,12,2.3
-GO_BP,Cell cycle g1 s phase transition,12,2.3
-GO_BP,Purine containing compound metabolic process,12,2.3
-GO_BP,Sprouting angiogenesis,12,2.3
-GO_BP,Regulation of lymphocyte differentiation,12,2.3
-GO_BP,Positive regulation of mononuclear cell migration,12,2.3
-GO_BP,Granulocyte migration,12,2.3
-GO_BP,Regulated exocytosis,12,2.3
-KEGG,Wnt signaling pathway,12,2.3
-Reactome,Assembly of collagen fibrils and other multimeric structures,12,2.3
-GO_BP,Negative regulation of vasculature development,11,2.1
-GO_BP,Adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains,11,2.1
-GO_BP,Formation of primary germ layer,11,2.1
-GO_BP,Fat cell differentiation,11,2.1
-GO_BP,Actomyosin structure organization,11,2.1
-GO_BP,Negative regulation of canonical wnt signaling pathway,11,2.1
-GO_BP,Regulation of gliogenesis,11,2.1
-Hallmark,Allograft rejection,11,2.1
-GO_BP,Regulation of muscle system process,11,2.1
-GO_BP,Organic acid catabolic process,11,2.1
-GO_BP,Oligodendrocyte differentiation,11,2.1
-Hallmark,Uv response up,11,2.1
-GO_BP,Regulation of cysteine type endopeptidase activity,11,2.1
-GO_BP,Regulation of cysteine type endopeptidase activity involved in apoptotic process,11,2.1
-GO_BP,Metanephros development,11,2.1
-Reactome,Signaling by pdgf,11,2.1
-GO_BP,Antimicrobial humoral response,11,2.1
-Reactome,Peptide ligand binding receptors,11,2.1
-GO_BP,Platelet activation,11,2.1
-GO_BP,Regulation of epithelial cell apoptotic process,11,2.1
-GO_BP,Mammary gland development,11,2.1
-Reactome,Cell surface interactions at the vascular wall,11,2.1
-GO_BP,Regulation of phagocytosis,11,2.1
-GO_BP,Regulation of monoatomic ion transmembrane transport,11,2.1
-GO_BP,Negative regulation of neuron projection development,11,2.1
-KEGG,Small cell lung cancer,11,2.1
-GO_BP,Positive regulation of epithelial to mesenchymal transition,11,2.1
-GO_BP,Response to reactive oxygen species,11,2.1
-GO_BP,Odontogenesis,11,2.1
-GO_BP,Protein processing,11,2.1
-GO_BP,Myeloid leukocyte mediated immunity,11,2.1
-GO_BP,Steroid metabolic process,11,2.1
-GO_BP,Signal release,11,2.1
-GO_BP,Granulocyte chemotaxis,11,2.1
-GO_BP,Embryonic organ morphogenesis,11,2.1
-GO_BP,Positive regulation of monoatomic ion transport,11,2.1
-GO_BP,Negative regulation of mitotic cell cycle,11,2.1
-GO_BP,Vascular process in circulatory system,11,2.1
-GO_BP,Regulation of leukocyte chemotaxis,10,1.9
-Reactome,Signaling by met,10,1.9
-GO_BP,Mesenchyme morphogenesis,10,1.9
-KEGG,Axon guidance,10,1.9
-GO_BP,Cell cell junction assembly,10,1.9
-KEGG,Dilated cardiomyopathy,10,1.9
-GO_BP,Regulation of cell morphogenesis,10,1.9
-Hallmark,Il6 jak stat3 signaling,10,1.9
-GO_BP,Lymphocyte mediated immunity,10,1.9
-GO_BP,Macrophage migration,10,1.9
-GO_BP,Intrinsic apoptotic signaling pathway in response to dna damage,10,1.9
-GO_BP,Regulation of blood circulation,10,1.9
-GO_BP,Regulation of extrinsic apoptotic signaling pathway,10,1.9
-GO_BP,Positive regulation of epithelial cell migration,10,1.9
-Reactome,Molecules associated with elastic fibres,10,1.9
-GO_BP,Neural precursor cell proliferation,10,1.9
-GO_BP,Neuron projection guidance,10,1.9
-Reactome,Metabolism of carbohydrates,10,1.9
-GO_BP,Response to chemokine,10,1.9
-GO_BP,Fibroblast proliferation,10,1.9
-GO_BP,Mesonephros development,10,1.9
-GO_BP,Regulation of map kinase activity,10,1.9
-GO_BP,Tumor necrosis factor superfamily cytokine production,10,1.9
-GO_BP,Interleukin 6 production,10,1.9
-GO_BP,Developmental growth involved in morphogenesis,10,1.9
-GO_BP,Positive regulation of lymphocyte differentiation,10,1.9
-Reactome,Cell cell junction organization,10,1.9
-GO_BP,Regulation of small gtpase mediated signal transduction,10,1.9
-GO_BP,Heart process,10,1.9
-GO_BP,Regulation of reproductive process,10,1.9
-GO_BP,Negative regulation of mitotic cell cycle phase transition,10,1.9
-Reactome,Collagen biosynthesis and modifying enzymes,10,1.9
-GO_BP,Camera type eye morphogenesis,10,1.9
-GO_BP,Sulfur compound metabolic process,10,1.9
-GO_BP,Regulation of protein localization to membrane,10,1.9
-GO_BP,Roof of mouth development,10,1.9
-GO_BP,Regulation of protein polymerization,10,1.9
-GO_BP,Cell cell adhesion via plasma membrane adhesion molecules,10,1.9
-Hallmark,Angiogenesis,10,1.9
-GO_BP,Focal adhesion assembly,9,1.7
-Reactome,Interleukin 10 signaling,9,1.7
-GO_BP,Artery morphogenesis,9,1.7
-GO_BP,Positive regulation of cysteine type endopeptidase activity,9,1.7
-Reactome,Rac1 gtpase cycle,9,1.7
-Reactome,Regulation of insulin like growth factor igf transport and uptake by insulin like growth factor binding proteins igfbps,9,1.7
-GO_BP,Negative regulation of response to wounding,9,1.7
-GO_BP,Epidermal cell differentiation,9,1.7
-GO_BP,Positive regulation of gliogenesis,9,1.7
-GO_BP,Positive regulation of glial cell differentiation,9,1.7
-GO_BP,Positive regulation of epithelial cell proliferation,9,1.7
-GO_BP,Establishment of cell polarity,9,1.7
-GO_BP,Regulation of synapse structure or activity,9,1.7
-GO_BP,Positive regulation of epithelial cell differentiation,9,1.7
-GO_BP,Body morphogenesis,9,1.7
-GO_BP,Negative regulation of hydrolase activity,9,1.7
-GO_BP,Negative regulation of leukocyte cell cell adhesion,9,1.7
-GO_BP,Negative regulation of inflammatory response,9,1.7
-GO_BP,Heart valve development,9,1.7
-Reactome,Chemokine receptors bind chemokines,9,1.7
-GO_BP,Regulation of production of molecular mediator of immune response,9,1.7
-GO_BP,Regulation of protein maturation,9,1.7
-Reactome,Collagen chain trimerization,9,1.7
-GO_BP,Positive regulation of peptidase activity,9,1.7
-GO_BP,Smooth muscle cell migration,9,1.7
-GO_BP,Positive regulation of transmembrane receptor protein serine threonine kinase signaling pathway,9,1.7
-GO_BP,Positive regulation of wnt signaling pathway,9,1.7
-GO_BP,Negative regulation of epithelial cell proliferation,9,1.7
-GO_BP,Regulation of muscle contraction,9,1.7
-Reactome,Adherens junctions interactions,9,1.7
-GO_BP,Cardiac chamber development,9,1.7
-GO_BP,Cardiac chamber morphogenesis,9,1.7
-KEGG,Prostate cancer,9,1.7
-GO_BP,Positive regulation of response to wounding,9,1.7
-GO_BP,Negative regulation of immune effector process,9,1.7
-KEGG,Hypertrophic cardiomyopathy hcm,9,1.7
-GO_BP,Regulation of hormone levels,9,1.7
-GO_BP,Negative regulation of apoptotic signaling pathway,9,1.7
-GO_BP,Regulation of fibroblast proliferation,9,1.7
-GO_BP,Muscle cell migration,9,1.7
-GO_BP,Cellular response to biotic stimulus,9,1.7
-GO_BP,Cellular extravasation,9,1.7
-GO_BP,Leukocyte apoptotic process,9,1.7
-GO_BP,Lymphocyte activation involved in immune response,9,1.7
-GO_BP,Cell killing,9,1.7
-GO_BP,Myeloid cell activation involved in immune response,9,1.7
-GO_BP,Cellular response to molecule of bacterial origin,9,1.7
-GO_BP,Cellular response to radiation,9,1.7
-GO_BP,Regulation of coagulation,9,1.7
-GO_BP,Antimicrobial humoral immune response mediated by antimicrobial peptide,9,1.7
-GO_BP,Positive regulation of canonical nf kappab signal transduction,9,1.7
-Reactome,O linked glycosylation,9,1.7
-GO_BP,Organic acid biosynthetic process,9,1.7
-GO_BP,Organelle fission,9,1.7
-GO_BP,Aorta development,9,1.7
-Reactome,Semaphorin interactions,9,1.7
-Reactome,Signaling by tgf beta receptor complex,8,1.5
-Reactome,Signaling by alk in cancer,8,1.5
-GO_BP,Amino acid metabolic process,8,1.5
-GO_BP,Neutrophil migration,8,1.5
-Reactome,Rho gtpase effectors,8,1.5
-GO_BP,Cellular response to acid chemical,8,1.5
-GO_BP,Regulation of cell shape,8,1.5
-Hallmark,Xenobiotic metabolism,8,1.5
-Hallmark,Estrogen response late,8,1.5
-GO_BP,Regulation of extracellular matrix organization,8,1.5
-GO_BP,Cellular response to uv,8,1.5
-Hallmark,Estrogen response early,8,1.5
-GO_BP,Regulation of cellular extravasation,8,1.5
-GO_BP,Morphogenesis of an epithelial sheet,8,1.5
-GO_BP,Regulation of cell killing,8,1.5
-GO_BP,Leukocyte mediated cytotoxicity,8,1.5
-KEGG,Bladder cancer,8,1.5
-GO_BP,Cytokine production involved in immune response,8,1.5
-GO_BP,Defense response to bacterium,8,1.5
-GO_BP,Calcium ion transmembrane import into cytosol,8,1.5
-GO_BP,Regulation of neural precursor cell proliferation,8,1.5
-GO_BP,Negative regulation of coagulation,8,1.5
-GO_BP,Embryo implantation,8,1.5
-GO_BP,Cardiocyte differentiation,8,1.5
-GO_BP,Negative regulation of cell cycle g1 s phase transition,8,1.5
-GO_BP,Cardiac ventricle development,8,1.5
-GO_BP,Regulation of oligodendrocyte differentiation,8,1.5
-GO_BP,Regulation of actin filament length,8,1.5
-GO_BP,Reactive oxygen species metabolic process,8,1.5
-Hallmark,Complement,8,1.5
-Hallmark,Bile acid metabolism,8,1.5
-Hallmark,Adipogenesis,8,1.5
-GO_BP,Regulation of leukocyte apoptotic process,8,1.5
-GO_BP,Ras protein signal transduction,8,1.5
-GO_BP,Smooth muscle cell proliferation,8,1.5
-KEGG,Leishmania infection,8,1.5
-GO_BP,T cell activation involved in immune response,8,1.5
-GO_BP,Cell recognition,8,1.5
-GO_BP,Regulation of bmp signaling pathway,8,1.5
-KEGG,P53 signaling pathway,8,1.5
-GO_BP,Cell substrate junction organization,8,1.5
-Hallmark,Mitotic spindle,8,1.5
-Hallmark,Interferon gamma response,8,1.5
-GO_BP,Lymphocyte migration,8,1.5
-GO_BP,Leukocyte degranulation,8,1.5
-GO_BP,Face morphogenesis,8,1.5
-Reactome,Met activates ptk2 signaling,8,1.5
-Reactome,Leishmania infection,8,1.5
-GO_BP,Response to acid chemical,8,1.5
-Reactome,Metabolism of amino acids and derivatives,8,1.5
-GO_BP,B cell activation,8,1.5
-Reactome,Mitotic g1 phase and g1 s transition,8,1.5
-GO_BP,Positive regulation of defense response,8,1.5
-GO_BP,Adenylate cyclase modulating g protein coupled receptor signaling pathway,8,1.5
-Reactome,Met promotes cell motility,8,1.5
-GO_BP,Actin polymerization or depolymerization,8,1.5
-GO_BP,Negative regulation of wound healing,8,1.5
-GO_BP,Positive regulation of leukocyte chemotaxis,8,1.5
-GO_BP,Extrinsic apoptotic signaling pathway via death domain receptors,8,1.5
-GO_BP,Negative regulation of lymphocyte activation,8,1.5
-GO_BP,Endothelium development,8,1.5
-GO_BP,Heart valve morphogenesis,8,1.5
-GO_BP,Head morphogenesis,8,1.5
-GO_BP,Regulation of regulated secretory pathway,8,1.5
-GO_BP,Regulation of reactive oxygen species metabolic process,8,1.5
-GO_BP,Skeletal muscle organ development,8,1.5
-GO_BP,Embryonic placenta development,8,1.5
-Reactome,Glycosaminoglycan metabolism,8,1.5
-GO_BP,Regulation of stem cell differentiation,8,1.5
-GO_BP,Positive regulation of map kinase activity,8,1.5
-GO_BP,Bone mineralization,8,1.5
-Reactome,Fatty acid metabolism,8,1.5
-GO_BP,Regulation of peptidyl tyrosine phosphorylation,8,1.5
-Reactome,Laminin interactions,8,1.5
-GO_BP,Positive regulation of cell junction assembly,8,1.5
-GO_BP,Neuron projection extension,8,1.5
-Reactome,Regulation of homotypic cell cell adhesion,8,1.5
-GO_BP,Extracellular matrix disassembly,8,1.5
-GO_BP,Response to retinoic acid,8,1.5
-GO_BP,Positive regulation of endocytosis,8,1.5
-GO_BP,Face development,8,1.5
-GO_BP,Hormone metabolic process,8,1.5
-GO_BP,Homeostasis of number of cells,8,1.5
-GO_BP,Ribose phosphate metabolic process,8,1.5
-GO_BP,Ear development,8,1.5
-GO_BP,Mesoderm development,7,1.3
-GO_BP,Membrane protein ectodomain proteolysis,7,1.3
-GO_BP,Regulation of cell substrate junction organization,7,1.3
-GO_BP,Metanephric nephron development,7,1.3
-GO_BP,Regulation of cartilage development,7,1.3
-GO_BP,Membrane protein proteolysis,7,1.3
-GO_BP,Cellular modified amino acid metabolic process,7,1.3
-GO_BP,Morphogenesis of embryonic epithelium,7,1.3
-GO_BP,Platelet aggregation,7,1.3
-GO_BP,Regulation of collagen metabolic process,7,1.3
-GO_BP,Cell differentiation involved in kidney development,7,1.3
-KEGG,Arrhythmogenic right ventricular cardiomyopathy arvc,7,1.3
-GO_BP,Olefinic compound metabolic process,7,1.3
-Reactome,Programmed cell death,7,1.3
-Reactome,Phase i functionalization of compounds,7,1.3
-GO_BP,Neutrophil chemotaxis,7,1.3
-GO_BP,Alpha beta t cell activation,7,1.3
-GO_BP,Alpha beta t cell differentiation,7,1.3
-GO_BP,Organ growth,7,1.3
-GO_BP,Organic anion transport,7,1.3
-GO_BP,Actin filament based movement,7,1.3
-GO_BP,Cellular response to external stimulus,7,1.3
-GO_BP,Central nervous system neuron development,7,1.3
-Hallmark,G2m checkpoint,7,1.3
-GO_BP,Leukocyte homeostasis,7,1.3
-KEGG,Cell adhesion molecules cams,7,1.3
-KEGG,Colorectal cancer,7,1.3
-KEGG,Cell cycle,7,1.3
-GO_BP,Positive regulation of phagocytosis,7,1.3
-GO_BP,Calcium ion transmembrane transport,7,1.3
-GO_BP,Negative regulation of epithelial cell migration,7,1.3
-GO_BP,Negative regulation of cellular response to growth factor stimulus,7,1.3
-GO_BP,Regulation of myeloid leukocyte differentiation,7,1.3
-GO_BP,Regulation of myeloid leukocyte mediated immunity,7,1.3
-GO_BP,Interleukin 10 production,7,1.3
-GO_BP,Regulation of myeloid cell differentiation,7,1.3
-GO_BP,Cardiac ventricle morphogenesis,7,1.3
-Reactome,Cdc42 gtpase cycle,7,1.3
-GO_BP,Cardiac epithelial to mesenchymal transition,7,1.3
-Reactome,Apoptosis,7,1.3
-GO_BP,Skin epidermis development,7,1.3
-GO_BP,Smooth muscle cell differentiation,7,1.3
-GO_BP,Vasculogenesis,7,1.3
-GO_BP,Negative regulation of cell substrate adhesion,7,1.3
-GO_BP,Learning,7,1.3
-GO_BP,Regulation of membrane potential,7,1.3
-GO_BP,Muscle organ morphogenesis,7,1.3
-GO_BP,Lymph vessel development,7,1.3
-KEGG,Glioma,7,1.3
-GO_BP,Regulation of granulocyte chemotaxis,7,1.3
-GO_BP,Regulation of leukocyte degranulation,7,1.3
-GO_BP,Collagen catabolic process,7,1.3
-GO_BP,Regeneration,7,1.3
-GO_BP,Regulation of animal organ morphogenesis,7,1.3
-GO_BP,Protein depolymerization,7,1.3
-GO_BP,Positive regulation of wound healing,7,1.3
-KEGG,Leukocyte transendothelial migration,7,1.3
-GO_BP,Tight junction organization,7,1.3
-GO_BP,Macrophage chemotaxis,7,1.3
-GO_BP,Macrophage activation,7,1.3
-GO_BP,Negative regulation of extrinsic apoptotic signaling pathway,7,1.3
-GO_BP,Regulation of morphogenesis of an epithelium,7,1.3
-GO_BP,Symbiont entry into host,7,1.3
-GO_BP,Digestive system development,7,1.3
-GO_BP,Import across plasma membrane,7,1.3
-GO_BP,Negative regulation of hemopoiesis,7,1.3
-GO_BP,Regulation of protein localization to plasma membrane,7,1.3
-GO_BP,Regulation of protein localization to cell periphery,7,1.3
-GO_BP,Endocardial cushion development,7,1.3
-Reactome,Eph ephrin signaling,7,1.3
-GO_BP,Regulation of osteoblast differentiation,7,1.3
-GO_BP,Positive regulation of leukocyte proliferation,7,1.3
-GO_BP,Positive regulation of fibroblast proliferation,7,1.3
-Reactome,Diseases associated with o glycosylation of proteins,7,1.3
-Reactome,Diseases associated with glycosaminoglycan metabolism,7,1.3
-Reactome,Crosslinking of collagen fibrils,7,1.3
-GO_BP,Epiboly,7,1.3
-GO_BP,Extracellular matrix assembly,7,1.3
-GO_BP,Positive regulation of epithelial cell apoptotic process,7,1.3
-GO_BP,Negative regulation of reproductive process,7,1.3
-Reactome,Neuronal system,7,1.3
-GO_BP,Renal system vasculature development,7,1.3
-GO_BP,Renal system process,7,1.3
-GO_BP,Fatty acid metabolic process,7,1.3
-GO_BP,Ensheathment of neurons,7,1.3
-GO_BP,Positive regulation of cell cycle process,7,1.3
-GO_BP,Positive regulation of cell cycle,7,1.3
-GO_BP,Apical junction assembly,7,1.3
-GO_BP,Actin mediated cell contraction,6,1.1
-GO_BP,Antigen receptor mediated signaling pathway,6,1.1
-GO_BP,Amide metabolic process,6,1.1
-GO_BP,Aorta morphogenesis,6,1.1
-GO_BP,Apoptotic process involved in morphogenesis,6,1.1
-Reactome,Tgf beta receptor signaling activates smads,6,1.1
-Reactome,Tp53 regulates transcription of cell cycle genes,6,1.1
-GO_BP,Organic acid transport,6,1.1
-GO_BP,Organic hydroxy compound biosynthetic process,6,1.1
-Reactome,Fcgamma receptor fcgr dependent phagocytosis,6,1.1
-Reactome,Immunoregulatory interactions between a lymphoid and a non lymphoid cell,6,1.1
-GO_BP,Blood vessel endothelial cell migration,6,1.1
-GO_BP,Non canonical nf kappab signal transduction,6,1.1
-Reactome,Kidney development,6,1.1
-GO_BP,Positive chemotaxis,6,1.1
-GO_BP,Appendage morphogenesis,6,1.1
-GO_BP,Apoptotic process involved in development,6,1.1
-GO_BP,Zymogen activation,6,1.1
-GO_BP,Positive regulation of leukocyte degranulation,6,1.1
-GO_BP,Positive regulation of leukocyte mediated immunity,6,1.1
-GO_BP,Columnar cuboidal epithelial cell differentiation,6,1.1
-GO_BP,Cellular response to vascular endothelial growth factor stimulus,6,1.1
-GO_BP,Cellular response to retinoic acid,6,1.1
-Hallmark,Pi3k akt mtor signaling,6,1.1
-GO_BP,Vacuolar localization,6,1.1
-KEGG,Melanoma,6,1.1
-KEGG,Jak stat signaling pathway,6,1.1
-GO_BP,Cd4 positive alpha beta t cell differentiation,6,1.1
-KEGG,Complement and coagulation cascades,6,1.1
-Reactome,Anchoring fibril formation,6,1.1
-KEGG,Natural killer cell mediated cytotoxicity,6,1.1
-GO_BP,Negative regulation of supramolecular fiber organization,6,1.1
-KEGG,Non small cell lung cancer,6,1.1
-GO_BP,Branching involved in blood vessel morphogenesis,6,1.1
-Reactome,Cell cycle checkpoints,6,1.1
-GO_BP,Cd4 positive alpha beta t cell activation,6,1.1
-GO_BP,Negative regulation of transmembrane receptor protein serine threonine kinase signaling pathway,6,1.1
-Reactome,Complement cascade,6,1.1
-GO_BP,Calcium mediated signaling,6,1.1
-GO_BP,Calcium ion import,6,1.1
-Reactome,Drug adme,6,1.1
-GO_BP,Positive regulation of endothelial cell migration,6,1.1
-GO_BP,Chondrocyte differentiation,6,1.1
-KEGG,Chronic myeloid leukemia,6,1.1
-GO_BP,Regulation of nervous system process,6,1.1
-GO_BP,Regulation of innate immune response,6,1.1
-GO_BP,Positive regulation of regulated secretory pathway,6,1.1
-GO_BP,Response to fibroblast growth factor,6,1.1
-GO_BP,Primary alcohol metabolic process,6,1.1
-GO_BP,Regulation of exocytosis,6,1.1
-GO_BP,Receptor mediated endocytosis,6,1.1
-GO_BP,Myeloid leukocyte cytokine production,6,1.1
-GO_BP,Myotube differentiation,6,1.1
-GO_BP,Lymphocyte apoptotic process,6,1.1
-GO_BP,Regulation of fat cell differentiation,6,1.1
-GO_BP,Regulation of macrophage migration,6,1.1
-GO_BP,Maintenance of location,6,1.1
-GO_BP,Mesoderm morphogenesis,6,1.1
-GO_BP,Aminoglycan metabolic process,6,1.1
-GO_BP,Regulation of adaptive immune response,6,1.1
-GO_BP,Amine transport,6,1.1
-GO_BP,Alpha amino acid metabolic process,6,1.1
-GO_BP,Activation of cysteine type endopeptidase activity involved in apoptotic process,6,1.1
-GO_BP,Amino acid catabolic process,6,1.1
-GO_BP,Regulation of b cell activation,6,1.1
-GO_BP,Mitotic cell cycle checkpoint signaling,6,1.1
-GO_BP,Mitotic nuclear division,6,1.1
-GO_BP,Regulation of cell adhesion mediated by integrin,6,1.1
-GO_BP,Mirna metabolic process,6,1.1
-GO_BP,Maintenance of location in cell,6,1.1
-GO_BP,Regulation of chondrocyte differentiation,6,1.1
-GO_BP,Lymphocyte homeostasis,6,1.1
-GO_BP,Mast cell activation,6,1.1
-GO_BP,Regulation of nuclear division,6,1.1
-GO_BP,Interleukin 8 production,6,1.1
-GO_BP,Regulation of mirna metabolic process,6,1.1
-GO_BP,Response to toxic substance,6,1.1
-GO_BP,Positive regulation of protein maturation,6,1.1
-GO_BP,Semi lunar valve development,6,1.1
-GO_BP,Positive regulation of protein localization to plasma membrane,6,1.1
-GO_BP,Response to hydrogen peroxide,6,1.1
-GO_BP,Regulation of protein depolymerization,6,1.1
-GO_BP,Negative regulation of cell matrix adhesion,6,1.1
-GO_BP,Positive regulation of tumor necrosis factor superfamily cytokine production,6,1.1
-GO_BP,Immune system development,6,1.1
-GO_BP,Regulation of platelet activation,6,1.1
-GO_BP,Regulation of response to biotic stimulus,6,1.1
-GO_BP,Renal filtration,6,1.1
-GO_BP,Response to axon injury,6,1.1
-GO_BP,Positive regulation of peptidyl tyrosine phosphorylation,6,1.1
-GO_BP,Endothelial cell apoptotic process,6,1.1
-GO_BP,Response to metal ion,6,1.1
-GO_BP,Sensory perception of pain,6,1.1
-GO_BP,Defense response to gram negative bacterium,6,1.1
-GO_BP,T cell migration,6,1.1
-GO_BP,Positive regulation of interleukin 6 production,6,1.1
-GO_BP,Negative regulation of cytoskeleton organization,6,1.1
-GO_BP,Negative regulation of immune response,6,1.1
-GO_BP,Smad protein signal transduction,6,1.1
-GO_BP,Endocardial cushion morphogenesis,6,1.1
-GO_BP,Positive regulation of interleukin 8 production,6,1.1
-GO_BP,Bone remodeling,5,1.0
-Reactome,Interferon signaling,5,1.0
-Reactome,G alpha s signalling events,5,1.0
-GO_BP,Nuclear chromosome segregation,5,1.0
-GO_BP,Vascular associated smooth muscle cell proliferation,5,1.0
-GO_BP,Collagen biosynthetic process,5,1.0
-GO_BP,Chromosome segregation,5,1.0
-GO_BP,Vascular endothelial growth factor signaling pathway,5,1.0
-GO_BP,Cellular response to xenobiotic stimulus,5,1.0
-Hallmark,Mtorc1 signaling,5,1.0
-GO_BP,Complement activation,5,1.0
-KEGG,Hematopoietic cell lineage,5,1.0
-KEGG,Chemokine signaling pathway,5,1.0
-GO_BP,Cell proliferation involved in kidney development,5,1.0
-Hallmark,Wnt beta catenin signaling,5,1.0
-KEGG,Apoptosis,5,1.0
-GO_BP,Negative regulation of leukocyte migration,5,1.0
-GO_BP,Positive regulation of gtpase activity,5,1.0
-GO_BP,Positive regulation of extrinsic apoptotic signaling pathway,5,1.0
-Hallmark,Tgf beta signaling,5,1.0
-KEGG,Gap junction,5,1.0
-GO_BP,Nucleoside phosphate biosynthetic process,5,1.0
-GO_BP,Negative regulation of transforming growth factor beta receptor signaling pathway,5,1.0
-GO_BP,Neural retina development,5,1.0
-Reactome,Activation of matrix metalloproteinases,5,1.0
-GO_BP,Carbohydrate metabolic process,5,1.0
-Reactome,Arachidonic acid metabolism,5,1.0
-Reactome,Anti inflammatory response favouring leishmania parasite infection,5,1.0
-KEGG,T cell receptor signaling pathway,5,1.0
-KEGG,Toll like receptor signaling pathway,5,1.0
-KEGG,Vascular smooth muscle contraction,5,1.0
-KEGG,Pancreatic cancer,5,1.0
+Hallmark,Epithelial mesenchymal transition,53,10.8
+GO_BP,External encapsulating structure organization,44,9.0
+Reactome,Extracellular matrix organization,44,9.0
+GO_BP,Response to wounding,38,7.7
+GO_BP,Cell substrate adhesion,35,7.1
+GO_BP,Morphogenesis of an epithelium,35,7.1
+GO_BP,Taxis,33,6.7
+GO_BP,Ossification,33,6.7
+GO_BP,Sensory organ development,33,6.7
+Hallmark,Tnfa signaling via nfkb,32,6.5
+GO_BP,Positive regulation of cell adhesion,32,6.5
+Reactome,Signaling by receptor tyrosine kinases,32,6.5
+GO_BP,Leukocyte migration,31,6.3
+GO_BP,Embryonic morphogenesis,31,6.3
+GO_BP,Wound healing,31,6.3
+GO_BP,Positive regulation of programmed cell death,30,6.1
+GO_BP,Ameboidal type cell migration,30,6.1
+GO_BP,Positive regulation of mapk cascade,30,6.1
+GO_BP,Skeletal system development,29,5.9
+GO_BP,Renal system development,29,5.9
+GO_BP,Regulation of cytoskeleton organization,28,5.7
+GO_BP,Cell matrix adhesion,28,5.7
+GO_BP,T cell activation,27,5.5
+GO_BP,Wnt signaling pathway,27,5.5
+GO_BP,Erk1 and erk2 cascade,27,5.5
+GO_BP,Regulation of cell cell adhesion,27,5.5
+KEGG,Pathways in cancer,26,5.3
+GO_BP,Negative regulation of immune system process,26,5.3
+GO_BP,Cell surface receptor protein serine threonine kinase signaling pathway,26,5.3
+Reactome,Signaling by interleukins,26,5.3
+GO_BP,Myeloid cell differentiation,26,5.3
+GO_BP,Positive regulation of cell development,26,5.3
+GO_BP,Mononuclear cell differentiation,26,5.3
+GO_BP,Regulation of lymphocyte activation,25,5.1
+GO_BP,Regulation of nervous system development,25,5.1
+GO_BP,Embryonic organ development,25,5.1
+GO_BP,Gliogenesis,25,5.1
+GO_BP,In utero embryonic development,25,5.1
+GO_BP,Regulation of vasculature development,25,5.1
+GO_BP,Regulation of actin filament based process,25,5.1
+GO_BP,Negative regulation of locomotion,25,5.1
+GO_BP,Regulation of anatomical structure size,24,4.9
+GO_BP,Sensory system development,24,4.9
+GO_BP,Regulation of kinase activity,24,4.9
+GO_BP,Response to transforming growth factor beta,24,4.9
+GO_BP,Regulation of cell substrate adhesion,24,4.9
+GO_BP,Cytokine mediated signaling pathway,24,4.9
+GO_BP,Actin filament organization,24,4.9
+Reactome,Signaling by gpcr,24,4.9
+GO_BP,Regulation of cellular response to growth factor stimulus,23,4.7
+GO_BP,Cell morphogenesis involved in neuron differentiation,23,4.7
+GO_BP,Regulation of wnt signaling pathway,23,4.7
+GO_BP,Gland development,23,4.7
+GO_BP,Muscle cell differentiation,23,4.7
+GO_BP,Epithelial cell proliferation,23,4.7
+GO_BP,Epithelial tube morphogenesis,23,4.7
+GO_BP,Regulation of hemopoiesis,23,4.7
+GO_BP,Axon development,23,4.7
+Hallmark,Hypoxia,22,4.5
+GO_BP,Regulation of leukocyte differentiation,22,4.5
+GO_BP,Regulation of leukocyte migration,22,4.5
+GO_BP,Cell chemotaxis,22,4.5
+GO_BP,Positive regulation of cytokine production,22,4.5
+GO_BP,Mesenchyme development,22,4.5
+GO_BP,Muscle tissue development,22,4.5
+GO_BP,Regulation of supramolecular fiber organization,22,4.5
+GO_BP,Regulation of neurogenesis,21,4.3
+KEGG,Cytokine cytokine receptor interaction,21,4.3
+GO_BP,Epidermis development,21,4.3
+GO_BP,Positive regulation of cell activation,21,4.3
+GO_BP,Morphogenesis of a branching structure,21,4.3
+GO_BP,Negative regulation of cell adhesion,21,4.3
+GO_BP,Leukocyte cell cell adhesion,21,4.3
+Reactome,Degradation of the extracellular matrix,21,4.3
+GO_BP,Regulation of body fluid levels,21,4.3
+GO_BP,Glial cell differentiation,21,4.3
+KEGG,Focal adhesion,21,4.3
+GO_BP,Cell junction assembly,21,4.3
+GO_BP,Regulation of t cell activation,21,4.3
+GO_BP,Positive regulation of hydrolase activity,20,4.1
+GO_BP,Response to inorganic substance,20,4.1
+Hallmark,Inflammatory response,20,4.1
+Hallmark,Apoptosis,20,4.1
+GO_BP,Transforming growth factor beta receptor signaling pathway,20,4.1
+GO_BP,Tissue migration,20,4.1
+GO_BP,Regulation of system process,20,4.1
+Hallmark,P53 pathway,20,4.1
+GO_BP,Response to oxygen levels,20,4.1
+Reactome,Neutrophil degranulation,19,3.9
+GO_BP,Muscle system process,19,3.9
+GO_BP,Regulation of secretion,19,3.9
+GO_BP,Mononuclear cell migration,19,3.9
+GO_BP,Muscle organ development,19,3.9
+GO_BP,Multi multicellular organism process,19,3.9
+GO_BP,Mesenchymal cell differentiation,19,3.9
+GO_BP,Regulation of monoatomic ion transport,19,3.9
+GO_BP,Regulation of neuron projection development,19,3.9
+GO_BP,Cell growth,19,3.9
+GO_BP,Negative regulation of intracellular signal transduction,19,3.9
+GO_BP,Organic hydroxy compound metabolic process,19,3.9
+GO_BP,Phagocytosis,19,3.9
+GO_BP,Nephron development,19,3.9
+GO_BP,Negative regulation of transport,19,3.9
+GO_BP,Regulation of vesicle mediated transport,19,3.9
+GO_BP,Regulation of transmembrane receptor protein serine threonine kinase signaling pathway,19,3.9
+GO_BP,Positive regulation of cell cell adhesion,18,3.7
+GO_BP,Positive regulation of erk1 and erk2 cascade,18,3.7
+GO_BP,Muscle contraction,18,3.7
+GO_BP,Regulation of chemotaxis,18,3.7
+GO_BP,Regulation of epithelial cell proliferation,18,3.7
+GO_BP,Positive regulation of proteolysis,18,3.7
+GO_BP,Phosphatidylinositol 3 kinase protein kinase b signal transduction,18,3.7
+Hallmark,Coagulation,17,3.5
+Hallmark,Myogenesis,17,3.5
+GO_BP,Myeloid leukocyte migration,17,3.5
+GO_BP,Connective tissue development,17,3.5
+GO_BP,Regulation of immune effector process,17,3.5
+GO_BP,Regulation of cellular component size,17,3.5
+GO_BP,Lymphocyte differentiation,17,3.5
+GO_BP,Respiratory system development,17,3.5
+Reactome,Rho gtpase cycle,17,3.5
+GO_BP,Positive regulation of leukocyte migration,17,3.5
+GO_BP,Osteoblast differentiation,17,3.5
+GO_BP,Cell cycle phase transition,17,3.5
+GO_BP,Branching morphogenesis of an epithelial tube,17,3.5
+GO_BP,Response to mechanical stimulus,17,3.5
+GO_BP,Humoral immune response,17,3.5
+GO_BP,Canonical wnt signaling pathway,17,3.5
+GO_BP,Calcium ion transport,17,3.5
+GO_BP,Stem cell differentiation,16,3.3
+GO_BP,Positive regulation of cell projection organization,16,3.3
+GO_BP,Leukocyte chemotaxis,16,3.3
+GO_BP,Regulation of cell matrix adhesion,16,3.3
+GO_BP,Regulation of epithelial cell migration,16,3.3
+Hallmark,Apical junction,16,3.3
+GO_BP,Regulation of mitotic cell cycle,16,3.3
+Reactome,Signaling by tgfb family members,16,3.3
+GO_BP,Regulation of actin filament organization,16,3.3
+GO_BP,Positive regulation of transferase activity,16,3.3
+Reactome,G alpha i signalling events,16,3.3
+GO_BP,Sensory organ morphogenesis,16,3.3
+GO_BP,Negative regulation of cell projection organization,16,3.3
+GO_BP,Regulation of canonical wnt signaling pathway,16,3.3
+GO_BP,Myeloid leukocyte activation,16,3.3
+GO_BP,Heart morphogenesis,16,3.3
+GO_BP,Leukocyte proliferation,16,3.3
+GO_BP,Hemostasis,16,3.3
+GO_BP,Positive regulation of leukocyte cell cell adhesion,16,3.3
+GO_BP,Positive regulation of hemopoiesis,16,3.3
+GO_BP,Positive regulation of kinase activity,16,3.3
+GO_BP,Negative regulation of cell development,15,3.1
+GO_BP,Cell activation involved in immune response,15,3.1
+GO_BP,Integrin mediated signaling pathway,15,3.1
+Reactome,Platelet activation signaling and aggregation,15,3.1
+GO_BP,Positive regulation of nervous system development,15,3.1
+Reactome,Collagen formation,15,3.1
+GO_BP,Pattern specification process,15,3.1
+GO_BP,Positive regulation of phosphatidylinositol 3 kinase protein kinase b signal transduction,15,3.1
+GO_BP,Immune response regulating signaling pathway,15,3.1
+GO_BP,Regulation of apoptotic signaling pathway,15,3.1
+GO_BP,Regulation of cell cycle phase transition,15,3.1
+GO_BP,Negative regulation of cytokine production,15,3.1
+GO_BP,Skin development,15,3.1
+GO_BP,Negative regulation of cell cycle,15,3.1
+GO_BP,Mitotic cell cycle phase transition,15,3.1
+GO_BP,Regulation of peptidase activity,15,3.1
+GO_BP,Exocytosis,15,3.1
+GO_BP,Response to tumor necrosis factor,15,3.1
+Hallmark,Kras signaling up,15,3.1
+GO_BP,Small molecule catabolic process,15,3.1
+GO_BP,Epithelial to mesenchymal transition,15,3.1
+GO_BP,Positive regulation of chemotaxis,15,3.1
+GO_BP,Endothelial cell migration,15,3.1
+GO_BP,Striated muscle cell differentiation,15,3.1
+GO_BP,Response to bmp,14,2.9
+GO_BP,Eye morphogenesis,14,2.9
+GO_BP,Regulation of monoatomic ion transmembrane transport,14,2.9
+GO_BP,Regulation of mononuclear cell migration,14,2.9
+GO_BP,Regulation of protein serine threonine kinase activity,14,2.9
+GO_BP,Kidney epithelium development,14,2.9
+GO_BP,Collagen metabolic process,14,2.9
+Hallmark,Glycolysis,14,2.9
+GO_BP,Regulation of dna binding transcription factor activity,14,2.9
+GO_BP,Tissue remodeling,14,2.9
+GO_BP,Synapse organization,14,2.9
+Reactome,Collagen degradation,14,2.9
+GO_BP,Positive regulation of protein localization,14,2.9
+GO_BP,Positive regulation of vasculature development,14,2.9
+Reactome,Ecm proteoglycans,14,2.9
+GO_BP,Intrinsic apoptotic signaling pathway,14,2.9
+GO_BP,Negative regulation of wnt signaling pathway,14,2.9
+Reactome,Gpcr ligand binding,14,2.9
+GO_BP,Positive regulation of immune effector process,14,2.9
+GO_BP,Positive regulation of protein kinase activity,14,2.9
+Reactome,Cell cell communication,14,2.9
+KEGG,Ecm receptor interaction,14,2.9
+GO_BP,Negative regulation of cell cycle process,14,2.9
+GO_BP,Organic acid catabolic process,13,2.6
+GO_BP,Renal tubule development,13,2.6
+Reactome,Non integrin membrane ecm interactions,13,2.6
+Reactome,Integrin cell surface interactions,13,2.6
+GO_BP,Cognition,13,2.6
+GO_BP,Cell adhesion mediated by integrin,13,2.6
+GO_BP,Cell cell junction organization,13,2.6
+GO_BP,Cellular response to abiotic stimulus,13,2.6
+KEGG,Regulation of actin cytoskeleton,13,2.6
+Reactome,Cell cycle mitotic,13,2.6
+GO_BP,Regulation of wound healing,13,2.6
+GO_BP,Calcium ion homeostasis,13,2.6
+GO_BP,Purine containing compound metabolic process,13,2.6
+Reactome,Assembly of collagen fibrils and other multimeric structures,13,2.6
+Reactome,Diseases of glycosylation,13,2.6
+GO_BP,Canonical nf kappab signal transduction,13,2.6
+GO_BP,Immune response regulating cell surface receptor signaling pathway,13,2.6
+Reactome,Class a 1 rhodopsin like receptors,13,2.6
+GO_BP,Cartilage development,13,2.6
+Reactome,Elastic fibre formation,13,2.6
+GO_BP,Regulation of leukocyte proliferation,13,2.6
+Hallmark,Uv response dn,13,2.6
+GO_BP,Myeloid leukocyte differentiation,13,2.6
+GO_BP,Negative regulation of cell cell adhesion,13,2.6
+GO_BP,Regulation of epithelial cell differentiation,13,2.6
+GO_BP,Regulation of response to wounding,13,2.6
+GO_BP,Leukocyte mediated immunity,13,2.6
+GO_BP,Regulation of protein containing complex assembly,13,2.6
+GO_BP,Regulation of cellular response to transforming growth factor beta stimulus,13,2.6
+GO_BP,Gastrulation,13,2.6
+GO_BP,Muscle cell development,13,2.6
+GO_BP,Small gtpase mediated signal transduction,13,2.6
+GO_BP,Positive regulation of cell substrate adhesion,13,2.6
+GO_BP,Regulation of mitotic cell cycle phase transition,13,2.6
+GO_BP,Alcohol metabolic process,13,2.6
+Reactome,Transcriptional regulation by tp53,13,2.6
+GO_BP,Actomyosin structure organization,12,2.4
+GO_BP,Granulocyte migration,12,2.4
+GO_BP,Epithelial cell development,12,2.4
+GO_BP,Steroid metabolic process,12,2.4
+GO_BP,Epithelial cell apoptotic process,12,2.4
+GO_BP,Tissue homeostasis,12,2.4
+GO_BP,Embryonic organ morphogenesis,12,2.4
+Reactome,Response to elevated platelet cytosolic ca2,12,2.4
+GO_BP,Artery development,12,2.4
+GO_BP,Positive regulation of mononuclear cell migration,12,2.4
+GO_BP,Positive regulation of neurogenesis,12,2.4
+GO_BP,Positive regulation of apoptotic signaling pathway,12,2.4
+GO_BP,Mammary gland development,12,2.4
+GO_BP,T cell differentiation,12,2.4
+GO_BP,Striated muscle tissue development,12,2.4
+Hallmark,Il2 stat5 signaling,12,2.4
+GO_BP,Regulation of endothelial cell migration,12,2.4
+GO_BP,Regulation of endocytosis,12,2.4
+GO_BP,Negative regulation of catalytic activity,12,2.4
+GO_BP,Regulation of lymphocyte differentiation,12,2.4
+GO_BP,Collagen fibril organization,12,2.4
+GO_BP,Regulation of inflammatory response,12,2.4
+GO_BP,Glomerulus development,12,2.4
+Reactome,Interleukin 4 and interleukin 13 signaling,12,2.4
+GO_BP,Notch signaling pathway,12,2.4
+GO_BP,Negative regulation of response to external stimulus,12,2.4
+Reactome,Cell junction organization,12,2.4
+KEGG,Small cell lung cancer,12,2.4
+GO_BP,Response to molecule of bacterial origin,12,2.4
+GO_BP,Nephron epithelium development,12,2.4
+GO_BP,Regulated exocytosis,12,2.4
+GO_BP,Response to xenobiotic stimulus,12,2.4
+GO_BP,Regulation of cell junction assembly,12,2.4
+GO_BP,Cell fate commitment,12,2.4
+GO_BP,Negative regulation of cell activation,12,2.4
+Reactome,Signaling by tgf beta receptor complex,11,2.2
+GO_BP,Granulocyte chemotaxis,11,2.2
+Reactome,Signaling by pdgf,11,2.2
+Reactome,Signaling by met,11,2.2
+Reactome,Molecules associated with elastic fibres,11,2.2
+GO_BP,Negative regulation of canonical wnt signaling pathway,11,2.2
+GO_BP,Regulation of cysteine type endopeptidase activity,11,2.2
+GO_BP,Regulation of cysteine type endopeptidase activity involved in apoptotic process,11,2.2
+GO_BP,Regulation of protein localization to membrane,11,2.2
+Hallmark,Uv response up,11,2.2
+GO_BP,Developmental growth involved in morphogenesis,11,2.2
+GO_BP,Regulation of phagocytosis,11,2.2
+Hallmark,Angiogenesis,11,2.2
+GO_BP,Adaptive immune response,11,2.2
+GO_BP,Antimicrobial humoral response,11,2.2
+GO_BP,Endothelial cell proliferation,11,2.2
+GO_BP,Sulfur compound metabolic process,11,2.2
+GO_BP,Vascular process in circulatory system,11,2.2
+GO_BP,Fat cell differentiation,11,2.2
+GO_BP,Muscle cell proliferation,11,2.2
+GO_BP,Regulation of muscle system process,11,2.2
+GO_BP,Response to reactive oxygen species,11,2.2
+GO_BP,Negative regulation of neuron projection development,11,2.2
+GO_BP,Negative regulation of vasculature development,11,2.2
+GO_BP,Negative regulation of mitotic cell cycle,11,2.2
+GO_BP,Cell substrate junction organization,11,2.2
+KEGG,Wnt signaling pathway,11,2.2
+GO_BP,Ribose phosphate metabolic process,11,2.2
+GO_BP,Organic acid biosynthetic process,11,2.2
+GO_BP,Positive regulation of monoatomic ion transport,11,2.2
+Reactome,Biological oxidations,11,2.2
+GO_BP,Peptidyl tyrosine modification,11,2.2
+GO_BP,Placenta development,11,2.2
+Reactome,Regulation of insulin like growth factor igf transport and uptake by insulin like growth factor binding proteins igfbps,11,2.2
+Reactome,Peptide ligand binding receptors,11,2.2
+GO_BP,Gland morphogenesis,11,2.2
+GO_BP,Body morphogenesis,10,2.0
+GO_BP,Fibroblast proliferation,10,2.0
+Reactome,Cell surface interactions at the vascular wall,10,2.0
+GO_BP,Negative regulation of phosphorus metabolic process,10,2.0
+GO_BP,Negative regulation of phosphorylation,10,2.0
+Reactome,Collagen biosynthesis and modifying enzymes,10,2.0
+GO_BP,Positive regulation of transmembrane receptor protein serine threonine kinase signaling pathway,10,2.0
+GO_BP,Establishment or maintenance of cell polarity,10,2.0
+GO_BP,Formation of primary germ layer,10,2.0
+GO_BP,Focal adhesion assembly,10,2.0
+GO_BP,Macrophage migration,10,2.0
+GO_BP,Sprouting angiogenesis,10,2.0
+GO_BP,Protein processing,10,2.0
+GO_BP,T cell proliferation,10,2.0
+GO_BP,Odontogenesis,10,2.0
+GO_BP,Positive regulation of lymphocyte differentiation,10,2.0
+GO_BP,Camera type eye morphogenesis,10,2.0
+GO_BP,Positive regulation of peptidase activity,10,2.0
+GO_BP,Oligodendrocyte differentiation,10,2.0
+GO_BP,Interleukin 6 production,10,2.0
+GO_BP,Response to chemokine,10,2.0
+Hallmark,Allograft rejection,10,2.0
+GO_BP,Regulation of epithelial to mesenchymal transition,10,2.0
+GO_BP,Regulation of cell morphogenesis,10,2.0
+GO_BP,Regulation of glial cell differentiation,10,2.0
+GO_BP,Myeloid leukocyte mediated immunity,10,2.0
+KEGG,Axon guidance,10,2.0
+GO_BP,Adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains,10,2.0
+KEGG,Dilated cardiomyopathy,10,2.0
+KEGG,Mapk signaling pathway,10,2.0
+GO_BP,Regulation of leukocyte mediated immunity,10,2.0
+GO_BP,Regulation of leukocyte chemotaxis,10,2.0
+GO_BP,Negative regulation of defense response,10,2.0
+GO_BP,Regulation of blood circulation,10,2.0
+GO_BP,Negative regulation of mitotic cell cycle phase transition,10,2.0
+GO_BP,Aorta development,9,1.8
+GO_BP,Antimicrobial humoral immune response mediated by antimicrobial peptide,9,1.8
+GO_BP,Positive regulation of defense response,9,1.8
+GO_BP,Platelet activation,9,1.8
+GO_BP,Positive regulation of leukocyte chemotaxis,9,1.8
+GO_BP,Positive regulation of epithelial cell migration,9,1.8
+KEGG,Hypertrophic cardiomyopathy hcm,9,1.8
+KEGG,Prostate cancer,9,1.8
+GO_BP,Cellular response to biotic stimulus,9,1.8
+GO_BP,Negative regulation of leukocyte cell cell adhesion,9,1.8
+Hallmark,Estrogen response early,9,1.8
+Hallmark,Estrogen response late,9,1.8
+GO_BP,Defense response to bacterium,9,1.8
+GO_BP,Muscle cell migration,9,1.8
+GO_BP,Cellular response to molecule of bacterial origin,9,1.8
+GO_BP,Intrinsic apoptotic signaling pathway in response to dna damage,9,1.8
+GO_BP,Regulation of t cell proliferation,9,1.8
+GO_BP,Regulation of small gtpase mediated signal transduction,9,1.8
+GO_BP,Positive regulation of cysteine type endopeptidase activity,9,1.8
+GO_BP,Smooth muscle cell migration,9,1.8
+GO_BP,Cardiac chamber morphogenesis,9,1.8
+GO_BP,Mesenchyme morphogenesis,9,1.8
+Reactome,Cell cell junction organization,9,1.8
+GO_BP,Neuron projection guidance,9,1.8
+GO_BP,Cardiac chamber development,9,1.8
+GO_BP,Positive regulation of response to wounding,9,1.8
+GO_BP,Regulation of gliogenesis,9,1.8
+GO_BP,Regulation of fibroblast proliferation,9,1.8
+GO_BP,Myeloid cell activation involved in immune response,9,1.8
+GO_BP,Negative regulation of apoptotic signaling pathway,9,1.8
+GO_BP,Positive regulation of epithelial cell differentiation,9,1.8
+GO_BP,Artery morphogenesis,9,1.8
+GO_BP,Regulation of epithelial cell apoptotic process,9,1.8
+GO_BP,Metanephros development,9,1.8
+GO_BP,Regulation of bmp signaling pathway,9,1.8
+GO_BP,Epidermal cell differentiation,9,1.8
+GO_BP,Mesonephros development,9,1.8
+Reactome,Collagen chain trimerization,9,1.8
+GO_BP,Face morphogenesis,9,1.8
+Reactome,Chemokine receptors bind chemokines,9,1.8
+GO_BP,Positive regulation of wnt signaling pathway,9,1.8
+GO_BP,Regulation of reproductive process,9,1.8
+GO_BP,Organelle fission,9,1.8
+GO_BP,Face development,9,1.8
+GO_BP,Extrinsic apoptotic signaling pathway,9,1.8
+GO_BP,Head morphogenesis,9,1.8
+Reactome,Met activates ptk2 signaling,9,1.8
+Reactome,Met promotes cell motility,9,1.8
+GO_BP,Fatty acid metabolic process,9,1.8
+Reactome,Metabolism of carbohydrates,9,1.8
+GO_BP,Renal system process,8,1.6
+GO_BP,Regulation of stem cell differentiation,8,1.6
+Reactome,Leishmania infection,8,1.6
+Reactome,Laminin interactions,8,1.6
+Reactome,Rac1 gtpase cycle,8,1.6
+GO_BP,Positive regulation of canonical nf kappab signal transduction,8,1.6
+Reactome,Glycosaminoglycan metabolism,8,1.6
+Reactome,Interleukin 10 signaling,8,1.6
+GO_BP,Amide metabolic process,8,1.6
+Reactome,Semaphorin interactions,8,1.6
+GO_BP,Amino acid metabolic process,8,1.6
+Reactome,Signaling by alk in cancer,8,1.6
+GO_BP,Actin filament based movement,8,1.6
+GO_BP,Smooth muscle cell proliferation,8,1.6
+GO_BP,Regulation of neural precursor cell proliferation,8,1.6
+GO_BP,Extracellular matrix assembly,8,1.6
+Reactome,Metabolism of amino acids and derivatives,8,1.6
+GO_BP,Skeletal muscle organ development,8,1.6
+GO_BP,Roof of mouth development,8,1.6
+GO_BP,Response to acid chemical,8,1.6
+GO_BP,Leukocyte apoptotic process,8,1.6
+GO_BP,Leukocyte degranulation,8,1.6
+GO_BP,Regulation of protein polymerization,8,1.6
+GO_BP,Regulation of regulated secretory pathway,8,1.6
+GO_BP,Calcium ion transmembrane import into cytosol,8,1.6
+GO_BP,Neutrophil migration,8,1.6
+GO_BP,Extracellular matrix disassembly,8,1.6
+GO_BP,Organ growth,8,1.6
+GO_BP,Positive regulation of map kinase activity,8,1.6
+GO_BP,Regulation of protein localization to plasma membrane,8,1.6
+GO_BP,Regulation of peptidyl tyrosine phosphorylation,8,1.6
+Reactome,Fatty acid metabolism,8,1.6
+GO_BP,Cardiocyte differentiation,8,1.6
+GO_BP,Embryonic placenta development,8,1.6
+GO_BP,Ras protein signal transduction,8,1.6
+GO_BP,Neuron projection extension,8,1.6
+GO_BP,Nucleoside bisphosphate metabolic process,8,1.6
+GO_BP,Cellular response to external stimulus,8,1.6
+GO_BP,Regulation of cell shape,8,1.6
+GO_BP,Cell recognition,8,1.6
+Reactome,Adherens junctions interactions,8,1.6
+GO_BP,Negative regulation of lymphocyte activation,8,1.6
+GO_BP,Regulation of actin filament length,8,1.6
+GO_BP,Tumor necrosis factor superfamily cytokine production,8,1.6
+GO_BP,Cell cell junction assembly,8,1.6
+GO_BP,Cell cell adhesion via plasma membrane adhesion molecules,8,1.6
+GO_BP,Negative regulation of immune effector process,8,1.6
+GO_BP,Cellular response to acid chemical,8,1.6
+GO_BP,Regulation of hormone levels,8,1.6
+GO_BP,Regulation of gtpase activity,8,1.6
+Hallmark,Complement,8,1.6
+GO_BP,Cellular response to uv,8,1.6
+Hallmark,Xenobiotic metabolism,8,1.6
+KEGG,P53 signaling pathway,8,1.6
+GO_BP,Regulation of coagulation,8,1.6
+GO_BP,Negative regulation of cell cycle g1 s phase transition,8,1.6
+GO_BP,Positive regulation of epithelial to mesenchymal transition,8,1.6
+GO_BP,Positive regulation of epithelial cell proliferation,8,1.6
+KEGG,Bladder cancer,8,1.6
+Hallmark,Il6 jak stat3 signaling,8,1.6
+GO_BP,Adenylate cyclase modulating g protein coupled receptor signaling pathway,8,1.6
+Reactome,O linked glycosylation,8,1.6
+Reactome,Mitotic g1 phase and g1 s transition,8,1.6
+Reactome,Tgf beta receptor signaling activates smads,8,1.6
+GO_BP,Positive regulation of cell junction assembly,7,1.4
+GO_BP,Antigen receptor mediated signaling pathway,7,1.4
+GO_BP,Heart valve development,7,1.4
+GO_BP,Heart valve morphogenesis,7,1.4
+GO_BP,Positive regulation of cell cycle process,7,1.4
+GO_BP,Acyl coa metabolic process,7,1.4
+GO_BP,Positive regulation of fibroblast proliferation,7,1.4
+GO_BP,Positive regulation of glial cell differentiation,7,1.4
+GO_BP,B cell activation,7,1.4
+Reactome,Programmed cell death,7,1.4
+KEGG,Arrhythmogenic right ventricular cardiomyopathy arvc,7,1.4
+KEGG,Cell cycle,7,1.4
+GO_BP,Digestive system development,7,1.4
+GO_BP,Positive regulation of cell cycle,7,1.4
+GO_BP,Positive regulation of endocytosis,7,1.4
+GO_BP,Positive regulation of epithelial cell apoptotic process,7,1.4
+GO_BP,Muscle organ morphogenesis,7,1.4
+Hallmark,Interferon gamma response,7,1.4
+GO_BP,Regulation of extracellular matrix organization,7,1.4
+GO_BP,Regulation of exocytosis,7,1.4
+GO_BP,Columnar cuboidal epithelial cell differentiation,7,1.4
+GO_BP,Regulation of extrinsic apoptotic signaling pathway,7,1.4
+GO_BP,Embryo implantation,7,1.4
+GO_BP,Morphogenesis of an epithelial sheet,7,1.4
+Hallmark,Adipogenesis,7,1.4
+GO_BP,Cytokine production involved in immune response,7,1.4
+GO_BP,Regulation of granulocyte chemotaxis,7,1.4
+GO_BP,Regulation of innate immune response,7,1.4
+GO_BP,Regulation of collagen metabolic process,7,1.4
+GO_BP,Collagen catabolic process,7,1.4
+KEGG,Leishmania infection,7,1.4
+GO_BP,Negative regulation of cellular response to growth factor stimulus,7,1.4
+KEGG,Melanoma,7,1.4
+GO_BP,Macrophage activation,7,1.4
+GO_BP,Regulation of oligodendrocyte differentiation,7,1.4
+GO_BP,Regulation of myeloid leukocyte mediated immunity,7,1.4
+GO_BP,Positive regulation of wound healing,7,1.4
+GO_BP,Maintenance of location,7,1.4
+GO_BP,Regeneration,7,1.4
+GO_BP,Protein depolymerization,7,1.4
+Reactome,Apoptosis,7,1.4
+GO_BP,Regulation of myeloid leukocyte differentiation,7,1.4
+GO_BP,Cardiac ventricle morphogenesis,7,1.4
+GO_BP,Cardiac epithelial to mesenchymal transition,7,1.4
+GO_BP,Regulation of leukocyte apoptotic process,7,1.4
+GO_BP,Regulation of leukocyte degranulation,7,1.4
+GO_BP,Endothelium development,7,1.4
+Reactome,Anchoring fibril formation,7,1.4
+GO_BP,Regulation of cartilage development,7,1.4
+GO_BP,T cell activation involved in immune response,7,1.4
+GO_BP,Cellular extravasation,7,1.4
+GO_BP,Negative regulation of inflammatory response,7,1.4
+GO_BP,Negative regulation of hemopoiesis,7,1.4
+GO_BP,Negative regulation of epithelial cell migration,7,1.4
+GO_BP,Regulation of cell substrate junction organization,7,1.4
+GO_BP,Cell killing,7,1.4
+GO_BP,Negative regulation of cell substrate adhesion,7,1.4
+KEGG,Glioma,7,1.4
+GO_BP,Nucleoside phosphate biosynthetic process,7,1.4
+GO_BP,Response to retinoic acid,7,1.4
+GO_BP,Regulation of response to biotic stimulus,7,1.4
+GO_BP,Regulation of reactive oxygen species metabolic process,7,1.4
+GO_BP,Hormone metabolic process,7,1.4
+GO_BP,Homeostasis of number of cells,7,1.4
+GO_BP,Response to metal ion,7,1.4
+GO_BP,Amino acid catabolic process,7,1.4
+GO_BP,Alpha beta t cell activation,7,1.4
+GO_BP,Alpha beta t cell differentiation,7,1.4
+GO_BP,Actin mediated cell contraction,7,1.4
+GO_BP,Actin polymerization or depolymerization,7,1.4
+GO_BP,Platelet aggregation,7,1.4
+GO_BP,Positive regulation of gliogenesis,7,1.4
+Reactome,Regulation of homotypic cell cell adhesion,7,1.4
+GO_BP,Bone mineralization,7,1.4
+GO_BP,Organic hydroxy compound biosynthetic process,7,1.4
+GO_BP,Regulation of protein localization to cell periphery,7,1.4
+GO_BP,Regulation of protein maturation,7,1.4
+GO_BP,Regulation of production of molecular mediator of immune response,7,1.4
+GO_BP,Lymph vessel development,7,1.4
+GO_BP,Lipid modification,7,1.4
+GO_BP,Olefinic compound metabolic process,7,1.4
+GO_BP,Lipid catabolic process,7,1.4
+Reactome,Eph ephrin signaling,7,1.4
+GO_BP,Regulation of myeloid cell differentiation,7,1.4
+GO_BP,Regulation of morphogenesis of an epithelium,7,1.4
+GO_BP,Endocardial cushion development,7,1.4
+GO_BP,Smooth muscle cell differentiation,7,1.4
+Reactome,Crosslinking of collagen fibrils,7,1.4
+GO_BP,Neutrophil chemotaxis,7,1.4
+GO_BP,Positive regulation of protein localization to plasma membrane,7,1.4
+GO_BP,Lymphocyte activation involved in immune response,7,1.4
+Reactome,Diseases associated with glycosaminoglycan metabolism,7,1.4
+GO_BP,Cellular response to vascular endothelial growth factor stimulus,6,1.2
+GO_BP,Morphogenesis of embryonic epithelium,6,1.2
+GO_BP,Mitotic cell cycle checkpoint signaling,6,1.2
+GO_BP,Mitotic nuclear division,6,1.2
+GO_BP,Monocarboxylic acid biosynthetic process,6,1.2
+GO_BP,Monocarboxylic acid catabolic process,6,1.2
+KEGG,Jak stat signaling pathway,6,1.2
+KEGG,Hematopoietic cell lineage,6,1.2
+GO_BP,Defense response to gram negative bacterium,6,1.2
+GO_BP,Negative regulation of coagulation,6,1.2
+GO_BP,Regulation of fat cell differentiation,6,1.2
+Hallmark,Bile acid metabolism,6,1.2
+GO_BP,Myeloid leukocyte cytokine production,6,1.2
+KEGG,Cell adhesion molecules cams,6,1.2
+Reactome,Tp53 regulates transcription of cell cycle genes,6,1.2
+Reactome,Rho gtpase effectors,6,1.2
+GO_BP,Positive regulation of endothelial cell migration,6,1.2
+Reactome,Phase i functionalization of compounds,6,1.2
+KEGG,Colorectal cancer,6,1.2
+Hallmark,G2m checkpoint,6,1.2
+GO_BP,Alpha amino acid metabolic process,6,1.2
+GO_BP,Aorta morphogenesis,6,1.2
+KEGG,Chronic myeloid leukemia,6,1.2
+KEGG,Leukocyte transendothelial migration,6,1.2
+KEGG,Non small cell lung cancer,6,1.2
+GO_BP,Regulation of b cell activation,6,1.2
+GO_BP,Regulation of animal organ morphogenesis,6,1.2
+GO_BP,Regulation of cell adhesion mediated by integrin,6,1.2
+GO_BP,Negative regulation of cell matrix adhesion,6,1.2
+GO_BP,Regulation of cellular extravasation,6,1.2
+GO_BP,Positive regulation of response to biotic stimulus,6,1.2
+GO_BP,Macrophage chemotaxis,6,1.2
+GO_BP,Mast cell activation,6,1.2
+GO_BP,Maintenance of location in cell,6,1.2
+GO_BP,Regulation of nuclear division,6,1.2
+GO_BP,Primary alcohol metabolic process,6,1.2
+GO_BP,Negative regulation of supramolecular fiber organization,6,1.2
+GO_BP,Regulation of osteoblast differentiation,6,1.2
+Reactome,Cdc42 gtpase cycle,6,1.2
+GO_BP,Lymphocyte migration,6,1.2
+GO_BP,Smad protein signal transduction,6,1.2
+GO_BP,Negative regulation of reproductive process,6,1.2
+GO_BP,Regulation of mirna metabolic process,6,1.2
+GO_BP,Tight junction organization,6,1.2
+GO_BP,Carbohydrate metabolic process,6,1.2
+Reactome,Cell cycle checkpoints,6,1.2
+GO_BP,Lymphocyte mediated immunity,6,1.2
+GO_BP,Negative regulation of immune response,6,1.2
+GO_BP,Regulation of cell killing,6,1.2
+GO_BP,Cellular response to interleukin 1,6,1.2
+GO_BP,Vacuolar localization,6,1.2
+GO_BP,Symbiont entry into host,6,1.2
+GO_BP,Vasculogenesis,6,1.2
+GO_BP,Sulfur compound biosynthetic process,6,1.2
+GO_BP,Membrane protein proteolysis,6,1.2
+GO_BP,Endocardial cushion morphogenesis,6,1.2
+GO_BP,Epiboly,6,1.2
+GO_BP,Membrane protein ectodomain proteolysis,6,1.2
+Reactome,Activation of matrix metalloproteinases,6,1.2
+KEGG,Valine leucine and isoleucine degradation,6,1.2
+GO_BP,Non canonical nf kappab signal transduction,6,1.2
+GO_BP,Calcium ion import,6,1.2
+GO_BP,Positive regulation of leukocyte mediated immunity,6,1.2
+GO_BP,Positive regulation of leukocyte degranulation,6,1.2
+GO_BP,Extrinsic apoptotic signaling pathway via death domain receptors,6,1.2
+GO_BP,Positive regulation of leukocyte proliferation,6,1.2
+GO_BP,Skin epidermis development,6,1.2
+GO_BP,Positive regulation of peptidyl tyrosine phosphorylation,6,1.2
+GO_BP,Regulation of protein depolymerization,6,1.2
+GO_BP,Positive regulation of regulated secretory pathway,6,1.2
+GO_BP,Cd4 positive alpha beta t cell differentiation,6,1.2
+GO_BP,Branching involved in blood vessel morphogenesis,6,1.2
+GO_BP,Blood vessel endothelial cell migration,6,1.2
+GO_BP,Cd4 positive alpha beta t cell activation,6,1.2
+GO_BP,Biological process involved in interaction with host,6,1.2
+Reactome,Diseases associated with o glycosylation of proteins,6,1.2
+GO_BP,Calcium mediated signaling,6,1.2
+GO_BP,Positive regulation of phagocytosis,6,1.2
+GO_BP,Interleukin 8 production,6,1.2
+GO_BP,Response to fibroblast growth factor,6,1.2
+GO_BP,Response to axon injury,6,1.2
+GO_BP,Response to hydrogen peroxide,6,1.2
+GO_BP,Leukocyte homeostasis,6,1.2
+Reactome,Metabolism of steroids,6,1.2
+GO_BP,Interleukin 10 production,6,1.2
+GO_BP,Glycerolipid metabolic process,6,1.2
+GO_BP,Sensory perception of pain,6,1.2
+Reactome,Immunoregulatory interactions between a lymphoid and a non lymphoid cell,6,1.2
+GO_BP,Positive regulation of interleukin 8 production,6,1.2
+GO_BP,Positive regulation of interleukin 6 production,6,1.2
+GO_BP,Positive chemotaxis,6,1.2
+GO_BP,Activation of innate immune response,6,1.2
+GO_BP,Activation of cysteine type endopeptidase activity involved in apoptotic process,6,1.2
+GO_BP,Amine transport,6,1.2
+GO_BP,Adenylate cyclase inhibiting g protein coupled receptor signaling pathway,5,1.0
+Reactome,Signaling by ntrks,5,1.0
+GO_BP,Antigen processing and presentation,5,1.0
+Reactome,Rhoa gtpase cycle,5,1.0
+GO_BP,Positive regulation of bmp signaling pathway,5,1.0
+Reactome,Syndecan interactions,5,1.0
 GO_BP,Positive regulation of cytokine production involved in immune response,5,1.0
 GO_BP,Positive regulation of collagen metabolic process,5,1.0
-GO_BP,Positive regulation of cellular extravasation,5,1.0
-GO_BP,Neurotransmitter secretion,5,1.0
-Reactome,Cyclin d associated events in g1,5,1.0
-GO_BP,Basement membrane organization,5,1.0
-GO_BP,Biogenic amine metabolic process,5,1.0
-GO_BP,Camera type eye photoreceptor cell differentiation,5,1.0
-GO_BP,Cardiac septum morphogenesis,5,1.0
-GO_BP,Animal organ regeneration,5,1.0
-Reactome,Keratinization,5,1.0
-Reactome,Metabolism of steroids,5,1.0
+GO_BP,Regulation of lymphocyte migration,5,1.0
+GO_BP,Regulation of macrophage migration,5,1.0
+GO_BP,Regulation of notch signaling pathway,5,1.0
+GO_BP,Lipid localization,5,1.0
+GO_BP,Lymph vessel morphogenesis,5,1.0
+GO_BP,Lymphocyte apoptotic process,5,1.0
+GO_BP,Lymphocyte homeostasis,5,1.0
+GO_BP,Regulation of platelet activation,5,1.0
 GO_BP,Outflow tract morphogenesis,5,1.0
-GO_BP,Aortic valve morphogenesis,5,1.0
-Reactome,Rhoa gtpase cycle,5,1.0
-Reactome,Rac2 gtpase cycle,5,1.0
-Reactome,Slc mediated transmembrane transport,5,1.0
-Reactome,Phase ii conjugation of compounds,5,1.0
-Reactome,Nuclear events kinase and transcription factor activation,5,1.0
-GO_BP,Antigen processing and presentation,5,1.0
-GO_BP,Phagocytosis engulfment,5,1.0
-Reactome,Negative regulation of the pi3k akt network,5,1.0
-Reactome,Ncam1 interactions,5,1.0
-Reactome,Ncam signaling for neurite out growth,5,1.0
-Reactome,Ngf stimulated transcription,5,1.0
-GO_BP,Nucleoside bisphosphate metabolic process,5,1.0
-GO_BP,Neutral lipid metabolic process,5,1.0
-GO_BP,Positive regulation of b cell activation,5,1.0
+GO_BP,Biogenic amine metabolic process,5,1.0
+GO_BP,Bone remodeling,5,1.0
+Reactome,Gpvi mediated activation cascade,5,1.0
+Reactome,Keratinization,5,1.0
+Reactome,Kidney development,5,1.0
+GO_BP,Apoptotic process involved in development,5,1.0
+GO_BP,Apoptotic process involved in morphogenesis,5,1.0
+GO_BP,Appendage morphogenesis,5,1.0
+GO_BP,Organic hydroxy compound catabolic process,5,1.0
+GO_BP,Camera type eye photoreceptor cell differentiation,5,1.0
+Reactome,Fcgamma receptor fcgr dependent phagocytosis,5,1.0
 Reactome,Formation of the cornified envelope,5,1.0
-GO_BP,Negative regulation of epithelial cell differentiation,5,1.0
-GO_BP,Negative regulation of fat cell differentiation,5,1.0
-GO_BP,Dendritic cell migration,5,1.0
-GO_BP,Negative regulation of nf kappab transcription factor activity,5,1.0
-GO_BP,Tumor necrosis factor mediated signaling pathway,5,1.0
-GO_BP,Positive regulation of interleukin 12 production,5,1.0
-GO_BP,Positive regulation of interleukin 10 production,5,1.0
-GO_BP,Granulocyte activation,5,1.0
-GO_BP,Heterotypic cell cell adhesion,5,1.0
-GO_BP,Glycerolipid metabolic process,5,1.0
-GO_BP,Regulatory t cell differentiation,5,1.0
-GO_BP,Regulation of tissue remodeling,5,1.0
-GO_BP,Regulation of synapse assembly,5,1.0
-GO_BP,Regulation of superoxide metabolic process,5,1.0
+Reactome,G alpha s signalling events,5,1.0
+GO_BP,Basement membrane organization,5,1.0
+GO_BP,Metanephric nephron development,5,1.0
+GO_BP,Labyrinthine layer morphogenesis,5,1.0
+GO_BP,Leukocyte mediated cytotoxicity,5,1.0
+GO_BP,Regulation of response to cytokine stimulus,5,1.0
+GO_BP,Intrinsic apoptotic signaling pathway by p53 class mediator,5,1.0
 GO_BP,Regulation of superoxide anion generation,5,1.0
-GO_BP,Epithelial cell differentiation involved in kidney development,5,1.0
-GO_BP,Positive regulation of production of molecular mediator of immune response,5,1.0
-GO_BP,Positive regulation of osteoblast differentiation,5,1.0
-GO_BP,Positive regulation of oligodendrocyte differentiation,5,1.0
-GO_BP,Positive regulation of smooth muscle cell proliferation,5,1.0
-GO_BP,Exocrine system development,5,1.0
-GO_BP,Positive regulation of response to biotic stimulus,5,1.0
-GO_BP,Positive regulation of smooth muscle cell migration,5,1.0
-GO_BP,Negative regulation of interleukin 6 production,5,1.0
-GO_BP,Substrate adhesion dependent cell spreading,5,1.0
-GO_BP,Superoxide anion generation,5,1.0
-GO_BP,T cell apoptotic process,5,1.0
-GO_BP,T cell differentiation involved in immune response,5,1.0
-GO_BP,T cell homeostasis,5,1.0
-GO_BP,Triglyceride metabolic process,5,1.0
-GO_BP,Sterol metabolic process,5,1.0
-GO_BP,Embryonic placenta morphogenesis,5,1.0
-GO_BP,Steroid biosynthetic process,5,1.0
-GO_BP,Semaphorin plexin signaling pathway,5,1.0
-GO_BP,Secondary palate development,5,1.0
+GO_BP,Regulation of superoxide metabolic process,5,1.0
+GO_BP,Negative regulation of amine transport,5,1.0
+GO_BP,Regulation of tissue remodeling,5,1.0
+GO_BP,Regulatory t cell differentiation,5,1.0
+GO_BP,Renal filtration,5,1.0
+GO_BP,Innate immune response activating cell surface receptor signaling pathway,5,1.0
+GO_BP,Renal system vasculature development,5,1.0
+GO_BP,Response to fatty acid,5,1.0
+KEGG,Vascular smooth muscle contraction,5,1.0
+GO_BP,Cell differentiation involved in kidney development,5,1.0
+Reactome,Anti inflammatory response favouring leishmania parasite infection,5,1.0
+GO_BP,Cardiac septum morphogenesis,5,1.0
+GO_BP,Phagocytosis engulfment,5,1.0
+GO_BP,Organic acid transport,5,1.0
+GO_BP,Organic anion transport,5,1.0
+GO_BP,Response to nutrient levels,5,1.0
+GO_BP,Negative chemotaxis,5,1.0
+GO_BP,Glycerolipid biosynthetic process,5,1.0
+GO_BP,Granulocyte activation,5,1.0
 GO_BP,Retina morphogenesis in camera type eye,5,1.0
 GO_BP,Rho protein signal transduction,5,1.0
-GO_BP,Regulation of lymphocyte apoptotic process,5,1.0
-GO_BP,Interleukin 12 production,5,1.0
-GO_BP,Negative chemotaxis,5,1.0
-GO_BP,Regulation of extrinsic apoptotic signaling pathway via death domain receptors,5,1.0
-GO_BP,Mesenchymal cell proliferation,5,1.0
-GO_BP,Membrane invagination,5,1.0
-GO_BP,Macrophage cytokine production,5,1.0
-GO_BP,Lipid catabolic process,5,1.0
-GO_BP,Lymph vessel morphogenesis,5,1.0
-GO_BP,Regulation of g protein coupled receptor signaling pathway,5,1.0
-GO_BP,Regulation of mirna transcription,5,1.0
-GO_BP,Innate immune response activating cell surface receptor signaling pathway,5,1.0
-GO_BP,Regulation of notch signaling pathway,5,1.0
-GO_BP,Labyrinthine layer morphogenesis,5,1.0
-GO_BP,Regulation of lymphocyte migration,5,1.0
-GO_BP,Intrinsic apoptotic signaling pathway by p53 class mediator,5,1.0
-GO_BP,Production of molecular mediator of immune response,5,1.0
-GO_BP,Metanephric epithelium development,5,1.0
-GO_BP,Regulation of alpha beta t cell differentiation,5,1.0
-GO_BP,Mucopolysaccharide metabolic process,5,1.0
+GO_BP,Secondary palate development,5,1.0
+GO_BP,Semaphorin plexin signaling pathway,5,1.0
+GO_BP,Positive regulation of smooth muscle cell proliferation,5,1.0
+GO_BP,Cellular response to retinoic acid,5,1.0
+KEGG,T cell receptor signaling pathway,5,1.0
+KEGG,Tight junction,5,1.0
+GO_BP,Positive regulation of production of molecular mediator of immune response,5,1.0
+GO_BP,Neurotransmitter secretion,5,1.0
+GO_BP,Neutral lipid metabolic process,5,1.0
+GO_BP,Negative regulation of epithelial cell differentiation,5,1.0
+GO_BP,Negative regulation of extrinsic apoptotic signaling pathway,5,1.0
+GO_BP,Negative regulation of fat cell differentiation,5,1.0
+GO_BP,Negative regulation of hydrolase activity,5,1.0
+GO_BP,Regulation of chondrocyte differentiation,5,1.0
+GO_BP,Steroid biosynthetic process,5,1.0
+GO_BP,Sterol metabolic process,5,1.0
+GO_BP,Substrate adhesion dependent cell spreading,5,1.0
+GO_BP,Superoxide anion generation,5,1.0
+KEGG,Natural killer cell mediated cytotoxicity,5,1.0
+GO_BP,Positive regulation of tumor necrosis factor superfamily cytokine production,5,1.0
+KEGG,Pancreatic cancer,5,1.0
+GO_BP,Nuclear chromosome segregation,5,1.0
+GO_BP,Positive regulation of protein localization to membrane,5,1.0
+GO_BP,Positive regulation of protein maturation,5,1.0
+GO_BP,Positive regulation of smooth muscle cell migration,5,1.0
 GO_BP,Regulation of cd4 positive alpha beta t cell activation,5,1.0
 GO_BP,Regulation of cd4 positive alpha beta t cell differentiation,5,1.0
-GO_BP,Metanephric tubule development,5,1.0
-GO_BP,Mast cell activation involved in immune response,5,1.0
-Reactome,Signaling by ntrks,5,1.0
+GO_BP,T cell differentiation involved in immune response,5,1.0
+GO_BP,T cell receptor signaling pathway,5,1.0
+GO_BP,Embryonic placenta morphogenesis,5,1.0
+GO_BP,Regulation of adaptive immune response,5,1.0
 GO_BP,Regulation of alpha beta t cell activation,5,1.0
-GO_BP,Aminoglycan biosynthetic process,5,1.0
-Reactome,Sema4d in semaphorin signaling,5,1.0
-GO_BP,Negative regulation of amine transport,5,1.0
+GO_BP,Regulation of alpha beta t cell differentiation,5,1.0
+GO_BP,Trabecula morphogenesis,5,1.0
+GO_BP,Triglyceride metabolic process,5,1.0
+GO_BP,Tumor necrosis factor mediated signaling pathway,5,1.0
+GO_BP,Vascular associated smooth muscle cell proliferation,5,1.0
+GO_BP,Vascular endothelial growth factor signaling pathway,5,1.0
+GO_BP,Xenobiotic metabolic process,5,1.0
+GO_BP,Zymogen activation,5,1.0
+GO_BP,Neural retina development,5,1.0
+GO_BP,Production of molecular mediator of immune response,5,1.0
+GO_BP,Protein localization to cell surface,5,1.0
+KEGG,Chemokine signaling pathway,5,1.0
+KEGG,Fatty acid metabolism,5,1.0
+KEGG,Gap junction,5,1.0
+GO_BP,Cellular response to xenobiotic stimulus,5,1.0
+GO_BP,Chondrocyte differentiation,5,1.0
+GO_BP,Chondrocyte proliferation,5,1.0
+GO_BP,Chromosome segregation,5,1.0
+GO_BP,Negative regulation of nf kappab transcription factor activity,5,1.0
+Hallmark,Fatty acid metabolism,5,1.0
+GO_BP,Collagen biosynthetic process,5,1.0
+Hallmark,Pi3k akt mtor signaling,5,1.0
+Hallmark,Tgf beta signaling,5,1.0
+Hallmark,Wnt beta catenin signaling,5,1.0
+KEGG,Apoptosis,5,1.0
+KEGG,Arachidonic acid metabolism,5,1.0
+GO_BP,Apical junction assembly,5,1.0
 GO_BP,Amine metabolic process,5,1.0
-Reactome,Smooth muscle contraction,5,1.0
-Reactome,Syndecan interactions,5,1.0
-GO_BP,Adenylate cyclase inhibiting g protein coupled receptor signaling pathway,5,1.0
-GO_BP,Activation of innate immune response,5,1.0
-GO_BP,Acyl coa metabolic process,4,0.8
-KEGG,Peroxisome,4,0.8
-KEGG,Prion diseases,4,0.8
-KEGG,Renal cell carcinoma,4,0.8
-KEGG,Tryptophan metabolism,4,0.8
-KEGG,Type ii diabetes mellitus,4,0.8
+GO_BP,Aminoglycan metabolic process,5,1.0
+GO_BP,Mesenchymal cell proliferation,5,1.0
+GO_BP,Mesoderm development,5,1.0
+GO_BP,Mesoderm morphogenesis,5,1.0
+GO_BP,Regulation of mirna transcription,5,1.0
+GO_BP,Macrophage cytokine production,5,1.0
+GO_BP,Mast cell activation involved in immune response,5,1.0
+GO_BP,Phospholipase c activating g protein coupled receptor signaling pathway,5,1.0
+Reactome,Ncam signaling for neurite out growth,5,1.0
+Reactome,Ncam1 interactions,5,1.0
+Reactome,Ngf stimulated transcription,5,1.0
+Reactome,Nuclear events kinase and transcription factor activation,5,1.0
+Reactome,Phase ii conjugation of compounds,5,1.0
 GO_BP,Positive regulation of cellular response to transforming growth factor beta stimulus,4,0.8
-GO_BP,Positive regulation of chemokine production,4,0.8
-GO_BP,Negative regulation of peptidase activity,4,0.8
-GO_BP,Monocarboxylic acid biosynthetic process,4,0.8
-GO_BP,Negative regulation of protein containing complex assembly,4,0.8
-GO_BP,Negative regulation of protein containing complex disassembly,4,0.8
-KEGG,Nod like receptor signaling pathway,4,0.8
-KEGG,Valine leucine and isoleucine degradation,4,0.8
-Reactome,Aberrant regulation of mitotic g1 s transition in cancer due to rb1 defects,4,0.8
+GO_BP,Positive regulation of cellular extravasation,4,0.8
 GO_BP,Positive regulation of cell killing,4,0.8
-KEGG,Erbb signaling pathway,4,0.8
-KEGG,Fatty acid metabolism,4,0.8
-KEGG,Fc epsilon ri signaling pathway,4,0.8
-KEGG,Glutathione metabolism,4,0.8
-GO_BP,Positive regulation of bmp signaling pathway,4,0.8
-GO_BP,Metanephric glomerulus development,4,0.8
-GO_BP,Microtubule depolymerization,4,0.8
-GO_BP,Regulation of cyclin dependent protein kinase activity,4,0.8
-GO_BP,Meiotic cell cycle process,4,0.8
-GO_BP,Regulation of cell cycle g2 m phase transition,4,0.8
-GO_BP,Cell differentiation involved in embryonic placenta development,4,0.8
-GO_BP,Cell differentiation involved in metanephros development,4,0.8
-GO_BP,Positive regulation of endothelial cell apoptotic process,4,0.8
-GO_BP,Positive regulation of endothelial cell proliferation,4,0.8
-GO_BP,Negative regulation of lymphocyte differentiation,4,0.8
-GO_BP,Chemokine production,4,0.8
-Hallmark,Notch signaling,4,0.8
-Hallmark,Peroxisome,4,0.8
-GO_BP,Negative regulation of t cell differentiation,4,0.8
-GO_BP,Vascular wound healing,4,0.8
-GO_BP,Xenobiotic metabolic process,4,0.8
-GO_BP,Collagen activated signaling pathway,4,0.8
-GO_BP,Receptor clustering,4,0.8
-Reactome,Mitotic prometaphase,4,0.8
-Reactome,Neurexins and neuroligins,4,0.8
-Reactome,Parasite infection,4,0.8
 Reactome,Platelet aggregation plug formation,4,0.8
-GO_BP,Angiogenesis involved in wound healing,4,0.8
-Reactome,Constitutive signaling by aberrant pi3k in cancer,4,0.8
-GO_BP,Positive regulation of inflammatory response,4,0.8
-GO_BP,Positive regulation of leukocyte adhesion to vascular endothelial cell,4,0.8
-GO_BP,Dendritic cell apoptotic process,4,0.8
-GO_BP,Dendritic cell chemotaxis,4,0.8
-GO_BP,Dendritic cell differentiation,4,0.8
-GO_BP,Triglyceride biosynthetic process,4,0.8
-GO_BP,Regulation of fibrinolysis,4,0.8
-GO_BP,Lymphangiogenesis,4,0.8
-GO_BP,Lymphocyte chemotaxis,4,0.8
-GO_BP,Lipid localization,4,0.8
-GO_BP,Long chain fatty acid metabolic process,4,0.8
-GO_BP,Regulation of glycoprotein metabolic process,4,0.8
-GO_BP,Regulation of inflammatory response to antigenic stimulus,4,0.8
-GO_BP,Regulation of leukocyte adhesion to vascular endothelial cell,4,0.8
-GO_BP,Sulfur amino acid metabolic process,4,0.8
-GO_BP,Sulfur compound biosynthetic process,4,0.8
-GO_BP,T cell differentiation in thymus,4,0.8
-GO_BP,T cell receptor signaling pathway,4,0.8
-GO_BP,T helper 1 type immune response,4,0.8
-GO_BP,Negative regulation of inflammatory response to antigenic stimulus,4,0.8
-GO_BP,Positive regulation of mirna metabolic process,4,0.8
-GO_BP,Positive regulation of mitotic cell cycle,4,0.8
-GO_BP,Positive regulation of myeloid leukocyte mediated immunity,4,0.8
-GO_BP,Positive regulation of nervous system process,4,0.8
-GO_BP,Positive regulation of neural precursor cell proliferation,4,0.8
-Reactome,Epha mediated growth cone collapse,4,0.8
-GO_BP,B cell mediated immunity,4,0.8
-GO_BP,B cell proliferation,4,0.8
-GO_BP,Plasminogen activation,4,0.8
-GO_BP,Platelet morphogenesis,4,0.8
-GO_BP,Podosome assembly,4,0.8
+Reactome,Neurexins and neuroligins,4,0.8
+Reactome,Negative regulation of the pi3k akt network,4,0.8
+Reactome,Mitotic prometaphase,4,0.8
 GO_BP,Positive regulation of alpha beta t cell activation,4,0.8
-GO_BP,Blood vessel endothelial cell proliferation involved in sprouting angiogenesis,4,0.8
-GO_BP,Positive regulation of alpha beta t cell differentiation,4,0.8
-GO_BP,Dna replication,4,0.8
-GO_BP,Ruffle organization,4,0.8
-GO_BP,Elastic fiber assembly,4,0.8
-GO_BP,Endocardial cushion formation,4,0.8
-GO_BP,Endoderm formation,4,0.8
-GO_BP,Signal transduction in absence of ligand,4,0.8
-GO_BP,Skeletal muscle cell differentiation,4,0.8
-GO_BP,Response to type ii interferon,4,0.8
-GO_BP,Positive regulation of nuclear division,4,0.8
-GO_BP,Positive regulation of podosome assembly,4,0.8
-GO_BP,Intrinsic apoptotic signaling pathway in response to dna damage by p53 class mediator,4,0.8
-GO_BP,L amino acid metabolic process,4,0.8
-GO_BP,Regulation of mast cell degranulation,4,0.8
-GO_BP,Regulation of membrane protein ectodomain proteolysis,4,0.8
-GO_BP,Production of molecular mediator involved in inflammatory response,4,0.8
-GO_BP,Proteoglycan metabolic process,4,0.8
-GO_BP,Negative regulation of epithelial cell apoptotic process,4,0.8
-GO_BP,Response to virus,4,0.8
-GO_BP,Neutral lipid biosynthetic process,4,0.8
-GO_BP,Neutrophil activation involved in immune response,4,0.8
-GO_BP,Neutrophil degranulation,4,0.8
-GO_BP,Non canonical wnt signaling pathway,4,0.8
-GO_BP,Non proteinogenic amino acid metabolic process,4,0.8
-GO_BP,B cell differentiation,4,0.8
-GO_BP,Ovulation cycle,4,0.8
+GO_BP,Podosome assembly,4,0.8
+GO_BP,Platelet morphogenesis,4,0.8
+GO_BP,Regulation of lymphocyte apoptotic process,4,0.8
 GO_BP,Regulation of mitotic nuclear division,4,0.8
-GO_BP,Regulation of myelination,4,0.8
-GO_BP,Regulation of neuroblast proliferation,4,0.8
-GO_BP,Regulation of neuroinflammatory response,4,0.8
-GO_BP,Interleukin 1 production,4,0.8
-GO_BP,Regulation of macrophage activation,4,0.8
-GO_BP,Regulation of macrophage differentiation,4,0.8
-Reactome,Fcgr3a mediated il10 synthesis,4,0.8
-GO_BP,Response to ionizing radiation,4,0.8
-GO_BP,Epithelial cell morphogenesis,4,0.8
-GO_BP,Epithelial to mesenchymal transition involved in endocardial cushion formation,4,0.8
-GO_BP,Response to nutrient levels,4,0.8
-GO_BP,Response to organophosphorus,4,0.8
-GO_BP,Regulation of plasminogen activation,4,0.8
-GO_BP,Regulation of podosome assembly,4,0.8
-Reactome,Metabolism of vitamins and cofactors,4,0.8
-GO_BP,Positive regulation of regulatory t cell differentiation,4,0.8
-GO_BP,Positive regulation of synapse assembly,4,0.8
-GO_BP,Fc receptor signaling pathway,4,0.8
-GO_BP,Renal vesicle development,4,0.8
-GO_BP,Generation of precursor metabolites and energy,4,0.8
-GO_BP,Glomerular epithelium development,4,0.8
-GO_BP,Regulation of t cell apoptotic process,4,0.8
-Reactome,G alpha q signalling events,4,0.8
-GO_BP,Glycerolipid biosynthetic process,4,0.8
-GO_BP,Regulation of response to cytokine stimulus,4,0.8
-GO_BP,Positive regulation of transforming growth factor beta production,4,0.8
-GO_BP,Intermediate filament based process,4,0.8
-GO_BP,Intermediate filament organization,4,0.8
-Reactome,Rho gtpases activate formins,4,0.8
-Reactome,Rho gtpases activate rocks,4,0.8
-GO_BP,Regulation of bicellular tight junction assembly,4,0.8
-GO_BP,Myeloid cell development,4,0.8
-GO_BP,Myeloid dendritic cell activation,4,0.8
-GO_BP,Regulation of bone remodeling,4,0.8
+GO_BP,Metanephric epithelium development,4,0.8
+Reactome,Sema4d in semaphorin signaling,4,0.8
+GO_BP,Aminoglycan biosynthetic process,4,0.8
 Reactome,Tp53 regulates transcription of cell death genes,4,0.8
+GO_BP,Positive regulation of chemokine production,4,0.8
+Hallmark,Peroxisome,4,0.8
+Hallmark,Notch signaling,4,0.8
+Hallmark,Mtorc1 signaling,4,0.8
+GO_BP,Dendritic cell migration,4,0.8
+GO_BP,Receptor clustering,4,0.8
+GO_BP,Dendritic cell differentiation,4,0.8
+GO_BP,Dendritic cell chemotaxis,4,0.8
+GO_BP,Dendritic cell apoptotic process,4,0.8
+GO_BP,Collagen activated signaling pathway,4,0.8
+GO_BP,Chemokine production,4,0.8
+KEGG,Fc epsilon ri signaling pathway,4,0.8
+KEGG,Erbb signaling pathway,4,0.8
+KEGG,Complement and coagulation cascades,4,0.8
+KEGG,Butanoate metabolism,4,0.8
+GO_BP,Elastic fiber assembly,4,0.8
+GO_BP,Dna replication,4,0.8
+GO_BP,Type ii interferon production,4,0.8
+GO_BP,Triglyceride biosynthetic process,4,0.8
+GO_BP,Ensheathment of neurons,4,0.8
+GO_BP,Negative regulation of protein containing complex disassembly,4,0.8
+GO_BP,Negative regulation of protein containing complex assembly,4,0.8
+GO_BP,Negative regulation of phagocytosis,4,0.8
+GO_BP,Endothelial cell apoptotic process,4,0.8
+GO_BP,Endocardial cushion formation,4,0.8
+GO_BP,Terpenoid metabolic process,4,0.8
+GO_BP,T helper 1 type immune response,4,0.8
+GO_BP,T cell migration,4,0.8
+GO_BP,T cell homeostasis,4,0.8
+GO_BP,T cell apoptotic process,4,0.8
+GO_BP,Regulation of bone remodeling,4,0.8
+GO_BP,Negative regulation of lymphocyte differentiation,4,0.8
+GO_BP,Positive regulation of small gtpase mediated signal transduction,4,0.8
+GO_BP,Positive regulation of regulatory t cell differentiation,4,0.8
+GO_BP,Positive regulation of protein serine threonine kinase activity,4,0.8
+GO_BP,Cellular lipid catabolic process,4,0.8
+GO_BP,Cellular ketone metabolic process,4,0.8
+KEGG,Peroxisome,4,0.8
+GO_BP,Negative regulation of t cell differentiation,4,0.8
+GO_BP,Positive regulation of transforming growth factor beta production,4,0.8
+KEGG,Neurotrophin signaling pathway,4,0.8
+GO_BP,Negative regulation of interleukin 6 production,4,0.8
+GO_BP,Epithelial to mesenchymal transition involved in endocardial cushion formation,4,0.8
+GO_BP,Epithelial cell morphogenesis,4,0.8
+GO_BP,Fatty acid catabolic process,4,0.8
+GO_BP,Fatty acid biosynthetic process,4,0.8
+GO_BP,Exocrine system development,4,0.8
+GO_BP,Negative regulation of inflammatory response to antigenic stimulus,4,0.8
+GO_BP,Neutral lipid biosynthetic process,4,0.8
+GO_BP,Positive regulation of podosome assembly,4,0.8
+GO_BP,Positive regulation of oligodendrocyte differentiation,4,0.8
+GO_BP,Positive regulation of nuclear division,4,0.8
+GO_BP,Positive regulation of neural precursor cell proliferation,4,0.8
+GO_BP,Positive regulation of myeloid leukocyte mediated immunity,4,0.8
+KEGG,Tryptophan metabolism,4,0.8
+KEGG,Toll like receptor signaling pathway,4,0.8
+KEGG,Renal cell carcinoma,4,0.8
+GO_BP,Regulation of cell cycle g2 m phase transition,4,0.8
+GO_BP,Fc receptor signaling pathway,4,0.8
+GO_BP,Fatty acid derivative metabolic process,4,0.8
+GO_BP,Semi lunar valve development,4,0.8
+GO_BP,Response to type ii interferon,4,0.8
+GO_BP,Regulation of cyclin dependent protein kinase activity,4,0.8
+GO_BP,Response to organophosphorus,4,0.8
+GO_BP,Response to nutrient,4,0.8
 GO_BP,Oligodendrocyte development,4,0.8
-GO_BP,One carbon metabolic process,4,0.8
-GO_BP,Organic hydroxy compound catabolic process,4,0.8
-GO_BP,Alcohol catabolic process,3,0.6
-GO_BP,Organic hydroxy compound transport,3,0.6
+GO_BP,Cell differentiation involved in embryonic placenta development,4,0.8
+Reactome,Aberrant regulation of mitotic g1 s transition in cancer due to rb1 defects,4,0.8
+Reactome,A tetrasaccharide linker sequence is required for gag synthesis,4,0.8
+KEGG,Type ii diabetes mellitus,4,0.8
+GO_BP,Cell proliferation involved in kidney development,4,0.8
+GO_BP,Non canonical wnt signaling pathway,4,0.8
+GO_BP,Neutrophil degranulation,4,0.8
+GO_BP,Neutrophil activation involved in immune response,4,0.8
+GO_BP,Heterotypic cell cell adhesion,4,0.8
+GO_BP,Response to calcium ion,4,0.8
+GO_BP,Inflammatory response to antigenic stimulus,4,0.8
+GO_BP,Immune system development,4,0.8
+GO_BP,Regulation of fibrinolysis,4,0.8
+GO_BP,Myeloid dendritic cell activation,4,0.8
+GO_BP,Myeloid cell development,4,0.8
+GO_BP,Regulation of synapse assembly,4,0.8
+GO_BP,Isoprenoid metabolic process,4,0.8
+GO_BP,Intrinsic apoptotic signaling pathway in response to dna damage by p53 class mediator,4,0.8
+GO_BP,Intermediate filament organization,4,0.8
+GO_BP,Intermediate filament based process,4,0.8
+GO_BP,Interleukin 12 production,4,0.8
+GO_BP,Interleukin 1 production,4,0.8
+GO_BP,Regulation of inflammatory response to antigenic stimulus,4,0.8
+GO_BP,Regulation of glycoprotein metabolic process,4,0.8
+GO_BP,Microtubule depolymerization,4,0.8
+GO_BP,Metanephric tubule development,4,0.8
+GO_BP,Positive regulation of inflammatory response,4,0.8
+GO_BP,Positive regulation of gtpase activity,4,0.8
+GO_BP,Positive regulation of alpha beta t cell differentiation,4,0.8
+GO_BP,Benzene containing compound metabolic process,4,0.8
+Reactome,G alpha q signalling events,4,0.8
+Reactome,Fcgr3a mediated il10 synthesis,4,0.8
+Reactome,Epha mediated growth cone collapse,4,0.8
+Reactome,Drug adme,4,0.8
+GO_BP,Positive regulation of mitotic cell cycle,4,0.8
+GO_BP,Positive regulation of lymphocyte migration,4,0.8
+GO_BP,Positive regulation of extrinsic apoptotic signaling pathway,4,0.8
+GO_BP,Positive regulation of endothelial cell proliferation,4,0.8
+GO_BP,Positive regulation of endothelial cell apoptotic process,4,0.8
+Reactome,Interferon signaling,4,0.8
+GO_BP,Blood vessel endothelial cell proliferation involved in sprouting angiogenesis,4,0.8
+GO_BP,Positive regulation of interleukin 12 production,4,0.8
+GO_BP,Positive regulation of interleukin 10 production,4,0.8
+GO_BP,Mucopolysaccharide metabolic process,4,0.8
+GO_BP,L amino acid metabolic process,4,0.8
+GO_BP,Regulation of podosome assembly,4,0.8
+GO_BP,Lymphangiogenesis,4,0.8
+GO_BP,Long chain fatty acid metabolic process,4,0.8
+GO_BP,Lipid oxidation,4,0.8
+GO_BP,Regulation of pattern recognition receptor signaling pathway,4,0.8
+GO_BP,Regulation of mast cell degranulation,4,0.8
+Reactome,Smooth muscle contraction,4,0.8
+GO_BP,Alcohol catabolic process,4,0.8
+GO_BP,Positive regulation of b cell activation,4,0.8
 Reactome,Tcr signaling,3,0.6
-GO_BP,Regulation of cellular response to vascular endothelial growth factor stimulus,3,0.6
-GO_BP,Regulation of b cell proliferation,3,0.6
-GO_BP,Negative regulation of protein polymerization,3,0.6
-GO_BP,Negative regulation of stem cell differentiation,3,0.6
-KEGG,Viral myocarditis,3,0.6
-GO_BP,Carbohydrate derivative catabolic process,3,0.6
-GO_BP,Negative regulation of cell substrate junction organization,3,0.6
-GO_BP,Positive regulation of t cell migration,3,0.6
-GO_BP,Positive regulation of t cell proliferation,3,0.6
-GO_BP,Positive regulation of type ii interferon production,3,0.6
-GO_BP,Post anal tail morphogenesis,3,0.6
-GO_BP,Interleukin 4 production,3,0.6
-GO_BP,Catecholamine secretion,3,0.6
-GO_BP,Cd8 positive alpha beta t cell activation,3,0.6
-GO_BP,Cd8 positive alpha beta t cell differentiation,3,0.6
-GO_BP,Cell cell adhesion mediated by integrin,3,0.6
-KEGG,Inositol phosphate metabolism,3,0.6
-KEGG,Intestinal immune network for iga production,3,0.6
-KEGG,Neurotrophin signaling pathway,3,0.6
-Reactome,Generation of second messenger molecules,3,0.6
-Reactome,Gp1b ix v activation signalling,3,0.6
-Reactome,Gpvi mediated activation cascade,3,0.6
-Reactome,Interferon gamma signaling,3,0.6
-Reactome,Interleukin 2 family signaling,3,0.6
-GO_BP,Regulation of protein autophosphorylation,3,0.6
-GO_BP,Regulation of protein tyrosine kinase activity,3,0.6
-GO_BP,Regulation of rho protein signal transduction,3,0.6
-GO_BP,Regulation of substrate adhesion dependent cell spreading,3,0.6
-GO_BP,Negative regulation of cell junction assembly,3,0.6
-GO_BP,Negative regulation of cell killing,3,0.6
-KEGG,Ether lipid metabolism,3,0.6
-KEGG,Fc gamma r mediated phagocytosis,3,0.6
-KEGG,Glycerolipid metabolism,3,0.6
-GO_BP,Positive regulation of b cell proliferation,3,0.6
+Reactome,Toll like receptor cascades,3,0.6
+Reactome,Triglyceride biosynthesis,3,0.6
+GO_BP,Amino acid biosynthetic process,3,0.6
+Reactome,Sema4d induced cell migration and growth cone collapse,3,0.6
+Reactome,Transcriptional regulation of granulopoiesis,3,0.6
+GO_BP,Acetyl coa metabolic process,3,0.6
 GO_BP,Positive regulation of calcium ion import,3,0.6
+GO_BP,Cellular response to type ii interferon,3,0.6
+GO_BP,Chromosome localization,3,0.6
+GO_BP,Collagen activated tyrosine kinase receptor signaling pathway,3,0.6
+KEGG,Inositol phosphate metabolism,3,0.6
+GO_BP,Positive regulation of substrate adhesion dependent cell spreading,3,0.6
+GO_BP,Positive regulation of synapse assembly,3,0.6
+GO_BP,Positive regulation of type ii interferon production,3,0.6
+GO_BP,Plasminogen activation,3,0.6
+GO_BP,Positive regulation of adaptive immune response,3,0.6
+GO_BP,B cell differentiation,3,0.6
+GO_BP,B cell proliferation,3,0.6
+Reactome,Mitochondrial protein degradation,3,0.6
+Reactome,O linked glycosylation of mucins,3,0.6
+Reactome,Parasite infection,3,0.6
+GO_BP,Regulation of neuroinflammatory response,3,0.6
+GO_BP,Regulation of neutrophil chemotaxis,3,0.6
+GO_BP,Regulation of myelination,3,0.6
+GO_BP,Aromatic amino acid family catabolic process,3,0.6
+GO_BP,Aromatic amino acid metabolic process,3,0.6
 GO_BP,Positive regulation of cell adhesion mediated by integrin,3,0.6
 GO_BP,Positive regulation of cell cycle phase transition,3,0.6
-GO_BP,Metaphase chromosome alignment,3,0.6
-GO_BP,Renal absorption,3,0.6
-GO_BP,Folic acid containing compound metabolic process,3,0.6
-GO_BP,Forebrain neuron development,3,0.6
-GO_BP,Glial cell migration,3,0.6
-GO_BP,Regulation of t cell migration,3,0.6
-GO_BP,Regulation of t cell receptor signaling pathway,3,0.6
-GO_BP,Regulation of t helper cell differentiation,3,0.6
-Reactome,Formation of fibrin clot clotting cascade,3,0.6
-Reactome,G1 s specific transcription,3,0.6
-GO_BP,Methionine metabolic process,3,0.6
-GO_BP,Regulation of chromosome segregation,3,0.6
-GO_BP,Maternal placenta development,3,0.6
-GO_BP,Regulation of calcium mediated signaling,3,0.6
+GO_BP,Positive regulation of exocytosis,3,0.6
+GO_BP,Regulation of plasminogen activation,3,0.6
+GO_BP,Regulation of positive chemotaxis,3,0.6
+GO_BP,L amino acid catabolic process,3,0.6
+GO_BP,Mitotic sister chromatid segregation,3,0.6
+GO_BP,Negative regulation of stem cell differentiation,3,0.6
 GO_BP,Negative regulation of tumor necrosis factor superfamily cytokine production,3,0.6
-GO_BP,Nephron tubule epithelial cell differentiation,3,0.6
+GO_BP,Prostate gland morphogenesis,3,0.6
+GO_BP,Protein localization to nucleus,3,0.6
+KEGG,B cell receptor signaling pathway,3,0.6
+GO_BP,Decidualization,3,0.6
+GO_BP,Post anal tail morphogenesis,3,0.6
+GO_BP,Production of molecular mediator involved in inflammatory response,3,0.6
+GO_BP,Programmed cell death involved in cell development,3,0.6
+KEGG,Nod like receptor signaling pathway,3,0.6
+KEGG,Phosphatidylinositol signaling system,3,0.6
+KEGG,Ppar signaling pathway,3,0.6
+GO_BP,Cellular modified amino acid metabolic process,3,0.6
+GO_BP,Cellular response to inorganic substance,3,0.6
+GO_BP,Regulation of fibroblast migration,3,0.6
+GO_BP,Regulation of rho protein signal transduction,3,0.6
+GO_BP,Intracellular receptor signaling pathway,3,0.6
+GO_BP,Regulation of small molecule metabolic process,3,0.6
+Reactome,Keratan sulfate biosynthesis,3,0.6
+Reactome,Metabolism of water soluble vitamins and cofactors,3,0.6
+GO_BP,Non proteinogenic amino acid metabolic process,3,0.6
+GO_BP,Diterpenoid metabolic process,3,0.6
+Hallmark,Oxidative phosphorylation,3,0.6
+GO_BP,Complement activation,3,0.6
+GO_BP,Cortical cytoskeleton organization,3,0.6
+Hallmark,E2f targets,3,0.6
+GO_BP,Bile acid metabolic process,3,0.6
+GO_BP,Bone resorption,3,0.6
+Reactome,Gp1b ix v activation signalling,3,0.6
+Reactome,Interleukin 2 family signaling,3,0.6
+GO_BP,Regulation of sodium ion transmembrane transport,3,0.6
+GO_BP,Regulation of sodium ion transmembrane transporter activity,3,0.6
+GO_BP,Regulation of substrate adhesion dependent cell spreading,3,0.6
+GO_BP,Regulation of t cell apoptotic process,3,0.6
+GO_BP,Negative regulation of alpha beta t cell activation,3,0.6
+GO_BP,Regulation of execution phase of apoptosis,3,0.6
+GO_BP,Defense response to virus,3,0.6
+GO_BP,Proteoglycan metabolic process,3,0.6
+GO_BP,Pyridine containing compound metabolic process,3,0.6
+GO_BP,Negative regulation of myoblast differentiation,3,0.6
+GO_BP,Positive regulation of reactive oxygen species metabolic process,3,0.6
+GO_BP,Positive regulation of response to cytokine stimulus,3,0.6
+GO_BP,Positive regulation of sodium ion transmembrane transporter activity,3,0.6
+GO_BP,Response to insulin,3,0.6
+GO_BP,Monocyte chemotaxis,3,0.6
+GO_BP,Regulation of t helper cell differentiation,3,0.6
+GO_BP,Release of cytochrome c from mitochondria,3,0.6
+GO_BP,Renal absorption,3,0.6
+GO_BP,Immune response regulating cell surface receptor signaling pathway involved in phagocytosis,3,0.6
+GO_BP,Import into nucleus,3,0.6
+GO_BP,Indole containing compound metabolic process,3,0.6
+KEGG,Propanoate metabolism,3,0.6
+KEGG,Retinol metabolism,3,0.6
+GO_BP,Vascular associated smooth muscle cell differentiation,3,0.6
+GO_BP,Vascular endothelial growth factor production,3,0.6
+GO_BP,Vascular wound healing,3,0.6
+GO_BP,Positive regulation of nervous system process,3,0.6
+GO_BP,Positive regulation of notch signaling pathway,3,0.6
+GO_BP,Neutrophil mediated immunity,3,0.6
+Reactome,Generation of second messenger molecules,3,0.6
+GO_BP,Organic hydroxy compound transport,3,0.6
+GO_BP,Integrin activation,3,0.6
+GO_BP,Renal vesicle development,3,0.6
+GO_BP,Respiratory system process,3,0.6
 GO_BP,Response to cadmium ion,3,0.6
 GO_BP,Response to corticosteroid,3,0.6
 GO_BP,Response to ether,3,0.6
-GO_BP,Response to fatty acid,3,0.6
-GO_BP,Fatty acid derivative metabolic process,3,0.6
+GO_BP,Cell surface pattern recognition receptor signaling pathway,3,0.6
+KEGG,Viral myocarditis,3,0.6
+GO_BP,Regulation of b cell proliferation,3,0.6
+GO_BP,Type i interferon production,3,0.6
+GO_BP,Unsaturated fatty acid metabolic process,3,0.6
+GO_BP,Vascular associated smooth muscle cell development,3,0.6
+GO_BP,Regulation of bone resorption,3,0.6
+GO_BP,Response to laminar fluid shear stress,3,0.6
+GO_BP,Generation of precursor metabolites and energy,3,0.6
+GO_BP,Negative regulation of cell substrate junction organization,3,0.6
+GO_BP,Regulation of chromosome segregation,3,0.6
+Reactome,Formation of fibrin clot clotting cascade,3,0.6
+Reactome,G1 s specific transcription,3,0.6
+GO_BP,Regulation of calcium mediated signaling,3,0.6
+GO_BP,T cell selection,3,0.6
+GO_BP,Negative regulation of peptidase activity,3,0.6
+GO_BP,Negative regulation of protein polymerization,3,0.6
+GO_BP,Catechol containing compound metabolic process,3,0.6
+GO_BP,Catecholamine secretion,3,0.6
+GO_BP,Establishment of protein localization to organelle,3,0.6
+GO_BP,Sulfur amino acid metabolic process,3,0.6
+GO_BP,Superoxide metabolic process,3,0.6
+GO_BP,Synaptic membrane adhesion,3,0.6
+GO_BP,Negative regulation of leukocyte mediated immunity,3,0.6
+GO_BP,Negative regulation of leukocyte proliferation,3,0.6
+GO_BP,Negative regulation of lymphocyte mediated immunity,3,0.6
+GO_BP,Regulation of bicellular tight junction assembly,3,0.6
+GO_BP,Glomerular epithelium development,3,0.6
+GO_BP,Response to purine containing compound,3,0.6
+GO_BP,Response to toxic substance,3,0.6
+GO_BP,Retinol metabolic process,3,0.6
+Reactome,Chondroitin sulfate biosynthesis,3,0.6
+Reactome,Complement cascade,3,0.6
+Reactome,Constitutive signaling by aberrant pi3k in cancer,3,0.6
+GO_BP,Phenol containing compound metabolic process,3,0.6
+GO_BP,Negative regulation of cell killing,3,0.6
+GO_BP,Forebrain neuron development,3,0.6
+GO_BP,Fatty acid beta oxidation,3,0.6
+GO_BP,Steroid catabolic process,3,0.6
+GO_BP,Epithelial cell differentiation involved in kidney development,3,0.6
+GO_BP,Signal transduction in absence of ligand,3,0.6
+GO_BP,Sister chromatid segregation,3,0.6
+GO_BP,Skeletal muscle cell proliferation,3,0.6
 GO_BP,Fc gamma receptor signaling pathway,3,0.6
 GO_BP,Fc receptor mediated stimulatory signaling pathway,3,0.6
 GO_BP,Fibroblast migration,3,0.6
-GO_BP,Release of cytochrome c from mitochondria,3,0.6
-KEGG,Butanoate metabolism,3,0.6
-GO_BP,Negative regulation of leukocyte proliferation,3,0.6
-GO_BP,Negative regulation of lymphocyte apoptotic process,3,0.6
-GO_BP,Negative regulation of lymphocyte mediated immunity,3,0.6
-GO_BP,Cellular response to inorganic substance,3,0.6
-GO_BP,Cellular response to type ii interferon,3,0.6
-GO_BP,Chondroitin sulfate biosynthetic process,3,0.6
-GO_BP,Chondroitin sulfate metabolic process,3,0.6
-GO_BP,Icosanoid metabolic process,3,0.6
-GO_BP,Immune response regulating cell surface receptor signaling pathway involved in phagocytosis,3,0.6
-Reactome,Keratan sulfate biosynthesis,3,0.6
-Reactome,Metabolism of water soluble vitamins and cofactors,3,0.6
-GO_BP,Arachidonic acid metabolic process,3,0.6
-GO_BP,Aspartate family amino acid metabolic process,3,0.6
-GO_BP,Negative regulation of g protein coupled receptor signaling pathway,3,0.6
-GO_BP,Positive regulation of stem cell differentiation,3,0.6
-GO_BP,Positive regulation of substrate adhesion dependent cell spreading,3,0.6
-GO_BP,Chondroitin sulfate proteoglycan biosynthetic process,3,0.6
-GO_BP,Chondroitin sulfate proteoglycan metabolic process,3,0.6
-GO_BP,Cell surface pattern recognition receptor signaling pathway,3,0.6
-GO_BP,Cellular ketone metabolic process,3,0.6
-GO_BP,Vascular associated smooth muscle cell development,3,0.6
-GO_BP,Vascular associated smooth muscle cell differentiation,3,0.6
-GO_BP,Vascular endothelial growth factor production,3,0.6
-GO_BP,Chromosome localization,3,0.6
-GO_BP,Collagen activated tyrosine kinase receptor signaling pathway,3,0.6
-GO_BP,Negative regulation of alpha beta t cell activation,3,0.6
-GO_BP,Regulation of epithelial cell differentiation involved in kidney development,3,0.6
-GO_BP,Inflammatory response to wounding,3,0.6
-GO_BP,Integrin activation,3,0.6
-Reactome,Fceri mediated ca 2 mobilization,3,0.6
-GO_BP,Response to laminar fluid shear stress,3,0.6
-GO_BP,Epidermis morphogenesis,3,0.6
-GO_BP,Response to nutrient,3,0.6
-GO_BP,Regulation of positive chemotaxis,3,0.6
-GO_BP,Prostate gland morphogenesis,3,0.6
-GO_BP,Protein localization to cell surface,3,0.6
-GO_BP,Protein oxidation,3,0.6
-GO_BP,Negative regulation of extrinsic apoptotic signaling pathway via death domain receptors,3,0.6
-GO_BP,Negative regulation of fibrinolysis,3,0.6
-GO_BP,Bone resorption,3,0.6
-GO_BP,Regulation of neutrophil chemotaxis,3,0.6
-GO_BP,Regulation of neutrophil migration,3,0.6
-GO_BP,Indole containing compound metabolic process,3,0.6
-GO_BP,Regulation of execution phase of apoptosis,3,0.6
-Reactome,Mitotic spindle checkpoint,3,0.6
-GO_BP,Cortical cytoskeleton organization,3,0.6
-Hallmark,E2f targets,3,0.6
-Hallmark,Fatty acid metabolism,3,0.6
-Reactome,Cell extracellular matrix interactions,3,0.6
-GO_BP,Branching involved in labyrinthine layer morphogenesis,3,0.6
-GO_BP,Ribose phosphate biosynthetic process,3,0.6
-GO_BP,Sister chromatid segregation,3,0.6
-GO_BP,Response to steroid hormone,3,0.6
-GO_BP,Positive regulation of notch signaling pathway,3,0.6
-GO_BP,Intracellular receptor signaling pathway,3,0.6
-GO_BP,Isoprenoid metabolic process,3,0.6
-GO_BP,Regulation of meiotic cell cycle,3,0.6
-Reactome,Chondroitin sulfate biosynthesis,3,0.6
-Reactome,Chondroitin sulfate dermatan sulfate metabolism,3,0.6
-Reactome,Cytochrome p450 arranged by substrate type,3,0.6
-Reactome,Death receptor signaling,3,0.6
-GO_BP,Type i interferon production,3,0.6
-GO_BP,Type ii interferon production,3,0.6
-GO_BP,Negative regulation of myoblast differentiation,3,0.6
-GO_BP,Positive regulation of interleukin 4 production,3,0.6
-GO_BP,Unsaturated fatty acid metabolic process,3,0.6
-GO_BP,Urogenital system development,3,0.6
-GO_BP,Decidualization,3,0.6
-GO_BP,Defense response to virus,3,0.6
-GO_BP,Detection of biotic stimulus,3,0.6
-Reactome,Mitochondrial protein degradation,3,0.6
-GO_BP,Phenol containing compound metabolic process,3,0.6
-GO_BP,Positive regulation of adaptive immune response,3,0.6
-Reactome,Mhc class ii antigen presentation,3,0.6
-GO_BP,Benzene containing compound metabolic process,3,0.6
-GO_BP,Steroid catabolic process,3,0.6
-GO_BP,Detoxification,3,0.6
-GO_BP,Dicarboxylic acid metabolic process,3,0.6
-GO_BP,Diterpenoid metabolic process,3,0.6
-GO_BP,Retinol metabolic process,3,0.6
-GO_BP,Regulation of fibroblast migration,3,0.6
-GO_BP,Lipid homeostasis,3,0.6
-GO_BP,Lipid modification,3,0.6
-GO_BP,Pyridine containing compound metabolic process,3,0.6
-GO_BP,Synaptic membrane adhesion,3,0.6
-GO_BP,Synaptic vesicle exocytosis,3,0.6
-GO_BP,T cell selection,3,0.6
-GO_BP,Temperature homeostasis,3,0.6
-GO_BP,Terpenoid metabolic process,3,0.6
-GO_BP,Negative regulation of leukocyte apoptotic process,3,0.6
-GO_BP,Negative regulation of leukocyte mediated immunity,3,0.6
-GO_BP,Positive regulation of macrophage differentiation,3,0.6
-GO_BP,Positive regulation of myelination,3,0.6
-GO_BP,Positive regulation of myeloid leukocyte cytokine production involved in immune response,3,0.6
-Reactome,Dissolution of fibrin clot,3,0.6
-Reactome,Downstream signal transduction,3,0.6
-GO_BP,Pteridine containing compound metabolic process,3,0.6
-GO_BP,Pulmonary valve development,3,0.6
-GO_BP,Regulation of lipase activity,3,0.6
-GO_BP,Regulation of lymphocyte chemotaxis,3,0.6
-GO_BP,Regulation of lymphocyte mediated immunity,3,0.6
-GO_BP,Phagosome maturation,3,0.6
-Reactome,Toll like receptor cascades,3,0.6
-KEGG,Phosphatidylinositol signaling system,3,0.6
-KEGG,Retinol metabolism,3,0.6
-GO_BP,Negative regulation of phagocytosis,3,0.6
-GO_BP,Negative regulation of phosphatidylinositol 3 kinase protein kinase b signal transduction,3,0.6
-GO_BP,Mitotic sister chromatid segregation,3,0.6
-GO_BP,Monocarboxylic acid catabolic process,3,0.6
-GO_BP,Monocarboxylic acid transport,3,0.6
-GO_BP,Monocyte chemotaxis,3,0.6
+GO_BP,Negative regulation of epithelial cell apoptotic process,3,0.6
 GO_BP,Regulation of cell proliferation involved in kidney development,3,0.6
-Reactome,Resolution of sister chromatid cohesion,3,0.6
-Reactome,Rho gtpases activate cit,3,0.6
-Reactome,Role of phospholipids in phagocytosis,3,0.6
+GO_BP,Regulation of cellular response to vascular endothelial growth factor stimulus,3,0.6
+GO_BP,Negative regulation of cell junction assembly,3,0.6
 GO_BP,Actin filament depolymerization,3,0.6
-Reactome,Transcriptional regulation of granulopoiesis,3,0.6
-Reactome,Triglyceride biosynthesis,3,0.6
-GO_BP,Regulation of bone resorption,3,0.6
-GO_BP,Antigen processing and presentation of peptide or polysaccharide antigen via mhc class ii,2,0.4
+Reactome,Rho gtpases activate formins,3,0.6
+Reactome,Rho gtpases activate rocks,3,0.6
+Reactome,Role of phospholipids in phagocytosis,3,0.6
+GO_BP,Angiogenesis involved in wound healing,3,0.6
+KEGG,Fc gamma r mediated phagocytosis,3,0.6
+KEGG,Glutathione metabolism,3,0.6
+GO_BP,Maternal placenta development,3,0.6
+GO_BP,Regulation of lymphocyte chemotaxis,3,0.6
+GO_BP,Regulation of macrophage activation,3,0.6
+GO_BP,Regulation of meiotic cell cycle,3,0.6
+GO_BP,Regulation of membrane depolarization,3,0.6
+GO_BP,Regulation of membrane protein ectodomain proteolysis,3,0.6
+Reactome,Peroxisomal protein import,3,0.6
+Reactome,Protein localization,3,0.6
+Reactome,Rac2 gtpase cycle,3,0.6
+Reactome,Resolution of sister chromatid cohesion,3,0.6
+Reactome,Tp53 regulates transcription of genes involved in g1 cell cycle arrest,2,0.4
+Reactome,Regulation of kit signaling,2,0.4
+Reactome,Purinergic signaling in leishmaniasis infection,2,0.4
+Reactome,Pecam1 interactions,2,0.4
+GO_BP,Regulation of map kinase activity,2,0.4
+GO_BP,Regulation of lymphocyte mediated immunity,2,0.4
 GO_BP,Antigen processing and presentation of peptide antigen,2,0.4
 GO_BP,Antigen processing and presentation of exogenous peptide antigen via mhc class ii,2,0.4
 GO_BP,Antigen processing and presentation of exogenous peptide antigen,2,0.4
-Reactome,Tryptophan catabolism,2,0.4
-GO_BP,Alpha beta t cell proliferation,2,0.4
-Reactome,Rho gtpases activate wasps and waves,2,0.4
-Reactome,Regulation of kit signaling,2,0.4
+GO_BP,Antigen processing and presentation of exogenous antigen,2,0.4
+GO_BP,Amyloid beta clearance,2,0.4
 Reactome,Runx3 regulates p14 arf,2,0.4
+Reactome,Rho gtpases activate cit,2,0.4
+GO_BP,Positive regulation of cd4 positive alpha beta t cell differentiation,2,0.4
+GO_BP,Positive regulation of cd4 positive alpha beta t cell activation,2,0.4
+GO_BP,C21 steroid hormone biosynthetic process,2,0.4
+GO_BP,Positive regulation of myelination,2,0.4
+GO_BP,One carbon metabolic process,2,0.4
 GO_BP,Regulation of cell migration involved in sprouting angiogenesis,2,0.4
-GO_BP,Modulation of process of another organism,2,0.4
-KEGG,Steroid hormone biosynthesis,2,0.4
-KEGG,Starch and sucrose metabolism,2,0.4
-KEGG,Propanoate metabolism,2,0.4
-KEGG,Primary immunodeficiency,2,0.4
-GO_BP,Pyridine containing compound biosynthetic process,2,0.4
-GO_BP,B cell receptor signaling pathway,2,0.4
+GO_BP,Negative regulation of g protein coupled receptor signaling pathway,2,0.4
+GO_BP,Epithelial tube branching involved in lung morphogenesis,2,0.4
+GO_BP,Ethanol metabolic process,2,0.4
+GO_BP,Folic acid containing compound metabolic process,2,0.4
+GO_BP,Phagosome maturation,2,0.4
+Reactome,Death receptor signaling,2,0.4
+Reactome,Costimulation by the cd28 family,2,0.4
+Reactome,Common pathway of fibrin clot formation,2,0.4
+Reactome,Chondroitin sulfate dermatan sulfate metabolism,2,0.4
+GO_BP,Retinoic acid metabolic process,2,0.4
+GO_BP,Response to zinc ion,2,0.4
+GO_BP,Response to tumor cell,2,0.4
+GO_BP,Glucose metabolic process,2,0.4
+GO_BP,Glomerular basement membrane development,2,0.4
+Reactome,Fcgr activation,2,0.4
+Reactome,Ethanol oxidation,2,0.4
+Reactome,Dissolution of fibrin clot,2,0.4
 Reactome,Diseases of programmed cell death,2,0.4
+Reactome,Defective intrinsic pathway for apoptosis,2,0.4
+GO_BP,Carbohydrate derivative catabolic process,2,0.4
+GO_BP,Carbohydrate biosynthetic process,2,0.4
+GO_BP,Cd8 positive alpha beta t cell differentiation,2,0.4
+GO_BP,Negative regulation of leukocyte apoptotic process,2,0.4
 GO_BP,Negative regulation of interleukin 10 production,2,0.4
-GO_BP,Tetrahydrofolate metabolic process,2,0.4
-GO_BP,T cell mediated immunity,2,0.4
-GO_BP,Sulfur amino acid catabolic process,2,0.4
-GO_BP,Rap protein signal transduction,2,0.4
-GO_BP,Pyridine nucleotide biosynthetic process,2,0.4
-GO_BP,Primary alcohol catabolic process,2,0.4
-GO_BP,Dicarboxylic acid biosynthetic process,2,0.4
-GO_BP,Sterol homeostasis,2,0.4
-GO_BP,Bone growth,2,0.4
-GO_BP,Bile acid metabolic process,2,0.4
-GO_BP,Bile acid biosynthetic process,2,0.4
-GO_BP,B cell homeostasis,2,0.4
-GO_BP,Phosphatidylcholine acyl chain remodeling,2,0.4
 GO_BP,Sulfur amino acid biosynthetic process,2,0.4
-GO_BP,Toll like receptor signaling pathway,2,0.4
+GO_BP,Estrogen metabolic process,2,0.4
+GO_BP,Establishment of organelle localization,2,0.4
+GO_BP,Cd8 positive alpha beta t cell activation,2,0.4
+GO_BP,Cardiac right ventricle morphogenesis,2,0.4
+Reactome,Bile acid and bile salt metabolism,2,0.4
+Reactome,Aspirin adme,2,0.4
+GO_BP,Cell fate determination,2,0.4
+GO_BP,Cell differentiation involved in metanephros development,2,0.4
+GO_BP,Cell cycle checkpoint signaling,2,0.4
+GO_BP,Cell cell adhesion mediated by integrin,2,0.4
+GO_BP,Regulation of amine metabolic process,2,0.4
+GO_BP,Endolysosomal toll like receptor signaling pathway,2,0.4
+GO_BP,T cell differentiation in thymus,2,0.4
+GO_BP,Regulation of catecholamine metabolic process,2,0.4
+Reactome,G0 and early g1,2,0.4
+Reactome,Formation of the ureteric bud,2,0.4
+GO_BP,Natural killer cell mediated immunity,2,0.4
+GO_BP,Regulation of epithelial cell differentiation involved in kidney development,2,0.4
+GO_BP,Regulation of dna replication,2,0.4
+GO_BP,Regulation of development heterochronic,2,0.4
+GO_BP,Negative regulation of cysteine type endopeptidase activity involved in apoptotic process,2,0.4
+GO_BP,Negative regulation of cysteine type endopeptidase activity,2,0.4
+GO_BP,Glial cell activation,2,0.4
+GO_BP,Serine family amino acid metabolic process,2,0.4
+GO_BP,Urogenital system development,2,0.4
+GO_BP,Tryptophan metabolic process,2,0.4
+GO_BP,Trophoblast giant cell differentiation,2,0.4
 GO_BP,Toll like receptor 4 signaling pathway,2,0.4
 GO_BP,Toll like receptor 2 signaling pathway,2,0.4
 GO_BP,Tolerance induction,2,0.4
-GO_BP,Defense response to gram positive bacterium,2,0.4
-GO_BP,Cytoplasmic pattern recognition receptor signaling pathway,2,0.4
-GO_BP,Cysteine metabolic process,2,0.4
-GO_BP,Cortisol metabolic process,2,0.4
-GO_BP,Negative regulation of nitric oxide metabolic process,2,0.4
-GO_BP,Negative regulation of neuroinflammatory response,2,0.4
-GO_BP,Tryptophan metabolic process,2,0.4
-GO_BP,Trophoblast giant cell differentiation,2,0.4
-Reactome,Defective intrinsic pathway for apoptosis,2,0.4
-Reactome,Dectin 2 family,2,0.4
-Reactome,Costimulation by the cd28 family,2,0.4
-Reactome,Common pathway of fibrin clot formation,2,0.4
-GO_BP,C21 steroid hormone biosynthetic process,2,0.4
-GO_BP,Programmed cell death involved in cell development,2,0.4
-GO_BP,Regulation of microglial cell activation,2,0.4
-GO_BP,L amino acid catabolic process,2,0.4
-GO_BP,Keratinocyte proliferation,2,0.4
-GO_BP,Response to tumor cell,2,0.4
-GO_BP,Signal transduction involved in regulation of gene expression,2,0.4
-GO_BP,Serine family amino acid metabolic process,2,0.4
-GO_BP,Endolysosomal toll like receptor signaling pathway,2,0.4
-GO_BP,Embryonic heart tube development,2,0.4
-GO_BP,Cellular response to interferon beta,2,0.4
-Hallmark,Androgen response,2,0.4
-GO_BP,Cortical actin cytoskeleton organization,2,0.4
-GO_BP,Complement activation classical pathway,2,0.4
-GO_BP,Complement activation alternative pathway,2,0.4
-Reactome,Protein localization,2,0.4
-Reactome,Peroxisomal protein import,2,0.4
-Reactome,Pecam1 interactions,2,0.4
-Reactome,Other semaphorin interactions,2,0.4
-GO_BP,B cell apoptotic process,2,0.4
-GO_BP,Notochord development,2,0.4
-GO_BP,Retinoic acid metabolic process,2,0.4
-GO_BP,Response to zinc ion,2,0.4
-GO_BP,Response to vitamin,2,0.4
-GO_BP,Negative regulation of cysteine type endopeptidase activity involved in apoptotic process,2,0.4
-GO_BP,Negative regulation of cysteine type endopeptidase activity,2,0.4
-GO_BP,Hormone catabolic process,2,0.4
-GO_BP,Hippo signaling,2,0.4
-GO_BP,Ethanol metabolic process,2,0.4
-GO_BP,Estrogen metabolic process,2,0.4
-GO_BP,Epithelial tube branching involved in lung morphogenesis,2,0.4
-GO_BP,Response to gonadotropin,2,0.4
-Reactome,Fcgr activation,2,0.4
-Reactome,Ethanol oxidation,2,0.4
-GO_BP,Interleukin 2 production,2,0.4
-GO_BP,Natural killer cell mediated immunity,2,0.4
-GO_BP,Receptor localization to synapse,2,0.4
-GO_BP,Cellular lipid catabolic process,2,0.4
+GO_BP,Epidermis morphogenesis,2,0.4
 GO_BP,Cellular aldehyde metabolic process,2,0.4
-Hallmark,Interferon alpha response,2,0.4
-GO_BP,Positive regulation of sodium ion transmembrane transporter activity,2,0.4
-GO_BP,Positive regulation of response to cytokine stimulus,2,0.4
-GO_BP,Positive regulation of release of cytochrome c from mitochondria,2,0.4
-GO_BP,Aromatic amino acid metabolic process,2,0.4
-GO_BP,Aromatic amino acid family catabolic process,2,0.4
-Reactome,Metabolism of folate and pterines,2,0.4
-Reactome,Map2k and mapk activation,2,0.4
-GO_BP,Cellular response to fluid shear stress,2,0.4
-GO_BP,Cellular modified amino acid biosynthetic process,2,0.4
-GO_BP,Negative regulation of meiotic cell cycle,2,0.4
-GO_BP,Positive regulation of dna replication,2,0.4
-GO_BP,Negative regulation of t cell receptor signaling pathway,2,0.4
-KEGG,Beta alanine metabolism,2,0.4
-KEGG,B cell receptor signaling pathway,2,0.4
 GO_BP,Cell migration involved in sprouting angiogenesis,2,0.4
-GO_BP,Filopodium assembly,2,0.4
-GO_BP,Fatty acid catabolic process,2,0.4
-GO_BP,Fatty acid biosynthetic process,2,0.4
+GO_BP,Hormone catabolic process,2,0.4
+GO_BP,Response to camp,2,0.4
+GO_BP,Respiratory burst,2,0.4
+GO_BP,Inflammatory response to wounding,2,0.4
+GO_BP,Positive regulation of leukocyte adhesion to vascular endothelial cell,2,0.4
+GO_BP,Positive regulation of interleukin 4 production,2,0.4
+GO_BP,Bile acid biosynthetic process,2,0.4
+GO_BP,B cell receptor signaling pathway,2,0.4
+GO_BP,Xenobiotic catabolic process,2,0.4
+GO_BP,Embryonic heart tube development,2,0.4
+GO_BP,Ectopic germ cell programmed cell death,2,0.4
+GO_BP,Dopamine metabolic process,2,0.4
+KEGG,Steroid hormone biosynthesis,2,0.4
+KEGG,Pyruvate metabolism,2,0.4
+KEGG,Primary immunodeficiency,2,0.4
+GO_BP,Cellular response to lipoprotein particle stimulus,2,0.4
+GO_BP,Osteoblast proliferation,2,0.4
+GO_BP,Indolalkylamine metabolic process,2,0.4
+GO_BP,Immunological synapse formation,2,0.4
+GO_BP,Icosanoid metabolic process,2,0.4
 GO_BP,Regulation of vascular permeability,2,0.4
 GO_BP,Regulation of toll like receptor 2 signaling pathway,2,0.4
+GO_BP,Regulation of t helper 1 type immune response,2,0.4
+GO_BP,Regulation of t cell receptor signaling pathway,2,0.4
+GO_BP,Positive regulation of release of cytochrome c from mitochondria,2,0.4
+GO_BP,Positive regulation of protein targeting to membrane,2,0.4
+GO_BP,Notochord development,2,0.4
+GO_BP,Receptor localization to synapse,2,0.4
+GO_BP,Pyridine nucleotide biosynthetic process,2,0.4
+GO_BP,Pyridine containing compound biosynthetic process,2,0.4
+GO_BP,Pteridine containing compound metabolic process,2,0.4
+GO_BP,Protein polymerization,2,0.4
+GO_BP,Protein oxidation,2,0.4
 GO_BP,Negative regulation of cd4 positive alpha beta t cell activation,2,0.4
-GO_BP,Positive regulation of t cell differentiation in thymus,2,0.4
-GO_BP,Cell fate determination,2,0.4
+Reactome,Intrinsic pathway of fibrin clot formation,2,0.4
+Reactome,Interleukin 1 family signaling,2,0.4
+Reactome,Interferon gamma signaling,2,0.4
+Reactome,Integrin signaling,2,0.4
+GO_BP,Bone growth,2,0.4
+Hallmark,Androgen response,2,0.4
+GO_BP,Cysteine metabolic process,2,0.4
+GO_BP,Cortisol metabolic process,2,0.4
+GO_BP,Cortical actin cytoskeleton organization,2,0.4
+Hallmark,Interferon alpha response,2,0.4
+GO_BP,Dicarboxylic acid metabolic process,2,0.4
+GO_BP,Dicarboxylic acid biosynthetic process,2,0.4
+GO_BP,Detection of biotic stimulus,2,0.4
+GO_BP,Negative regulation of nitric oxide metabolic process,2,0.4
+GO_BP,Cellular response to interferon beta,2,0.4
+Reactome,Mhc class ii antigen presentation,2,0.4
+Reactome,Map2k and mapk activation,2,0.4
+GO_BP,Interleukin 4 production,2,0.4
+GO_BP,Interleukin 2 production,2,0.4
+GO_BP,Regulation of respiratory system process,2,0.4
+GO_BP,Regulation of protein targeting to membrane,2,0.4
+GO_BP,Regulation of protein targeting,2,0.4
+GO_BP,Leukocyte activation involved in inflammatory response,2,0.4
+GO_BP,Regulation of leukocyte adhesion to vascular endothelial cell,2,0.4
+GO_BP,Modulation of process of another organism,2,0.4
+GO_BP,Cellular response to fluid shear stress,2,0.4
+GO_BP,Cellular modified amino acid biosynthetic process,2,0.4
+KEGG,Pathogenic escherichia coli infection,2,0.4
+KEGG,Oocyte meiosis,2,0.4
+GO_BP,Nephron tubule epithelial cell differentiation,2,0.4
+GO_BP,Programmed necrotic cell death,2,0.4
+GO_BP,Primary alcohol catabolic process,2,0.4
+GO_BP,Positive t cell selection,2,0.4
+GO_BP,Neuroinflammatory response,2,0.4
 KEGG,Antigen processing and presentation,2,0.4
 KEGG,Acute myeloid leukemia,2,0.4
-Reactome,Biosynthesis of specialized proresolving mediators spms,2,0.4
-Reactome,Bile acid and bile salt metabolism,2,0.4
-Reactome,Aspirin adme,2,0.4
-GO_BP,Regulation of catecholamine metabolic process,2,0.4
-GO_BP,Regulation of dna replication,2,0.4
-GO_BP,Regulation of dna damage response signal transduction by p53 class mediator,2,0.4
-GO_BP,Regulation of development heterochronic,2,0.4
-Reactome,G2 m checkpoints,2,0.4
-Reactome,G0 and early g1,2,0.4
-Reactome,Formation of the ureteric bud,2,0.4
-GO_BP,Regulation of t helper 1 type immune response,2,0.4
-GO_BP,Regulation of t cell chemotaxis,2,0.4
-GO_BP,Glomerular basement membrane development,2,0.4
-GO_BP,Respiratory burst,2,0.4
-GO_BP,Mesodermal cell differentiation,2,0.4
-GO_BP,Antigen processing and presentation of exogenous antigen,2,0.4
-GO_BP,Positive regulation of cell cycle g2 m phase transition,2,0.4
-GO_BP,Positive regulation of cd4 positive alpha beta t cell differentiation,2,0.4
-GO_BP,Positive regulation of cd4 positive alpha beta t cell activation,2,0.4
-KEGG,Glyoxylate and dicarboxylate metabolism,2,0.4
-KEGG,Glycosaminoglycan biosynthesis chondroitin sulfate,2,0.4
-KEGG,Glycolysis gluconeogenesis,2,0.4
-GO_BP,Regulation of ruffle assembly,2,0.4
-GO_BP,Regulation of respiratory system process,2,0.4
-GO_BP,Regulation of protein localization to cell surface,2,0.4
-Reactome,Intrinsic pathway of fibrin clot formation,2,0.4
-Reactome,Integrin signaling,2,0.4
+GO_BP,Cytoplasmic pattern recognition receptor signaling pathway,2,0.4
+KEGG,Ether lipid metabolism,2,0.4
 KEGG,Epithelial cell signaling in helicobacter pylori infection,2,0.4
 KEGG,Drug metabolism cytochrome p450,2,0.4
 KEGG,Cysteine and methionine metabolism,2,0.4
-KEGG,Metabolism of xenobiotics by cytochrome p450,2,0.4
-KEGG,Lysosome,2,0.4
-KEGG,Lysine degradation,2,0.4
-GO_BP,Caveolin mediated endocytosis,2,0.4
-GO_BP,Catechol containing compound metabolic process,2,0.4
-GO_BP,Cardiac right ventricle morphogenesis,2,0.4
-GO_BP,Ammonium ion metabolic process,2,0.4
-GO_BP,Amino acid biosynthetic process,2,0.4
-GO_BP,Amide transport,2,0.4
-GO_BP,Regulation of plasma lipoprotein particle levels,2,0.4
-GO_BP,Regulation of phospholipase activity,2,0.4
-GO_BP,Indolalkylamine metabolic process,2,0.4
-GO_BP,Immunological synapse formation,2,0.4
-GO_BP,Positive t cell selection,2,0.4
-GO_BP,Positive regulation of vasculogenesis,2,0.4
+KEGG,Beta alanine metabolism,2,0.4
+GO_BP,Protein containing complex disassembly,2,0.4
+GO_BP,Monosaccharide metabolic process,2,0.4
+GO_BP,Monosaccharide biosynthetic process,2,0.4
+GO_BP,L amino acid biosynthetic process,2,0.4
+GO_BP,Keratinocyte proliferation,2,0.4
+GO_BP,Regulation of protein autophosphorylation,2,0.4
+GO_BP,Positive regulation of dna replication,2,0.4
+GO_BP,Positive regulation of cell cycle g2 m phase transition,2,0.4
+GO_BP,Metanephric glomerulus development,2,0.4
+GO_BP,Mesodermal cell differentiation,2,0.4
+GO_BP,Membrane raft organization,2,0.4
+Reactome,Other semaphorin interactions,2,0.4
+GO_BP,B cell mediated immunity,2,0.4
+GO_BP,Aspartate family amino acid metabolic process,2,0.4
 GO_BP,Positive regulation of type i interferon production,2,0.4
-Reactome,Acyl chain remodelling of pc,2,0.4
-KEGG,Pathogenic escherichia coli infection,2,0.4
-KEGG,Oocyte meiosis,2,0.4
-KEGG,One carbon pool by folate,2,0.4
-GO_BP,Regulation of b cell apoptotic process,2,0.4
-GO_BP,Regulation of antigen receptor mediated signaling pathway,2,0.4
-GO_BP,Regulation of amine metabolic process,2,0.4
-GO_BP,Regulation of alcohol biosynthetic process,2,0.4
-GO_BP,Negative regulation of b cell apoptotic process,2,0.4
-GO_BP,Actin nucleation,2,0.4
+KEGG,Metabolism of xenobiotics by cytochrome p450,2,0.4
+KEGG,Lysine degradation,2,0.4
+KEGG,Intestinal immune network for iga production,2,0.4
+KEGG,Glyoxylate and dicarboxylate metabolism,2,0.4
+KEGG,Glycolysis gluconeogenesis,2,0.4
+GO_BP,Chondroitin sulfate proteoglycan biosynthetic process,2,0.4
+GO_BP,Chondroitin sulfate metabolic process,2,0.4
+GO_BP,Chondroitin sulfate biosynthetic process,2,0.4
+GO_BP,Positive regulation of b cell proliferation,2,0.4
 Reactome,Synthesis of bile acids and bile salts,2,0.4
+GO_BP,Alpha beta t cell proliferation,2,0.4
+GO_BP,Antigen processing and presentation of peptide or polysaccharide antigen via mhc class ii,2,0.4
 Reactome,Sulfur amino acid metabolism,2,0.4
-GO_BP,Alditol metabolic process,2,0.4
-Reactome,Tp53 regulates transcription of genes involved in g1 cell cycle arrest,2,0.4
-GO_BP,Osteoblast proliferation,2,0.4
-Reactome,Spry regulation of fgf signaling,1,0.2
-Reactome,Synthesis of bile acids and bile salts via 24 hydroxycholesterol,1,0.2
-Reactome,Synthesis of bile acids and bile salts via 7alpha hydroxycholesterol,1,0.2
-Reactome,Synthesis of dna,1,0.2
+Reactome,Tryptophan catabolism,2,0.4
+Reactome,Synthesis of pips at the early endosome membrane,1,0.2
+Reactome,Thrombin signalling through proteinase activated receptors pars,1,0.2
+Reactome,Tnf receptor superfamily tnfsf members mediating non canonical nf kb pathway,1,0.2
+GO_BP,Aldehyde catabolic process,1,0.2
+GO_BP,Alditol metabolic process,1,0.2
 GO_BP,Amino acid betaine metabolic process,1,0.2
 Reactome,S phase,1,0.2
-GO_BP,Amide biosynthetic process,1,0.2
-Reactome,Transport of bile salts and organic acids metal ions and amine compounds,1,0.2
-Reactome,Unwinding of dna,1,0.2
-Reactome,Xenobiotics,1,0.2
-KEGG,Ppar signaling pathway,1,0.2
-KEGG,Primary bile acid biosynthesis,1,0.2
-KEGG,Pyruvate metabolism,1,0.2
-KEGG,Systemic lupus erythematosus,1,0.2
-KEGG,Type i diabetes mellitus,1,0.2
-GO_BP,Positive regulation of cell migration involved in sprouting angiogenesis,1,0.2
-KEGG,Nicotinate and nicotinamide metabolism,1,0.2
-KEGG,Pantothenate and coa biosynthesis,1,0.2
-KEGG,Tyrosine metabolism,1,0.2
-Reactome,Activation of atr in response to replication stress,1,0.2
-Reactome,Activation of smo,1,0.2
-Reactome,Activation of the pre replicative complex,1,0.2
-Reactome,Antigen activates b cell receptor bcr leading to generation of second messengers,1,0.2
-GO_BP,Carbohydrate catabolic process,1,0.2
-GO_BP,Positive regulation of b cell mediated immunity,1,0.2
-GO_BP,Cd4 positive alpha beta t cell proliferation,1,0.2
-GO_BP,Cell cycle checkpoint signaling,1,0.2
-GO_BP,Cell cycle dna replication,1,0.2
-GO_BP,Cell cycle g2 m phase transition,1,0.2
+Reactome,Separation of sister chromatids,1,0.2
+Reactome,Signaling by csf1 m csf in myeloid cells,1,0.2
+Reactome,Rho gtpases activate wasps and waves,1,0.2
+GO_BP,Ammonium ion metabolic process,1,0.2
+GO_BP,Androgen metabolic process,1,0.2
+KEGG,Glycine serine and threonine metabolism,1,0.2
+GO_BP,Chromosome separation,1,0.2
+KEGG,Glycosaminoglycan biosynthesis chondroitin sulfate,1,0.2
 KEGG,Graft versus host disease,1,0.2
 KEGG,Histidine metabolism,1,0.2
-KEGG,Cytosolic dna sensing pathway,1,0.2
-KEGG,Drug metabolism other enzymes,1,0.2
-KEGG,Glycine serine and threonine metabolism,1,0.2
-GO_BP,Negative t cell selection,1,0.2
-Reactome,Branched chain amino acid catabolism,1,0.2
-Reactome,Caspase activation via extrinsic apoptotic signalling pathway,1,0.2
-KEGG,Alanine aspartate and glutamate metabolism,1,0.2
-KEGG,Allograft rejection,1,0.2
+KEGG,Lysosome,1,0.2
+KEGG,Nicotinate and nicotinamide metabolism,1,0.2
+GO_BP,Positive regulation of t cell differentiation in thymus,1,0.2
+GO_BP,Positive regulation of t cell mediated immunity,1,0.2
+GO_BP,Positive regulation of t cell proliferation,1,0.2
+GO_BP,Positive regulation of vasculogenesis,1,0.2
+GO_BP,Negative regulation of tissue remodeling,1,0.2
+GO_BP,Protein localization to endosome,1,0.2
 KEGG,Arginine and proline metabolism,1,0.2
 KEGG,Ascorbate and aldarate metabolism,1,0.2
 KEGG,Asthma,1,0.2
 KEGG,Autoimmune thyroid disease,1,0.2
-GO_BP,Cell migration involved in heart development,1,0.2
-GO_BP,Negative regulation of tissue remodeling,1,0.2
-GO_BP,Negative regulation of myeloid cell apoptotic process,1,0.2
-GO_BP,Cellular modified amino acid catabolic process,1,0.2
+KEGG,Cytosolic dna sensing pathway,1,0.2
+KEGG,Drug metabolism other enzymes,1,0.2
 KEGG,Abc transporters,1,0.2
-Hallmark,Oxidative phosphorylation,1,0.2
-GO_BP,Cellular defense response,1,0.2
-GO_BP,Branched chain amino acid catabolic process,1,0.2
-GO_BP,Branched chain amino acid metabolic process,1,0.2
-GO_BP,Carbohydrate biosynthetic process,1,0.2
-Reactome,Chk1 chk2 cds1 mediated inactivation of cyclin b cdk1 complex,1,0.2
-GO_BP,Unsaturated fatty acid biosynthetic process,1,0.2
-GO_BP,Positive regulation of interleukin 2 production,1,0.2
-GO_BP,Negative regulation of glycoprotein metabolic process,1,0.2
-GO_BP,Negative regulation of hormone biosynthetic process,1,0.2
-GO_BP,Cytokine production involved in inflammatory response,1,0.2
-GO_BP,Thioester biosynthetic process,1,0.2
-GO_BP,Thymic t cell selection,1,0.2
-GO_BP,Double strand break repair,1,0.2
-GO_BP,Negative regulation of interleukin 1 beta production,1,0.2
-GO_BP,Positive regulation of non canonical nf kappab signal transduction,1,0.2
-GO_BP,Double strand break repair via break induced replication,1,0.2
-Reactome,Dna replication,1,0.2
-Reactome,Dna strand elongation,1,0.2
-GO_BP,Behavioral response to cocaine,1,0.2
-GO_BP,Skeletal muscle tissue regeneration,1,0.2
-GO_BP,Stem cell division,1,0.2
+KEGG,Alanine aspartate and glutamate metabolism,1,0.2
+KEGG,Allograft rejection,1,0.2
+GO_BP,Positive thymic t cell selection,1,0.2
+GO_BP,Primary amino compound metabolic process,1,0.2
+GO_BP,Negative t cell selection,1,0.2
+KEGG,One carbon pool by folate,1,0.2
+KEGG,Pantothenate and coa biosynthesis,1,0.2
+GO_BP,Non proteinogenic amino acid catabolic process,1,0.2
+GO_BP,Negative regulation of nuclear division,1,0.2
+GO_BP,Detoxification,1,0.2
 GO_BP,Detoxification of inorganic compound,1,0.2
-GO_BP,Dna conformation change,1,0.2
+GO_BP,Complement activation alternative pathway,1,0.2
+GO_BP,Defense response to gram positive bacterium,1,0.2
+GO_BP,Pyrimidine nucleotide metabolic process,1,0.2
+GO_BP,Recombinational repair,1,0.2
+GO_BP,Negative regulation of neuroinflammatory response,1,0.2
+KEGG,Primary bile acid biosynthesis,1,0.2
+KEGG,Starch and sucrose metabolism,1,0.2
+KEGG,Systemic lupus erythematosus,1,0.2
+GO_BP,Cell junction disassembly,1,0.2
+GO_BP,Very long chain fatty acid metabolic process,1,0.2
 GO_BP,Dna recombination,1,0.2
 GO_BP,Dna replication checkpoint signaling,1,0.2
 GO_BP,Dna replication initiation,1,0.2
 GO_BP,Dna templated dna replication,1,0.2
 GO_BP,Dna unwinding involved in dna replication,1,0.2
-GO_BP,Ectopic germ cell programmed cell death,1,0.2
+GO_BP,Double strand break repair,1,0.2
+GO_BP,Double strand break repair via break induced replication,1,0.2
 GO_BP,Embryonic heart tube morphogenesis,1,0.2
-GO_BP,Serine family amino acid biosynthetic process,1,0.2
-GO_BP,Response to potassium ion,1,0.2
-GO_BP,Positive regulation of alpha beta t cell proliferation,1,0.2
-GO_BP,Positive regulation of b cell differentiation,1,0.2
-GO_BP,Non proteinogenic amino acid catabolic process,1,0.2
-GO_BP,Nucleoside bisphosphate biosynthetic process,1,0.2
-Reactome,Ephb mediated forward signaling,1,0.2
-GO_BP,Response to insulin,1,0.2
-GO_BP,Response to interleukin 17,1,0.2
-GO_BP,Response to interleukin 4,1,0.2
-GO_BP,Epoxygenase p450 pathway,1,0.2
-GO_BP,Positive regulation of t cell mediated immunity,1,0.2
-GO_BP,Response to camp,1,0.2
-GO_BP,Fatty acid beta oxidation,1,0.2
+GO_BP,Positive regulation of non canonical nf kappab signal transduction,1,0.2
+GO_BP,Cell migration involved in heart development,1,0.2
+GO_BP,Cellular defense response,1,0.2
+KEGG,Type i diabetes mellitus,1,0.2
+KEGG,Tyrosine metabolism,1,0.2
+Reactome,Activation of atr in response to replication stress,1,0.2
+Reactome,Activation of smo,1,0.2
+Reactome,Activation of the pre replicative complex,1,0.2
+Reactome,Alpha linolenic omega3 and linoleic omega6 acid metabolism,1,0.2
+GO_BP,Regulation of b cell mediated immunity,1,0.2
+GO_BP,Negative regulation of interleukin 1 beta production,1,0.2
+GO_BP,Toll like receptor signaling pathway,1,0.2
+GO_BP,Tricarboxylic acid metabolic process,1,0.2
+GO_BP,Uronic acid metabolic process,1,0.2
+GO_BP,T cell mediated immunity,1,0.2
+GO_BP,Tetrahydrofolate metabolic process,1,0.2
+GO_BP,Thymic t cell selection,1,0.2
+GO_BP,Negative regulation of organelle organization,1,0.2
+GO_BP,Regulation of adenylate cyclase activating g protein coupled receptor signaling pathway,1,0.2
+GO_BP,Regulation of antigen receptor mediated signaling pathway,1,0.2
+GO_BP,Regulation of b cell differentiation,1,0.2
+GO_BP,Cell cycle dna replication,1,0.2
+GO_BP,Cell cycle g2 m phase transition,1,0.2
+Reactome,Beta oxidation of very long chain fatty acids,1,0.2
+Reactome,Branched chain amino acid catabolism,1,0.2
+Reactome,Caspase activation via extrinsic apoptotic signalling pathway,1,0.2
+GO_BP,Cd4 positive alpha beta t cell proliferation,1,0.2
+GO_BP,Synapse pruning,1,0.2
+GO_BP,Negative regulation of meiotic cell cycle,1,0.2
+GO_BP,Negative regulation of myeloid cell apoptotic process,1,0.2
+Reactome,Chk1 chk2 cds1 mediated inactivation of cyclin b cdk1 complex,1,0.2
+Reactome,Dectin 2 family,1,0.2
+GO_BP,Branched chain amino acid metabolic process,1,0.2
+GO_BP,Phosphate ion homeostasis,1,0.2
+GO_BP,Nucleoside phosphate catabolic process,1,0.2
+GO_BP,Omega hydroxylase p450 pathway,1,0.2
+GO_BP,Filopodium assembly,1,0.2
 GO_BP,Fluid transport,1,0.2
 GO_BP,G protein coupled purinergic nucleotide receptor signaling pathway,1,0.2
 GO_BP,Gamma delta t cell activation,1,0.2
-GO_BP,Glucose metabolic process,1,0.2
-GO_BP,Regulation of t cell mediated immunity,1,0.2
-Reactome,Glucuronidation,1,0.2
-Reactome,Growth hormone receptor signaling,1,0.2
-Reactome,Initial triggering of complement,1,0.2
-GO_BP,Regulation of protein localization to synapse,1,0.2
-GO_BP,Regulation of receptor localization to synapse,1,0.2
+GO_BP,Fatty acid beta oxidation using acyl coa oxidase,1,0.2
+GO_BP,Sterol homeostasis,1,0.2
+GO_BP,Epoxygenase p450 pathway,1,0.2
+GO_BP,Erythrose 4 phosphate phosphoenolpyruvate family amino acid metabolic process,1,0.2
+GO_BP,Serotonin transport,1,0.2
+GO_BP,Skeletal muscle tissue regeneration,1,0.2
+GO_BP,Negative regulation of glycoprotein metabolic process,1,0.2
+GO_BP,Negative regulation of hormone biosynthetic process,1,0.2
+GO_BP,Positive regulation of monocyte chemotactic protein 1 production,1,0.2
+GO_BP,Positive regulation of myeloid leukocyte cytokine production involved in immune response,1,0.2
+GO_BP,Calcineurin mediated signaling,1,0.2
+Reactome,Dna replication,1,0.2
+Reactome,Dna strand elongation,1,0.2
+Reactome,Ephb mediated forward signaling,1,0.2
+GO_BP,Negative adaptation of signaling pathway,1,0.2
+GO_BP,Negative regulation of adenylate cyclase activating g protein coupled receptor signaling pathway,1,0.2
 GO_BP,Glutamate metabolic process,1,0.2
 GO_BP,Glutamine family amino acid biosynthetic process,1,0.2
 GO_BP,Glutamine family amino acid metabolic process,1,0.2
+GO_BP,Serine family amino acid biosynthetic process,1,0.2
+GO_BP,Response to peptide hormone,1,0.2
+GO_BP,Negative regulation of chromosome organization,1,0.2
+GO_BP,Negative regulation of chromosome segregation,1,0.2
+GO_BP,Negative regulation of cytokine production involved in inflammatory response,1,0.2
+GO_BP,Regulation of chromosome organization,1,0.2
+Reactome,G2 m checkpoints,1,0.2
+Reactome,Glucuronidation,1,0.2
+GO_BP,Behavioral response to cocaine,1,0.2
+GO_BP,Positive regulation of alpha beta t cell proliferation,1,0.2
+GO_BP,Positive regulation of granulocyte macrophage colony stimulating factor production,1,0.2
+GO_BP,Positive regulation of interleukin 2 production,1,0.2
+GO_BP,Granulocyte macrophage colony stimulating factor production,1,0.2
 GO_BP,Hepaticobiliary system development,1,0.2
-GO_BP,Regulation of response to tumor cell,1,0.2
-GO_BP,Positive regulation of t helper 1 type immune response,1,0.2
-GO_BP,Positive thymic t cell selection,1,0.2
-GO_BP,Immune response to tumor cell,1,0.2
-GO_BP,Regulation of non canonical nf kappab signal transduction,1,0.2
-GO_BP,Regulation of phospholipase c activity,1,0.2
+GO_BP,Hepatocyte growth factor receptor signaling pathway,1,0.2
 GO_BP,Homocysteine metabolic process,1,0.2
-GO_BP,Negative regulation of cd4 positive alpha beta t cell proliferation,1,0.2
-Reactome,Metabolism of porphyrins,1,0.2
-GO_BP,Arginine metabolic process,1,0.2
-GO_BP,Aspartate family amino acid catabolic process,1,0.2
-GO_BP,Outflow tract septum morphogenesis,1,0.2
-GO_BP,Regulation of microvillus organization,1,0.2
-GO_BP,Regulation of monocyte chemotaxis,1,0.2
-GO_BP,Regulation of nmda receptor activity,1,0.2
-GO_BP,Inorganic ion homeostasis,1,0.2
-GO_BP,Interferon beta production,1,0.2
-GO_BP,Keratinocyte migration,1,0.2
-GO_BP,Ketone catabolic process,1,0.2
-GO_BP,Kynurenine metabolic process,1,0.2
-GO_BP,L amino acid biosynthetic process,1,0.2
-GO_BP,Primary amino compound metabolic process,1,0.2
-GO_BP,Programmed necrotic cell death,1,0.2
-GO_BP,Protein localization to endosome,1,0.2
-GO_BP,Pyramidal neuron differentiation,1,0.2
+GO_BP,Response to interleukin 17,1,0.2
+GO_BP,Regulation of toll like receptor signaling pathway,1,0.2
+GO_BP,Immune response to tumor cell,1,0.2
+GO_BP,Organophosphate catabolic process,1,0.2
 GO_BP,Peptide antigen assembly with mhc class ii protein complex,1,0.2
 GO_BP,Peptide antigen assembly with mhc protein complex,1,0.2
-GO_BP,Phosphate ion homeostasis,1,0.2
-GO_BP,Positive regulation of acute inflammatory response,1,0.2
-Reactome,Mitochondrial fatty acid beta oxidation,1,0.2
-GO_BP,Maintenance of blood brain barrier,1,0.2
-GO_BP,Lipid oxidation,1,0.2
-GO_BP,Lipopolysaccharide mediated signaling pathway,1,0.2
-GO_BP,Regulation of hormone biosynthetic process,1,0.2
-GO_BP,Recombinational repair,1,0.2
+GO_BP,Branched chain amino acid catabolic process,1,0.2
+Reactome,Growth hormone receptor signaling,1,0.2
+Reactome,Initial triggering of complement,1,0.2
+GO_BP,Regulation of t cell mediated immunity,1,0.2
+GO_BP,Negative regulation of cd4 positive alpha beta t cell proliferation,1,0.2
 GO_BP,Natural killer cell activation,1,0.2
 GO_BP,Natural killer cell mediated immune response to tumor cell,1,0.2
-GO_BP,Negative adaptation of signaling pathway,1,0.2
-GO_BP,Negative regulation of adenylate cyclase activating g protein coupled receptor signaling pathway,1,0.2
-GO_BP,Membrane raft organization,1,0.2
 GO_BP,Regulation of exit from mitosis,1,0.2
-Reactome,Negative regulation of fgfr3 signaling,1,0.2
-Reactome,Negative regulation of fgfr4 signaling,1,0.2
-Reactome,Pd 1 signaling,1,0.2
-Reactome,Pyroptosis,1,0.2
-GO_BP,Androgen metabolic process,1,0.2
+GO_BP,Regulation of g protein coupled receptor signaling pathway,1,0.2
+GO_BP,Regulation of gamma delta t cell activation,1,0.2
+GO_BP,Monocyte chemotactic protein 1 production,1,0.2
+GO_BP,Regulation of proteolysis involved in protein catabolic process,1,0.2
+GO_BP,Regulation of receptor localization to synapse,1,0.2
+GO_BP,Regulation of response to tumor cell,1,0.2
+GO_BP,Interferon beta production,1,0.2
+GO_BP,Regulation of sister chromatid segregation,1,0.2
+Reactome,M phase,1,0.2
+Reactome,Metabolism of folate and pterines,1,0.2
+Reactome,Metabolism of porphyrins,1,0.2
+GO_BP,Arginine metabolic process,1,0.2
+GO_BP,Phosphatidylcholine acyl chain remodeling,1,0.2
+GO_BP,Regulation of protein localization to synapse,1,0.2
+GO_BP,Kynurenine metabolic process,1,0.2
+GO_BP,Metaphase chromosome alignment,1,0.2
 GO_BP,Microtubule based protein transport,1,0.2
-GO_BP,Microvillus organization,1,0.2
-GO_BP,Regulation of cholesterol storage,1,0.2
-GO_BP,Meiotic cell cycle phase transition,1,0.2
-GO_BP,Regulation of cardiocyte differentiation,1,0.2
+GO_BP,Midgut development,1,0.2
 GO_BP,Mitotic dna replication,1,0.2
-GO_BP,Monosaccharide biosynthetic process,1,0.2
-GO_BP,Monosaccharide metabolic process,1,0.2
-Reactome,Signal regulatory protein family interactions,1,0.2
-Reactome,Signaling by csf1 m csf in myeloid cells,1,0.2
-GO_BP,Regulation of adenylate cyclase activating g protein coupled receptor signaling pathway,1,0.2
-GO_BP,Regulation of b cell differentiation,1,0.2
-Reactome,Tnf receptor superfamily tnfsf members mediating non canonical nf kb pathway,1,0.2
-Reactome,Trafficking and processing of endosomal tlr,1,0.2
-GO_BP,Omega hydroxylase p450 pathway,1,0.2
+GO_BP,Mitotic sister chromatid separation,1,0.2
+GO_BP,Positive regulation of acute inflammatory response,1,0.2
+GO_BP,Aspartate family amino acid catabolic process,1,0.2
+GO_BP,B cell homeostasis,1,0.2
+Reactome,Mitotic metaphase and anaphase,1,0.2
+Reactome,Mitotic spindle checkpoint,1,0.2
+Reactome,Pd 1 signaling,1,0.2
+GO_BP,Meiotic cell cycle process,1,0.2
+GO_BP,Meiotic chromosome segregation,1,0.2
+GO_BP,Membrane raft assembly,1,0.2
+GO_BP,Meiosis i cell cycle process,1,0.2
+GO_BP,Meiotic cell cycle,1,0.2
+GO_BP,Meiotic cell cycle phase transition,1,0.2
+GO_BP,Regulation of natural killer cell mediated immunity,1,0.2
+GO_BP,Regulation of nmda receptor activity,1,0.2
+GO_BP,Regulation of non canonical nf kappab signal transduction,1,0.2
+GO_BP,Lipid homeostasis,1,0.2
+GO_BP,Lipopolysaccharide mediated signaling pathway,1,0.2
+GO_BP,Lymph node development,1,0.2
+GO_BP,Regulation of phospholipase c activity,1,0.2
+GO_BP,Regulation of microvillus organization,1,0.2
+GO_BP,Regulation of mitotic sister chromatid segregation,1,0.2
+GO_BP,Regulation of monocyte chemotaxis,1,0.2
+GO_BP,Maintenance of blood brain barrier,1,0.2
+GO_BP,Regulation of microglial cell activation,1,0.2
+Reactome,Peroxisomal lipid metabolism,1,0.2
+Reactome,Pyroptosis,1,0.2
 Reactome,Regulated necrosis,1,0.2
+GO_BP,Positive regulation of cell migration involved in sprouting angiogenesis,1,0.2
+GO_BP,Positive regulation of b cell differentiation,1,0.2
+GO_BP,Positive regulation of b cell mediated immunity,1,0.2
+Reactome,Signaling by retinoic acid,1,0.2
+Reactome,Synthesis of dna,1,0.2
+Reactome,Synthesis of bile acids and bile salts via 7alpha hydroxycholesterol,1,0.2
+Reactome,Synthesis of bile acids and bile salts via 24 hydroxycholesterol,1,0.2
+GO_BP,Acute phase response,1,0.2
+Reactome,Unwinding of dna,1,0.2

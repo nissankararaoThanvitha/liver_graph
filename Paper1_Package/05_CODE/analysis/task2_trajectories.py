@@ -1,3 +1,6 @@
+# Patient policy (corrected 2026-10-10): average repeat measurements only
+# when fibrosis stage is identical; otherwise retain biopsy 1. Existing
+# packaged results are historical and are not overwritten by the isolated run.
 """Paper 1, Task 2 -- cluster fibrosis-associated genes by their F0->F4 pattern.
 
 Each gene's five stage means (value_z, from genes_by_fibrosis_stage.csv) are
@@ -23,13 +26,14 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+from biopsy_policy import select_biopsies, expression_directory
 from sklearn.cluster import KMeans
 from scipy.optimize import linear_sum_assignment
 from sklearn.metrics import adjusted_rand_score, silhouette_score
 
 SRC = Path("data/for_mentor/genes_by_fibrosis_stage.csv")
 SAMPLES = Path("data/for_mentor/sample_demographics.csv")
-GRAPH = "data/graph_full"
+GRAPH = str(expression_directory())
 # Output folder. Defaults to the committed location; --out redirects
 # it so a re-run can be compared against the previous version instead
 # of overwriting it.
@@ -62,7 +66,7 @@ def kmeans(k, data, seed=SEED):
 
 
 # --- patient-level expression: one row per patient x stage ---
-samples = pd.read_csv(SAMPLES)
+samples = select_biopsies(pd.read_csv(SAMPLES))
 samples = samples[samples.fibrosis_stage.notna()]
 print("reading patient-level expression ...", flush=True)
 parts = []
@@ -116,7 +120,8 @@ kscores = pd.DataFrame(rows)
 kscores.to_csv(OUT / "task2_choosing_k.csv", index=False, encoding="utf-8-sig")
 
 # Rule: largest k whose mean stability ARI stays >= 0.95 (override with argv[1]).
-K = int(sys.argv[1]) if len(sys.argv) > 1 else int(kscores[kscores.stability_ARI_mean >= 0.95].k.max())
+rule_k = int(kscores[kscores.stability_ARI_mean >= 0.95].k.max())
+K = int(sys.argv[1]) if len(sys.argv) > 1 else rule_k
 print(f"\nChosen k = {K}")
 
 fig, axes = plt.subplots(1, 2, figsize=(10, 4))
@@ -134,7 +139,7 @@ axes[1].legend(loc="lower left")
 for ax in axes:
     ax.axvline(K, color="#2471a3", lw=6, alpha=0.2)
     ax.set_xlabel("Number of clusters k")
-fig.suptitle(f"Choosing k (chosen k = {K}: largest k with stability ARI ≥ 0.95)")
+fig.suptitle(f"Choosing k (reported k = {K}; automatic ARI rule = {rule_k})")
 fig.tight_layout()
 fig.savefig(OUT / "task2_choosing_k.png", dpi=300, bbox_inches="tight")
 plt.close(fig)

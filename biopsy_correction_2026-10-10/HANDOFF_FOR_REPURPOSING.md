@@ -1,3 +1,5 @@
+> **Promoted to active paths:** Corrected outputs now live in the standard root data/, Paper1_Results/, Paper1_HighConfidence/ and rebuilt Paper1_Package/. Links under this audit directory are aliases to those active folders. Superseded results/draft are only in archives/previous_results_2026-10-10.tar.gz. This document records the correction run; use the active package for current methods and numbers.
+
 # Corrected evidence for the drug-repurposing team
 
 Use the live liver_kg database and this directory's corrected results, identified by analysis_run=biopsy_correction_2026-10-10 on TRACKS relationships. The older Paper1_Package and original result folders were retained and contain superseded counts.

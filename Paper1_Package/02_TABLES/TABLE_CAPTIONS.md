@@ -46,7 +46,7 @@ Counts of terms at FDR < 0.05 in each database, per gene group and per trajector
 
 **The prioritised fibrosis genes.**
 
-The five highest-scoring Tier 1 genes per trajectory cluster, ties broken by correlation magnitude, with all five evidence scores, the stage of largest change and the leave-one-study-out results.
+The five highest-scoring Tier 1 genes per trajectory cluster, ties broken by correlation magnitude, with all five evidence scores, the stage of largest change, leave-one-study-out results and cluster confidence.
 
 `Table6_prioritised_genes.csv`
 
