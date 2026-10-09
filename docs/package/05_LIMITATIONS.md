@@ -305,3 +305,93 @@ and their F0→F4 endpoint difference. All four have both a weak rho
 (|rho| ≤ 0.18) and a near-zero delta, so this is two noise signals rather
 than two strong signals in conflict. They are **flagged in the tables and were
 not relabelled.** Direction agrees for 3,641 of 3,645 genes (99.9%).
+
+---
+
+## 16. The live graph is short by 40,247 links; the CSVs are the dataset
+
+Found by a collaborator reading the package on their own machine, and
+reproducible with `python verify_graph_counts.py`.
+
+The edge CSVs and the running database disagree on five relationship types:
+
+| Relationship | CSV rows | Live graph | Short by |
+|---|---|---|---|
+| PARENT_OF | 44,215 | 28,919 | **15,296** |
+| TREATS | 57,601 | 43,636 | **13,965** |
+| HAS_PHENOTYPE | 157,144 | 149,960 | **7,184** |
+| CONTRAINDICATED_IN | 11,718 | 8,255 | **3,463** |
+| OFF_LABEL_FOR | 1,061 | 722 | **339** |
+| | | | **40,247 total** |
+
+**Two innocent explanations were tested and both fail.**
+
+*Deduplication* — if the loader used `MERGE`, duplicate `(from, to)` pairs
+would collapse into one relationship. Measured: distinct pair count **equals**
+row count for all five types. There are no duplicates to collapse.
+
+*Dangling endpoints* — a relationship whose endpoint node is absent is
+silently skipped by a `MATCH`-based load. Measured: **0** dangling rows for
+four of the five types, and 142 for PARENT_OF against a shortfall of 15,296.
+
+**What remains is a pattern that is diagnostic rather than coincidental:**
+
+- Short **and** touches a Disease node: PARENT_OF, TREATS, HAS_PHENOTYPE,
+  CONTRAINDICATED_IN, OFF_LABEL_FOR — all five.
+- Touches a Disease node and is **intact**: ASSOCIATED_WITH, the gene–disease
+  links.
+- Short while **avoiding** Disease nodes: **none.** Every relationship type
+  that does not touch a Disease node reconciles exactly.
+
+The session history records a disease-node deletion followed by restoration
+of the nodes and of the gene–disease links, and no restoration of the other
+disease-touching types. That is consistent with every column above. **It is
+not proof of the history of any individual link**, and it is stated as the
+supported explanation rather than an established one.
+
+### What this does and does not affect
+
+**No result in this paper is affected.** Every analysis reads CSV files; not
+one connects to the database. Verified by grep across the pipeline and
+analysis scripts — the only files that mention Neo4j are the graph builders,
+the Cypher loaders and `verify_against_neo4j.py`, which exists to check the
+graph rather than to produce a result. `export_triples.py`, which feeds the
+drug-repurposing work, reads `data/graph_okg` and
+`data/graph_full/edges_my_progression.csv`, so it sees the complete 57,601
+TREATS links.
+
+**What is affected is the graph description**, which appears in the Abstract
+and Results 2.1 of the reference draft, in `01_OVERVIEW.md`, and in
+`CLAUDE.md`. The corrected total is **35,131,313** relationships, not
+35,091,066. Node counts are unaffected.
+
+**Anyone querying the live graph directly is affected**, and the worst case is
+drug repurposing: the graph is missing **24% of its TREATS links** (13,965 of
+57,601), which are exactly the examples a link-prediction model learns from.
+Train on the database and you train on a graph missing a quarter of its known
+drug–disease treatments.
+
+### A reproducibility gap this exposed
+
+**No committed script loads the knowledge layer.** `load_edges.cypher` loads
+only the 8 per-study `EXPRESSES` files; `reload_expression.cypher` swaps those
+edges; `create_kg_constraints.cypher` creates constraints and states that they
+"must exist before the knowledge-layer edges are loaded" — but the file that
+loads them is not in the repository. The knowledge layer was loaded ad hoc
+through a session, which is why a partial restoration could leave no trace
+and why the shortfall went unnoticed.
+
+That `create_kg_constraints.cypher` also refers to "all 17,080 Disease nodes"
+against the current 36,044 confirms the Cypher files date from different eras
+of the project.
+
+### What to do
+
+1. **Report the dataset counts, not the live-graph counts**, in the paper.
+   `01_OVERVIEW.md` now carries both columns side by side.
+2. **Write the missing loader** and reload the knowledge layer from the CSVs,
+   then re-run `python verify_graph_counts.py --live` until it reconciles.
+   Until that is done, treat any live query on those five types as short.
+3. **Tell Team 2 before they query the graph.** Their own pipeline reads the
+   CSVs and is fine, but the "164 drugs already treat a liver disease" style
+   of figure must come from the CSVs, not from the database.
