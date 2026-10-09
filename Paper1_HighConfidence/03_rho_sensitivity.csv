@@ -1,4 +1,4 @@
 strong_cutoff,moderate_cutoff,n_P2,n_P1,n_P0,frozen_choice
-0.35,0.25,401,1083,2161,False
-0.4,0.3,167,679,2799,True
-0.45,0.35,71,330,3244,False
+0.35,0.25,453,1088,2140,False
+0.4,0.3,185,710,2786,True
+0.45,0.35,82,371,3228,False

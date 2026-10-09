@@ -79,8 +79,18 @@ CLINICAL = "data/graph/nodes_sample_clinical.csv"
 # Set by main(). data/graph_all was built from the zero-dropped parse;
 # data/graph_full keeps measured zeros, which matters here because a gene
 # switching off as disease advances is itself a progression signal.
-GRAPH_ALL = "data/graph_all"
-OUT = "data/progression"
+# data/graph_full, not data/graph_all. graph_all was built from the parse
+# that dropped measured zeros, and that decision was reversed: a gene reading
+# zero is real data, and deleting those zeros deletes the switching-on that
+# IS the progression signal. Keeping them added 9.1M measurements and 514
+# progression genes, TREM2 among them. graph_all has been deleted.
+GRAPH_ALL = "data/graph_full"
+# Writes where everything else reads. The old default, data/progression,
+# was computed from the zero-dropped graph and is missing the 514
+# progression genes that keeping measured zeros revealed, TREM2 among
+# them. Two output folders with no marker of which is current is how a
+# superseded result gets quoted by mistake.
+OUT = "data/progression_full"
 REPEAT_POLICY = "first"    # see REPEAT BIOPSIES below; set by main()
 
 DISEASE_LADDER = {"control": 0, "NAFL": 1, "NASH": 2}

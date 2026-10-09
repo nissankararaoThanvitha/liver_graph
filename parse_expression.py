@@ -130,7 +130,7 @@ def to_long(df, dataset_id, unit):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--raw-dir", default="data/raw")
-    ap.add_argument("--out-dir", default="data/interim")
+    ap.add_argument("--out-dir", default="data/interim_full")
     ap.add_argument("--drop-zeros", action="store_true",
                     help="Omit zero-expression pairs.")
     args = ap.parse_args()

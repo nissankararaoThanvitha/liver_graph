@@ -16,8 +16,16 @@ import sys
 
 import pandas as pd
 
-V1 = "Paper1_Results"
-V2 = "Paper1_Results_v2"
+# Set these to the two result folders you want compared. They are
+# deliberately not defaulted to anything that exists: this tool is for
+# comparing a re-run against what it replaced, and silently comparing
+# a folder with itself would report "nothing changed" and be believed.
+#
+# It earned its keep once already: when Task 4 was re-run, its cluster
+# rows came back byte-identical to the previous version, which is how
+# we found the script was still reading the OLD cluster file.
+V1 = "Paper1_Results_previous"
+V2 = "Paper1_Results"
 
 
 def read(folder, task, name):

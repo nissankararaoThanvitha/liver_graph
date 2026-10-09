@@ -158,7 +158,7 @@ def resolve(raw, id_type, lk):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--interim-dir", default="data/interim")
+    ap.add_argument("--interim-dir", default="data/interim_full")
     ap.add_argument("--hgnc", default="data/raw/hgnc_complete_set.txt")
     ap.add_argument("--out-dir", default="data/processed")
     args = ap.parse_args()
