@@ -1,7 +1,0 @@
-﻿cluster,cluster_name,n_genes,pct_of_fibrosis_genes,mean_F0,mean_F1,mean_F2,mean_F3,mean_F4
-1,"Early increase (F0→F1), then continued",494,13.4,-0.287,-0.0,0.032,0.179,0.425
-2,Late increase (largest at F3→F4),1223,33.2,-0.223,-0.141,-0.031,0.252,0.894
-3,Mid increase (largest at F2→F3),778,21.1,-0.293,-0.142,0.016,0.332,0.666
-4,"Early rise, then plateau",190,5.2,-0.28,-0.031,0.074,0.233,0.127
-5,Mid decrease (largest at F1→F2),305,8.3,0.189,0.179,-0.074,-0.256,-0.358
-6,Late decrease (largest at F3→F4),691,18.8,0.18,0.201,-0.023,-0.251,-0.717
