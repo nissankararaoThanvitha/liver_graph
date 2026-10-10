@@ -1,0 +1,32 @@
+{
+  "verified": true,
+  "counts": {
+    "EXPRESSES": 32471042,
+    "IN_DATASET": 1085,
+    "ASSOCIATED_WITH": 1832441,
+    "INTERACTS_WITH": 324116,
+    "INVOLVED_IN": 157081,
+    "IN_PATHWAY": 46751,
+    "ACTS_ON": 20674,
+    "TREATS": 57601,
+    "CONTRAINDICATED_IN": 11718,
+    "OFF_LABEL_FOR": 1061,
+    "HAS_PHENOTYPE": 157144,
+    "PARENT_OF": 44073,
+    "TRACKS_FIBROSIS": 3845,
+    "TRACKS_INFLAMMATION": 4199
+  },
+  "total_relationships": 35132831,
+  "expression_samples_verified": 164,
+  "expression_relationships_updated": 2814896,
+  "raw_values_preserved": true,
+  "curated_relationship_counts_preserved": true,
+  "unclassified_sample_ids": [
+    "GSM3758028",
+    "GSM3758038",
+    "GSM3758039",
+    "GSM3758073",
+    "GSM3758074"
+  ],
+  "progression_properties_exact_match": true
+}

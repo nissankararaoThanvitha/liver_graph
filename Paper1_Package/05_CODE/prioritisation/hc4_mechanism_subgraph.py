@@ -236,7 +236,7 @@ keep_genes = set(deg[deg >= MIN_GENE_DEGREE].index) | (
 fig_edges = fig_edges[fig_edges.from_id.isin(keep_genes)]
 n_short_in_fig = len(set(fig_edges.from_id) & short_ids)
 print(f"\nfigure: {len(keep_genes)} genes, {len(fig_edges)} edges "
-      f"({n_short_in_fig} of the final 25 appear; the rest connect to none "
+      f"({n_short_in_fig} of the final {len(short_ids)} appear; the rest connect to none "
       f"of these 12 mechanisms)")
 
 # --- draw ---
@@ -442,7 +442,7 @@ def long_table(ids, label):
 notes = pd.DataFrame({"Sheet": [
     "1_shortlist_25_KG", f"2_tier1_{len(tier1_ids)}_KG", "3_all_mechanisms_ranked",
     "4_figure_edges", "5_figure_nodes", "6_duplicates_collapsed"], "Contents": [
-    "The brief's table for the final 25 genes: one row per gene per "
+    "The final shortlisted genes: one row per gene per "
     "connected pathway or biological process.",
     f"The same for all {len(tier1_ids)} Tier 1 genes.",
     "Every mechanism the Tier 1 genes reach, with its fold enrichment, "
@@ -479,7 +479,7 @@ caveats = pd.DataFrame({"Caveat": [
     "1 members, so the figure shows distinct mechanisms rather than one "
     "mechanism worded several ways. Sheet 6 lists what was collapsed.",
     "THE FIGURE DRAWS A SUBSET OF GENES: those reaching three or more of the "
-    "12 mechanisms, plus every one of the final 25 that reaches any. Genes "
+    "12 mechanisms, plus every shortlisted gene that reaches any. Genes "
     "absent from the figure are not absent from the analysis - sheets 1 and "
     "2 carry every connection.",
     "THIS NETWORK WAS RECOMPUTED ON THE CORRECTED PATIENT-DERIVED GENE SET. "
@@ -494,7 +494,7 @@ out_xlsx = HERE / "12_KG_supplementary.xlsx"
 with pd.ExcelWriter(out_xlsx, engine="openpyxl") as xl:
     notes.to_excel(xl, sheet_name="0_README", index=False)
     caveats.to_excel(xl, sheet_name="0_README", index=False, startrow=9)
-    long_table(short_ids, "shortlist 25").to_excel(
+    long_table(short_ids, f"shortlist {len(short_ids)}").to_excel(
         xl, sheet_name="1_shortlist_25_KG", index=False)
     long_table(tier1_ids, f"tier 1 {len(tier1_ids)}").to_excel(
         xl, sheet_name=f"2_tier1_{len(tier1_ids)}_KG", index=False)
@@ -511,7 +511,7 @@ with pd.ExcelWriter(out_xlsx, engine="openpyxl") as xl:
     pd.DataFrame([
         {"Node": meta.Gene.get(n, name_of.get(n, n)),
          "ID": n,
-         "Kind": ("Final 25 gene" if G.nodes[n]["kind"] == "shortlist"
+         "Kind": ("Shortlisted gene" if G.nodes[n]["kind"] == "shortlist"
                   else "Tier 1 gene" if G.nodes[n]["kind"] == "tier1"
                   else G.nodes[n]["kind"]),
          "Degree_in_figure": G.degree(n)}

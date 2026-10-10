@@ -30,10 +30,14 @@ python scripts/make_fig1.py
 python build_paper1_package.py
 ```
 
-The historical source name00_all_4692_progression_genes.py remains for caller compatibility; its output is now00_all_progression_genes.csv and contains5,904 genes. Old first/average discovery options remain only for explicit historical comparisons. Neither top25 nor top12 selection rules changed.
+The historical source name00_all_4692_progression_genes.py remains for caller compatibility; its output is now00_all_progression_genes.csv and contains6,222 genes. Old first/average discovery options remain only for explicit historical comparisons. Neither top25 nor top12 selection rules changed.
 
 ## Loading and verification
 
-The live graph already contains corrected progression links. Only restore/reload them from verified current CSVs using a saved backup. MERGE alone does not remove obsolete selected edges; the correction used atomic type-limited replacement after checking endpoints. The full expression loader uses CREATE and expects all53,993 union-gene measurements; do not execute it on the core-only recovery.
+The selected final approach is documented in final_combined_2026-10-10/FINAL_SELECTION.md. Check its graph_verification.json for live synchronisation. Only restore/reload them from verified current CSVs using a saved backup. MERGE alone does not remove obsolete selected edges; the correction used atomic type-limited replacement after checking endpoints. The full expression loader uses CREATE and expects all53,993 union-gene measurements; do not execute it on the core-only recovery.
 
 Mechanism CSVs and current selected memberships match the live graph at final verification. Source-node constraints and imported annotations are preserved. The archive holds historical outputs and is excluded from normal analysis paths.
+
+## Final combined inputs
+
+Five flagged GSE130970 disease labels are unclassified (fibrosis/histology retained); normalize_clinical.py reproduces this policy. GSE193066 uses deposited linear RLE counts without CPM rescaling; build_graph_all.py preserves this transform. The active core contains the matching final value_z measurements. The verified raw GCT is retained in unit_audit_GSE193066_2026-10-10. Final shortlist23: up to five Tier1 genes per cluster, C4 only three. Alternative sensitivity outputs are removed from active folders and retained in a local recovery archive. Retained comparison evidence and original commands are in final_combined_2026-10-10.

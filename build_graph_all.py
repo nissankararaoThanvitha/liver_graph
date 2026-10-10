@@ -157,7 +157,9 @@ def main():
         merged = before - len(df)
 
         unit = df["unit"].iloc[0]
-        if unit == "TPM":
+        # GSE193066 deposits linear DESeq2 RLE-normalised counts. Preserve
+        # their between-sample normalisation instead of rescaling to CPM.
+        if unit == "TPM" or gse == "GSE193066":
             df["value_log"] = np.log2(df["value"] + 1)
         else:
             lib = df["sample_key"].map(libsize).replace(0, np.nan)

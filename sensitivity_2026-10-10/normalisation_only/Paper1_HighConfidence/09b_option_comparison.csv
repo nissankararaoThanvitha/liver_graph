@@ -1,3 +1,0 @@
-option,n_genes,n_C1,n_C2,n_C3,n_C4,n_C5,n_increasing,n_decreasing,n_fibrosis_only,n_shared,n_F0→F1,n_F1→F2,n_F2→F3,n_F3→F4,min_score,max_score,top_pathway,top_pathway_n,top_pathway_pct
-A - top 5 per cluster,24,5,5,5,4,5,15,9,9,15,6,4,7,7,7,9,Neutrophil degranulation,3,12.5
-B - cluster top score,49,26,6,1,4,12,33,16,21,28,7,6,16,20,7,9,External encapsulating structure organization,7,14.3

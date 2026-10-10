@@ -1,6 +1,0 @@
-score_dropped,spearman_vs_full,n_top_band_full,n_top_band_reduced,overlap,jaccard
-P,0.953,135,124,43,0.199
-T,0.914,135,169,135,0.799
-X,0.937,135,164,135,0.823
-F,0.954,135,99,99,0.733
-B,0.838,135,243,135,0.556

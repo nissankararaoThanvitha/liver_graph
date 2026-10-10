@@ -273,10 +273,20 @@ def main():
                                    meta["sample_id"]).fillna(meta["sample_id"])
     meta["disease_group"] = derived[0]
     meta["disease_provenance"] = derived[1]
+    # Researcher-selected conservative exclusion; remaining histology-derived
+    # labels are not author-confirmed diagnoses (see source-search audit).
+    meta["disease_group_baseline"] = meta["disease_group"].fillna("")
+    meta["label_sensitivity_status"] = "unchanged"
+    flagged = {"GSM3758028", "GSM3758039", "GSM3758073", "GSM3758074", "GSM3758038"}
+    excluded = meta["dataset_id"].eq("GSE130970") & meta["sample_id"].isin(flagged)
+    meta.loc[excluded, "disease_group"] = None
+    meta.loc[excluded, "disease_provenance"] = "unclassified_sensitivity"
+    meta.loc[excluded, "label_sensitivity_status"] = "flagged_case_unclassified"
 
     out = meta[["sample_id", "dataset_id", "patient_id", "biopsy_number",
                 "fibrosis_stage", "disease_group", "disease_provenance",
-                "fibrosis_stage_raw", "disease_group_raw"]].copy()
+                "fibrosis_stage_raw", "disease_group_raw", "disease_group_baseline",
+                "label_sensitivity_status"]].copy()
     out["fibrosis_stage"] = out["fibrosis_stage"].apply(
         lambda v: "" if pd.isna(v) else str(int(v)))
     out["disease_group"] = out["disease_group"].fillna("")

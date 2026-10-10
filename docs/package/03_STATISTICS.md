@@ -1,84 +1,84 @@
 # Current statistics and test families
 
-Corrected active version: 10 October 2026. Eight human liver transcriptome studies contain1,085 samples from1,027 patient IDs. Fibrosis analysis uses610 independent staged patients; the disease-group axis uses221 patients from three studies. Repeat biopsies are averaged only if fibrosis stage matches; otherwise biopsy1 is retained before any stage filtering.
+Final combined active version: 10 October 2026. Eight human liver transcriptome studies contain1,085 samples from1,027 patient IDs. Fibrosis analysis uses610 independent staged patients; the disease-group axis uses216 patients from three studies. Repeat biopsies are averaged only if fibrosis stage matches; otherwise biopsy1 is retained before any stage filtering.
 
-Selected genes: **3,688 fibrosis**, **4,018 disease**, **1,802 shared**, **5,904 union**. Tier1 has **491 genes**, with25 shortlisted. The network displays **42 genes**, **12 mechanisms**, **154 connections**, with5 shortlisted genes shown.
+Selected genes: **3,845 fibrosis**, **4,199 disease**, **1,822 shared**, **6,222 union**. Tier1 has **447 genes**, with23 shortlisted. The network displays **42 genes**, **12 mechanisms**, **154 connections**, with4 shortlisted genes shown.
 
 ## Trajectory sizes and confidence
 
 | cluster | cluster_name | median_shape_corr | min_shape_corr | genes_confidence>=0.8 | n_genes |
 | --- | --- | --- | --- | --- | --- |
-| 1 | Early increase (F0→F1), then continued | 0.978 | 0.864 | 32 | 953 |
-| 2 | Late increase (largest at F3→F4) | 0.996 | 0.948 | 803 | 1452 |
-| 3 | Early rise, then plateau | 0.962 | 0.78 | 1 | 272 |
-| 4 | Mid decrease (largest at F1→F2) | 0.961 | -0.74 | 96 | 322 |
-| 5 | Late decrease (largest at F3→F4) | 0.991 | -0.603 | 511 | 689 |
+| 1 | Early increase (F0→F1), then continued | 0.977 | 0.825 | 90 | 857 |
+| 2 | Late increase (largest at F3→F4) | 0.996 | -0.426 | 806 | 1367 |
+| 3 | Early rise, then plateau | 0.967 | -0.62 | 74 | 226 |
+| 4 | Mid decrease (largest at F1→F2) | 0.968 | 0.756 | 126 | 397 |
+| 5 | Late decrease (largest at F3→F4) | 0.993 | -0.374 | 742 | 998 |
 
 ## k diagnostics
 
 | k | silhouette | stability_ARI_mean | stability_ARI_sd | patient_bootstrap_ARI_mean | patient_bootstrap_ARI_sd |
 | --- | --- | --- | --- | --- | --- |
-| 3 | 0.5471749740852124 | 0.9898852680109228 | 0.0080905017903522 | 0.7461986528119308 | 0.0370843963289989 |
-| 4 | 0.4570698794024951 | 0.9775929165690715 | 0.0149523703477535 | 0.5590663072256323 | 0.0725023199426928 |
-| 5 | 0.3320389786771027 | 0.96000734575419 | 0.0176872269654241 | 0.5153269898291009 | 0.0598684127391846 |
-| 6 | 0.2921865660403158 | 0.9068214339786635 | 0.0511485212943671 | 0.4688551021163175 | 0.0466913205088611 |
-| 7 | 0.2875609637143108 | 0.915514383551574 | 0.0316739007179199 | 0.4184619313126088 | 0.0516103699682386 |
-| 8 | 0.2778694976935945 | 0.887588529894318 | 0.071396820491235 | 0.4038718792074401 | 0.0451844819171934 |
+| 3 | 0.5874274548260973 | 0.981079066813464 | 0.0182811587200682 | 0.7912846310741619 | 0.0627296762171589 |
+| 4 | 0.4378337161592175 | 0.970826783010548 | 0.017374617358458 | 0.6786661681134757 | 0.0806373554910996 |
+| 5 | 0.3521700923761786 | 0.9834666794034416 | 0.0107295731534814 | 0.5919089483352878 | 0.0622922493704726 |
+| 6 | 0.3167085315462095 | 0.8163589350097848 | 0.1716793476725813 | 0.5136759935239583 | 0.0727013446691447 |
+| 7 | 0.2803957733778422 | 0.9343376240807432 | 0.045203963188876 | 0.4495038477806786 | 0.0478233247484487 |
+| 8 | 0.2841160184125451 | 0.8676311443462404 | 0.1104395911485979 | 0.4257066006694372 | 0.0455258758492673 |
 
 ## Stage contrasts
 
 | transition | n_F0 | n_F1 | studies_used | n_significant_q<0.05 | n_substantial | n_substantial_up | n_substantial_down | median_abs_beta | n_abs_beta>=0.2 | median_abs_delta_mean | n_F2 | n_F3 | n_F4 | matched_n_substantial_mean (n=30/stage) | matched_n_substantial_sd | matched_n_substantial_median |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| F0→F1 | 152.0 | 160.0 | 5 | 1200 | 1197 | 1166 | 31 | 0.1888 | 1741 | 0.138 |  |  |  | 14.48 | 77.0 | 0.0 |
-| F1→F2 |  | 160.0 | 5 | 1003 | 1000 | 550 | 450 | 0.1814 | 1599 | 0.161 | 152.0 |  |  | 10.94 | 35.5 | 0.0 |
-| F2→F3 |  |  | 5 | 1086 | 1086 | 872 | 214 | 0.2246 | 2075 | 0.214 | 152.0 | 112.0 |  | 57.18 | 108.3 | 1.5 |
-| F3→F4 |  |  | 4 | 847 | 847 | 791 | 56 | 0.3753 | 2738 | 0.363 |  | 86.0 | 34.0 | 406.44 | 411.5 | 251.5 |
+| F0→F1 | 152.0 | 160.0 | 5 | 858 | 857 | 822 | 35 | 0.1599 | 1522 | 0.125 |  |  |  | 12.42 | 67.6 | 0.0 |
+| F1→F2 |  | 160.0 | 5 | 1049 | 1048 | 459 | 589 | 0.1862 | 1730 | 0.168 | 152.0 |  |  | 10.22 | 34.4 | 0.0 |
+| F2→F3 |  |  | 5 | 1116 | 1116 | 792 | 324 | 0.2236 | 2165 | 0.213 | 152.0 | 112.0 |  | 77.02 | 154.2 | 1.0 |
+| F3→F4 |  |  | 4 | 781 | 781 | 723 | 58 | 0.3518 | 2717 | 0.366 |  | 86.0 | 34.0 | 369.46 | 383.4 | 232.5 |
 
 ## Enrichment counts
 
 | group | n_genes | GO_BP | KEGG | Reactome | Hallmark |
 | --- | --- | --- | --- | --- | --- |
-| fibrosis_only_up | 1215 | 345 | 31 | 28 | 9 |
-| fibrosis_only_down | 671 | 61 | 23 | 27 | 8 |
-| inflammation_only_up | 1794 | 137 | 8 | 208 | 15 |
-| inflammation_only_down | 422 | 0 | 0 | 0 | 0 |
-| shared_up | 1460 | 393 | 30 | 87 | 26 |
-| shared_down | 329 | 85 | 26 | 10 | 6 |
-| C1_all | 953 | 377 | 48 | 65 | 18 |
-| C2_all | 1452 | 486 | 23 | 57 | 20 |
-| C3_all | 272 | 82 | 3 | 33 | 4 |
-| C4_all | 322 | 15 | 4 | 5 | 6 |
-| C5_all | 689 | 140 | 30 | 33 | 6 |
-| C1_core | 32 | 65 | 1 | 0 | 0 |
-| C2_core | 803 | 284 | 6 | 35 | 22 |
-| C3_core | 1 | 0 | 0 | 0 | 0 |
-| C4_core | 96 | 0 | 1 | 1 | 7 |
-| C5_core | 511 | 129 | 29 | 25 | 5 |
+| fibrosis_only_up | 1040 | 356 | 30 | 17 | 7 |
+| fibrosis_only_down | 983 | 68 | 19 | 23 | 5 |
+| inflammation_only_up | 2042 | 141 | 6 | 206 | 11 |
+| inflammation_only_down | 335 | 0 | 0 | 0 | 1 |
+| shared_up | 1408 | 421 | 30 | 83 | 27 |
+| shared_down | 384 | 86 | 24 | 11 | 4 |
+| C1_all | 857 | 370 | 39 | 51 | 18 |
+| C2_all | 1367 | 518 | 21 | 44 | 20 |
+| C3_all | 226 | 87 | 2 | 28 | 3 |
+| C4_all | 397 | 0 | 1 | 1 | 3 |
+| C5_all | 998 | 162 | 32 | 45 | 5 |
+| C1_core | 90 | 181 | 8 | 13 | 4 |
+| C2_core | 806 | 324 | 5 | 40 | 21 |
+| C3_core | 74 | 87 | 2 | 26 | 3 |
+| C4_core | 126 | 0 | 0 | 1 | 0 |
+| C5_core | 742 | 130 | 30 | 39 | 5 |
 
-C3 core has one gene and is untested. Zero entries for that core do not mean a null test. Other current core findings must be read from this table rather than earlier captions.
+Core results and test status must be read from the current enrichment tables; groups with fewer than five genes are untested, not tested-null.
 
 ## LOSO
 
-BH family14,794 eligible genes per omitted-study run. Tier1 reports2,455 gene/run records: 488/491 significant in all five refits; 274/491 retain median|rho|≥.30 in all five. Direction retention follows discovery consistency and is not an independent validation test.
+BH family14,794 eligible genes per omitted-study run. Tier1 reports2,235 gene/run records: 442/447 significant in all five refits; 247/447 retain median|rho|≥.30 in all five. Direction retention follows discovery consistency and is not an independent validation test.
 
 ## Selected graph mechanisms
 
 | Mechanism_ID | mechanism | n_tier1_genes | fold_enrichment | q_value |
 | --- | --- | --- | --- | --- |
-| GO_0030198 | extracellular matrix organization | 27 | 7.07 | 1.162665179587812e-12 |
-| GO_0001525 | angiogenesis | 38 | 4.51 | 7.273187557856588e-12 |
-| GO_0030335 | positive regulation of cell migration | 35 | 4.61 | 3.497089442771115e-11 |
-| GO_0098609 | cell-cell adhesion | 32 | 4.87 | 7.409231735728561e-11 |
-| REACT:R-HSA-9925563 | Developmental Lineage of Pancreatic Ductal Cells | 16 | 10.96 | 2.100212274778178e-10 |
-| REACT:R-HSA-3000178 | ECM proteoglycans | 19 | 8.42 | 2.494967025791799e-10 |
-| GO_0007229 | integrin-mediated signaling pathway | 22 | 6.76 | 3.622415499952244e-10 |
-| REACT:R-HSA-216083 | Integrin cell surface interactions | 20 | 7.63 | 3.622415499952244e-10 |
-| GO_0016477 | cell migration | 36 | 3.94 | 7.128893887495718e-10 |
-| GO_0007179 | transforming growth factor beta receptor signaling pathway | 21 | 6.66 | 1.362281830679808e-09 |
-| GO_0070374 | positive regulation of ERK1 and ERK2 cascade | 26 | 4.93 | 5.201757681419712e-09 |
-| REACT:R-HSA-8874081 | MET activates PTK2 signaling | 12 | 12.47 | 1.562982830805839e-08 |
+| GO_0030198 | extracellular matrix organization | 27 | 7.77 | 1.056719036528773e-13 |
+| GO_0098609 | cell-cell adhesion | 32 | 5.35 | 8.597685117371849e-12 |
+| GO_0001525 | angiogenesis | 36 | 4.69 | 8.599051522770523e-12 |
+| REACT:R-HSA-216083 | Integrin cell surface interactions | 20 | 8.38 | 1.076339087375278e-10 |
+| GO_0030335 | positive regulation of cell migration | 32 | 4.62 | 2.779379358362056e-10 |
+| REACT:R-HSA-3000178 | ECM proteoglycans | 18 | 8.76 | 5.653463072107831e-10 |
+| REACT:R-HSA-9925563 | Developmental Lineage of Pancreatic Ductal Cells | 15 | 11.28 | 6.485206642148144e-10 |
+| GO_0070374 | positive regulation of ERK1 and ERK2 cascade | 26 | 5.41 | 7.944906263589113e-10 |
+| GO_0016477 | cell migration | 34 | 4.09 | 1.069674523599284e-09 |
+| GO_0007229 | integrin-mediated signaling pathway | 20 | 6.75 | 3.715753984486238e-09 |
+| REACT:R-HSA-6785807 | Interleukin-4 and Interleukin-13 signaling | 19 | 6.76 | 1.105684222848239e-08 |
+| REACT:R-HSA-186797 | Signaling by PDGF | 12 | 12.81 | 1.283585189724749e-08 |
 
-Displayed network42 genes+12 mechanisms,154 edges. Five of25 shortlisted genes appear; ITGA2 reaches6 selected mechanisms and PDGFRA4; ADAMTSL2,NFASC,TREM2 reach one each.
+Displayed network42 genes+12 mechanisms,154 edges. Four of23 shortlisted genes appear; PDGFRA reaches5 selected mechanisms; EPHA3,NFASC,TREM2 reach one each.
 
 Software: core dependency versions are those pinned in requirements; corrected run Python3.12.14. Baseline discovery reproduced the historical results under this runtime before correction. See the archived correction audit's runtime_requirements.txt for the exact installed environment.
 

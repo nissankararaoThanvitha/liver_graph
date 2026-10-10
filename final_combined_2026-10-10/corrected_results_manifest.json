@@ -1,0 +1,598 @@
+{
+  "Paper1_Results/README.md": {
+    "bytes": 839,
+    "sha256": "40b68ecdc7f632ef6ba8b600ebb7936cfff788138235d1dd405297c8559a0d49"
+  },
+  "Paper1_Results/00_progression_genes/genes_by_disease_group.csv": {
+    "bytes": 669725,
+    "sha256": "1d9a0d5e7d816fa4f20d0ac6102521d7e117236e6dbef9320b747786517b2727"
+  },
+  "Paper1_Results/00_progression_genes/progression_fibrosis.csv": {
+    "bytes": 1915295,
+    "sha256": "2edf3e6dc59a89bce4a5df959057939caf5585165346ccee83190764073725a0"
+  },
+  "Paper1_Results/00_progression_genes/diagnostic_both_q_significant.csv": {
+    "bytes": 1340268,
+    "sha256": "07c0a10724964ffcec878eca4de44e6d3f7e2b9aefe92fc105a53002b7b96e9f"
+  },
+  "Paper1_Results/00_progression_genes/progression_disease.csv": {
+    "bytes": 1898738,
+    "sha256": "94fcd500be849b843785bb6ce6f55f61ded7a43a473cc3be42aa5fd02a0d71ea"
+  },
+  "Paper1_Results/00_progression_genes/genes_by_fibrosis_stage.csv": {
+    "bytes": 668809,
+    "sha256": "b3b5645e591ea87e9737ebb831478328ee6e843ef7d5dff0045bd68d062f88c2"
+  },
+  "Paper1_Results/00_progression_genes/sample_demographics.csv": {
+    "bytes": 51821,
+    "sha256": "97f6416608cc83bf96254a49953b36ea6971bbe6df7381082406ac4640ab6f21"
+  },
+  "Paper1_Results/Task2/task2_gene_clusters.csv": {
+    "bytes": 521052,
+    "sha256": "f2bd20999f4aa87694f1dcb9c66dc7656ef71b1b42b7cebefa9eb1004f98aef0"
+  },
+  "Paper1_Results/Task2/task2_cluster_means.png": {
+    "bytes": 239998,
+    "sha256": "1a0eeaa16dbe6487998cac42c33a16c4a3d4fcb33a6d9f834cb381733e4b9ad9"
+  },
+  "Paper1_Results/Task2/task2_cluster_trajectories.png": {
+    "bytes": 1211938,
+    "sha256": "72ea61337ece6f7a2620ff38bf67b5daf3638cd095be63bb1d9ebe26b5c4e459"
+  },
+  "Paper1_Results/Task2/task2_cluster_sizes.csv": {
+    "bytes": 483,
+    "sha256": "10b053ae2b9336895c5655597ebb44f6e6d9c7bb471e720e63a2f28a4277a513"
+  },
+  "Paper1_Results/Task2/task2_heatmap.png": {
+    "bytes": 214695,
+    "sha256": "8f3c561f529b28b875034412c9acc4503403325b4967dbe317323ac136e56adc"
+  },
+  "Paper1_Results/Task2/task2_choosing_k.csv": {
+    "bytes": 703,
+    "sha256": "bdea9ea9dfcab9fbd8c0b9a169fc7bb09f32d06b448df0779916859bf7db58ef"
+  },
+  "Paper1_Results/Task2/task2_robustness.csv": {
+    "bytes": 181,
+    "sha256": "fac0e7ed1c1981360e1573016104a183c5931d92db69051e6260a3df7ee1a51e"
+  },
+  "Paper1_Results/Task2/task2_choosing_k.png": {
+    "bytes": 223679,
+    "sha256": "0e6296751cd11eac253d99ca770686a8362a5cd9ec04e4f3f5f65f46998e7abf"
+  },
+  "Paper1_Results/Task2/task2_bootstrap_shape_stability.csv": {
+    "bytes": 372,
+    "sha256": "511ed85597b38afb9428347d3441ca9add7439718ef31a2f94bf9d9f50008c6a"
+  },
+  "Paper1_Results/Task2/task2_robustness_crosstab.csv": {
+    "bytes": 281,
+    "sha256": "757c81fd05085194c9c12f64f39e04a9d87d962bfb830e6d186307e74c5d91b7"
+  },
+  "Paper1_Results/Task2/task2_representative_genes.csv": {
+    "bytes": 8122,
+    "sha256": "4dfda3bcb05e34103c4ab879236b2e8147cbd6413df4e7e18eba7527932f20cb"
+  },
+  "Paper1_Results/Task3/task3_cluster_by_transition.csv": {
+    "bytes": 1560,
+    "sha256": "5c2aea2fbe1efd4630dcc865f4392a873040d7629130776bfd29c0e56286116f"
+  },
+  "Paper1_Results/Task3/task3_transition_comparison.png": {
+    "bytes": 214250,
+    "sha256": "bead3b332d49e59dfab1397323cd4674ddafe1e37f193c92f823ad2fefae92d1"
+  },
+  "Paper1_Results/Task3/task3_delta_distributions.png": {
+    "bytes": 182161,
+    "sha256": "798c43364119164ba326bb46848240ecdabd2c207bc925ee0727931fb38ef4bb"
+  },
+  "Paper1_Results/Task3/task3_top_genes_per_transition.csv": {
+    "bytes": 20684,
+    "sha256": "85d8ec5a9d759e9acadb8aabe89efefa490574c50d1af993c5b55792520db832"
+  },
+  "Paper1_Results/Task3/task3_transition_summary.csv": {
+    "bytes": 572,
+    "sha256": "302097775154b79de75e6cb1faa7142cd3d48e8c705a137dfa858d7070539301"
+  },
+  "Paper1_Results/Task3/task3_all_genes_all_transitions.csv": {
+    "bytes": 2524377,
+    "sha256": "217229221f533e93d8c84d0e57788071db43049a31dad16705093ea19e3bfef3"
+  },
+  "Paper1_Results/Task1/task1_shared_rho_scatter.png": {
+    "bytes": 350473,
+    "sha256": "493079d085db904e236941c53046acea4e4a05a48bc5a1aa6276c5a01eff73c3"
+  },
+  "Paper1_Results/Task1/task1_venn.png": {
+    "bytes": 150297,
+    "sha256": "ab7f24ab07b94c7f3032556323f3f2deb54977382da5bc636120786bbc652623"
+  },
+  "Paper1_Results/Task1/task1_top20_fibrosis_genes.csv": {
+    "bytes": 3053,
+    "sha256": "957ef30f1a242d08e3e18db15cbd89e571ec847ba5782d04882b00a00912cf23"
+  },
+  "Paper1_Results/Task1/task1_summary.csv": {
+    "bytes": 493,
+    "sha256": "68b4eb2f643762aa190e39542c38fd68cb2897e195d36d222bdc2c0a398d8792"
+  },
+  "Paper1_Results/Figure1/figure1_pipeline.png": {
+    "bytes": 616077,
+    "sha256": "6f163f5928409cebc19dd6fd071caf7a071849c65b0611e198a20e1cf6759632"
+  },
+  "Paper1_Results/Task4/task4_heatmap_go_bp.png": {
+    "bytes": 649698,
+    "sha256": "45d5dd8480189d9c87601ba61dec595a66dc8e3cbc9c28d03e21a123086dc96a"
+  },
+  "Paper1_Results/Task4/task4_top_pathways_per_group.csv": {
+    "bytes": 171708,
+    "sha256": "2a52f24b8a63abd0c69f406fd5b328ecbe7c7c5291e01a0aa62d5a03f47f048b"
+  },
+  "Paper1_Results/Task4/task4_significant_counts.csv": {
+    "bytes": 466,
+    "sha256": "9d504934f7fc4913db60bf4eeaff5d63eec52a025d08aec5fd50ee402da9ddaa"
+  },
+  "Paper1_Results/Task4/task4_heatmap_kegg.png": {
+    "bytes": 573699,
+    "sha256": "39e60b5af0e944a85fea8c1c0179eeb0a2ffd2678f0a8319f9d97eea0f1f989f"
+  },
+  "Paper1_Results/Task4/task4_heatmap_reactome.png": {
+    "bytes": 636842,
+    "sha256": "3b0719ef7a826ce58b9ea7addb4bd6ab43ff30aca33b157f4f6c1c0178cac09e"
+  },
+  "Paper1_Results/Task4/task4_cluster_core_check.csv": {
+    "bytes": 1318,
+    "sha256": "7b78d6972840970feb4b2ccab1d91c1ac84cabe8b3967727c01b0e9f2edbd04d"
+  },
+  "Paper1_Results/Task4/task4_heatmap_hallmark.png": {
+    "bytes": 598663,
+    "sha256": "6cd8b3e8280f14b920ba58f2a4df614dd5ec847f58ca69a37ba58b93d9269b48"
+  },
+  "Paper1_Results/Task4/task4_all_significant.csv": {
+    "bytes": 1268831,
+    "sha256": "26a54e1d744aaa626b299c27d3e086fb300fefaf6c65c6b75cf800455334044e"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C2_all__Hallmark.csv": {
+    "bytes": 13522,
+    "sha256": "7428fa7f212611e9076ce6eeefb715c603761dbe0475ca4df5010e8d9400b857"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C2_all__KEGG.csv": {
+    "bytes": 31151,
+    "sha256": "184e99ba3c0b387676230cf8a7e9ca6f4a601449210d82187aa7c227ad6b0948"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C3_all__Reactome.csv": {
+    "bytes": 91599,
+    "sha256": "1bf514d4da769b2dedb3fbb18ad9eac60a963f3830a2a299a140d867506337f6"
+  },
+  "Paper1_Results/Task4/enrichment_tables/shared_down__Hallmark.csv": {
+    "bytes": 7264,
+    "sha256": "329926702610ad9fe50ea76942bc814de4e24c44d3da371eb3a37f43452ed5d4"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C3_core__Reactome.csv": {
+    "bytes": 41920,
+    "sha256": "ff0d6307b7b5ae7ca8765ddc2ab06ae3bf04f9c614d1689abf12e8ce2c75e099"
+  },
+  "Paper1_Results/Task4/enrichment_tables/inflammation_only_down__Reactome.csv": {
+    "bytes": 122263,
+    "sha256": "22d7f31853e991fc743dfbead926014d01e7805b84afbba473e8add64f8a0ec2"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C4_all__KEGG.csv": {
+    "bytes": 21869,
+    "sha256": "af10a4d802515de5575762aed47b546944ed397494aaaa96ba0793b00d269aca"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C5_core__GO_BP.csv": {
+    "bytes": 672804,
+    "sha256": "21c7d094e9ea95c34cc45f7c63b1254ff79f66739840de45b62d251fa7420524"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C4_all__Hallmark.csv": {
+    "bytes": 7671,
+    "sha256": "3cf493987d96fb8d6b6405f496026725aff9acb452c04fcf7f023afa26b820d1"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C1_core__GO_BP.csv": {
+    "bytes": 336112,
+    "sha256": "565f4fb34ed6219de3400a066c9f341e7396958b307663609e35fbf6c07cd829"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C4_core__Reactome.csv": {
+    "bytes": 93354,
+    "sha256": "5152b66b92dd661aeac6ba3d64327aa70e9fadd3b2c3367da564f57be1a9bfe1"
+  },
+  "Paper1_Results/Task4/enrichment_tables/fibrosis_only_down__KEGG.csv": {
+    "bytes": 30803,
+    "sha256": "16dd27f2a8fcf7a83c9961c7451e3438708ee91f229dc855576e1f4289f81b1d"
+  },
+  "Paper1_Results/Task4/enrichment_tables/shared_up__GO_BP.csv": {
+    "bytes": 1040024,
+    "sha256": "5d6a4e38a1f59a7c6db24eea0ddb1f783eac3ed2e4dec2fc7e3c6976c3a3bf4d"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C2_all__GO_BP.csv": {
+    "bytes": 982179,
+    "sha256": "3e8833a29262f7fe422ac5101055b119e98a0b187adb696ff93b9581d6358ce6"
+  },
+  "Paper1_Results/Task4/enrichment_tables/shared_up__Hallmark.csv": {
+    "bytes": 15422,
+    "sha256": "25be11bfd9aa52d09b10f8739755fe39fbd543eda98f947791f209edb8bec0ba"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C2_all__Reactome.csv": {
+    "bytes": 216542,
+    "sha256": "4376cacdae2230c016ea87c4dd9c5a0d63eb60e122148a65e949d7e9e8be798a"
+  },
+  "Paper1_Results/Task4/enrichment_tables/shared_down__KEGG.csv": {
+    "bytes": 20815,
+    "sha256": "b0b71f1a342cfc8c640abe9107d1a5cb7e8f83d63fb9c24f4316c4845ec76162"
+  },
+  "Paper1_Results/Task4/enrichment_tables/inflammation_only_down__GO_BP.csv": {
+    "bytes": 513676,
+    "sha256": "0e332e0a44ba70268979fef7697f7b5b072b0c4a1910ca6c8c028d8b7dad207a"
+  },
+  "Paper1_Results/Task4/enrichment_tables/shared_up__KEGG.csv": {
+    "bytes": 35552,
+    "sha256": "fd53b086bb0e480464b4817d088639f570167da2dd9516ae2a23ffacc1cc285e"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C5_all__Reactome.csv": {
+    "bytes": 178871,
+    "sha256": "6831bbb2d0bd1c97031249d6e9fa25854f3465ccb203451b6e1aa74cd82cea69"
+  },
+  "Paper1_Results/Task4/enrichment_tables/fibrosis_only_up__Hallmark.csv": {
+    "bytes": 11396,
+    "sha256": "ada4ac742718629083f86b5bda6c8f29bb0e9c1f53a48de38eadfd3c84b80754"
+  },
+  "Paper1_Results/Task4/enrichment_tables/fibrosis_only_up__GO_BP.csv": {
+    "bytes": 942528,
+    "sha256": "76cb47b995719ec14b2ee3092d0e645a24352a48451e23eba91300ba5172e89f"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C3_all__GO_BP.csv": {
+    "bytes": 415578,
+    "sha256": "784702b7e650bcdf7d25176ed30cf022f63a23cb4d5bd567224088662b894786"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C5_core__KEGG.csv": {
+    "bytes": 23349,
+    "sha256": "f7d475cd26a88735604d318e76c79a7ca1d4536dc223c5adf8d4292fc4011f96"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C5_all__GO_BP.csv": {
+    "bytes": 779441,
+    "sha256": "36dbed6e3eef0dfb9439346ccb89feb86f02a4b615d8d7fcb759fb881e39b8ca"
+  },
+  "Paper1_Results/Task4/enrichment_tables/shared_down__GO_BP.csv": {
+    "bytes": 555636,
+    "sha256": "353e0dba18a64674cba3eb6d439da33621e8533981344d8327b22106176dc026"
+  },
+  "Paper1_Results/Task4/enrichment_tables/inflammation_only_up__Hallmark.csv": {
+    "bytes": 16140,
+    "sha256": "aecd4e2d42c33ca2cff7d4d1499de1fc1748d17c3f629d6751eb7d9a19850409"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C5_all__Hallmark.csv": {
+    "bytes": 10116,
+    "sha256": "eeda4f659950a4e7566ea5077dbf91d85797039f54f7793dea4d7ccd11bb094f"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C1_all__GO_BP.csv": {
+    "bytes": 859465,
+    "sha256": "20cb78adef82d2b46302523b2afc7d3a358d75048fbdc3e00f0dd6d058f091ed"
+  },
+  "Paper1_Results/Task4/enrichment_tables/fibrosis_only_up__Reactome.csv": {
+    "bytes": 203826,
+    "sha256": "e94952953231708beef9e033ccc3a7cc1faf298b9c00d4e0c7c8399a91321fc3"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C2_core__GO_BP.csv": {
+    "bytes": 798572,
+    "sha256": "921a2b9e3a5ee52212122998782ebd5950b88ac20396532b095942747f641b10"
+  },
+  "Paper1_Results/Task4/enrichment_tables/inflammation_only_up__GO_BP.csv": {
+    "bytes": 1149668,
+    "sha256": "761295d7f5bce906fc7a68f6b3586f7f47601924eea4cc3d3504cb7203b4416a"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C4_core__Hallmark.csv": {
+    "bytes": 5428,
+    "sha256": "fa1885f895bf578aa2d738aec86cccef8bd0be2647caec8975489011ead22d79"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C1_core__Hallmark.csv": {
+    "bytes": 4903,
+    "sha256": "ea290c217d2ad41827da971b671e49b0cc643d809e465528e11561a2c841d1b2"
+  },
+  "Paper1_Results/Task4/enrichment_tables/inflammation_only_down__KEGG.csv": {
+    "bytes": 18656,
+    "sha256": "1007d95caca5ae9f43e90f027a37661960f0bad1fd38aa384a1660acd4ba3220"
+  },
+  "Paper1_Results/Task4/enrichment_tables/inflammation_only_up__KEGG.csv": {
+    "bytes": 40066,
+    "sha256": "078dae9eaf9fa0d80e18848fbff5d43b1394a668f48a404fd6a82dc134a9d19e"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C1_all__KEGG.csv": {
+    "bytes": 31088,
+    "sha256": "1c6273f7b20ccd5308de3e214db69c8dad57d33e1ed3ee520c6fb4d7e7b4a8f6"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C1_all__Hallmark.csv": {
+    "bytes": 11517,
+    "sha256": "c898be8744130819ce7fa57742f71e0caa7b9f26a4545789b74d79724a950cf1"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C4_core__GO_BP.csv": {
+    "bytes": 363027,
+    "sha256": "e9bc48c8189c758cf7a2e5c5353e9910092cac6902853c5417ee4556b1fcd6b4"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C1_core__Reactome.csv": {
+    "bytes": 68793,
+    "sha256": "c62a45174781add8ac8930e7eaf37a52de97880da7e8b55b466e3f102f49a99f"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C2_core__Hallmark.csv": {
+    "bytes": 11416,
+    "sha256": "3df921ae3b1b14c79468a367b999046dab83e3cb3020b4811b3550741a5d87e0"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C1_core__KEGG.csv": {
+    "bytes": 11993,
+    "sha256": "b48f112aff36fded5884d4ba62975d86b708631b3016cfeb64890e8b67dd5d7d"
+  },
+  "Paper1_Results/Task4/enrichment_tables/fibrosis_only_down__Hallmark.csv": {
+    "bytes": 10806,
+    "sha256": "946782310754bae675f22570228dc3e7645a0147e5d7cd8eb89db4432125271f"
+  },
+  "Paper1_Results/Task4/enrichment_tables/fibrosis_only_down__Reactome.csv": {
+    "bytes": 201547,
+    "sha256": "150e2f7aa877c8b452da874a743f89a7fe1a0b514a529a7a42f5443d6b2e0cb3"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C2_core__Reactome.csv": {
+    "bytes": 163668,
+    "sha256": "55b22a610fac12ac03664dce879382c0af6bc068fc906dbe372982495292a4dd"
+  },
+  "Paper1_Results/Task4/enrichment_tables/fibrosis_only_down__GO_BP.csv": {
+    "bytes": 837216,
+    "sha256": "505eda38d7b47af7a491f1cd8e75c1e6ff51b62a3d2d5624a580106406b49554"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C4_core__KEGG.csv": {
+    "bytes": 14258,
+    "sha256": "1fb08b23ab93af46376f19e9cc23dc3655ffde9959c48d5204d0f2273e7d70d2"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C5_all__KEGG.csv": {
+    "bytes": 28321,
+    "sha256": "2b2f637b8b8820d212316dd4c5df6a5f3653e0fb0ecf77b054cf13da993561f1"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C3_core__GO_BP.csv": {
+    "bytes": 173546,
+    "sha256": "e1f75ae854d0629e1f78ec695b49079420ba72f73c200783c347cd44ef374ff3"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C3_core__Hallmark.csv": {
+    "bytes": 4195,
+    "sha256": "56313f43521d5c17d54d2113ad175d675c40e95e3ffff58a7639bd34b5c761cb"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C4_all__GO_BP.csv": {
+    "bytes": 571364,
+    "sha256": "a61461b103f8bd096cdf8c9531a33e1c36405e6c32c175cb27e2a2789fa418af"
+  },
+  "Paper1_Results/Task4/enrichment_tables/shared_up__Reactome.csv": {
+    "bytes": 246143,
+    "sha256": "dccd44c1d3ec35edc6847ae73462724d8480eca66d9d51552505fbdc09899a2f"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C3_all__Hallmark.csv": {
+    "bytes": 6457,
+    "sha256": "0f844fd33ee6337e8f87847202a6d3ea0e2e28ec3fc38b22dde05eff5cda3227"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C2_core__KEGG.csv": {
+    "bytes": 23693,
+    "sha256": "c054ad36f26fc6c949e79909e233363971354ca57b0c4d413e90ee1e719c27cc"
+  },
+  "Paper1_Results/Task4/enrichment_tables/fibrosis_only_up__KEGG.csv": {
+    "bytes": 30948,
+    "sha256": "df3ca58dd871f76fab5cfb8661b4d0523fb89b4f35a27d6f285c7da492cfc0ae"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C3_core__KEGG.csv": {
+    "bytes": 4579,
+    "sha256": "3711ab5f8ac3e015bc182aa40f07906a29ffcd0697658faeec2e649bd6108253"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C5_core__Reactome.csv": {
+    "bytes": 138031,
+    "sha256": "fe671f80691bdfff5922766a93dff477c18527eb174c50e882f521e8be48ca23"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C1_all__Reactome.csv": {
+    "bytes": 204919,
+    "sha256": "753cb64d00665881f767c4a4dee20b3a6e66c5c7479ee396ec17c348ea5a711d"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C4_all__Reactome.csv": {
+    "bytes": 152146,
+    "sha256": "d5479f8ae678396eadc8a8234cc78e447831716f06d4827186534b42052c1880"
+  },
+  "Paper1_Results/Task4/enrichment_tables/shared_down__Reactome.csv": {
+    "bytes": 137655,
+    "sha256": "0f228c1c794d2eb8ae33ae39d9c88408271802907e6490ecdb7b7f070f304451"
+  },
+  "Paper1_Results/Task4/enrichment_tables/inflammation_only_down__Hallmark.csv": {
+    "bytes": 6580,
+    "sha256": "c3784fd2f9176629e12915235967547491a1f2e24eba75635839c339a3270239"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C5_core__Hallmark.csv": {
+    "bytes": 8422,
+    "sha256": "004ee5ec81af3f74043ed7a4ec76f6674d9a225e388bdeabde1e2694e81fc07c"
+  },
+  "Paper1_Results/Task4/enrichment_tables/inflammation_only_up__Reactome.csv": {
+    "bytes": 314841,
+    "sha256": "d3b731752b7403b02c22806bca6aa234c6a765fccd6c4e3380e6c781c8a49a7e"
+  },
+  "Paper1_Results/Task4/enrichment_tables/C3_all__KEGG.csv": {
+    "bytes": 14012,
+    "sha256": "2205aa94eee4fa34db4800c59d18d9261cd755e49b57a254989f3524b62f3685"
+  },
+  "Paper1_Results/Task4/dot_plots/dot_inflammation_only_up.png": {
+    "bytes": 432712,
+    "sha256": "5f398d794f0489ed8b78c4b14147d907a315e482f2ab6390d0acb2eeffe02eec"
+  },
+  "Paper1_Results/Task4/dot_plots/dot_C4_all.png": {
+    "bytes": 169802,
+    "sha256": "510b0164c7062cf438bf96872ac725ae5c22a1aecc971fc2455108b266512701"
+  },
+  "Paper1_Results/Task4/dot_plots/dot_C1_core.png": {
+    "bytes": 371780,
+    "sha256": "f178adf7f0c3a82b74bd57fdd298b36b59ec7cb66138b91e6ef38a20089da3f2"
+  },
+  "Paper1_Results/Task4/dot_plots/dot_fibrosis_only_down.png": {
+    "bytes": 410837,
+    "sha256": "8dddda5613d70906795200142847fc672552272284ce4a83ce4597c832028a42"
+  },
+  "Paper1_Results/Task4/dot_plots/dot_C1_all.png": {
+    "bytes": 418417,
+    "sha256": "4c0f4ecb1ed4d1b41449b8b89d61d3bbc02bd5dd196dcf72d817a16f3be51058"
+  },
+  "Paper1_Results/Task4/dot_plots/dot_C5_core.png": {
+    "bytes": 413904,
+    "sha256": "b12bb3e1dd582fe13cc2cc6ad2804891bbc68e84eea5e736db8e1294e648c853"
+  },
+  "Paper1_Results/Task4/dot_plots/dot_C2_core.png": {
+    "bytes": 421970,
+    "sha256": "371ce30a17191e66fc79011235ab9e7567742aedaa461b8795b17b285364f0ed"
+  },
+  "Paper1_Results/Task4/dot_plots/dot_shared_up.png": {
+    "bytes": 413709,
+    "sha256": "9f3fc42cf0ab99820b5061e7f326893eead3bacff7600a38cdd51c2cecb72fbc"
+  },
+  "Paper1_Results/Task4/dot_plots/dot_inflammation_only_down.png": {
+    "bytes": 103546,
+    "sha256": "886eec932558acff65c5281462d0aaa36119d41309a4ebaa8bbea5985b4ef044"
+  },
+  "Paper1_Results/Task4/dot_plots/dot_fibrosis_only_up.png": {
+    "bytes": 413099,
+    "sha256": "51cc80bc4f4c88af0836a7962b9cba021487001551f3864c3089517470e8b99b"
+  },
+  "Paper1_Results/Task4/dot_plots/dot_shared_down.png": {
+    "bytes": 390271,
+    "sha256": "3f3ed9251b636bca0dc6f487f55bbf3055c30572b2e8239220a95eb844e4e195"
+  },
+  "Paper1_Results/Task4/dot_plots/dot_C3_all.png": {
+    "bytes": 318147,
+    "sha256": "9f1dd86ab24f47b6654cb95035b07b87777d33f4fe2adf1b710d65dead3f0524"
+  },
+  "Paper1_Results/Task4/dot_plots/dot_C5_all.png": {
+    "bytes": 419003,
+    "sha256": "07cf7c2e2505fec93d5b270b1fc2774bd32601d78e3d7c84407203efd9c053e6"
+  },
+  "Paper1_Results/Task4/dot_plots/dot_C4_core.png": {
+    "bytes": 100695,
+    "sha256": "9aa3f07d3db1cc8d8e22ed5bb1180ade69cebd2bd3a56733bcf26aeb61eb906f"
+  },
+  "Paper1_Results/Task4/dot_plots/dot_C3_core.png": {
+    "bytes": 309280,
+    "sha256": "5777b9a077367c3cf21d1e9638aa08f31d249cb063609d4ecfe4c052d2b48d1d"
+  },
+  "Paper1_Results/Task4/dot_plots/dot_C2_all.png": {
+    "bytes": 402949,
+    "sha256": "a1c41159c4df8f7f96936e727c534af71bc98baa25ede6f60ec552847c3d7a7a"
+  },
+  "Paper1_HighConfidence/12_mechanistic_subgraph.png": {
+    "bytes": 1807160,
+    "sha256": "5a351e94a90dae8a6e373c1c275c038de30bbd0e6fa63049640bb8f2a2522103"
+  },
+  "Paper1_HighConfidence/09b_option_comparison.csv": {
+    "bytes": 398,
+    "sha256": "26bcfdb9c889dcef60616cee9bccffb7a87358b2c86385cf1051ef20098b79df"
+  },
+  "Paper1_HighConfidence/shortlist_with_membership_confidence.csv": {
+    "bytes": 7155,
+    "sha256": "ce0a355f4d7700bf8ec29bbca620b8ba8812fbb6442291d6c50a013b6fff7443"
+  },
+  "Paper1_HighConfidence/04_delta_sensitivity.csv": {
+    "bytes": 142,
+    "sha256": "308f7f061728939acc2316e991e816e97b24f431fd136573f44eb05e50e937f4"
+  },
+  "Paper1_HighConfidence/11_final_tier1_genes.csv": {
+    "bytes": 126470,
+    "sha256": "83f1c2e83339f29cab9200bc1202407d0ee0cb2c134c140936ce8ad2518f63b0"
+  },
+  "Paper1_HighConfidence/08_tier_sensitivity.csv": {
+    "bytes": 141,
+    "sha256": "032d8bd765670e83e38466cb0bbf12498cd6a02f2b9f872564824ddd87b3c82f"
+  },
+  "Paper1_HighConfidence/03_rho_sensitivity.csv": {
+    "bytes": 143,
+    "sha256": "2dc7fdd2a253685046170337500fbb4f8b4b1ce87a9a373b8f8d5cbe9727f8e9"
+  },
+  "Paper1_HighConfidence/README.md": {
+    "bytes": 867,
+    "sha256": "e522f70417b148d185cf6d807f5b37a75510e461110291a1f7941bddb8c48f53"
+  },
+  "Paper1_HighConfidence/10_loso_summary.csv": {
+    "bytes": 38268,
+    "sha256": "52a87dd171ddb8470fb9d9b7e5bdbfe7f9655f2fd4dbb74a2fc5435a487b7dea"
+  },
+  "Paper1_HighConfidence/10_loso_runs.csv": {
+    "bytes": 158114,
+    "sha256": "9dc17fa6627174a4d076322fcd4104634399d540563219ecf4f2a083f54df5b0"
+  },
+  "Paper1_HighConfidence/09b_option_A_top5_per_cluster.csv": {
+    "bytes": 6355,
+    "sha256": "d81dc1fee6b89a7e383479cf8af2f48782929ad5e29288912788f519da030fbf"
+  },
+  "Paper1_HighConfidence/08_leave_one_score_out.csv": {
+    "bytes": 209,
+    "sha256": "d9e2445324ddbe701f62138d52676c5788fc244924f4e11a614f4216155c8d8c"
+  },
+  "Paper1_HighConfidence/00_all_progression_genes.csv": {
+    "bytes": 922830,
+    "sha256": "bb73e71e1ebb8c5cfb4bd8171f8bee4c77de12053acb7e16677d008a921f1394"
+  },
+  "Paper1_HighConfidence/10_loso_per_study_all_eligible.csv": {
+    "bytes": 3226961,
+    "sha256": "22aeb7d0c18061cb6d0b124b8863cac7b14d157bf3b4e5a87bc351903385e1b3"
+  },
+  "Paper1_HighConfidence/11_final_all_3845_genes.csv": {
+    "bytes": 1017003,
+    "sha256": "97d5e8cfda34329420a9f61c59b2c1a2577f27781db5fdd699ef77321a1a3ffe"
+  },
+  "Paper1_HighConfidence/01_master_table.csv": {
+    "bytes": 1321154,
+    "sha256": "284e0d3c9aced819cdb326dafd2fa7fa4fb609bf0548cc459194cd2a1714c794"
+  },
+  "Paper1_HighConfidence/09b_option_B_cluster_top_score.csv": {
+    "bytes": 13144,
+    "sha256": "444ede2e25f0b0000f727d3f2d0a83d233025bba2c0640e9ec606eea27ac2c9c"
+  },
+  "Paper1_HighConfidence/09a_tier1_pathway_dominance.csv": {
+    "bytes": 72307,
+    "sha256": "2693388c521fd2e56eaa9cadb0225fd80ac0179a1bd5b753ea69566713574510"
+  },
+  "Paper1_HighConfidence/11_FINAL_shortlist_25_genes.csv": {
+    "bytes": 6916,
+    "sha256": "44f395ea687187b8d7a804b1afe0bf7678ccf7035121c4f4b2db6d0caf28dca0"
+  },
+  "Paper1_HighConfidence/10_loso_all_eligible_runs.csv": {
+    "bytes": 5225571,
+    "sha256": "056460bc2e7801923adc7d73a2470a5fb5bc9f897b4bc546cfafa55580593e2e"
+  },
+  "Paper1_HighConfidence/09a_tier1_genes.csv": {
+    "bytes": 157498,
+    "sha256": "ba7e53ff612e7c43b800c9f34189da7e0b65f09bd6e689a36bcfef1e085afd19"
+  },
+  "Paper1_HighConfidence/05_powermatched_per_gene.csv": {
+    "bytes": 694472,
+    "sha256": "50d43816a6ed2572a636d2b75214904af321c356a0de915153d44a0e25b57768"
+  },
+  "Paper1_HighConfidence/12_KG_supplementary.xlsx": {
+    "bytes": 852070,
+    "sha256": "7d0f7b319d64ca5b7cb3a2ef90b30e6c827e0dbd4276282db7470d6d4592c9a3"
+  },
+  "data/progression_full/progression_fibrosis.csv": {
+    "bytes": 1915295,
+    "sha256": "2edf3e6dc59a89bce4a5df959057939caf5585165346ccee83190764073725a0"
+  },
+  "data/progression_full/diagnostic_both_q_significant.csv": {
+    "bytes": 1340268,
+    "sha256": "07c0a10724964ffcec878eca4de44e6d3f7e2b9aefe92fc105a53002b7b96e9f"
+  },
+  "data/progression_full/progression_disease.csv": {
+    "bytes": 1898738,
+    "sha256": "94fcd500be849b843785bb6ce6f55f61ded7a43a473cc3be42aa5fd02a0d71ea"
+  },
+  "data/for_mentor/genes_by_disease_group.csv": {
+    "bytes": 669725,
+    "sha256": "1d9a0d5e7d816fa4f20d0ac6102521d7e117236e6dbef9320b747786517b2727"
+  },
+  "data/for_mentor/genes_by_stage_and_sex.csv": {
+    "bytes": 868658,
+    "sha256": "0ba8154d6aef8e81697a66b4485e5b68b8c291b405388dafd645b8e9e68b0161"
+  },
+  "data/for_mentor/README.txt": {
+    "bytes": 780,
+    "sha256": "eb5566cc3026332e53585dc80438b3c095ebbebf0486a72c0195fb31dec0fcb4"
+  },
+  "data/for_mentor/genes_by_stage_and_age.csv": {
+    "bytes": 1341438,
+    "sha256": "7ad160af2dc24ddb2d5e1a00cf5e53b71f04fc0f45d499cc0bff8f72f3591c5f"
+  },
+  "data/for_mentor/genes_by_fibrosis_stage.csv": {
+    "bytes": 668809,
+    "sha256": "b3b5645e591ea87e9737ebb831478328ee6e843ef7d5dff0045bd68d062f88c2"
+  },
+  "data/for_mentor/sample_demographics.csv": {
+    "bytes": 51821,
+    "sha256": "97f6416608cc83bf96254a49953b36ea6971bbe6df7381082406ac4640ab6f21"
+  }
+}

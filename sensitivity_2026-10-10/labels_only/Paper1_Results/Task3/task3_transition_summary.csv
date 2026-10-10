@@ -1,5 +1,0 @@
-﻿transition,n_F0,n_F1,studies_used,n_significant_q<0.05,n_substantial,n_substantial_up,n_substantial_down,median_abs_beta,n_abs_beta>=0.2,median_abs_delta_mean,n_F2,n_F3,n_F4,matched_n_substantial_mean (n=30/stage),matched_n_substantial_sd,matched_n_substantial_median
-F0→F1,152.0,160.0,5,1200,1197,1166,31,0.1888,1741,0.138,,,,14.48,77.0,0.0
-F1→F2,,160.0,5,1003,1000,550,450,0.1814,1599,0.161,152.0,,,10.94,35.5,0.0
-F2→F3,,,5,1086,1086,872,214,0.2246,2075,0.214,152.0,112.0,,57.18,108.3,1.5
-F3→F4,,,4,847,847,791,56,0.3753,2738,0.363,,86.0,34.0,406.44,411.5,251.5

@@ -71,8 +71,8 @@ MAIN_FIGURES = [
      "Comparison of the four stage transitions.",
      "Numbers of substantially changing genes on the full data, the same "
      "counts under the power-matched design of 30 patients per stage, and the "
-     "distribution of effect sizes. Equalising power isolates F3-F4 as the "
-     "transition carrying the largest transcriptional change."),
+     "distribution of effect sizes. Compare the matched counts across each "
+     "transition within the preselected fibrosis-associated gene set."),
     (f"{RES}/Task4/task4_heatmap_hallmark.png",
      "Figure8_hallmark_enrichment.png",
      "Hallmark process enrichment across groups and clusters.",
@@ -470,6 +470,10 @@ def main():
         copy(src, "01_FIGURES/main/" + name, missing)
     for src, name, _t, _b in SUPP_FIGURES:
         copy(src, "01_FIGURES/supplementary/" + name, missing)
+    for name in ["FINAL_SELECTION.md", "PROTOCOL.md", "comparison_summary.csv", "network_comparison.csv", "candidate_stability.csv", "graph_verification.json"]:
+        copy("final_combined_2026-10-10/" + name, "06_PROVENANCE/final_combined/" + name, missing)
+    for name in ["summary.json", "per_gene_drug_counts.csv", "nafld_nash_indication_annotations.csv"]:
+        copy("drug_shortlist_audit_2026-10-10/" + name, "06_PROVENANCE/drug_connection_audit/" + name, missing)
     counts["figures"] = len(MAIN_FIGURES) + len(SUPP_FIGURES)
     write_captions(
         os.path.join(PKG, "01_FIGURES", "FIGURE_CAPTIONS.md"),

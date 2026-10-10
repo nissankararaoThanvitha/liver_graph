@@ -1,8 +1,8 @@
 # Stage-informed liver knowledge graph
 
-Corrected active version: 10 October 2026. Eight human liver transcriptome studies contain1,085 samples from1,027 patient IDs. Fibrosis analysis uses610 independent staged patients; the disease-group axis uses221 patients from three studies. Repeat biopsies are averaged only if fibrosis stage matches; otherwise biopsy1 is retained before any stage filtering.
+Final combined active version: 10 October 2026. Eight human liver transcriptome studies contain1,085 samples from1,027 patient IDs. Fibrosis analysis uses610 independent staged patients; the disease-group axis uses216 patients from three studies. Repeat biopsies are averaged only if fibrosis stage matches; otherwise biopsy1 is retained before any stage filtering.
 
-Selected genes: **3,688 fibrosis**, **4,018 disease**, **1,802 shared**, **5,904 union**. Tier1 has **491 genes**, with25 shortlisted. The network displays **42 genes**, **12 mechanisms**, **154 connections**, with5 shortlisted genes shown.
+Selected genes: **3,845 fibrosis**, **4,199 disease**, **1,822 shared**, **6,222 union**. Tier1 has **447 genes**, with23 shortlisted. The network displays **42 genes**, **12 mechanisms**, **154 connections**, with4 shortlisted genes shown.
 
 The final objective is to support the next team’s drug repurposing for interrupting disease progression at different stages. Curated biology from OptimusKG connects stage-associated genes to drugs, diseases, pathways and processes. No therapeutic efficacy or validated clinical stage predictor is established.
 
@@ -15,7 +15,8 @@ The final objective is to support the next team’s drug repurposing for interru
 - data/graph_full and data/graph_okg: current node/knowledge/progression CSVs.
 - data/expression_analysis_core: core-only recovery for analysis; never use to replace all graph expression measurements.
 - manuscript_planning: current inventory/workflow/evidence map/missing information.
-- biopsy_correction_2026-10-10: verified correction audit, comparison and graph rollback snapshot.
+- final_combined_2026-10-10: final selection, sensitivity evidence and graph verification.
+- biopsy_correction_2026-10-10: historical biopsy correction record; numerical results there are superseded.
 - archives: checksum-verified recovery copy of superseded results/draft; excluded from Git by default.
 
 ## Rebuild and checks
