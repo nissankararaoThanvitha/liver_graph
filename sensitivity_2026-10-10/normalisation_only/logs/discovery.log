@@ -1,0 +1,114 @@
+reading /home/nikitha07/Projects/liver_graph/sensitivity_2026-10-10/normalisation_only/data/expression_analysis_core  ->  writing data/progression_full
+repeat-biopsy policy: same_stage_mean
+
+testing 14,794 genes measured in all 8 studies
+
+--- FIBROSIS LADDER ---
+  fibrosis  GSE130970:   78 patients, 14,794 genes
+  fibrosis  GSE135251:  216 patients, 14,794 genes
+  fibrosis  GSE162694:  143 patients, 14,794 genes
+  fibrosis  GSE193066:  106 patients, 14,794 genes
+  fibrosis  GSE240729:   67 patients, 14,794 genes
+  -> 14,794 genes tested, 3,845 significant with ALL studies agreeing
+
+--- DISEASE LADDER ---
+  disease   GSE126848:   45 patients, 14,794 genes
+  disease   GSE130970:   78 patients, 14,794 genes
+  disease   GSE162694: skipped, no variation on this ladder
+  disease   GSE167523:   98 patients, 14,794 genes
+  -> 14,784 genes tested, 4,018 significant with ALL studies agreeing
+
+=== FIBROSIS: strongest RISING genes ===
+ symbol  median_rho  n_studies      q_value
+  NALCN    0.583159          5 5.834026e-39
+  STMN2    0.574118          5 1.373800e-51
+   DTNA    0.555483          5 4.116928e-46
+  GABRE    0.548819          5 2.730426e-33
+  LAMC3    0.535761          5 5.362126e-40
+  PLPP4    0.532812          5 4.492010e-30
+  NFASC    0.532322          5 4.340056e-34
+   PODN    0.527163          5 4.680584e-38
+  CCL20    0.525670          5 7.392072e-33
+   IL32    0.521884          5 9.123651e-33
+  THBS2    0.514163          5 8.187247e-39
+SPATA21    0.510483          5 1.545020e-30
+  LTBP2    0.509420          5 2.225471e-41
+  FBLN5    0.509043          5 3.039633e-36
+   THY1    0.507906          5 4.388506e-36
+
+=== FIBROSIS: strongest FALLING genes ===
+  symbol  median_rho  n_studies      q_value
+   DCAF6   -0.469438          5 2.117205e-21
+   KCNN2   -0.469435          5 1.901689e-26
+SLC16A10   -0.469433          5 7.927725e-23
+  COBLL1   -0.458145          5 2.931939e-21
+  CLEC4M   -0.456164          5 4.766523e-19
+ PPP1R1A   -0.447347          5 2.028679e-26
+    SORD   -0.447220          5 1.085341e-19
+  ACADSB   -0.446757          5 4.620234e-25
+ CYP2C19   -0.442721          5 1.257284e-30
+  ANXA10   -0.433821          5 1.578122e-13
+     LPA   -0.432467          5 1.000479e-13
+ DNAJC19   -0.432280          5 2.369759e-14
+ SLC38A4   -0.429978          5 1.204755e-14
+     MME   -0.420561          5 9.552619e-16
+    A1CF   -0.419480          5 3.599604e-17
+
+=== DISEASE: strongest RISING genes ===
+  symbol  median_rho  n_studies      q_value
+  COL1A2    0.746214          3 3.362648e-25
+   CAPN2    0.734025          3 1.241756e-22
+   ANXA2    0.729608          3 1.150080e-22
+  COL3A1    0.719499          3 1.241756e-22
+SERPINB8    0.703271          3 2.792784e-22
+     UBC    0.695583          3 2.112416e-17
+    RFX5    0.692438          3 5.320019e-20
+    CAPG    0.689896          3 1.338145e-22
+    RTCB    0.689174          3 2.086133e-18
+   LOXL4    0.681954          3 7.787021e-20
+   FCAMR    0.676900          3 7.638660e-19
+   BCAT1    0.673077          3 7.346219e-16
+    FAT1    0.668954          3 6.483771e-21
+   DUSP8    0.663903          3 2.745684e-19
+    DTNA    0.662468          3 2.963020e-24
+
+=== DISEASE: strongest FALLING genes ===
+ symbol  median_rho  n_studies      q_value
+DNAJC12   -0.624914          3 1.467457e-15
+   NAAA   -0.619138          3 2.846431e-16
+HSBP1L1   -0.618071          3 1.108261e-14
+   HAAO   -0.612639          3 3.571095e-17
+PACSIN3   -0.594587          3 3.308342e-19
+  PXMP2   -0.593259          3 1.495660e-13
+   CA14   -0.587369          3 8.173792e-13
+ ACADSB   -0.587369          3 6.160871e-14
+  CENPV   -0.585202          3 2.133785e-12
+ST3GAL6   -0.545451          3 5.251984e-15
+   GNMT   -0.541159          3 1.152541e-14
+   LCAT   -0.529606          3 1.152249e-09
+   AHCY   -0.523830          3 2.868315e-14
+  GLYAT   -0.518776          3 2.622525e-09
+   AASS   -0.513573          3 9.212263e-14
+
+=== GENES ON *BOTH* LADDERS: 5,436 ===
+symbol_fib  median_rho_fib  median_rho_dis
+     NALCN        0.583159        0.628625
+      DTNA        0.555483        0.662468
+     CCL20        0.525670        0.587757
+     STMN2        0.574118        0.524804
+      IL32        0.521884        0.634300
+     THBS2        0.514163        0.533849
+     LTBP2        0.509420        0.588813
+      THY1        0.507906        0.609029
+     LOXL1        0.497308        0.512112
+    ITGBL1        0.506966        0.494359
+ TNFRSF12A        0.491465        0.628524
+     LOXL4        0.491439        0.681954
+      TYMS        0.488577        0.642965
+       LUM        0.487723        0.595311
+       AEN        0.486796        0.577043
+   AKR1B10        0.476087        0.606143
+       GSN        0.473888        0.538462
+   COL16A1        0.472719        0.558488
+     CAPN2        0.469624        0.734025
+     TREM2        0.468600        0.592423

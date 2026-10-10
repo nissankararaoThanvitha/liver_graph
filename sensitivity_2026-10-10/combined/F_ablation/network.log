@@ -1,0 +1,25 @@
+Tier 1 genes 286   final shortlist 21
+  enrichment background: 14,794 eligible genes (the same one Task 4 used)
+knowledge layer: 203,832 gene-to-mechanism edges, 14,423 mechanisms
+
+12 major mechanisms (of 1,839 passing the size filter, 44 also major and enriched; 1 near-duplicates collapsed)
+                                       mechanism mechanism_type  n_tier1_genes  n_shortlist_genes  n_genes_in_background  fold_enrichment      q_value
+               extracellular matrix organization     BioProcess             21                  1                    115             9.45 7.533394e-12
+Developmental Lineage of Pancreatic Ductal Cells        Pathway             13                  1                     44            15.28 1.203358e-09
+           positive regulation of cell migration     BioProcess             25                  0                    229             5.65 1.444324e-09
+                               ECM proteoglycans        Pathway             15                  0                     68            11.41 1.444324e-09
+                              cell-cell adhesion     BioProcess             23                  1                    198             6.01 2.583491e-09
+                               Signaling by PDGF        Pathway             11                  1                     31            18.35 2.956454e-09
+                            Collagen degradation        Pathway             13                  0                     51            13.19 3.668059e-09
+              Integrin cell surface interactions        Pathway             15                  0                     79             9.82 7.182028e-09
+                                    angiogenesis     BioProcess             25                  0                    254             5.09 7.182028e-09
+                    MET activates PTK2 signaling        Pathway             10                  1                     29            17.84 2.429215e-08
+          Non-integrin membrane-ECM interactions        Pathway             11                  1                     39            14.59 2.975549e-08
+                                  cell migration     BioProcess             24                  1                    275             4.51 1.567014e-07
+
+figure: 29 genes, 122 edges (5 of the final 25 appear; the rest connect to none of these 12 mechanisms)
+  shortlist 25: 329 gene-mechanism rows
+  tier 1 286: 6,024 gene-mechanism rows
+
+-> F_ablation/12_mechanistic_subgraph.png
+-> F_ablation/12_KG_supplementary.xlsx

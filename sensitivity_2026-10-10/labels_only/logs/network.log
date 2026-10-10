@@ -1,0 +1,25 @@
+Tier 1 genes 484   final shortlist 25
+  enrichment background: 14,794 eligible genes (the same one Task 4 used)
+knowledge layer: 203,832 gene-to-mechanism edges, 14,423 mechanisms
+
+12 major mechanisms (of 2,357 passing the size filter, 79 also major and enriched; 0 near-duplicates collapsed)
+                                                 mechanism mechanism_type  n_tier1_genes  n_shortlist_genes  n_genes_in_background  fold_enrichment      q_value
+                         extracellular matrix organization     BioProcess             27                  3                    115             7.18 8.042713e-13
+                                              angiogenesis     BioProcess             38                  0                    254             4.57 4.518894e-12
+                                        cell-cell adhesion     BioProcess             32                  2                    198             4.94 6.161031e-11
+                     positive regulation of cell migration     BioProcess             34                  1                    229             4.54 1.021748e-10
+          Developmental Lineage of Pancreatic Ductal Cells        Pathway             16                  0                     44            11.11 1.665265e-10
+                                         ECM proteoglycans        Pathway             19                  1                     68             8.54 1.910620e-10
+                       integrin-mediated signaling pathway     BioProcess             22                  1                     98             6.86 2.728882e-10
+                        Integrin cell surface interactions        Pathway             20                  1                     79             7.74 2.728882e-10
+transforming growth factor beta receptor signaling pathway     BioProcess             21                  0                     95             6.76 1.126862e-09
+                                            cell migration     BioProcess             35                  1                    275             3.89 1.990849e-09
+              positive regulation of ERK1 and ERK2 cascade     BioProcess             26                  2                    159             5.00 3.730877e-09
+                              MET activates PTK2 signaling        Pathway             12                  1                     29            12.65 1.307887e-08
+
+figure: 42 genes, 154 edges (5 of the final 25 appear; the rest connect to none of these 12 mechanisms)
+  shortlist 25: 494 gene-mechanism rows
+  tier 1 484: 9,810 gene-mechanism rows
+
+-> Paper1_HighConfidence/12_mechanistic_subgraph.png
+-> Paper1_HighConfidence/12_KG_supplementary.xlsx

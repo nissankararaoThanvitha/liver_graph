@@ -1,5 +1,7 @@
 # Current research inventory
 
+Analysis-selection update (10 October 2026): the combined sensitivity run is selected for future primary reporting; see [PRIMARY_ANALYSIS_DECISION.md](PRIMARY_ANALYSIS_DECISION.md). It is not yet promoted. The baseline counts and processing below describe the currently active package, not the newly selected run.
+
 Active version:10 October2026, after the verified biopsy correction. Current source of truth is Paper1_Package plus canonical root result/data paths. Historical originals are preserved only in the recovery archive. No manuscript prose or new drug prediction is produced here.
 
 ## Objectives and claim boundary

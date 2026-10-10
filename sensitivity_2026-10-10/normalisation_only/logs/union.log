@@ -1,0 +1,13 @@
+qualifying on each ladder:
+  fibrosis     tested 14,794   q<0.05 10,671   + all studies agree  3,845
+  inflammation tested 14,784   q<0.05  9,063   + all studies agree  4,018
+
+union = 6,095 progression genes
+  ladder
+  inflammation_only    2250
+  fibrosis_only        2077
+  both                 1768
+
+fibrosis starting set (fibrosis_only + both): 3,845
+
+-> Paper1_HighConfidence/00_all_progression_genes.csv  (6,095 x 21)

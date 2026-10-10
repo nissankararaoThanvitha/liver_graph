@@ -1,0 +1,56 @@
+PASS Label-only changes leave fibrosis discovery unchanged
+PASS Normalisation-only changes leave disease discovery unchanged
+PASS Disease discovery matches between labels-only and combined
+PASS Fibrosis discovery matches between normalisation-only and combined
+PASS Baseline matches active discovery
+PASS Baseline shortlist matches active shortlist
+PASS baseline cluster membership matches discovery
+PASS baseline main shortlist meets unrelaxed quota
+PASS baseline LOSO uses full universe in five fits
+PASS baseline same 610 staged patients
+PASS baseline preserves clinical sample_id
+PASS baseline preserves clinical dataset_id
+PASS baseline preserves clinical patient_id
+PASS baseline preserves clinical biopsy_number
+PASS baseline preserves clinical fibrosis_stage
+PASS baseline preserves clinical fibrosis_stage_raw
+PASS baseline preserves clinical disease_group_raw
+PASS labels_only cluster membership matches discovery
+PASS labels_only main shortlist meets unrelaxed quota
+PASS labels_only LOSO uses full universe in five fits
+PASS labels_only same 610 staged patients
+PASS labels_only preserves clinical sample_id
+PASS labels_only preserves clinical dataset_id
+PASS labels_only preserves clinical patient_id
+PASS labels_only preserves clinical biopsy_number
+PASS labels_only preserves clinical fibrosis_stage
+PASS labels_only preserves clinical fibrosis_stage_raw
+PASS labels_only preserves clinical disease_group_raw
+PASS normalisation_only cluster membership matches discovery
+PASS normalisation_only main shortlist meets unrelaxed quota
+PASS normalisation_only LOSO uses full universe in five fits
+PASS normalisation_only same 610 staged patients
+PASS normalisation_only preserves clinical sample_id
+PASS normalisation_only preserves clinical dataset_id
+PASS normalisation_only preserves clinical patient_id
+PASS normalisation_only preserves clinical biopsy_number
+PASS normalisation_only preserves clinical fibrosis_stage
+PASS normalisation_only preserves clinical fibrosis_stage_raw
+PASS normalisation_only preserves clinical disease_group_raw
+PASS combined cluster membership matches discovery
+PASS combined main shortlist meets unrelaxed quota
+PASS combined LOSO uses full universe in five fits
+PASS combined same 610 staged patients
+PASS combined preserves clinical sample_id
+PASS combined preserves clinical dataset_id
+PASS combined preserves clinical patient_id
+PASS combined preserves clinical biopsy_number
+PASS combined preserves clinical fibrosis_stage
+PASS combined preserves clinical fibrosis_stage_raw
+PASS combined preserves clinical disease_group_raw
+PASS Active package/results/code preserved
+               run  fibrosis_genes  disease_genes  shared  union  fibrosis_added  fibrosis_removed  disease_added  disease_removed  Tier1  Tier1_retained_from_baseline  shortlist_size  shortlist_retained_from_baseline  cluster_ARI_common_genes  confident_cluster_genes  Tier1_LOSO_significant_all5  Tier1_LOSO_strong_all5  F_ablation_Tier1  F_ablation_shortlist_size  F_ablation_baseline_shortlist_retained  F_ablation_own_shortlist_retained
+          baseline            3688           4018    1802   5904               0                 0              0                0    491                           491              25                                25                    1.0000                     1443                          488                     274               320                         25                                      15                                 15
+       labels_only            3688           4199    1862   6025               0                 0            291              110    484                           480              25                                25                    1.0000                     1443                          481                     275               321                         25                                      15                                 15
+normalisation_only            3845           4018    1768   6095             385               228              0                0    454                           421              24                                16                    0.9126                     1838                          449                     246               285                         22                                      12                                 15
+          combined            3845           4199    1822   6222             385               228            291              110    447                           411              23                                16                    0.9126                     1838                          442                     247               286                         21                                      12                                 14
