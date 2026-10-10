@@ -1,0 +1,1 @@
+Intermediate results for the adult NAFLD cohort are saved here.

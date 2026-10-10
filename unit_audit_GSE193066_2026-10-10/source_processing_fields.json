@@ -1,0 +1,5 @@
+[
+  "Raw cDNA reads are aligned to the reference genome (hg19) using the spliced gap aligner STAR, with count-based quantitation carried out via the Subread package featureCounts at the gene levels. The count data were normalized using \u201cRelative Log Expression\u201d normalization (RLE) implemented in the DESeq2 R package. Poor-quality transcriptome profiles were determined based on inter-sample correlation <0.7 and excluded from the subsequent analyses.",
+  "Genome_build: hg19",
+  "Supplementary_files_format_and_content: .gct file format (tab-delimited text) including normalized gene expression levels normalized within 106 1st biopsy tissues (NAFLD.HUn106.gct) and within the 58 high-risk patients with paired biopsy tissues (NAFLD.HUn164.gct)."
+]

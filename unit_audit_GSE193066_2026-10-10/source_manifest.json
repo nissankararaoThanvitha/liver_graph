@@ -1,0 +1,19 @@
+[
+  {
+    "file": "GSE193066_NAFLD.HUn164.gct.gz",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE193nnn/GSE193066/suppl/GSE193066_NAFLD.HUn164.gct.gz",
+    "bytes": 14714764,
+    "sha256": "23526d17bc3afa5baec4a3ab88646b49ea87faa64081b58f00a0f66b1f53ae79"
+  },
+  {
+    "file": "GSE193066_series_matrix.txt.gz",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE193nnn/GSE193066/matrix/GSE193066_series_matrix.txt.gz",
+    "bytes": 7517,
+    "sha256": "1872a5cebcf38f7d6cd6bdb4e37e410c25e81e2834cc003e46a1ec79bc52c548"
+  },
+  {
+    "file": "PMC9236162.xml",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9236162/fullTextXML",
+    "error": "HTTP500; XML not retrieved"
+  }
+]

@@ -1,0 +1,24 @@
+{
+  "gct_version": "#1.2",
+  "annotation_columns_excluded": [
+    "gene_id"
+  ],
+  "declared_dimensions": "17231\t164",
+  "genes": 17231,
+  "samples": 164,
+  "min_value": 0.0,
+  "max_value": 2724768.59,
+  "fraction_noninteger": 0.9033810305023137,
+  "fraction_zero": 0.09661896949768639,
+  "negative_values": 0,
+  "column_sum_min": 12095296.008540258,
+  "column_sum_max": 20542686.837929867,
+  "column_sum_median": 15510132.14196222,
+  "current_value_z_rows_checked": 2426216,
+  "current_value_z_max_absolute_difference": 3.1530333899354446e-14,
+  "current_value_z_reproduced": true,
+  "descriptive_gene_rank_corr_median": 0.9667324146749553,
+  "descriptive_gene_rank_corr_10pct": 0.8855410607647626,
+  "descriptive_gene_rank_corr_min": 0.596411519051052,
+  "genes_rank_correlation_below_0_9": 2356
+}

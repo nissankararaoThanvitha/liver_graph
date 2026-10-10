@@ -1,0 +1,441 @@
+{
+  "accno" : "S-BSST1361",
+  "attributes" : [ {
+    "name" : "Template",
+    "value" : "Default.v2"
+  }, {
+    "name" : "DOI",
+    "value" : "10.6019/S-BSST1361"
+  }, {
+    "name" : "ReleaseDate",
+    "value" : "2024-04-02"
+  } ],
+  "section" : {
+    "type" : "Study",
+    "attributes" : [ {
+      "name" : "Title",
+      "value" : "Processed data related to \"Gene expression profile of NAFLD murine models\" (Part1: E-MTAB-12808, Part2: E-MTAB-12817)"
+    }, {
+      "name" : "Description",
+      "value" : "In this project, the gene expression profiles of commonly used murine models of NAFLD were compared to two publically available human datasets to assess proximity to human pathophysiology, focusing on differential expression and pathway enrichment. CCL4 was used as a positive control for fibrosis.\nThe raw data included both RNASeq and microarrays and have been deposited separately (E-MTAB-12808, E-MTAB-12817)\nHere, we have deposited all the processed data and the intermediate steps of our analysis. "
+    }, {
+      "name" : "Organism",
+      "value" : "Mus musculus (mouse)"
+    }, {
+      "name" : "Organism",
+      "value" : "Rattus norvegicus (brown rat)"
+    }, {
+      "name" : "Organism",
+      "value" : "Homo sapiens (human)"
+    }, {
+      "name" : "License",
+      "value" : "CC0",
+      "valqual" : [ {
+        "name" : "URL",
+        "value" : "https://creativecommons.org/publicdomain/zero/1.0/legalcode"
+      } ]
+    } ],
+    "files" : [ {
+      "path" : "mice_merged_rawcounts.csv",
+      "size" : 56091051,
+      "attributes" : [ {
+        "name" : "Description",
+        "value" : "This matrix shows the raw counts of all the mice belonging to the different mouse models (and their corresponding controls)"
+      }, {
+        "name" : "Type",
+        "value" : "Raw counts (Mice)"
+      } ],
+      "type" : "file"
+    }, {
+      "path" : "rats_merged_rawcounts.csv",
+      "size" : 8733347,
+      "attributes" : [ {
+        "name" : "Description",
+        "value" : "This matrix shows the raw counts of all the rats belonging to the different rat models (and their corresponding controls)"
+      }, {
+        "name" : "Type",
+        "value" : "Raw counts (Rats)"
+      } ],
+      "type" : "file"
+    }, {
+      "path" : "CPMs_mice.csv",
+      "size" : 111663945,
+      "attributes" : [ {
+        "name" : "Description",
+        "value" : "This matrix shows the CPMs of all the mice belonging to the different mouse models (and their corresponding controls)"
+      }, {
+        "name" : "Type",
+        "value" : "CPMs (Mice)"
+      } ],
+      "type" : "file"
+    }, {
+      "path" : "CPMs_rats.csv",
+      "size" : 24744995,
+      "attributes" : [ {
+        "name" : "Description",
+        "value" : "This matrix shows the CPMs of all the rats belonging to the different rat models (and their corresponding controls)"
+      }, {
+        "name" : "Type",
+        "value" : "CPMs (Rats)"
+      } ],
+      "type" : "file"
+    }, {
+      "path" : "NormalisedCounts_Mouse.csv",
+      "size" : 184362085,
+      "attributes" : [ {
+        "name" : "Description",
+        "value" : "This matrix shows the quantile normalised counts of all the mice belonging to the different models (and their corresponding controls). For the calculation of this matrix, the mice raw count matrix has been used."
+      }, {
+        "name" : "Type",
+        "value" : "Quantile normalised counts (Mice)"
+      } ],
+      "type" : "file"
+    }, {
+      "path" : "NormalisedCounts_Rat.csv",
+      "size" : 26520930,
+      "attributes" : [ {
+        "name" : "Description",
+        "value" : "This matrix shows the quantile normalised counts of all the rats belonging to the different models (and their corresponding controls). For the calculation of this matrix, the rats raw count matrix has been used."
+      }, {
+        "name" : "Type",
+        "value" : "Quantile normalised counts (Rats)"
+      } ],
+      "type" : "file"
+    }, {
+      "path" : "Corrected_NormalisedCounts_Mouse.csv",
+      "size" : 194070760,
+      "attributes" : [ {
+        "name" : "Description",
+        "value" : "This matrix shows the COMBAT batch effect corrected normalised counts of all the mice belonging to the different models (and their corresponding controls)."
+      }, {
+        "name" : "Type",
+        "value" : "Batch effect corrected counts (Mice)"
+      } ],
+      "type" : "file"
+    }, {
+      "path" : "Corrected_NormalisedCounts_Rat.csv",
+      "size" : 27790379,
+      "attributes" : [ {
+        "name" : "Description",
+        "value" : "This matrix shows the COMBAT batch effect corrected normalised counts of all the rats belonging to the different models (and their corresponding controls)."
+      }, {
+        "name" : "Type",
+        "value" : "Batch effect corrected counts (Rats)"
+      } ],
+      "type" : "file"
+    }, {
+      "path" : "Mouse_DEGs.csv",
+      "size" : 47196756,
+      "attributes" : [ {
+        "name" : "Description",
+        "value" : "Results of the differential expression analysis of all the RNASeq mouse models vs their corresponding controls. The format of the results is a 6-plet for each model including the basemean, log2foldchange, lfcSE, stat, pvalue, and adjusted_pvalue (outcomes of the DESeq2 analysis)"
+      }, {
+        "name" : "Type",
+        "value" : "DEGs (Mice - RNASeq)"
+      } ],
+      "type" : "file"
+    }, {
+      "path" : "Mouse_DEGs_with_Log2CPMs_AfterFilteringLowLog2CPMs.csv",
+      "size" : 32200217,
+      "attributes" : [ {
+        "name" : "Description",
+        "value" : "Results of the differential expression analysis of all the RNASeq mouse models vs their corresponding controls. The format of the results is a 4-plet for each model including the Log2CPMs, Log2FoldChange, pvalue, and adjusted_pvalue. The last column shows the genes that have been included/excluded in the enrichment analysis based on a filtering on the CPMs (genes with Log2CPMs < -2 in more than 10% of the models have been excluded) "
+      }, {
+        "name" : "Type",
+        "value" : "DEGs (Mice - RNASeq, showing Log2CPMs)"
+      } ],
+      "type" : "file"
+    }, {
+      "path" : "Rat_DEGs.csv",
+      "size" : 13313731,
+      "attributes" : [ {
+        "name" : "Description",
+        "value" : "Results of the differential expression analysis of all the RNASeq rat models vs their corresponding controls. The format of the results is a 6-plet for each model including the basemean, log2foldchange, lfcSE, stat, pvalue, and adjusted_pvalue (outcomes of the DESeq2 analysis)"
+      }, {
+        "name" : "Type",
+        "value" : "DEGs (Rats - RNASeq)"
+      } ],
+      "type" : "file"
+    }, {
+      "path" : "Rat_DEGs_with_Log2CPMs_AfterFilteringLowLog2CPMs.csv",
+      "size" : 9392862,
+      "attributes" : [ {
+        "name" : "Description",
+        "value" : "Results of the differential expression analysis of all the RNASeq rat models vs their corresponding controls. The format of the results is a 4-plet for each model including the Log2CPMs, Log2FoldChange, pvalue, and adjusted_pvalue. The last column shows the genes that have been included/excluded in the enrichment analysis based on a filtering on the CPMs (genes with Log2CPMs < -2 in more than 10% of the models have been excluded)"
+      }, {
+        "name" : "Type",
+        "value" : "DEGs (Rats - RNASeq, showing Log2CPMs)"
+      } ],
+      "type" : "file"
+    }, {
+      "path" : "Microarrays_D.E.Analysis_results.csv",
+      "size" : 2168217,
+      "attributes" : [ {
+        "name" : "Description",
+        "value" : "Results of the differential expression analysis of the 2 microarrays (mice) models vs their corresponding controls"
+      }, {
+        "name" : "Type",
+        "value" : "DEGs (Mice - Microarrays)"
+      } ],
+      "type" : "file"
+    }, {
+      "path" : "Degs_UCAM_VCU.csv",
+      "size" : 2513424,
+      "attributes" : [ {
+        "name" : "Description",
+        "value" : "Results of the differential expression analysis of the UCAM/VCU human disease stages. The precise comparison groups are described in the columns of the file. The format of the results is a 4-plet for each disease stage comparison including the basemean, log2foldchange, pvalue, and adjusted_pvalue (outcomes of the DESeq2 analysis)"
+      }, {
+        "name" : "Type",
+        "value" : "DEGs (Human UCAM/VCU - RNASeq)"
+      } ],
+      "type" : "file"
+    }, {
+      "path" : "Degs_EPoS.csv",
+      "size" : 2142000,
+      "attributes" : [ {
+        "name" : "Description",
+        "value" : "Results of the differential expression analysis of the EPoS human disease stages. The precise comparison groups are described in the columns of the file. The format of the results is a 4-plet for each disease stage comparison including the basemean, log2foldchange, pvalue, and adjusted_pvalue (outcomes of the DESeq2 analysis)"
+      }, {
+        "name" : "Type",
+        "value" : "DEGs (Human EPoS - RNASeq)"
+      } ],
+      "type" : "file"
+    }, {
+      "path" : "FGSEA_humanUCAM_VCUvsNAFL_merged.csv",
+      "size" : 32379,
+      "attributes" : [ {
+        "name" : "Description",
+        "value" : "Results of the FGSEA (KEGG) pathway enrichment analysis on the UCAM/VCU human dataset. The structure of this matrix is a 3-plet showing for each comparison group the NES score, pvalue, and p-adjusted."
+      }, {
+        "name" : "Type",
+        "value" : "FGSEA (KEGG) human UCAM/VCU pathway analysis results"
+      } ],
+      "type" : "file"
+    }, {
+      "path" : "FGSEA_humanEPOSvsNAFL_merged.csv",
+      "size" : 23912,
+      "attributes" : [ {
+        "name" : "Description",
+        "value" : "Results of the FGSEA (KEGG) pathway enrichment analysis on the EPoS human dataset. The structure of this matrix is a 3-plet showing for each comparison group the NES score, pvalue, and p-adjusted. Note that this dataset did not include a comparison against a control group."
+      }, {
+        "name" : "Type",
+        "value" : "FGSEA (KEGG) human EPoS pathway analysis results"
+      } ],
+      "type" : "file"
+    }, {
+      "path" : "FGSEA_rodents_merged FINAL.csv",
+      "size" : 496400,
+      "attributes" : [ {
+        "name" : "Description",
+        "value" : "Results of the FGSEA (KEGG) pathway enrichment analysis on the whole rodent (mice and rats) dataset. The structure of this matrix is a 3-plet showing for each comparison group the NES score, pvalue, and p-adjusted. The calculation of this matrix uses as an input the results from the differential expression analysis. "
+      }, {
+        "name" : "Type",
+        "value" : "FGSEA (KEGG) rodents (mice and rats) pathway analysis results"
+      } ],
+      "type" : "file"
+    }, {
+      "path" : "DHPS_EnrichmentScores.xlsx",
+      "size" : 27777,
+      "attributes" : [ {
+        "name" : "Description",
+        "value" : "DSEA enrichment score results for all murine models when applying the adapted method to the DEGs and the pathways. The first and second sheet includes the results of applying the ranking according to metabolic relevance and ability to induce MASH-Fibrosis respectively."
+      }, {
+        "name" : "Type",
+        "value" : "DSEA Enrichment scores"
+      } ],
+      "type" : "file"
+    }, {
+      "path" : "PharmInterv_and_ChowReversal_rawcounts.csv",
+      "size" : 8270961,
+      "attributes" : [ {
+        "name" : "Description",
+        "value" : "This matrix shows the raw counts of the additional mice belonging to the pharmacological intervention and chow reversal groups"
+      }, {
+        "name" : "Type",
+        "value" : "Raw counts (Mice) - Parmacological Intervention & Chow Reversal groups"
+      } ],
+      "type" : "file"
+    }, {
+      "path" : "DietReversal-Treatment_DEGs.csv",
+      "size" : 7960437,
+      "attributes" : [ {
+        "name" : "Description",
+        "value" : "Results of the differential expression analysis of the RNASeq diet_reversal and treatment mouse models. The format of the results is a 4-plet for each model including the basemean, log2foldchange, pvalue, and adjusted_pvalue (outcomes of the DESeq2 analysis)"
+      }, {
+        "name" : "Type",
+        "value" : "DEGs (Mice - Effect of treatments and diet reversal in a selection of models)"
+      } ],
+      "type" : "file"
+    }, {
+      "path" : "FGSEA_DietReversal-Treatment.csv",
+      "size" : 73434,
+      "attributes" : [ {
+        "name" : "Description",
+        "value" : "Results of the FGSEA (KEGG) pathway enrichment analysis on a selection of mouse models to study the effect of diet_reversal and treatment. The structure of this matrix is a 3-plet showing for each comparison group the NES score, pvalue, and p-adjusted. The calculation of this matrix uses as an input the results from the differential expression analysis of the same mouse models. "
+      }, {
+        "name" : "Type",
+        "value" : "FGSEA (KEGG) Mice pathway analysis results (effect of treatments and diet reversal in a selection of models)"
+      } ],
+      "type" : "file"
+    }, {
+      "path" : "Table S4 - Detailed list of DEGs (main rodent models).xlsx",
+      "size" : 21436600,
+      "attributes" : [ {
+        "name" : "Description",
+        "value" : "Table S4: Detailed list of DEGs characterising early/all disease stages and disease progression. The table shows the official gene symbols and ENSEMBL IDs, and separates the genes associated with the different stages of MASLD development/progression. The data have been organised in 3-plets (Log2FoldChange, p-value, adjusted_p-value) for the human disease stage or rodent model comparisons, respectively. To assess the statistical significance between the compared groups a Wald test statistic (two-sided hypothesis testing; DESeq2 function in R) has been deployed to compare the coefficients of explanatory variables in a regression model, representing the gene expression differences among the compared groups. The adjusted_p-value has been calculated based on the Benjamini-Hochberg method."
+      }, {
+        "name" : "Type",
+        "value" : "Detailed list of DEGs - main rodent models"
+      } ],
+      "type" : "file"
+    }, {
+      "path" : "Table S8 - Detailed list of DEGs (diet_reversal and treatment models).xlsx",
+      "size" : 6493246,
+      "attributes" : [ {
+        "name" : "Description",
+        "value" : "Table S8: Detailed list of DEGs characterising early/all disease stages and disease progression modulated by treatments. The table shows the official gene symbols and ENSEMBL IDs, and separates the genes associated with the different stages of MASLD development/progression. The data have been organised in 3-plets (Log2FoldChange, p-value, adjusted_p-value) for the human disease stage or rodent model comparisons, respectively. To assess the statistical significance between the compared groups a Wald test statistic (two-sided hypothesis testing; DESeq2 function in R) has been deployed to compare the coefficients of explanatory variables in a regression model, representing the gene expression differences among the compared groups. The adjusted_p-value represents the Benjamini-Hochberg corrected p-values."
+      }, {
+        "name" : "Type",
+        "value" : "Detailed list of DEGs - diet reversal and treatment models"
+      } ],
+      "type" : "file"
+    }, {
+      "path" : "Table S9 - METADATA per animal.xlsx",
+      "size" : 121681,
+      "attributes" : [ {
+        "name" : "Description",
+        "value" : "All metadata for each animal used in our study"
+      }, {
+        "name" : "Type",
+        "value" : "Metadata (all data - Mice/Rats)"
+      } ],
+      "type" : "file"
+    } ],
+    "links" : [ {
+      "url" : "E-MTAB-12808",
+      "attributes" : [ {
+        "name" : "Description",
+        "value" : "This is the collection of the RNA-Seq data included in our study"
+      }, {
+        "name" : "Type",
+        "value" : "biostudies"
+      } ]
+    }, {
+      "url" : "E-MTAB-12817",
+      "attributes" : [ {
+        "name" : "Description",
+        "value" : "This is the collection of the Microarray data included in our study"
+      }, {
+        "name" : "Type",
+        "value" : "biostudies"
+      } ]
+    } ],
+    "subsections" : [ {
+      "type" : "author",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "Ioannis Kamzolas"
+      }, {
+        "name" : "E-mail",
+        "value" : "ik352@cam.ac.uk"
+      }, {
+        "name" : "ORCID",
+        "value" : "0000-0002-7408-5284"
+      }, {
+        "name" : "affiliation",
+        "value" : "o1",
+        "reference" : true
+      }, {
+        "name" : "affiliation",
+        "value" : "o2",
+        "reference" : true
+      } ]
+    }, {
+      "type" : "author",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "Lea Mørch Harder "
+      }, {
+        "name" : "E-mail",
+        "value" : "lmhd@novonordisk.com"
+      }, {
+        "name" : "ORCID",
+        "value" : "0009-0007-6126-3380"
+      }, {
+        "name" : "affiliation",
+        "value" : "o3",
+        "reference" : true
+      } ]
+    }, {
+      "type" : "author",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "Michele Vacca"
+      }, {
+        "name" : "E-mail",
+        "value" : "michele.vacca@uniba.it"
+      }, {
+        "name" : "ORCID",
+        "value" : "0000-0002-1973-224X"
+      }, {
+        "name" : "affiliation",
+        "value" : "o1",
+        "reference" : true
+      } ]
+    }, {
+      "type" : "author",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "Antonio Vidal-Puig"
+      }, {
+        "name" : "E-mail",
+        "value" : "ajv22@medschl.cam.ac.uk"
+      }, {
+        "name" : "ORCID",
+        "value" : "0000-0003-4220-9577"
+      }, {
+        "name" : "affiliation",
+        "value" : "o1",
+        "reference" : true
+      } ]
+    }, {
+      "type" : "author",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "Evangelia Petsalaki"
+      }, {
+        "name" : "E-mail",
+        "value" : "petsalaki@ebi.ac.uk"
+      }, {
+        "name" : "ORCID",
+        "value" : "0000-0002-8294-2995"
+      }, {
+        "name" : "affiliation",
+        "value" : "o2",
+        "reference" : true
+      } ]
+    }, {
+      "accno" : "o1",
+      "type" : "organisation",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "University of Cambridge"
+      } ]
+    }, {
+      "accno" : "o2",
+      "type" : "organisation",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "European Bioinformatics Institute"
+      } ]
+    }, {
+      "accno" : "o3",
+      "type" : "organisation",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "Novo Nordisk (Denmark)"
+      } ]
+    } ]
+  },
+  "type" : "submission"
+}

@@ -1,0 +1,25 @@
+[
+  {
+    "file": "oa_manifest_alt.xml",
+    "url": "https://www.ncbi.nlm.nih.gov/utils/oa/oa.fcgi?id=PMC6715650",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "file": "NRF2_repository.zip",
+    "url": "https://codeload.github.com/saezlab/NRF2-activity-in-CLD/zip/refs/heads/master",
+    "bytes": 1505860,
+    "sha256": "1c0c985538f6d0be48dad3788f9ceba044d731157757c4ec8343026592b302d5"
+  },
+  {
+    "file": "BioStudies_S-BSST1361.json",
+    "url": "https://www.ebi.ac.uk/biostudies/api/v1/studies/S-BSST1361",
+    "bytes": 18709,
+    "sha256": "c7972de59d15b823850396fa09335d51244395a9249e9e78addbb1b8e7a6e6f1"
+  },
+  {
+    "file": "BioStudies_original_paper.json",
+    "url": "https://www.ebi.ac.uk/biostudies/api/v1/studies/S-EPMC6715650",
+    "bytes": 8918,
+    "sha256": "8aa0a10c2aeacd099292236d329328c65e315170c33f4da50d358527bba087f8"
+  }
+]

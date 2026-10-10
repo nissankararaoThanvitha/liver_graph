@@ -1,0 +1,23 @@
+[
+  {
+    "file": "GSE130970_series_matrix.txt.gz",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE130nnn/GSE130970/matrix/GSE130970_series_matrix.txt.gz",
+    "bytes": 4840,
+    "sha256": "add9a76443996d78439c622275aa51237505e9c83951bf5319298266f2604cbf"
+  },
+  {
+    "file": "PMC6715650.xml",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6715650/fullTextXML",
+    "bytes": 127889,
+    "sha256": "92f4e38927133ef2fba1ee292113456d153f52cbf2f09b0218ef4f32c0450731"
+  },
+  {
+    "file": "41598_2019_48746_MOESM1_ESM.pdf",
+    "url": "https://static-content.springer-cdn.com/esm/art%3A10.1038%2Fs41598-019-48746-5/MediaObjects/41598_2019_48746_MOESM1_ESM.pdf",
+    "error": "<urlopen error [Errno -2] Name or service not known>"
+  },
+  {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6715650/supplementaryFiles",
+    "error": "The read operation timed out"
+  }
+]
