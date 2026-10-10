@@ -1,0 +1,17 @@
+            group                     direction  n_genes  pct_of_group  pct_of_all_5904
+    fibrosis_only                           all     1886         100.0             31.9
+    fibrosis_only                      positive     1215          64.4             20.6
+    fibrosis_only                      negative      671          35.6             11.4
+inflammation_only                           all     2216         100.0             37.5
+inflammation_only                      positive     1794          81.0             30.4
+inflammation_only                      negative      422          19.0              7.1
+           shared                           all     1802         100.0             30.5
+           shared            positive (both up)     1460          81.0             24.7
+           shared          negative (both down)      329          18.3              5.6
+           shared discordant (fib up, inf down)        1           0.1              0.0
+           shared discordant (fib down, inf up)       12           0.7              0.2
+
+Shared genes: Spearman rho(fibrosis_rho, inflammation_rho) = 0.650, p = 1.89e-216
+
+Top 20 positive: NALCN, GABRE, STMN2, DTNA, LAMC3, PODN, PLPP4, NFASC, SPATA21, LTBP2, CCL20, IL32, EPHA3, ADAMTSL2, THBS2, GSN, CAPN2, LOXL4, FBLN5, THY1
+Top 20 negative: KCNN2, SLC16A10, COBLL1, SORD, CYP2C19, ACADSB, LPA, SLC38A4, ANXA10, PPP1R1A, HAAO, ABCC9, DNAJC12, DCAF6, SOX5, ASXL3, HECTD1, NCAM2, EGFLAM, OAT
