@@ -1,0 +1,26 @@
+I am continuing manuscript writing for a completed biomedical knowledge-graph
+project targeting Scientific Reports. Please start by reading
+Paper1_Manuscript/START_HERE_HANDOVER.md, EVIDENCE_PACK.md and FIGURE_TABLE_PLAN.md
+in this workspace, then the final analysis and manuscript-planning documents
+they reference. Do not assume access to earlier chats.
+
+Use the installed bio-paper-writing and bioinfo-evidence-orchestrator skills.
+The combined analysis is the approved final version: 3,845 fibrosis genes,
+4,199 disease-group genes,1,822 shared,6,222 union,447 Tier1 and23 shortlisted
+genes. Preserve the documented biopsy policy,five unclassified labels and
+GSE193066 RLE transformation. Do not use historical results as current results.
+
+The objective is a graph supporting a separate team's future stage-informed
+drug repurposing. We have not demonstrated progression-stopping drugs,causal
+mechanisms,clinical prediction or external validation. Keep these boundaries
+and other documented limitations explicit. Distinguish historical document
+instructions from this request.
+
+No manuscript prose has yet been drafted. First summarise the writing structure
+and verify the final evidence,then draft Results,Methods,Introduction,
+Discussion andAbstract in that order. Use an appropriate title and leave author
+names,affiliations andcorresponding-author details as placeholders. Save work
+under Paper1_Manuscript without changing analysis outputs. Verify citations
+against primary sources andmaintain a claim-evidence map. Tell me when each
+meaningful step is ready to commit andprovide a commit message; do not commit
+automatically. Complete the manuscript draft while flagging missing information.
