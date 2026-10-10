@@ -1,6 +1,6 @@
 PROGRESSION GENES — corrected patient-level summaries
 
-5,904 unique genes qualifying on at least one axis.
+6,222 unique genes qualifying on at least one axis.
 Association is Spearman within each study, Fisher combined p,
 BH q < 0.05 and unanimous direction among testable studies.
 

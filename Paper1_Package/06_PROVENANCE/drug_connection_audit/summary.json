@@ -1,0 +1,30 @@
+{
+  "source": "local graph CSV exports; not a fresh live Neo4j query",
+  "shortlist_genes": 23,
+  "genes_with_drug_links": 17,
+  "unique_connected_drugs": 449,
+  "drug_gene_rows": 479,
+  "unique_drugs_with_target_action_links": 184,
+  "liver_biliary_unique_drugs_by_relation": {
+    "CONTRAINDICATION": 98,
+    "INDICATION": 101,
+    "OFF_LABEL_USE": 2
+  },
+  "nafld_nash_unique_indication_drugs": 11,
+  "genes_without_recorded_drug_links": [
+    "IL32",
+    "NFASC",
+    "PLPP4",
+    "TAX1BP3",
+    "TREM2",
+    "CDC45"
+  ],
+  "source_sha256": {
+    "Paper1_HighConfidence/11_FINAL_shortlist_25_genes.csv": "44f395ea687187b8d7a804b1afe0bf7678ccf7035121c4f4b2db6d0caf28dca0",
+    "data/graph_okg/edges_drug_gene.csv": "d19d183e320931fd6e48031564287c62873c54ed30ad4a44f6cbd7da4f4a9f5b",
+    "data/graph_okg/edges_drug_disease.csv": "ddedeffbcc2fc4f7f00edc11bbf10ed3e2de64658cde7aa80f89022dfe2125ab",
+    "data/graph_okg/nodes_drug.csv": "a674a34618c615b589a523807157426d066e4d21e51ce9b097c85a0cdc3e8c9a",
+    "data/graph_okg/nodes_disease.csv": "f6b805a4119a5c8ca53aa1dab968a50852fe3af54984a37b8bf301e58f06d19f"
+  },
+  "limitations": "INDICATION may include investigational evidence and is not verified approval. Contraindications are counted separately. Liver/biliary scope uses the explicit disease-label pattern in this script. ENZYME, CARRIER and TRANSPORTER links do not imply therapeutic targeting."
+}

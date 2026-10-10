@@ -1,4 +1,0 @@
-strong_cutoff,moderate_cutoff,n_T2,n_T1,n_T0,frozen_choice
-0.8,0.4,1976,1506,363,False
-1.0,0.5,1227,1979,639,True
-1.2,0.6,668,2138,1039,False

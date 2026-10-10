@@ -1,6 +1,6 @@
 # Current completed workflow
 
-The original data collection, parsing, ID mapping, crosswalk, clinical fields, normalisation and OptimusKG integration are upstream inputs. Correction begins at discovery and propagates through patient summaries,Tasks1–5 and progression-edge export. Data/expression_analysis_core was recovered read-only; baseline discovery reproduced original statistics before correction. All affected steps were rerun before active replacement.
+The original data collection, parsing, ID mapping, crosswalk and OptimusKG integration are upstream inputs. The final combined approach changes five derived disease labels and the GSE193066 expression transformation before discovery. The shared biopsy correction begins at discovery and propagates through patient summaries,Tasks1–5 and progression-edge export. Data/expression_analysis_core was recovered read-only; baseline discovery reproduced original statistics before correction. All affected steps were rerun before active replacement.
 
 # Completed methodology
 
@@ -12,11 +12,11 @@ Eight GEO studies and exact downloaded filenames are listed in06_PROVENANCE/DATA
 
 HGNC approved symbols, Entrez IDs, unambiguous previous symbols/aliases map to canonical version-stripped Ensembl IDs; non-HGNC Ensembl IDs pass through without annotation. Mapping failures are reported. _PAR_Y rows removed; distinct raw IDs collapsing to a gene are summed. The graph holds53,993 union genes;14,794 are measured in all eight studies. Gene category records the pilot categories, not complete HGNC biotypes.
 
-Study-specific expression keys map to GSM via checked title/description/prefix rules. Clinical fibrosis labels, diagnosis provenance, patient identity and biopsy order are added beside raw fields. GSE135251/GSE162694 broad NAFLD is not treated as NASH. GSE130970 diagnosis is derived from steatosis/ballooning and requires clinical-definition review; GSE193066 has no usable disease diagnoses.
+Study-specific expression keys map to GSM via checked title/description/prefix rules. Clinical fibrosis labels, diagnosis provenance, patient identity and biopsy order are added beside raw fields. GSE135251/GSE162694 broad NAFLD is not treated as NASH. GSE130970 labels remain derived from steatosis/ballooning; five flagged samples are unclassified, leaving73 used on the disease axis. Original individual diagnoses were not recovered; GSE193066 has no usable disease diagnoses.
 
 ## 3. Measurement transformation
 
-Library sums are calculated before mapping/filtering. TPM uses log2(TPM+1); other units use log2(CPM+1), including the unresolved GSE193066 unit. Expression is then standardised by within-study/gene mean and sample SD (ddof1); undefined SD gives0. No DESeq2/limma/edgeR or fitted batch-correction algorithm is used. Effect values are within-study SD units, not fold changes.
+Library sums are calculated before mapping/filtering. TPM uses log2(TPM+1). GSE193066 uses log2(deposited linear DESeq2 RLE-normalised counts+1), without CPM rescaling; mapped aliases are summed before logging. Other count inputs retain log2(CPM+1). Expression is then standardised by within-study/gene mean and sample SD (ddof1); undefined SD gives0. No DESeq2/limma/edgeR or fitted batch-correction algorithm is used. Effect values are within-study SD units, not fold changes.
 
 ## 4. Shared repeat-biopsy policy
 
@@ -46,7 +46,7 @@ MSigDB2024.1.Hs GO BP,KEGG legacy,Reactome,Hallmark; eligible background14,794 u
 
 P:2/1 at|rho|≥.4/.3. T:2/1 at|F4−F0|≥1/.5SD,0 if direction conflicts. X:2 if largest|beta| is substantial in full fit and reproducible with same sign/|beta|≥.2 in≥50% draws,1 for one condition. F:1 for fibrosis-only. B:2/1 for enriched membership in≥2/1 annotation databases via own group/cluster. Sum maximum9; Tier1≥7,Tier2≥5. These features share data and are not five independent validations.
 
-Top25 remains five Tier1 genes per cluster, ranking total score then absolute rho. Alternative cluster-top-score list remains an unselected comparison. LOSO refits per-study correlations on the same biopsy rule, removes one of five staged studies and applies BH to all14,794 eligible genes before reporting Tier1. Selection is not repeated within a held-out clinical prediction design; this is internal robustness.
+The shortlist takes up to five Tier1 genes per cluster (C4 has only three, giving23 total), ranking total score then absolute rho. Alternative cluster-top-score list remains an unselected comparison. LOSO refits per-study correlations on the same biopsy rule, removes one of five staged studies and applies BH to all14,794 eligible genes before reporting Tier1. Selection is not repeated within a held-out clinical prediction design; this is internal robustness.
 
 ## 10. OptimusKG and mechanism subgraph
 
@@ -58,6 +58,6 @@ Pathway and BioProcess each attach directly to Gene. Test Tier1 enrichment again
 
 ## Chronology and implementation versus plans
 
-August–September2026: original harmonisation, graph expansion, OptimusKG/zero-retention, progression discovery and mentor exports. October6–9: Tasks1–5, package, clinical/repeat corrections and graph reconciliation. October10: unified biopsy rule, full-universe LOSO, affected reruns, verified graph-link update and promotion to canonical files. Exact correction commands/timings are in biopsy_correction_2026-10-10/run_status.json. Original detailed session/commit interpretation is in the archived first-stage audit.
+August–September2026: original harmonisation, graph expansion, OptimusKG/zero-retention, progression discovery and mentor exports. October6–9: Tasks1–5, package, clinical/repeat corrections and graph reconciliation. October10: unified biopsy rule, full-universe LOSO, affected reruns, verified graph-link update and promotion to canonical files. Final combined commands/timings are in final_combined_2026-10-10/analysis_run_status.json; the factorial comparison is retained there as evidence. The researcher chose the combined result and removed the alternative run folders. Original detailed session/commit interpretation is in the archived first-stage audit.
 
 Researcher decisions: graph for downstream drug repurposing; average same-stage/otherwise biopsy1. Implemented procedures: current root scripts and package02_METHODS. Planned/failed work: successful drug-link model,causal validation,clinical efficacy,RAG/chatbot and liver-only trimming are not completed outputs. Top25/top12 selection rules remained unchanged; AST checks are saved in selection_logic_verification.json.

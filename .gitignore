@@ -43,3 +43,6 @@ data/paper2/
 # Verified historical recovery archives and regenerated analysis-core measurements.
 archives/*.tar.gz
 data/expression_analysis_core/
+
+# Local rollback of derived graph properties; do not ship bulk graph backups.
+final_combined_2026-10-10/graph_rollback/

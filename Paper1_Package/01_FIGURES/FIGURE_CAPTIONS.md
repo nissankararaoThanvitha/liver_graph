@@ -54,7 +54,7 @@ Silhouette score, gene-subsample stability and patient-bootstrap stability for k
 
 **Comparison of the four stage transitions.**
 
-Numbers of substantially changing genes on the full data, the same counts under the power-matched design of 30 patients per stage, and the distribution of effect sizes. Equalising power isolates F3-F4 as the transition carrying the largest transcriptional change.
+Numbers of substantially changing genes on the full data, the same counts under the power-matched design of 30 patients per stage, and the distribution of effect sizes. Compare the matched counts across each transition within the preselected fibrosis-associated gene set.
 
 `Figure7_stage_transitions.png`
 
@@ -140,9 +140,9 @@ Top five terms per database. x = gene ratio, point size = number of genes, colou
 
 ## Figure S9
 
-**Enrichment tested with no significant terms: inflammation-only decreasing genes.**
+**Enrichment dot plot: inflammation-only decreasing genes.**
 
-Tested 422 genes; no terms at FDR < 0.05 in the four collections.
+Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR.
 
 `FigureS9_dotplot_inflammation_only_down.png`
 
@@ -204,9 +204,9 @@ Top five terms per database. x = gene ratio, point size = number of genes, colou
 
 ## Figure S17
 
-**Enrichment not tested: cluster C3, high-confidence members only.**
+**Enrichment dot plot: cluster C3, high-confidence members only.**
 
-Not tested: 1 confidently assigned gene(s), below the minimum of five.
+Top five terms per database. x = gene ratio, point size = number of genes, colour = -log10 FDR.
 
 `FigureS17_dotplot_C3_core.png`
 

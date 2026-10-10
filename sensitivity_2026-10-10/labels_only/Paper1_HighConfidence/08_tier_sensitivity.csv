@@ -1,4 +1,0 @@
-tier1_cutoff,n_genes,shared_with_frozen,pct_of_frozen_retained,frozen_choice
-6,1015,484,100.0,False
-7,484,484,100.0,True
-8,135,135,27.9,False

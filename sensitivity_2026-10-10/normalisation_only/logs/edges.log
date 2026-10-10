@@ -1,7 +1,0 @@
-disease nodes confirmed present in the knowledge layer
-  TRACKS_FIBROSIS         3845 genes  (from progression_fibrosis.csv)
-  TRACKS_INFLAMMATION     4018 genes  (from progression_disease.csv)
-
--> data/graph_full/edges_my_progression.csv  (7863 edges)
-   these are the project's own contribution to the graph;
-   every other edge type is imported or measured

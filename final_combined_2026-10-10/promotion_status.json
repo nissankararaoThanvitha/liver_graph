@@ -1,0 +1,17 @@
+{
+  "selected_approach": "combined",
+  "researcher_authorised": true,
+  "fibrosis_genes": 3845,
+  "disease_genes": 4199,
+  "shared": 1822,
+  "union": 6222,
+  "tier1": 447,
+  "shortlist": 23,
+  "archive_verified_files": 1222,
+  "active_inputs_and_results_promoted": true,
+  "graph_update_pending": false,
+  "package_rebuild_pending": false,
+  "alternative_cleanup_pending": false,
+  "active_package_manifest_files": 277,
+  "promotion_verified": true
+}

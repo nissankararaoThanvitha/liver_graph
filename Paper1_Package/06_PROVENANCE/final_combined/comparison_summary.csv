@@ -1,0 +1,5 @@
+run,fibrosis_genes,disease_genes,shared,union,fibrosis_added,fibrosis_removed,disease_added,disease_removed,Tier1,Tier1_retained_from_baseline,shortlist_size,shortlist_retained_from_baseline,cluster_ARI_common_genes,confident_cluster_genes,Tier1_LOSO_significant_all5,Tier1_LOSO_strong_all5,F_ablation_Tier1,F_ablation_shortlist_size,F_ablation_baseline_shortlist_retained,F_ablation_own_shortlist_retained
+baseline,3688,4018,1802,5904,0,0,0,0,491,491,25,25,1.0,1443,488,274,320,25,15,15
+labels_only,3688,4199,1862,6025,0,0,291,110,484,480,25,25,1.0,1443,481,275,321,25,15,15
+normalisation_only,3845,4018,1768,6095,385,228,0,0,454,421,24,16,0.9126,1838,449,246,285,22,12,15
+combined,3845,4199,1822,6222,385,228,291,110,447,411,23,16,0.9126,1838,442,247,286,21,12,14

@@ -2,24 +2,24 @@
 from pathlib import Path
 import json,pandas as pd
 R=Path(__file__).resolve().parent.parent;P=R/'docs/package';P.mkdir(parents=True,exist_ok=True)
-D=R/'biopsy_correction_2026-10-10';comparison=json.loads((D/'comparison_summary.json').read_text())
+D=R/'final_combined_2026-10-10'
 f=pd.read_csv(R/'data/progression_full/progression_fibrosis.csv');d=pd.read_csv(R/'data/progression_full/progression_disease.csv');fs=f[(f.q_value<.05)&(f.n_agree==f.n_studies)];ds=d[(d.q_value<.05)&(d.n_agree==d.n_studies)];union=set(fs.ensembl_id)|set(ds.ensembl_id);shared=set(fs.ensembl_id)&set(ds.ensembl_id)
-tier=pd.read_csv(R/'Paper1_HighConfidence/11_final_tier1_genes.csv');short=pd.read_csv(R/'Paper1_HighConfidence/shortlist_with_membership_confidence.csv');clusters=pd.read_csv(R/'Paper1_Results/Task2/task2_cluster_sizes.csv');confidence=pd.read_csv(R/'Paper1_Results/Task2/task2_bootstrap_shape_stability.csv');ks=pd.read_csv(R/'Paper1_Results/Task2/task2_choosing_k.csv');transition=pd.read_csv(R/'Paper1_Results/Task3/task3_transition_summary.csv');enrich=pd.read_csv(R/'Paper1_Results/Task4/task4_significant_counts.csv');clinical=pd.read_csv(R/'data/graph/nodes_sample_clinical.csv');counts=json.loads((D/'final_graph_readonly_verification.json').read_text())['counts'];wb=pd.read_excel(R/'Paper1_HighConfidence/12_KG_supplementary.xlsx',sheet_name=None);edges=wb['4_figure_edges'];networkgenes=edges.Ensembl_ID.nunique();mechanisms=wb['3_all_mechanisms_ranked'];selected=mechanisms[mechanisms.selected_for_figure];sig5=int((tier.LOSO_still_significant_of_5==5).sum());strong5=int((tier['LOSO_still_strong_rho0.30_of_5']==5).sum())
+tier=pd.read_csv(R/'Paper1_HighConfidence/11_final_tier1_genes.csv');short=pd.read_csv(R/'Paper1_HighConfidence/shortlist_with_membership_confidence.csv');clusters=pd.read_csv(R/'Paper1_Results/Task2/task2_cluster_sizes.csv');confidence=pd.read_csv(R/'Paper1_Results/Task2/task2_bootstrap_shape_stability.csv');ks=pd.read_csv(R/'Paper1_Results/Task2/task2_choosing_k.csv');transition=pd.read_csv(R/'Paper1_Results/Task3/task3_transition_summary.csv');enrich=pd.read_csv(R/'Paper1_Results/Task4/task4_significant_counts.csv');clinical=pd.read_csv(R/'data/graph/nodes_sample_clinical.csv');graph_record=json.loads((D/'graph_verification.json').read_text()) if (D/'graph_verification.json').exists() else {'verified':False,'counts':{**json.loads((R/'biopsy_correction_2026-10-10/final_graph_readonly_verification.json').read_text())['counts'],'TRACKS_FIBROSIS':3845,'TRACKS_INFLAMMATION':4199}};counts=graph_record['counts'];wb=pd.read_excel(R/'Paper1_HighConfidence/12_KG_supplementary.xlsx',sheet_name=None);edges=wb['4_figure_edges'];networkgenes=edges.Ensembl_ID.nunique();mechanisms=wb['3_all_mechanisms_ranked'];selected=mechanisms[mechanisms.selected_for_figure];sig5=int((tier.LOSO_still_significant_of_5==5).sum());strong5=int((tier['LOSO_still_strong_rho0.30_of_5']==5).sum())
 def table(frame):
  cols=list(frame.columns);rows=['| '+' | '.join(str(c) for c in cols)+' |','| '+' | '.join('---' for c in cols)+' |']
  for row in frame.fillna('').itertuples(index=False,name=None):rows.append('| '+' | '.join(str(v).replace('|','/') for v in row)+' |')
  return '\n'.join(rows)
 def put(name,body):(P/name).write_text(body+'\n')
-summary=f'''Corrected active version: 10 October 2026. Eight human liver transcriptome studies contain1,085 samples from1,027 patient IDs. Fibrosis analysis uses610 independent staged patients; the disease-group axis uses221 patients from three studies. Repeat biopsies are averaged only if fibrosis stage matches; otherwise biopsy1 is retained before any stage filtering.
+summary=f'''Final combined active version: 10 October 2026. Eight human liver transcriptome studies contain1,085 samples from1,027 patient IDs. Fibrosis analysis uses610 independent staged patients; the disease-group axis uses216 patients from three studies. Repeat biopsies are averaged only if fibrosis stage matches; otherwise biopsy1 is retained before any stage filtering.
 
-Selected genes: **{len(fs):,} fibrosis**, **{len(ds):,} disease**, **{len(shared):,} shared**, **{len(union):,} union**. Tier1 has **{len(tier)} genes**, with25 shortlisted. The network displays **{networkgenes} genes**, **{len(selected)} mechanisms**, **{len(edges)} connections**, with{edges.loc[edges.In_final_25,'Ensembl_ID'].nunique()} shortlisted genes shown.
+Selected genes: **{len(fs):,} fibrosis**, **{len(ds):,} disease**, **{len(shared):,} shared**, **{len(union):,} union**. Tier1 has **{len(tier)} genes**, with{len(short)} shortlisted. The network displays **{networkgenes} genes**, **{len(selected)} mechanisms**, **{len(edges)} connections**, with{edges.loc[edges.In_final_25,'Ensembl_ID'].nunique()} shortlisted genes shown.
 '''
 put('README.md',f'''# Current research package
 
 {summary}
 The final goal clarified by the researcher is drug repurposing to identify drugs that could interrupt disease progression at different stages. This paper supplies stage-associated genes and biological context; it does not demonstrate drug efficacy or a validated patient-stage predictor.
 
-Read01_OVERVIEW,02_METHODS,03_STATISTICS and04_LIMITATIONS before drafting. Actual data/output files take priority over dated conversations. Current supporting audit: ../biopsy_correction_2026-10-10/CORRECTION_REPORT.md in the repository. The previous package/draft are archived under archives/previous_results_2026-10-10.tar.gz.
+Read01_OVERVIEW,02_METHODS,03_STATISTICS and04_LIMITATIONS before drafting. Actual data/output files take priority over dated conversations. Current supporting audit: ../final_combined_2026-10-10/FINAL_SELECTION.md in the repository. Previous analyses are retained in verified recovery archives; alternative sensitivity-run folders were removed after final promotion.
 
 The package contains current derived data, figures, tables and source-code copies. Bulk expression is not shipped. Root data/expression_analysis_core contains a verified14,794-gene recovery subset, not the full expression-load export; do not reload all EXPRESSES links from that subset.
 ''')
@@ -36,7 +36,7 @@ Fibrosis is F0–F4. Disease-group ordering is control→NAFL→NASH. Broad NAFL
 
 ## Current graph
 
-Eight labels,126,244 nodes; {sum(counts.values()):,} relationships at final correction verification. Patient identity is a Sample property, not a Patient node. Curated gene/disease/drug/annotation relationships remain unchanged; only7,706 patient-derived progression links were replaced. The graph is not trimmed to liver diseases only.
+Eight labels,126,244 nodes; {sum(counts.values()):,} relationships expected from final exports; live verification status: {graph_record['verified']}. Patient identity is a Sample property, not a Patient node. Curated gene/disease/drug/annotation relationships remain unchanged; 8,044 patient-derived progression links represent the final combined analysis. Five derived disease labels are unclassified; GSE193066 derived expression preserves deposited RLE normalisation. Raw expression values and curated knowledge are preserved. The graph is not trimmed to liver diseases only.
 
 ## Outputs
 
@@ -53,11 +53,11 @@ Eight GEO studies and exact downloaded filenames are listed in06_PROVENANCE/DATA
 
 HGNC approved symbols, Entrez IDs, unambiguous previous symbols/aliases map to canonical version-stripped Ensembl IDs; non-HGNC Ensembl IDs pass through without annotation. Mapping failures are reported. _PAR_Y rows removed; distinct raw IDs collapsing to a gene are summed. The graph holds53,993 union genes;14,794 are measured in all eight studies. Gene category records the pilot categories, not complete HGNC biotypes.
 
-Study-specific expression keys map to GSM via checked title/description/prefix rules. Clinical fibrosis labels, diagnosis provenance, patient identity and biopsy order are added beside raw fields. GSE135251/GSE162694 broad NAFLD is not treated as NASH. GSE130970 diagnosis is derived from steatosis/ballooning and requires clinical-definition review; GSE193066 has no usable disease diagnoses.
+Study-specific expression keys map to GSM via checked title/description/prefix rules. Clinical fibrosis labels, diagnosis provenance, patient identity and biopsy order are added beside raw fields. GSE135251/GSE162694 broad NAFLD is not treated as NASH. GSE130970 labels remain derived from steatosis/ballooning; five flagged samples are unclassified, leaving73 used on the disease axis. Original individual diagnoses were not recovered; GSE193066 has no usable disease diagnoses.
 
 ## 3. Measurement transformation
 
-Library sums are calculated before mapping/filtering. TPM uses log2(TPM+1); other units use log2(CPM+1), including the unresolved GSE193066 unit. Expression is then standardised by within-study/gene mean and sample SD (ddof1); undefined SD gives0. No DESeq2/limma/edgeR or fitted batch-correction algorithm is used. Effect values are within-study SD units, not fold changes.
+Library sums are calculated before mapping/filtering. TPM uses log2(TPM+1). GSE193066 uses log2(deposited linear DESeq2 RLE-normalised counts+1), without CPM rescaling; mapped aliases are summed before logging. Other count inputs retain log2(CPM+1). Expression is then standardised by within-study/gene mean and sample SD (ddof1); undefined SD gives0. No DESeq2/limma/edgeR or fitted batch-correction algorithm is used. Effect values are within-study SD units, not fold changes.
 
 ## 4. Shared repeat-biopsy policy
 
@@ -87,7 +87,7 @@ MSigDB2024.1.Hs GO BP,KEGG legacy,Reactome,Hallmark; eligible background14,794 u
 
 P:2/1 at|rho|≥.4/.3. T:2/1 at|F4−F0|≥1/.5SD,0 if direction conflicts. X:2 if largest|beta| is substantial in full fit and reproducible with same sign/|beta|≥.2 in≥50% draws,1 for one condition. F:1 for fibrosis-only. B:2/1 for enriched membership in≥2/1 annotation databases via own group/cluster. Sum maximum9; Tier1≥7,Tier2≥5. These features share data and are not five independent validations.
 
-Top25 remains five Tier1 genes per cluster, ranking total score then absolute rho. Alternative cluster-top-score list remains an unselected comparison. LOSO refits per-study correlations on the same biopsy rule, removes one of five staged studies and applies BH to all14,794 eligible genes before reporting Tier1. Selection is not repeated within a held-out clinical prediction design; this is internal robustness.
+The shortlist takes up to five Tier1 genes per cluster (C4 has only three, giving23 total), ranking total score then absolute rho. Alternative cluster-top-score list remains an unselected comparison. LOSO refits per-study correlations on the same biopsy rule, removes one of five staged studies and applies BH to all14,794 eligible genes before reporting Tier1. Selection is not repeated within a held-out clinical prediction design; this is internal robustness.
 
 ## 10. OptimusKG and mechanism subgraph
 
@@ -115,7 +115,7 @@ put('03_STATISTICS.md',f'''# Current statistics and test families
 
 '''+table(enrich)+f'''
 
-C3 core has one gene and is untested. Zero entries for that core do not mean a null test. Other current core findings must be read from this table rather than earlier captions.
+Core results and test status must be read from the current enrichment tables; groups with fewer than five genes are untested, not tested-null.
 
 ## LOSO
 
@@ -125,7 +125,7 @@ BH family14,794 eligible genes per omitted-study run. Tier1 reports{len(tier)*5:
 
 '''+table(selected[['Mechanism_ID','mechanism','n_tier1_genes','fold_enrichment','q_value']])+f'''
 
-Displayed network{networkgenes} genes+12 mechanisms,{len(edges)} edges. Five of25 shortlisted genes appear; ITGA2 reaches6 selected mechanisms and PDGFRA4; ADAMTSL2,NFASC,TREM2 reach one each.
+Displayed network{networkgenes} genes+12 mechanisms,{len(edges)} edges. Four of23 shortlisted genes appear; PDGFRA reaches5 selected mechanisms; EPHA3,NFASC,TREM2 reach one each.
 
 Software: core dependency versions are those pinned in requirements; corrected run Python3.12.14. Baseline discovery reproduced the historical results under this runtime before correction. See the archived correction audit's runtime_requirements.txt for the exact installed environment.
 ''')
@@ -134,14 +134,14 @@ limits='''# Evidence boundaries and outstanding questions
 - Final goal is drug repurposing; no suitable drug has been predicted or shown to stop progression by this correction.
 - Cross-sectional stage associations do not establish individual progression, causality or a validated stage predictor.
 - F4 has34 independent patients; late matched counts are highly variable. Counts are inside a preselected gene set; equal selection does not prove unbiased contrast comparisons.
-- Disease axis uses221 patients/three studies versus fibrosis610/five; shared is independently selected association, not necessarily the same patients or specificity.
-- GSE130970's78 diagnoses are derived from a simplified histology rule and need clinical-definition/source review. GSE193066 units remain unresolved.
+- Disease axis uses216 patients/three studies versus fibrosis610/five; shared is independently selected association, not necessarily the same patients or specificity.
+- GSE130970 individual author diagnoses were not recovered; five flagged cases are unclassified and the remaining73 labels are still derived. GSE193066 deposited linear RLE units were verified and are preserved; sensitivity evidence records how normalisation changes prioritisation.
 - Modern MASLD/MASH eligibility was not reconstructed from complete metabolic/alcohol criteria. Preserve original labels transparently.
 - Demographic stage summaries use327 independent patients. BMI, treatment and cell composition are not comprehensively adjusted.
-- Bootstrap shape medians can conceal failed centroid matches; membership confidence is conditional on sound matches. C3 core1 is untestable. A high score does not guarantee stable cluster timing; Table6 includes individual confidence.
+- Bootstrap shape medians can conceal failed centroid matches; membership confidence is conditional on sound matches. Small core groups may be untestable. A high score does not guarantee stable cluster timing; Table6 includes individual confidence.
 - Score features and annotation databases overlap. Cutoff and top-band sensitivity are material; no prospectively registered protocol establishes pre-specification.
 - LOSO now uses consistent patient handling/full-universe BH, but remains selected-set internal robustness, not external validation or fully nested prediction.
-- Only five shortlisted genes reach the selected twelve mechanisms. The network shows a Tier1 subset, not universal shortlist convergence.
+- Only four shortlisted genes reach the selected twelve mechanisms. The network shows a Tier1 subset, not universal shortlist convergence.
 - A pancreatic developmental annotation remains among selected mechanisms; inspect driver genes and source biology before interpreting it as a liver process. Gene annotation alone does not establish mechanism or therapeutic direction.
 - Original acquisition assets, HGNC/source release dates, source-paper verification and independent cohort overlap/metadata review are incomplete.
 - Expression recovery covers only the14,794-gene analysis core; do not replace all32.5million EXPRESSES links from it.
@@ -169,7 +169,7 @@ value_z is within-study/gene standardised expression after the deposited-value l
 - gene_tables stage/disease/age/sex summaries:{len(union)} selected-union genes; staged patients610,demographic staged patients327. sample_demographics.csv has all1,085 raw sample records and biopsy_number; analyse after selection/aggregation.
 - harmonisation: original metadata, additive clinical labels/diagnosis provenance, crosswalk, mapping summary/unmapped IDs, parse summary. Raw clinical fields preserved.
 - graph_nodes/nodes_gene.csv:53,993 union genes; n_datasets records study coverage. category is a pilot annotation, not comprehensive biotype.
-- graph_nodes/edges_my_progression.csv and knowledge_layer/edges_my_progression.csv: identical corrected7,706 links with Ensembl gene,disease ID,relationship,rho,q,study count,direction.
+- graph_nodes/edges_my_progression.csv and knowledge_layer/edges_my_progression.csv: identical final8,044 links with Ensembl gene,disease ID,relationship,rho,q,study count,direction.
 - gene_progression_scores.csv:{len(union)} selected-union genes; fib_rho/fib_q and dis_rho/dis_q blank where not selected on that axis.
 - knowledge layer: Gene-associated curated Disease,Drug,Pathway,BioProcess,Phenotype nodes/relations. ASSOCIATED_WITH scores≥.1; ACTS_ON mode-of-action annotations retained. No Pathway→BioProcess relationship.
 
@@ -194,6 +194,6 @@ The recovered14,794-gene expression subset is data/expression_analysis_core, dis
 # Current result README and root entrypoints derive from current statistics.
 (R/'Paper1_Results/README.md').write_text('# Current Paper1 results\n\n'+summary+'\nUse Task1–4 and00_progression_genes. These replace the earlier biopsy-inconsistent results. Correction records remain in biopsy_correction_2026-10-10; previous results are only in the recovery archive.\n')
 (R/'Paper1_HighConfidence/README.md').write_text('# Current prioritisation\n\n'+summary+'\nUse11_final_tier1_genes.csv and11_FINAL_shortlist_25_genes.csv for exact scores. Table6 uses shortlist_with_membership_confidence.csv. The original numerical filenames are descriptive run artifacts, not evidence of their row count.\n')
-(R/'README.md').write_text('# Stage-informed liver knowledge graph\n\n'+summary+'\nThe final objective is to support the next team’s drug repurposing for interrupting disease progression at different stages. Curated biology from OptimusKG connects stage-associated genes to drugs, diseases, pathways and processes. No therapeutic efficacy or validated clinical stage predictor is established.\n\n## Active files\n\n- Paper1_Package: current data, methods, figures, tables and evidence boundaries.\n- Paper1_Results: corrected Tasks1–4.\n- Paper1_HighConfidence: corrected scores, shortlist, LOSO and network.\n- data/progression_full and data/for_mentor: corrected association/group summaries.\n- data/graph_full and data/graph_okg: current node/knowledge/progression CSVs.\n- data/expression_analysis_core: core-only recovery for analysis; never use to replace all graph expression measurements.\n- manuscript_planning: current inventory/workflow/evidence map/missing information.\n- biopsy_correction_2026-10-10: verified correction audit, comparison and graph rollback snapshot.\n- archives: checksum-verified recovery copy of superseded results/draft; excluded from Git by default.\n\n## Rebuild and checks\n\nRead docs/provenance/REBUILD.md. Run scripts from repository root with explicit outputs. Requirements cover Paper1; requirements-link-prediction.txt is optional and unrelated to the verified Paper1 results. Patient-policy tests are in tests/.\n\nHistorical Claude sessions under handover/ preserve rationale and rejected branches; their counts/method descriptions are not current results.\n')
-(R/'CLAUDE.md').write_text('# Current project context\n\n'+summary+'\nFinal purpose, clarified by the researcher: a graph for stage-informed drug repurposing to interrupt progression. Use the active root directories and Paper1_Package, not archived historical numbers.\n\nSame-stage repeat biopsies are averaged; differing stages retain biopsy1 before all contrasts. Stage summaries and LOSO use the same independent-patient policy; LOSO BH uses14,794 eligible genes. Top25: five Tier1 genes per cluster, score then|rho|. Top12: enrichment-ranked mechanisms with existing eligibility/redundancy rules. Those selection rules are unchanged.\n\nRaw expression/sample nodes and curated knowledge were preserved; current patient-derived links match corrected CSVs. The recovered analysis core is not a full measurement-load export. All missing metadata/unit/clinical-definition/causality questions remain explicit in04_LIMITATIONS.md.\n\nExecute source scripts from root. Prioritisation order hc0→hc1→hc2→hc3→hc2→hc4. Never mix old intermediate files with a corrected run.\n')
+(R/'README.md').write_text('# Stage-informed liver knowledge graph\n\n'+summary+'\nThe final objective is to support the next team’s drug repurposing for interrupting disease progression at different stages. Curated biology from OptimusKG connects stage-associated genes to drugs, diseases, pathways and processes. No therapeutic efficacy or validated clinical stage predictor is established.\n\n## Active files\n\n- Paper1_Package: current data, methods, figures, tables and evidence boundaries.\n- Paper1_Results: corrected Tasks1–4.\n- Paper1_HighConfidence: corrected scores, shortlist, LOSO and network.\n- data/progression_full and data/for_mentor: corrected association/group summaries.\n- data/graph_full and data/graph_okg: current node/knowledge/progression CSVs.\n- data/expression_analysis_core: core-only recovery for analysis; never use to replace all graph expression measurements.\n- manuscript_planning: current inventory/workflow/evidence map/missing information.\n- final_combined_2026-10-10: final selection, sensitivity evidence and graph verification.\n- biopsy_correction_2026-10-10: historical biopsy correction record; numerical results there are superseded.\n- archives: checksum-verified recovery copy of superseded results/draft; excluded from Git by default.\n\n## Rebuild and checks\n\nRead docs/provenance/REBUILD.md. Run scripts from repository root with explicit outputs. Requirements cover Paper1; requirements-link-prediction.txt is optional and unrelated to the verified Paper1 results. Patient-policy tests are in tests/.\n\nHistorical Claude sessions under handover/ preserve rationale and rejected branches; their counts/method descriptions are not current results.\n')
+(R/'CLAUDE.md').write_text('# Current project context\n\n'+summary+'\nFinal purpose, clarified by the researcher: a graph for stage-informed drug repurposing to interrupt progression. Use the active root directories and Paper1_Package, not archived historical numbers.\n\nSame-stage repeat biopsies are averaged; differing stages retain biopsy1 before all contrasts. Stage summaries and LOSO use the same independent-patient policy; LOSO BH uses14,794 eligible genes. Shortlist: up to five Tier1 genes per cluster (23 total), score then|rho|. Top12: enrichment-ranked mechanisms with existing eligibility/redundancy rules. Those selection rules are unchanged.\n\nRaw expression values and curated knowledge were preserved; derived GSE193066 values and five derived disease labels were updated; current patient-derived links match corrected CSVs. The recovered analysis core is not a full measurement-load export. All missing metadata/unit/clinical-definition/causality questions remain explicit in04_LIMITATIONS.md.\n\nExecute source scripts from root. Prioritisation order hc0→hc1→hc2→hc3→hc2→hc4. Never mix old intermediate files with a corrected run.\n')
 print('Current docs generated from active outputs.')
