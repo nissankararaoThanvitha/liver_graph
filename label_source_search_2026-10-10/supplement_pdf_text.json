@@ -1,0 +1,30 @@
+[
+  {
+    "page": 1,
+    "text": "[1] Hoang et al  GENE EXPRESSION PREDICTS HISTOLOGICAL SEVERITY AND REVEALS DISTINCT MOLECULAR PROFILES OF NONALCOHOLIC FATTY LIVER DISEASE  Stephen A. Hoang PhD1, Abdul Oseini MD2, Ryan E. Feaver PhD1, Banumathi Cole PhD1, Amon Asgharpour MD3, Robert Vincent MD PhD2, Mohammad Siddiqui MD2, Mark J. Lawson PhD1, Nathan C. Day1, Justin M. Taylor1, Brian R. Wamhoff PhD1, Faridoddin Mirshahi MS2, Melissa J Contos MD2, Michael Idowu MD2 and Arun J. Sanyal MBBS MD2  Corresponding authors:  Stephen A. Hoang PhD Title: Head of Computational Biology, HemoShear Therapeutics Address:    501 Locust Avenue     Charlottesville, VA 22902 Phone:    (434) 872 0196 Fax: Email:    hoang@hemoshear.com   Senior author:   Arun J. Sanyal Title:   Z. Reno Vlahcevic Professor of Medicine, Physiology  and Molecular Pathology Address:    MCV Box 980341     Richmond, VA 23298-0341 Phone:    (804) 828 6314 Fax:    (804) 828 2992 Email:    arun.sanyal@vcuhealth.org  Affiliations: 1. HemoShear Therapeutics, LLC, Charlottesville, Virginia 2. Div. of Gastroenterology, Hepatology and Nutrition, Dept. of Internal Medicine, Virginia Commonwealth University School of Medicine, Richmond, VA  3. Div. of Surgical Pathology, Dept. of Pathology, Virginia Commonwealth University School of Medicine, Richmond, VA       "
+  },
+  {
+    "page": 2,
+    "text": "[2] Hoang et al  Supplementary figure 1 \n Supplementary figure 1: Composition of the NAFLD activity score (NAS) for each sample. The NAS is the sum score of histological assessments of cytological ballooning (0-2), lobular inflammation (0-3), and steatosis (0-3).           \n"
+  },
+  {
+    "page": 3,
+    "text": "[3] Hoang et al  Supplementary figure 2 \n Supplementary Figure 2: Differential expression analysis of NAS components. Plot shows the set intersection cardinality for differentially expressed genes at 5% (A) and 1% (B) FDR thresholds. Differentially expressed genes were assessed with respect to lobular inflammation, steatosis, cytological ballooning, and the composite NAS. Individual set sizes are shown on the \n"
+  },
+  {
+    "page": 4,
+    "text": "[4] Hoang et al  lower left corner of the plots, intersection sizes are on the y-axis, and intersection labels are shown along the x-axis.   Supplementary figure 3  \n  Supplementary Figure 3: An analysis of gene expression responses that are unique to NAS (A) or fibrosis stage (B). Figures A & B are fold change-fold change plots (NAS vs fibrosis stage), where each point represents a gene, and color represents the posterior probability that a given gene is uniquely differentially regulated with respect to NAS (A) or fibrosis stage (B) (i.e. the \n"
+  },
+  {
+    "page": 5,
+    "text": "[5] Hoang et al  probability approaches one when a gene shows strong evidence of differential regulation in one condition, but not the other). The top 10 genes are labeled in plots A & B. The tables (C & D) show the Reactome gene sets that are enriched for genes with a high degree of uniqueness.    Supplementary Figure 4 \n Supplementary Figure 4: The cross-validation root-mean-squared error of the lasso models as a function of the regularization parameter. The number of predictors in each model is represented as point size.             \n"
+  },
+  {
+    "page": 6,
+    "text": "[6] Hoang et al  Supplemental Table 1: Characteristics of the populations studied  Histologically normal control N=6 NAFLD N=72 Age (yrs) mean \u00b1 S.D. Gender (males) n Caucasians (n)  Body Mass Index (kg/m2) mean \u00b1 S.D. Diabetes (n) Hypertension (n) Hyperlipidemia (n)  AST (IU/L) mean \u00b1 S.D. ALT (IU/L) mean \u00b1 S.D. Alk Phos (IU/L) mean \u00b1 S.D. Bilirubin (mg/dl) mean \u00b1 S.D. Albumin (gm/dl) mean \u00b1 S.D.  Steatohepatitis (n) Steatosis grade: mean  Lobular inflammation grade: mean  Hepatocellular Ballooning: mean  Fibrosis stage: mean   Distribution of Steatosis grade 0 1 2 3 Distribution of Lobular inflammation grade 0 1 2 Distribution of Hepatocellular ballooning grade 0 1 2 Distribution of NAS 0 1 2 3 4 5 \n49.8 \u00b1 21 2 5  25.9 \u00b1 5.8 0 1 0  35.7 \u00b1 11 37.9 \u00b1 12 96 \u00b1 73 0.6 \u00b1 0.2 4.3 \u00b1 0.2  0 - - - -   6 - - -  6 - -    6 - -  6 - - - - - \n52.8 \u00b1 12 28 64  33.3 \u00b1 5.5 29 46 42  60 \u00b1 40 82 \u00b1 56 93 \u00b1 33 0.6 \u00b1 0.6 4.4 \u00b1 0.5  58 2 1.4 1.8 1.3   2 29 27 14  5 55 12    14 28 30  0 2 9 18 17 18 "
+  },
+  {
+    "page": 7,
+    "text": "[7] Hoang et al  6 Distribution of fibrosis stage 0 1 2 3 4 \n-  6 - - - - \n8  19 28 9 14 2   "
+  }
+]

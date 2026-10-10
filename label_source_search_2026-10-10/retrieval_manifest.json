@@ -1,0 +1,22 @@
+[
+  {
+    "file": "oa_manifest.xml",
+    "url": "https://pmc.ncbi.nlm.nih.gov/utils/oa/oa.fcgi?id=PMC6715650",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "file": "original_supplement.pdf",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6715650/bin/41598_2019_48746_MOESM1_ESM.pdf",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "file": "publisher_supplement.pdf",
+    "url": "https://static-content.springer-cdn.com/esm/art%3A10.1038%2Fs41598-019-48746-5/MediaObjects/41598_2019_48746_MOESM1_ESM.pdf",
+    "error": "<urlopen error [Errno -2] Name or service not known>"
+  },
+  {
+    "file": "secondary_repository_tree.json",
+    "url": "https://api.github.com/repos/saezlab/NRF2-activity-in-CLD/git/trees/master?recursive=1",
+    "error": "HTTP Error 403: rate limit exceeded"
+  }
+]

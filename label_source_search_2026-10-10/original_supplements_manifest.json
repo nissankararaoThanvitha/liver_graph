@@ -1,0 +1,44 @@
+[
+  {
+    "file": "41598_2019_48746_MOESM1_ESM.pdf",
+    "url": "https://www.ebi.ac.uk/biostudies/files/S-EPMC6715650/41598_2019_48746_MOESM1_ESM.pdf",
+    "bytes": 1515728,
+    "size_matches_record": true,
+    "sha256": "5f2031a45ef59b8ea51118a8a3ee07e60979065b3c4c0eb211c762b3bca918a6"
+  },
+  {
+    "file": "41598_2019_48746_MOESM2_ESM.xlsx",
+    "url": "https://www.ebi.ac.uk/biostudies/files/S-EPMC6715650/41598_2019_48746_MOESM2_ESM.xlsx",
+    "bytes": 3867192,
+    "size_matches_record": true,
+    "sha256": "226f12c5c868e14e79ff8828feea2d8da6d707bf3a40c983f97f9e20da766130"
+  },
+  {
+    "file": "41598_2019_48746_MOESM3_ESM.xlsx",
+    "url": "https://www.ebi.ac.uk/biostudies/files/S-EPMC6715650/41598_2019_48746_MOESM3_ESM.xlsx",
+    "bytes": 149760,
+    "size_matches_record": true,
+    "sha256": "7785104e729b92465c58f30e3f33afd0437b5322fcc5ff4ff1a612a187c34ed2"
+  },
+  {
+    "file": "41598_2019_48746_MOESM4_ESM.xlsx",
+    "url": "https://www.ebi.ac.uk/biostudies/files/S-EPMC6715650/41598_2019_48746_MOESM4_ESM.xlsx",
+    "bytes": 141331,
+    "size_matches_record": true,
+    "sha256": "c59beabd5e5b739f85cca9e74e6a89cdde428c620708b4c395bca78c00db6350"
+  },
+  {
+    "file": "41598_2019_48746_MOESM5_ESM.xlsx",
+    "url": "https://www.ebi.ac.uk/biostudies/files/S-EPMC6715650/41598_2019_48746_MOESM5_ESM.xlsx",
+    "bytes": 247852,
+    "size_matches_record": true,
+    "sha256": "f84d250a479f98eb3eff75822eb07f1302746c17095dd4c9abf4847278f2222d"
+  },
+  {
+    "file": "41598_2019_48746_MOESM6_ESM.xlsx",
+    "url": "https://www.ebi.ac.uk/biostudies/files/S-EPMC6715650/41598_2019_48746_MOESM6_ESM.xlsx",
+    "bytes": 408307,
+    "size_matches_record": true,
+    "sha256": "5013e6da06419d1a17a788981b50b98d1f10a28ecf0e91ba27e24e8e4a0d6f77"
+  }
+]

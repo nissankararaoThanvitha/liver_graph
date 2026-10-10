@@ -1,0 +1,219 @@
+---
+title: "NFE2L2 activitiy in adult NAFLD cohort"
+author: 
+  - Christian H. Holland^[Faculty of Medicine, Institute of Computational Biomedicine, Heidelberg University, Bioquant, Heidelberg, Germany, christian.holland@bioquant.uni-heidelberg.de]
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  html_document:
+    df_print: paged
+editor_options:
+  chunk_output_type: inline
+---
+# Library and sources
+These libraries and sources are used in this analysis 
+```{r "setup", message=F}
+library(tidyverse)
+library(GEOquery)
+library(edgeR)
+library(dorothea)
+library(biobroom)
+library(here)
+library(ggpubr)
+library(viper)
+
+source(here("src/utils.R"))
+```
+
+# Data processing
+## Download meta data
+Meta data are downloaded from Gene Expression Omnibus via the Bioconductor package GEOquery.
+```{r "download meta", message=FALSE, warning=FALSE, cache=TRUE}
+df = getGEO("GSE130970")
+
+meta = df$GSE130970_series_matrix.txt.gz %>%
+  pData() %>%
+  rownames_to_column("sample") %>%
+  as_tibble() %>%
+  select(sample = title, fibrosis = `fibrosis stage:ch1`, 
+         lobular_inflammation = `lobular inflammation grade:ch1`, 
+         nafld = `nafld activity score:ch1`, gender = `Sex:ch1`, 
+         steatosis = `steatosis grade:ch1`, age = `age at biopsy:ch1`,
+         ballooning = `cytological ballooning grade:ch1`) %>%
+  mutate(fibrosis = fct_inseq(fibrosis),
+         lobular_inflammation = fct_inseq(lobular_inflammation),
+         nafld = fct_inseq(nafld),
+         gender = as_factor(str_to_lower(gender)),
+         steatosis = fct_inseq(steatosis),
+         age = as.numeric(age),
+         ballooning = fct_inseq(ballooning)) %>%
+  mutate(nafld = factor(str_c("stage", nafld, sep="_"), 
+                        levels = str_c("stage", c(0:6), sep = "_")))
+
+saveRDS(meta, here("output/adult_nafld_cohort/meta.rds"))
+
+meta
+```
+
+## Process count matrix
+The raw count matrix must be downloaded manually from GEO and deposit in the data folder (see path in the chunk below for the exact file name). As genes are annotated with entrez gene IDs they are mapped to HGNC genes. Counts for duplicated HGNC gene symbols are averaged.
+```{r "process count matrix", message=FALSE, warning=FALSE, cache=TRUE}
+# read count data with entrez gene ids
+count_mat_entrez = read_csv(here("data/adult_nafld_cohort/GSE130970_all_sample_salmon_tximport_counts_entrez_gene_ID.csv"))
+
+# translate gene ids to hgnc symbols
+count_mat = count_mat_entrez %>%
+  mutate(entrez_id = as.character(entrez_id)) %>%
+  rename(gene = entrez_id) %>%
+  translate_gene_ids(from = "entrez_hgnc", to = "symbol_hgnc") %>%
+  # summarize over multiple genes - takes a while
+  drop_na(gene) %>%
+  group_by(gene) %>%
+  summarise(across(where(is.numeric), median)) %>%
+  data.frame(row.names = 1, check.names = F)
+
+saveRDS(count_mat, here("output/adult_nafld_cohort/count_mat.rds"))
+```
+
+# Normalization
+Count matrix is normalized via voom which filters for low read counts, performs a TMM normalization and transforms the values to logCPMs.
+```{r message=FALSE, warning=FALSE}
+meta = readRDS(here("output/adult_nafld_cohort/meta.rds"))
+count_mat = readRDS(here("output/adult_nafld_cohort/count_mat.rds"))
+
+# check if count and meta data and matrix correspond to each other
+stopifnot(identical(colnames(count_mat), as.character(meta$sample)))
+
+dge_obj = count_mat %>% 
+  DGEList(group = meta$nafld)
+
+# filter low read counts, TMM normalization and logCPM transformation
+norm_expr = voom_normalization(dge_obj)
+
+saveRDS(norm_expr, here("output/adult_nafld_cohort/norm_expr.rds"))
+```
+
+# TF activity inference
+TF activities are inferred via the dorothe package.
+```{r "tf activity inference"}
+norm_expr = readRDS(here("output/adult_nafld_cohort/norm_expr.rds"))
+meta = readRDS(here("output/adult_nafld_cohort/meta.rds"))
+
+tf_scores = run_viper(norm_expr, dorothea_hs, 
+                      options = list(nes = T, method = "scale", minsize = 4, 
+                                     eset.filter = F, verbose=F), tidy = T) %>%
+  as_tibble()
+```
+
+## TF activity of NFE2L2
+Here we show how the activity of NFE2L2 changes with different lobular inflammation stages. To access the significance, an anova (including linear models) and correlation analysis is performed.
+```{r "nfe2l2 activity", message=FALSE, warning=FALSE}
+a = tf_scores %>% 
+  left_join(meta, by="sample") %>%
+  filter(tf %in% "NFE2L2") 
+
+a %>%
+  ggplot(aes(x=lobular_inflammation, y=activity, fill=lobular_inflammation)) +
+  geom_boxplot() +
+  geom_jitter(alpha = 0.3) +
+  theme(legend.position = "none") +
+  ggpubr::stat_compare_means(method = "anova") +
+  stat_compare_means(comparisons = list(c("none", "mild"), c("mild", "severe"), 
+                                        c("none", "severe"))) +
+  geom_smooth(method = "lm", se = FALSE, color = "yellow", aes(group = 1))
+
+
+# anova
+a %>%
+  nest(data = -tf) %>%
+  mutate(aov = data %>% map(~broom::tidy(
+    aov(activity~lobular_inflammation, data = .)))) %>%
+  select(-data) %>%
+  unnest(aov)
+
+# anova post hoc test
+a %>%
+  nest(data = -tf) %>%
+  mutate(tukey = data %>% map(~broom::tidy(
+    TukeyHSD(aov(activity~lobular_inflammation, data = .))))) %>%
+  unnest(tukey) %>%
+  select(-data, -null.value)
+  
+
+# linear models
+a %>%
+  nest(data = -tf) %>%
+  mutate(lm = data %>% map(~broom::tidy(
+    lm(activity~lobular_inflammation, data = .)))) %>%
+  unnest(lm) %>%
+  filter(term != "(Intercept)") %>%
+  select(-data)
+
+# correlations
+a %>%
+  mutate_if(is.factor, as.numeric) %>%
+  nest(data = -tf) %>%
+  mutate(r = data %>% map(~broom::tidy(
+    cor.test(~activity + lobular_inflammation, data = ., 
+             method = "spearman")))) %>%
+  unnest(r) %>%
+  select(-data)
+```
+
+## TF expression of NFE2L2
+Here we show how the expression of NFE2L2 changes with different lobular inflammation stages. To access the significance, an anova (including linear models) and correlation analysis is performed.
+```{r "nfe2l2 expression", message=FALSE, warning=FALSE}
+e = norm_expr %>%
+  tdy("gene", "sample", "expression") %>%
+  left_join(meta, by="sample") %>%
+  filter(gene %in% "NFE2L2")
+
+e %>%  
+  ggplot(aes(x=lobular_inflammation, y=expression, fill=lobular_inflammation)) +
+  geom_boxplot() +
+  geom_jitter(alpha = 0.3) +
+  theme(legend.position = "none") +
+  stat_compare_means(comparisons = list(c("none", "mild"), c("mild", "severe"), 
+                                        c("none", "severe"))) +
+  ggpubr::stat_compare_means(method = "anova") +
+  geom_smooth(method = "lm", se = FALSE, color = "yellow", aes(group = 1))
+
+# anova 
+e %>%
+  nest(data = -gene) %>%
+  mutate(aov = data %>% map(~broom::tidy(
+    aov(expression~lobular_inflammation, data = .)))) %>%
+  select(-data) %>%
+  unnest(aov)
+
+# anova post hoc test
+e %>%
+  nest(data = -gene) %>%
+  mutate(tukey = data %>% map(~broom::tidy(
+    TukeyHSD(aov(expression~lobular_inflammation, data = .))))) %>%
+  unnest(tukey) %>%
+  select(-data, -null.value)
+
+# linear models
+e %>%
+  nest(data = -gene) %>%
+  mutate(lm = data %>% map(~broom::tidy(lm(expression~lobular_inflammation, 
+                                           data = .)))) %>%
+  unnest(lm) %>%
+  filter(term != "(Intercept)") %>%
+  select(-data)
+
+# correlation
+e %>%
+  mutate_if(is.factor, as.numeric) %>%
+  nest(data = -gene) %>%
+  mutate(r = data %>% map(~tidy(cor.test(~expression + lobular_inflammation, 
+                                         data = ., method = "spearman")))) %>%
+  unnest(r) %>%
+  select(-data)
+```
+
+# Sessioninfo
+```{r}
+sessionInfo()
+```
+

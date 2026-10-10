@@ -1,0 +1,782 @@
+{
+  "GSM3758005": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "80",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "2",
+    "steatosis grade": "2",
+    "nafld activity score": "5",
+    "fibrosis stage": "3"
+  },
+  "GSM3758006": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "48",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "2",
+    "steatosis grade": "1",
+    "nafld activity score": "4",
+    "fibrosis stage": "3"
+  },
+  "GSM3758007": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "65",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "2",
+    "steatosis grade": "2",
+    "nafld activity score": "5",
+    "fibrosis stage": "3"
+  },
+  "GSM3758008": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "53",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "2",
+    "steatosis grade": "2",
+    "nafld activity score": "5",
+    "fibrosis stage": "3"
+  },
+  "GSM3758009": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "61",
+    "lobular inflammation grade": "2",
+    "cytological ballooning grade": "2",
+    "steatosis grade": "2",
+    "nafld activity score": "6",
+    "fibrosis stage": "3"
+  },
+  "GSM3758010": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "46",
+    "lobular inflammation grade": "2",
+    "cytological ballooning grade": "2",
+    "steatosis grade": "2",
+    "nafld activity score": "6",
+    "fibrosis stage": "3"
+  },
+  "GSM3758011": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "56",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "1",
+    "steatosis grade": "3",
+    "nafld activity score": "5",
+    "fibrosis stage": "3"
+  },
+  "GSM3758012": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "55",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "2",
+    "steatosis grade": "3",
+    "nafld activity score": "6",
+    "fibrosis stage": "3"
+  },
+  "GSM3758013": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "60",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "2",
+    "steatosis grade": "1",
+    "nafld activity score": "4",
+    "fibrosis stage": "3"
+  },
+  "GSM3758014": {
+    "tissue": "liver biopsy",
+    "Sex": "M",
+    "age at biopsy": "56",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "1",
+    "steatosis grade": "2",
+    "nafld activity score": "4",
+    "fibrosis stage": "3"
+  },
+  "GSM3758015": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "64",
+    "lobular inflammation grade": "2",
+    "cytological ballooning grade": "1",
+    "steatosis grade": "1",
+    "nafld activity score": "4",
+    "fibrosis stage": "3"
+  },
+  "GSM3758016": {
+    "tissue": "liver biopsy",
+    "Sex": "M",
+    "age at biopsy": "45",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "2",
+    "steatosis grade": "2",
+    "nafld activity score": "5",
+    "fibrosis stage": "2"
+  },
+  "GSM3758017": {
+    "tissue": "liver biopsy",
+    "Sex": "M",
+    "age at biopsy": "43",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "2",
+    "steatosis grade": "2",
+    "nafld activity score": "5",
+    "fibrosis stage": "1"
+  },
+  "GSM3758018": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "49",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "2",
+    "steatosis grade": "2",
+    "nafld activity score": "5",
+    "fibrosis stage": "2"
+  },
+  "GSM3758019": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "64",
+    "lobular inflammation grade": "2",
+    "cytological ballooning grade": "2",
+    "steatosis grade": "1",
+    "nafld activity score": "5",
+    "fibrosis stage": "2"
+  },
+  "GSM3758020": {
+    "tissue": "liver biopsy",
+    "Sex": "M",
+    "age at biopsy": "41",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "0",
+    "steatosis grade": "2",
+    "nafld activity score": "3",
+    "fibrosis stage": "2"
+  },
+  "GSM3758021": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "36",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "1",
+    "steatosis grade": "2",
+    "nafld activity score": "4",
+    "fibrosis stage": "2"
+  },
+  "GSM3758022": {
+    "tissue": "liver biopsy",
+    "Sex": "M",
+    "age at biopsy": "69",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "2",
+    "steatosis grade": "2",
+    "nafld activity score": "5",
+    "fibrosis stage": "1"
+  },
+  "GSM3758023": {
+    "tissue": "liver biopsy",
+    "Sex": "M",
+    "age at biopsy": "39",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "0",
+    "steatosis grade": "3",
+    "nafld activity score": "4",
+    "fibrosis stage": "1"
+  },
+  "GSM3758024": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "55",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "1",
+    "steatosis grade": "1",
+    "nafld activity score": "3",
+    "fibrosis stage": "2"
+  },
+  "GSM3758025": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "31",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "1",
+    "steatosis grade": "1",
+    "nafld activity score": "3",
+    "fibrosis stage": "1"
+  },
+  "GSM3758026": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "65",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "1",
+    "steatosis grade": "1",
+    "nafld activity score": "3",
+    "fibrosis stage": "2"
+  },
+  "GSM3758027": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "48",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "0",
+    "steatosis grade": "2",
+    "nafld activity score": "3",
+    "fibrosis stage": "1"
+  },
+  "GSM3758028": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "53",
+    "lobular inflammation grade": "2",
+    "cytological ballooning grade": "0",
+    "steatosis grade": "0",
+    "nafld activity score": "2",
+    "fibrosis stage": "2"
+  },
+  "GSM3758029": {
+    "tissue": "liver biopsy",
+    "Sex": "M",
+    "age at biopsy": "50",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "0",
+    "steatosis grade": "1",
+    "nafld activity score": "2",
+    "fibrosis stage": "1"
+  },
+  "GSM3758030": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "52",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "1",
+    "steatosis grade": "3",
+    "nafld activity score": "5",
+    "fibrosis stage": "2"
+  },
+  "GSM3758031": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "64",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "2",
+    "steatosis grade": "1",
+    "nafld activity score": "4",
+    "fibrosis stage": "3"
+  },
+  "GSM3758032": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "70",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "1",
+    "steatosis grade": "1",
+    "nafld activity score": "3",
+    "fibrosis stage": "3"
+  },
+  "GSM3758033": {
+    "tissue": "liver biopsy",
+    "Sex": "M",
+    "age at biopsy": "41",
+    "lobular inflammation grade": "2",
+    "cytological ballooning grade": "0",
+    "steatosis grade": "1",
+    "nafld activity score": "3",
+    "fibrosis stage": "4"
+  },
+  "GSM3758034": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "46",
+    "lobular inflammation grade": "2",
+    "cytological ballooning grade": "2",
+    "steatosis grade": "1",
+    "nafld activity score": "5",
+    "fibrosis stage": "4"
+  },
+  "GSM3758035": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "47",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "1",
+    "steatosis grade": "1",
+    "nafld activity score": "3",
+    "fibrosis stage": "0"
+  },
+  "GSM3758036": {
+    "tissue": "liver biopsy",
+    "Sex": "M",
+    "age at biopsy": "65",
+    "lobular inflammation grade": "2",
+    "cytological ballooning grade": "1",
+    "steatosis grade": "2",
+    "nafld activity score": "5",
+    "fibrosis stage": "1"
+  },
+  "GSM3758037": {
+    "tissue": "liver biopsy",
+    "Sex": "M",
+    "age at biopsy": "49",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "1",
+    "steatosis grade": "1",
+    "nafld activity score": "3",
+    "fibrosis stage": "0"
+  },
+  "GSM3758038": {
+    "tissue": "liver biopsy",
+    "Sex": "M",
+    "age at biopsy": "40",
+    "lobular inflammation grade": "0",
+    "cytological ballooning grade": "1",
+    "steatosis grade": "2",
+    "nafld activity score": "3",
+    "fibrosis stage": "1"
+  },
+  "GSM3758039": {
+    "tissue": "liver biopsy",
+    "Sex": "M",
+    "age at biopsy": "61",
+    "lobular inflammation grade": "0",
+    "cytological ballooning grade": "1",
+    "steatosis grade": "0",
+    "nafld activity score": "1",
+    "fibrosis stage": "0"
+  },
+  "GSM3758040": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "53",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "2",
+    "steatosis grade": "3",
+    "nafld activity score": "6",
+    "fibrosis stage": "1"
+  },
+  "GSM3758041": {
+    "tissue": "liver biopsy",
+    "Sex": "M",
+    "age at biopsy": "31",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "0",
+    "steatosis grade": "3",
+    "nafld activity score": "4",
+    "fibrosis stage": "0"
+  },
+  "GSM3758042": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "38",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "0",
+    "steatosis grade": "2",
+    "nafld activity score": "3",
+    "fibrosis stage": "0"
+  },
+  "GSM3758043": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "59",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "0",
+    "steatosis grade": "2",
+    "nafld activity score": "3",
+    "fibrosis stage": "0"
+  },
+  "GSM3758044": {
+    "tissue": "liver biopsy",
+    "Sex": "M",
+    "age at biopsy": "59",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "0",
+    "steatosis grade": "1",
+    "nafld activity score": "2",
+    "fibrosis stage": "0"
+  },
+  "GSM3758045": {
+    "tissue": "liver biopsy",
+    "Sex": "M",
+    "age at biopsy": "34",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "0",
+    "steatosis grade": "1",
+    "nafld activity score": "2",
+    "fibrosis stage": "0"
+  },
+  "GSM3758046": {
+    "tissue": "liver biopsy",
+    "Sex": "M",
+    "age at biopsy": "57",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "1",
+    "steatosis grade": "2",
+    "nafld activity score": "4",
+    "fibrosis stage": "0"
+  },
+  "GSM3758047": {
+    "tissue": "liver biopsy",
+    "Sex": "M",
+    "age at biopsy": "64",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "1",
+    "steatosis grade": "1",
+    "nafld activity score": "3",
+    "fibrosis stage": "0"
+  },
+  "GSM3758048": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "43",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "0",
+    "steatosis grade": "1",
+    "nafld activity score": "2",
+    "fibrosis stage": "0"
+  },
+  "GSM3758049": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "41",
+    "lobular inflammation grade": "2",
+    "cytological ballooning grade": "1",
+    "steatosis grade": "1",
+    "nafld activity score": "4",
+    "fibrosis stage": "0"
+  },
+  "GSM3758050": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "53",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "0",
+    "steatosis grade": "3",
+    "nafld activity score": "4",
+    "fibrosis stage": "0"
+  },
+  "GSM3758051": {
+    "tissue": "liver biopsy",
+    "Sex": "M",
+    "age at biopsy": "37",
+    "lobular inflammation grade": "2",
+    "cytological ballooning grade": "0",
+    "steatosis grade": "3",
+    "nafld activity score": "5",
+    "fibrosis stage": "0"
+  },
+  "GSM3758052": {
+    "tissue": "liver biopsy",
+    "Sex": "M",
+    "age at biopsy": "32",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "0",
+    "steatosis grade": "2",
+    "nafld activity score": "3",
+    "fibrosis stage": "0"
+  },
+  "GSM3758053": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "60",
+    "lobular inflammation grade": "0",
+    "cytological ballooning grade": "0",
+    "steatosis grade": "2",
+    "nafld activity score": "2",
+    "fibrosis stage": "0"
+  },
+  "GSM3758054": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "56",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "0",
+    "steatosis grade": "1",
+    "nafld activity score": "2",
+    "fibrosis stage": "0"
+  },
+  "GSM3758055": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "59",
+    "lobular inflammation grade": "0",
+    "cytological ballooning grade": "0",
+    "steatosis grade": "1",
+    "nafld activity score": "1",
+    "fibrosis stage": "0"
+  },
+  "GSM3758056": {
+    "tissue": "liver biopsy",
+    "Sex": "M",
+    "age at biopsy": "51",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "0",
+    "steatosis grade": "1",
+    "nafld activity score": "2",
+    "fibrosis stage": "0"
+  },
+  "GSM3758057": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "41",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "2",
+    "steatosis grade": "1",
+    "nafld activity score": "4",
+    "fibrosis stage": "1"
+  },
+  "GSM3758058": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "34",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "2",
+    "steatosis grade": "1",
+    "nafld activity score": "4",
+    "fibrosis stage": "1"
+  },
+  "GSM3758059": {
+    "tissue": "liver biopsy",
+    "Sex": "M",
+    "age at biopsy": "44",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "2",
+    "steatosis grade": "1",
+    "nafld activity score": "4",
+    "fibrosis stage": "1"
+  },
+  "GSM3758060": {
+    "tissue": "liver biopsy",
+    "Sex": "M",
+    "age at biopsy": "43",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "1",
+    "steatosis grade": "3",
+    "nafld activity score": "5",
+    "fibrosis stage": "1"
+  },
+  "GSM3758061": {
+    "tissue": "liver biopsy",
+    "Sex": "M",
+    "age at biopsy": "38",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "0",
+    "steatosis grade": "2",
+    "nafld activity score": "3",
+    "fibrosis stage": "1"
+  },
+  "GSM3758062": {
+    "tissue": "liver biopsy",
+    "Sex": "M",
+    "age at biopsy": "52",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "2",
+    "steatosis grade": "1",
+    "nafld activity score": "4",
+    "fibrosis stage": "1"
+  },
+  "GSM3758063": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "53",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "0",
+    "steatosis grade": "2",
+    "nafld activity score": "3",
+    "fibrosis stage": "1"
+  },
+  "GSM3758064": {
+    "tissue": "liver biopsy",
+    "Sex": "M",
+    "age at biopsy": "52",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "0",
+    "steatosis grade": "1",
+    "nafld activity score": "2",
+    "fibrosis stage": "1"
+  },
+  "GSM3758065": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "55",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "2",
+    "steatosis grade": "2",
+    "nafld activity score": "5",
+    "fibrosis stage": "1"
+  },
+  "GSM3758066": {
+    "tissue": "liver biopsy",
+    "Sex": "M",
+    "age at biopsy": "21",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "2",
+    "steatosis grade": "2",
+    "nafld activity score": "5",
+    "fibrosis stage": "1"
+  },
+  "GSM3758067": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "41",
+    "lobular inflammation grade": "0",
+    "cytological ballooning grade": "0",
+    "steatosis grade": "1",
+    "nafld activity score": "1",
+    "fibrosis stage": "1"
+  },
+  "GSM3758068": {
+    "tissue": "liver biopsy",
+    "Sex": "M",
+    "age at biopsy": "57",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "1",
+    "steatosis grade": "3",
+    "nafld activity score": "5",
+    "fibrosis stage": "1"
+  },
+  "GSM3758069": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "57",
+    "lobular inflammation grade": "2",
+    "cytological ballooning grade": "1",
+    "steatosis grade": "3",
+    "nafld activity score": "6",
+    "fibrosis stage": "1"
+  },
+  "GSM3758070": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "45",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "1",
+    "steatosis grade": "2",
+    "nafld activity score": "4",
+    "fibrosis stage": "1"
+  },
+  "GSM3758071": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "53",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "0",
+    "steatosis grade": "2",
+    "nafld activity score": "3",
+    "fibrosis stage": "1"
+  },
+  "GSM3758072": {
+    "tissue": "liver biopsy",
+    "Sex": "M",
+    "age at biopsy": "44",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "2",
+    "steatosis grade": "3",
+    "nafld activity score": "6",
+    "fibrosis stage": "1"
+  },
+  "GSM3758073": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "68",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "0",
+    "steatosis grade": "0",
+    "nafld activity score": "1",
+    "fibrosis stage": "0"
+  },
+  "GSM3758074": {
+    "tissue": "liver biopsy",
+    "Sex": "M",
+    "age at biopsy": "19",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "0",
+    "steatosis grade": "0",
+    "nafld activity score": "1",
+    "fibrosis stage": "0"
+  },
+  "GSM3758075": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "64",
+    "lobular inflammation grade": "0",
+    "cytological ballooning grade": "0",
+    "steatosis grade": "0",
+    "nafld activity score": "0",
+    "fibrosis stage": "0"
+  },
+  "GSM3758076": {
+    "tissue": "liver biopsy",
+    "Sex": "M",
+    "age at biopsy": "26",
+    "lobular inflammation grade": "0",
+    "cytological ballooning grade": "0",
+    "steatosis grade": "0",
+    "nafld activity score": "0",
+    "fibrosis stage": "0"
+  },
+  "GSM3758077": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "60",
+    "lobular inflammation grade": "0",
+    "cytological ballooning grade": "0",
+    "steatosis grade": "0",
+    "nafld activity score": "0",
+    "fibrosis stage": "0"
+  },
+  "GSM3758078": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "77",
+    "lobular inflammation grade": "2",
+    "cytological ballooning grade": "1",
+    "steatosis grade": "3",
+    "nafld activity score": "6",
+    "fibrosis stage": "3"
+  },
+  "GSM3758079": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "55",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "2",
+    "steatosis grade": "3",
+    "nafld activity score": "6",
+    "fibrosis stage": "1"
+  },
+  "GSM3758080": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "54",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "2",
+    "steatosis grade": "2",
+    "nafld activity score": "5",
+    "fibrosis stage": "1"
+  },
+  "GSM3758081": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "35",
+    "lobular inflammation grade": "1",
+    "cytological ballooning grade": "1",
+    "steatosis grade": "1",
+    "nafld activity score": "3",
+    "fibrosis stage": "1"
+  },
+  "GSM3758082": {
+    "tissue": "liver biopsy",
+    "Sex": "F",
+    "age at biopsy": "62",
+    "lobular inflammation grade": "0",
+    "cytological ballooning grade": "0",
+    "steatosis grade": "0",
+    "nafld activity score": "0",
+    "fibrosis stage": "0"
+  }
+}

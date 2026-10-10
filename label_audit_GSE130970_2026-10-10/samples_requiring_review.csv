@@ -1,0 +1,6 @@
+sample_id,sample_title,steatosis,ballooning,lobular_inflammation,fibrosis,NAS,current_label,current_provenance,three_features_present,review_flag,source_diagnosis_available_in_GEO
+GSM3758028,440393.1.X_3,0,0,2,2,2,control,derived_from_histology,False,derived_control_has_abnormal_histology,False
+GSM3758038,440420.1.X_8,2,1,0,1,3,NASH,derived_from_histology,False,derived_NASH_lacks_one_of_three_features,False
+GSM3758039,440421.1.X_1,0,1,0,0,1,control,derived_from_histology,False,derived_control_has_abnormal_histology,False
+GSM3758073,440528.1.X_5,0,0,1,0,1,control,derived_from_histology,False,derived_control_has_abnormal_histology,False
+GSM3758074,440529.1.X_5,0,0,1,0,1,control,derived_from_histology,False,derived_control_has_abnormal_histology,False

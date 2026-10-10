@@ -1,0 +1,3071 @@
+[
+  {
+    "file": "41598_2019_48746_MOESM2_ESM.xlsx",
+    "sheets": [
+      {
+        "name": "NAS ordinal regression",
+        "rows_including_header": 16011,
+        "columns": 9,
+        "first_rows": [
+          [
+            "gene_symbol",
+            "entrez_gene",
+            "range_log2FC",
+            "coefficient",
+            "std_err",
+            "z_score",
+            "p_value",
+            "adj_P",
+            "posterior_prob"
+          ],
+          [
+            "YWHAZ",
+            "7534",
+            0.43775333919008,
+            10.0354577824118,
+            1.56980932117924,
+            6.39278773989772,
+            1.62888308248398e-10,
+            2.66306095155305e-06,
+            0.99999982813816
+          ],
+          [
+            "ARF4",
+            "378",
+            0.591478841277017,
+            4.91813136530139,
+            0.800832339425959,
+            6.14127467532933,
+            8.18618863813931e-10,
+            3.5166819433807e-06,
+            0.999999480239767
+          ],
+          [
+            "KPNA2",
+            "3838",
+            1.08592870763803,
+            2.78676885945799,
+            0.454077194441683,
+            6.13721387810392,
+            8.39812879529295e-10,
+            3.5166819433807e-06,
+            0.999999471053454
+          ],
+          [
+            "PRAMEF10",
+            "343071",
+            5.32558646559447,
+            0.73505682130141,
+            0.120193341991121,
+            6.11562012607743,
+            9.61821967105918e-10,
+            3.5166819433807e-06,
+            0.999999419514365
+          ],
+          [
+            "IL32",
+            "9235",
+            1.93152791958999,
+            1.856053856003,
+            0.30438180576574,
+            6.09778186752551,
+            1.07550368321631e-09,
+            3.5166819433807e-06,
+            0.99999937331957
+          ],
+          [
+            "TNFRSF12A",
+            "51330",
+            1.83965888961366,
+            1.35422969248346,
+            0.2236264836834,
+            6.05576616050859,
+            1.39750891477608e-09,
+            3.80797887461236e-06,
+            0.999999250093295
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "fibrosis ordinal regression",
+        "rows_including_header": 16011,
+        "columns": 9,
+        "first_rows": [
+          [
+            "gene_symbol",
+            "entrez_gene",
+            "range_log2FC",
+            "coefficient",
+            "std_err",
+            "z_score",
+            "p_value",
+            "adj_P",
+            "posterior_prob"
+          ],
+          [
+            "SAMD11",
+            "148398",
+            1.19984840770725,
+            1.92634723793892,
+            0.347910656328638,
+            5.53690208361792,
+            3.07868553349287e-08,
+            0.000358818655130852,
+            0.999965903553275
+          ],
+          [
+            "STMN2",
+            "11075",
+            3.22431411677245,
+            0.695593309430961,
+            0.129695156584328,
+            5.36329441862144,
+            8.17176467993031e-08,
+            0.000358818655130852,
+            0.99994174432183
+          ],
+          [
+            "NRAS",
+            "4893",
+            0.226668672935912,
+            8.90451051376739,
+            1.67976354031905,
+            5.30104999902313,
+            1.15138547867719e-07,
+            0.000358818655130852,
+            0.999929685673296
+          ],
+          [
+            "LAMC3",
+            "10319",
+            1.3559606729356,
+            1.78155454589646,
+            0.338967026378917,
+            5.25583436515425,
+            1.47354867526837e-07,
+            0.000358818655130852,
+            0.999919492903444
+          ],
+          [
+            "PLPP4",
+            "196051",
+            1.23710658403878,
+            1.94334352738671,
+            0.369956575039457,
+            5.25289630865311,
+            1.497258384359e-07,
+            0.000358818655130852,
+            0.999918784687063
+          ],
+          [
+            "ZC3H6",
+            "376940",
+            -0.315053969293228,
+            -4.6537422889855,
+            0.88599136806417,
+            -5.25258197396844,
+            1.49981676162869e-07,
+            0.000358818655130852,
+            0.999918708571084
+          ]
+        ],
+        "potential_label_hits": []
+      }
+    ]
+  },
+  {
+    "file": "41598_2019_48746_MOESM3_ESM.xlsx",
+    "sheets": [
+      {
+        "name": "C_1",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "Signaling by Receptor Tyrosine Kinases",
+            515,
+            244,
+            68,
+            10131,
+            1.30080556865181e-32,
+            2.189255772041e-29
+          ],
+          [
+            "Signaling by Rho GTPases",
+            436,
+            244,
+            62,
+            10131,
+            1.82875833459724e-31,
+            1.53890013856357e-28
+          ],
+          [
+            "Rho GTPase cycle",
+            137,
+            244,
+            36,
+            10131,
+            7.12574164632637e-28,
+            3.9975410635891e-25
+          ],
+          [
+            "Fcgamma receptor (FCGR) dependent phagocytosis",
+            85,
+            244,
+            27,
+            10131,
+            1.5373872856215e-23,
+            6.46855700425244e-21
+          ],
+          [
+            "Axon guidance",
+            550,
+            244,
+            59,
+            10131,
+            2.7112339566717e-23,
+            9.12601349815694e-21
+          ],
+          [
+            "EPHB-mediated forward signaling",
+            41,
+            244,
+            19,
+            10131,
+            1.35625251403255e-20,
+            3.80428830186129e-18
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "C_2",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "Extracellular matrix organization",
+            293,
+            246,
+            41,
+            10131,
+            2.64719486740264e-20,
+            4.45522896183864e-17
+          ],
+          [
+            "PPARA activates gene expression",
+            119,
+            246,
+            24,
+            10131,
+            6.49737733244349e-16,
+            5.46754302525119e-13
+          ],
+          [
+            "Regulation of lipid metabolism by Peroxisome proliferator-activated receptor alpha (PPARalpha)",
+            122,
+            246,
+            24,
+            10131,
+            1.18269603025123e-15,
+            6.63492472970938e-13
+          ],
+          [
+            "Transcriptional regulation of white adipocyte differentiation",
+            84,
+            246,
+            20,
+            10131,
+            6.32557614093245e-15,
+            2.66148616129733e-12
+          ],
+          [
+            "Integrin cell surface interactions",
+            85,
+            246,
+            19,
+            10131,
+            1.06695707737841e-13,
+            3.59137752245571e-11
+          ],
+          [
+            "Interleukin-4 and 13 signaling",
+            107,
+            246,
+            20,
+            10131,
+            8.57804665789314e-13,
+            2.40614208753903e-10
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "C_3",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "S Phase",
+            140,
+            181,
+            60,
+            10131,
+            2.13290509156806e-70,
+            2.1133656231462e-67
+          ],
+          [
+            "Mitotic G1-G1/S phases",
+            148,
+            181,
+            61,
+            10131,
+            2.51142676547379e-70,
+            2.1133656231462e-67
+          ],
+          [
+            "G1/S Transition",
+            130,
+            181,
+            56,
+            10131,
+            1.20019012003959e-65,
+            6.73306657342211e-63
+          ],
+          [
+            "DNA Replication",
+            108,
+            181,
+            51,
+            10131,
+            3.34353657047468e-62,
+            1.40679301202722e-59
+          ],
+          [
+            "Cell Cycle",
+            622,
+            181,
+            90,
+            10131,
+            1.92791812152877e-61,
+            6.48937239706586e-59
+          ],
+          [
+            "Synthesis of DNA",
+            101,
+            181,
+            48,
+            10131,
+            1.30255186239622e-58,
+            3.65365797402139e-56
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "C_4",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "TP53 Regulates Metabolic Genes",
+            85,
+            126,
+            17,
+            10131,
+            2.12271147081011e-16,
+            3.57252340537341e-13
+          ],
+          [
+            "mTOR signalling",
+            40,
+            126,
+            13,
+            10131,
+            8.21404582876692e-16,
+            6.91211956490736e-13
+          ],
+          [
+            "Transcriptional Regulation by TP53",
+            347,
+            126,
+            25,
+            10131,
+            6.8771224053889e-13,
+            3.85806566942317e-10
+          ],
+          [
+            "Energy dependent regulation of mTOR by LKB1-AMPK",
+            29,
+            126,
+            10,
+            10131,
+            1.01206242655528e-12,
+            4.25825265973136e-10
+          ],
+          [
+            "mTORC1-mediated signalling",
+            23,
+            126,
+            9,
+            10131,
+            3.76515192812782e-12,
+            1.26735013900782e-09
+          ],
+          [
+            "Macroautophagy",
+            65,
+            126,
+            10,
+            10131,
+            6.2037922638747e-09,
+            1.74016373001685e-06
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "C_5",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "Membrane Trafficking",
+            629,
+            116,
+            66,
+            10131,
+            9.3979991100288e-50,
+            1.58168325021785e-46
+          ],
+          [
+            "Vesicle-mediated transport",
+            667,
+            116,
+            66,
+            10131,
+            4.56186079775345e-48,
+            3.83880586130952e-45
+          ],
+          [
+            "ER to Golgi Anterograde Transport",
+            152,
+            116,
+            27,
+            10131,
+            3.27936477983897e-25,
+            1.83972364148966e-22
+          ],
+          [
+            "Transport to the Golgi and subsequent modification",
+            183,
+            116,
+            27,
+            10131,
+            5.84019905647433e-23,
+            2.45726375301157e-20
+          ],
+          [
+            "Intra-Golgi and retrograde Golgi-to-ER traffic",
+            200,
+            116,
+            27,
+            10131,
+            6.64222522024844e-22,
+            2.23577300913562e-19
+          ],
+          [
+            "Asparagine N-linked glycosylation",
+            302,
+            116,
+            29,
+            10131,
+            2.67813924616602e-19,
+            7.51218058549569e-17
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "C_6",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "Metabolism",
+            2023,
+            125,
+            81,
+            10131,
+            6.25044075651586e-28,
+            1.05194917932162e-24
+          ],
+          [
+            "Metabolism of carbohydrates",
+            269,
+            125,
+            24,
+            10131,
+            1.5964410804567e-14,
+            1.34340516920431e-11
+          ],
+          [
+            "Synthesis of glycosylphosphatidylinositol (GPI)",
+            18,
+            125,
+            7,
+            10131,
+            1.04531486687628e-09,
+            5.86421640317593e-07
+          ],
+          [
+            "Metabolism of lipids",
+            710,
+            125,
+            30,
+            10131,
+            1.48940916308496e-09,
+            6.26668905367996e-07
+          ],
+          [
+            "Glucose metabolism",
+            89,
+            125,
+            11,
+            10131,
+            1.04767165508656e-08,
+            3.52646279102135e-06
+          ],
+          [
+            "Post-translational modification: synthesis of GPI-anchored proteins",
+            89,
+            125,
+            10,
+            10131,
+            1.2708690668314e-07,
+            3.56478773246208e-05
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "C_7",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "Processing of Capped Intron-Containing Pre-mRNA",
+            237,
+            101,
+            40,
+            10131,
+            1.34169253302296e-39,
+            2.25806853307764e-36
+          ],
+          [
+            "Metabolism of RNA",
+            656,
+            101,
+            55,
+            10131,
+            3.91736797087995e-39,
+            3.29646514749548e-36
+          ],
+          [
+            "mRNA Splicing",
+            185,
+            101,
+            34,
+            10131,
+            1.06263643564962e-34,
+            5.96139040399437e-32
+          ],
+          [
+            "mRNA Splicing - Major Pathway",
+            177,
+            101,
+            33,
+            10131,
+            7.32239777559498e-34,
+            3.08089886408159e-31
+          ],
+          [
+            "mRNA Splicing - Minor Pathway",
+            50,
+            101,
+            14,
+            10131,
+            2.6380972253979e-17,
+            8.87983526068934e-15
+          ],
+          [
+            "RNA Polymerase III Transcription Initiation",
+            36,
+            101,
+            10,
+            10131,
+            1.26243105544248e-12,
+            3.54111911051616e-10
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "C_8",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "Cellular response to heat stress",
+            86,
+            76,
+            14,
+            10131,
+            1.51149035407554e-15,
+            2.54383826590913e-12
+          ],
+          [
+            "Prefoldin mediated transfer of substrate  to CCT/TriC",
+            29,
+            76,
+            9,
+            10131,
+            4.10097107023741e-13,
+            3.45096715560478e-10
+          ],
+          [
+            "Cooperation of Prefoldin and TriC/CCT  in actin and tubulin folding",
+            34,
+            76,
+            9,
+            10131,
+            2.08453130772078e-12,
+            1.16942206363136e-09
+          ],
+          [
+            "BBSome-mediated cargo-targeting to cilium",
+            23,
+            76,
+            8,
+            10131,
+            3.07897337833077e-12,
+            1.29547804893267e-09
+          ],
+          [
+            "Folding of actin by CCT/TriC",
+            10,
+            76,
+            6,
+            10131,
+            2.98981555479094e-11,
+            1.00637191574263e-08
+          ],
+          [
+            "Regulation of HSF1-mediated heat shock response",
+            66,
+            76,
+            10,
+            10131,
+            4.617781646694e-11,
+            1.29528775189767e-08
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "C_9",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "Translation",
+            287,
+            91,
+            38,
+            10131,
+            2.09787321232973e-35,
+            3.53072061635093e-32
+          ],
+          [
+            "Mitochondrial translation",
+            91,
+            91,
+            19,
+            10131,
+            1.94982383702204e-21,
+            1.64077675885405e-18
+          ],
+          [
+            "Mitochondrial translation elongation",
+            85,
+            91,
+            18,
+            10131,
+            1.84854361446603e-20,
+            7.7777472578658e-18
+          ],
+          [
+            "Mitochondrial translation initiation",
+            85,
+            91,
+            18,
+            10131,
+            1.84854361446603e-20,
+            7.7777472578658e-18
+          ],
+          [
+            "Mitochondrial translation termination",
+            85,
+            91,
+            17,
+            10131,
+            6.60958253175537e-19,
+            2.22478548018886e-16
+          ],
+          [
+            "tRNA Aminoacylation",
+            41,
+            91,
+            10,
+            10131,
+            1.83849380505466e-12,
+            5.15697512317832e-10
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "C_10",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "Chromatin modifying enzymes",
+            264,
+            82,
+            53,
+            10131,
+            3.22245932364355e-65,
+            2.71169952084605e-62
+          ],
+          [
+            "Chromatin organization",
+            264,
+            82,
+            53,
+            10131,
+            3.22245932364355e-65,
+            2.71169952084605e-62
+          ],
+          [
+            "HATs acetylate histones",
+            138,
+            82,
+            32,
+            10131,
+            1.48677958267435e-39,
+            8.3408334588031e-37
+          ],
+          [
+            "HDACs deacetylate histones",
+            94,
+            82,
+            26,
+            10131,
+            3.71492631901703e-34,
+            1.56305524872641e-31
+          ],
+          [
+            "Epigenetic regulation of gene expression",
+            144,
+            82,
+            29,
+            10131,
+            9.46211371015248e-34,
+            3.18494747483733e-31
+          ],
+          [
+            "ERCC6 (CSB) and EHMT2 (G9a) positively regulate rRNA expression",
+            75,
+            82,
+            23,
+            10131,
+            2.31401262865425e-31,
+            6.49080542337517e-29
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "C_11",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "GPCR ligand binding",
+            436,
+            79,
+            51,
+            10131,
+            7.41721831812872e-51,
+            7.08932952706752e-48
+          ],
+          [
+            "Signaling by GPCR",
+            1120,
+            79,
+            66,
+            10131,
+            8.42463401909391e-51,
+            7.08932952706752e-48
+          ],
+          [
+            "GPCR downstream signalling",
+            927,
+            79,
+            61,
+            10131,
+            3.95633251080793e-48,
+            2.21950253856325e-45
+          ],
+          [
+            "G alpha (i) signalling events",
+            241,
+            79,
+            41,
+            10131,
+            1.92159713062531e-46,
+            8.08511992710599e-44
+          ],
+          [
+            "Class A/1 (Rhodopsin-like receptors)",
+            309,
+            79,
+            41,
+            10131,
+            9.11581935489746e-42,
+            3.06838479485849e-39
+          ],
+          [
+            "Signal Transduction",
+            2527,
+            79,
+            67,
+            10131,
+            3.80691905778889e-29,
+            1.06784079570978e-26
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "C_12",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "Mitotic Prometaphase",
+            189,
+            66,
+            46,
+            10131,
+            2.47343446808119e-66,
+            4.16279020978064e-63
+          ],
+          [
+            "M Phase",
+            383,
+            66,
+            47,
+            10131,
+            7.52768586777348e-53,
+            6.33454765773139e-50
+          ],
+          [
+            "Cell Cycle, Mitotic",
+            522,
+            66,
+            49,
+            10131,
+            9.59755682345202e-50,
+            5.38422937795658e-47
+          ],
+          [
+            "Recruitment of NuMA to mitotic centrosomes",
+            90,
+            66,
+            30,
+            10131,
+            5.65276008480892e-46,
+            2.13985653228166e-43
+          ],
+          [
+            "Cell Cycle",
+            622,
+            66,
+            49,
+            10131,
+            6.35726836684984e-46,
+            2.13985653228166e-43
+          ],
+          [
+            "Centrosome maturation",
+            77,
+            66,
+            27,
+            10131,
+            7.07034710052417e-42,
+            1.69991345288317e-39
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "C_13",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "Endosomal Sorting Complex Required For Transport (ESCRT)",
+            32,
+            38,
+            7,
+            10131,
+            1.83140245546902e-11,
+            3.08225033255435e-08
+          ],
+          [
+            "Budding and maturation of HIV virion",
+            29,
+            38,
+            6,
+            10131,
+            8.21646099163593e-10,
+            6.91415192446163e-07
+          ],
+          [
+            "RNA polymerase II transcribes snRNA genes",
+            68,
+            38,
+            6,
+            10131,
+            1.70294351780217e-07,
+            9.55351313487017e-05
+          ],
+          [
+            "Late Phase of HIV Life Cycle",
+            128,
+            38,
+            6,
+            10131,
+            7.16792269237323e-06,
+            0.00301590347281604
+          ],
+          [
+            "Membrane Trafficking",
+            629,
+            38,
+            11,
+            10131,
+            1.24521784069909e-05,
+            0.00350620284812297
+          ],
+          [
+            "HIV Life Cycle",
+            141,
+            38,
+            6,
+            10131,
+            1.24998319006166e-05,
+            0.00350620284812297
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "C_14",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "Insulin receptor recycling",
+            26,
+            14,
+            9,
+            10131,
+            2.01095401806797e-21,
+            3.3844356124084e-18
+          ],
+          [
+            "Transferrin endocytosis and recycling",
+            31,
+            14,
+            9,
+            10131,
+            1.29461202706727e-20,
+            1.0894160207771e-17
+          ],
+          [
+            "Iron uptake and transport",
+            57,
+            14,
+            9,
+            10131,
+            5.71062080269941e-18,
+            3.20365827031437e-15
+          ],
+          [
+            "ROS, RNS production in phagocytes",
+            32,
+            14,
+            8,
+            10131,
+            1.13633243769428e-17,
+            4.78111873159869e-15
+          ],
+          [
+            "Signaling by Insulin receptor",
+            77,
+            14,
+            9,
+            10131,
+            1.01490458450356e-16,
+            3.416168831439e-14
+          ],
+          [
+            "Ion channel transport",
+            182,
+            14,
+            9,
+            10131,
+            2.96379669616051e-13,
+            8.31344973273023e-11
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "C_15",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "Sphingolipid metabolism",
+            84,
+            12,
+            11,
+            10131,
+            7.70102133857403e-23,
+            1.29608189128201e-19
+          ],
+          [
+            "Glycosphingolipid metabolism",
+            44,
+            12,
+            7,
+            10131,
+            1.37710225948494e-14,
+            1.15883155135658e-11
+          ],
+          [
+            "Metabolism of lipids",
+            710,
+            12,
+            11,
+            10131,
+            2.09406432390887e-12,
+            1.17477008571288e-09
+          ],
+          [
+            "Sphingolipid de novo biosynthesis",
+            40,
+            12,
+            4,
+            10131,
+            1.00802112411647e-07,
+            4.24124887972006e-05
+          ],
+          [
+            "Metabolism",
+            2023,
+            12,
+            11,
+            10131,
+            1.93247425958155e-07,
+            6.50470835775151e-05
+          ],
+          [
+            "Sialic acid metabolism",
+            33,
+            12,
+            3,
+            10131,
+            6.79093249645663e-06,
+            0.00190485656525609
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "C_16",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "Cilium Assembly",
+            194,
+            12,
+            12,
+            10131,
+            1.72927732979042e-21,
+            2.91037374603728e-18
+          ],
+          [
+            "Organelle biogenesis and maintenance",
+            270,
+            12,
+            12,
+            10131,
+            1.0084787769507e-19,
+            8.4863489080401e-17
+          ],
+          [
+            "Intraflagellar transport",
+            53,
+            12,
+            8,
+            10131,
+            1.57333567124179e-16,
+            8.82641311566642e-14
+          ],
+          [
+            "Hedgehog 'off' state",
+            116,
+            12,
+            5,
+            10131,
+            1.34080722806093e-07,
+            5.64144641206636e-05
+          ],
+          [
+            "Signaling by Hedgehog",
+            151,
+            12,
+            5,
+            10131,
+            5.01195126846197e-07,
+            0.00016870227969643
+          ],
+          [
+            "Anchoring of the basal body to the plasma membrane",
+            92,
+            12,
+            4,
+            10131,
+            2.9819185156102e-06,
+            0.000836428143628661
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "C_17",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "Antigen processing: Ubiquitination & Proteasome degradation",
+            302,
+            8,
+            4,
+            10131,
+            4.92930957949481e-05,
+            0.0829602802228977
+          ],
+          [
+            "Class I MHC mediated antigen processing & presentation",
+            364,
+            8,
+            4,
+            10131,
+            0.000102314597950184,
+            0.0860977341750802
+          ],
+          [
+            "Synthesis of active ubiquitin: roles of E1 and E2 enzymes",
+            29,
+            8,
+            2,
+            10131,
+            0.000219189254909313,
+            0.122965172004125
+          ],
+          [
+            "Negative regulators of DDX58/IFIH1 signaling",
+            34,
+            8,
+            2,
+            10131,
+            0.000302271904163702,
+            0.127180903676878
+          ],
+          [
+            "Immune System",
+            2047,
+            8,
+            6,
+            10131,
+            0.00129728345686367,
+            0.3693625867395
+          ],
+          [
+            "Protein ubiquitination",
+            74,
+            8,
+            2,
+            10131,
+            0.00143248246138516,
+            0.3693625867395
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "C_18",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "Lysine catabolism",
+            12,
+            2,
+            2,
+            10131,
+            1.28621085497641e-06,
+            0.0021646928689253
+          ],
+          [
+            "Histidine, lysine, phenylalanine, tyrosine, proline and tryptophan catabolism",
+            43,
+            2,
+            2,
+            10131,
+            1.75977030612682e-05,
+            0.0148084671260572
+          ],
+          [
+            "Metabolism of amino acids and derivatives",
+            359,
+            2,
+            2,
+            10131,
+            0.00125232114775211,
+            0.702552163888932
+          ],
+          [
+            "Tryptophan catabolism",
+            12,
+            2,
+            1,
+            10131,
+            0.00236768032763224,
+            0.996201497851264
+          ],
+          [
+            "Metabolism",
+            2023,
+            2,
+            2,
+            10131,
+            0.0398579789359559,
+            1
+          ],
+          [
+            "2-LTR circle formation",
+            7,
+            2,
+            0,
+            10131,
+            1,
+            1
+          ]
+        ],
+        "potential_label_hits": []
+      }
+    ]
+  },
+  {
+    "file": "41598_2019_48746_MOESM4_ESM.xlsx",
+    "sheets": [
+      {
+        "name": "C_1",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "Cell Cycle",
+            622,
+            205,
+            77,
+            10131,
+            1.955622987991e-41,
+            3.29131348878885e-38
+          ],
+          [
+            "Cell Cycle, Mitotic",
+            522,
+            205,
+            68,
+            10131,
+            1.41120295845755e-37,
+            1.18752728954203e-34
+          ],
+          [
+            "Cell Cycle Checkpoints",
+            282,
+            205,
+            47,
+            10131,
+            2.170695937225e-30,
+            1.21776042078322e-27
+          ],
+          [
+            "Mitotic G1-G1/S phases",
+            148,
+            205,
+            36,
+            10131,
+            2.32582510713838e-29,
+            9.78590913828472e-27
+          ],
+          [
+            "S Phase",
+            140,
+            205,
+            34,
+            10131,
+            1.0117883847799e-27,
+            3.40567970316916e-25
+          ],
+          [
+            "Generic Transcription Pathway",
+            1117,
+            205,
+            81,
+            10131,
+            9.17459869402911e-27,
+            2.57347493367516e-24
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "C_2",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "Signaling by Rho GTPases",
+            436,
+            119,
+            48,
+            10131,
+            6.92049535817745e-35,
+            1.16471936878127e-31
+          ],
+          [
+            "Rho GTPase cycle",
+            137,
+            119,
+            26,
+            10131,
+            9.26971863015079e-25,
+            7.80046822727189e-22
+          ],
+          [
+            "EPHB-mediated forward signaling",
+            41,
+            119,
+            16,
+            10131,
+            3.74706160131161e-21,
+            2.10210155833581e-18
+          ],
+          [
+            "EPH-Ephrin signaling",
+            92,
+            119,
+            20,
+            10131,
+            1.99178332506332e-20,
+            8.38042834020393e-18
+          ],
+          [
+            "Fcgamma receptor (FCGR) dependent phagocytosis",
+            85,
+            119,
+            18,
+            10131,
+            3.02683302950634e-18,
+            1.01883199773184e-15
+          ],
+          [
+            "RHO GTPase Effectors",
+            309,
+            119,
+            28,
+            10131,
+            1.20587449020399e-17,
+            3.38247794502218e-15
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "C_3",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "Signaling by Receptor Tyrosine Kinases",
+            515,
+            113,
+            39,
+            10131,
+            8.58127764809928e-23,
+            1.44422902817511e-19
+          ],
+          [
+            "MAPK1/MAPK3 signaling",
+            247,
+            113,
+            25,
+            10131,
+            1.63914884162296e-17,
+            1.37934375022572e-14
+          ],
+          [
+            "Interleukin-20 family signaling",
+            259,
+            113,
+            25,
+            10131,
+            5.14257247623416e-17,
+            2.88498315916736e-14
+          ],
+          [
+            "RAF/MAP kinase cascade",
+            241,
+            113,
+            24,
+            10131,
+            1.15138587599489e-16,
+            4.84445607324849e-14
+          ],
+          [
+            "MAPK family signaling cascades",
+            285,
+            113,
+            25,
+            10131,
+            5.03233243445893e-16,
+            1.69388309743888e-13
+          ],
+          [
+            "Negative regulation of the PI3K/AKT network",
+            102,
+            113,
+            16,
+            10131,
+            1.65423523164547e-14,
+            4.64012982476556e-12
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "C_4",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "Extracellular matrix organization",
+            293,
+            113,
+            45,
+            10131,
+            2.53756332221712e-40,
+            4.27071907129141e-37
+          ],
+          [
+            "ECM proteoglycans",
+            75,
+            113,
+            18,
+            10131,
+            9.95562623407088e-20,
+            8.37765947597064e-17
+          ],
+          [
+            "Integrin cell surface interactions",
+            85,
+            113,
+            18,
+            10131,
+            1.14833189861442e-18,
+            5.24043009572464e-16
+          ],
+          [
+            "Degradation of the extracellular matrix",
+            136,
+            113,
+            21,
+            10131,
+            1.24549734895416e-18,
+            5.24043009572464e-16
+          ],
+          [
+            "Collagen degradation",
+            61,
+            113,
+            16,
+            10131,
+            2.56889819663113e-18,
+            8.6469113298604e-16
+          ],
+          [
+            "Non-integrin membrane-ECM interactions",
+            60,
+            113,
+            15,
+            10131,
+            6.93780679353828e-17,
+            1.94605480558749e-14
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "C_5",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "Cilium Assembly",
+            194,
+            84,
+            21,
+            10131,
+            3.23529389184147e-18,
+            5.4449996199692e-15
+          ],
+          [
+            "Organelle biogenesis and maintenance",
+            270,
+            84,
+            21,
+            10131,
+            2.91941285010557e-15,
+            2.45668591336383e-12
+          ],
+          [
+            "Mitotic Prometaphase",
+            189,
+            84,
+            18,
+            10131,
+            1.07834632665198e-14,
+            5.40167532340661e-12
+          ],
+          [
+            "Recruitment of NuMA to mitotic centrosomes",
+            90,
+            84,
+            14,
+            10131,
+            1.28382063539076e-14,
+            5.40167532340661e-12
+          ],
+          [
+            "Centrosome maturation",
+            77,
+            84,
+            13,
+            10131,
+            4.00652838288637e-14,
+            1.12383121139963e-11
+          ],
+          [
+            "Recruitment of mitotic centrosome proteins and complexes",
+            77,
+            84,
+            13,
+            10131,
+            4.00652838288637e-14,
+            1.12383121139963e-11
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "C_6",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "Processing of Capped Intron-Containing Pre-mRNA",
+            237,
+            79,
+            28,
+            10131,
+            2.87707825830448e-26,
+            4.84212270872644e-23
+          ],
+          [
+            "Metabolism of RNA",
+            656,
+            79,
+            38,
+            10131,
+            9.89359858482997e-25,
+            8.32546320913442e-22
+          ],
+          [
+            "mRNA Splicing - Major Pathway",
+            177,
+            79,
+            23,
+            10131,
+            1.83751633380965e-22,
+            1.03084666326721e-19
+          ],
+          [
+            "mRNA Splicing",
+            185,
+            79,
+            23,
+            10131,
+            5.20413243750964e-22,
+            2.18963872308218e-19
+          ],
+          [
+            "Gene expression (Transcription)",
+            1365,
+            79,
+            35,
+            10131,
+            1.82893838379383e-11,
+            6.15620659985002e-09
+          ],
+          [
+            "Transport of Mature Transcript to Cytoplasm",
+            82,
+            79,
+            11,
+            10131,
+            2.83624917809377e-11,
+            7.95567894455302e-09
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "C_7",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "GPCR ligand binding",
+            436,
+            61,
+            41,
+            10131,
+            4.31852921613816e-42,
+            7.26808467076053e-39
+          ],
+          [
+            "Class A/1 (Rhodopsin-like receptors)",
+            309,
+            61,
+            37,
+            10131,
+            2.94675147141682e-41,
+            2.47969136319725e-38
+          ],
+          [
+            "Signaling by GPCR",
+            1120,
+            61,
+            50,
+            10131,
+            6.99715339674568e-38,
+            3.92540305557433e-35
+          ],
+          [
+            "GPCR downstream signalling",
+            927,
+            61,
+            46,
+            10131,
+            1.10418128306312e-35,
+            4.6458427484881e-33
+          ],
+          [
+            "G alpha (i) signalling events",
+            241,
+            61,
+            31,
+            10131,
+            8.18377606609789e-35,
+            2.75465902384855e-32
+          ],
+          [
+            "Peptide ligand-binding receptors",
+            186,
+            61,
+            25,
+            10131,
+            3.78985821608007e-28,
+            1.06305522961046e-25
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "C_8",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "tRNA Aminoacylation",
+            41,
+            43,
+            7,
+            10131,
+            3.00424857208272e-10,
+            5.05615034681523e-07
+          ],
+          [
+            "Metabolism of folate and pterines",
+            16,
+            43,
+            5,
+            10131,
+            4.57207449486228e-09,
+            3.84740068742661e-06
+          ],
+          [
+            "Mitochondrial tRNA aminoacylation",
+            20,
+            43,
+            5,
+            10131,
+            1.60263151201986e-08,
+            8.99076278243139e-06
+          ],
+          [
+            "Macroautophagy",
+            65,
+            43,
+            6,
+            10131,
+            2.7904954986195e-07,
+            0.000117410098104416
+          ],
+          [
+            "mTORC1-mediated signalling",
+            23,
+            43,
+            4,
+            10131,
+            2.34934945693543e-06,
+            0.000790791027204466
+          ],
+          [
+            "Energy dependent regulation of mTOR by LKB1-AMPK",
+            29,
+            43,
+            4,
+            10131,
+            6.18598424325256e-06,
+            0.00173516858023234
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "C_9",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "Translation",
+            287,
+            35,
+            23,
+            10131,
+            6.42886350732281e-28,
+            1.08197772828243e-24
+          ],
+          [
+            "SRP-dependent cotranslational protein targeting to membrane",
+            111,
+            35,
+            11,
+            10131,
+            5.51975995501576e-14,
+            4.64487800214576e-11
+          ],
+          [
+            "Mitochondrial translation elongation",
+            85,
+            35,
+            9,
+            10131,
+            7.89438828343853e-12,
+            2.65725109620541e-09
+          ],
+          [
+            "Mitochondrial translation initiation",
+            85,
+            35,
+            9,
+            10131,
+            7.89438828343853e-12,
+            2.65725109620541e-09
+          ],
+          [
+            "Mitochondrial translation termination",
+            85,
+            35,
+            9,
+            10131,
+            7.89438828343853e-12,
+            2.65725109620541e-09
+          ],
+          [
+            "Mitochondrial translation",
+            91,
+            35,
+            9,
+            10131,
+            1.48193485438254e-11,
+            4.15682726654303e-09
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "C_10",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "MHC class II antigen presentation",
+            121,
+            20,
+            7,
+            10131,
+            1.98429450998077e-09,
+            3.33956766029763e-06
+          ],
+          [
+            "Adaptive Immune System",
+            742,
+            20,
+            10,
+            10131,
+            3.93485871302534e-07,
+            0.000331118360701082
+          ],
+          [
+            "Interferon gamma signaling",
+            90,
+            20,
+            5,
+            10131,
+            6.90322572306155e-07,
+            0.000387270963063753
+          ],
+          [
+            "Endosomal/Vacuolar pathway",
+            11,
+            20,
+            3,
+            10131,
+            1.07481871258541e-06,
+            0.000452229973320313
+          ],
+          [
+            "Neutrophil degranulation",
+            462,
+            20,
+            8,
+            10131,
+            1.36594776787374e-06,
+            0.000459778018666302
+          ],
+          [
+            "Immune System",
+            2047,
+            20,
+            13,
+            10131,
+            1.66527364785772e-05,
+            0.00467109258224091
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "C_11",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "Membrane Trafficking",
+            629,
+            17,
+            13,
+            10131,
+            3.41684756081704e-13,
+            5.75055444485508e-10
+          ],
+          [
+            "Vesicle-mediated transport",
+            667,
+            17,
+            13,
+            10131,
+            7.26915247177467e-13,
+            6.11699180499839e-10
+          ],
+          [
+            "Rab regulation of trafficking",
+            120,
+            17,
+            7,
+            10131,
+            4.83566218327537e-10,
+            2.71280648481748e-07
+          ],
+          [
+            "RAB GEFs exchange GTP for GDP on RABs",
+            86,
+            17,
+            6,
+            10131,
+            3.60104471030196e-09,
+            1.51513956185955e-06
+          ],
+          [
+            "COPII (Coat Protein 2) Mediated Vesicle Transport",
+            67,
+            17,
+            4,
+            10131,
+            3.89753739151051e-06,
+            0.00131191108598244
+          ],
+          [
+            "Cargo recognition for clathrin-mediated endocytosis",
+            96,
+            17,
+            4,
+            10131,
+            1.63947338755066e-05,
+            0.00459872285207961
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "C_12",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "Glutathione conjugation",
+            35,
+            21,
+            6,
+            10131,
+            5.6613267080113e-11,
+            9.52801284958302e-08
+          ],
+          [
+            "Metabolism",
+            2023,
+            21,
+            17,
+            10131,
+            3.15878051486149e-09,
+            2.65811380325594e-06
+          ],
+          [
+            "Biological oxidations",
+            215,
+            21,
+            8,
+            10131,
+            5.79869689591884e-09,
+            3.00696478950786e-06
+          ],
+          [
+            "Detoxification of Reactive Oxygen Species",
+            35,
+            21,
+            5,
+            10131,
+            7.14667804992956e-09,
+            3.00696478950786e-06
+          ],
+          [
+            "Phase II - Conjugation of compounds",
+            106,
+            21,
+            6,
+            10131,
+            5.43477159599963e-08,
+            1.82934411921348e-05
+          ],
+          [
+            "Glutathione synthesis and recycling",
+            11,
+            21,
+            3,
+            10131,
+            1.25321180267316e-06,
+            0.000351525910649821
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "C_13",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "Tight junction interactions",
+            28,
+            5,
+            3,
+            10131,
+            1.88389778584426e-07,
+            0.000317059997357589
+          ],
+          [
+            "Cell-cell junction organization",
+            58,
+            5,
+            3,
+            10131,
+            1.76651779683092e-06,
+            0.00148652472603322
+          ],
+          [
+            "Cell junction organization",
+            85,
+            5,
+            3,
+            10131,
+            5.63194563834205e-06,
+            0.00315952150310989
+          ],
+          [
+            "Cell-Cell communication",
+            121,
+            5,
+            3,
+            10131,
+            1.63329253453458e-05,
+            0.00687207833905426
+          ],
+          [
+            "Apoptotic cleavage of cell adhesion  proteins",
+            11,
+            5,
+            1,
+            10131,
+            0.00541817274662593,
+            1
+          ],
+          [
+            "Signaling by Hippo",
+            20,
+            5,
+            1,
+            10131,
+            0.00983373237273932,
+            1
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "C_14",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "Cell surface interactions at the vascular wall",
+            133,
+            6,
+            3,
+            10131,
+            4.29835634637725e-05,
+            0.072341337309529
+          ],
+          [
+            "Regulation of Complement cascade",
+            47,
+            6,
+            2,
+            10131,
+            0.000312273187221179,
+            0.262777887046622
+          ],
+          [
+            "Complement cascade",
+            58,
+            6,
+            2,
+            10131,
+            0.00047612545400302,
+            0.267106379695694
+          ],
+          [
+            "Innate Immune System",
+            1020,
+            6,
+            4,
+            10131,
+            0.00129731831041244,
+            0.545846679106036
+          ],
+          [
+            "Neutrophil degranulation",
+            462,
+            6,
+            3,
+            10131,
+            0.00169961907631061,
+            0.572091781086152
+          ],
+          [
+            "Hemostasis",
+            630,
+            6,
+            3,
+            10131,
+            0.00415346948418313,
+            1
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "C_15",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "Insulin receptor recycling",
+            26,
+            7,
+            4,
+            10131,
+            1.18659398979028e-09,
+            1.59891281721469e-06
+          ],
+          [
+            "Transferrin endocytosis and recycling",
+            31,
+            7,
+            4,
+            10131,
+            2.49444029265322e-09,
+            1.59891281721469e-06
+          ],
+          [
+            "ROS, RNS production in phagocytes",
+            32,
+            7,
+            4,
+            10131,
+            2.85011197364472e-09,
+            1.59891281721469e-06
+          ],
+          [
+            "Iron uptake and transport",
+            57,
+            7,
+            4,
+            10131,
+            3.11221407241205e-08,
+            1.30946407096737e-05
+          ],
+          [
+            "Signaling by Insulin receptor",
+            77,
+            7,
+            4,
+            10131,
+            1.06115630812415e-07,
+            3.57185213314588e-05
+          ],
+          [
+            "Ion channel transport",
+            182,
+            7,
+            4,
+            10131,
+            3.38182112560903e-06,
+            0.000948600825733332
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "C_16",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "COPI-dependent Golgi-to-ER retrograde traffic",
+            99,
+            6,
+            4,
+            10131,
+            1.26794718261153e-07,
+            0.000111125808118654
+          ],
+          [
+            "COPI-mediated anterograde transport",
+            100,
+            6,
+            4,
+            10131,
+            1.32056812975228e-07,
+            0.000111125808118654
+          ],
+          [
+            "Golgi-to-ER retrograde transport",
+            132,
+            6,
+            4,
+            10131,
+            4.04847566410167e-07,
+            0.000227119484756104
+          ],
+          [
+            "ER to Golgi Anterograde Transport",
+            152,
+            6,
+            4,
+            10131,
+            7.13878748467006e-07,
+            0.000300364483417493
+          ],
+          [
+            "Transport to the Golgi and subsequent modification",
+            183,
+            6,
+            4,
+            10131,
+            1.50260949600629e-06,
+            0.000505778356355716
+          ],
+          [
+            "Intra-Golgi and retrograde Golgi-to-ER traffic",
+            200,
+            6,
+            4,
+            10131,
+            2.1438962238678e-06,
+            0.000601362890794919
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "C_17",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "Neurofascin interactions",
+            7,
+            5,
+            2,
+            10131,
+            4.08844991238025e-06,
+            0.00688086120253595
+          ],
+          [
+            "L1CAM interactions",
+            116,
+            5,
+            2,
+            10131,
+            0.00127083740784327,
+            1
+          ],
+          [
+            "Serotonin and melatonin biosynthesis",
+            5,
+            5,
+            1,
+            10131,
+            0.00246572525022803,
+            1
+          ],
+          [
+            "Activation of Ca-permeable Kainate Receptor",
+            11,
+            5,
+            1,
+            10131,
+            0.00541817274662593,
+            1
+          ],
+          [
+            "Ionotropic activity of kainate receptors",
+            11,
+            5,
+            1,
+            10131,
+            0.00541817274662593,
+            1
+          ],
+          [
+            "Amine-derived hormones",
+            19,
+            5,
+            1,
+            10131,
+            0.00934389054640761,
+            1
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "C_18",
+        "rows_including_header": 101,
+        "columns": 7,
+        "first_rows": [
+          [
+            "set_name",
+            "set_size",
+            "community_size",
+            "overlap",
+            "universe_size",
+            "fisher_p",
+            "q"
+          ],
+          [
+            "Defective CFTR causes cystic fibrosis",
+            63,
+            3,
+            2,
+            10131,
+            0.00011372202525304,
+            0.166526763987787
+          ],
+          [
+            "ABC transporter disorders",
+            83,
+            3,
+            2,
+            10131,
+            0.000197892767662254,
+            0.166526763987787
+          ],
+          [
+            "ABC-family proteins mediated transport",
+            106,
+            3,
+            2,
+            10131,
+            0.000323125831154455,
+            0.181273591277649
+          ],
+          [
+            "Disorders of transmembrane transporters",
+            150,
+            3,
+            2,
+            10131,
+            0.000646972492879184,
+            0.272213676378917
+          ],
+          [
+            "Transport of small molecules",
+            716,
+            3,
+            2,
+            10131,
+            0.0142617984018405,
+            1
+          ],
+          [
+            "Hh mutants that don't undergo autocatalytic processing are degraded by ERAD",
+            58,
+            3,
+            1,
+            10131,
+            0.017078544295953,
+            1
+          ]
+        ],
+        "potential_label_hits": []
+      }
+    ]
+  },
+  {
+    "file": "41598_2019_48746_MOESM5_ESM.xlsx",
+    "sheets": [
+      {
+        "name": "NAS network centrality",
+        "rows_including_header": 2140,
+        "columns": 6,
+        "first_rows": [
+          [
+            "gene_symbol",
+            "range_log2FC",
+            "posterior_prob",
+            "community_louvain",
+            "degree",
+            "eigenvector_centrality"
+          ],
+          [
+            "CDK1",
+            1.24058635320611,
+            0.999150592348667,
+            "C_3",
+            161,
+            0.190169085181889
+          ],
+          [
+            "CDKN1A",
+            1.16025250932338,
+            0.999846352661778,
+            "C_3",
+            104,
+            0.161166571596708
+          ],
+          [
+            "PSMC4",
+            0.289005829845971,
+            0.999256865861065,
+            "C_3",
+            57,
+            0.159421679935704
+          ],
+          [
+            "PSMA1",
+            0.264037271795166,
+            0.997149814000216,
+            "C_3",
+            58,
+            0.158533530128925
+          ],
+          [
+            "PSMC2",
+            0.31400591644844,
+            0.999887776437001,
+            "C_3",
+            57,
+            0.158195671825738
+          ],
+          [
+            "PSMA6",
+            0.351214790960887,
+            0.997746864570617,
+            "C_3",
+            59,
+            0.158097275183501
+          ]
+        ],
+        "potential_label_hits": []
+      },
+      {
+        "name": "fibrosis network centrality",
+        "rows_including_header": 1225,
+        "columns": 6,
+        "first_rows": [
+          [
+            "gene_symbol",
+            "range_log2FC",
+            "posterior_prob",
+            "community_louvain",
+            "degree",
+            "eigenvector_centrality"
+          ],
+          [
+            "EGFR",
+            -0.341003899226241,
+            0.995347661704125,
+            "C_3",
+            82,
+            0.182825352831193
+          ],
+          [
+            "CCND1",
+            0.675125695389282,
+            0.998975758892671,
+            "C_1",
+            88,
+            0.181456363161202
+          ],
+          [
+            "RHOA",
+            0.222617840009462,
+            0.999177338526922,
+            "C_2",
+            92,
+            0.181090614396041
+          ],
+          [
+            "MYC",
+            0.795545001689814,
+            0.995479655854285,
+            "C_1",
+            81,
+            0.175805631331739
+          ],
+          [
+            "RAC1",
+            0.240566952265362,
+            0.99757860610309,
+            "C_2",
+            80,
+            0.173871392811606
+          ],
+          [
+            "CDC42",
+            0.255236849051146,
+            0.99822701265055,
+            "C_2",
+            80,
+            0.162487942410917
+          ]
+        ],
+        "potential_label_hits": []
+      }
+    ]
+  },
+  {
+    "file": "41598_2019_48746_MOESM6_ESM.xlsx",
+    "sheets": [
+      {
+        "name": "NAS GSVA Ord Reg",
+        "rows_including_header": 1680,
+        "columns": 8,
+        "first_rows": [
+          [
+            "pathway",
+            "range_GSVA_score",
+            "coefficient",
+            "std_err",
+            "z_score",
+            "p_value",
+            "adj_P",
+            "posterior_prob"
+          ],
+          [
+            "Intrinsic Pathway for Apoptosis",
+            0.4518393311324652,
+            7.448009749232696,
+            1.2267312484363884,
+            6.071427428563551,
+            1.2677825163697237e-09,
+            2.1311424100175053e-06,
+            0.9999998641583333
+          ],
+          [
+            "Fc epsilon receptor (FCERI) signaling",
+            0.44516720568281676,
+            6.485052315027226,
+            1.1346866196079266,
+            5.715280503852275,
+            1.0952320863266596e-08,
+            5.518140103243968e-06,
+            0.9999992680388505
+          ],
+          [
+            "Regulation of PTEN gene transcription",
+            0.28044637256825916,
+            8.219853795612401,
+            1.4385873038104517,
+            5.713837299856672,
+            1.1045661088082767e-08,
+            5.518140103243968e-06,
+            0.9999992631709197
+          ],
+          [
+            "Transcriptional Regulation by TP53",
+            0.19739955465511444,
+            10.250824682162532,
+            1.8033395167492376,
+            5.684356488034502,
+            1.3130612976190289e-08,
+            5.518140103243968e-06,
+            0.9999991566246533
+          ],
+          [
+            "Vesicle-mediated transport",
+            0.18900025765504502,
+            11.71642736279904,
+            2.110421741934168,
+            5.551699515785466,
+            2.8290558173312093e-08,
+            9.089978702386238e-06,
+            0.9999984639683337
+          ],
+          [
+            "TNFR2 non-canonical NF-kB pathway",
+            0.5437252936850232,
+            4.443664053777992,
+            0.8170598989136878,
+            5.438602554948557,
+            5.3700096263543563e-08,
+            9.089978702386238e-06,
+            0.9999974660283186
+          ]
+        ],
+        "potential_label_hits": [
+          {
+            "row": 209,
+            "text": "Transcription of E2F targets under negative control by DREAM complex"
+          },
+          {
+            "row": 337,
+            "text": "Transcription of E2F targets under negative control by p107 (RBL1) and p130 (RBL2) in complex with HDAC1"
+          },
+          {
+            "row": 758,
+            "text": "ER Quality Control Compartment (ERQC)"
+          },
+          {
+            "row": 991,
+            "text": "RUNX1 and FOXP3 control the development of regulatory T lymphocytes (Tregs)"
+          }
+        ]
+      },
+      {
+        "name": "Fibrosis Stage GSVA Ord Reg",
+        "rows_including_header": 1680,
+        "columns": 8,
+        "first_rows": [
+          [
+            "pathway",
+            "range_log2FC",
+            "coefficient",
+            "std_err",
+            "z_score",
+            "p_value",
+            "adj_P",
+            "posterior_prob"
+          ],
+          [
+            "EPH-Ephrin signaling",
+            0.2734852606763913,
+            6.983194701389056,
+            1.324230132603598,
+            5.273399637613776,
+            1.3391950338895355e-07,
+            0.00022511868519683092,
+            0.9999815387349649
+          ],
+          [
+            "Chk1/Chk2(Cds1) mediated inactivation of Cyclin B:Cdk1 complex",
+            0.30570932051200467,
+            3.7061590207538155,
+            0.7320315681049367,
+            5.062840432343947,
+            4.1305556557087567e-07,
+            0.000347173202862321,
+            0.9999608145046921
+          ],
+          [
+            "Transcriptional Regulation by TP53",
+            0.11309412436012348,
+            9.01649012133691,
+            1.8498139225952617,
+            4.87426870951804,
+            1.0921225334808303e-06,
+            0.0004985838576581204,
+            0.9999249624815119
+          ],
+          [
+            "RHO GTPases Activate WASPs and WAVEs",
+            0.2956115003098836,
+            4.491420864119029,
+            0.9245609756137535,
+            4.857895782522595,
+            1.1863982335707804e-06,
+            0.0004985838576581204,
+            0.9999206940660613
+          ],
+          [
+            "EPHB-mediated forward signaling",
+            0.3166727771336722,
+            5.509710516075359,
+            1.1464069924841165,
+            4.806068483703615,
+            1.53927191266606e-06,
+            0.0005175032170383294,
+            0.9999056229610209
+          ],
+          [
+            "G2 Phase",
+            0.5750192575772953,
+            2.3437941221449003,
+            0.49329114517753636,
+            4.75134034952394,
+            2.0207267223674155e-06,
+            0.0005597748524633177,
+            0.9998868020238847
+          ]
+        ],
+        "potential_label_hits": [
+          {
+            "row": 92,
+            "text": "Transcription of E2F targets under negative control by DREAM complex"
+          },
+          {
+            "row": 401,
+            "text": "Transcription of E2F targets under negative control by p107 (RBL1) and p130 (RBL2) in complex with HDAC1"
+          },
+          {
+            "row": 791,
+            "text": "RUNX1 and FOXP3 control the development of regulatory T lymphocytes (Tregs)"
+          },
+          {
+            "row": 1445,
+            "text": "ER Quality Control Compartment (ERQC)"
+          }
+        ]
+      }
+    ]
+  }
+]

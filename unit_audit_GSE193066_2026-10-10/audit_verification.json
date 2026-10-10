@@ -1,0 +1,9 @@
+{
+  "deposited_unit": "DESeq2_RLE_normalised_counts_linear_scale",
+  "source_metadata_verified": true,
+  "current_value_z_reproduced": true,
+  "checked_rows": 2426216,
+  "active_expression_modified": false,
+  "active_disease_labels_modified": false,
+  "replacement_normalisation_selected": false
+}
