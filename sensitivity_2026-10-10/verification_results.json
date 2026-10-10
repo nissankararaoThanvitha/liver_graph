@@ -1,0 +1,257 @@
+[
+  {
+    "check": "Label-only changes leave fibrosis discovery unchanged",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "Normalisation-only changes leave disease discovery unchanged",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "Disease discovery matches between labels-only and combined",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "Fibrosis discovery matches between normalisation-only and combined",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "Baseline matches active discovery",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "Baseline shortlist matches active shortlist",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "baseline cluster membership matches discovery",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "baseline main shortlist meets unrelaxed quota",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "baseline LOSO uses full universe in five fits",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "baseline same 610 staged patients",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "baseline preserves clinical sample_id",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "baseline preserves clinical dataset_id",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "baseline preserves clinical patient_id",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "baseline preserves clinical biopsy_number",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "baseline preserves clinical fibrosis_stage",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "baseline preserves clinical fibrosis_stage_raw",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "baseline preserves clinical disease_group_raw",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "labels_only cluster membership matches discovery",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "labels_only main shortlist meets unrelaxed quota",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "labels_only LOSO uses full universe in five fits",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "labels_only same 610 staged patients",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "labels_only preserves clinical sample_id",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "labels_only preserves clinical dataset_id",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "labels_only preserves clinical patient_id",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "labels_only preserves clinical biopsy_number",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "labels_only preserves clinical fibrosis_stage",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "labels_only preserves clinical fibrosis_stage_raw",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "labels_only preserves clinical disease_group_raw",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "normalisation_only cluster membership matches discovery",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "normalisation_only main shortlist meets unrelaxed quota",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "normalisation_only LOSO uses full universe in five fits",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "normalisation_only same 610 staged patients",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "normalisation_only preserves clinical sample_id",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "normalisation_only preserves clinical dataset_id",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "normalisation_only preserves clinical patient_id",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "normalisation_only preserves clinical biopsy_number",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "normalisation_only preserves clinical fibrosis_stage",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "normalisation_only preserves clinical fibrosis_stage_raw",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "normalisation_only preserves clinical disease_group_raw",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "combined cluster membership matches discovery",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "combined main shortlist meets unrelaxed quota",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "combined LOSO uses full universe in five fits",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "combined same 610 staged patients",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "combined preserves clinical sample_id",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "combined preserves clinical dataset_id",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "combined preserves clinical patient_id",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "combined preserves clinical biopsy_number",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "combined preserves clinical fibrosis_stage",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "combined preserves clinical fibrosis_stage_raw",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "combined preserves clinical disease_group_raw",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "check": "Active package/results/code preserved",
+    "passed": true,
+    "detail": []
+  }
+]

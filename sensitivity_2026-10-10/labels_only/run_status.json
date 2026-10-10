@@ -1,0 +1,164 @@
+[
+  {
+    "step": "discovery",
+    "command": [
+      "/tmp/liver-sensitivity-venv/bin/python",
+      "find_progression_genes.py",
+      "--repeat-policy",
+      "same_stage_mean",
+      "--out",
+      "data/progression_full"
+    ],
+    "exit_code": 0,
+    "seconds": 20.01
+  },
+  {
+    "step": "exports",
+    "command": [
+      "/tmp/liver-sensitivity-venv/bin/python",
+      "export_for_mentor.py"
+    ],
+    "exit_code": 0,
+    "seconds": 22.2
+  },
+  {
+    "step": "groups",
+    "command": [
+      "/tmp/liver-sensitivity-venv/bin/python",
+      "paper1_task1_groups.py",
+      "--out",
+      "Paper1_Results/Task1"
+    ],
+    "exit_code": 0,
+    "seconds": 2.49
+  },
+  {
+    "step": "clustering",
+    "command": [
+      "/tmp/liver-sensitivity-venv/bin/python",
+      "paper1_task2_trajectories.py",
+      "--out",
+      "Paper1_Results/Task2",
+      "5"
+    ],
+    "exit_code": 0,
+    "seconds": 31.19
+  },
+  {
+    "step": "transitions",
+    "command": [
+      "/tmp/liver-sensitivity-venv/bin/python",
+      "paper1_task3_transitions.py",
+      "--out",
+      "Paper1_Results/Task3",
+      "--clusters",
+      "Paper1_Results/Task2/task2_gene_clusters.csv"
+    ],
+    "exit_code": 0,
+    "seconds": 10.47
+  },
+  {
+    "step": "enrichment",
+    "command": [
+      "/tmp/liver-sensitivity-venv/bin/python",
+      "paper1_task4_enrichment.py",
+      "--out",
+      "Paper1_Results/Task4",
+      "--clusters",
+      "Paper1_Results/Task2/task2_gene_clusters.csv"
+    ],
+    "exit_code": 0,
+    "seconds": 18.25
+  },
+  {
+    "step": "union",
+    "command": [
+      "/tmp/liver-sensitivity-venv/bin/python",
+      "scripts/00_all_4692_progression_genes.py",
+      "--out",
+      "Paper1_HighConfidence",
+      "--results",
+      "Paper1_Results"
+    ],
+    "exit_code": 0,
+    "seconds": 0.43
+  },
+  {
+    "step": "matched",
+    "command": [
+      "/tmp/liver-sensitivity-venv/bin/python",
+      "scripts/powermatched_transitions.py",
+      "--out",
+      "Paper1_HighConfidence",
+      "--results",
+      "Paper1_Results"
+    ],
+    "exit_code": 0,
+    "seconds": 8.97
+  },
+  {
+    "step": "score",
+    "command": [
+      "/tmp/liver-sensitivity-venv/bin/python",
+      "scripts/high_confidence_genes.py",
+      "--out",
+      "Paper1_HighConfidence",
+      "--results",
+      "Paper1_Results"
+    ],
+    "exit_code": 0,
+    "seconds": 1.18
+  },
+  {
+    "step": "loso",
+    "command": [
+      "/tmp/liver-sensitivity-venv/bin/python",
+      "scripts/loso_validation.py",
+      "--out",
+      "Paper1_HighConfidence",
+      "--results",
+      "Paper1_Results"
+    ],
+    "exit_code": 0,
+    "seconds": 12.39
+  },
+  {
+    "step": "final_score",
+    "command": [
+      "/tmp/liver-sensitivity-venv/bin/python",
+      "scripts/high_confidence_genes.py",
+      "--out",
+      "Paper1_HighConfidence",
+      "--results",
+      "Paper1_Results"
+    ],
+    "exit_code": 0,
+    "seconds": 1.34
+  },
+  {
+    "step": "network",
+    "command": [
+      "/tmp/liver-sensitivity-venv/bin/python",
+      "scripts/kg_subgraph.py",
+      "--out",
+      "Paper1_HighConfidence",
+      "--results",
+      "Paper1_Results"
+    ],
+    "exit_code": 0,
+    "seconds": 4.58
+  },
+  {
+    "step": "edges",
+    "command": [
+      "/tmp/liver-sensitivity-venv/bin/python",
+      "build_progression_edges.py",
+      "--knowledge",
+      "data/graph_okg",
+      "--out",
+      "data/graph_full"
+    ],
+    "exit_code": 0,
+    "seconds": 0.18
+  }
+]

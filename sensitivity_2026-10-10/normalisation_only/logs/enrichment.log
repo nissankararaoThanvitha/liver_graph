@@ -1,0 +1,92 @@
+background: 14,794 eligible genes
+  fibrosis_only_up          1099 genes (1099 in background)
+  fibrosis_only_down         978 genes (978 in background)
+  inflammation_only_up      1890 genes (1890 in background)
+  inflammation_only_down     360 genes (360 in background)
+  shared_up                 1348 genes (1348 in background)
+  shared_down                391 genes (391 in background)
+  C1_all                     857 genes (857 in background)
+  C2_all                    1367 genes (1367 in background)
+  C3_all                     226 genes (226 in background)
+  C4_all                     397 genes (397 in background)
+  C5_all                     998 genes (998 in background)
+  C1_core                     90 genes (90 in background)
+  C2_core                    806 genes (806 in background)
+  C3_core                     74 genes (74 in background)
+  C4_core                    126 genes (126 in background)
+  C5_core                    742 genes (742 in background)
+GO_BP: 4,853 gene sets with 10-500 background genes
+KEGG: 183 gene sets with 10-500 background genes
+Reactome: 1,279 gene sets with 10-500 background genes
+Hallmark: 50 gene sets with 10-500 background genes
+
+hypergeometric check (fibrosis_only_up, GOBP_T_CELL_ACTIVATION): gseapy p=9.977e-14, scipy p=9.977e-14
+
+Significant terms (FDR < 0.05):
+database                n_genes  GO_BP  KEGG  Reactome  Hallmark
+group                                                           
+fibrosis_only_up           1099    347    30        18         9
+fibrosis_only_down          978     65    19        24         5
+inflammation_only_up       1890    147     8       216        12
+inflammation_only_down      360      0     0         0         2
+shared_up                  1348    424    28        81        25
+shared_down                 391     86    25        12         4
+C1_all                      857    370    39        51        18
+C2_all                     1367    518    21        44        20
+C3_all                      226     87     2        28         3
+C4_all                      397      0     1         1         3
+C5_all                      998    162    32        45         5
+C1_core                      90    181     8        13         4
+C2_core                     806    324     5        40        21
+C3_core                      74     87     2        26         3
+C4_core                     126      0     0         1         0
+C5_core                     742    130    30        39         5
+
+Cluster check, all genes vs high-confidence genes:
+cluster                           cluster_name database  n_sig_all  n_sig_core  n_shared  pct_core_terms_also_in_all  top10_all_also_sig_in_core
+     C1 Early increase (F0→F1), then continued    GO_BP        370         181       127                        70.2                          10
+     C1 Early increase (F0→F1), then continued     KEGG         39           8         6                        75.0                           0
+     C1 Early increase (F0→F1), then continued Reactome         51          13         7                        53.8                           3
+     C1 Early increase (F0→F1), then continued Hallmark         18           4         3                        75.0                           2
+     C2       Late increase (largest at F3→F4)    GO_BP        518         324       286                        88.3                          10
+     C2       Late increase (largest at F3→F4)     KEGG         21           5         5                       100.0                           4
+     C2       Late increase (largest at F3→F4) Reactome         44          40        32                        80.0                          10
+     C2       Late increase (largest at F3→F4) Hallmark         20          21        19                        90.5                          10
+     C3               Early rise, then plateau    GO_BP         87          87        63                        72.4                          10
+     C3               Early rise, then plateau     KEGG          2           2         2                       100.0                           2
+     C3               Early rise, then plateau Reactome         28          26        15                        57.7                           9
+     C3               Early rise, then plateau Hallmark          3           3         3                       100.0                           3
+     C4        Mid decrease (largest at F1→F2)    GO_BP          0           0         0                         NaN                           0
+     C4        Mid decrease (largest at F1→F2)     KEGG          1           0         0                         NaN                           0
+     C4        Mid decrease (largest at F1→F2) Reactome          1           1         0                         0.0                           0
+     C4        Mid decrease (largest at F1→F2) Hallmark          3           0         0                         NaN                           0
+     C5       Late decrease (largest at F3→F4)    GO_BP        162         130       116                        89.2                          10
+     C5       Late decrease (largest at F3→F4)     KEGG         32          30        29                        96.7                          10
+     C5       Late decrease (largest at F3→F4) Reactome         45          39        37                        94.9                          10
+     C5       Late decrease (largest at F3→F4) Hallmark          5           5         5                       100.0                           5
+
+Top Hallmark / GO_BP per main group:
+  fibrosis_only_up         Hallmark Allograft rejection | Il2 stat5 signaling | Il6 jak stat3 signaling | Inflammatory response
+  fibrosis_only_up         GO_BP    T cell activation | Myeloid leukocyte activation | Mononuclear cell differentiation | Lymphocyte differentiation
+  fibrosis_only_down       Hallmark Xenobiotic metabolism | Fatty acid metabolism | Bile acid metabolism | Peroxisome
+  fibrosis_only_down       GO_BP    Small molecule catabolic process | Fatty acid metabolic process | Organic acid catabolic process | Lipid oxidation
+  inflammation_only_up     Hallmark Interferon alpha response | Myc targets v1 | Mtorc1 signaling | E2f targets
+  inflammation_only_up     GO_BP    Endoplasmic reticulum to golgi vesicle mediated transport | Sister chromatid segregation | Mitotic sister chromatid segregation | Golgi vesicle transport
+  inflammation_only_down   Hallmark Estrogen response late | Kras signaling dn
+  inflammation_only_down   GO_BP    -
+  shared_up                Hallmark Epithelial mesenchymal transition | Tnfa signaling via nfkb | Apoptosis | P53 pathway
+  shared_up                GO_BP    External encapsulating structure organization | Collagen fibril organization | Taxis | Leukocyte migration
+  shared_down              Hallmark Xenobiotic metabolism | Bile acid metabolism | Coagulation | Fatty acid metabolism
+  shared_down              GO_BP    Organic acid catabolic process | Small molecule catabolic process | Alpha amino acid metabolic process | Amino acid catabolic process
+  C1_all                   Hallmark Allograft rejection | Tnfa signaling via nfkb | P53 pathway | Interferon gamma response
+  C1_all                   GO_BP    T cell activation | Adaptive immune response | Immune response regulating signaling pathway | Positive regulation of cytokine production
+  C2_all                   Hallmark Epithelial mesenchymal transition | Tnfa signaling via nfkb | Hypoxia | Apical junction
+  C2_all                   GO_BP    External encapsulating structure organization | Ameboidal type cell migration | Morphogenesis of an epithelium | Ossification
+  C3_all                   Hallmark E2f targets | G2m checkpoint | Mitotic spindle
+  C3_all                   GO_BP    Chromosome segregation | Nuclear chromosome segregation | Organelle fission | Sister chromatid segregation
+  C4_all                   Hallmark Xenobiotic metabolism | Estrogen response early | Coagulation
+  C4_all                   GO_BP    -
+  C5_all                   Hallmark Bile acid metabolism | Xenobiotic metabolism | Fatty acid metabolism | Peroxisome
+  C5_all                   GO_BP    Small molecule catabolic process | Organic acid catabolic process | Fatty acid metabolic process | Organic acid biosynthetic process
+
+Wrote outputs to Paper1_Results/Task4/

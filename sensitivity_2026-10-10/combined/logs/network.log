@@ -1,0 +1,25 @@
+Tier 1 genes 447   final shortlist 23
+  enrichment background: 14,794 eligible genes (the same one Task 4 used)
+knowledge layer: 203,832 gene-to-mechanism edges, 14,423 mechanisms
+
+12 major mechanisms (of 2,243 passing the size filter, 76 also major and enriched; 0 near-duplicates collapsed)
+                                       mechanism mechanism_type  n_tier1_genes  n_shortlist_genes  n_genes_in_background  fold_enrichment      q_value
+               extracellular matrix organization     BioProcess             27                  1                    115             7.77 1.056719e-13
+                              cell-cell adhesion     BioProcess             32                  1                    198             5.35 8.597685e-12
+                                    angiogenesis     BioProcess             36                  0                    254             4.69 8.599052e-12
+              Integrin cell surface interactions        Pathway             20                  0                     79             8.38 1.076339e-10
+           positive regulation of cell migration     BioProcess             32                  1                    229             4.62 2.779379e-10
+                               ECM proteoglycans        Pathway             18                  0                     68             8.76 5.653463e-10
+Developmental Lineage of Pancreatic Ductal Cells        Pathway             15                  0                     44            11.28 6.485207e-10
+    positive regulation of ERK1 and ERK2 cascade     BioProcess             26                  2                    159             5.41 7.944906e-10
+                                  cell migration     BioProcess             34                  2                    275             4.09 1.069675e-09
+             integrin-mediated signaling pathway     BioProcess             20                  0                     98             6.75 3.715754e-09
+      Interleukin-4 and Interleukin-13 signaling        Pathway             19                  0                     93             6.76 1.105684e-08
+                               Signaling by PDGF        Pathway             12                  1                     31            12.81 1.283585e-08
+
+figure: 42 genes, 154 edges (4 of the final 25 appear; the rest connect to none of these 12 mechanisms)
+  shortlist 25: 501 gene-mechanism rows
+  tier 1 447: 9,240 gene-mechanism rows
+
+-> Paper1_HighConfidence/12_mechanistic_subgraph.png
+-> Paper1_HighConfidence/12_KG_supplementary.xlsx

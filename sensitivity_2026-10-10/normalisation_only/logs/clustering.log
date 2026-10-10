@@ -1,0 +1,50 @@
+3,845 fibrosis-associated genes
+reading patient-level expression ...
+k=3  silhouette=0.587  gene-subsample ARI=0.981 ± 0.018  patient-bootstrap ARI=0.791 ± 0.063
+k=4  silhouette=0.438  gene-subsample ARI=0.971 ± 0.017  patient-bootstrap ARI=0.679 ± 0.081
+k=5  silhouette=0.352  gene-subsample ARI=0.983 ± 0.011  patient-bootstrap ARI=0.592 ± 0.062
+k=6  silhouette=0.317  gene-subsample ARI=0.816 ± 0.172  patient-bootstrap ARI=0.514 ± 0.073
+k=7  silhouette=0.280  gene-subsample ARI=0.934 ± 0.045  patient-bootstrap ARI=0.450 ± 0.048
+k=8  silhouette=0.284  gene-subsample ARI=0.868 ± 0.110  patient-bootstrap ARI=0.426 ± 0.046
+
+Chosen k = 5
+
+label matching: 8 of 500 matched pairs fell below r = 0.5 and were not scored
+                genes assessed in 96-100 of 100 bootstraps (median 97)
+
+Patient bootstrap (100x), shape recovery and gene confidence:
+ cluster                           cluster_name  median_shape_corr  min_shape_corr  genes_confidence>=0.8  n_genes
+       1 Early increase (F0→F1), then continued              0.977           0.825                     90      857
+       2       Late increase (largest at F3→F4)              0.996          -0.426                    806     1367
+       3               Early rise, then plateau              0.967          -0.620                     74      226
+       4        Mid decrease (largest at F1→F2)              0.968           0.756                    126      397
+       5       Late decrease (largest at F3→F4)              0.993          -0.374                    742      998
+
+ cluster                           cluster_name  n_genes  pct_of_fibrosis_genes  mean_F0  mean_F1  mean_F2  mean_F3  mean_F4
+       1 Early increase (F0→F1), then continued      857                   22.3   -0.295   -0.057    0.067    0.237    0.515
+       2       Late increase (largest at F3→F4)     1367                   35.6   -0.227   -0.142   -0.018    0.266    0.860
+       3               Early rise, then plateau      226                    5.9   -0.270   -0.012    0.108    0.213    0.136
+       4        Mid decrease (largest at F1→F2)      397                   10.3    0.161    0.182   -0.075   -0.260   -0.279
+       5       Late decrease (largest at F3→F4)      998                   26.0    0.184    0.195   -0.034   -0.259   -0.658
+
+Representative genes:
+  C1 Early increase (F0→F1), then continued: GAS7, RAP2B, JAML, ACOT9, FAT1, IL27RA, STK10, CD300LF, ITGAM, LAIR1
+  C2 Late increase (largest at F3→F4): YBX3, PLEKHB1, GJA1, TM4SF1, MCAM, TPPP3, MAFF, TPBG, FJX1, PLAT
+  C3 Early rise, then plateau: ANLN, DHRS9, KIFC1, KIF4A, MACROH2A2, LPL, DLGAP5, ASPM, FOXN4, ADGRE2
+  C4 Mid decrease (largest at F1→F2): EFNA1, SLC7A2, RGS5, EIF4B, PPP4R2, GRPEL1, MEF2A, CFAP20, ERLIN2, TANK
+  C5 Late decrease (largest at F3→F4): ADGRG7, NAT1, AGMO, ARRDC3, COQ5, AADAT, SLC10A5, KLHDC2, ATF7IP2, ADH7
+
+Robustness:
+                                                     check  value
+             study-adjusted profiles: ARI vs main clusters  0.901
+study-adjusted profiles: median per-gene curve correlation  0.999
+                patient bootstrap ARI at chosen k=5 (mean)  0.592
+study-adjusted cluster                       0     1    2    3    4
+main cluster                                                       
+C1 Early increase (F0→F1), then continued    0    10  829    0   18
+C2 Late increase (largest at F3→F4)          1  1306   60    0    0
+C3 Early rise, then plateau                  0     0    3    0  223
+C4 Mid decrease (largest at F1→F2)         384     0    0   13    0
+C5 Late decrease (largest at F3→F4)         65     0    0  933    0
+
+Wrote outputs to Paper1_Results/Task2/

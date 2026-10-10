@@ -1,0 +1,6 @@
+﻿cluster,cluster_name,median_shape_corr,min_shape_corr,genes_confidence>=0.8,n_genes
+1,"Early increase (F0→F1), then continued",0.977,0.825,90,857
+2,Late increase (largest at F3→F4),0.996,-0.426,806,1367
+3,"Early rise, then plateau",0.967,-0.62,74,226
+4,Mid decrease (largest at F1→F2),0.968,0.756,126,397
+5,Late decrease (largest at F3→F4),0.993,-0.374,742,998

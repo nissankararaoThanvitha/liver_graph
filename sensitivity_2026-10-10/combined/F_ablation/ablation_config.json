@@ -1,0 +1,20 @@
+{
+  "run": "combined",
+  "F_removed": true,
+  "maximum_score": 8,
+  "Tier1_cutoff": 7,
+  "tier1_genes": 286,
+  "shortlist_genes": 21,
+  "tier1_available_per_cluster": {
+    "C1": 71,
+    "C2": 176,
+    "C3": 6,
+    "C4": 1,
+    "C5": 32
+  },
+  "clusters_below_five": [
+    "C4"
+  ],
+  "rule_not_relaxed": true,
+  "remaining_label_dependence": "B still uses group/cluster enrichment; removing F is not a fully disease-label-free analysis"
+}

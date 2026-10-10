@@ -1,0 +1,9 @@
+run,scoring,selected_mechanisms,displayed_genes,edges,shortlisted_genes_shown
+baseline,standard,12,42,154,5
+baseline,without_F,12,34,127,6
+labels_only,standard,12,42,154,5
+labels_only,without_F,12,34,127,6
+normalisation_only,standard,12,42,154,4
+normalisation_only,without_F,12,29,122,5
+combined,standard,12,42,154,4
+combined,without_F,12,29,122,5

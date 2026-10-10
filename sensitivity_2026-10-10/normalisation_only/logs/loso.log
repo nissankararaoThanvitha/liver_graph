@@ -1,0 +1,26 @@
+Tier 1 genes reported: 454; BH universe: 14,794
+
+per-study Spearman (recomputed; find_progression_genes.py keeps only the median)
+  GSE130970:   78 patients, 14,794 genes
+  GSE135251:  216 patients, 14,794 genes
+  GSE162694:  143 patients, 14,794 genes
+  GSE193066:  106 patients, 14,794 genes
+  GSE240729:   67 patients, 14,794 genes
+
+5 studies stage fibrosis -> 5 LOSO runs (the brief asks for 8; three studies carry no F0-F4 labels)
+
+of 454 Tier 1 genes, how many of the 5 runs each measure survives:
+  direction_kept  <- guaranteed; all 5 studies already agree
+      5/5 runs:  454 genes
+  still_significant
+      5/5 runs:  449 genes
+      4/5 runs:    4 genes
+      3/5 runs:    1 genes
+  still_strong
+      5/5 runs:  246 genes
+      3/5 runs:   67 genes
+      2/5 runs:   85 genes
+      0/5 runs:   56 genes
+
+-> Paper1_HighConfidence/10_loso_summary.csv
+-> Paper1_HighConfidence/10_loso_runs.csv
