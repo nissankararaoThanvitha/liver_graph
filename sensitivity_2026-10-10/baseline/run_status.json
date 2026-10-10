@@ -1,0 +1,35 @@
+[
+  {
+    "step": "discovery",
+    "command": [
+      "/tmp/liver-sensitivity-venv/bin/python",
+      "find_progression_genes.py",
+      "--repeat-policy",
+      "same_stage_mean",
+      "--out",
+      "data/progression_full"
+    ],
+    "exit_code": 0,
+    "seconds": 21.84
+  },
+  {
+    "step": "exports",
+    "command": [
+      "/tmp/liver-sensitivity-venv/bin/python",
+      "export_for_mentor.py"
+    ],
+    "exit_code": 0,
+    "seconds": 23.69
+  },
+  {
+    "step": "groups",
+    "command": [
+      "/tmp/liver-sensitivity-venv/bin/python",
+      "paper1_task1_groups.py",
+      "--out",
+      "Paper1_Results/Task1"
+    ],
+    "exit_code": 0,
+    "seconds": 3.05
+  }
+]

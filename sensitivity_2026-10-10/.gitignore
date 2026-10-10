@@ -1,0 +1,8 @@
+# Regenerable bulk or duplicate frozen inputs; keep protocol/hashes/clinical perturbations.
+shared/*.csv
+*/data/expression_analysis_core/
+*/data/processed/
+*/data/genesets
+*/data/graph_okg
+*/logs/matplotlib/
+__pycache__/

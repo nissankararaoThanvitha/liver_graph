@@ -1,0 +1,38 @@
+{
+  "runs": {
+    "baseline": {
+      "unclassify": false,
+      "preserve_rle": false
+    },
+    "labels_only": {
+      "unclassify": true,
+      "preserve_rle": false
+    },
+    "normalisation_only": {
+      "unclassify": false,
+      "preserve_rle": true
+    },
+    "combined": {
+      "unclassify": true,
+      "preserve_rle": true
+    }
+  },
+  "unclassified_sample_ids": [
+    "GSM3758028",
+    "GSM3758038",
+    "GSM3758039",
+    "GSM3758073",
+    "GSM3758074"
+  ],
+  "alternate_transform": "log2(deposited RLE count+1), then within-gene study mean/sample-SD standardisation over all164 biopsies; no CPM rescaling",
+  "eligible_genes": 14794,
+  "alternate_rows": 2426216,
+  "source_matrix_sha256": "23526d17bc3afa5baec4a3ab88646b49ea87faa64081b58f00a0f66b1f53ae79",
+  "alternate_csv_sha256": "df447d78e28d353bf24c0003ef430d01be63c4055af4c9980ad5320fe9dc3430",
+  "fixed_clustering_k": 5,
+  "fixed_seed": 42,
+  "top25_rule": "five Tier1 genes per cluster, score then absolute rho; never lower thresholds to fill slots",
+  "top12_rule": "existing enrichment/size/connectivity/Jaccard rules",
+  "F_ablation": "set F=0; retain absolute Tier1>=7 threshold, maximum8; shortages of five per cluster reported rather than filled",
+  "active_files_modified": false
+}
