@@ -24,7 +24,6 @@ import os
 import re
 
 import pandas as pd
-
 # data/interim_full, not data/interim: the project keeps measured
 # zeros, and data/interim was the zero-dropped parse, now deleted.
 INTERIM = "data/interim_full"
@@ -43,33 +42,23 @@ def rule_gsm(row):
 def rule_title(row):
     """Expression file uses the study's own sample title, unchanged."""
     return row["sample_title"]
-
-
 def rule_description(row):
     """GSE126848 labels columns with the internal lab ID, which GEO stores in
     the !Sample_description field (e.g. '869') rather than the title."""
     return row["sample_description"]
-
-
 def rule_last_token(row):
     """GSE162694 title is 'nash1_F0 548nash1' -- the column name is the part
     after the space."""
     t = str(row["sample_title"]).strip()
-    return t.split()[-1] if t else None
-
-
+    return t.split()[-1] if t else None 
 def rule_prefix_s(row):
     """GSE240729 title is '7068-04-001-001', the column adds a leading 's'."""
     return "s" + str(row["sample_title"]).strip()
-
-
 def rule_nafld_padded(row):
     """GSE167523 title is 'NAFLD liver 7' -> column is 'NAFLD07'.
     All 98 titles follow this pattern, verified against the series matrix."""
     m = re.search(r"(\d+)\s*$", str(row["sample_title"]))
     return f"NAFLD{int(m.group(1)):02d}" if m else None
-
-
 RULES = {
     "GSE126848": rule_description,
     "GSE130970": rule_title,
@@ -118,7 +107,6 @@ def main():
         # Keys in the expression file that no metadata row claimed
         claimed = {x["sample_key"] for x in rows if x["dataset_id"] == gse}
         orphan_keys = sorted(found - claimed)
-
         summary.append(dict(dataset_id=gse, n_meta=len(m), n_expr_keys=len(found),
                             n_matched=matched,
                             pct=round(100 * matched / len(m), 1) if len(m) else 0,
@@ -127,16 +115,12 @@ def main():
             print(f"  {gse} unmatched examples: {unmatched_meta[:3]}")
         if orphan_keys[:3]:
             print(f"  {gse} orphan keys: {orphan_keys[:3]}")
-
     cw = pd.DataFrame(rows)
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     cw.to_csv(OUT, index=False)
-
     print("\n=== CROSSWALK SUMMARY ===")
     print(pd.DataFrame(summary).to_string(index=False))
     print(f"\nTotal linked samples: {len(cw):,} (target 1,085)")
     print(f"Written to {OUT}")
-
-
 if __name__ == "__main__":
     main()
