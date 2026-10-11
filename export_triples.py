@@ -106,7 +106,6 @@ def main():
     print(tri.r.value_counts().to_string())
 
     tri.to_csv(f"{OUT}/all.tsv", sep="\t", index=False, header=False)
-
     # Split so evaluation is honest: the model never sees the test edges.
     # Every entity must appear in train, or the model has no embedding for
     # it at test time -- so split within each relation and keep 80/10/10.
