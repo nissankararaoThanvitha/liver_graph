@@ -69,6 +69,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from paper2_io import SupportingTables
 
 EDGES = "Paper2_Results/Task2/task2_drug_gene_edges.csv"
+PATHWAYS = "Paper1_Results/Task4/task4_top_pathways_per_group.csv"
 OUT_DIR = "Paper2_Results/Task4"
 TOP_N = 50
 PHARMACOKINETIC = {"ENZYME", "TRANSPORTER", "CARRIER", "SUBSTRATE"}
@@ -187,6 +188,11 @@ def main():
               .pivot_table(index="Drug_ID", columns="Cluster", values="Gene_ID",
                            aggfunc="nunique", fill_value=0))
     if len(clus):
+        # Per-cluster counts, not only the dominant share. The plan asks for
+        # coverage calculated "separately for ... important F0-F4 trajectory
+        # clusters", which a single dominant-fraction column does not give.
+        d = d.merge(clus.rename(columns=lambda c: f"n_cluster_{c}"),
+                    on="Drug_ID", how="left")
         dom = (clus.max(axis=1) / clus.sum(axis=1)).round(3)
         d = d.merge(dom.rename("dominant_cluster_fraction"),
                     on="Drug_ID", how="left")
@@ -214,9 +220,10 @@ def main():
                                    | d.flag_duplicate)
     d = d.sort_values("n_progression_genes", ascending=False).reset_index(drop=True)
 
+    ccols = sorted(c for c in d.columns if c.startswith("n_cluster_C"))
     keep = (["Drug", "Drug_ID", "n_progression_genes", "fibrosis_only_targets",
              "shared_targets", "inflammation_only_targets"]
-            + sorted(gcols)
+            + sorted(gcols) + ccols
             + ["all_known_targets", "progression_target_fraction",
                "progression_fraction_lower95", "dominant_class_fraction",
                "dominant_cluster_fraction", "genes_with_a_cluster",
@@ -265,6 +272,23 @@ def main():
                      largest_transition=("Largest_transition", "first"),
                      tier=("Tier", "first"),
                      n_drugs=("Drug_ID", "nunique")).reset_index())
+    # "major fibrosis-associated pathway/process", as the plan requires on the
+    # network. Paper 1's gene table carries only booleans per database, so the
+    # name comes from Paper 1's own enrichment: for each gene, the most
+    # significant enriched term it is listed under.
+    pw = pd.read_csv(PATHWAYS)
+    pw = pw[pw.significant.astype(str).str.lower() == "true"]
+    pw = pw.sort_values("q_value")
+    best = {}
+    for _, r in pw.iterrows():
+        for sym in str(r.genes).split(","):
+            sym = sym.strip()
+            if sym and sym not in best:
+                best[sym] = (r.term_label, r.database, r.q_value)
+    gnodes["major_pathway"] = gnodes.Gene.map(lambda g: best.get(g, (None,))[0])
+    gnodes["major_pathway_db"] = gnodes.Gene.map(
+        lambda g: best[g][1] if g in best else None)
+
     gnodes.insert(0, "node_type", "gene")
     gnodes = gnodes.rename(columns={"Gene": "label", "Gene_ID": "node_id"})
     dnodes = d[d.Drug_ID.isin(net_drugs)][
