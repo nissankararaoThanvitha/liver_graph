@@ -17,7 +17,6 @@ Built by `scripts/paper2_task4_drug_coverage.py`, therapeutic edges only.
 |---|---:|---|
 | `task4_drug_coverage.csv` | 2,404 | every drug reaching ≥1 progression gene, with per-group **and per-cluster** coverage |
 | `task4_top_drugs_raw_coverage.csv` | 50 | top 50 by raw coverage, as the plan asks |
-| `task4_top_drugs_filtered.csv` | 50 | the same, non-therapeutic entities removed |
 | **`task4_top_drugs_by_coherence.csv`** | 50 | **ranked by coherence instead of count — read this one first** |
 | `task4_network_nodes.csv` | 986 | bipartite network, annotated with Paper 1 evidence |
 | `task4_network_edges.csv` | 2,033 | — |
@@ -64,9 +63,10 @@ Top by raw coverage, as asked:
 | GLUTAMIC ACID | 33 | 61 | 0.30 |
 
 One promiscuous kinase inhibitor, two zinc salts, an amino acid, and an unnamed
-ChEMBL entry. After removing flagged entities: FOSTAMATINIB, then
+ChEMBL entry. Filtering the flagged entities out of that list leaves FOSTAMATINIB, then
 PHENETHYLISOTHIOCYANATE, CANNABIDIOL, NABIXIMOLS, ASPIRIN, TILUDRONIC ACID,
-SPIRONOLACTONE, MINOCYCLINE, ZONISAMIDE, CAFFEINE.
+SPIRONOLACTONE, MINOCYCLINE, ZONISAMIDE, CAFFEINE — filter
+`task4_drug_coverage.csv` on `likely_non_therapeutic` to reproduce it.
 
 Still not a candidate list. It is what "most targets" looks like.
 

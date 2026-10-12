@@ -240,9 +240,6 @@ def main():
     # It also says not to call a high-degree drug the best candidate. Both are
     # satisfied by shipping the raw list and, beside it, the same list with the
     # non-therapeutic entities removed -- which is the one a reader should use.
-    top_filtered = d[~d.likely_non_therapeutic].head(TOP_N)
-    top_filtered.to_csv(f"{OUT_DIR}/task4_top_drugs_filtered.csv", index=False)
-
     # Ranked by coherence instead of by count. Coverage and coherence correlate
     # at -0.124 here, so this is a genuinely different list and it is the one
     # worth reading first: it is where TRAPIDIL, MARIMASTAT and GLYCYRRHIZIN
@@ -325,7 +322,6 @@ def main():
                       "likely_non_therapeutic"]].to_string(index=False))
     print(f"\nwrote {OUT_DIR}/task4_drug_coverage.csv")
     print(f"wrote {OUT_DIR}/task4_top_drugs_raw_coverage.csv")
-    print(f"wrote {OUT_DIR}/task4_top_drugs_filtered.csv")
     print(f"wrote {OUT_DIR}/task4_top_drugs_by_coherence.csv")
     print(f"wrote {OUT_DIR}/task4_network_edges.csv")
     print(f"wrote {OUT_DIR}/task4_network_nodes.csv")

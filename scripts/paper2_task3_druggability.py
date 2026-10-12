@@ -307,7 +307,6 @@ def main():
 
     summary.to_csv(f"{OUT_DIR}/task3_druggability_summary.csv", index=False)
     t.to_csv(f"{OUT_DIR}/task3_enrichment_tests.csv", index=False)
-    g.to_csv(f"{OUT_DIR}/task3_gene_level_drug_connectivity.csv", index=False)
 
     print(summary.to_string(index=False))
     print()
@@ -316,7 +315,6 @@ def main():
              "survives_degree_aware"]].to_string(index=False))
     print(f"\nwrote {OUT_DIR}/task3_druggability_summary.csv")
     print(f"wrote {OUT_DIR}/task3_enrichment_tests.csv")
-    print(f"wrote {OUT_DIR}/task3_gene_level_drug_connectivity.csv")
 
 
 if __name__ == "__main__":
