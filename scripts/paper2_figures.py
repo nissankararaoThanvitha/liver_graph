@@ -246,12 +246,17 @@ def task4_coverage():
 
 
 def task4_network():
-    """A readable slice of the bipartite network.
+    """A readable slice of the bipartite network, grouped by biology.
 
     The full network is 376 drugs and 610 genes -- a hairball at any size that
     fits on a page. Drawn instead: the most coherent named drugs reaching at
-    least five progression genes, with genes coloured by the direction they
-    move in. The full network ships as node and edge CSVs for a proper viewer.
+    least five progression genes.
+
+    Genes are ordered by their major fibrosis-associated process rather than
+    alphabetically, which is the point of carrying that annotation: it turns a
+    list of symbols into blocks, and MARIMASTAT's fan into the matrix
+    metallopeptidases becomes visible as a block rather than a coincidence of
+    names starting with MMP.
     """
     T4 = "Paper2_Results/Task4"
     d = pd.read_csv(f"{T4}/task4_drug_coverage.csv")
@@ -261,19 +266,27 @@ def task4_network():
     pick = (d[(~d.likely_non_therapeutic) & (d.n_progression_genes >= 5)]
             .nlargest(8, "dominant_class_fraction").Drug.tolist())
     sub = e[e.Drug.isin(pick)]
-    genes = n[(n.node_type == "gene") & (n.label.isin(sub.Gene))]
-    gmeta = genes.set_index("label")["group"].to_dict()
+    genes = n[(n.node_type == "gene") & (n.label.isin(sub.Gene))].copy()
+    genes["major_pathway"] = genes.major_pathway.fillna("(no enriched process)")
 
-    gene_list = sorted(sub.Gene.unique())
+    # order genes by pathway block, largest block first, alphabetical within
+    size = genes.major_pathway.value_counts()
+    genes["block"] = genes.major_pathway.map(size)
+    genes = genes.sort_values(["block", "major_pathway", "label"],
+                              ascending=[False, True, True])
+    gene_list = genes.label.tolist()
+    gmeta = genes.set_index("label")["group"].to_dict()
+    pmeta = genes.set_index("label")["major_pathway"].to_dict()
+
     gy = {g: i for i, g in enumerate(gene_list)}
     dy = {dr: i * (len(gene_list) - 1) / max(len(pick) - 1, 1)
           for i, dr in enumerate(pick)}
 
-    fig, ax = plt.subplots(figsize=(9.5, max(5.5, len(gene_list) * .17)))
+    fig, ax = plt.subplots(figsize=(12, max(6, len(gene_list) * .19)))
     for _, r in sub.iterrows():
         ax.plot([0, 1], [dy[r.Drug], gy[r.Gene]], lw=.7, color="#c7d4e0",
                 zorder=1)
-    ax.scatter([0] * len(pick), [dy[p] for p in pick], s=90, c=PURPLE_OK,
+    ax.scatter([0] * len(pick), [dy[p] for p in pick], s=95, c=PURPLE_OK,
                zorder=3)
     for p in pick:
         ax.text(-.02, dy[p], p, ha="right", va="center", fontsize=8.5,
@@ -284,16 +297,73 @@ def task4_network():
     ax.scatter([1] * len(gene_list), [gy[g] for g in gene_list], s=26, c=cols,
                zorder=3)
     for g in gene_list:
-        ax.text(1.02, gy[g], g, ha="left", va="center", fontsize=7)
-    ax.set_xlim(-.35, 1.3)
+        ax.text(1.015, gy[g], g, ha="left", va="center", fontsize=7)
+
+    # bracket and label each pathway block on the far right
+    seen, start = None, 0
+    for i, g in enumerate(gene_list + [None]):
+        pw = pmeta.get(g) if g else None
+        if pw != seen:
+            if seen is not None and i - start >= 2:
+                ax.plot([1.145, 1.145], [start - .3, i - 1 + .3], lw=1.6,
+                        color="#8a97a5", zorder=2)
+                ax.text(1.165, (start + i - 1) / 2,
+                        seen if len(seen) < 42 else seen[:40] + "...",
+                        ha="left", va="center", fontsize=7.2, color="#4a5a6a")
+            seen, start = pw, i
+    ax.set_xlim(-.36, 1.78)
     ax.axis("off")
     ax.set_title("Most coherent drugs and the progression genes they reach\n"
-                 "red = gene rises with disease   blue = gene falls",
+                 "red = gene rises with disease   blue = gene falls   "
+                 "right-hand brackets = major fibrosis-associated process",
                  fontsize=10, loc="left")
     fig.tight_layout()
     fig.savefig(f"{T4}/task4_network.png", dpi=200)
     plt.close(fig)
     print(f"wrote {T4}/task4_network.png")
+
+
+def task4_clusters():
+    """Per-cluster coverage for the leading drugs.
+
+    The plan asks for coverage calculated separately per F0-F4 trajectory
+    cluster. The table carries it; this shows whether a drug sits in one
+    trajectory or spreads across several.
+    """
+    T4 = "Paper2_Results/Task4"
+    d = pd.read_csv(f"{T4}/task4_drug_coverage.csv")
+    ccols = sorted(c for c in d.columns if c.startswith("n_cluster_"))
+    if not ccols:
+        return
+    top = (d[(~d.likely_non_therapeutic) & (d.n_progression_genes >= 5)]
+           .nlargest(18, "n_progression_genes")
+           .set_index("Drug")[ccols].fillna(0))
+    labels = {"n_cluster_C1": "C1\nearly rise",
+              "n_cluster_C2": "C2\nlate rise",
+              "n_cluster_C3": "C3\nrise, plateau",
+              "n_cluster_C4": "C4\nmid fall",
+              "n_cluster_C5": "C5\nlate fall"}
+
+    fig, ax = plt.subplots(figsize=(7.2, 6.4))
+    im = ax.imshow(top.values, cmap="Blues", aspect="auto")
+    ax.set_xticks(range(len(ccols)))
+    ax.set_xticklabels([labels.get(c, c) for c in ccols], fontsize=8)
+    ax.set_yticks(range(len(top)))
+    ax.set_yticklabels(top.index, fontsize=8)
+    for i in range(len(top)):
+        for j in range(len(ccols)):
+            v = int(top.values[i, j])
+            if v:
+                ax.text(j, i, v, ha="center", va="center", fontsize=7.5,
+                        color="white" if v > top.values.max() * .55 else "#15202b")
+    ax.set_title("Which trajectory clusters each drug reaches\n"
+                 "(leading drugs by coverage; genes per cluster)",
+                 fontsize=10, loc="left")
+    fig.colorbar(im, ax=ax, label="progression genes", pad=.02)
+    fig.tight_layout()
+    fig.savefig(f"{T4}/task4_cluster_coverage.png", dpi=200)
+    plt.close(fig)
+    print(f"wrote {T4}/task4_cluster_coverage.png")
 
 
 PURPLE_OK = "#6b4bd6"
@@ -305,3 +375,4 @@ if __name__ == "__main__":
     task3_druggability()
     task4_coverage()
     task4_network()
+    task4_clusters()
