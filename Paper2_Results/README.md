@@ -28,7 +28,7 @@ Use Task1 for the master gene table. Analysis code is in
 | 3 | Druggability comparison across progression groups | **done** | [`Task3/`](Task3) — direction beats class; decreasing genes more druggable |
 | 4 | Drug coverage across progression genes | **done** | [`Task4/`](Task4) — coverage vs coherence; 726 entities flagged |
 | 5 | MetaPath implementation and testing | **done** | [`Task5/`](Task5) — 7 metapaths; Reactome 11× cleaner than GO; DWPC vs count ρ = 0.45 |
-| 6 | Target-prioritisation framework design | not started | |
+| 6 | Target-prioritisation framework design | **done** | [`Task6/`](Task6) — 5 components defined; F redundant within class; top-50 unstable |
 | 7 | Drug action / direction evidence table | **done** | [`Task7/`](Task7) — 4,984 relationships; fibrosis-only rising genes 89% consistent |
 | 8 | Final target and drug ranking | not started | |
 
