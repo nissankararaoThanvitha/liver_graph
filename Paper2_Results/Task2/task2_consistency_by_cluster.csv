@@ -1,0 +1,11 @@
+mechanism_consistency,Cluster_pattern,edges,drugs,genes
+reversal-consistent,Late increase (largest at F3→F4),171,148,37
+reversal-inconsistent,Late decrease (largest at F3→F4),163,154,39
+reversal-inconsistent,Late increase (largest at F3→F4),116,96,17
+reversal-consistent,"Early increase (F0→F1), then continued",104,95,26
+reversal-consistent,Late decrease (largest at F3→F4),73,73,15
+reversal-consistent,"Early rise, then plateau",66,66,12
+reversal-inconsistent,"Early increase (F0→F1), then continued",50,49,7
+reversal-inconsistent,Mid decrease (largest at F1→F2),48,47,12
+reversal-inconsistent,"Early rise, then plateau",10,10,2
+reversal-consistent,Mid decrease (largest at F1→F2),3,3,2
