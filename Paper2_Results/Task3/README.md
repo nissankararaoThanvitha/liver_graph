@@ -17,7 +17,7 @@ database `neo4j`, 12 October 2026.
 |---|---|
 | `task3_druggability_summary.csv` | the summary table the plan asks for |
 | `task3_enrichment_tests.csv` | odds ratio, Fisher p, BH-q, degree-matched p |
-| `task3_classic_druggable_sensitivity.csv` | the confound check |
+| `task3_supporting.xlsx` | 1 sheet — `classic_druggable_sensitivity`, the confound check |
 | `task3_gene_level_drug_connectivity.csv` | per-gene, all 14,794 eligible genes |
 | `task3_druggability_by_group.png` | the bar plot |
 

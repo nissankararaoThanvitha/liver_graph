@@ -40,8 +40,11 @@ import numpy as np
 import pandas as pd
 from neo4j import GraphDatabase
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from paper2_io import SupportingTables
+
 MASTER = "Paper2_Results/Task1/Paper2_progression_genes.csv"
-OUT = "Paper2_Results/Task1/task1_stage_mean_verification.csv"
+OUT_DIR = "Paper2_Results/Task1"
 N_SAMPLE = 40
 TOL = 5e-4           # the CSV carries four decimal places
 SEED = 42
@@ -129,9 +132,11 @@ def main():
                      "mean_abs_diff": round(float(diff.mean()), 6),
                      "within_tolerance": bool(diff.max() <= TOL)})
     report = pd.DataFrame(rows)
-    j.to_csv(OUT)
+    sup = SupportingTables(OUT_DIR, "task1")
+    sup.add("stage_mean_verification", j.reset_index())
+    sup.add("stage_mean_check", report)
+    sup.write()
     print(report.to_string(index=False))
-    print(f"\nwrote {OUT}")
 
     if worst <= TOL:
         print(f"\nPASS - F0-F4 reproduce from EXPRESSES under the biopsy "

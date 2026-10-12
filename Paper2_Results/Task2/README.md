@@ -50,11 +50,7 @@ metabolises a drug has no mechanism to be consistent or inconsistent with.
 |---|---:|---|
 | `task2_drug_gene_edges.csv` | 8,948 | the complete edge table |
 | `task2_summary.csv` | 7 | the counts the plan asks for |
-| `task2_action_breakdown.csv` | 23 | every action value, classified |
-| `task2_mechanism_consistency.csv` | — | consistency × progression class |
-| `task2_consistency_by_cluster.csv` | — | consistency × F0–F4 trajectory pattern |
-| `task2_mapping_sensitivity.csv` | 6 | consistency under 6 action→direction mappings |
-| `task2_consistency_permutation_test.csv` | 1 | the valid test, replacing the binomial |
+| `task2_supporting.xlsx` | 5 sheets | `action_breakdown` (23) · `mechanism_consistency` (12) · `consistency_by_cluster` (10) · `mapping_sensitivity` (6) · `consistency_permutation_test` (1) |
 | `task2_action_classes.png` | — | what the 8,948 edges actually are |
 | `task2_consistency_null.png` | — | observed consistency against its null |
 

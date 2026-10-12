@@ -55,8 +55,13 @@ import json
 import os
 
 import numpy as np
+import sys
+
 import pandas as pd
 from neo4j import GraphDatabase
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from paper2_io import SupportingTables
 from scipy import stats
 
 MASTER = "Paper2_Results/Task1/Paper2_progression_genes.csv"
@@ -145,6 +150,7 @@ def degree_matched_null(group_ids, pool, rng, n_perm=N_PERM):
 
 def main():
     os.makedirs(OUT_DIR, exist_ok=True)
+    sup = SupportingTables(OUT_DIR, "task3")
     rng = np.random.default_rng(SEED)
 
     master = pd.read_csv(MASTER)
@@ -296,8 +302,8 @@ def main():
             "odds_ratio": round(float(odds), 3),
             "fisher_p": f"{p:.3e}",
         })
-    pd.DataFrame(rows_ex).to_csv(
-        f"{OUT_DIR}/task3_classic_druggable_sensitivity.csv", index=False)
+    sup.add("classic_druggable_sensitivity", pd.DataFrame(rows_ex))
+    sup.write()
 
     summary.to_csv(f"{OUT_DIR}/task3_druggability_summary.csv", index=False)
     t.to_csv(f"{OUT_DIR}/task3_enrichment_tests.csv", index=False)

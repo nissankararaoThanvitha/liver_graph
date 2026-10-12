@@ -30,8 +30,14 @@ Usage:
     uv run --with pandas --with numpy --with scipy python scripts/paper2_task2_robustness.py
 """
 
+import os
+import sys
+
 import numpy as np
 import pandas as pd
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from paper2_io import SupportingTables
 
 EDGES = "Paper2_Results/Task2/task2_drug_gene_edges.csv"
 SOURCE = "Paper1_Package/04_DATA/knowledge_layer/edges_drug_gene.csv"
@@ -94,6 +100,7 @@ def permutation_p(d, rng, n=N_PERM):
 
 def main():
     e = pd.read_csv(EDGES)
+    sup = SupportingTables(OUT_DIR, "task2")
     rng = np.random.default_rng(SEED)
     lines = []
 
@@ -130,7 +137,7 @@ def main():
         print(f"   {name:<28} {k:>4}/{n:<5} = {100*k/n:5.1f}%   "
               f"null {100*null.mean():4.1f}%   p = {p:.3f}")
     sens = pd.DataFrame(rows)
-    sens.to_csv(f"{OUT_DIR}/task2_mapping_sensitivity.csv", index=False)
+    sup.add("mapping_sensitivity", sens)
 
     spread = sens.percent_consistent.max() - sens.percent_consistent.min()
     print(f"   -> range across mappings: {sens.percent_consistent.min():.1f}% "
@@ -152,7 +159,7 @@ def main():
           "independent\n    observations; the largest drug alone contributes "
           f"{d.Drug_ID.value_counts().iloc[0]} edges)")
 
-    pd.DataFrame([{
+    perm = pd.DataFrame([{
         "test": "gene-level permutation", "n_edges": len(d),
         "n_genes": d.Gene_ID.nunique(), "n_drugs": d.Drug_ID.nunique(),
         "observed_percent_consistent": round(100 * obs, 1),
@@ -161,10 +168,9 @@ def main():
         "permutations": N_PERM, "p_value": round(float(p), 4),
         "verdict": "not distinguishable from chance" if p >= 0.05
                    else "distinguishable from chance",
-    }]).to_csv(f"{OUT_DIR}/task2_consistency_permutation_test.csv", index=False)
-
-    print(f"\nwrote {OUT_DIR}/task2_mapping_sensitivity.csv")
-    print(f"wrote {OUT_DIR}/task2_consistency_permutation_test.csv")
+    }])
+    sup.add("consistency_permutation_test", perm)
+    sup.write()
 
 
 if __name__ == "__main__":

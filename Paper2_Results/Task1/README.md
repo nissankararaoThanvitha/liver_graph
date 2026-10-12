@@ -15,9 +15,7 @@ Built by `scripts/paper2_task1_master_table.py` from
 |---|---:|---|
 | `Paper2_progression_genes.csv` | 6,222 | the master table |
 | `task1_class_summary.csv` | 4 | counts per class, direction split per ladder |
-| `task1_discordant_shared_genes.csv` | 30 | genes whose two ladders disagree |
-| `task1_discordant_vs_concordant.csv` | 2 | why those 30 look the way they do |
-| `task1_stage_mean_verification.csv` | 40 | F0–F4 recomputed from `EXPRESSES` |
+| `task1_supporting.xlsx` | 4 sheets | `discordant_shared_genes` (30) · `discordant_vs_concordant` (2) · `stage_mean_verification` (40) · `stage_mean_check` (5) |
 | `task1_class_composition.png` | — | classes and direction, per ladder |
 
 ## The gene count differs from the plan
