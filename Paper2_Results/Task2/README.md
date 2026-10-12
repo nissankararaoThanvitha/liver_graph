@@ -8,6 +8,42 @@ action as unknown."*
 Built by `scripts/paper2_task2_drug_gene_edges.py` against instance
 **LiverDiseaseDB** (`dbms-1c965ecc-…`), database `neo4j`, 12 October 2026.
 
+## Does this match the plan? — line by line
+
+| Plan asks for | Status |
+|---|---|
+| Extract all connected drugs for every progression gene | ✅ 8,948 edges, all 6,222 genes queried |
+| …from **CausalKG**/OptimusKG | ⚠️ **CausalKG does not exist in this project.** The knowledge layer is OptimusKG (`data/graph_okg`). PrimeKG is superseded and kept only as `data/graph_primekg_superseded` for the comparison that justified the switch. Source used: OptimusKG |
+| Retain original evidence and source information | ❌ **not available per edge** — see below |
+| Record mechanism/action exactly where present | ✅ stored verbatim, 23 distinct values |
+| Otherwise mark the action as unknown | ✅ rule implemented — **it never fired**: all 8,948 edges carry an action, 0 marked unknown |
+| Column: Drug | ✅ |
+| Column: Drug ID | ✅ ChEMBL |
+| Column: Gene | ✅ HGNC symbol |
+| Column: Gene ID | ✅ Ensembl |
+| Column: Relationship | ✅ `ACTS_ON` for all |
+| Column: Action/Mechanism | ✅ |
+| Column: Evidence/Source | ⚠️ dataset-level only, stated explicitly in the cell |
+| Column: Database ID | ✅ `ChEMBL:<drug>\|Ensembl:<gene>` — unique for all 8,948 rows |
+| **Output:** complete drug-gene edge table | ✅ 8,948 rows |
+| **Output:** genes with ≥1 drug connection | ✅ 1,072 |
+| **Output:** total unique drugs, total relationships | ✅ 3,027 / 8,948 |
+| **Output:** number and % with known action direction | ✅ 1,005 / 11.2% |
+| **Output:** number and % reconcilable with Paper 1 direction | ✅ 1,005 / 11.2% |
+| **Output:** …and the F0–F4 trajectory pattern where available | ✅ 804 / 9.0% |
+
+Two notes on interpretation:
+
+**Database ID** is listed beside Drug ID in the plan, so it is meant to be
+something other than a copy of it. There is no edge-level identifier in the
+graph — the loader `MERGE`s the relationship and stores only `action` — so it
+is filled with the namespaced pair, which states which vocabulary each side is
+in and is a stable join key for the relationship itself.
+
+**"Reconcilable with the Paper 1 direction"** is computed on *drug-target*
+relationships only. Pharmacokinetic edges are excluded, because a gene that
+metabolises a drug has no mechanism to be consistent or inconsistent with.
+
 ## Files
 
 | File | Rows | What it is |
