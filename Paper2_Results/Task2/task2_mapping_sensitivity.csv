@@ -1,0 +1,7 @@
+mapping,edges,consistent,inconsistent,percent_consistent,null_mean_percent,permutation_p,beats_chance
+as published,1005,530,475,52.7,55.9,0.778,no
+STABILISER dropped,989,527,462,53.3,56.1,0.74,no
+DEGRADER dropped,1003,530,473,52.8,55.9,0.77,no
+both arguable dropped,987,527,460,53.4,56.1,0.731,no
+strict core only,886,516,370,58.2,58.3,0.512,no
+INHIBITOR vs AGONIST only,686,419,267,61.1,56.5,0.248,no

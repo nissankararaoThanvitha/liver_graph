@@ -53,6 +53,31 @@ metabolises a drug has no mechanism to be consistent or inconsistent with.
 | `task2_action_breakdown.csv` | 23 | every action value, classified |
 | `task2_mechanism_consistency.csv` | — | consistency × progression class |
 | `task2_consistency_by_cluster.csv` | — | consistency × F0–F4 trajectory pattern |
+| `task2_mapping_sensitivity.csv` | 6 | consistency under 6 action→direction mappings |
+| `task2_consistency_permutation_test.csv` | 1 | the valid test, replacing the binomial |
+| `task2_action_classes.png` | — | what the 8,948 edges actually are |
+| `task2_consistency_null.png` | — | observed consistency against its null |
+
+## Was mode of action lost when the graph was loaded?
+
+**No — checked, not assumed.** `load_knowledge_layer.cypher` does
+`MERGE (d)-[r:ACTS_ON]->(g) SET r.action = row.rel_type`, which keeps **one**
+edge per drug–gene pair. Had the source listed a pair twice with different
+actions, the later row would have silently overwritten the earlier one and the
+directional share would be an undercount.
+
+The source file is in the repo at
+`Paper1_Package/04_DATA/knowledge_layer/edges_drug_gene.csv`:
+
+```
+source rows                   20,674
+distinct drug-gene pairs      20,674
+pairs with >1 action row           0
+rows lost to MERGE overwrite       0
+```
+
+Nothing was overwritten. **11.2% is exact, not a floor.** Re-checked by
+`scripts/paper2_task2_robustness.py`.
 
 ## The required counts
 
@@ -139,15 +164,45 @@ The known showcase case lands where it should.
 
 530 consistent of 1,005 is **52.7%**.
 
+> **The binomial test first reported here (p = 0.088) was invalid.** It assumed
+> 1,005 independent observations. They are not independent: a drug can hit
+> several genes and a gene is hit by several drugs, so the edges come in
+> correlated blocks. Replaced with a permutation test that shuffles direction
+> labels at the **gene** level, moving each gene's whole set of edges together
+> and preserving the clustering under the null.
+
 ```
-binomial test vs 50%:  p = 0.088
-95% CI:                49.6%  to  55.9%     (includes 50%)
+observed                       52.7%
+null (gene-level shuffle, 10,000 permutations)
+  mean 55.9%, 95% range 45.6% – 66.5%
+permutation p = 0.778
 ```
 
-The interval contains 50%, so on this evidence drug action is **essentially
-uncorrelated** with progression direction. That is not a defect — these drugs
-were developed for other diseases and there is no reason their mechanisms
-should align with liver progression. But it means:
+The observed value sits **inside** the null, and in fact slightly below its
+mean. See `task2_consistency_null.png`.
+
+**Does the conclusion depend on my action → direction mapping?** No. The
+mapping is a judgement call, and a few members are genuinely arguable
+(`STABILISER`, `DEGRADER`, `MODULATOR`, `BINDING_AGENT`), so every variant was
+re-tested with its own null (`task2_mapping_sensitivity.csv`):
+
+| mapping | consistent | null | p |
+|---|---:|---:|---:|
+| as published | 52.7% | 55.9% | 0.778 |
+| STABILISER dropped | 53.3% | 56.1% | 0.740 |
+| DEGRADER dropped | 52.8% | 55.9% | 0.770 |
+| both arguable dropped | 53.4% | 56.1% | 0.731 |
+| strict core only | 58.2% | 58.3% | 0.512 |
+| INHIBITOR vs AGONIST only | 61.1% | 56.5% | 0.248 |
+
+Restricting to cleaner pharmacology lifts the raw percentage to 61.1%, but it
+also shrinks n and widens the null — **no variant beats its own null.** The
+conclusion is a property of the data, not of my mapping table.
+
+So on this evidence drug action is **essentially uncorrelated** with
+progression direction. That is not a defect — these drugs were developed for
+other diseases and there is no reason their mechanisms should align with liver
+progression. But it means:
 
 **Mechanism consistency cannot by itself rank candidates.** It is one weak
 evidence layer among several, exactly as the plan frames it — *"an early

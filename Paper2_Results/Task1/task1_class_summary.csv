@@ -1,5 +1,5 @@
-progression_class,genes,percent_of_union,increasing,decreasing,has_trajectory_tier_evidence
-fibrosis-only,2023,32.5,1040,983,True
-inflammation-only,2377,38.2,2042,335,False
-both,1822,29.3,1438,414,True
-UNION (all),6222,100.0,,,"3,845 of 6,222"
+progression_class,genes,percent_of_union,fibrosis_increasing,fibrosis_decreasing,inflammation_increasing,inflammation_decreasing,has_trajectory_tier_evidence
+fibrosis-only,2023,32.5,1040,983,0,0,True
+inflammation-only,2377,38.2,0,0,2042,335,False
+both,1822,29.3,1408,414,1438,384,True
+UNION (all),6222,100.0,2448,1397,3480,719,"3,845 of 6,222"

@@ -1,0 +1,2 @@
+test,n_edges,n_genes,n_drugs,observed_percent_consistent,null_mean_percent,null_95_low,null_95_high,permutations,p_value,verdict
+gene-level permutation,1005,202,721,52.7,55.9,45.6,66.5,10000,0.7778,not distinguishable from chance
