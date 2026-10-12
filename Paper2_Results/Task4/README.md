@@ -15,7 +15,7 @@ Built by `scripts/paper2_task4_drug_coverage.py`, therapeutic edges only.
 
 | File | Rows | What it is |
 |---|---:|---|
-| `task4_drug_coverage.csv` | 2,404 | every drug reaching ≥1 progression gene |
+| `task4_drug_coverage.csv` | 2,404 | every drug reaching ≥1 progression gene, with per-group **and per-cluster** coverage |
 | `task4_top_drugs_raw_coverage.csv` | 50 | top 50 by raw coverage, as the plan asks |
 | `task4_top_drugs_filtered.csv` | 50 | the same, non-therapeutic entities removed |
 | **`task4_top_drugs_by_coherence.csv`** | 50 | **ranked by coherence instead of count — read this one first** |
@@ -132,13 +132,32 @@ have. Worth raising alongside the LINCS/CMap gap.
 networkx. Restricted to named drugs reaching ≥3 progression genes: **376 drugs,
 610 genes, 2,033 edges**.
 
-Annotated with Paper 1 evidence as the plan requires — gene nodes carry
-`progression_class`, `group` (class × direction), `fibrosis_rho`,
-`inflammation_rho`, `cluster`, `cluster_pattern`, `largest_transition` and
+Annotated with Paper 1 evidence as the plan requires — all four annotations it
+names. Gene nodes carry `progression_class` (fibrosis-only / shared status),
+`group` (positive / negative direction), `cluster` and `cluster_pattern`
+(F0–F4 trajectory), and **`major_pathway`** (the major fibrosis-associated
+process), plus `fibrosis_rho`, `inflammation_rho`, `largest_transition` and
 `tier`; drug nodes carry coverage, total targets, specificity bound and
 coherence; edges carry `Action_Mechanism`, `action_class` and
 `mechanism_consistency`. So the network can be laid out by progression biology
 rather than by database connectivity alone.
+
+## Two gaps found on a re-read of the plan, and closed
+
+Checked column by column against the plan on 12 October:
+
+- **Per-cluster coverage was missing.** The plan asks for coverage "calculated
+  separately for … important F0–F4 trajectory clusters", and only a single
+  `dominant_cluster_fraction` existed. `n_cluster_C1` … `n_cluster_C5` are now
+  on every drug.
+- **The network lacked the pathway annotation.** The plan names four
+  annotations; three were present and "major fibrosis-associated
+  pathway/process" was not. Paper 1's gene table carries only a boolean per
+  database, so the name is taken from Paper 1's own enrichment
+  (`task4_top_pathways_per_group.csv`): for each gene, the most significant
+  enriched term it is listed under. **341 of the 610 network genes** now carry
+  one; the rest appear in no significant enriched term, which is a real absence
+  rather than a lookup failure.
 
 ## Carried forward
 
