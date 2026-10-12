@@ -9,7 +9,38 @@ Nothing is filtered. All 6,222 progression genes are carried through.
 
 Built by: scripts/paper2_task1_master_table.py
 Source:   Paper1_HighConfidence/00_all_progression_genes.csv
-Verified against the live Neo4j graph on 12 October 2026.
+
+
+VERIFICATION -- gene by gene, not count by count
+  scripts/paper2_task1_verify_against_neo4j.py
+
+Run 12 October 2026 against instance LiverDiseaseDB
+(dbms-1c965ecc-01bb-470f-86fa-237c81d9d40d), database `neo4j`. Note this is a
+different Neo4j instance from the one used before 12 October; the earlier
+instance no longer exists.
+
+Matching totals prove nothing on their own -- two sets of 6,222 genes can agree
+on size and disagree on membership -- so the audit compares the sets themselves
+and then every value:
+
+  gene SET identical                6,222, symmetric difference empty
+  progression_class vs TRACKS edges 6,222 agree
+  fibrosis_rho                      3,845 compared, max diff 5.0e-05
+  fibrosis_q_FDR                    3,845 compared, max diff 3.4e-21
+  fibrosis_n_studies                3,845 exact
+  fibrosis_direction                3,845 exact
+  inflammation_rho                  4,199 compared, max diff 5.0e-05
+  inflammation_q_FDR                4,199 compared, max diff 3.4e-21
+  inflammation_n_studies            4,199 exact
+  inflammation_direction            4,199 exact
+  gene symbols                      6,222 exact
+
+The residual rho difference of 5e-05 is CSV rounding to four decimal places,
+not disagreement. Direction is spelled rises/falls in the graph and
+increasing/decreasing in Paper 1's CSVs; that vocabulary difference is mapped,
+and once mapped the two agree on every row.
+
+RESULT: PASS. The table reproduces the live graph exactly.
 
 
 FILES
