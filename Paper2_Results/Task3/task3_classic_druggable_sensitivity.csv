@@ -1,0 +1,8 @@
+group,percent_all_genes,genes_excluding_classic,percent_excluding_classic,background_excluding_classic,odds_ratio,fisher_p
+fibrosis-only / positive,12.8,990,11.2,10.0,1.141,2.192e-01
+fibrosis-only / negative,19.3,909,16.5,10.0,1.786,1.095e-08
+inflammation-only / positive,13.5,1954,13.1,10.0,1.357,9.708e-05
+inflammation-only / negative,12.8,313,11.5,10.0,1.175,3.872e-01
+shared / positive,15.9,1348,14.8,10.0,1.566,3.938e-07
+shared / negative,22.7,342,20.2,10.0,2.285,3.431e-08
+shared / discordant,16.7,26,15.4,10.0,1.644,3.223e-01

@@ -24,7 +24,7 @@ Use Task1 for the master gene table. Analysis code is in
 |---|---|---|---|
 | 1 | Master progression-gene table | **done** | [`Task1/`](Task1) — 6,222 genes, verified against the graph |
 | 2 | Drug-gene extraction from the knowledge graph | **done** | [`Task2/`](Task2) — 8,948 edges, 1,072 genes, 3,027 drugs |
-| 3 | Druggability comparison across progression groups | not started | |
+| 3 | Druggability comparison across progression groups | **done** | [`Task3/`](Task3) — direction beats class; decreasing genes more druggable |
 | 4 | Drug coverage across progression genes | not started | |
 | 5 | MetaPath implementation and testing | not started | |
 | 6 | Target-prioritisation framework design | not started | |
