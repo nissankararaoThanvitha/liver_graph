@@ -185,7 +185,13 @@ def main():
 
     # ---- classify ---------------------------------------------------------
     e["Evidence_Source"] = SOURCE_NOTE
-    e["Database_ID"] = e["Drug_ID"]              # ChEMBL; gene side is Ensembl
+    # The plan lists Database ID beside Drug ID, so it is meant to be something
+    # other than a copy of it. There is no edge-level identifier in the graph --
+    # the loader MERGEs the relationship and stores only `action` -- so the
+    # honest filling is the namespaced pair, which states which vocabulary each
+    # side is in and is a stable join key for the relationship itself.
+    e["Database_ID"] = ("ChEMBL:" + e["Drug_ID"].astype(str)
+                        + "|Ensembl:" + e["Gene_ID"].astype(str))
     e["action_class"] = e.Action_Mechanism.map(action_class)
     e["gene_direction"] = e.apply(gene_direction, axis=1)
     e["mechanism_consistency"] = e.apply(consistency, axis=1)
@@ -194,6 +200,12 @@ def main():
                                 "Action_Mechanism"].unique())
     if unclassified:
         print(f"WARNING unclassified action values: {unclassified}")
+
+    # The plan says to mark the action unknown where the source has none. Report
+    # whether that rule ever fired, so "no unknowns" is a stated finding rather
+    # than something a reader has to infer from its absence.
+    n_unknown = int((e.Action_Mechanism == "unknown").sum())
+    print(f"edges with no recorded action (marked 'unknown'): {n_unknown}")
 
     order = ["Drug", "Drug_ID", "Gene", "Gene_ID", "Relationship",
              "Action_Mechanism", "Evidence_Source", "Database_ID",
