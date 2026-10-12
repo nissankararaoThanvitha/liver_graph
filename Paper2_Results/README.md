@@ -12,7 +12,8 @@ disease-associated set 4,199. Tier1 has 447 genes, with 23 shortlisted.
 The Paper 2 plan was written against 4,692 progression genes. That figure
 predates the biopsy-pairing correction of 9-10 October
 ([`BIOPSY_CORRECTION.md`](../BIOPSY_CORRECTION.md)); the corrected union is
-6,222 and that is what Paper 2 uses throughout.
+6,222. **Confirmed by the researcher on 12 October 2026: Paper 2 uses 6,222
+throughout.** The plan's 4,692 no longer describes any committed gene set.
 
 Use Task1 for the master gene table. Analysis code is in
 [`scripts/`](../scripts), following the convention Paper 1 settled on.

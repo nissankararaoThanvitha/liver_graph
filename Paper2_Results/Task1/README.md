@@ -35,9 +35,12 @@ corrected union is **6,222**.
 The script asserts every one of these and fails rather than writing a table
 that disagrees with Paper 1.
 
-> **Open decision.** Substituting 6,222 for the plan's 4,692 is a judgement
-> made here, not an instruction from the mentor. Everything downstream inherits
-> it. Worth confirming before Task 6 freezes any weights.
+> **Confirmed, 12 October 2026.** Substituting 6,222 for the plan's 4,692 was
+> initially a judgement made here rather than an instruction. It has since been
+> confirmed by the researcher, so Paper 2 uses 6,222 throughout and Task 6 can
+> freeze weights against it. The plan's 4,692 is superseded, not ignored: it
+> predates the biopsy-pairing correction and no longer describes any committed
+> gene set.
 
 ## Class summary
 
