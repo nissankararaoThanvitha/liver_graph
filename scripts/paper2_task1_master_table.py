@@ -123,6 +123,10 @@ def main():
     out.to_csv(f"{OUT_DIR}/Paper2_progression_genes.csv", index=False)
 
     # ---- the short summary the plan asks for ------------------------------
+    # Counted PER LADDER. An earlier version counted a gene as increasing if
+    # either ladder said so, which made the shared row sum to 1,852 against
+    # 1,822 genes -- the 30 contradictory genes landed in both columns. Each
+    # ladder is now reported on its own, so every column sums to its own n.
     rows = []
     for cls in ["fibrosis-only", "inflammation-only", "both"]:
         sub = out[out.progression_class == cls]
@@ -130,19 +134,23 @@ def main():
             "progression_class": cls,
             "genes": len(sub),
             "percent_of_union": round(100 * len(sub) / len(out), 1),
-            # The direction of the ladder the gene belongs to. For shared genes
-            # the two ladders could in principle disagree, so both are counted
-            # and any disagreement is reported separately below.
-            "increasing": int((sub.fibrosis_direction.eq("increasing")
-                               | sub.inflammation_direction.eq("increasing")).sum()),
-            "decreasing": int((sub.fibrosis_direction.eq("decreasing")
-                               | sub.inflammation_direction.eq("decreasing")).sum()),
+            "fibrosis_increasing": int(sub.fibrosis_direction.eq("increasing").sum()),
+            "fibrosis_decreasing": int(sub.fibrosis_direction.eq("decreasing").sum()),
+            "inflammation_increasing":
+                int(sub.inflammation_direction.eq("increasing").sum()),
+            "inflammation_decreasing":
+                int(sub.inflammation_direction.eq("decreasing").sum()),
             "has_trajectory_tier_evidence": cls != "inflammation-only",
         })
     rows.append({
         "progression_class": "UNION (all)",
         "genes": len(out), "percent_of_union": 100.0,
-        "increasing": "", "decreasing": "",
+        "fibrosis_increasing": int(out.fibrosis_direction.eq("increasing").sum()),
+        "fibrosis_decreasing": int(out.fibrosis_direction.eq("decreasing").sum()),
+        "inflammation_increasing":
+            int(out.inflammation_direction.eq("increasing").sum()),
+        "inflammation_decreasing":
+            int(out.inflammation_direction.eq("decreasing").sum()),
         "has_trajectory_tier_evidence": "3,845 of 6,222",
     })
     summary = pd.DataFrame(rows)
@@ -159,11 +167,29 @@ def main():
     # worth naming rather than averaging away.
     both = out[out.progression_class == "both"]
     disc = both[both.fibrosis_direction != both.inflammation_direction]
+    conc = both[both.fibrosis_direction == both.inflammation_direction]
     print(f"\nshared genes with DISCORDANT directions: {len(disc)}")
     if len(disc):
-        print(disc[["Gene", "fibrosis_direction", "inflammation_direction",
-                    "fibrosis_rho", "inflammation_rho"]].to_string(index=False))
         disc.to_csv(f"{OUT_DIR}/task1_discordant_shared_genes.csv", index=False)
+
+        # Are they biology, or are they weak? Reporting them without asking
+        # invites the reader to treat 30 contradictory genes as a finding.
+        cmp_rows = []
+        for label, grp in [("discordant", disc), ("concordant", conc)]:
+            cmp_rows.append({
+                "group": label, "genes": len(grp),
+                "median_abs_fibrosis_rho": round(grp.fibrosis_rho.abs().median(), 3),
+                "median_abs_inflammation_rho":
+                    round(grp.inflammation_rho.abs().median(), 3),
+                "median_fibrosis_q": f"{grp.fibrosis_q_FDR.median():.2e}",
+                "median_inflammation_q": f"{grp.inflammation_q_FDR.median():.2e}",
+                "median_fibrosis_n_studies": grp.fibrosis_n_studies.median(),
+                "median_inflammation_n_studies":
+                    grp.inflammation_n_studies.median(),
+            })
+        cmp = pd.DataFrame(cmp_rows)
+        cmp.to_csv(f"{OUT_DIR}/task1_discordant_vs_concordant.csv", index=False)
+        print(cmp.to_string(index=False))
 
 
 if __name__ == "__main__":

@@ -1,0 +1,3 @@
+group,genes,median_abs_fibrosis_rho,median_abs_inflammation_rho,median_fibrosis_q,median_inflammation_q,median_fibrosis_n_studies,median_inflammation_n_studies
+discordant,30,0.152,0.217,4.32e-03,6.03e-03,5.0,3.0
+concordant,1792,0.261,0.304,6.01e-09,1.35e-05,5.0,3.0
