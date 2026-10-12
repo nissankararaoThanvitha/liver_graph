@@ -236,6 +236,17 @@ def main():
     top_filtered = d[~d.likely_non_therapeutic].head(TOP_N)
     top_filtered.to_csv(f"{OUT_DIR}/task4_top_drugs_filtered.csv", index=False)
 
+    # Ranked by coherence instead of by count. Coverage and coherence correlate
+    # at -0.124 here, so this is a genuinely different list and it is the one
+    # worth reading first: it is where TRAPIDIL, MARIMASTAT and GLYCYRRHIZIN
+    # sit, none of which the coverage ranking surfaces. A floor of five genes
+    # keeps out drugs that score 1.0 coherence on two targets.
+    coherent = (d[(~d.likely_non_therapeutic) & (d.n_progression_genes >= 5)]
+                .sort_values(["dominant_class_fraction", "n_progression_genes"],
+                             ascending=[False, False])
+                .head(TOP_N))
+    coherent.to_csv(f"{OUT_DIR}/task4_top_drugs_by_coherence.csv", index=False)
+
     # ---- bipartite network, annotated with Paper 1 evidence ----------------
     net_drugs = set(d[(d.n_progression_genes >= 3)
                       & (~d.likely_non_therapeutic)].Drug_ID)
@@ -291,6 +302,7 @@ def main():
     print(f"\nwrote {OUT_DIR}/task4_drug_coverage.csv")
     print(f"wrote {OUT_DIR}/task4_top_drugs_raw_coverage.csv")
     print(f"wrote {OUT_DIR}/task4_top_drugs_filtered.csv")
+    print(f"wrote {OUT_DIR}/task4_top_drugs_by_coherence.csv")
     print(f"wrote {OUT_DIR}/task4_network_edges.csv")
     print(f"wrote {OUT_DIR}/task4_network_nodes.csv")
 
