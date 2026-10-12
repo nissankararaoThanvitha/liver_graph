@@ -318,6 +318,110 @@ def task5_metapaths():
     print(f"wrote {T5}/task5_metapath_sizes.png")
 
 
+
+def task6_stability():
+    """Why an exact top-50 is not defensible.
+
+    The table reports a median of 29 of 50 top genes retained. That hides the
+    spread, which is the actual finding: under 2,000 weightings drawn from the
+    whole simplex the number ranges from the high teens to the low forties.
+    Rank bands survive; a named top-50 does not.
+    """
+    T6 = "Paper2_Results/Task6"
+    s = pd.read_csv(f"{T6}/task6_weight_sensitivity.csv")
+    core = pd.read_csv(f"{T6}/task6_stable_core.csv")
+
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(11, 4.1),
+                                   gridspec_kw={"width_ratios": [1, 1.25]})
+
+    y = np.arange(len(s))
+    ax1.barh(y, s.median_top50_retained, .55, color=BLUE, label="median retained")
+    for i, r in s.iterrows():
+        ax1.plot([r.top50_retained_5th_pct, 50], [i, i], color="#8a97a5", lw=1.4,
+                 zorder=1)
+        ax1.plot(r.top50_retained_5th_pct, i, "|", color=RED, ms=11, mew=2)
+        ax1.text(r.median_top50_retained + 1, i,
+                 f"{int(r.median_top50_retained)}", va="center", fontsize=9)
+    ax1.axvline(50, color="#15202b", lw=1, ls=":")
+    ax1.text(50, len(s) - .35, " all 50", fontsize=8, color="#15202b")
+    ax1.set_yticks(y); ax1.set_yticklabels(s.progression_class, fontsize=9)
+    ax1.set_xlim(0, 58); ax1.set_xlabel("top-50 genes retained")
+    ax1.set_title("How much of a top-50 survives a reweighting\n"
+                  "red mark = 5th percentile across 2,000 weightings",
+                  fontsize=9.5, loc="left")
+    ax1.spines[["top", "right"]].set_visible(False)
+
+    # the defensible alternative: genes that keep their place most of the time
+    for cls, colour in zip(sorted(core.progression_class.unique()),
+                           [BLUE, ORANGE, GREEN]):
+        sub = core[core.progression_class == cls].nlargest(25, "top50_frequency")
+        ax2.plot(range(1, len(sub) + 1), 100 * sub.top50_frequency.values,
+                 marker="o", ms=3.5, lw=1.4, color=colour, label=cls)
+    ax2.axhline(80, color=RED, ls="--", lw=1.2)
+    ax2.text(24.5, 81.5, "80%", color=RED, fontsize=8, ha="right")
+    ax2.set_xlabel("gene, ranked by stability within its class")
+    ax2.set_ylabel("% of weightings keeping it in the top 50")
+    ax2.set_ylim(0, 105)
+    ax2.set_title("The stable core: genes that hold their place\n"
+                  "regardless of how the components are weighted",
+                  fontsize=9.5, loc="left")
+    ax2.legend(fontsize=8, loc="lower left", framealpha=.95)
+    ax2.spines[["top", "right"]].set_visible(False)
+    fig.tight_layout()
+    fig.savefig(f"{T6}/task6_weight_stability.png", dpi=200)
+    plt.close(fig)
+    print(f"wrote {T6}/task6_weight_stability.png")
+
+
+def task7_consistency():
+    """One group beats chance -- but only against the right baseline.
+
+    Three numbers per group: what was observed, what the drug vocabulary gives
+    for free (68% of directional drugs lower their target, so a rising gene is
+    consistent 67.6% of the time by accident), and what a gene-level
+    permutation gives. Eighteen numbers in a table; one glance as a figure.
+    """
+    T7 = "Paper2_Results/Task7"
+    t = pd.read_csv(f"{T7}/task7_consistency_significance.csv")
+    t = t.sort_values("observed_percent", ascending=False)
+
+    y = np.arange(len(t))
+    fig, ax = plt.subplots(figsize=(10, 4.6))
+    cols = [GREEN if v == "yes" else GREY for v in t.survives_gene_permutation]
+    ax.barh(y, t.observed_percent, .52, color=cols, zorder=3, label="observed")
+    ax.scatter(t.expected_from_vocabulary, y, marker="D", s=42, color=ORANGE,
+               zorder=4, label="expected from the drug vocabulary")
+    ax.scatter(t.gene_permutation_null, y, marker="o", s=42,
+               facecolor="white", edgecolor=RED, lw=1.6, zorder=4,
+               label="gene-permuted null")
+
+    # Labels sit inside the bar: outside they collide with the two marker
+    # series, and the markers are the comparison the figure exists to show.
+    for i, r in enumerate(t.itertuples()):
+        inside = r.observed_percent > 25
+        ax.text(r.observed_percent - 1.5 if inside else r.observed_percent + 1.5,
+                i, f"{r.observed_percent:.1f}%",
+                va="center", ha="right" if inside else "left", fontsize=8.5,
+                color="white" if inside else "#15202b",
+                fontweight="bold" if r.survives_gene_permutation == "yes" else "normal")
+        if r.survives_gene_permutation == "yes":
+            ax.text(r.observed_percent + 2, i, f"p = {r.gene_permutation_p}",
+                    va="center", fontsize=8, color=GREEN, fontweight="bold")
+    ax.set_yticks(y); ax.set_yticklabels(t.paper1_group, fontsize=9)
+    ax.set_xlabel("reversal-consistent relationships (%)")
+    ax.set_xlim(0, 100)
+    ax.set_title("Only one group beats its own null\n"
+                 "green = survives a gene-level permutation; the baseline is "
+                 "not 50%", fontsize=10, loc="left", pad=26)
+    ax.legend(fontsize=8, ncol=3, framealpha=.95,
+              loc="lower center", bbox_to_anchor=(.5, 1.02))
+    ax.spines[["top", "right"]].set_visible(False)
+    fig.tight_layout()
+    fig.savefig(f"{T7}/task7_consistency_vs_null.png", dpi=200)
+    plt.close(fig)
+    print(f"wrote {T7}/task7_consistency_vs_null.png")
+
+
 PURPLE_OK = "#6b4bd6"
 
 if __name__ == "__main__":
@@ -327,3 +431,5 @@ if __name__ == "__main__":
     task4_coverage()
     task4_network()
     task5_metapaths()
+    task6_stability()
+    task7_consistency()

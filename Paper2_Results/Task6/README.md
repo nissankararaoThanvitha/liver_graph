@@ -19,6 +19,7 @@ Built by `scripts/paper2_task6_target_score.py`, 12 October 2026.
 | `task6_weight_sensitivity.csv` | 3 | stability across 2,000 random weightings |
 | `task6_stable_core.csv` | 75 | genes that stay in the top 50 under almost any weighting |
 | `task6_supporting.xlsx` | 2 sheets | component availability · component correlations |
+| `task6_weight_stability.png` | — | top-50 survival, and the stable core |
 
 ---
 
