@@ -13,12 +13,15 @@ database `neo4j`, 12 October 2026.
 
 ## Files
 
+The per-gene table behind these numbers (all 14,794 eligible genes) is not
+committed: it is 1.4 MB of intermediate working data that nothing downstream
+reads. `scripts/paper2_task3_druggability.py` regenerates it.
+
 | File | What it is |
 |---|---|
 | `task3_druggability_summary.csv` | the summary table the plan asks for |
 | `task3_enrichment_tests.csv` | odds ratio, Fisher p, BH-q, degree-matched p |
 | `task3_supporting.xlsx` | 1 sheet — `classic_druggable_sensitivity`, the confound check |
-| `task3_gene_level_drug_connectivity.csv` | per-gene, all 14,794 eligible genes |
 | `task3_druggability_by_group.png` | the bar plot |
 
 ## Two decisions behind the numbers
