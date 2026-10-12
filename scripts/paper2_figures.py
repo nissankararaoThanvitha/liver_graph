@@ -7,12 +7,6 @@ PNGs per task rather than CSVs alone.
 Deliberately plain. These are working figures for reading the result, not
 manuscript figures; the Paper 1 package builds those separately at the end.
 
-Task 1
-  task1_class_composition.png  the three progression classes, and the direction
-                               split within each ladder. Drawn per ladder
-                               because a gene has a direction on each ladder it
-                               belongs to, not one overall.
-
 Task 2
   task2_action_classes.png     what the 8,948 drug-gene edges actually are.
                                The point of the figure is that the two largest
@@ -38,46 +32,6 @@ T2 = "Paper2_Results/Task2"
 BLUE, ORANGE, GREY = "#1f6feb", "#b4690e", "#8a97a5"
 GREEN, RED = "#0f8a5f", "#c0362c"
 
-
-def task1_classes():
-    s = pd.read_csv(f"{T1}/task1_class_summary.csv")
-    s = s[s.progression_class != "UNION (all)"]
-    classes = s.progression_class.tolist()
-    y = np.arange(len(classes))
-
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(11, 3.6),
-                                   gridspec_kw={"width_ratios": [1, 1.5]})
-
-    ax1.barh(y, s.genes, color=[BLUE, ORANGE, GREEN], height=.6)
-    ax1.set_yticks(y); ax1.set_yticklabels(classes); ax1.invert_yaxis()
-    for i, (n, p) in enumerate(zip(s.genes, s.percent_of_union)):
-        ax1.text(n + 40, i, f"{n:,}  ({p}%)", va="center", fontsize=9)
-    ax1.set_xlim(0, max(s.genes) * 1.35)
-    ax1.set_xlabel("genes")
-    ax1.set_title("Progression classes (6,222 genes)", fontsize=10, loc="left")
-    ax1.spines[["top", "right"]].set_visible(False)
-
-    # Direction per ladder. A gene has one direction per ladder it is on, so
-    # each ladder is drawn separately rather than merged into one bar.
-    h = .34
-    ax2.barh(y - h/2, s.fibrosis_increasing, h, color=RED, label="fibrosis: increasing")
-    ax2.barh(y - h/2, -s.fibrosis_decreasing, h, color="#f0a39c",
-             label="fibrosis: decreasing")
-    ax2.barh(y + h/2, s.inflammation_increasing, h, color="#0b5c40",
-             label="inflammation: increasing")
-    ax2.barh(y + h/2, -s.inflammation_decreasing, h, color="#95ddc0",
-             label="inflammation: decreasing")
-    ax2.axvline(0, color="#15202b", lw=.8)
-    ax2.set_yticks(y); ax2.set_yticklabels(classes); ax2.invert_yaxis()
-    ax2.set_xlabel("genes   (decreasing  <-  |  ->  increasing)")
-    ax2.set_title("Direction of change, per ladder", fontsize=10, loc="left")
-    ax2.legend(fontsize=7.5, loc="lower right", framealpha=.95)
-    ax2.spines[["top", "right"]].set_visible(False)
-
-    fig.tight_layout()
-    fig.savefig(f"{T1}/task1_class_composition.png", dpi=200)
-    plt.close(fig)
-    print(f"wrote {T1}/task1_class_composition.png")
 
 
 def task2_actions():
@@ -323,56 +277,12 @@ def task4_network():
     print(f"wrote {T4}/task4_network.png")
 
 
-def task4_clusters():
-    """Per-cluster coverage for the leading drugs.
-
-    The plan asks for coverage calculated separately per F0-F4 trajectory
-    cluster. The table carries it; this shows whether a drug sits in one
-    trajectory or spreads across several.
-    """
-    T4 = "Paper2_Results/Task4"
-    d = pd.read_csv(f"{T4}/task4_drug_coverage.csv")
-    ccols = sorted(c for c in d.columns if c.startswith("n_cluster_"))
-    if not ccols:
-        return
-    top = (d[(~d.likely_non_therapeutic) & (d.n_progression_genes >= 5)]
-           .nlargest(18, "n_progression_genes")
-           .set_index("Drug")[ccols].fillna(0))
-    labels = {"n_cluster_C1": "C1\nearly rise",
-              "n_cluster_C2": "C2\nlate rise",
-              "n_cluster_C3": "C3\nrise, plateau",
-              "n_cluster_C4": "C4\nmid fall",
-              "n_cluster_C5": "C5\nlate fall"}
-
-    fig, ax = plt.subplots(figsize=(7.2, 6.4))
-    im = ax.imshow(top.values, cmap="Blues", aspect="auto")
-    ax.set_xticks(range(len(ccols)))
-    ax.set_xticklabels([labels.get(c, c) for c in ccols], fontsize=8)
-    ax.set_yticks(range(len(top)))
-    ax.set_yticklabels(top.index, fontsize=8)
-    for i in range(len(top)):
-        for j in range(len(ccols)):
-            v = int(top.values[i, j])
-            if v:
-                ax.text(j, i, v, ha="center", va="center", fontsize=7.5,
-                        color="white" if v > top.values.max() * .55 else "#15202b")
-    ax.set_title("Which trajectory clusters each drug reaches\n"
-                 "(leading drugs by coverage; genes per cluster)",
-                 fontsize=10, loc="left")
-    fig.colorbar(im, ax=ax, label="progression genes", pad=.02)
-    fig.tight_layout()
-    fig.savefig(f"{T4}/task4_cluster_coverage.png", dpi=200)
-    plt.close(fig)
-    print(f"wrote {T4}/task4_cluster_coverage.png")
-
 
 PURPLE_OK = "#6b4bd6"
 
 if __name__ == "__main__":
-    task1_classes()
     task2_actions()
     task2_null()
     task3_druggability()
     task4_coverage()
     task4_network()
-    task4_clusters()

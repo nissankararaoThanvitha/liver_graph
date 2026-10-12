@@ -23,7 +23,6 @@ Built by `scripts/paper2_task4_drug_coverage.py`, therapeutic edges only.
 | `task4_supporting.xlsx` | 3 sheets | `coverage_by_group` · `flagged_non_therapeutic` · `specificity_trap` |
 | `task4_coverage_vs_coherence.png` | — | why coverage is not quality |
 | `task4_network.png` | — | coherent drugs and their targets, grouped by fibrosis process |
-| `task4_cluster_coverage.png` | — | which F0–F4 trajectory clusters each leading drug reaches |
 
 ## Headline numbers
 
