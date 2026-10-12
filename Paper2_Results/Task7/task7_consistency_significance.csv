@@ -1,0 +1,7 @@
+paper1_group,relationships,consistent,observed_percent,expected_from_vocabulary,binomial_p,gene_permutation_null,gene_permutation_p,binomial_q_BH,survives_gene_permutation
+fibrosis-only / negative,189,56,29.6,32.4,4.38e-01,53.4,0.029,5.25e-01,no
+fibrosis-only / positive,157,140,89.2,67.6,3.56e-10,53.3,0.001,2.14e-09,yes
+inflammation-only / negative,36,11,30.6,32.4,8.61e-01,56.0,0.3455,8.61e-01,no
+inflammation-only / positive,165,102,61.8,67.6,1.15e-01,53.1,0.3985,1.72e-01,no
+shared / negative,98,20,20.4,32.4,9.59e-03,53.2,0.0345,1.92e-02,no
+shared / positive,360,201,55.8,67.6,3.54e-06,53.4,0.8335,1.06e-05,no
