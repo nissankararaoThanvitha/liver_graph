@@ -18,6 +18,7 @@ Built by `scripts/paper2_task7_action_direction.py`, 12 October 2026.
 | `task7_consistency_by_cluster.csv` | 5 | consistency × F0–F4 trajectory cluster |
 | `task7_consistency_significance.csv` | 6 | is any group better than chance? |
 | `task7_supporting.xlsx` | 4 sheets | action vocabulary · by transition · by tier · top Tier-1 |
+| `task7_consistency_vs_null.png` | — | observed vs both baselines, per group |
 
 ## Scope — pharmacokinetic edges are excluded
 
