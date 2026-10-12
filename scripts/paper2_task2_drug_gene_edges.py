@@ -80,8 +80,13 @@ Usage:
 import json
 import os
 
+import sys
+
 import pandas as pd
 from neo4j import GraphDatabase
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from paper2_io import SupportingTables
 
 MASTER = "Paper2_Results/Task1/Paper2_progression_genes.csv"
 TRAJECTORY = "Paper1_HighConfidence/11_final_all_3845_genes.csv"
@@ -148,6 +153,7 @@ def consistency(row):
 
 def main():
     os.makedirs(OUT_DIR, exist_ok=True)
+    sup = SupportingTables(OUT_DIR, "task2")
     master = pd.read_csv(MASTER)
 
     drv, db = driver()
@@ -248,26 +254,25 @@ def main():
                      genes=("Gene_ID", "nunique"))
                 .reset_index()
                 .sort_values(["action_class", "edges"], ascending=[True, False]))
-    action.to_csv(f"{OUT_DIR}/task2_action_breakdown.csv", index=False)
+    sup.add("action_breakdown", action)
 
     cons = (e.groupby(["mechanism_consistency", "progression_class"])
               .agg(edges=("Drug_ID", "size"), drugs=("Drug_ID", "nunique"),
                    genes=("Gene_ID", "nunique"))
               .reset_index().sort_values("edges", ascending=False))
-    cons.to_csv(f"{OUT_DIR}/task2_mechanism_consistency.csv", index=False)
+    sup.add("mechanism_consistency", cons)
 
     cons_clu = (e[reconciled].groupby(["mechanism_consistency", "Cluster_pattern"])
                   .agg(edges=("Drug_ID", "size"), drugs=("Drug_ID", "nunique"),
                        genes=("Gene_ID", "nunique"))
                   .reset_index().sort_values("edges", ascending=False))
-    cons_clu.to_csv(f"{OUT_DIR}/task2_consistency_by_cluster.csv", index=False)
+    sup.add("consistency_by_cluster", cons_clu)
+
+    sup.write()
 
     # ---- report -----------------------------------------------------------
-    print(f"\nwrote {OUT_DIR}/task2_drug_gene_edges.csv  ({len(e):,} rows)")
-    print(f"wrote {OUT_DIR}/task2_summary.csv")
-    print(f"wrote {OUT_DIR}/task2_action_breakdown.csv")
-    print(f"wrote {OUT_DIR}/task2_mechanism_consistency.csv")
-    print(f"wrote {OUT_DIR}/task2_consistency_by_cluster.csv\n")
+    print(f"wrote {OUT_DIR}/task2_drug_gene_edges.csv  ({len(e):,} rows)")
+    print(f"wrote {OUT_DIR}/task2_summary.csv\n")
     print(summary.to_string(index=False))
     print("\naction classes:")
     print(e.action_class.value_counts().to_string())

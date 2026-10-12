@@ -48,8 +48,12 @@ Usage:
 """
 
 import os
+import sys
 
 import pandas as pd
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from paper2_io import SupportingTables
 
 SRC = "Paper1_HighConfidence/00_all_progression_genes.csv"
 OUT_DIR = "Paper2_Results/Task1"
@@ -79,6 +83,7 @@ COLUMNS = [
 
 def main():
     os.makedirs(OUT_DIR, exist_ok=True)
+    sup = SupportingTables(OUT_DIR, "task1")
     src = pd.read_csv(SRC)
 
     out = pd.DataFrame({
@@ -170,7 +175,7 @@ def main():
     conc = both[both.fibrosis_direction == both.inflammation_direction]
     print(f"\nshared genes with DISCORDANT directions: {len(disc)}")
     if len(disc):
-        disc.to_csv(f"{OUT_DIR}/task1_discordant_shared_genes.csv", index=False)
+        sup.add("discordant_shared_genes", disc)
 
         # Are they biology, or are they weak? Reporting them without asking
         # invites the reader to treat 30 contradictory genes as a finding.
@@ -188,8 +193,9 @@ def main():
                     grp.inflammation_n_studies.median(),
             })
         cmp = pd.DataFrame(cmp_rows)
-        cmp.to_csv(f"{OUT_DIR}/task1_discordant_vs_concordant.csv", index=False)
+        sup.add("discordant_vs_concordant", cmp)
         print(cmp.to_string(index=False))
+    sup.write()
 
 
 if __name__ == "__main__":
