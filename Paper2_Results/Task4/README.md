@@ -18,6 +18,7 @@ Built by `scripts/paper2_task4_drug_coverage.py`, therapeutic edges only.
 | `task4_drug_coverage.csv` | 2,404 | every drug reaching ≥1 progression gene |
 | `task4_top_drugs_raw_coverage.csv` | 50 | top 50 by raw coverage, as the plan asks |
 | `task4_top_drugs_filtered.csv` | 50 | the same, non-therapeutic entities removed |
+| **`task4_top_drugs_by_coherence.csv`** | 50 | **ranked by coherence instead of count — read this one first** |
 | `task4_network_nodes.csv` | 986 | bipartite network, annotated with Paper 1 evidence |
 | `task4_network_edges.csv` | 2,033 | — |
 | `task4_supporting.xlsx` | 3 sheets | `coverage_by_group` · `flagged_non_therapeutic` · `specificity_trap` |
@@ -81,8 +82,8 @@ Named drugs reaching ≥5 genes, ranked by coherence:
 | AMLODIPINE | 5 | 0.60 | calcium channel blocker |
 
 Three of the top five have a defensible route to liver fibrosis biology, where
-the raw-coverage list has none. **This is a better place to start than the
-coverage ranking** — and it is still candidate generation, not evidence.
+the raw-coverage list has none. The full ranking is `task4_top_drugs_by_coherence.csv`. **This is a better
+place to start than the coverage ranking** — and it is still candidate generation, not evidence.
 
 ## The specificity measure needed fixing before it could be used
 
