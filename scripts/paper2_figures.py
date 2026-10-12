@@ -278,6 +278,46 @@ def task4_network():
 
 
 
+
+def task5_metapaths():
+    """How many paths each metapath makes, and how much of that the cap removes.
+
+    Log scale, because the span runs from 60 thousand to 14 million. The point
+    of the figure is the pair of bars for MP4 and MP5: the same metapath shape
+    through Reactome and through GO BP, where GO makes eleven times the paths
+    and loses three quarters of them to a size cap that costs Reactome a fifth.
+    """
+    T5 = "Paper2_Results/Task5"
+    c = pd.read_csv(f"{T5}/task5_metapath_counts.csv")
+    raw = c[c.terms_filtered == "no"].set_index("metapath").paths
+    cap = c[c.terms_filtered != "no"].set_index("metapath").paths
+    order = [m for m in raw.index if m in cap.index]
+
+    x = np.arange(len(order)); w = .38
+    fig, ax = plt.subplots(figsize=(10, 4.4))
+    ax.bar(x - w/2, raw[order], w, color=GREY, label="all terms")
+    ax.bar(x + w/2, cap[order], w, color=BLUE, label="terms capped to 5-200 genes")
+    for i, m in enumerate(order):
+        drop = 100 * (1 - cap[m] / raw[m])
+        ax.text(i, max(raw[m], cap[m]) * 1.35, f"-{drop:.0f}%", ha="center",
+                fontsize=8, color=RED if drop > 50 else "#5a6b7c",
+                fontweight="bold" if drop > 50 else "normal")
+    ax.set_yscale("log")
+    ax.set_xticks(x)
+    ax.set_xticklabels([m.replace(" ", "\n", 1) for m in order], fontsize=8)
+    ax.set_ylabel("paths (log scale)")
+    ax.set_ylim(top=raw.max() * 9)
+    ax.set_title("MetaPath size, and how much of it is annotation breadth\n"
+                 "percentages = share of paths removed by the term-size cap",
+                 fontsize=10, loc="left")
+    ax.legend(fontsize=8, loc="upper left", framealpha=.95)
+    ax.spines[["top", "right"]].set_visible(False)
+    fig.tight_layout()
+    fig.savefig(f"{T5}/task5_metapath_sizes.png", dpi=200)
+    plt.close(fig)
+    print(f"wrote {T5}/task5_metapath_sizes.png")
+
+
 PURPLE_OK = "#6b4bd6"
 
 if __name__ == "__main__":
@@ -286,3 +326,4 @@ if __name__ == "__main__":
     task3_druggability()
     task4_coverage()
     task4_network()
+    task5_metapaths()
