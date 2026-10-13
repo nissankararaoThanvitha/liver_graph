@@ -81,21 +81,12 @@ Of the Task 4 coverage table's 2,404 drugs:
 These are the `*_source` columns in `task4_drug_coverage.csv`. A reader can
 separate the two recoveries from the delivered CSV alone, without this README.
 
-## The pilot that got it wrong, and why
+## Why three denominators
 
-A 60-drug pilot run before committing to the full fetch reported that ChEMBL
-would supply structures for **57 of 59** gap drugs. It sampled all
-18,640 OptimusKG records rather than the 12,025 in the graph, so it drew
-almost entirely from drugs Paper 2 never uses.
-
-The pilot was not wrong about ChEMBL. It was wrong about **which drugs
-mattered** — and a sample drawn from the wrong population will do that however
-large it is. An earlier four-drug test had suggested the opposite, because it
-happened to draw cisplatin and bismuth subsalicylate, inorganics with no
-standard SMILES. Both samples misled, in opposite directions, for the same
-reason.
-
-This is why the table above reports three denominators instead of one.
+A sample drawn from all 18,640 OptimusKG records describes a different
+population from the 12,025 drugs in the graph, and a different one again
+from the drugs Paper 2 ranks. The contribution changes completely between them,
+which is why all three are reported rather than one.
 
 ## Was this worth doing?
 

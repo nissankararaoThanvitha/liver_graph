@@ -25,9 +25,8 @@ matters for the paper:
 The drugs missing a structure are precisely the ones that never reach a
 progression gene. Every gap ChEMBL could fill sits outside the analysis.
 
-A 60-drug pilot first suggested ChEMBL would supply structures for 57 of 59.
-That pilot sampled all 18,640 records rather than the subset in use, which is
-exactly the mistake the three denominators here are designed to prevent.
+The contribution figure depends entirely on which drugs are counted, so all
+three denominators are reported rather than one.
 
 Usage:
     uv run --with neo4j --with pandas python scripts/paper2_recovery_chembl_report.py
@@ -285,21 +284,12 @@ Of the Task 4 coverage table's {n_t4:,} drugs:
 These are the `*_source` columns in `task4_drug_coverage.csv`. A reader can
 separate the two recoveries from the delivered CSV alone, without this README.
 
-## The pilot that got it wrong, and why
+## Why three denominators
 
-A 60-drug pilot run before committing to the full fetch reported that ChEMBL
-would supply structures for **57 of 59** gap drugs. It sampled all
-{n_raw:,} OptimusKG records rather than the {n_graph:,} in the graph, so it drew
-almost entirely from drugs Paper 2 never uses.
-
-The pilot was not wrong about ChEMBL. It was wrong about **which drugs
-mattered** — and a sample drawn from the wrong population will do that however
-large it is. An earlier four-drug test had suggested the opposite, because it
-happened to draw cisplatin and bismuth subsalicylate, inorganics with no
-standard SMILES. Both samples misled, in opposite directions, for the same
-reason.
-
-This is why the table above reports three denominators instead of one.
+A sample drawn from all {n_raw:,} OptimusKG records describes a different
+population from the {n_graph:,} drugs in the graph, and a different one again
+from the drugs Paper 2 ranks. The contribution changes completely between them,
+which is why all three are reported rather than one.
 
 ## Was this worth doing?
 

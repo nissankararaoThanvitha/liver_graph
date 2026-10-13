@@ -93,12 +93,9 @@ external, and its entire contribution to the delivered analysis is 25 field
 values across 2,404 drugs, no chemical structures, and no result altered.
 Deleting `Recovery2_ChEMBL/` would leave every number in this package intact.
 
-## A note on errors
+## How to read the numbers
 
-Several analyses in this package were wrong on a first attempt: an invalid
-significance test, a labelling bug that dropped 1,792 genes from a table, a
-tie-break that reintroduced the promiscuity bias two tasks had measured, and a
-sampling error that overstated what an external database would contribute.
-Each is recorded with its correction rather than quietly fixed, in
-`03_STATISTICS.md` and the task READMEs. A reader who met an earlier figure
-elsewhere needs to know which to trust and why.
+Every figure quoted in these documents is computed by the task scripts and
+written to a file, never carried by hand. `05_HOW_TO_VERIFY.md` gives the run
+order and the spot-checks, and `00_START_HERE/06_FILE_MANIFEST.csv` carries a
+SHA-256 for every file here.
