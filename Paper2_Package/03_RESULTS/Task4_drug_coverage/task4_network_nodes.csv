@@ -1,0 +1,987 @@
+node_type,label,node_id,n_progression_genes,all_known_targets,progression_fraction_lower95,dominant_class_fraction,progression_class,group,fibrosis_rho,inflammation_rho,cluster,cluster_pattern,largest_transition,tier,n_drugs,major_pathway,major_pathway_db
+drug,FOSTAMATINIB,CHEMBL2103830,131.0,302.0,0.379,0.336,,,,,,,,,,,
+drug,PHENETHYLISOTHIOCYANATE,CHEMBL151649,26.0,44.0,0.444,0.462,,,,,,,,,,,
+drug,CANNABIDIOL,CHEMBL190461,26.0,41.0,0.481,0.308,,,,,,,,,,,
+drug,NABIXIMOLS,CHEMBL3833333,26.0,41.0,0.481,0.308,,,,,,,,,,,
+drug,ASPIRIN,CHEMBL25,17.0,28.0,0.424,0.353,,,,,,,,,,,
+drug,TILUDRONIC ACID,CHEMBL1350,14.0,27.0,0.34,0.429,,,,,,,,,,,
+drug,SPIRONOLACTONE,CHEMBL1393,14.0,37.0,0.241,0.214,,,,,,,,,,,
+drug,MINOCYCLINE,CHEMBL1434,14.0,21.0,0.454,0.429,,,,,,,,,,,
+drug,ZONISAMIDE,CHEMBL750,13.0,31.0,0.264,0.308,,,,,,,,,,,
+drug,CAFFEINE,CHEMBL113,13.0,36.0,0.225,0.462,,,,,,,,,,,
+drug,GLUTATHIONE,CHEMBL1543,13.0,37.0,0.218,0.385,,,,,,,,,,,
+drug,DASATINIB,CHEMBL1421,13.0,23.0,0.368,0.308,,,,,,,,,,,
+drug,PROCAINE,CHEMBL569,12.0,19.0,0.41,0.333,,,,,,,,,,,
+drug,PSEUDOEPHEDRINE,CHEMBL1590,12.0,19.0,0.41,0.583,,,,,,,,,,,
+drug,AMOXAPINE,CHEMBL1113,12.0,44.0,0.163,0.5,,,,,,,,,,,
+drug,ARIPIPRAZOLE,CHEMBL1112,12.0,44.0,0.163,0.25,,,,,,,,,,,
+drug,ENFLURANE,CHEMBL1257,12.0,52.0,0.137,0.333,,,,,,,,,,,
+drug,TRIMEBUTINE,CHEMBL190044,11.0,26.0,0.255,0.364,,,,,,,,,,,
+drug,RESVERATROL,CHEMBL165,11.0,26.0,0.255,0.273,,,,,,,,,,,
+drug,BUTAMBEN,CHEMBL127516,11.0,35.0,0.186,0.364,,,,,,,,,,,
+drug,MARIMASTAT,CHEMBL279785,10.0,23.0,0.256,0.6,,,,,,,,,,,
+drug,QUERCETIN,CHEMBL50,10.0,27.0,0.215,0.5,,,,,,,,,,,
+drug,LAMOTRIGINE,CHEMBL741,10.0,41.0,0.138,0.4,,,,,,,,,,,
+drug,ZANUBRUTINIB,CHEMBL3936761,10.0,15.0,0.417,0.3,,,,,,,,,,,
+drug,REGORAFENIB,CHEMBL1946170,10.0,18.0,0.337,0.4,,,,,,,,,,,
+drug,DEXTROMETHORPHAN,CHEMBL52440,10.0,21.0,0.283,0.4,,,,,,,,,,,
+drug,LOXAPINE,CHEMBL831,10.0,32.0,0.18,0.4,,,,,,,,,,,
+drug,DRONEDARONE,CHEMBL184412,9.0,27.0,0.186,0.333,,,,,,,,,,,
+drug,PAROXETINE,CHEMBL490,9.0,36.0,0.138,0.444,,,,,,,,,,,
+drug,CLOZAPINE,CHEMBL42,9.0,27.0,0.186,0.444,,,,,,,,,,,
+drug,HALOTHANE,CHEMBL931,9.0,34.0,0.146,0.333,,,,,,,,,,,
+drug,AMITRIPTYLINE,CHEMBL629,9.0,33.0,0.151,0.333,,,,,,,,,,,
+drug,MICONAZOLE,CHEMBL91,9.0,24.0,0.212,0.333,,,,,,,,,,,
+drug,CHLORPROMAZINE,CHEMBL71,9.0,26.0,0.194,0.333,,,,,,,,,,,
+drug,PRASTERONE,CHEMBL90593,9.0,30.0,0.167,0.444,,,,,,,,,,,
+drug,ASENAPINE MALEATE,CHEMBL3544974,9.0,20.0,0.258,0.333,,,,,,,,,,,
+drug,PONATINIB,CHEMBL1171837,9.0,15.0,0.357,0.333,,,,,,,,,,,
+drug,TOPIRAMATE,CHEMBL220492,9.0,29.0,0.173,0.333,,,,,,,,,,,
+drug,IMIPRAMINE,CHEMBL11,9.0,25.0,0.202,0.556,,,,,,,,,,,
+drug,"(R,R)-TRAMADOL",CHEMBL1066,8.0,22.0,0.197,0.5,,,,,,,,,,,
+drug,CABERGOLINE,CHEMBL1201087,8.0,20.0,0.219,0.375,,,,,,,,,,,
+drug,DIHYDROERGOCRISTINE,CHEMBL601773,8.0,30.0,0.142,0.375,,,,,,,,,,,
+drug,VALPROIC ACID,CHEMBL109,8.0,22.0,0.197,0.375,,,,,,,,,,,
+drug,MIANSERIN,CHEMBL6437,8.0,23.0,0.188,0.5,,,,,,,,,,,
+drug,AMIODARONE,CHEMBL633,8.0,18.0,0.246,0.375,,,,,,,,,,,
+drug,TRAPIDIL,CHEMBL132767,8.0,24.0,0.18,0.625,,,,,,,,,,,
+drug,PROMETHAZINE,CHEMBL643,8.0,25.0,0.172,0.25,,,,,,,,,,,
+drug,RANOLAZINE,CHEMBL1404,8.0,30.0,0.142,0.375,,,,,,,,,,,
+drug,GLYCERIN,CHEMBL692,8.0,11.0,0.434,0.375,,,,,,,,,,,
+drug,FORMIC ACID,CHEMBL116736,8.0,12.0,0.391,0.5,,,,,,,,,,,
+drug,ZIPRASIDONE,CHEMBL708,8.0,30.0,0.142,0.375,,,,,,,,,,,
+drug,BROMOCRIPTINE,CHEMBL493,8.0,18.0,0.246,0.375,,,,,,,,,,,
+drug,DONEPEZIL,CHEMBL502,8.0,15.0,0.301,0.5,,,,,,,,,,,
+drug,MYRISTIC ACID,CHEMBL111077,8.0,21.0,0.208,0.375,,,,,,,,,,,
+drug,DEXIBUPROFEN,CHEMBL175,8.0,12.0,0.391,0.375,,,,,,,,,,,
+drug,QUETIAPINE,CHEMBL716,8.0,26.0,0.165,0.375,,,,,,,,,,,
+drug,PHENYTOIN,CHEMBL16,8.0,33.0,0.128,0.25,,,,,,,,,,,
+drug,ARIPIPRAZOLE LAUROXIL,CHEMBL2219425,8.0,25.0,0.172,0.375,,,,,,,,,,,
+drug,GUANOSINE TRIPHOSPHATE,CHEMBL1233147,8.0,10.0,0.49,0.5,,,,,,,,,,,
+drug,EPOTHILONE D,CHEMBL96172,7.0,10.0,0.397,0.571,,,,,,,,,,,
+drug,THEOPHYLLINE,CHEMBL190,7.0,14.0,0.268,0.429,,,,,,,,,,,
+drug,beta-D-Glucose,CHEMBL1614854,7.0,20.0,0.181,0.286,,,,,,,,,,,
+drug,PALIPERIDONE,CHEMBL1621,7.0,15.0,0.248,0.429,,,,,,,,,,,
+drug,PYRUVATE,CHEMBL1162144,7.0,11.0,0.354,0.286,,,,,,,,,,,
+drug,TRETINOIN,CHEMBL38,7.0,18.0,0.203,0.286,,,,,,,,,,,
+drug,ICOSAPENT,CHEMBL460026,7.0,10.0,0.397,0.429,,,,,,,,,,,
+drug,PERGOLIDE,CHEMBL531,7.0,17.0,0.216,0.286,,,,,,,,,,,
+drug,PROLINE,CHEMBL54922,7.0,20.0,0.181,0.429,,,,,,,,,,,
+drug,LEVOMEPROMAZINE,CHEMBL1764,7.0,19.0,0.191,0.286,,,,,,,,,,,
+drug,LINOLENIC ACID,CHEMBL8739,7.0,11.0,0.354,0.571,,,,,,,,,,,
+drug,CYCLOTHIAZIDE,CHEMBL61593,7.0,13.0,0.291,0.286,,,,,,,,,,,
+drug,TROGLITAZONE,CHEMBL408,7.0,9.0,0.453,0.429,,,,,,,,,,,
+drug,LISURIDE,CHEMBL157138,7.0,15.0,0.248,0.429,,,,,,,,,,,
+drug,DODECANOATE,CHEMBL108766,7.0,12.0,0.32,0.429,,,,,,,,,,,
+drug,LENVATINIB,CHEMBL1289601,7.0,10.0,0.397,0.286,,,,,,,,,,,
+drug,ERDAFITINIB,CHEMBL3545376,7.0,9.0,0.453,0.286,,,,,,,,,,,
+drug,STAUROSPORINE,CHEMBL388978,7.0,13.0,0.291,0.429,,,,,,,,,,,
+drug,TAMOXIFEN,CHEMBL83,7.0,17.0,0.216,0.429,,,,,,,,,,,
+drug,MAPROTILINE,CHEMBL21731,7.0,17.0,0.216,0.571,,,,,,,,,,,
+drug,NINTEDANIB,CHEMBL502835,7.0,12.0,0.32,0.429,,,,,,,,,,,
+drug,ELLAGIC ACID,CHEMBL6246,7.0,17.0,0.216,0.286,,,,,,,,,,,
+drug,HALOPERIDOL,CHEMBL54,7.0,18.0,0.203,0.429,,,,,,,,,,,
+drug,INDOMETHACIN,CHEMBL6,7.0,9.0,0.453,0.429,,,,,,,,,,,
+drug,PATUPILONE,CHEMBL94657,7.0,10.0,0.397,0.571,,,,,,,,,,,
+drug,NORTRIPTYLINE,CHEMBL445,7.0,23.0,0.156,0.429,,,,,,,,,,,
+drug,PAZOPANIB,CHEMBL477772,6.0,10.0,0.313,0.333,,,,,,,,,,,
+drug,COCAINE,CHEMBL370805,6.0,19.0,0.154,0.167,,,,,,,,,,,
+drug,COENZYME_A,CHEMBL1213327,6.0,8.0,0.409,0.5,,,,,,,,,,,
+drug,DIACEREIN,CHEMBL41286,6.0,11.0,0.28,0.5,,,,,,,,,,,
+drug,TRIMIPRAMINE,CHEMBL644,6.0,24.0,0.12,0.333,,,,,,,,,,,
+drug,APOMORPHINE,CHEMBL53,6.0,14.0,0.214,0.333,,,,,,,,,,,
+drug,DESIPRAMINE,CHEMBL72,6.0,21.0,0.138,0.5,,,,,,,,,,,
+drug,IBUPROFEN,CHEMBL521,6.0,10.0,0.313,0.333,,,,,,,,,,,
+drug,AMPHETAMINE,CHEMBL405,6.0,18.0,0.163,0.5,,,,,,,,,,,
+drug,DITHIOTHREITOL,CHEMBL406270,6.0,10.0,0.313,0.333,,,,,,,,,,,
+drug,TIAPRIDE,CHEMBL84158,6.0,24.0,0.12,0.5,,,,,,,,,,,
+drug,ILOPERIDONE,CHEMBL14376,6.0,11.0,0.28,0.333,,,,,,,,,,,
+drug,DOXEPIN,CHEMBL1628227,6.0,19.0,0.154,0.333,,,,,,,,,,,
+drug,KETAMINE,CHEMBL742,6.0,23.0,0.125,0.333,,,,,,,,,,,
+drug,FLUFENAMIC ACID,CHEMBL23588,6.0,6.0,0.61,0.333,,,,,,,,,,,
+drug,LEVOMENTHOL,CHEMBL470670,6.0,13.0,0.232,0.5,,,,,,,,,,,
+drug,FLUOCINOLONE ACETONIDE,CHEMBL989,6.0,6.0,0.61,0.833,,,,,,,,,,,
+drug,GLYCYRRHIZIN,CHEMBL441687,6.0,6.0,0.61,0.667,,,,,,,,,,,
+drug,ERGOTAMINE,CHEMBL442,6.0,15.0,0.198,0.333,,,,,,,,,,,
+drug,PIPAMPERONE,CHEMBL440294,6.0,10.0,0.313,0.333,,,,,,,,,,,
+drug,HYDROFLUMETHIAZIDE,CHEMBL1763,6.0,9.0,0.354,0.333,,,,,,,,,,,
+drug,ALVOCIDIB,CHEMBL428690,6.0,11.0,0.28,0.5,,,,,,,,,,,
+drug,PIZOTYLINE,CHEMBL294951,6.0,16.0,0.185,0.333,,,,,,,,,,,
+drug,DALFAMPRIDINE,CHEMBL284348,6.0,16.0,0.185,0.333,,,,,,,,,,,
+drug,BENZTHIAZIDE,CHEMBL1201039,6.0,13.0,0.232,0.333,,,,,,,,,,,
+drug,NICARDIPINE,CHEMBL1484,6.0,15.0,0.198,0.333,,,,,,,,,,,
+drug,FELODIPINE,CHEMBL1480,6.0,13.0,0.232,0.333,,,,,,,,,,,
+drug,DOTHIEPIN,CHEMBL1492500,6.0,16.0,0.185,0.5,,,,,,,,,,,
+drug,OCAPERIDONE,CHEMBL2104619,5.0,11.0,0.213,0.4,,,,,,,,,,,
+drug,AMLODIPINE,CHEMBL1491,5.0,7.0,0.359,0.6,,,,,,,,,,,
+drug,ESCITALOPRAM,CHEMBL1508,5.0,15.0,0.152,0.6,,,,,,,,,,,
+drug,SETIPTILINE,CHEMBL2104895,5.0,19.0,0.118,0.6,,,,,,,,,,,
+drug,NIMODIPINE,CHEMBL1428,5.0,10.0,0.237,0.4,,,,,,,,,,,
+drug,METHAMPHETAMINE,CHEMBL1201201,5.0,11.0,0.213,0.6,,,,,,,,,,,
+drug,ORNITHINE,CHEMBL446143,5.0,10.0,0.237,0.4,,,,,,,,,,,
+drug,MINAPRINE,CHEMBL278819,5.0,9.0,0.267,0.4,,,,,,,,,,,
+drug,DESFLURANE,CHEMBL1200733,5.0,29.0,0.076,0.4,,,,,,,,,,,
+drug,ETOPERIDONE,CHEMBL1743259,5.0,14.0,0.163,0.4,,,,,,,,,,,
+drug,YOHIMBINE,CHEMBL15245,5.0,18.0,0.125,0.4,,,,,,,,,,,
+drug,SULFASALAZINE,CHEMBL421,5.0,10.0,0.237,0.4,,,,,,,,,,,
+drug,INAMRINONE,CHEMBL12856,5.0,8.0,0.306,0.6,,,,,,,,,,,
+drug,CLADRIBINE,CHEMBL1619,5.0,9.0,0.267,0.6,,,,,,,,,,,
+drug,"Ionositol 1,3,4,5-Tetraphosphate",CHEMBL23552,5.0,8.0,0.306,0.6,,,,,,,,,,,
+drug,CITRIC ACID,CHEMBL1261,5.0,15.0,0.152,0.6,,,,,,,,,,,
+drug,ACETAZOLAMIDE,CHEMBL20,5.0,8.0,0.306,0.4,,,,,,,,,,,
+drug,CHOLIC ACID,CHEMBL205596,5.0,21.0,0.106,0.4,,,,,,,,,,,
+drug,LEVOCARNITINE,CHEMBL1149,5.0,9.0,0.267,0.6,,,,,,,,,,,
+drug,FLUCICLOVINE F18,CHEMBL254468,5.0,14.0,0.163,0.6,,,,,,,,,,,
+drug,ASPARAGINE,CHEMBL58832,5.0,9.0,0.267,0.4,,,,,,,,,,,
+drug,NIFEDIPINE,CHEMBL193,5.0,10.0,0.237,0.4,,,,,,,,,,,
+drug,DOPAMINE,CHEMBL59,5.0,14.0,0.163,0.4,,,,,,,,,,,
+drug,PHENELZINE,CHEMBL1089,5.0,6.0,0.436,0.6,,,,,,,,,,,
+drug,MEMANTINE,CHEMBL807,5.0,29.0,0.076,0.4,,,,,,,,,,,
+drug,RISPERIDONE,CHEMBL85,5.0,12.0,0.193,0.4,,,,,,,,,,,
+drug,CHLORPROTHIXENE,CHEMBL908,5.0,25.0,0.089,0.2,,,,,,,,,,,
+drug,OLANZAPINE,CHEMBL715,5.0,31.0,0.071,0.4,,,,,,,,,,,
+drug,GENISTEIN,CHEMBL44,5.0,13.0,0.177,0.4,,,,,,,,,,,
+drug,CYCLOBENZAPRINE,CHEMBL669,5.0,9.0,0.267,0.4,,,,,,,,,,,
+drug,SULINDAC,CHEMBL15770,5.0,7.0,0.359,0.6,,,,,,,,,,,
+drug,EPINASTINE,CHEMBL1106,5.0,6.0,0.436,0.4,,,,,,,,,,,
+drug,PENTOBARBITAL,CHEMBL448,5.0,28.0,0.079,0.4,,,,,,,,,,,
+drug,PALMITIC ACID,CHEMBL82293,5.0,9.0,0.267,0.6,,,,,,,,,,,
+drug,(+)-ALPHA-TOCOPHERYL SUCCINATE,CHEMBL81421,4.0,16.0,0.102,0.5,,,,,,,,,,,
+drug,PACLITAXEL,CHEMBL428647,4.0,6.0,0.3,0.5,,,,,,,,,,,
+drug,WORTMANNIN,CHEMBL428496,4.0,4.0,0.51,0.5,,,,,,,,,,,
+drug,ISOLEUCINE,CHEMBL1233584,4.0,5.0,0.376,0.25,,,,,,,,,,,
+drug,FENOLDOPAM,CHEMBL588,4.0,8.0,0.215,0.5,,,,,,,,,,,
+drug,ROPINIROLE,CHEMBL589,4.0,9.0,0.189,0.5,,,,,,,,,,,
+drug,PHTHALIC ACID,CHEMBL1045,4.0,9.0,0.189,0.25,,,,,,,,,,,
+drug,PROGESTERONE,CHEMBL103,4.0,9.0,0.189,0.5,,,,,,,,,,,
+drug,GEMFIBROZIL,CHEMBL457,4.0,5.0,0.376,0.75,,,,,,,,,,,
+drug,ELAIDIC ACID,CHEMBL460657,4.0,5.0,0.376,0.25,,,,,,,,,,,
+drug,LACIDIPINE,CHEMBL460291,4.0,9.0,0.189,0.5,,,,,,,,,,,
+drug,ADAPALENE,CHEMBL1265,4.0,9.0,0.189,0.5,,,,,,,,,,,
+drug,LURASIDONE,CHEMBL1237021,4.0,6.0,0.3,0.75,,,,,,,,,,,
+drug,CARBAMAZEPINE,CHEMBL108,4.0,12.0,0.138,0.25,,,,,,,,,,,
+drug,TETRAHYDROCANNABIVARIN,CHEMBL2387541,4.0,7.0,0.25,0.5,,,,,,,,,,,
+drug,CARBETAPENTANE,CHEMBL73234,4.0,14.0,0.117,0.25,,,,,,,,,,,
+drug,CARVEDILOL,CHEMBL723,4.0,18.0,0.09,0.75,,,,,,,,,,,
+drug,TOLAZOLINE,CHEMBL770,4.0,6.0,0.3,0.5,,,,,,,,,,,
+drug,CARFILZOMIB,CHEMBL451887,4.0,6.0,0.3,0.75,,,,,,,,,,,
+drug,THALIDOMIDE,CHEMBL468,4.0,6.0,0.3,0.75,,,,,,,,,,,
+drug,ISRADIPINE,CHEMBL1648,4.0,7.0,0.25,0.25,,,,,,,,,,,
+drug,IMATINIB,CHEMBL941,4.0,8.0,0.215,0.75,,,,,,,,,,,
+drug,CLOMIPRAMINE,CHEMBL415,4.0,6.0,0.3,0.5,,,,,,,,,,,
+drug,PARA-METHOXYAMPHETAMINE,CHEMBL278663,4.0,7.0,0.25,0.5,,,,,,,,,,,
+drug,ATOMOXETINE,CHEMBL641,4.0,11.0,0.152,0.5,,,,,,,,,,,
+drug,OXTRIPHYLLINE,CHEMBL1200434,4.0,5.0,0.376,0.75,,,,,,,,,,,
+drug,MEPERIDINE,CHEMBL607,4.0,16.0,0.102,0.5,,,,,,,,,,,
+drug,QUINETHAZONE,CHEMBL1532,4.0,5.0,0.376,0.25,,,,,,,,,,,
+drug,BRIVARACETAM,CHEMBL607400,4.0,15.0,0.109,0.5,,,,,,,,,,,
+drug,NAFAMOSTAT,CHEMBL273264,4.0,6.0,0.3,0.75,,,,,,,,,,,
+drug,MESALAMINE,CHEMBL704,4.0,7.0,0.25,0.5,,,,,,,,,,,
+drug,SORAFENIB,CHEMBL1336,4.0,10.0,0.168,0.25,,,,,,,,,,,
+drug,VINBLASTINE,CHEMBL159,4.0,6.0,0.3,0.75,,,,,,,,,,,
+drug,FENOPROFEN,CHEMBL1297,4.0,4.0,0.51,0.25,,,,,,,,,,,
+drug,ROSIGLITAZONE,CHEMBL121,4.0,7.0,0.25,0.5,,,,,,,,,,,
+drug,NITRENDIPINE,CHEMBL475534,4.0,7.0,0.25,0.25,,,,,,,,,,,
+drug,EXISULIND,CHEMBL488025,4.0,8.0,0.215,0.5,,,,,,,,,,,
+drug,ILOPROST,CHEMBL494,4.0,9.0,0.189,0.75,,,,,,,,,,,
+drug,ESMIRTAZAPINE,CHEMBL1366933,4.0,7.0,0.25,0.5,,,,,,,,,,,
+drug,RADICICOL,CHEMBL414883,4.0,4.0,0.51,0.75,,,,,,,,,,,
+drug,DIETHYLSTILBESTROL,CHEMBL411,4.0,9.0,0.189,0.75,,,,,,,,,,,
+drug,RIPRETINIB,CHEMBL4216467,4.0,6.0,0.3,0.5,,,,,,,,,,,
+drug,"INS(1,4,5)P3",CHEMBL279107,4.0,7.0,0.25,0.5,,,,,,,,,,,
+drug,CILNIDIPINE,CHEMBL452076,4.0,10.0,0.168,0.5,,,,,,,,,,,
+drug,OXIGLUTATIONE,CHEMBL1372,4.0,14.0,0.117,0.5,,,,,,,,,,,
+drug,BALSALAZIDE,CHEMBL1201346,4.0,4.0,0.51,0.5,,,,,,,,,,,
+drug,PROPOFOL,CHEMBL526,4.0,18.0,0.09,0.5,,,,,,,,,,,
+drug,ZOTEPINE,CHEMBL285802,4.0,8.0,0.215,0.5,,,,,,,,,,,
+drug,ATORVASTATIN,CHEMBL1487,4.0,5.0,0.376,0.75,,,,,,,,,,,
+drug,ARGININE,CHEMBL1485,4.0,9.0,0.189,0.25,,,,,,,,,,,
+drug,MIDOSTAURIN,CHEMBL608533,4.0,6.0,0.3,0.5,,,,,,,,,,,
+drug,NEFAZODONE,CHEMBL623,4.0,10.0,0.168,0.5,,,,,,,,,,,
+drug,ADEMETIONINE,CHEMBL1088977,4.0,8.0,0.215,0.75,,,,,,,,,,,
+drug,ZUCLOPENTHIXOL,CHEMBL53904,4.0,7.0,0.25,0.5,,,,,,,,,,,
+drug,DIPIVEFRIN,CHEMBL1201262,4.0,5.0,0.376,0.5,,,,,,,,,,,
+drug,SUNITINIB,CHEMBL535,4.0,8.0,0.215,0.5,,,,,,,,,,,
+drug,NILVADIPINE,CHEMBL517427,4.0,6.0,0.3,0.5,,,,,,,,,,,
+drug,IBUTILIDE,CHEMBL533,4.0,10.0,0.168,0.5,,,,,,,,,,,
+drug,IMIDAZOLE,CHEMBL540,4.0,9.0,0.189,0.5,,,,,,,,,,,
+drug,L-CITRULLINE,CHEMBL444814,4.0,12.0,0.138,0.5,,,,,,,,,,,
+drug,MENADIONE,CHEMBL590,4.0,10.0,0.168,0.75,,,,,,,,,,,
+drug,DEXTROAMPHETAMINE,CHEMBL612,4.0,10.0,0.168,0.75,,,,,,,,,,,
+drug,ARANIDIPINE,CHEMBL2104030,4.0,10.0,0.168,0.5,,,,,,,,,,,
+drug,S-ADENOSYLHOMOCYSTEINE,CHEMBL418052,4.0,10.0,0.168,0.5,,,,,,,,,,,
+drug,LEVONORGESTREL,CHEMBL1389,4.0,6.0,0.3,0.5,,,,,,,,,,,
+drug,ENZASTAURIN,CHEMBL300138,4.0,8.0,0.215,0.5,,,,,,,,,,,
+drug,PHENYLALANINE,CHEMBL301523,4.0,7.0,0.25,0.5,,,,,,,,,,,
+drug,LEUCINE,CHEMBL291962,4.0,6.0,0.3,0.5,,,,,,,,,,,
+drug,ANDROGRAPHOLIDE,CHEMBL186141,4.0,5.0,0.376,1.0,,,,,,,,,,,
+drug,DROXIDOPA,CHEMBL2103827,4.0,10.0,0.168,0.5,,,,,,,,,,,
+drug,ACAMPROSATE,CHEMBL1201293,4.0,24.0,0.067,0.5,,,,,,,,,,,
+drug,NOREPINEPHRINE,CHEMBL1437,4.0,12.0,0.138,0.5,,,,,,,,,,,
+drug,FENOFIBRIC ACID,CHEMBL981,4.0,5.0,0.376,0.25,,,,,,,,,,,
+drug,DOCETAXEL ANHYDROUS,CHEMBL92,4.0,6.0,0.3,0.5,,,,,,,,,,,
+drug,AMUVATINIB,CHEMBL2103851,4.0,6.0,0.3,0.5,,,,,,,,,,,
+drug,CLINOFIBRATE,CHEMBL1897738,3.0,3.0,0.438,0.333,,,,,,,,,,,
+drug,PROPIVERINE,CHEMBL1078261,3.0,7.0,0.158,0.333,,,,,,,,,,,
+drug,BUMETANIDE,CHEMBL1072,3.0,5.0,0.231,0.667,,,,,,,,,,,
+drug,OXCARBAZEPINE,CHEMBL1068,3.0,14.0,0.076,0.333,,,,,,,,,,,
+drug,AMILORIDE,CHEMBL945,3.0,8.0,0.137,0.333,,,,,,,,,,,
+drug,BUFEXAMAC,CHEMBL94394,3.0,4.0,0.301,0.333,,,,,,,,,,,
+drug,ORPHENADRINE,CHEMBL900,3.0,7.0,0.158,0.333,,,,,,,,,,,
+drug,SIMVASTATIN,CHEMBL1064,3.0,3.0,0.438,0.667,,,,,,,,,,,
+drug,PEMIGATINIB,CHEMBL4297522,3.0,4.0,0.301,0.667,,,,,,,,,,,
+drug,ISOPROTERENOL,CHEMBL434,3.0,8.0,0.137,0.333,,,,,,,,,,,
+drug,PHENYLBUTAZONE,CHEMBL101,3.0,3.0,0.438,0.667,,,,,,,,,,,
+drug,STIRIPENTOL,CHEMBL1983350,3.0,18.0,0.058,0.667,,,,,,,,,,,
+drug,EMRICASAN,CHEMBL197672,3.0,3.0,0.438,0.667,,,,,,,,,,,
+drug,IBUDILAST,CHEMBL19449,3.0,6.0,0.188,0.667,,,,,,,,,,,
+drug,TACRINE,CHEMBL95,3.0,3.0,0.438,0.333,,,,,,,,,,,
+drug,AMINOCAPROIC ACID,CHEMBL1046,3.0,3.0,0.438,0.333,,,,,,,,,,,
+drug,PROPIOMAZINE,CHEMBL1201210,3.0,10.0,0.108,0.333,,,,,,,,,,,
+drug,FLUOXYMESTERONE,CHEMBL1445,3.0,4.0,0.301,0.667,,,,,,,,,,,
+drug,TRIFLUPROMAZINE,CHEMBL570,3.0,5.0,0.231,0.333,,,,,,,,,,,
+drug,TESTOSTERONE CYPIONATE,CHEMBL1201101,3.0,3.0,0.438,0.667,,,,,,,,,,,
+drug,ACETYLCYSTEINE,CHEMBL600,3.0,10.0,0.108,0.333,,,,,,,,,,,
+drug,MERCAPTOPURINE ANHYDROUS,CHEMBL1425,3.0,4.0,0.301,0.333,,,,,,,,,,,
+drug,FLUTICASONE PROPIONATE,CHEMBL1473,3.0,4.0,0.301,0.333,,,,,,,,,,,
+drug,PEROSPIRONE,CHEMBL1472975,3.0,8.0,0.137,0.333,,,,,,,,,,,
+drug,MEPHENTERMINE,CHEMBL1201234,3.0,9.0,0.121,0.667,,,,,,,,,,,
+drug,XYLOMETAZOLINE,CHEMBL312448,3.0,6.0,0.188,0.667,,,,,,,,,,,
+drug,BINIMETINIB,CHEMBL3187723,3.0,5.0,0.231,0.667,,,,,,,,,,,
+drug,DICHLOROBENZYL ALCOHOL,CHEMBL3184437,3.0,14.0,0.076,0.333,,,,,,,,,,,
+drug,APALUTAMIDE,CHEMBL3183409,3.0,17.0,0.062,0.667,,,,,,,,,,,
+drug,CLONIDINE,CHEMBL134,3.0,6.0,0.188,0.667,,,,,,,,,,,
+drug,CIRAZOLINE,CHEMBL13852,3.0,6.0,0.188,0.667,,,,,,,,,,,
+drug,DEQUALINIUM,CHEMBL333826,3.0,3.0,0.438,0.333,,,,,,,,,,,
+drug,TERAZOSIN,CHEMBL611,3.0,7.0,0.158,0.667,,,,,,,,,,,
+drug,THIOPROPERAZINE,CHEMBL609109,3.0,6.0,0.188,0.667,,,,,,,,,,,
+drug,BOSUTINIB,CHEMBL288441,3.0,10.0,0.108,0.333,,,,,,,,,,,
+drug,TALBUTAL,CHEMBL1200802,3.0,20.0,0.052,0.667,,,,,,,,,,,
+drug,SEVOFLURANE,CHEMBL1200694,3.0,21.0,0.05,0.667,,,,,,,,,,,
+drug,ISOSORBIDE,CHEMBL1200660,3.0,3.0,0.438,0.667,,,,,,,,,,,
+drug,STANOLONE,CHEMBL27769,3.0,4.0,0.301,0.667,,,,,,,,,,,
+drug,DANAZOL,CHEMBL1479,3.0,6.0,0.188,0.667,,,,,,,,,,,
+drug,DROSPIRENONE,CHEMBL1509,3.0,4.0,0.301,0.333,,,,,,,,,,,
+drug,GALLAMINE TRIETHIODIDE,CHEMBL1200993,3.0,5.0,0.231,0.333,,,,,,,,,,,
+drug,INCADRONIC ACID,CHEMBL53950,3.0,4.0,0.301,0.667,,,,,,,,,,,
+drug,FLUTICASONE,CHEMBL1201396,3.0,4.0,0.301,0.333,,,,,,,,,,,
+drug,FLUPENTIXOL,CHEMBL54661,3.0,5.0,0.231,0.667,,,,,,,,,,,
+drug,DISOPYRAMIDE,CHEMBL517,3.0,8.0,0.137,0.667,,,,,,,,,,,
+drug,CYPROHEPTADINE,CHEMBL516,3.0,7.0,0.158,0.333,,,,,,,,,,,
+drug,GELDANAMYCIN,CHEMBL278315,3.0,3.0,0.438,1.0,,,,,,,,,,,
+drug,TRAZODONE,CHEMBL621,3.0,7.0,0.158,0.333,,,,,,,,,,,
+drug,NIFLUMIC ACID,CHEMBL63323,3.0,5.0,0.231,0.667,,,,,,,,,,,
+drug,PROPOXYCAINE,CHEMBL1195,3.0,10.0,0.108,0.333,,,,,,,,,,,
+drug,PRAMOXINE,CHEMBL1198,3.0,10.0,0.108,0.333,,,,,,,,,,,
+drug,ISOBUTYLMETHYLXANTHINE,CHEMBL275084,3.0,8.0,0.137,0.333,,,,,,,,,,,
+drug,NOMIFENSINE,CHEMBL273575,3.0,7.0,0.158,0.333,,,,,,,,,,,
+drug,KETOCONAZOLE,CHEMBL157101,3.0,6.0,0.188,0.667,,,,,,,,,,,
+drug,FOSFOCREATINE,CHEMBL1204644,3.0,7.0,0.158,0.333,,,,,,,,,,,
+drug,GILTERITINIB,CHEMBL3301622,3.0,19.0,0.055,0.333,,,,,,,,,,,
+drug,ROMIDEPSIN,CHEMBL343448,3.0,5.0,0.231,0.667,,,,,,,,,,,
+drug,FUROSEMIDE,CHEMBL35,3.0,3.0,0.438,0.333,,,,,,,,,,,
+drug,AMINOPHYLLINE,CHEMBL1370561,3.0,4.0,0.301,0.667,,,,,,,,,,,
+drug,"(1R,2S)-PHENYLPROPANOLAMINE",CHEMBL136560,3.0,6.0,0.188,0.667,,,,,,,,,,,
+drug,ESTRADIOL,CHEMBL135,3.0,7.0,0.158,0.667,,,,,,,,,,,
+drug,ENILURACIL,CHEMBL355200,3.0,3.0,0.438,0.667,,,,,,,,,,,
+drug,BRIGATINIB,CHEMBL3545311,3.0,9.0,0.121,0.667,,,,,,,,,,,
+drug,TRIFLUSAL,CHEMBL1332032,3.0,4.0,0.301,0.333,,,,,,,,,,,
+drug,ISOFLURANE,CHEMBL1256,3.0,24.0,0.043,0.667,,,,,,,,,,,
+drug,FOMEPIZOLE,CHEMBL1308,3.0,4.0,0.301,0.667,,,,,,,,,,,
+drug,ETIZOLAM,CHEMBL1289779,3.0,17.0,0.062,0.667,,,,,,,,,,,
+drug,ELAFIBRANOR,CHEMBL3707395,3.0,3.0,0.438,0.333,,,,,,,,,,,
+drug,TETRACAINE,CHEMBL698,3.0,12.0,0.089,0.333,,,,,,,,,,,
+drug,VERAPAMIL,CHEMBL6966,3.0,11.0,0.097,0.667,,,,,,,,,,,
+drug,MILNACIPRAN,CHEMBL259209,3.0,9.0,0.121,0.333,,,,,,,,,,,
+drug,MOXISYLYTE,CHEMBL159226,3.0,6.0,0.188,0.667,,,,,,,,,,,
+drug,LINDANE,CHEMBL15891,3.0,10.0,0.108,0.333,,,,,,,,,,,
+drug,METHYCLOTHIAZIDE,CHEMBL1577,3.0,4.0,0.301,0.333,,,,,,,,,,,
+drug,MIRTAZAPINE,CHEMBL654,3.0,8.0,0.137,0.333,,,,,,,,,,,
+drug,METHADONE,CHEMBL651,3.0,14.0,0.076,0.667,,,,,,,,,,,
+drug,LEUKOTRIENE_B4,CHEMBL65061,3.0,3.0,0.438,0.667,,,,,,,,,,,
+drug,ZOLMITRIPTAN,CHEMBL1185,3.0,8.0,0.137,0.333,,,,,,,,,,,
+drug,TESTOSTERONE ENANTHATE,CHEMBL1200335,3.0,3.0,0.438,0.667,,,,,,,,,,,
+drug,SURAMIN,CHEMBL265502,3.0,6.0,0.188,0.667,,,,,,,,,,,
+drug,BEZAFIBRATE,CHEMBL264374,3.0,7.0,0.158,0.333,,,,,,,,,,,
+drug,MIVACURIUM,CHEMBL1182833,3.0,4.0,0.301,0.333,,,,,,,,,,,
+drug,EPINEPHRINE,CHEMBL679,3.0,8.0,0.137,0.667,,,,,,,,,,,
+drug,DECAMETHONIUM,CHEMBL1190,3.0,4.0,0.301,0.667,,,,,,,,,,,
+drug,GLUCOSAMINE,CHEMBL493287,3.0,4.0,0.301,1.0,,,,,,,,,,,
+drug,MECLOFENAMIC ACID,CHEMBL509,3.0,5.0,0.231,0.667,,,,,,,,,,,
+drug,CAMPHOR,CHEMBL504760,3.0,4.0,0.301,0.333,,,,,,,,,,,
+drug,LOVASTATIN,CHEMBL503,3.0,3.0,0.438,0.667,,,,,,,,,,,
+drug,GLYBURIDE,CHEMBL472,3.0,8.0,0.137,0.333,,,,,,,,,,,
+drug,THIORIDAZINE,CHEMBL479,3.0,6.0,0.188,0.667,,,,,,,,,,,
+drug,METHYSERGIDE,CHEMBL485253,3.0,8.0,0.137,0.333,,,,,,,,,,,
+drug,PANOBINOSTAT,CHEMBL483254,3.0,11.0,0.097,0.667,,,,,,,,,,,
+drug,VANDETANIB,CHEMBL24828,3.0,5.0,0.231,0.667,,,,,,,,,,,
+drug,PERICIAZINE,CHEMBL251940,3.0,4.0,0.301,0.667,,,,,,,,,,,
+drug,ESTRAMUSTINE,CHEMBL1575,3.0,4.0,0.301,0.333,,,,,,,,,,,
+drug,PHENTERMINE,CHEMBL1574,3.0,6.0,0.188,0.333,,,,,,,,,,,
+drug,GUVACINE,CHEMBL76768,3.0,4.0,0.301,0.333,,,,,,,,,,,
+drug,OXYMETAZOLINE,CHEMBL762,3.0,6.0,0.188,0.667,,,,,,,,,,,
+drug,CHLOROQUINE,CHEMBL76,3.0,6.0,0.188,0.667,,,,,,,,,,,
+drug,BENDROFLUMETHIAZIDE,CHEMBL1684,3.0,5.0,0.231,0.667,,,,,,,,,,,
+drug,METRIBOLONE,CHEMBL166444,3.0,4.0,0.301,0.667,,,,,,,,,,,
+drug,SPERMINE,CHEMBL23194,3.0,6.0,0.188,0.667,,,,,,,,,,,
+drug,CANNABIDIVARIN,CHEMBL2387742,3.0,3.0,0.438,0.333,,,,,,,,,,,
+drug,TESTOSTERONE,CHEMBL386630,3.0,3.0,0.438,0.667,,,,,,,,,,,
+drug,DEXAMETHASONE,CHEMBL384467,3.0,5.0,0.231,0.667,,,,,,,,,,,
+drug,EZETIMIBE,CHEMBL1138,3.0,3.0,0.438,0.667,,,,,,,,,,,
+drug,SERTRALINE,CHEMBL809,3.0,6.0,0.188,0.333,,,,,,,,,,,
+drug,REMOXIPRIDE,CHEMBL22242,3.0,5.0,0.231,0.333,,,,,,,,,,,
+drug,NISOLDIPINE,CHEMBL1726,3.0,5.0,0.231,0.333,,,,,,,,,,,
+drug,PIMAGEDINE,CHEMBL225304,3.0,3.0,0.438,0.667,,,,,,,,,,,
+drug,(-)-CAMPHOR,CHEMBL2252949,3.0,4.0,0.301,0.333,,,,,,,,,,,
+drug,PROCHLORPERAZINE,CHEMBL728,3.0,8.0,0.137,0.667,,,,,,,,,,,
+drug,FLUPHENAZINE,CHEMBL726,3.0,6.0,0.188,0.667,,,,,,,,,,,
+drug,CHOLESTEROL,CHEMBL112570,3.0,4.0,0.301,0.667,,,,,,,,,,,
+drug,CLOBETASOL PROPIONATE,CHEMBL1159650,3.0,3.0,0.438,0.333,,,,,,,,,,,
+drug,ETHACRYNIC ACID,CHEMBL456,3.0,4.0,0.301,0.667,,,,,,,,,,,
+drug,ACEPROMAZINE,CHEMBL39560,3.0,6.0,0.188,0.667,,,,,,,,,,,
+drug,ESKETAMINE,CHEMBL395091,3.0,10.0,0.108,0.333,,,,,,,,,,,
+drug,PHENOBARBITAL,CHEMBL40,3.0,13.0,0.082,0.667,,,,,,,,,,,
+drug,HESPERETIN,CHEMBL399121,3.0,4.0,0.301,0.333,,,,,,,,,,,
+drug,METHARBITAL,CHEMBL450,3.0,20.0,0.052,0.667,,,,,,,,,,,
+drug,SECOBARBITAL,CHEMBL447,3.0,17.0,0.062,0.667,,,,,,,,,,,
+drug,BUTALBITAL,CHEMBL454,3.0,20.0,0.052,0.667,,,,,,,,,,,
+drug,DYPHYLLINE,CHEMBL1752,3.0,7.0,0.158,0.667,,,,,,,,,,,
+drug,AMYLOCAINE,CHEMBL1740065,3.0,10.0,0.108,0.333,,,,,,,,,,,
+drug,PHENOXYBENZAMINE,CHEMBL753,3.0,8.0,0.137,0.667,,,,,,,,,,,
+drug,LIDOCAINE,CHEMBL79,3.0,7.0,0.158,0.667,,,,,,,,,,,
+drug,INDEGLITAZAR,CHEMBL1232583,3.0,4.0,0.301,0.333,,,,,,,,,,,
+drug,BELINOSTAT,CHEMBL408513,3.0,11.0,0.097,0.667,,,,,,,,,,,
+drug,Alpha-Sialoside,CHEMBL1234621,3.0,7.0,0.158,0.333,,,,,,,,,,,
+drug,DEOXYCHOLIC ACID,CHEMBL406393,3.0,4.0,0.301,0.333,,,,,,,,,,,
+drug,TRICLOSAN,CHEMBL849,3.0,5.0,0.231,0.333,,,,,,,,,,,
+drug,GABEXATE,CHEMBL87563,3.0,3.0,0.438,0.667,,,,,,,,,,,
+drug,TESTOSTERONE UNDECANOATE,CHEMBL2107067,3.0,3.0,0.438,0.667,,,,,,,,,,,
+drug,HISTIDINE,CHEMBL17962,3.0,4.0,0.301,0.333,,,,,,,,,,,
+drug,LOFEXIDINE,CHEMBL17860,3.0,6.0,0.188,0.667,,,,,,,,,,,
+drug,LYSINE,CHEMBL8085,3.0,5.0,0.231,0.333,,,,,,,,,,,
+drug,ACETAMINOPHEN,CHEMBL112,3.0,5.0,0.231,0.333,,,,,,,,,,,
+drug,PYRIDOSTIGMINE,CHEMBL1115,3.0,3.0,0.438,0.333,,,,,,,,,,,
+drug,CABOZANTINIB,CHEMBL2105717,3.0,3.0,0.438,0.667,,,,,,,,,,,
+drug,FENFLURAMINE,CHEMBL87493,3.0,6.0,0.188,0.333,,,,,,,,,,,
+drug,ALENDRONIC ACID,CHEMBL870,3.0,5.0,0.231,0.333,,,,,,,,,,,
+drug,TIZANIDINE,CHEMBL1079,3.0,7.0,0.158,0.667,,,,,,,,,,,
+drug,INDIGOTINDISULFONATE,CHEMBL1091250,3.0,7.0,0.158,0.667,,,,,,,,,,,
+drug,GUANIDINE,CHEMBL821,3.0,4.0,0.301,0.333,,,,,,,,,,,
+drug,PRIMIDONE,CHEMBL856,3.0,20.0,0.052,0.667,,,,,,,,,,,
+drug,GESTRINONE,CHEMBL1868702,3.0,6.0,0.188,0.667,,,,,,,,,,,
+drug,PROPACETAMOL,CHEMBL1851805,3.0,4.0,0.301,0.333,,,,,,,,,,,
+drug,ERTIPROTAFIB,CHEMBL184041,3.0,4.0,0.301,0.333,,,,,,,,,,,
+drug,DIAZOXIDE,CHEMBL181,3.0,5.0,0.231,0.667,,,,,,,,,,,
+drug,TOLRESTAT,CHEMBL436,3.0,3.0,0.438,0.333,,,,,,,,,,,
+drug,GAMMA-AMINOBUTYRIC ACID,CHEMBL96,3.0,3.0,0.438,0.667,,,,,,,,,,,
+drug,CARBAMOYLCHOLINE,CHEMBL965,3.0,6.0,0.188,0.333,,,,,,,,,,,
+gene,AAK1,ENSG00000115977,,,,,both,shared / positive,0.3151,0.1212,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 3,1.0,,
+gene,ABAT,ENSG00000183044,,,,,both,shared / negative,-0.3096,-0.3631,C5,Late decrease (largest at F3→F4),F1→F2,Tier 1 - high confidence,2.0,Organic acid catabolic process,GO_BP
+gene,ABCA1,ENSG00000165029,,,,,fibrosis-only,fibrosis-only / negative,-0.0854,,C5,Late decrease (largest at F3→F4),F1→F2,Tier 2 - moderate confidence,1.0,Bile acid metabolism,Hallmark
+gene,ABCC1,ENSG00000103222,,,,,fibrosis-only,fibrosis-only / positive,0.2611,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,Taxis,GO_BP
+gene,ABCC9,ENSG00000069431,,,,,both,shared / negative,-0.4136,-0.2088,C5,Late decrease (largest at F3→F4),F3→F4,Tier 1 - high confidence,1.0,,
+gene,ACADSB,ENSG00000196177,,,,,both,shared / negative,-0.4468,-0.5874,C5,Late decrease (largest at F3→F4),F1→F2,Tier 1 - high confidence,2.0,Organic acid catabolic process,GO_BP
+gene,ACAT1,ENSG00000075239,,,,,fibrosis-only,fibrosis-only / negative,-0.2805,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,3.0,Organic acid catabolic process,GO_BP
+gene,ACAT2,ENSG00000120437,,,,,inflammation-only,inflammation-only / positive,,0.222,,,,,1.0,Cholesterol homeostasis,Hallmark
+gene,ACE2,ENSG00000130234,,,,,both,shared / positive,0.1255,0.1596,C3,"Early rise, then plateau",F0→F1,Tier 3,1.0,,
+gene,ACHE,ENSG00000087085,,,,,both,shared / positive,0.3001,0.3181,C1,"Early increase (F0→F1), then continued",F1→F2,Tier 2 - moderate confidence,8.0,Allograft rejection,Hallmark
+gene,ACSL4,ENSG00000068366,,,,,both,shared / positive,0.2338,0.4185,C2,Late increase (largest at F3→F4),F3→F4,Tier 3,3.0,,
+gene,ACYP2,ENSG00000170634,,,,,fibrosis-only,fibrosis-only / negative,-0.177,,C4,Mid decrease (largest at F1→F2),F1→F2,Tier 3,1.0,,
+gene,ADH1A,ENSG00000187758,,,,,fibrosis-only,fibrosis-only / negative,-0.256,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,Organic hydroxy compound metabolic process,GO_BP
+gene,ADH1B,ENSG00000196616,,,,,both,shared / negative,-0.3289,-0.2723,C5,Late decrease (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,2.0,Organic hydroxy compound metabolic process,GO_BP
+gene,ADH5,ENSG00000197894,,,,,fibrosis-only,fibrosis-only / negative,-0.2673,,C4,Mid decrease (largest at F1→F2),F1→F2,Tier 2 - moderate confidence,1.0,Xenobiotic metabolism,Hallmark
+gene,ADORA1,ENSG00000163485,,,,,both,shared / positive,0.1604,0.0798,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,8.0,Leukocyte migration,GO_BP
+gene,ADRA1A,ENSG00000120907,,,,,fibrosis-only,fibrosis-only / negative,-0.2601,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,79.0,,
+gene,ADRA2A,ENSG00000150594,,,,,both,shared / positive,0.4657,0.3222,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,73.0,Response to wounding,GO_BP
+gene,ADRA2C,ENSG00000184160,,,,,both,shared / positive,0.2173,0.3004,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,60.0,Response to wounding,GO_BP
+gene,ADSS1,ENSG00000185100,,,,,inflammation-only,inflammation-only / positive,,0.1989,,,,,1.0,,
+gene,AGXT2,ENSG00000113492,,,,,both,shared / negative,-0.2507,-0.2296,C5,Late decrease (largest at F3→F4),F2→F3,Tier 3,1.0,Organic acid catabolic process,GO_BP
+gene,AKR1A1,ENSG00000117448,,,,,inflammation-only,inflammation-only / positive,,0.235,,,,,1.0,,
+gene,AKR1B1,ENSG00000085662,,,,,fibrosis-only,fibrosis-only / positive,0.3072,,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 1 - high confidence,6.0,,
+gene,AKR1B10,ENSG00000198074,,,,,both,shared / positive,0.4761,0.6061,C1,"Early increase (F0→F1), then continued",F2→F3,Tier 2 - moderate confidence,3.0,,
+gene,AKR1C3,ENSG00000196139,,,,,inflammation-only,inflammation-only / positive,,0.2011,,,,,2.0,,
+gene,ALB,ENSG00000163631,,,,,fibrosis-only,fibrosis-only / negative,-0.1283,,C5,Late decrease (largest at F3→F4),F1→F2,Tier 2 - moderate confidence,1.0,Drug adme,Reactome
+gene,ALDH1A2,ENSG00000128918,,,,,both,shared / discordant,-0.1782,0.2993,C5,Late decrease (largest at F3→F4),F3→F4,Tier 3,1.0,Organic acid biosynthetic process,GO_BP
+gene,ALDH2,ENSG00000111275,,,,,fibrosis-only,fibrosis-only / negative,-0.3675,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 1 - high confidence,1.0,Small molecule catabolic process,GO_BP
+gene,ALOX5,ENSG00000012779,,,,,fibrosis-only,fibrosis-only / positive,0.2714,,C1,"Early increase (F0→F1), then continued",F2→F3,Tier 2 - moderate confidence,9.0,Neutrophil degranulation,Reactome
+gene,AMD1,ENSG00000123505,,,,,both,shared / positive,0.0711,0.273,C2,Late increase (largest at F3→F4),F3→F4,Tier 3,1.0,,
+gene,AMY2B,ENSG00000240038,,,,,inflammation-only,inflammation-only / negative,,-0.357,,,,,1.0,,
+gene,ANPEP,ENSG00000166825,,,,,both,shared / negative,-0.1769,-0.2148,C4,Mid decrease (largest at F1→F2),F2→F3,Tier 3,1.0,,
+gene,ANXA1,ENSG00000135046,,,,,both,shared / positive,0.2786,0.5202,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,3.0,Apoptosis,Hallmark
+gene,ANXA2,ENSG00000182718,,,,,both,shared / positive,0.4668,0.7296,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 1 - high confidence,1.0,External encapsulating structure organization,GO_BP
+gene,ANXA3,ENSG00000138772,,,,,both,shared / positive,0.2649,0.2509,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,Ameboidal type cell migration,GO_BP
+gene,ANXA4,ENSG00000196975,,,,,both,shared / positive,0.3143,0.4271,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,Il2 stat5 signaling,Hallmark
+gene,ANXA5,ENSG00000164111,,,,,both,shared / positive,0.2535,0.5983,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,Response to wounding,GO_BP
+gene,AOX1,ENSG00000138356,,,,,both,shared / negative,-0.3418,-0.3641,C5,Late decrease (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,2.0,Xenobiotic metabolism,Hallmark
+gene,AQP1,ENSG00000240583,,,,,both,shared / positive,0.4314,0.4307,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,1.0,Ameboidal type cell migration,GO_BP
+gene,AR,ENSG00000169083,,,,,fibrosis-only,fibrosis-only / negative,-0.2495,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,22.0,Bile acid metabolism,Hallmark
+gene,ARF1,ENSG00000143761,,,,,inflammation-only,inflammation-only / positive,,0.2379,,,,,3.0,Asparagine n linked glycosylation,Reactome
+gene,ARF6,ENSG00000165527,,,,,inflammation-only,inflammation-only / positive,,0.2466,,,,,1.0,,
+gene,ARG1,ENSG00000118520,,,,,both,shared / negative,-0.3511,-0.121,C5,Late decrease (largest at F3→F4),F1→F2,Tier 2 - moderate confidence,1.0,Organic acid catabolic process,GO_BP
+gene,ASL,ENSG00000126522,,,,,both,shared / negative,-0.1594,-0.3638,C4,Mid decrease (largest at F1→F2),F1→F2,Tier 3,1.0,Alpha amino acid metabolic process,GO_BP
+gene,ASPG,ENSG00000166183,,,,,both,shared / negative,-0.163,-0.4687,C4,Mid decrease (largest at F1→F2),F1→F2,Tier 2 - moderate confidence,1.0,Alpha amino acid metabolic process,GO_BP
+gene,ASRGL1,ENSG00000162174,,,,,inflammation-only,inflammation-only / positive,,0.4119,,,,,1.0,,
+gene,ASS1,ENSG00000130707,,,,,inflammation-only,inflammation-only / negative,,-0.4004,,,,,2.0,,
+gene,ATF2,ENSG00000115966,,,,,fibrosis-only,fibrosis-only / negative,-0.1557,,C5,Late decrease (largest at F3→F4),F2→F3,Tier 3,1.0,,
+gene,ATF3,ENSG00000162772,,,,,both,shared / positive,0.2933,0.4863,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 2 - moderate confidence,1.0,Tnfa signaling via nfkb,Hallmark
+gene,ATF7,ENSG00000170653,,,,,inflammation-only,inflammation-only / negative,,-0.1137,,,,,1.0,,
+gene,ATP2A2,ENSG00000174437,,,,,inflammation-only,inflammation-only / positive,,0.231,,,,,1.0,Mtorc1 signaling,Hallmark
+gene,ATP2B2,ENSG00000157087,,,,,inflammation-only,inflammation-only / negative,,-0.1314,,,,,2.0,,
+gene,ATP2B4,ENSG00000058668,,,,,fibrosis-only,fibrosis-only / positive,0.1711,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,2.0,Ameboidal type cell migration,GO_BP
+gene,ATP5F1A,ENSG00000152234,,,,,inflammation-only,inflammation-only / positive,,0.4061,,,,,1.0,,
+gene,ATP6V0A1,ENSG00000033627,,,,,both,shared / positive,0.1017,0.4899,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 3,1.0,Neutrophil degranulation,Reactome
+gene,ATP6V0B,ENSG00000117410,,,,,fibrosis-only,fibrosis-only / positive,0.2242,,C2,Late increase (largest at F3→F4),F3→F4,Tier 3,1.0,Signaling by receptor tyrosine kinases,Reactome
+gene,ATP6V0D1,ENSG00000159720,,,,,both,shared / positive,0.0762,0.5282,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 3,1.0,Signaling by receptor tyrosine kinases,Reactome
+gene,ATP6V1A,ENSG00000114573,,,,,inflammation-only,inflammation-only / positive,,0.2139,,,,,2.0,,
+gene,ATP6V1B2,ENSG00000147416,,,,,inflammation-only,inflammation-only / positive,,0.4207,,,,,1.0,,
+gene,ATP6V1C1,ENSG00000155097,,,,,inflammation-only,inflammation-only / positive,,0.0904,,,,,1.0,,
+gene,ATP6V1E1,ENSG00000131100,,,,,inflammation-only,inflammation-only / positive,,0.3982,,,,,1.0,,
+gene,ATP6V1E2,ENSG00000250565,,,,,both,shared / positive,0.1418,0.1931,C3,"Early rise, then plateau",F0→F1,Tier 3,1.0,Signaling by receptor tyrosine kinases,Reactome
+gene,ATP6V1F,ENSG00000128524,,,,,both,shared / positive,0.1446,0.3472,C2,Late increase (largest at F3→F4),F3→F4,Tier 3,1.0,Signaling by receptor tyrosine kinases,Reactome
+gene,ATP6V1H,ENSG00000047249,,,,,inflammation-only,inflammation-only / positive,,0.5613,,,,,1.0,Protein secretion,Hallmark
+gene,AURKA,ENSG00000087586,,,,,inflammation-only,inflammation-only / positive,,0.23,,,,,2.0,Cell cycle mitotic,Reactome
+gene,AXIN1,ENSG00000103126,,,,,fibrosis-only,fibrosis-only / positive,0.1065,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,Pathways in cancer,KEGG
+gene,AZGP1,ENSG00000160862,,,,,both,shared / negative,-0.3265,-0.3179,C5,Late decrease (largest at F3→F4),F1→F2,Tier 2 - moderate confidence,1.0,,
+gene,BCAT1,ENSG00000060982,,,,,both,shared / positive,0.156,0.6731,C1,"Early increase (F0→F1), then continued",F0→F1,Tier 3,2.0,Allograft rejection,Hallmark
+gene,BCAT2,ENSG00000105552,,,,,inflammation-only,inflammation-only / negative,,-0.2097,,,,,2.0,,
+gene,BCHE,ENSG00000114200,,,,,both,shared / negative,-0.2747,-0.2952,C5,Late decrease (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,6.0,Drug adme,Reactome
+gene,BCL2,ENSG00000171791,,,,,fibrosis-only,fibrosis-only / positive,0.299,,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,5.0,Morphogenesis of an epithelium,GO_BP
+gene,BCL2L1,ENSG00000171552,,,,,both,shared / positive,0.2712,0.1908,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,Apoptosis,Hallmark
+gene,BECN1,ENSG00000126581,,,,,inflammation-only,inflammation-only / positive,,0.5607,,,,,1.0,Sister chromatid segregation,GO_BP
+gene,BLK,ENSG00000136573,,,,,inflammation-only,inflammation-only / negative,,-0.1946,,,,,2.0,,
+gene,BTK,ENSG00000010671,,,,,fibrosis-only,fibrosis-only / positive,0.2006,,C3,"Early rise, then plateau",F3→F4,Tier 3,4.0,Myeloid leukocyte activation,GO_BP
+gene,CA1,ENSG00000133742,,,,,fibrosis-only,fibrosis-only / negative,-0.1943,,C5,Late decrease (largest at F3→F4),F2→F3,Tier 2 - moderate confidence,12.0,,
+gene,CA11,ENSG00000063180,,,,,inflammation-only,inflammation-only / positive,,0.1863,,,,,1.0,,
+gene,CA12,ENSG00000074410,,,,,both,shared / positive,0.3522,0.6405,C1,"Early increase (F0→F1), then continued",F2→F3,Tier 2 - moderate confidence,5.0,Hypoxia,Hallmark
+gene,CA13,ENSG00000185015,,,,,fibrosis-only,fibrosis-only / negative,-0.2947,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,3.0,,
+gene,CA14,ENSG00000118298,,,,,both,shared / negative,-0.2516,-0.5874,C5,Late decrease (largest at F3→F4),F1→F2,Tier 2 - moderate confidence,5.0,,
+gene,CA2,ENSG00000104267,,,,,both,shared / negative,-0.129,-0.1168,C4,Mid decrease (largest at F1→F2),F1→F2,Tier 3,13.0,Xenobiotic metabolism,Hallmark
+gene,CA9,ENSG00000107159,,,,,fibrosis-only,fibrosis-only / positive,0.1529,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,5.0,Morphogenesis of an epithelium,GO_BP
+gene,CACNA1C,ENSG00000151067,,,,,fibrosis-only,fibrosis-only / positive,0.4466,,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,26.0,Dilated cardiomyopathy,KEGG
+gene,CACNA1H,ENSG00000196557,,,,,fibrosis-only,fibrosis-only / negative,-0.2402,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,12.0,Organic hydroxy compound metabolic process,GO_BP
+gene,CACNA1I,ENSG00000100346,,,,,fibrosis-only,fibrosis-only / positive,0.2011,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,10.0,,
+gene,CACNA2D1,ENSG00000153956,,,,,both,shared / positive,0.2915,0.2832,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,10.0,Dilated cardiomyopathy,KEGG
+gene,CACNA2D3,ENSG00000157445,,,,,both,shared / positive,0.1179,0.3524,C3,"Early rise, then plateau",F2→F3,Tier 3,5.0,,
+gene,CACNB1,ENSG00000067191,,,,,fibrosis-only,fibrosis-only / positive,0.2964,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,16.0,Dilated cardiomyopathy,KEGG
+gene,CACNB2,ENSG00000165995,,,,,inflammation-only,inflammation-only / negative,,-0.2932,,,,,21.0,,
+gene,CACNB3,ENSG00000167535,,,,,inflammation-only,inflammation-only / positive,,0.1782,,,,,14.0,,
+gene,CAMK1D,ENSG00000183049,,,,,inflammation-only,inflammation-only / positive,,0.4502,,,,,1.0,,
+gene,CAMK2A,ENSG00000070808,,,,,inflammation-only,inflammation-only / negative,,-0.1336,,,,,2.0,,
+gene,CAMK2D,ENSG00000145349,,,,,both,shared / negative,-0.2097,-0.1626,C4,Mid decrease (largest at F1→F2),F2→F3,Tier 3,1.0,,
+gene,CAMKK1,ENSG00000004660,,,,,inflammation-only,inflammation-only / positive,,0.2509,,,,,1.0,,
+gene,CASK,ENSG00000147044,,,,,inflammation-only,inflammation-only / positive,,0.2159,,,,,2.0,,
+gene,CASP1,ENSG00000137752,,,,,both,shared / positive,0.2817,0.4777,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 3,3.0,Apoptosis,Hallmark
+gene,CASP3,ENSG00000164305,,,,,inflammation-only,inflammation-only / positive,,0.2434,,,,,5.0,Interferon gamma response,Hallmark
+gene,CASP4,ENSG00000196954,,,,,both,shared / positive,0.2281,0.5318,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 2 - moderate confidence,1.0,Apoptosis,Hallmark
+gene,CASP7,ENSG00000165806,,,,,inflammation-only,inflammation-only / positive,,0.3005,,,,,2.0,Interferon gamma response,Hallmark
+gene,CASR,ENSG00000036828,,,,,fibrosis-only,fibrosis-only / positive,0.1279,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,Morphogenesis of an epithelium,GO_BP
+gene,CAT,ENSG00000121691,,,,,fibrosis-only,fibrosis-only / negative,-0.3745,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 1 - high confidence,3.0,Bile acid metabolism,Hallmark
+gene,CBS,ENSG00000160200,,,,,both,shared / negative,-0.1477,-0.4412,C5,Late decrease (largest at F3→F4),F1→F2,Tier 3,1.0,Organic acid catabolic process,GO_BP
+gene,CCDC51,ENSG00000164051,,,,,inflammation-only,inflammation-only / positive,,0.1384,,,,,1.0,,
+gene,CCL2,ENSG00000108691,,,,,both,shared / positive,0.4135,0.5311,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,1.0,Tnfa signaling via nfkb,Hallmark
+gene,CCND1,ENSG00000110092,,,,,both,shared / positive,0.4023,0.1907,C1,"Early increase (F0→F1), then continued",F2→F3,Tier 1 - high confidence,1.0,Tnfa signaling via nfkb,Hallmark
+gene,CDK1,ENSG00000170312,,,,,inflammation-only,inflammation-only / positive,,0.4314,,,,,2.0,Cell cycle mitotic,Reactome
+gene,CDK16,ENSG00000102225,,,,,both,shared / positive,0.227,0.2567,C2,Late increase (largest at F3→F4),F3→F4,Tier 3,1.0,,
+gene,CDK4,ENSG00000135446,,,,,fibrosis-only,fibrosis-only / positive,0.1532,,C2,Late increase (largest at F3→F4),F2→F3,Tier 3,2.0,Pathways in cancer,KEGG
+gene,CDK5,ENSG00000164885,,,,,inflammation-only,inflammation-only / positive,,0.2218,,,,,1.0,,
+gene,CDK8,ENSG00000132964,,,,,inflammation-only,inflammation-only / positive,,0.3318,,,,,1.0,,
+gene,CEBPB,ENSG00000172216,,,,,inflammation-only,inflammation-only / negative,,-0.4256,,,,,1.0,,
+gene,CES1,ENSG00000198848,,,,,inflammation-only,inflammation-only / positive,,0.282,,,,,5.0,,
+gene,CHEK1,ENSG00000149554,,,,,inflammation-only,inflammation-only / positive,,0.2473,,,,,2.0,Cell cycle checkpoints,Reactome
+gene,CHEK2,ENSG00000183765,,,,,fibrosis-only,fibrosis-only / positive,0.2246,,C3,"Early rise, then plateau",F2→F3,Tier 3,2.0,E2f targets,Hallmark
+gene,CHRM2,ENSG00000181072,,,,,inflammation-only,inflammation-only / positive,,0.2448,,,,,35.0,,
+gene,CHRNA2,ENSG00000120903,,,,,fibrosis-only,fibrosis-only / negative,-0.1095,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 3,6.0,,
+gene,CHRNA4,ENSG00000101204,,,,,fibrosis-only,fibrosis-only / negative,-0.1158,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,13.0,,
+gene,CIT,ENSG00000122966,,,,,fibrosis-only,fibrosis-only / positive,0.2539,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,Rho gtpase cycle,Reactome
+gene,CKB,ENSG00000166165,,,,,fibrosis-only,fibrosis-only / positive,0.2602,,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,1.0,Myogenesis,Hallmark
+gene,CLEC14A,ENSG00000176435,,,,,both,shared / positive,0.255,0.4632,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,Ameboidal type cell migration,GO_BP
+gene,CNGA1,ENSG00000198515,,,,,both,shared / negative,-0.2381,-0.284,C5,Late decrease (largest at F3→F4),F3→F4,Tier 3,1.0,,
+gene,COQ8A,ENSG00000163050,,,,,inflammation-only,inflammation-only / negative,,-0.1888,,,,,1.0,Kras signaling dn,Hallmark
+gene,COX5B,ENSG00000135940,,,,,fibrosis-only,fibrosis-only / negative,-0.1766,,C4,Mid decrease (largest at F1→F2),F1→F2,Tier 3,1.0,,
+gene,COX7A1,ENSG00000161281,,,,,both,shared / positive,0.2505,0.2703,C2,Late increase (largest at F3→F4),F3→F4,Tier 3,1.0,Myogenesis,Hallmark
+gene,CPT1A,ENSG00000110090,,,,,inflammation-only,inflammation-only / positive,,0.0996,,,,,2.0,,
+gene,CPT2,ENSG00000157184,,,,,inflammation-only,inflammation-only / positive,,0.3463,,,,,1.0,,
+gene,CRAT,ENSG00000095321,,,,,fibrosis-only,fibrosis-only / negative,-0.1204,,C5,Late decrease (largest at F3→F4),F0→F1,Tier 3,2.0,Organic acid catabolic process,GO_BP
+gene,CRYZ,ENSG00000116791,,,,,inflammation-only,inflammation-only / positive,,0.3885,,,,,1.0,,
+gene,CSK,ENSG00000103653,,,,,both,shared / positive,0.0834,0.1414,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 3,3.0,Allograft rejection,Hallmark
+gene,CYB5B,ENSG00000103018,,,,,inflammation-only,inflammation-only / positive,,0.1585,,,,,1.0,Mtorc1 signaling,Hallmark
+gene,CYBA,ENSG00000051523,,,,,fibrosis-only,fibrosis-only / positive,0.282,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,Signaling by receptor tyrosine kinases,Reactome
+gene,CYCS,ENSG00000172115,,,,,both,shared / positive,0.1087,0.4257,C1,"Early increase (F0→F1), then continued",F0→F1,Tier 3,2.0,Pathways in cancer,KEGG
+gene,CYP17A1,ENSG00000148795,,,,,fibrosis-only,fibrosis-only / negative,-0.1354,,C5,Late decrease (largest at F3→F4),F2→F3,Tier 3,4.0,Xenobiotic metabolism,Hallmark
+gene,CYP1A1,ENSG00000140465,,,,,inflammation-only,inflammation-only / negative,,-0.2899,,,,,1.0,,
+gene,CYP1A2,ENSG00000140505,,,,,both,shared / negative,-0.186,-0.2964,C5,Late decrease (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,3.0,Fatty acid metabolic process,GO_BP
+gene,CYP1B1,ENSG00000138061,,,,,inflammation-only,inflammation-only / positive,,0.2236,,,,,4.0,,
+gene,CYP26B1,ENSG00000003137,,,,,inflammation-only,inflammation-only / negative,,-0.1339,,,,,1.0,,
+gene,CYP2C8,ENSG00000138115,,,,,fibrosis-only,fibrosis-only / negative,-0.3101,,C5,Late decrease (largest at F3→F4),F1→F2,Tier 1 - high confidence,1.0,Fatty acid metabolic process,GO_BP
+gene,CYP2E1,ENSG00000130649,,,,,both,shared / negative,-0.2697,-0.352,C5,Late decrease (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,Fatty acid metabolic process,GO_BP
+gene,CYP3A5,ENSG00000106258,,,,,fibrosis-only,fibrosis-only / negative,-0.0973,,C4,Mid decrease (largest at F1→F2),F2→F3,Tier 3,1.0,Lipid modification,GO_BP
+gene,CYP3A7,ENSG00000160870,,,,,inflammation-only,inflammation-only / positive,,0.3794,,,,,3.0,,
+gene,CYTH2,ENSG00000105443,,,,,both,shared / positive,0.2184,0.3246,C2,Late increase (largest at F3→F4),F3→F4,Tier 3,3.0,,
+gene,CYTH3,ENSG00000008256,,,,,fibrosis-only,fibrosis-only / positive,0.2563,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,,
+gene,DAPK3,ENSG00000167657,,,,,inflammation-only,inflammation-only / positive,,0.1869,,,,,1.0,Mitotic nuclear division,GO_BP
+gene,DAPP1,ENSG00000070190,,,,,both,shared / positive,0.2483,0.1965,C1,"Early increase (F0→F1), then continued",F1→F2,Tier 3,1.0,,
+gene,DBI,ENSG00000155368,,,,,fibrosis-only,fibrosis-only / negative,-0.3125,,C5,Late decrease (largest at F3→F4),F1→F2,Tier 1 - high confidence,1.0,Fatty acid metabolic process,GO_BP
+gene,DCLK2,ENSG00000170390,,,,,both,shared / positive,0.1937,0.1043,C2,Late increase (largest at F3→F4),F3→F4,Tier 3,1.0,,
+gene,DCLK3,ENSG00000163673,,,,,fibrosis-only,fibrosis-only / negative,-0.0641,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 3,1.0,,
+gene,DDR1,ENSG00000204580,,,,,fibrosis-only,fibrosis-only / positive,0.132,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,2.0,External encapsulating structure organization,GO_BP
+gene,DDR2,ENSG00000162733,,,,,fibrosis-only,fibrosis-only / positive,0.1396,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,2.0,External encapsulating structure organization,GO_BP
+gene,DGKQ,ENSG00000145214,,,,,both,shared / positive,0.156,0.2154,C1,"Early increase (F0→F1), then continued",F2→F3,Tier 3,1.0,Response to wounding,GO_BP
+gene,DGKZ,ENSG00000149091,,,,,fibrosis-only,fibrosis-only / positive,0.1795,,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 2 - moderate confidence,1.0,Immune response regulating signaling pathway,GO_BP
+gene,DLAT,ENSG00000150768,,,,,inflammation-only,inflammation-only / positive,,0.2267,,,,,1.0,,
+gene,DNMT1,ENSG00000130816,,,,,both,shared / positive,0.2619,0.2622,C3,"Early rise, then plateau",F0→F1,Tier 2 - moderate confidence,1.0,E2f targets,Hallmark
+gene,DNMT3A,ENSG00000119772,,,,,inflammation-only,inflammation-only / positive,,0.0849,,,,,1.0,,
+gene,DPP4,ENSG00000197635,,,,,inflammation-only,inflammation-only / positive,,0.2437,,,,,1.0,,
+gene,DPYD,ENSG00000188641,,,,,fibrosis-only,fibrosis-only / negative,-0.3269,,C5,Late decrease (largest at F3→F4),F2→F3,Tier 1 - high confidence,1.0,Small molecule catabolic process,GO_BP
+gene,DRD1,ENSG00000184845,,,,,fibrosis-only,fibrosis-only / negative,-0.2896,,C5,Late decrease (largest at F3→F4),F2→F3,Tier 2 - moderate confidence,42.0,Organic hydroxy compound metabolic process,GO_BP
+gene,DRD4,ENSG00000069696,,,,,inflammation-only,inflammation-only / negative,,-0.1837,,,,,24.0,,
+gene,ECI2,ENSG00000198721,,,,,fibrosis-only,fibrosis-only / negative,-0.3176,,C5,Late decrease (largest at F3→F4),F2→F3,Tier 1 - high confidence,1.0,Organic acid catabolic process,GO_BP
+gene,EDNRA,ENSG00000151617,,,,,both,shared / positive,0.1121,0.2651,C2,Late increase (largest at F3→F4),F3→F4,Tier 3,1.0,Ameboidal type cell migration,GO_BP
+gene,EEF2,ENSG00000167658,,,,,inflammation-only,inflammation-only / negative,,-0.1456,,,,,1.0,,
+gene,EFL1,ENSG00000140598,,,,,inflammation-only,inflammation-only / positive,,0.4459,,,,,1.0,,
+gene,EGFR,ENSG00000146648,,,,,fibrosis-only,fibrosis-only / negative,-0.2733,,C5,Late decrease (largest at F3→F4),F2→F3,Tier 3,6.0,,
+gene,EIF2AK2,ENSG00000055332,,,,,inflammation-only,inflammation-only / positive,,0.2527,,,,,1.0,Interferon alpha response,Hallmark
+gene,EIF2AK4,ENSG00000128829,,,,,inflammation-only,inflammation-only / positive,,0.2996,,,,,1.0,,
+gene,ELOVL2,ENSG00000197977,,,,,inflammation-only,inflammation-only / positive,,0.2653,,,,,1.0,,
+gene,ELOVL5,ENSG00000012660,,,,,inflammation-only,inflammation-only / positive,,0.3404,,,,,1.0,Mtorc1 signaling,Hallmark
+gene,EPHA2,ENSG00000142627,,,,,fibrosis-only,fibrosis-only / positive,0.2865,,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,3.0,Ameboidal type cell migration,GO_BP
+gene,EPHA3,ENSG00000044524,,,,,both,shared / positive,0.4978,0.5083,C1,"Early increase (F0→F1), then continued",F2→F3,Tier 1 - high confidence,1.0,,
+gene,EPHA4,ENSG00000116106,,,,,inflammation-only,inflammation-only / positive,,0.2329,,,,,1.0,,
+gene,EPHA6,ENSG00000080224,,,,,both,shared / positive,0.2836,0.1673,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,,
+gene,EPHB2,ENSG00000133216,,,,,both,shared / positive,0.3404,0.3217,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 2 - moderate confidence,1.0,Adaptive immune response,GO_BP
+gene,EPHB6,ENSG00000106123,,,,,both,shared / positive,0.2043,0.3563,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,,
+gene,EPRS1,ENSG00000136628,,,,,inflammation-only,inflammation-only / positive,,0.5972,,,,,1.0,Myc targets v1,Hallmark
+gene,ERBB2,ENSG00000141736,,,,,inflammation-only,inflammation-only / positive,,0.3451,,,,,3.0,,
+gene,ERN1,ENSG00000178607,,,,,fibrosis-only,fibrosis-only / negative,-0.1335,,C4,Mid decrease (largest at F1→F2),F2→F3,Tier 3,1.0,,
+gene,ESD,ENSG00000139684,,,,,inflammation-only,inflammation-only / positive,,0.3356,,,,,1.0,,
+gene,ESR1,ENSG00000091831,,,,,fibrosis-only,fibrosis-only / negative,-0.1347,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,20.0,Xenobiotic metabolism,Hallmark
+gene,ESRRG,ENSG00000196482,,,,,fibrosis-only,fibrosis-only / positive,0.2201,,C1,"Early increase (F0→F1), then continued",F2→F3,Tier 2 - moderate confidence,4.0,,
+gene,F10,ENSG00000126218,,,,,fibrosis-only,fibrosis-only / negative,-0.1935,,C4,Mid decrease (largest at F1→F2),F2→F3,Tier 3,1.0,Xenobiotic metabolism,Hallmark
+gene,F12,ENSG00000131187,,,,,fibrosis-only,fibrosis-only / negative,-0.1634,,C4,Mid decrease (largest at F1→F2),F2→F3,Tier 3,1.0,Complement and coagulation cascades,KEGG
+gene,F2,ENSG00000180210,,,,,fibrosis-only,fibrosis-only / negative,-0.3067,,C4,Mid decrease (largest at F1→F2),F1→F2,Tier 1 - high confidence,4.0,Complement and coagulation cascades,KEGG
+gene,F9,ENSG00000101981,,,,,fibrosis-only,fibrosis-only / negative,-0.3038,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,Complement and coagulation cascades,KEGG
+gene,FADS2,ENSG00000134824,,,,,inflammation-only,inflammation-only / positive,,0.2242,,,,,1.0,Mtorc1 signaling,Hallmark
+gene,FARSA,ENSG00000179115,,,,,inflammation-only,inflammation-only / positive,,0.2056,,,,,1.0,Aminoacyl trna biosynthesis,KEGG
+gene,FARSB,ENSG00000116120,,,,,inflammation-only,inflammation-only / positive,,0.3303,,,,,1.0,Aminoacyl trna biosynthesis,KEGG
+gene,FBXO41,ENSG00000163013,,,,,fibrosis-only,fibrosis-only / positive,0.2728,,C1,"Early increase (F0→F1), then continued",F1→F2,Tier 3,1.0,,
+gene,FGFR2,ENSG00000066468,,,,,both,shared / positive,0.2311,0.3693,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,8.0,Morphogenesis of an epithelium,GO_BP
+gene,FGFR3,ENSG00000068078,,,,,inflammation-only,inflammation-only / negative,,-0.221,,,,,7.0,Kras signaling dn,Hallmark
+gene,FGFR4,ENSG00000160867,,,,,inflammation-only,inflammation-only / negative,,-0.3209,,,,,4.0,,
+gene,FGR,ENSG00000000938,,,,,both,shared / positive,0.2821,0.3727,C3,"Early rise, then plateau",F0→F1,Tier 2 - moderate confidence,3.0,Allograft rejection,Hallmark
+gene,FOS,ENSG00000170345,,,,,both,shared / positive,0.2281,0.2878,C2,Late increase (largest at F3→F4),F3→F4,Tier 3,1.0,Tnfa signaling via nfkb,Hallmark
+gene,FRK,ENSG00000111816,,,,,fibrosis-only,fibrosis-only / negative,-0.2434,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 3,4.0,,
+gene,FXYD2,ENSG00000137731,,,,,fibrosis-only,fibrosis-only / positive,0.3594,,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,1.0,,
+gene,GABBR1,ENSG00000204681,,,,,fibrosis-only,fibrosis-only / positive,0.303,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,Ossification,GO_BP
+gene,GABBR2,ENSG00000136928,,,,,fibrosis-only,fibrosis-only / positive,0.1068,,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,1.0,Signaling by gpcr,Reactome
+gene,GABRB3,ENSG00000166206,,,,,both,shared / positive,0.2539,0.1225,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,21.0,Signaling by receptor tyrosine kinases,Reactome
+gene,GABRE,ENSG00000102287,,,,,both,shared / positive,0.5488,0.3505,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 1 - high confidence,20.0,,
+gene,GAMT,ENSG00000130005,,,,,inflammation-only,inflammation-only / negative,,-0.2276,,,,,3.0,Kras signaling dn,Hallmark
+gene,GATM,ENSG00000171766,,,,,fibrosis-only,fibrosis-only / negative,-0.3173,,C5,Late decrease (largest at F3→F4),F1→F2,Tier 1 - high confidence,2.0,Organic acid biosynthetic process,GO_BP
+gene,GGACT,ENSG00000134864,,,,,fibrosis-only,fibrosis-only / negative,-0.1255,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 3,1.0,,
+gene,GGCX,ENSG00000115486,,,,,fibrosis-only,fibrosis-only / negative,-0.0696,,C5,Late decrease (largest at F3→F4),F1→F2,Tier 2 - moderate confidence,1.0,,
+gene,GJA1,ENSG00000152661,,,,,both,shared / positive,0.188,0.2308,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,Epithelial mesenchymal transition,Hallmark
+gene,GLRB,ENSG00000109738,,,,,fibrosis-only,fibrosis-only / positive,0.1975,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,4.0,,
+gene,GLTP,ENSG00000139433,,,,,fibrosis-only,fibrosis-only / positive,0.1079,,C2,Late increase (largest at F3→F4),F3→F4,Tier 3,1.0,,
+gene,GLUD1,ENSG00000148672,,,,,fibrosis-only,fibrosis-only / negative,-0.3033,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 1 - high confidence,1.0,Organic acid catabolic process,GO_BP
+gene,GM2A,ENSG00000196743,,,,,both,shared / positive,0.1837,0.1853,C1,"Early increase (F0→F1), then continued",F0→F1,Tier 2 - moderate confidence,2.0,P53 pathway,Hallmark
+gene,GNMT,ENSG00000124713,,,,,both,shared / negative,-0.3492,-0.5412,C5,Late decrease (largest at F3→F4),F0→F1,Tier 1 - high confidence,2.0,Bile acid metabolism,Hallmark
+gene,GNPDA1,ENSG00000113552,,,,,both,shared / positive,0.1871,0.3427,C1,"Early increase (F0→F1), then continued",F0→F1,Tier 2 - moderate confidence,1.0,,
+gene,GPBAR1,ENSG00000179921,,,,,fibrosis-only,fibrosis-only / positive,0.0901,,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,2.0,Signaling by gpcr,Reactome
+gene,GPHN,ENSG00000171723,,,,,fibrosis-only,fibrosis-only / negative,-0.1432,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,2.0,Adipogenesis,Hallmark
+gene,GPR35,ENSG00000178623,,,,,both,shared / positive,0.1794,0.3563,C1,"Early increase (F0→F1), then continued",F1→F2,Tier 2 - moderate confidence,1.0,,
+gene,GPR55,ENSG00000135898,,,,,fibrosis-only,fibrosis-only / positive,0.1977,,C3,"Early rise, then plateau",F2→F3,Tier 2 - moderate confidence,3.0,Signaling by gpcr,Reactome
+gene,GPT,ENSG00000167701,,,,,both,shared / negative,-0.1136,-0.3643,C4,Mid decrease (largest at F1→F2),F1→F2,Tier 3,1.0,Organic acid catabolic process,GO_BP
+gene,GPT2,ENSG00000166123,,,,,fibrosis-only,fibrosis-only / negative,-0.1435,,C4,Mid decrease (largest at F1→F2),F0→F1,Tier 3,1.0,Small molecule catabolic process,GO_BP
+gene,GPX2,ENSG00000176153,,,,,both,shared / positive,0.2663,0.3484,C2,Late increase (largest at F3→F4),F3→F4,Tier 3,1.0,P53 pathway,Hallmark
+gene,GPX3,ENSG00000211445,,,,,both,shared / positive,0.377,0.3794,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,1.0,Apoptosis,Hallmark
+gene,GPX7,ENSG00000116157,,,,,both,shared / positive,0.3009,0.2963,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,1.0,Epithelial mesenchymal transition,Hallmark
+gene,GRIA3,ENSG00000125675,,,,,both,shared / positive,0.2693,0.3838,C3,"Early rise, then plateau",F0→F1,Tier 3,1.0,,
+gene,GRIN2D,ENSG00000105464,,,,,fibrosis-only,fibrosis-only / positive,0.3357,,C1,"Early increase (F0→F1), then continued",F2→F3,Tier 1 - high confidence,18.0,,
+gene,GRIN3A,ENSG00000198785,,,,,fibrosis-only,fibrosis-only / negative,-0.2662,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,21.0,,
+gene,GSK3A,ENSG00000105723,,,,,inflammation-only,inflammation-only / positive,,0.2307,,,,,1.0,Proteasomal protein catabolic process,GO_BP
+gene,GSR,ENSG00000104687,,,,,inflammation-only,inflammation-only / positive,,0.3103,,,,,4.0,Mtorc1 signaling,Hallmark
+gene,GSS,ENSG00000100983,,,,,inflammation-only,inflammation-only / positive,,0.4516,,,,,2.0,,
+gene,GSTA1,ENSG00000243955,,,,,fibrosis-only,fibrosis-only / negative,-0.2909,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,Fatty acid metabolic process,GO_BP
+gene,GSTA5,ENSG00000182793,,,,,fibrosis-only,fibrosis-only / negative,-0.1166,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,Drug metabolism cytochrome p450,KEGG
+gene,GSTM4,ENSG00000168765,,,,,fibrosis-only,fibrosis-only / negative,-0.2587,,C5,Late decrease (largest at F3→F4),F2→F3,Tier 2 - moderate confidence,2.0,Fatty acid metabolic process,GO_BP
+gene,GSTP1,ENSG00000084207,,,,,both,shared / positive,0.3215,0.4085,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,8.0,Pathways in cancer,KEGG
+gene,GSTZ1,ENSG00000100577,,,,,fibrosis-only,fibrosis-only / negative,-0.2903,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,3.0,Organic acid catabolic process,GO_BP
+gene,HAGH,ENSG00000063854,,,,,fibrosis-only,fibrosis-only / negative,-0.1138,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 3,1.0,Small molecule catabolic process,GO_BP
+gene,HAL,ENSG00000084110,,,,,both,shared / negative,-0.1686,-0.318,C4,Mid decrease (largest at F1→F2),F1→F2,Tier 3,1.0,Organic acid catabolic process,GO_BP
+gene,HARS1,ENSG00000170445,,,,,inflammation-only,inflammation-only / positive,,0.2805,,,,,1.0,Aminoacyl trna biosynthesis,KEGG
+gene,HDAC11,ENSG00000163517,,,,,both,shared / positive,0.2682,0.3982,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,2.0,,
+gene,HDAC2,ENSG00000196591,,,,,inflammation-only,inflammation-only / positive,,0.2625,,,,,10.0,Myc targets v1,Hallmark
+gene,HDAC6,ENSG00000094631,,,,,inflammation-only,inflammation-only / positive,,0.1636,,,,,4.0,Autophagy,Reactome
+gene,HDC,ENSG00000140287,,,,,fibrosis-only,fibrosis-only / positive,0.0937,,C2,Late increase (largest at F3→F4),F3→F4,Tier 3,1.0,,
+gene,HIPK2,ENSG00000064393,,,,,fibrosis-only,fibrosis-only / negative,-0.2417,,C5,Late decrease (largest at F3→F4),F2→F3,Tier 2 - moderate confidence,1.0,,
+gene,HK1,ENSG00000156515,,,,,fibrosis-only,fibrosis-only / positive,0.2366,,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,1.0,Hypoxia,Hallmark
+gene,HM13,ENSG00000101294,,,,,inflammation-only,inflammation-only / positive,,0.235,,,,,1.0,Proteasomal protein catabolic process,GO_BP
+gene,HMGB1,ENSG00000189403,,,,,fibrosis-only,fibrosis-only / negative,-0.196,,C4,Mid decrease (largest at F1→F2),F1→F2,Tier 3,1.0,,
+gene,HMGCR,ENSG00000113161,,,,,inflammation-only,inflammation-only / positive,,0.1633,,,,,7.0,Mtorc1 signaling,Hallmark
+gene,HNF4G,ENSG00000164749,,,,,fibrosis-only,fibrosis-only / negative,-0.0674,,C4,Mid decrease (largest at F1→F2),F2→F3,Tier 3,1.0,,
+gene,HNRNPF,ENSG00000169813,,,,,inflammation-only,inflammation-only / positive,,0.2134,,,,,1.0,,
+gene,HPRT1,ENSG00000165704,,,,,inflammation-only,inflammation-only / negative,,-0.4826,,,,,1.0,,
+gene,HRAS,ENSG00000174775,,,,,both,shared / positive,0.1942,0.2382,C2,Late increase (largest at F3→F4),F1→F2,Tier 3,1.0,P53 pathway,Hallmark
+gene,HRH2,ENSG00000113749,,,,,inflammation-only,inflammation-only / positive,,0.1901,,,,,8.0,,
+gene,HSD11B1,ENSG00000117594,,,,,fibrosis-only,fibrosis-only / negative,-0.2351,,C5,Late decrease (largest at F3→F4),F1→F2,Tier 2 - moderate confidence,1.0,Xenobiotic metabolism,Hallmark
+gene,HSP90AA1,ENSG00000080824,,,,,inflammation-only,inflammation-only / positive,,0.3239,,,,,2.0,Cell cycle mitotic,Reactome
+gene,HSP90AB1,ENSG00000096384,,,,,inflammation-only,inflammation-only / positive,,0.487,,,,,2.0,Cell cycle mitotic,Reactome
+gene,HSP90B1,ENSG00000166598,,,,,inflammation-only,inflammation-only / positive,,0.183,,,,,2.0,Mtorc1 signaling,Hallmark
+gene,HSPA2,ENSG00000126803,,,,,fibrosis-only,fibrosis-only / positive,0.3746,,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,1.0,,
+gene,HSPA4,ENSG00000170606,,,,,inflammation-only,inflammation-only / positive,,0.2997,,,,,1.0,Mtorc1 signaling,Hallmark
+gene,HSPA5,ENSG00000044574,,,,,inflammation-only,inflammation-only / positive,,0.3607,,,,,1.0,Mtorc1 signaling,Hallmark
+gene,HSPA8,ENSG00000109971,,,,,inflammation-only,inflammation-only / positive,,0.3647,,,,,1.0,G2m checkpoint,Hallmark
+gene,HSPH1,ENSG00000120694,,,,,both,shared / positive,0.1213,0.4653,C3,"Early rise, then plateau",F0→F1,Tier 3,1.0,Positive regulation of cell adhesion,GO_BP
+gene,HTR2A,ENSG00000102468,,,,,both,shared / negative,-0.3137,-0.233,C5,Late decrease (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,70.0,,
+gene,HTR2B,ENSG00000135914,,,,,fibrosis-only,fibrosis-only / positive,0.1512,,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 2 - moderate confidence,31.0,Positive regulation of cytokine production,GO_BP
+gene,HTR7,ENSG00000148680,,,,,both,shared / positive,0.44,0.4449,C3,"Early rise, then plateau",F2→F3,Tier 1 - high confidence,35.0,,
+gene,IARS1,ENSG00000196305,,,,,inflammation-only,inflammation-only / positive,,0.3752,,,,,1.0,Myc targets v1,Hallmark
+gene,ICAM1,ENSG00000090339,,,,,fibrosis-only,fibrosis-only / positive,0.2455,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,Extracellular matrix organization,Reactome
+gene,IL1B,ENSG00000125538,,,,,both,shared / positive,0.3297,0.3232,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 2 - moderate confidence,4.0,Tnfa signaling via nfkb,Hallmark
+gene,IL4I1,ENSG00000104951,,,,,both,shared / positive,0.272,0.3755,C1,"Early increase (F0→F1), then continued",F0→F1,Tier 3,1.0,T cell activation,GO_BP
+gene,IMPDH1,ENSG00000106348,,,,,both,shared / positive,0.3053,0.2386,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 2 - moderate confidence,1.0,Neutrophil degranulation,Reactome
+gene,IMPDH2,ENSG00000178035,,,,,inflammation-only,inflammation-only / positive,,0.1265,,,,,1.0,Myc targets v1,Hallmark
+gene,IRAK1,ENSG00000184216,,,,,both,shared / positive,0.216,0.2249,C1,"Early increase (F0→F1), then continued",F0→F1,Tier 3,1.0,P53 pathway,Hallmark
+gene,IRAK3,ENSG00000090376,,,,,fibrosis-only,fibrosis-only / positive,0.2535,,C2,Late increase (largest at F3→F4),F3→F4,Tier 3,1.0,,
+gene,ISYNA1,ENSG00000105655,,,,,fibrosis-only,fibrosis-only / positive,0.2138,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,,
+gene,ITGAL,ENSG00000005844,,,,,fibrosis-only,fibrosis-only / positive,0.1975,,C1,"Early increase (F0→F1), then continued",F0→F1,Tier 2 - moderate confidence,2.0,Allograft rejection,Hallmark
+gene,ITPA,ENSG00000125877,,,,,fibrosis-only,fibrosis-only / positive,0.1078,,C2,Late increase (largest at F3→F4),F3→F4,Tier 3,1.0,,
+gene,ITPKA,ENSG00000137825,,,,,fibrosis-only,fibrosis-only / positive,0.2046,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,2.0,,
+gene,ITPR1,ENSG00000150995,,,,,both,shared / positive,0.2227,0.2371,C1,"Early increase (F0→F1), then continued",F0→F1,Tier 2 - moderate confidence,3.0,Signaling by receptor tyrosine kinases,Reactome
+gene,ITPR2,ENSG00000123104,,,,,fibrosis-only,fibrosis-only / negative,-0.3114,,C5,Late decrease (largest at F3→F4),F2→F3,Tier 2 - moderate confidence,1.0,,
+gene,JAK3,ENSG00000105639,,,,,both,shared / positive,0.3117,0.3058,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,2.0,T cell activation,GO_BP
+gene,JDP2,ENSG00000140044,,,,,fibrosis-only,fibrosis-only / positive,0.2503,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,,
+gene,JUN,ENSG00000177606,,,,,both,shared / positive,0.3182,0.5958,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,3.0,Epithelial mesenchymal transition,Hallmark
+gene,KARS1,ENSG00000065427,,,,,inflammation-only,inflammation-only / positive,,0.2134,,,,,1.0,Myc targets v1,Hallmark
+gene,KAT2B,ENSG00000114166,,,,,fibrosis-only,fibrosis-only / negative,-0.1386,,C4,Mid decrease (largest at F1→F2),F1→F2,Tier 3,1.0,Fatty acid metabolic process,GO_BP
+gene,KAT5,ENSG00000172977,,,,,inflammation-only,inflammation-only / positive,,0.3217,,,,,1.0,Sister chromatid segregation,GO_BP
+gene,KCNA2,ENSG00000177301,,,,,fibrosis-only,fibrosis-only / positive,0.1487,,C2,Late increase (largest at F3→F4),F3→F4,Tier 3,1.0,,
+gene,KCNA3,ENSG00000177272,,,,,fibrosis-only,fibrosis-only / positive,0.2782,,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 3,1.0,Inflammatory response,Hallmark
+gene,KCNB1,ENSG00000158445,,,,,inflammation-only,inflammation-only / positive,,0.1677,,,,,1.0,,
+gene,KCNC2,ENSG00000166006,,,,,fibrosis-only,fibrosis-only / negative,-0.1927,,C5,Late decrease (largest at F3→F4),F1→F2,Tier 2 - moderate confidence,1.0,,
+gene,KCND1,ENSG00000102057,,,,,both,shared / positive,0.32,0.2835,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 3,1.0,,
+gene,KCND3,ENSG00000171385,,,,,fibrosis-only,fibrosis-only / negative,-0.1414,,C4,Mid decrease (largest at F1→F2),F1→F2,Tier 3,5.0,,
+gene,KCNH1,ENSG00000143473,,,,,fibrosis-only,fibrosis-only / negative,-0.1228,,C5,Late decrease (largest at F3→F4),F2→F3,Tier 3,1.0,,
+gene,KCNH7,ENSG00000184611,,,,,fibrosis-only,fibrosis-only / negative,-0.1928,,C5,Late decrease (largest at F3→F4),F2→F3,Tier 2 - moderate confidence,4.0,,
+gene,KCNJ10,ENSG00000177807,,,,,fibrosis-only,fibrosis-only / negative,-0.12,,C4,Mid decrease (largest at F1→F2),F1→F2,Tier 3,2.0,,
+gene,KCNJ3,ENSG00000162989,,,,,fibrosis-only,fibrosis-only / negative,-0.1637,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,3.0,,
+gene,KCNK3,ENSG00000171303,,,,,both,shared / negative,-0.232,-0.1426,C5,Late decrease (largest at F3→F4),F2→F3,Tier 2 - moderate confidence,1.0,,
+gene,KCNMA1,ENSG00000156113,,,,,fibrosis-only,fibrosis-only / negative,-0.1897,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,8.0,,
+gene,KCNMB2,ENSG00000197584,,,,,fibrosis-only,fibrosis-only / positive,0.1677,,C3,"Early rise, then plateau",F3→F4,Tier 3,3.0,Inflammatory response,Hallmark
+gene,KCNN2,ENSG00000080709,,,,,both,shared / negative,-0.4694,-0.3574,C5,Late decrease (largest at F3→F4),F3→F4,Tier 1 - high confidence,3.0,,
+gene,KCNN4,ENSG00000104783,,,,,both,shared / positive,0.2361,0.2999,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,4.0,Kras signaling up,Hallmark
+gene,KDR,ENSG00000128052,,,,,fibrosis-only,fibrosis-only / negative,-0.362,,C4,Mid decrease (largest at F1→F2),F2→F3,Tier 2 - moderate confidence,12.0,,
+gene,KIT,ENSG00000157404,,,,,fibrosis-only,fibrosis-only / positive,0.19,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,13.0,Ameboidal type cell migration,GO_BP
+gene,KLKB1,ENSG00000164344,,,,,both,shared / negative,-0.3937,-0.1895,C5,Late decrease (largest at F3→F4),F2→F3,Tier 1 - high confidence,1.0,Complement and coagulation cascades,KEGG
+gene,LCK,ENSG00000182866,,,,,both,shared / positive,0.2338,0.1368,C2,Late increase (largest at F3→F4),F3→F4,Tier 3,6.0,Allograft rejection,Hallmark
+gene,LCMT1,ENSG00000205629,,,,,inflammation-only,inflammation-only / positive,,0.0942,,,,,1.0,Cell cycle mitotic,Reactome
+gene,LCMT2,ENSG00000168806,,,,,inflammation-only,inflammation-only / positive,,0.3679,,,,,1.0,,
+gene,LDHB,ENSG00000111716,,,,,inflammation-only,inflammation-only / positive,,0.3462,,,,,1.0,,
+gene,LEF1,ENSG00000138795,,,,,both,shared / positive,0.3787,0.3885,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,1.0,Apoptosis,Hallmark
+gene,LGALS1,ENSG00000100097,,,,,inflammation-only,inflammation-only / positive,,0.1604,,,,,1.0,,
+gene,LGALS2,ENSG00000100079,,,,,both,shared / positive,0.1519,0.1989,C2,Late increase (largest at F3→F4),F2→F3,Tier 3,1.0,,
+gene,LIMK1,ENSG00000106683,,,,,fibrosis-only,fibrosis-only / positive,0.1868,,C3,"Early rise, then plateau",F0→F1,Tier 2 - moderate confidence,1.0,Rho gtpase effectors,Reactome
+gene,LIMK2,ENSG00000182541,,,,,both,shared / positive,0.3812,0.2842,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,1.0,Regulation of actin cytoskeleton,KEGG
+gene,LPA,ENSG00000198670,,,,,both,shared / negative,-0.4325,-0.2993,C4,Mid decrease (largest at F1→F2),F2→F3,Tier 2 - moderate confidence,1.0,,
+gene,LPL,ENSG00000175445,,,,,both,shared / positive,0.3566,0.6083,C3,"Early rise, then plateau",F0→F1,Tier 2 - moderate confidence,1.0,Angiogenesis,Hallmark
+gene,LTB4R,ENSG00000213903,,,,,inflammation-only,inflammation-only / negative,,-0.1713,,,,,1.0,,
+gene,LTB4R2,ENSG00000213906,,,,,inflammation-only,inflammation-only / negative,,-0.2341,,,,,1.0,,
+gene,LY96,ENSG00000154589,,,,,inflammation-only,inflammation-only / positive,,0.1833,,,,,2.0,,
+gene,MAOA,ENSG00000189221,,,,,both,shared / negative,-0.3452,-0.3833,C5,Late decrease (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,9.0,Organic hydroxy compound metabolic process,GO_BP
+gene,MAOB,ENSG00000069535,,,,,fibrosis-only,fibrosis-only / negative,-0.283,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,8.0,Organic hydroxy compound metabolic process,GO_BP
+gene,MAP1A,ENSG00000166963,,,,,both,shared / positive,0.4172,0.4276,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,1.0,,
+gene,MAP2,ENSG00000078018,,,,,fibrosis-only,fibrosis-only / positive,0.2994,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,3.0,,
+gene,MAP2K1,ENSG00000169032,,,,,inflammation-only,inflammation-only / negative,,-0.2044,,,,,1.0,,
+gene,MAP2K3,ENSG00000034152,,,,,inflammation-only,inflammation-only / positive,,0.2021,,,,,1.0,Mtorc1 signaling,Hallmark
+gene,MAP3K1,ENSG00000095015,,,,,fibrosis-only,fibrosis-only / positive,0.1973,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,2.0,Hypoxia,Hallmark
+gene,MAP3K2,ENSG00000169967,,,,,fibrosis-only,fibrosis-only / negative,-0.2354,,C4,Mid decrease (largest at F1→F2),F1→F2,Tier 3,2.0,,
+gene,MAP3K6,ENSG00000142733,,,,,fibrosis-only,fibrosis-only / positive,0.2057,,C2,Late increase (largest at F3→F4),F3→F4,Tier 3,1.0,,
+gene,MAP4,ENSG00000047849,,,,,both,shared / positive,0.2168,0.2844,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 3,2.0,,
+gene,MAP4K2,ENSG00000168067,,,,,inflammation-only,inflammation-only / positive,,0.2285,,,,,1.0,,
+gene,MAPK10,ENSG00000109339,,,,,both,shared / positive,0.3683,0.2128,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,2.0,Pathways in cancer,KEGG
+gene,MAPK11,ENSG00000185386,,,,,inflammation-only,inflammation-only / positive,,0.202,,,,,2.0,,
+gene,MAPK13,ENSG00000156711,,,,,inflammation-only,inflammation-only / positive,,0.1607,,,,,2.0,,
+gene,MAPK4,ENSG00000141639,,,,,inflammation-only,inflammation-only / positive,,0.2605,,,,,3.0,,
+gene,MAPK6,ENSG00000069956,,,,,inflammation-only,inflammation-only / positive,,0.2314,,,,,2.0,,
+gene,MAPK7,ENSG00000166484,,,,,fibrosis-only,fibrosis-only / positive,0.1722,,C1,"Early increase (F0→F1), then continued",F1→F2,Tier 2 - moderate confidence,3.0,Regulation of cell cell adhesion,GO_BP
+gene,MAPK8,ENSG00000107643,,,,,fibrosis-only,fibrosis-only / negative,-0.0816,,C4,Mid decrease (largest at F1→F2),F1→F2,Tier 3,2.0,,
+gene,MAPKAPK2,ENSG00000162889,,,,,inflammation-only,inflammation-only / positive,,0.1373,,,,,1.0,,
+gene,MARK1,ENSG00000116141,,,,,fibrosis-only,fibrosis-only / positive,0.224,,C2,Late increase (largest at F3→F4),F3→F4,Tier 3,1.0,Wnt signaling pathway,GO_BP
+gene,MARK2,ENSG00000072518,,,,,fibrosis-only,fibrosis-only / positive,0.1701,,C1,"Early increase (F0→F1), then continued",F0→F1,Tier 2 - moderate confidence,1.0,,
+gene,MAST1,ENSG00000105613,,,,,both,shared / negative,-0.1668,-0.4206,C5,Late decrease (largest at F3→F4),F3→F4,Tier 3,1.0,,
+gene,MAT1A,ENSG00000151224,,,,,both,shared / negative,-0.3631,-0.4329,C5,Late decrease (largest at F3→F4),F2→F3,Tier 1 - high confidence,1.0,Organic acid catabolic process,GO_BP
+gene,MATK,ENSG00000007264,,,,,inflammation-only,inflammation-only / positive,,0.1755,,,,,1.0,,
+gene,MB,ENSG00000198125,,,,,inflammation-only,inflammation-only / positive,,0.1621,,,,,2.0,,
+gene,MCL1,ENSG00000143384,,,,,both,shared / positive,0.1384,0.2964,C2,Late increase (largest at F3→F4),F3→F4,Tier 3,1.0,Tnfa signaling via nfkb,Hallmark
+gene,MELK,ENSG00000165304,,,,,both,shared / positive,0.2727,0.393,C3,"Early rise, then plateau",F0→F1,Tier 2 - moderate confidence,1.0,E2f targets,Hallmark
+gene,MET,ENSG00000105976,,,,,fibrosis-only,fibrosis-only / negative,-0.3239,,C4,Mid decrease (largest at F1→F2),F2→F3,Tier 3,4.0,,
+gene,MINK1,ENSG00000141503,,,,,fibrosis-only,fibrosis-only / positive,0.1462,,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 3,1.0,Regulation of cell cell adhesion,GO_BP
+gene,MMP11,ENSG00000099953,,,,,both,shared / positive,0.1639,0.2379,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,External encapsulating structure organization,GO_BP
+gene,MMP14,ENSG00000157227,,,,,both,shared / positive,0.3231,0.5399,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,1.0,Epithelial mesenchymal transition,Hallmark
+gene,MMP15,ENSG00000102996,,,,,inflammation-only,inflammation-only / positive,,0.2314,,,,,1.0,,
+gene,MMP19,ENSG00000123342,,,,,both,shared / positive,0.4154,0.3495,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,1.0,External encapsulating structure organization,GO_BP
+gene,MMP2,ENSG00000087245,,,,,both,shared / positive,0.3457,0.3995,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,1.0,Epithelial mesenchymal transition,Hallmark
+gene,MMP23B,ENSG00000189409,,,,,fibrosis-only,fibrosis-only / positive,0.2144,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,External encapsulating structure organization,GO_BP
+gene,MMP24,ENSG00000125966,,,,,inflammation-only,inflammation-only / positive,,0.3127,,,,,1.0,,
+gene,MMP25,ENSG00000008516,,,,,fibrosis-only,fibrosis-only / positive,0.0844,,C3,"Early rise, then plateau",F1→F2,Tier 3,2.0,Neutrophil degranulation,Reactome
+gene,MMP7,ENSG00000137673,,,,,both,shared / positive,0.3958,0.3155,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,1.0,External encapsulating structure organization,GO_BP
+gene,MMP9,ENSG00000100985,,,,,both,shared / positive,0.359,0.6177,C3,"Early rise, then plateau",F0→F1,Tier 2 - moderate confidence,4.0,Extracellular matrix organization,Reactome
+gene,MST1R,ENSG00000164078,,,,,both,shared / positive,0.4016,0.1373,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,1.0,Signaling by receptor tyrosine kinases,Reactome
+gene,MTOR,ENSG00000198793,,,,,inflammation-only,inflammation-only / positive,,0.2194,,,,,1.0,Autophagy,Reactome
+gene,MTTP,ENSG00000138823,,,,,fibrosis-only,fibrosis-only / negative,-0.3049,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,,
+gene,MUSK,ENSG00000030304,,,,,fibrosis-only,fibrosis-only / positive,0.102,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,Extracellular matrix organization,Reactome
+gene,MYC,ENSG00000136997,,,,,fibrosis-only,fibrosis-only / positive,0.4023,,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,1.0,Tnfa signaling via nfkb,Hallmark
+gene,MYO3A,ENSG00000095777,,,,,fibrosis-only,fibrosis-only / positive,0.2475,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,,
+gene,NAAA,ENSG00000138744,,,,,both,shared / negative,-0.3478,-0.6191,C4,Mid decrease (largest at F1→F2),F2→F3,Tier 2 - moderate confidence,2.0,Organic hydroxy compound metabolic process,GO_BP
+gene,NAGA,ENSG00000198951,,,,,inflammation-only,inflammation-only / negative,,-0.2538,,,,,1.0,,
+gene,NARS1,ENSG00000134440,,,,,inflammation-only,inflammation-only / positive,,0.1374,,,,,1.0,Aminoacyl trna biosynthesis,KEGG
+gene,NCF2,ENSG00000116701,,,,,fibrosis-only,fibrosis-only / positive,0.2813,,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 2 - moderate confidence,1.0,Leishmania infection,KEGG
+gene,NCF4,ENSG00000100365,,,,,fibrosis-only,fibrosis-only / positive,0.3411,,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,1.0,Allograft rejection,Hallmark
+gene,NCOA2,ENSG00000140396,,,,,fibrosis-only,fibrosis-only / negative,-0.3137,,C4,Mid decrease (largest at F1→F2),F1→F2,Tier 2 - moderate confidence,3.0,Biological oxidations,Reactome
+gene,NEK1,ENSG00000137601,,,,,inflammation-only,inflammation-only / positive,,0.3202,,,,,1.0,,
+gene,NEK11,ENSG00000114670,,,,,inflammation-only,inflammation-only / positive,,0.2986,,,,,1.0,,
+gene,NEK2,ENSG00000117650,,,,,inflammation-only,inflammation-only / positive,,0.3832,,,,,1.0,Cell cycle mitotic,Reactome
+gene,NEK4,ENSG00000114904,,,,,fibrosis-only,fibrosis-only / negative,-0.0824,,C5,Late decrease (largest at F3→F4),F2→F3,Tier 3,1.0,,
+gene,NEK9,ENSG00000119638,,,,,inflammation-only,inflammation-only / positive,,0.0868,,,,,1.0,Cell cycle mitotic,Reactome
+gene,NFATC1,ENSG00000131196,,,,,fibrosis-only,fibrosis-only / positive,0.2899,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,Response to wounding,GO_BP
+gene,NFKB1,ENSG00000109320,,,,,both,shared / positive,0.1539,0.2151,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 3,6.0,Tnfa signaling via nfkb,Hallmark
+gene,NFKB2,ENSG00000077150,,,,,both,shared / positive,0.381,0.4307,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 1 - high confidence,4.0,Tnfa signaling via nfkb,Hallmark
+gene,NOMO1,ENSG00000103512,,,,,inflammation-only,inflammation-only / positive,,0.0926,,,,,1.0,,
+gene,NOS2,ENSG00000007171,,,,,inflammation-only,inflammation-only / positive,,0.2328,,,,,8.0,,
+gene,NPC1L1,ENSG00000015520,,,,,inflammation-only,inflammation-only / positive,,0.2044,,,,,1.0,,
+gene,NQO1,ENSG00000181019,,,,,inflammation-only,inflammation-only / positive,,0.3527,,,,,2.0,,
+gene,NR1H3,ENSG00000025434,,,,,both,shared / negative,-0.1851,-0.1464,C5,Late decrease (largest at F3→F4),F2→F3,Tier 2 - moderate confidence,1.0,Fatty acid metabolic process,GO_BP
+gene,NR1I3,ENSG00000143257,,,,,both,shared / negative,-0.3268,-0.2403,C5,Late decrease (largest at F3→F4),F1→F2,Tier 2 - moderate confidence,6.0,,
+gene,NR3C1,ENSG00000113580,,,,,inflammation-only,inflammation-only / positive,,0.3308,,,,,11.0,Chromosome segregation,GO_BP
+gene,NR3C2,ENSG00000151623,,,,,both,shared / negative,-0.259,-0.2384,C5,Late decrease (largest at F3→F4),F2→F3,Tier 3,14.0,Bile acid metabolism,Hallmark
+gene,NR4A3,ENSG00000119508,,,,,inflammation-only,inflammation-only / positive,,0.4577,,,,,1.0,,
+gene,NUAK2,ENSG00000163545,,,,,fibrosis-only,fibrosis-only / positive,0.254,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,,
+gene,NUDC,ENSG00000090273,,,,,fibrosis-only,fibrosis-only / negative,-0.1697,,C4,Mid decrease (largest at F1→F2),F1→F2,Tier 3,1.0,,
+gene,NUDT9,ENSG00000170502,,,,,inflammation-only,inflammation-only / negative,,-0.1654,,,,,1.0,,
+gene,OAT,ENSG00000065154,,,,,both,shared / negative,-0.3976,-0.3286,C4,Mid decrease (largest at F1→F2),F2→F3,Tier 1 - high confidence,1.0,Organic acid catabolic process,GO_BP
+gene,ODC1,ENSG00000115758,,,,,inflammation-only,inflammation-only / positive,,0.4432,,,,,1.0,Myc targets v1,Hallmark
+gene,ORM2,ENSG00000228278,,,,,fibrosis-only,fibrosis-only / negative,-0.1895,,C4,Mid decrease (largest at F1→F2),F2→F3,Tier 3,5.0,,
+gene,P3H2,ENSG00000090530,,,,,fibrosis-only,fibrosis-only / negative,-0.0509,,C4,Mid decrease (largest at F1→F2),F2→F3,Tier 3,1.0,,
+gene,P4HA2,ENSG00000072682,,,,,fibrosis-only,fibrosis-only / positive,0.0957,,C1,"Early increase (F0→F1), then continued",F0→F1,Tier 2 - moderate confidence,1.0,Extracellular matrix organization,Reactome
+gene,PADI1,ENSG00000142623,,,,,both,shared / positive,0.1816,0.5143,C3,"Early rise, then plateau",F0→F1,Tier 3,1.0,,
+gene,PADI2,ENSG00000117115,,,,,both,shared / positive,0.223,0.1198,C1,"Early increase (F0→F1), then continued",F1→F2,Tier 3,1.0,Neutrophil degranulation,Reactome
+gene,PAH,ENSG00000171759,,,,,fibrosis-only,fibrosis-only / negative,-0.3569,,C5,Late decrease (largest at F3→F4),F1→F2,Tier 1 - high confidence,3.0,Organic acid catabolic process,GO_BP
+gene,PAK3,ENSG00000077264,,,,,inflammation-only,inflammation-only / positive,,0.2854,,,,,1.0,,
+gene,PAK5,ENSG00000101349,,,,,fibrosis-only,fibrosis-only / positive,0.2453,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,Focal adhesion,KEGG
+gene,PAPPA,ENSG00000182752,,,,,both,shared / positive,0.3119,0.4666,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,1.0,,
+gene,PAPSS1,ENSG00000138801,,,,,both,shared / positive,0.1671,0.1956,C2,Late increase (largest at F3→F4),F3→F4,Tier 3,1.0,,
+gene,PCMT1,ENSG00000120265,,,,,fibrosis-only,fibrosis-only / negative,-0.0576,,C5,Late decrease (largest at F3→F4),F1→F2,Tier 3,1.0,,
+gene,PCNA,ENSG00000132646,,,,,both,shared / positive,0.239,0.5462,C1,"Early increase (F0→F1), then continued",F0→F1,Tier 2 - moderate confidence,1.0,P53 pathway,Hallmark
+gene,PDE11A,ENSG00000128655,,,,,inflammation-only,inflammation-only / positive,,0.3462,,,,,2.0,,
+gene,PDE1A,ENSG00000115252,,,,,both,shared / positive,0.3625,0.3332,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,4.0,Signaling by gpcr,Reactome
+gene,PDE3A,ENSG00000172572,,,,,both,shared / positive,0.1579,0.1147,C2,Late increase (largest at F3→F4),F3→F4,Tier 3,7.0,Response to transforming growth factor beta,GO_BP
+gene,PDE3B,ENSG00000152270,,,,,fibrosis-only,fibrosis-only / negative,-0.2301,,C5,Late decrease (largest at F3→F4),F1→F2,Tier 2 - moderate confidence,4.0,Lipid catabolic process,GO_BP
+gene,PDE4A,ENSG00000065989,,,,,both,shared / positive,0.2981,0.2893,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 2 - moderate confidence,8.0,,
+gene,PDE4D,ENSG00000113448,,,,,fibrosis-only,fibrosis-only / positive,0.2069,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,8.0,Signaling by gpcr,Reactome
+gene,PDE7A,ENSG00000205268,,,,,both,shared / positive,0.2395,0.1982,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 3,3.0,,
+gene,PDGFRA,ENSG00000134853,,,,,fibrosis-only,fibrosis-only / positive,0.4169,,C2,Late increase (largest at F3→F4),F2→F3,Tier 1 - high confidence,12.0,External encapsulating structure organization,GO_BP
+gene,PDGFRB,ENSG00000113721,,,,,both,shared / positive,0.3127,0.4314,C1,"Early increase (F0→F1), then continued",F2→F3,Tier 1 - high confidence,12.0,Epithelial mesenchymal transition,Hallmark
+gene,PDHB,ENSG00000168291,,,,,inflammation-only,inflammation-only / positive,,0.2125,,,,,1.0,,
+gene,PDK3,ENSG00000067992,,,,,inflammation-only,inflammation-only / negative,,-0.1339,,,,,1.0,,
+gene,PDK4,ENSG00000004799,,,,,fibrosis-only,fibrosis-only / negative,-0.2872,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,Fatty acid metabolic process,GO_BP
+gene,PFKFB1,ENSG00000158571,,,,,both,shared / negative,-0.3095,-0.2539,C5,Late decrease (largest at F3→F4),F2→F3,Tier 3,1.0,,
+gene,PI4K2B,ENSG00000038210,,,,,fibrosis-only,fibrosis-only / negative,-0.2269,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 3,1.0,,
+gene,PIK3C2B,ENSG00000133056,,,,,inflammation-only,inflammation-only / positive,,0.0658,,,,,1.0,,
+gene,PIK3C2G,ENSG00000139144,,,,,fibrosis-only,fibrosis-only / negative,-0.3489,,C5,Late decrease (largest at F3→F4),F2→F3,Tier 2 - moderate confidence,1.0,,
+gene,PIK3CA,ENSG00000121879,,,,,fibrosis-only,fibrosis-only / negative,-0.0901,,C4,Mid decrease (largest at F1→F2),F1→F2,Tier 3,2.0,,
+gene,PIK3CB,ENSG00000051382,,,,,inflammation-only,inflammation-only / positive,,0.2632,,,,,1.0,,
+gene,PIK3CD,ENSG00000171608,,,,,fibrosis-only,fibrosis-only / positive,0.0924,,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 2 - moderate confidence,2.0,T cell activation,GO_BP
+gene,PIK3CG,ENSG00000105851,,,,,fibrosis-only,fibrosis-only / positive,0.338,,C1,"Early increase (F0→F1), then continued",F0→F1,Tier 1 - high confidence,4.0,T cell activation,GO_BP
+gene,PIK3R1,ENSG00000145675,,,,,fibrosis-only,fibrosis-only / negative,-0.2742,,C5,Late decrease (largest at F3→F4),F2→F3,Tier 2 - moderate confidence,3.0,,
+gene,PIK3R3,ENSG00000117461,,,,,fibrosis-only,fibrosis-only / positive,0.1755,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,Ameboidal type cell migration,GO_BP
+gene,PIP4K2C,ENSG00000166908,,,,,inflammation-only,inflammation-only / positive,,0.2143,,,,,1.0,,
+gene,PKIA,ENSG00000171033,,,,,fibrosis-only,fibrosis-only / positive,0.1362,,C2,Late increase (largest at F3→F4),F2→F3,Tier 3,1.0,,
+gene,PKM,ENSG00000067225,,,,,both,shared / positive,0.3263,0.2704,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 2 - moderate confidence,1.0,Neutrophil degranulation,Reactome
+gene,PKMYT1,ENSG00000127564,,,,,both,shared / positive,0.2991,0.5455,C1,"Early increase (F0→F1), then continued",F2→F3,Tier 2 - moderate confidence,1.0,Cell cycle,KEGG
+gene,PKN2,ENSG00000065243,,,,,fibrosis-only,fibrosis-only / negative,-0.21,,C4,Mid decrease (largest at F1→F2),F1→F2,Tier 3,1.0,,
+gene,PLA2G2A,ENSG00000188257,,,,,inflammation-only,inflammation-only / positive,,0.2574,,,,,3.0,,
+gene,PLA2G4A,ENSG00000116711,,,,,fibrosis-only,fibrosis-only / positive,0.2466,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,4.0,Myeloid leukocyte activation,GO_BP
+gene,PLAT,ENSG00000104368,,,,,both,shared / positive,0.1713,0.2253,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,3.0,Apoptosis,Hallmark
+gene,PLAU,ENSG00000122861,,,,,both,shared / positive,0.4091,0.4644,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,1.0,Tnfa signaling via nfkb,Hallmark
+gene,PLG,ENSG00000122194,,,,,fibrosis-only,fibrosis-only / negative,-0.3369,,C5,Late decrease (largest at F3→F4),F2→F3,Tier 1 - high confidence,2.0,Xenobiotic metabolism,Hallmark
+gene,PLK1,ENSG00000166851,,,,,both,shared / positive,0.231,0.3144,C3,"Early rise, then plateau",F1→F2,Tier 3,2.0,E2f targets,Hallmark
+gene,PLK2,ENSG00000145632,,,,,both,shared / positive,0.3085,0.5722,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 1 - high confidence,1.0,Tnfa signaling via nfkb,Hallmark
+gene,PLK3,ENSG00000173846,,,,,fibrosis-only,fibrosis-only / positive,0.4139,,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,1.0,P53 pathway,Hallmark
+gene,PLK4,ENSG00000142731,,,,,both,shared / positive,0.1661,0.4536,C3,"Early rise, then plateau",F0→F1,Tier 3,1.0,E2f targets,Hallmark
+gene,PLPBP,ENSG00000147471,,,,,fibrosis-only,fibrosis-only / negative,-0.1443,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 3,1.0,,
+gene,PMP2,ENSG00000147588,,,,,fibrosis-only,fibrosis-only / negative,-0.1356,,C5,Late decrease (largest at F3→F4),F1→F2,Tier 2 - moderate confidence,2.0,,
+gene,PNP,ENSG00000198805,,,,,fibrosis-only,fibrosis-only / negative,-0.2658,,C4,Mid decrease (largest at F1→F2),F1→F2,Tier 2 - moderate confidence,1.0,Small molecule catabolic process,GO_BP
+gene,POLE3,ENSG00000148229,,,,,inflammation-only,inflammation-only / positive,,0.2328,,,,,1.0,Cell cycle mitotic,Reactome
+gene,PPARA,ENSG00000186951,,,,,both,shared / negative,-0.246,-0.2093,C5,Late decrease (largest at F3→F4),F3→F4,Tier 3,26.0,Organic acid catabolic process,GO_BP
+gene,PPARD,ENSG00000112033,,,,,both,shared / positive,0.1637,0.2685,C2,Late increase (largest at F3→F4),F3→F4,Tier 3,14.0,Ameboidal type cell migration,GO_BP
+gene,PPARG,ENSG00000132170,,,,,inflammation-only,inflammation-only / positive,,0.1996,,,,,26.0,Organelle fission,GO_BP
+gene,PPIA,ENSG00000196262,,,,,inflammation-only,inflammation-only / positive,,0.2546,,,,,1.0,Myc targets v1,Hallmark
+gene,PPIC,ENSG00000168938,,,,,both,shared / positive,0.2268,0.2938,C2,Late increase (largest at F3→F4),F2→F3,Tier 3,1.0,,
+gene,PPIF,ENSG00000108179,,,,,inflammation-only,inflammation-only / positive,,0.1231,,,,,1.0,,
+gene,PPT1,ENSG00000131238,,,,,both,shared / positive,0.1568,0.3207,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 3,1.0,Apoptosis,Hallmark
+gene,PRKAA1,ENSG00000132356,,,,,both,shared / negative,-0.2387,-0.1751,C4,Mid decrease (largest at F1→F2),F1→F2,Tier 3,2.0,Organic hydroxy compound metabolic process,GO_BP
+gene,PRKAA2,ENSG00000162409,,,,,both,shared / positive,0.2508,0.4776,C1,"Early increase (F0→F1), then continued",F2→F3,Tier 3,2.0,,
+gene,PRKACB,ENSG00000142875,,,,,inflammation-only,inflammation-only / positive,,0.2552,,,,,1.0,,
+gene,PRKAG1,ENSG00000181929,,,,,inflammation-only,inflammation-only / positive,,0.2184,,,,,2.0,Autophagy,Reactome
+gene,PRKAG2,ENSG00000106617,,,,,both,shared / negative,-0.2845,-0.1983,C5,Late decrease (largest at F3→F4),F1→F2,Tier 2 - moderate confidence,2.0,Fatty acid metabolic process,GO_BP
+gene,PRKCD,ENSG00000163932,,,,,inflammation-only,inflammation-only / positive,,0.2617,,,,,2.0,,
+gene,PRKCE,ENSG00000171132,,,,,inflammation-only,inflammation-only / positive,,0.2663,,,,,2.0,,
+gene,PRKCQ,ENSG00000065675,,,,,both,shared / positive,0.229,0.2901,C2,Late increase (largest at F3→F4),F3→F4,Tier 3,3.0,Taxis,GO_BP
+gene,PSMB10,ENSG00000205220,,,,,both,shared / positive,0.1512,0.274,C1,"Early increase (F0→F1), then continued",F0→F1,Tier 3,1.0,Allograft rejection,Hallmark
+gene,PSMB2,ENSG00000126067,,,,,inflammation-only,inflammation-only / positive,,0.2954,,,,,1.0,Cell cycle mitotic,Reactome
+gene,PSMB8,ENSG00000204264,,,,,inflammation-only,inflammation-only / positive,,0.2644,,,,,1.0,Cell cycle mitotic,Reactome
+gene,PSMB9,ENSG00000240065,,,,,inflammation-only,inflammation-only / positive,,0.2526,,,,,1.0,Cell cycle mitotic,Reactome
+gene,PTAFR,ENSG00000169403,,,,,fibrosis-only,fibrosis-only / positive,0.2755,,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 2 - moderate confidence,1.0,Neutrophil degranulation,Reactome
+gene,PTGIR,ENSG00000160013,,,,,both,shared / positive,0.2804,0.3739,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 2 - moderate confidence,1.0,Inflammatory response,Hallmark
+gene,PTGIS,ENSG00000124212,,,,,fibrosis-only,fibrosis-only / positive,0.3737,,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,1.0,Regulation of vasculature development,GO_BP
+gene,PTGR2,ENSG00000140043,,,,,inflammation-only,inflammation-only / negative,,-0.1471,,,,,1.0,,
+gene,PTGS1,ENSG00000095303,,,,,fibrosis-only,fibrosis-only / positive,0.3104,,C1,"Early increase (F0→F1), then continued",F0→F1,Tier 2 - moderate confidence,22.0,,
+gene,PTGS2,ENSG00000073756,,,,,both,shared / positive,0.274,0.229,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,20.0,Tnfa signaling via nfkb,Hallmark
+gene,PTK2B,ENSG00000120899,,,,,inflammation-only,inflammation-only / negative,,-0.1642,,,,,2.0,,
+gene,PTK6,ENSG00000101213,,,,,inflammation-only,inflammation-only / positive,,0.1563,,,,,3.0,Cell cycle mitotic,Reactome
+gene,PTPN1,ENSG00000196396,,,,,fibrosis-only,fibrosis-only / positive,0.1564,,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 2 - moderate confidence,1.0,Interferon gamma response,Hallmark
+gene,PTPN12,ENSG00000127947,,,,,inflammation-only,inflammation-only / positive,,0.2747,,,,,1.0,,
+gene,PTPN4,ENSG00000088179,,,,,fibrosis-only,fibrosis-only / negative,-0.1636,,C4,Mid decrease (largest at F1→F2),F1→F2,Tier 3,1.0,,
+gene,PTPN6,ENSG00000111679,,,,,fibrosis-only,fibrosis-only / positive,0.1129,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,T cell activation,GO_BP
+gene,PTPRE,ENSG00000132334,,,,,fibrosis-only,fibrosis-only / positive,0.2674,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,2.0,Tnfa signaling via nfkb,Hallmark
+gene,PVALB,ENSG00000100362,,,,,fibrosis-only,fibrosis-only / negative,-0.1165,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,,
+gene,PVR,ENSG00000073008,,,,,both,shared / positive,0.1275,0.3361,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 2 - moderate confidence,1.0,Epithelial mesenchymal transition,Hallmark
+gene,PYGB,ENSG00000100994,,,,,both,shared / positive,0.2964,0.5392,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 2 - moderate confidence,1.0,Neutrophil degranulation,Reactome
+gene,RAB5A,ENSG00000144566,,,,,inflammation-only,inflammation-only / positive,,0.2985,,,,,1.0,Protein secretion,Hallmark
+gene,RAC1,ENSG00000136238,,,,,inflammation-only,inflammation-only / positive,,0.295,,,,,1.0,Pi3k akt mtor signaling,Hallmark
+gene,RAC2,ENSG00000128340,,,,,fibrosis-only,fibrosis-only / positive,0.2707,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,T cell activation,GO_BP
+gene,RAP2A,ENSG00000125249,,,,,inflammation-only,inflammation-only / positive,,0.3073,,,,,1.0,,
+gene,RARB,ENSG00000077092,,,,,fibrosis-only,fibrosis-only / positive,0.1641,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,2.0,Renal system development,GO_BP
+gene,RARG,ENSG00000172819,,,,,both,shared / positive,0.2727,0.3765,C2,Late increase (largest at F3→F4),F3→F4,Tier 3,2.0,Morphogenesis of an epithelium,GO_BP
+gene,RARRES1,ENSG00000118849,,,,,both,shared / positive,0.1945,0.4762,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 3,1.0,,
+gene,RBP4,ENSG00000138207,,,,,both,shared / negative,-0.2367,-0.5005,C4,Mid decrease (largest at F1→F2),F1→F2,Tier 2 - moderate confidence,1.0,Organic hydroxy compound metabolic process,GO_BP
+gene,RDX,ENSG00000137710,,,,,fibrosis-only,fibrosis-only / negative,-0.1799,,C4,Mid decrease (largest at F1→F2),F2→F3,Tier 3,1.0,,
+gene,RET,ENSG00000165731,,,,,inflammation-only,inflammation-only / positive,,0.5051,,,,,8.0,,
+gene,RIOK1,ENSG00000124784,,,,,inflammation-only,inflammation-only / positive,,0.1599,,,,,1.0,,
+gene,RIOK2,ENSG00000058729,,,,,inflammation-only,inflammation-only / positive,,0.2158,,,,,1.0,Sister chromatid segregation,GO_BP
+gene,RIOK3,ENSG00000101782,,,,,inflammation-only,inflammation-only / positive,,0.1866,,,,,1.0,Chromosome segregation,GO_BP
+gene,RIPK1,ENSG00000137275,,,,,inflammation-only,inflammation-only / positive,,0.1301,,,,,1.0,Interferon gamma response,Hallmark
+gene,RIPK2,ENSG00000104312,,,,,inflammation-only,inflammation-only / positive,,0.3473,,,,,1.0,Interferon alpha response,Hallmark
+gene,RIPK4,ENSG00000183421,,,,,fibrosis-only,fibrosis-only / positive,0.1943,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,Morphogenesis of an epithelium,GO_BP
+gene,RNASE1,ENSG00000129538,,,,,both,shared / positive,0.3685,0.3602,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,3.0,,
+gene,RND3,ENSG00000115963,,,,,both,shared / positive,0.1753,0.3098,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,,
+gene,RORA,ENSG00000069667,,,,,both,shared / negative,-0.2767,-0.2582,C5,Late decrease (largest at F3→F4),F2→F3,Tier 3,1.0,Steroid metabolic process,GO_BP
+gene,RPS6KA1,ENSG00000117676,,,,,both,shared / positive,0.2816,0.4708,C3,"Early rise, then plateau",F0→F1,Tier 2 - moderate confidence,1.0,Signaling by receptor tyrosine kinases,Reactome
+gene,RPS6KA3,ENSG00000177189,,,,,inflammation-only,inflammation-only / positive,,0.1511,,,,,2.0,Pi3k akt mtor signaling,Hallmark
+gene,RPS6KA6,ENSG00000072133,,,,,fibrosis-only,fibrosis-only / negative,-0.2141,,C5,Late decrease (largest at F3→F4),F1→F2,Tier 3,1.0,,
+gene,RRM1,ENSG00000167325,,,,,inflammation-only,inflammation-only / positive,,0.4923,,,,,1.0,Myc targets v1,Hallmark
+gene,RRM2,ENSG00000171848,,,,,both,shared / positive,0.2423,0.5448,C3,"Early rise, then plateau",F0→F1,Tier 3,1.0,E2f targets,Hallmark
+gene,RRM2B,ENSG00000048392,,,,,inflammation-only,inflammation-only / positive,,0.4219,,,,,1.0,,
+gene,S100A10,ENSG00000197747,,,,,both,shared / positive,0.2799,0.3599,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 2 - moderate confidence,1.0,P53 pathway,Hallmark
+gene,SCN2A,ENSG00000136531,,,,,inflammation-only,inflammation-only / negative,,-0.3108,,,,,19.0,,
+gene,SCN4A,ENSG00000007314,,,,,fibrosis-only,fibrosis-only / positive,0.1226,,C2,Late increase (largest at F3→F4),F3→F4,Tier 3,18.0,,
+gene,SCN8A,ENSG00000196876,,,,,both,shared / negative,-0.2883,-0.2206,C5,Late decrease (largest at F3→F4),F2→F3,Tier 3,16.0,,
+gene,SCNN1A,ENSG00000111319,,,,,inflammation-only,inflammation-only / positive,,0.16,,,,,1.0,,
+gene,SEC14L2,ENSG00000100003,,,,,both,shared / negative,-0.3354,-0.3253,C5,Late decrease (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,Organic hydroxy compound metabolic process,GO_BP
+gene,SELP,ENSG00000174175,,,,,both,shared / positive,0.2175,0.1321,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,Positive regulation of cell adhesion,GO_BP
+gene,SERPINE1,ENSG00000106366,,,,,inflammation-only,inflammation-only / positive,,0.3628,,,,,1.0,,
+gene,SETD7,ENSG00000145391,,,,,fibrosis-only,fibrosis-only / negative,-0.1869,,C5,Late decrease (largest at F3→F4),F1→F2,Tier 2 - moderate confidence,1.0,,
+gene,SF3A3,ENSG00000183431,,,,,inflammation-only,inflammation-only / positive,,0.4877,,,,,1.0,,
+gene,SFRP4,ENSG00000106483,,,,,both,shared / positive,0.3277,0.5012,C2,Late increase (largest at F3→F4),F2→F3,Tier 1 - high confidence,1.0,Epithelial mesenchymal transition,Hallmark
+gene,SGK3,ENSG00000104205,,,,,fibrosis-only,fibrosis-only / negative,-0.2179,,C5,Late decrease (largest at F3→F4),F2→F3,Tier 3,1.0,,
+gene,SH2B3,ENSG00000111252,,,,,both,shared / positive,0.1915,0.3647,C3,"Early rise, then plateau",F0→F1,Tier 2 - moderate confidence,1.0,Response to wounding,GO_BP
+gene,SIGMAR1,ENSG00000147955,,,,,fibrosis-only,fibrosis-only / negative,-0.1887,,C4,Mid decrease (largest at F1→F2),F1→F2,Tier 2 - moderate confidence,10.0,,
+gene,SIK2,ENSG00000170145,,,,,fibrosis-only,fibrosis-only / negative,-0.2098,,C4,Mid decrease (largest at F1→F2),F1→F2,Tier 3,1.0,,
+gene,SIRT1,ENSG00000096717,,,,,both,shared / negative,-0.3266,-0.29,C4,Mid decrease (largest at F1→F2),F1→F2,Tier 2 - moderate confidence,1.0,Organic hydroxy compound metabolic process,GO_BP
+gene,SIRT5,ENSG00000124523,,,,,fibrosis-only,fibrosis-only / negative,-0.334,,C5,Late decrease (largest at F3→F4),F2→F3,Tier 2 - moderate confidence,1.0,,
+gene,SLC12A1,ENSG00000074803,,,,,inflammation-only,inflammation-only / positive,,0.2193,,,,,6.0,,
+gene,SLC12A2,ENSG00000064651,,,,,both,shared / positive,0.2651,0.1481,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,2.0,Taxis,GO_BP
+gene,SLC12A4,ENSG00000124067,,,,,both,shared / positive,0.4137,0.6083,C1,"Early increase (F0→F1), then continued",F0→F1,Tier 1 - high confidence,1.0,,
+gene,SLC15A1,ENSG00000088386,,,,,inflammation-only,inflammation-only / positive,,0.2278,,,,,1.0,,
+gene,SLC16A2,ENSG00000147100,,,,,fibrosis-only,fibrosis-only / negative,-0.1185,,C5,Late decrease (largest at F3→F4),F1→F2,Tier 2 - moderate confidence,1.0,Organic hydroxy compound metabolic process,GO_BP
+gene,SLC16A4,ENSG00000168679,,,,,inflammation-only,inflammation-only / negative,,-0.2349,,,,,1.0,,
+gene,SLC16A5,ENSG00000170190,,,,,inflammation-only,inflammation-only / positive,,0.0968,,,,,1.0,,
+gene,SLC1A5,ENSG00000105281,,,,,fibrosis-only,fibrosis-only / positive,0.2348,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,2.0,Il2 stat5 signaling,Hallmark
+gene,SLC29A4,ENSG00000164638,,,,,inflammation-only,inflammation-only / positive,,0.1574,,,,,1.0,,
+gene,SLC38A1,ENSG00000111371,,,,,both,shared / positive,0.2789,0.2745,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,,
+gene,SLC38A4,ENSG00000139209,,,,,fibrosis-only,fibrosis-only / negative,-0.43,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 1 - high confidence,1.0,,
+gene,SLC6A1,ENSG00000157103,,,,,fibrosis-only,fibrosis-only / negative,-0.2364,,C5,Late decrease (largest at F3→F4),F2→F3,Tier 2 - moderate confidence,1.0,,
+gene,SLC6A11,ENSG00000132164,,,,,fibrosis-only,fibrosis-only / positive,0.3476,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,,
+gene,SLC6A13,ENSG00000010379,,,,,both,shared / negative,-0.3335,-0.2837,C5,Late decrease (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,,
+gene,SLC6A2,ENSG00000103546,,,,,both,shared / positive,0.0723,0.2618,C3,"Early rise, then plateau",F3→F4,Tier 3,33.0,,
+gene,SLC6A8,ENSG00000130821,,,,,inflammation-only,inflammation-only / positive,,0.4704,,,,,1.0,,
+gene,SLC7A1,ENSG00000139514,,,,,both,shared / positive,0.299,0.3277,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,3.0,Positive regulation of cell adhesion,GO_BP
+gene,SLC7A2,ENSG00000003989,,,,,fibrosis-only,fibrosis-only / negative,-0.2334,,C4,Mid decrease (largest at F1→F2),F1→F2,Tier 2 - moderate confidence,2.0,Estrogen response early,Hallmark
+gene,SLC7A7,ENSG00000155465,,,,,fibrosis-only,fibrosis-only / positive,0.2389,,C1,"Early increase (F0→F1), then continued",F0→F1,Tier 2 - moderate confidence,1.0,Cell surface interactions at the vascular wall,Reactome
+gene,SLC9A1,ENSG00000090020,,,,,fibrosis-only,fibrosis-only / positive,0.259,,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 2 - moderate confidence,1.0,Cell substrate adhesion,GO_BP
+gene,SLCO1B1,ENSG00000134538,,,,,fibrosis-only,fibrosis-only / negative,-0.2727,,C5,Late decrease (largest at F3→F4),F2→F3,Tier 2 - moderate confidence,1.0,Drug adme,Reactome
+gene,SLCO1B3,ENSG00000111700,,,,,fibrosis-only,fibrosis-only / negative,-0.2543,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,Drug adme,Reactome
+gene,SLCO2B1,ENSG00000137491,,,,,fibrosis-only,fibrosis-only / negative,-0.2001,,C5,Late decrease (largest at F3→F4),F0→F1,Tier 2 - moderate confidence,1.0,Drug adme,Reactome
+gene,SMARCE1,ENSG00000073584,,,,,inflammation-only,inflammation-only / positive,,0.2018,,,,,1.0,Sister chromatid segregation,GO_BP
+gene,SMOX,ENSG00000088826,,,,,fibrosis-only,fibrosis-only / positive,0.1056,,C2,Late increase (largest at F3→F4),F3→F4,Tier 3,1.0,,
+gene,SOAT1,ENSG00000057252,,,,,inflammation-only,inflammation-only / positive,,0.1313,,,,,2.0,Steroid biosynthesis,KEGG
+gene,SOAT2,ENSG00000167780,,,,,both,shared / negative,-0.1776,-0.3105,C4,Mid decrease (largest at F1→F2),F2→F3,Tier 2 - moderate confidence,1.0,Organic hydroxy compound metabolic process,GO_BP
+gene,SOD1,ENSG00000142168,,,,,both,shared / negative,-0.341,-0.251,C5,Late decrease (largest at F3→F4),F1→F2,Tier 1 - high confidence,4.0,Bile acid metabolism,Hallmark
+gene,SQLE,ENSG00000104549,,,,,inflammation-only,inflammation-only / positive,,0.3043,,,,,1.0,Mtorc1 signaling,Hallmark
+gene,SRC,ENSG00000197122,,,,,fibrosis-only,fibrosis-only / positive,0.3251,,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 1 - high confidence,6.0,T cell activation,GO_BP
+gene,SRD5A1,ENSG00000145545,,,,,both,shared / negative,-0.2318,-0.3838,C5,Late decrease (largest at F3→F4),F3→F4,Tier 3,2.0,Organic hydroxy compound metabolic process,GO_BP
+gene,SRD5A3,ENSG00000128039,,,,,inflammation-only,inflammation-only / positive,,0.2805,,,,,1.0,Asparagine n linked glycosylation,Reactome
+gene,STAT5B,ENSG00000173757,,,,,inflammation-only,inflammation-only / negative,,-0.0921,,,,,1.0,,
+gene,STK10,ENSG00000072786,,,,,fibrosis-only,fibrosis-only / positive,0.2493,,C1,"Early increase (F0→F1), then continued",F0→F1,Tier 2 - moderate confidence,1.0,Neutrophil degranulation,Reactome
+gene,STK17A,ENSG00000164543,,,,,both,shared / positive,0.2901,0.487,C1,"Early increase (F0→F1), then continued",F0→F1,Tier 3,1.0,,
+gene,STK17B,ENSG00000081320,,,,,both,shared / positive,0.2775,0.263,C2,Late increase (largest at F3→F4),F3→F4,Tier 3,2.0,,
+gene,STK26,ENSG00000134602,,,,,inflammation-only,inflammation-only / positive,,0.1721,,,,,1.0,,
+gene,STK3,ENSG00000104375,,,,,fibrosis-only,fibrosis-only / negative,-0.2566,,C5,Late decrease (largest at F3→F4),F2→F3,Tier 3,1.0,,
+gene,STK32A,ENSG00000169302,,,,,both,shared / positive,0.1802,0.2633,C2,Late increase (largest at F3→F4),F3→F4,Tier 3,1.0,,
+gene,STK38,ENSG00000112079,,,,,inflammation-only,inflammation-only / positive,,0.2131,,,,,1.0,,
+gene,STK39,ENSG00000198648,,,,,both,shared / positive,0.3155,0.1887,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,Taxis,GO_BP
+gene,SV2A,ENSG00000159164,,,,,fibrosis-only,fibrosis-only / positive,0.2883,,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,1.0,Ecm receptor interaction,KEGG
+gene,SYK,ENSG00000165025,,,,,fibrosis-only,fibrosis-only / positive,0.3244,,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 2 - moderate confidence,3.0,T cell activation,GO_BP
+gene,TAOK3,ENSG00000135090,,,,,inflammation-only,inflammation-only / positive,,0.1622,,,,,1.0,,
+gene,TAT,ENSG00000198650,,,,,fibrosis-only,fibrosis-only / negative,-0.1069,,C4,Mid decrease (largest at F1→F2),F0→F1,Tier 3,1.0,Xenobiotic metabolism,Hallmark
+gene,TBK1,ENSG00000183735,,,,,inflammation-only,inflammation-only / positive,,0.2292,,,,,1.0,Mtorc1 signaling,Hallmark
+gene,TCIRG1,ENSG00000110719,,,,,fibrosis-only,fibrosis-only / positive,0.122,,C1,"Early increase (F0→F1), then continued",F0→F1,Tier 3,1.0,T cell activation,GO_BP
+gene,TEC,ENSG00000135605,,,,,fibrosis-only,fibrosis-only / negative,-0.1709,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 3,2.0,,
+gene,TESK1,ENSG00000107140,,,,,inflammation-only,inflammation-only / positive,,0.1824,,,,,1.0,,
+gene,TGFB1,ENSG00000105329,,,,,fibrosis-only,fibrosis-only / positive,0.3376,,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 1 - high confidence,1.0,Allograft rejection,Hallmark
+gene,TGFBR1,ENSG00000106799,,,,,inflammation-only,inflammation-only / positive,,0.2215,,,,,1.0,,
+gene,THBD,ENSG00000178726,,,,,both,shared / positive,0.402,0.2715,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,2.0,Angiogenesis,Hallmark
+gene,TIMP3,ENSG00000100234,,,,,inflammation-only,inflammation-only / positive,,0.2732,,,,,1.0,,
+gene,TLK1,ENSG00000198586,,,,,fibrosis-only,fibrosis-only / negative,-0.282,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 3,1.0,,
+gene,TLR2,ENSG00000137462,,,,,fibrosis-only,fibrosis-only / positive,0.2286,,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 2 - moderate confidence,1.0,Allograft rejection,Hallmark
+gene,TNF,ENSG00000232810,,,,,both,shared / positive,0.2683,0.3509,C1,"Early increase (F0→F1), then continued",F0→F1,Tier 2 - moderate confidence,9.0,Tnfa signaling via nfkb,Hallmark
+gene,TOP2A,ENSG00000131747,,,,,both,shared / positive,0.2812,0.606,C3,"Early rise, then plateau",F0→F1,Tier 2 - moderate confidence,1.0,Apoptosis,Hallmark
+gene,TPD52L2,ENSG00000101150,,,,,both,shared / positive,0.1644,0.2801,C2,Late increase (largest at F3→F4),F3→F4,Tier 3,1.0,,
+gene,TPM1,ENSG00000140416,,,,,both,shared / positive,0.279,0.3679,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,Epithelial mesenchymal transition,Hallmark
+gene,TPM4,ENSG00000167460,,,,,fibrosis-only,fibrosis-only / positive,0.4028,,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,1.0,Epithelial mesenchymal transition,Hallmark
+gene,TRPA1,ENSG00000104321,,,,,fibrosis-only,fibrosis-only / positive,0.1419,,C2,Late increase (largest at F3→F4),F3→F4,Tier 3,8.0,,
+gene,TRPM7,ENSG00000092439,,,,,fibrosis-only,fibrosis-only / negative,-0.1803,,C5,Late decrease (largest at F3→F4),F2→F3,Tier 3,1.0,,
+gene,TRPM8,ENSG00000144481,,,,,inflammation-only,inflammation-only / positive,,0.1679,,,,,6.0,,
+gene,TRPV1,ENSG00000196689,,,,,inflammation-only,inflammation-only / negative,,-0.2018,,,,,10.0,,
+gene,TRPV2,ENSG00000187688,,,,,both,shared / positive,0.3742,0.2772,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 2 - moderate confidence,4.0,,
+gene,TRPV4,ENSG00000111199,,,,,both,shared / positive,0.2475,0.2552,C3,"Early rise, then plateau",F0→F1,Tier 3,3.0,Taxis,GO_BP
+gene,TTK,ENSG00000112742,,,,,both,shared / positive,0.2063,0.2467,C3,"Early rise, then plateau",F0→F1,Tier 3,1.0,Organelle fission,GO_BP
+gene,TTLL3,ENSG00000214021,,,,,fibrosis-only,fibrosis-only / positive,0.2347,,C1,"Early increase (F0→F1), then continued",F3→F4,Tier 3,1.0,,
+gene,TUBA1A,ENSG00000167552,,,,,both,shared / positive,0.2931,0.5274,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,4.0,,
+gene,TUBA1B,ENSG00000123416,,,,,inflammation-only,inflammation-only / positive,,0.5691,,,,,2.0,Cell cycle mitotic,Reactome
+gene,TUBA1C,ENSG00000167553,,,,,both,shared / positive,0.1271,0.4588,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,2.0,,
+gene,TUBB1,ENSG00000101162,,,,,both,shared / negative,-0.2742,-0.2357,C5,Late decrease (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,5.0,,
+gene,TUBB2A,ENSG00000137267,,,,,inflammation-only,inflammation-only / positive,,0.3895,,,,,1.0,Cell cycle mitotic,Reactome
+gene,TUBB3,ENSG00000258947,,,,,inflammation-only,inflammation-only / positive,,0.1786,,,,,3.0,Cell cycle mitotic,Reactome
+gene,TUBB4A,ENSG00000104833,,,,,inflammation-only,inflammation-only / positive,,0.2119,,,,,2.0,Cell cycle mitotic,Reactome
+gene,TUBB4B,ENSG00000188229,,,,,inflammation-only,inflammation-only / positive,,0.4451,,,,,3.0,Cell cycle mitotic,Reactome
+gene,TUBE1,ENSG00000074935,,,,,fibrosis-only,fibrosis-only / negative,-0.2189,,C5,Late decrease (largest at F3→F4),F1→F2,Tier 3,1.0,,
+gene,TUBG1,ENSG00000131462,,,,,both,shared / positive,0.1364,0.4103,C3,"Early rise, then plateau",F0→F1,Tier 3,1.0,E2f targets,Hallmark
+gene,TXN,ENSG00000136810,,,,,inflammation-only,inflammation-only / positive,,0.2874,,,,,1.0,,
+gene,UBA1,ENSG00000130985,,,,,inflammation-only,inflammation-only / positive,,0.2492,,,,,1.0,Ubiquitin mediated proteolysis,KEGG
+gene,UCHL1,ENSG00000154277,,,,,both,shared / positive,0.1795,0.1797,C2,Late increase (largest at F3→F4),F3→F4,Tier 3,1.0,,
+gene,UGT3A1,ENSG00000145626,,,,,inflammation-only,inflammation-only / positive,,0.2981,,,,,1.0,,
+gene,ULK3,ENSG00000140474,,,,,inflammation-only,inflammation-only / positive,,0.2201,,,,,1.0,,
+gene,USP14,ENSG00000101557,,,,,inflammation-only,inflammation-only / positive,,0.4509,,,,,1.0,Proteasomal protein catabolic process,GO_BP
+gene,VCP,ENSG00000165280,,,,,inflammation-only,inflammation-only / positive,,0.4758,,,,,1.0,Endoplasmic reticulum to golgi vesicle mediated transport,GO_BP
+gene,VDAC1,ENSG00000213585,,,,,inflammation-only,inflammation-only / positive,,0.2209,,,,,2.0,Myc targets v1,Hallmark
+gene,VDR,ENSG00000111424,,,,,both,shared / positive,0.2563,0.0814,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,1.0,P53 pathway,Hallmark
+gene,VIM,ENSG00000026025,,,,,both,shared / positive,0.3736,0.3589,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,1.0,Epithelial mesenchymal transition,Hallmark
+gene,VLDLR,ENSG00000147852,,,,,inflammation-only,inflammation-only / positive,,0.2957,,,,,1.0,Mtorc1 signaling,Hallmark
+gene,XDH,ENSG00000158125,,,,,fibrosis-only,fibrosis-only / negative,-0.1786,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,2.0,Small molecule catabolic process,GO_BP
+gene,XIAP,ENSG00000101966,,,,,inflammation-only,inflammation-only / positive,,0.1262,,,,,1.0,Ubiquitin mediated proteolysis,KEGG
+gene,YARS1,ENSG00000134684,,,,,inflammation-only,inflammation-only / positive,,0.4162,,,,,1.0,Aminoacyl trna biosynthesis,KEGG
+gene,YES1,ENSG00000176105,,,,,both,shared / negative,-0.1746,-0.2069,C4,Mid decrease (largest at F1→F2),F1→F2,Tier 3,2.0,,
+gene,YWHAB,ENSG00000166913,,,,,inflammation-only,inflammation-only / positive,,0.4896,,,,,1.0,Cell cycle checkpoints,Reactome
+gene,YWHAH,ENSG00000128245,,,,,both,shared / positive,0.3138,0.6524,C1,"Early increase (F0→F1), then continued",F0→F1,Tier 1 - high confidence,1.0,Apical junction,Hallmark
+gene,YWHAZ,ENSG00000164924,,,,,both,shared / positive,0.1079,0.4732,C2,Late increase (largest at F3→F4),F3→F4,Tier 3,1.0,Cell cycle,KEGG
+gene,ZAP70,ENSG00000115085,,,,,fibrosis-only,fibrosis-only / positive,0.1611,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,2.0,T cell activation,GO_BP

@@ -1,0 +1,11 @@
+group,genes,drug_connected,percent,background_percent,odds_ratio,fisher_p,degree_matched_null_percent,degree_matched_p,fisher_q_BH,survives_degree_aware
+fibrosis-only / positive,1040,133,12.8,11.2,1.159,1.479e-01,12.1,0.495,1.848e-01,no
+fibrosis-only / negative,983,190,19.3,11.2,1.893,4.135e-12,12.2,0.0,2.068e-11,yes
+inflammation-only / positive,2042,276,13.5,11.2,1.235,4.525e-03,12.4,0.056,6.464e-03,no
+inflammation-only / negative,335,43,12.8,11.2,1.164,3.783e-01,10.8,0.224,3.783e-01,no
+shared / positive,1408,224,15.9,11.2,1.495,1.212e-06,13.2,0.0015,2.425e-06,yes
+shared / negative,384,87,22.7,11.2,2.315,6.046e-10,11.5,0.0,2.015e-09,yes
+shared / discordant,30,5,16.7,11.2,1.58,3.770e-01,13.0,0.571,3.783e-01,no
+[class] fibrosis-only,2023,323,16.0,11.2,1.501,1.262e-08,12.2,0.0,3.156e-08,yes
+[class] inflammation-only,2377,319,13.4,11.2,1.225,3.908e-03,12.2,0.0155,6.464e-03,yes
+[class] both,1822,316,17.3,11.2,1.658,3.942e-12,12.8,0.0,2.068e-11,yes
