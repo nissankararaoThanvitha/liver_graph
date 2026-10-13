@@ -86,10 +86,25 @@ or block CACNA1C."** Both genes score a perfect 1.00 on all five Task 6
 components, and both were independently flagged in Task 7 as reversal-consistent
 fibrosis-only rising genes.
 
-**PDGFRA** is the stronger of the two: Paper 1's only 9/9 gene, rho +0.417
-across 5/5 studies, LOSO 5/5, and nintedanib is already approved for *lung*
-fibrosis — the same mechanism in a different organ. That convergence is the
-most defensible thing in this paper.
+**PDGFRA is NOT the stronger of the two on this project's evidence.** An
+earlier version of this README claimed it was "Paper 1's only 9/9 gene". That is
+false: six genes score 9 — CACNA1C, MYC, PDGFRA, PLK3, TAX1BP3 and TPM4 — and
+CACNA1C is one of them.
+
+| | PDGFRA | CACNA1C |
+|---|---:|---:|
+| Paper 1 score | 9/9 | **9/9** |
+| fibrosis rho | +0.417 | **+0.447** |
+| BH-q | 1.4e-18 | **5.9e-21** |
+| studies | 5/5 | 5/5 |
+| Task 6 components | 1.00 × 5 | **1.00 × 5** |
+| reversal-inconsistent relationships | 0 | 0 |
+
+On every internal measure CACNA1C equals or exceeds PDGFRA. **PDGFRA is
+preferred on one external fact only**: nintedanib is approved for *lung*
+fibrosis — the same mechanism in a different organ. That is a real argument, but
+it comes from outside this project and should be presented as such, not as a
+within-paper finding.
 
 **CACNA1C** carries more drugs but a thinner story. It reaches band 1 on the
 same five components, and calcium-channel blockers have been examined in
