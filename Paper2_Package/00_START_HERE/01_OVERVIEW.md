@@ -35,7 +35,7 @@ the researcher confirmed its use on 12 October.
 | 1 | Master gene table | 6,222 genes, nothing filtered, verified gene by gene against the live graph |
 | 2 | Drug–gene extraction | 8,948 links · 1,072 genes · 3,027 drugs; only 11.2% carry a usable direction |
 | 3 | Druggability by group | Genes that **fall** with disease are ~2× more drug-connected; survives a degree-matched null |
-| 4 | Drug coverage | Coverage and coherence correlate **−0.124**: counting targets selects promiscuity |
+| 4 | Drug coverage | Coverage and coherence correlate **−0.268**: counting targets selects promiscuity |
 | 5 | MetaPaths | Reactome 11× cleaner than GO; raw path counts disagree with DWPC at ρ = 0.45 |
 | 6 | Target scoring | Five components, one of which contributes nothing; exact top-50 not defensible |
 | 7 | Action/direction | Mechanism consistency at chance overall; one subgroup beats its null |

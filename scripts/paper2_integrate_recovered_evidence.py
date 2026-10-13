@@ -159,6 +159,11 @@ def main():
         + t2.sources_indirect.fillna("").radd(" via ").where(
             t2.sources_indirect.notna(), ""))
     t2["Evidence_Level"] = t2.evidence_level.fillna("not matched to source")
+    # evidence_level and Evidence_Level were identical on all 8,948 rows. Two
+    # columns differing only in case are a hazard in Excel and in any
+    # case-insensitive import, so only the Title_Case one -- matching Task 2's
+    # own Drug / Gene / Evidence_Source convention -- is delivered.
+    t2 = t2.drop(columns=["evidence_level"])
     t2.to_csv(T2, index=False)
     print(f"\nTask 2: {matched:,} of {len(t2):,} edges matched to source evidence")
     print(f"   Evidence_Source was: {str(before)[:60]!r}")
@@ -172,8 +177,10 @@ def main():
     t7["Evidence_Source"] = ("OptimusKG: "
                              + t7.sources_direct.fillna("unattributed"))
     t7["Evidence_Level"] = t7.evidence_level.fillna("not matched to source")
+    n_t7_evidence = int(t7.evidence_level.notna().sum())
+    t7 = t7.drop(columns=["evidence_level"])        # see the Task 2 note above
     t7.to_csv(T7, index=False)
-    print(f"Task 7: {int(t7.evidence_level.notna().sum()):,} of {len(t7):,} "
+    print(f"Task 7: {n_t7_evidence:,} of {len(t7):,} "
           "relationships now carry a real evidence level")
     print(t7.Evidence_Level.value_counts().to_string())
 
@@ -188,7 +195,15 @@ def main():
             "smiles", "smiles_source",
             "is_approved", "has_been_withdrawn", "has_smiles",
             "inchi_key", "cd_formula", "cd_mol_weight"]
-    t4 = t4.drop(columns=[c for c in keep if c in t4.columns
+    # Drop the columns this script owns, INCLUDING ones it no longer produces.
+    # The earlier version dropped only what was in `keep`, so a column written
+    # by a superseded version of this script survived every rerun forever --
+    # which is how flag_no_structure and likely_non_therapeutic_v2 came to sit
+    # in the delivered table, written by nothing and flagging 1 drug where
+    # likely_non_therapeutic flags 726. A "_v2" name on a dead column is worse
+    # than no column: it reads as the newer, better one.
+    RETIRED = ["flag_no_structure", "likely_non_therapeutic_v2"]
+    t4 = t4.drop(columns=[c for c in keep + RETIRED if c in t4.columns
                           and c != "Drug_ID"], errors="ignore")
     t4 = t4.merge(md[keep], on="Drug_ID", how="left")
 

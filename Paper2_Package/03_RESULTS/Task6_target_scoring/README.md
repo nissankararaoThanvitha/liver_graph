@@ -66,7 +66,7 @@ K(g) = 0.5 · 1{ a therapeutic drug acts on g }
 **Deliberately degree-free.** The obvious K is "how many drugs act on this
 gene", and every task so far has found degree misleading: Task 3 killed an
 apparently significant result once connectivity was matched, Task 4 found
-coverage *negatively* correlated with coherence (ρ = −0.124), and Task 5 found
+coverage *negatively* correlated with coherence (ρ = −0.268), and Task 5 found
 raw path counts disagreeing with DWPC at ρ = 0.45 while DWPC itself promoted
 proteasome and tubulin binders. A gene with one characterised inhibitor scores
 the same as one with forty.

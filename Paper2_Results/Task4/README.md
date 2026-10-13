@@ -43,7 +43,8 @@ unrelated genes*. Two measures per drug answer it:
   falling in one class × direction group
 - **`dominant_cluster_fraction`** — the same across F0–F4 trajectory clusters
 
-Correlation between raw coverage and coherence: **−0.124**.
+Correlation between raw coverage and coherence: **−0.268** (Spearman, p = 0.001, 147 drugs). Measured by the task script into
+`task4_coverage_vs_coherence_correlation.csv`, not carried by hand.
 
 **Negative.** The drugs reaching the most progression genes cover the *least*
 coherent programmes. Ranking by coverage actively selects promiscuity. The

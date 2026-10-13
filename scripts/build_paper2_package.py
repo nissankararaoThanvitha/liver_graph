@@ -73,7 +73,7 @@ FIGURES = {
     "Task4/task4_coverage_vs_coherence.png": (
         "main",
         "Coverage against coherence, one point per drug. The widest-reaching "
-        "drugs are the least coherent; the two measures correlate at -0.124, "
+        "drugs are the least coherent; the two measures correlate at -0.268 (p = 0.001), "
         "so ranking by target count selects promiscuity."),
     "Task4/task4_network.png": (
         "main",

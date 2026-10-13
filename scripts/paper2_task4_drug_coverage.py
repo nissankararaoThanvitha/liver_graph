@@ -63,6 +63,7 @@ import sys
 
 import numpy as np
 import pandas as pd
+from scipy.stats import spearmanr
 from neo4j import GraphDatabase
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -241,7 +242,8 @@ def main():
     # satisfied by shipping the raw list and, beside it, the same list with the
     # non-therapeutic entities removed -- which is the one a reader should use.
     # Ranked by coherence instead of by count. Coverage and coherence correlate
-    # at -0.124 here, so this is a genuinely different list and it is the one
+    # NEGATIVELY (computed below, not asserted), so this is a genuinely
+    # different list and it is the one
     # worth reading first: it is where TRAPIDIL, MARIMASTAT and GLYCYRRHIZIN
     # sit, none of which the coverage ranking surfaces. A floor of five genes
     # keeps out drugs that score 1.0 coherence on two targets.
@@ -250,6 +252,41 @@ def main():
                              ascending=[False, False])
                 .head(TOP_N))
     coherent.to_csv(f"{OUT_DIR}/task4_top_drugs_by_coherence.csv", index=False)
+
+    # ---- coverage vs coherence, MEASURED ----------------------------------
+    # This number is quoted in five documents. It used to be carried by hand as
+    # -0.124 and drifted when the coherence definition and the gene set changed,
+    # because nothing recomputed it. It is computed here and written to disk so
+    # a stale value cannot survive a rerun again.
+    corr_rows = []
+    for coh_col in ["dominant_class_fraction", "dominant_cluster_fraction"]:
+        for label, mask in [
+                ("not non-therapeutic", ~d.likely_non_therapeutic),
+                ("named only", ~d.flag_unnamed)]:
+            sub = d[mask & (d.n_progression_genes >= 5)].dropna(
+                subset=["n_progression_genes", coh_col])
+            if len(sub) < 10:
+                continue
+            rho, pval = spearmanr(sub.n_progression_genes, sub[coh_col])
+            corr_rows.append({"coherence_measure": coh_col,
+                              "drug_set": label,
+                              "min_progression_genes": 5,
+                              "n_drugs": len(sub),
+                              "spearman_rho": round(float(rho), 3),
+                              "p_value": float(pval)})
+    corr = pd.DataFrame(corr_rows)
+    corr.to_csv(f"{OUT_DIR}/task4_coverage_vs_coherence_correlation.csv",
+                index=False)
+    headline = corr[(corr.coherence_measure == "dominant_class_fraction")
+                    & (corr.drug_set == "not non-therapeutic")]
+    rho_headline = float(headline.spearman_rho.iloc[0])
+    print("\ncoverage vs coherence (Spearman), measured:")
+    print(corr.to_string(index=False))
+    print(f"   headline (class coherence, non-therapeutic removed, n>=5): "
+          f"rho = {rho_headline:+.3f}")
+    assert rho_headline < 0, (
+        "coverage and coherence are no longer negatively correlated -- the "
+        "Task 4 / 6 / 8 argument rests on this sign, so stop and re-read")
 
     # ---- bipartite network, annotated with Paper 1 evidence ----------------
     net_drugs = set(d[(d.n_progression_genes >= 3)

@@ -71,9 +71,32 @@ the simplest objection; what it means biologically is not settled here.
 
 ## Coverage versus coherence (Task 4)
 
-Spearman **−0.124** between progression-gene coverage and coherence, over named
-drugs reaching ≥5 genes. Negative: the widest-reaching drugs cover the least
-coherent programmes.
+Spearman **−0.268** (p = 0.001, 147 drugs) between progression-gene coverage and
+class coherence, over drugs reaching ≥5 progression genes with non-therapeutic
+entities removed. Negative: the widest-reaching drugs cover the least coherent
+programmes.
+
+> **A stale figure, corrected.** This was reported as **−0.124** in five
+> documents and three scripts. No script computed it — it was carried by hand
+> from an earlier Task 4 run, and it drifted when the coherence definition and
+> the drug set changed. The task script now computes it and writes
+> `task4_coverage_vs_coherence_correlation.csv`, so a stale value cannot
+> survive a rerun. **The conclusion is unchanged and in fact stronger**: the
+> correlation is more negative than was claimed, not less.
+
+**The coherence measure matters, which one number hid.** Both measures were
+computed; only the class-based one is significant:
+
+| coherence measure | drug set | n | rho | p |
+|---|---|---:|---:|---:|
+| dominant **class** fraction | non-therapeutic removed | 147 | **−0.268** | 0.001 |
+| dominant **class** fraction | named only | 173 | −0.320 | 1.8e-05 |
+| dominant **cluster** fraction | non-therapeutic removed | 147 | −0.090 | 0.28 |
+| dominant **cluster** fraction | named only | 173 | −0.059 | 0.44 |
+
+The class-level claim holds on either drug set. The cluster-level one does not
+hold at all, so the argument that coverage selects promiscuity should be made at
+the level of progression class, not trajectory cluster.
 
 ## MetaPaths (Task 5)
 
