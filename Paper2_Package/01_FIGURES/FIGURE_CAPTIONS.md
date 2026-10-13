@@ -18,7 +18,7 @@ Mechanism consistency against its null. Observed 52.7% sits inside a null centre
 
 **task3_druggability_by_group.png** _(main)_
 
-Druggability by progression group against an 11.2% background. Genes that fall as disease worsens are roughly twice as drug-connected as genes that rise. Starred groups survive a null matched on non-drug degree.
+Druggability by progression group, grey = any drug edge, colour = real therapeutics only. Removing mineral salts, nutrients and unnamed accessions from BOTH arms drops the background from 11.2% to 9.3% and costs the falling groups about 5 points each. All three starred groups still survive a degree-matched null on the filtered definition.
 
 **task4_coverage_vs_coherence.png** _(main)_
 

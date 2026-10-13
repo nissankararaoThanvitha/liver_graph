@@ -108,48 +108,64 @@ def task2_null():
 
 
 def task3_druggability():
-    """The bar plot the plan asks for, with the background drawn as the line
-    everything is compared against rather than as another bar."""
+    """The bar plot the plan asks for, now with BOTH definitions of
+    "drug-connected" side by side.
+
+    A reviewer pointed out on 13 October that the first version counted a gene
+    as druggable when its only drug was zinc chloride or an unnamed accession.
+    Showing one bar would mean choosing which number to believe; showing two
+    lets the reader watch the effect shrink and survive.
+    """
     T3 = "Paper2_Results/Task3"
     s = pd.read_csv(f"{T3}/task3_druggability_summary.csv")
     t = pd.read_csv(f"{T3}/task3_enrichment_tests.csv").set_index("group")
 
-    bg = float(s.loc[s.group == "NOT progression (background)", "percent"].iloc[0])
+    bgrow = s.group == "NOT progression (background)"
+    bg = float(s.loc[bgrow, "percent"].iloc[0])
+    bg_u = float(s.loc[bgrow, "percent_usable"].iloc[0])
     order = ["fibrosis-only / positive", "fibrosis-only / negative",
              "inflammation-only / positive", "inflammation-only / negative",
              "shared / positive", "shared / negative", "shared / discordant"]
     s = s.set_index("group").loc[order].reset_index()
 
-    # Colour by direction, not by class: the direction is where the signal is.
-    colours = [BLUE if "positive" in grp else
-               (ORANGE if "negative" in grp else GREY) for grp in s.group]
-    survives = [t.loc[grp, "survives_degree_aware"] if grp in t.index else "no"
-                for grp in s.group]
+    survives = [t.loc[g, "survives_degree_aware_usable"] if g in t.index else "no"
+                for g in s.group]
 
-    fig, ax = plt.subplots(figsize=(10, 4.2))
+    fig, ax = plt.subplots(figsize=(11, 4.6))
     x = np.arange(len(s))
-    bars = ax.bar(x, s.percent, color=colours, width=.66,
+    w = 0.38
+    ax.bar(x - w/2, s.percent, width=w, color=GREY, alpha=.65,
+           label="any drug edge (as first published)")
+    bars = ax.bar(x + w/2, s.percent_usable, width=w,
+                  color=[BLUE if "positive" in g else
+                         (ORANGE if "negative" in g else "#9aa7b8") for g in s.group],
                   edgecolor=["#15202b" if v == "yes" else "none" for v in survives],
-                  linewidth=1.6)
-    ax.axhline(bg, color=RED, ls="--", lw=1.4)
-    ax.text(len(s) - .4, bg + .45, f"background {bg}%", color=RED, fontsize=8.5,
-            ha="right")
+                  linewidth=1.7,
+                  label="real therapeutics only (primary)")
 
-    for b, pct, n, v in zip(bars, s.percent, s.total_genes, survives):
+    ax.axhline(bg, color=GREY, ls=":", lw=1.3)
+    ax.axhline(bg_u, color=RED, ls="--", lw=1.4)
+    ax.text(len(s) - .35, bg_u + .4, f"background {bg_u}%", color=RED,
+            fontsize=8.5, ha="right")
+    ax.text(len(s) - .35, bg + .4, f"was {bg}%", color="#6b7a8d",
+            fontsize=8, ha="right")
+
+    for b, pct, v in zip(bars, s.percent_usable, survives):
         ax.text(b.get_x() + b.get_width()/2, pct + .35,
-                f"{pct}%" + ("  *" if v == "yes" else ""),
-                ha="center", fontsize=9,
-                fontweight="bold" if v == "yes" else "normal")
-        ax.text(b.get_x() + b.get_width()/2, .6, f"n={n:,}", ha="center",
-                fontsize=7.5, color="white")
+                f"{pct}%" + ("  *" if v == "yes" else ""), ha="center",
+                fontsize=8.8, fontweight="bold" if v == "yes" else "normal")
+    for xi, n in zip(x, s.total_genes):
+        ax.text(xi, .55, f"n={n:,}", ha="center", fontsize=7.4, color="#3b4a5e")
 
     ax.set_xticks(x)
     ax.set_xticklabels([g.replace(" / ", "\n") for g in s.group], fontsize=8.5)
-    ax.set_ylabel("genes with a therapeutic drug edge (%)")
-    ax.set_ylim(0, max(s.percent) * 1.22)
-    ax.set_title("Druggability by progression group  "
-                 "(* survives a degree-matched null; bold outline = same)",
-                 fontsize=10, loc="left")
+    ax.set_ylabel("genes with a drug (%)")
+    ax.set_ylim(0, max(s.percent) * 1.24)
+    ax.set_title("Druggability by progression group, before and after removing "
+                 "non-therapeutic entities\n"
+                 "* and bold outline = survives a degree-matched null on the "
+                 "filtered definition", fontsize=10, loc="left")
+    ax.legend(fontsize=8, framealpha=.95, loc="upper right")
     ax.spines[["top", "right"]].set_visible(False)
     fig.tight_layout()
     fig.savefig(f"{T3}/task3_druggability_by_group.png", dpi=200)

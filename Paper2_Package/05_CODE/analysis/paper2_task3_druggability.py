@@ -69,7 +69,7 @@ UNIVERSE = "data/progression_full/progression_fibrosis.csv"
 OUT_DIR = "Paper2_Results/Task3"
 SEED = 42
 N_PERM = 2000
-PHARMACOKINETIC = {"ENZYME", "TRANSPORTER", "CARRIER", "SUBSTRATE"}
+from paper2_drug_filters import PHARMACOKINETIC, flag_entities
 
 
 def driver():
@@ -93,7 +93,7 @@ def fetch(genes):
             MATCH (dr:Drug)-[a:ACTS_ON]->(g:Gene)
             WHERE g.ensembl_id IN $genes
             RETURN g.ensembl_id AS Ensembl_ID, dr.node_id AS drug,
-                   a.action AS action
+                   dr.name AS drug_name, a.action AS action
         """, genes=genes).data())
         degree = pd.DataFrame(s.run("""
             MATCH (g:Gene) WHERE g.ensembl_id IN $genes
@@ -131,7 +131,8 @@ def group_of(row):
     return f"{cls} / {'positive' if d == 'increasing' else 'negative'}"
 
 
-def degree_matched_null(group_ids, pool, rng, n_perm=N_PERM):
+def degree_matched_null(group_ids, pool, rng, n_perm=N_PERM,
+                        col="drug_connected"):
     """Fraction drug-connected in degree-matched background draws.
 
     Background genes are binned by non-drug degree; for each group gene a
@@ -140,7 +141,7 @@ def degree_matched_null(group_ids, pool, rng, n_perm=N_PERM):
     progression-associated.
     """
     bins = pool.groupby("degree_bin").Ensembl_ID.apply(list).to_dict()
-    conn = pool.set_index("Ensembl_ID").drug_connected.to_dict()
+    conn = pool.set_index("Ensembl_ID")[col].to_dict()
     wanted = group_ids.degree_bin.value_counts().to_dict()
 
     out = np.empty(n_perm)
@@ -172,18 +173,43 @@ def main():
     drugs, degree = fetch(universe.Ensembl_ID.tolist())
     drugs["therapeutic"] = ~drugs.action.isin(PHARMACOKINETIC)
 
+    # ENTITY-LEVEL FILTER, added 13 October after review.
+    # Until now "drug-connected" counted any ACTS_ON edge whose action was not
+    # pharmacokinetic -- which let zinc chloride, ATP and unnamed ChEMBL
+    # accessions make a gene "druggable". 174 of the 958 drug-connected
+    # progression genes (18%) reach a flagged entity and nothing else, so this
+    # was not a rounding issue.
+    #
+    # The same rule now runs on BOTH arms: a background cleaned on one side and
+    # not the other would manufacture an effect rather than measure one.
+    names = dict(zip(drugs.drug, drugs.drug_name))
+    targets = drugs.groupby("drug").Ensembl_ID.apply(set).to_dict()
+    flags = flag_entities(names, targets)
+    drugs["non_therapeutic_entity"] = drugs.drug.map(
+        lambda d: flags[d]["non_therapeutic"])
+    drugs["usable"] = drugs.therapeutic & ~drugs.non_therapeutic_entity
+    n_flagged = sum(1 for f in flags.values() if f["non_therapeutic"])
+    print(f"entities flagged non-therapeutic: {n_flagged:,} of {len(flags):,} drugs")
+
     per_gene = (drugs.groupby("Ensembl_ID")
                      .agg(drugs_all=("drug", "nunique"),
                           drugs_therapeutic=("drug",
-                                             lambda s: s[drugs.loc[s.index, "therapeutic"]].nunique()))
+                                             lambda s: s[drugs.loc[s.index, "therapeutic"]].nunique()),
+                          drugs_usable=("drug",
+                                        lambda s: s[drugs.loc[s.index, "usable"]].nunique()))
                      .reset_index())
 
     g = (universe.merge(per_gene, on="Ensembl_ID", how="left")
                  .merge(degree, on="Ensembl_ID", how="left")
                  .fillna({"drugs_all": 0, "drugs_therapeutic": 0,
+                         "drugs_usable": 0,
                           "nondrug_degree": 0}))
     g["drug_connected_all"] = g.drugs_all > 0
-    g["drug_connected"] = g.drugs_therapeutic > 0      # primary definition
+    g["drug_connected"] = g.drugs_therapeutic > 0      # as first published
+    # PRIMARY from 13 October: therapeutic action AND a plausible therapeutic
+    # entity. A gene whose only drug is zinc chloride is not druggable in any
+    # sense the plan asks about.
+    g["drug_connected_usable"] = g.drugs_usable > 0
 
     m = master[["Ensembl_ID", "progression_class", "fibrosis_direction",
                 "inflammation_direction"]].copy()
@@ -216,6 +242,8 @@ def main():
             "total_genes": len(sub),
             "drug_connected_genes": int(sub.drug_connected.sum()),
             "percent": round(100 * sub.drug_connected.mean(), 1),
+            "drug_connected_usable": int(sub.drug_connected_usable.sum()),
+            "percent_usable": round(100 * sub.drug_connected_usable.mean(), 1),
             "unique_drugs": drugs[drugs.Ensembl_ID.isin(ids)
                                   & drugs.therapeutic].drug.nunique(),
             "drug_connected_ALL_edges": int(sub.drug_connected_all.sum()),
@@ -230,6 +258,8 @@ def main():
             "group": f"[class] {shown}", "total_genes": len(sub),
             "drug_connected_genes": int(sub.drug_connected.sum()),
             "percent": round(100 * sub.drug_connected.mean(), 1),
+            "drug_connected_usable": int(sub.drug_connected_usable.sum()),
+            "percent_usable": round(100 * sub.drug_connected_usable.mean(), 1),
             "unique_drugs": drugs[drugs.Ensembl_ID.isin(ids)
                                   & drugs.therapeutic].drug.nunique(),
             "drug_connected_ALL_edges": int(sub.drug_connected_all.sum()),
@@ -250,7 +280,10 @@ def main():
 
     # ---- Fisher vs the background, then the degree-aware null -------------
     bg_hit = int(pool.drug_connected.sum())
+    bg_hit_u = int(pool.drug_connected_usable.sum())
     bg_n = len(pool)
+    print(f"background: {100*bg_hit/bg_n:.1f}% as published, "
+          f"{100*bg_hit_u/bg_n:.1f}% with non-therapeutic entities removed")
     tests = []
     display_to_raw = {v: k for k, v in CLASS_RAW_TO_DISPLAY.items()}
     for grp in order + [f"[class] {v}" for v in CLASS_RAW_TO_DISPLAY.values()]:
@@ -270,6 +303,17 @@ def main():
         obs = hit / n
         p_perm = (np.abs(null - np.nanmean(null)) >=
                   abs(obs - np.nanmean(null))).mean()
+
+        # The same three tests on the entity-filtered definition, with the
+        # background filtered too. A reviewer asked for exactly this on
+        # 13 October and was right to: the published effect rests on it.
+        hit_u = int(sub.drug_connected_usable.sum())
+        table_u = [[hit_u, n - hit_u], [bg_hit_u, bg_n - bg_hit_u]]
+        odds_u, p_u = stats.fisher_exact(table_u)
+        null_u = degree_matched_null(sub, pool, rng, col="drug_connected_usable")
+        obs_u = hit_u / n
+        p_perm_u = (np.abs(null_u - np.nanmean(null_u)) >=
+                    abs(obs_u - np.nanmean(null_u))).mean()
         tests.append({
             "group": grp, "genes": n, "drug_connected": hit,
             "percent": round(100 * obs, 1),
@@ -278,12 +322,25 @@ def main():
             "fisher_p": p,
             "degree_matched_null_percent": round(100 * float(np.nanmean(null)), 1),
             "degree_matched_p": round(float(p_perm), 4),
+            # entity-filtered, both arms
+            "percent_usable": round(100 * obs_u, 1),
+            "background_percent_usable": round(100 * bg_hit_u / bg_n, 1),
+            "odds_ratio_usable": round(float(odds_u), 3),
+            "fisher_p_usable": p_u,
+            "degree_matched_null_percent_usable":
+                round(100 * float(np.nanmean(null_u)), 1),
+            "degree_matched_p_usable": round(float(p_perm_u), 4),
         })
     t = pd.DataFrame(tests)
     t["fisher_q_BH"] = stats.false_discovery_control(t.fisher_p.values)
+    t["fisher_q_BH_usable"] = stats.false_discovery_control(
+        t.fisher_p_usable.values)
     t["fisher_p"] = t.fisher_p.map(lambda v: f"{v:.3e}")
     t["fisher_q_BH"] = t.fisher_q_BH.map(lambda v: f"{v:.3e}")
     t["survives_degree_aware"] = np.where(t.degree_matched_p < 0.05, "yes", "no")
+    t["fisher_q_BH_usable"] = t.fisher_q_BH_usable.map(lambda v: f"{v:.3e}")
+    t["survives_degree_aware_usable"] = np.where(
+        t.degree_matched_p_usable < 0.05, "yes", "no")
 
     # ---- confound: is this just the classically druggable protein families? -
     # The degree-aware null controls for how connected a gene is, not for what

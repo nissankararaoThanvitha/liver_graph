@@ -6,27 +6,45 @@ meeting the old figure elsewhere needs to know which to trust.
 
 ## Druggability across progression groups (Task 3)
 
-Background rate **11.2%** (963 of 8,572 eligible non-progression genes).
+**Two definitions are reported, because the first one was too loose.**
 
-| group | n | % | OR | BH-q | degree-matched p | survives |
-|---|---:|---:|---:|---|---:|---|
-| shared / negative | 384 | 22.7 | 2.32 | 2.0e-09 | 0.0000 | ✅ |
-| fibrosis-only / negative | 983 | 19.3 | 1.89 | 2.1e-11 | 0.0000 | ✅ |
-| shared / positive | 1,408 | 15.9 | 1.50 | 2.4e-06 | 0.0015 | ✅ |
-| inflammation-only / positive | 2,042 | 13.5 | 1.24 | 6.5e-03 | 0.0560 | ✗ |
-| fibrosis-only / positive | 1,040 | 12.8 | 1.16 | 1.8e-01 | 0.4950 | ✗ |
-| inflammation-only / negative | 335 | 12.8 | 1.16 | 3.8e-01 | 0.2240 | ✗ |
+> **A reviewer's finding, 13 October.** "Drug-connected" originally counted any
+> `ACTS_ON` edge whose action was not pharmacokinetic. That let zinc chloride,
+> ATP and unnamed ChEMBL accessions make a gene druggable. **174 of the 958
+> drug-connected progression genes — 18% — reach a flagged entity and nothing
+> else.** The filter is now applied to **both arms**; cleaning one side only
+> would manufacture an effect rather than measure one.
 
-**The degree-aware null earns its place.** `inflammation-only / positive` has a
-BH-q of 0.0065 and looks significant, then dies at p = 0.056 once connectivity
-is matched. Fisher alone would have put a false positive in the paper.
+Background rate **9.3%** filtered (was 11.2% unfiltered).
+
+| group | n | % published | **% filtered** | OR filtered | BH-q filtered | degree-matched p | survives |
+|---|---:|---:|---:|---:|---|---:|---|
+| shared / negative | 384 | 22.7 | **17.2** | 2.04 | 5.1e-06 | 0.0000 | ✅ |
+| shared / positive | 1,408 | 15.9 | **14.1** | 1.62 | 3.2e-07 | 0.0000 | ✅ |
+| fibrosis-only / negative | 983 | 19.3 | **14.3** | 1.64 | 4.3e-06 | 0.0000 | ✅ |
+| inflammation-only / negative | 335 | 12.8 | 11.3 | 1.26 | 2.4e-01 | 0.0860 | ✗ |
+| fibrosis-only / positive | 1,040 | 12.8 | 11.1 | 1.22 | 8.0e-02 | 0.2485 | ✗ |
+| inflammation-only / positive | 2,042 | 13.5 | 10.9 | 1.20 | 3.8e-02 | 0.2575 | ✗ |
+
+**The headline survives, and the gap narrows.** All three groups that beat the
+degree-matched null before still beat it with both arms filtered. The falling
+groups lose the most — fibrosis-only / negative drops 5.0 points — which is
+exactly where mineral salts and cofactors were doing the work.
+
+**One result did not survive.** The class-level rollup
+`[class] inflammation-only` had a degree-matched p of 0.0205 unfiltered and
+**0.0805 filtered**. It is no longer significant and is no longer claimed.
+
+**Two nulls earn their place, not one.** `inflammation-only / positive` has a
+filtered BH-q of 0.038 and looks significant until the degree-matched null puts
+it at p = 0.26. Fisher alone would have put a false positive in the paper under
+either definition.
 
 **Confound tested, not assumed.** The decreasing groups are led by ADRA1A,
 HTR2A, ESR1, AR, DRD1 and the monoamine oxidases — families that attract drug
-annotation for reasons unrelated to liver, and which a degree-matched null does
-not control for. Removing every classically druggable family leaves **20.2%**
-and **16.5%** against a 10.0% background (OR 2.29 and 1.79). The effect is
-smaller and it is not theirs.
+annotation for reasons unrelated to liver. Removing every classically druggable
+family leaves **20.2%** and **16.5%** against a 10.0% background (OR 2.29 and
+1.79) on the unfiltered definition. The effect is smaller and it is not theirs.
 
 ## Mechanism consistency (Tasks 2 and 7)
 
