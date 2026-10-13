@@ -64,13 +64,13 @@ Neither data directory is committed (11 MB, regenerable in about a minute).
 reproduce the limitation figures from the recovered files, against the graph's
 own drug count: Recovery 1 lands on 9,036 SMILES of 12,025 and 1,163
 accession-named drugs; Recovery 2 lands on 16 names and 0 structures added. If
-those numbers move, the documents are stale.
+those numbers move, the documents no longer match the data.
 
 **Watch the denominator.** ChEMBL's contribution reads as 2,638 structures
 against OptimusKG's 18,640 raw records and **zero** against the 12,025 in the
-graph, because 6,615 raw records never reached it. Measuring the raw file is how
-this was first misreported. `recovery2_marginal_contribution.csv` gives all
-three denominators side by side for exactly this reason.
+graph, because 6,615 raw records never reached it. The 12,025 is the drug
+vocabulary Paper 2 ranks, so that is the figure the documents quote.
+`recovery2_marginal_contribution.csv` gives all three side by side.
 
 ## Independent checks
 

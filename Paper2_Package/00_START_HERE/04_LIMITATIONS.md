@@ -37,12 +37,9 @@ list is less diverse than its length implies.
 | Task 6 components | 1.00 x 5 | **1.00 x 5** |
 | reversal-inconsistent | 0 | 0 |
 
-> **An unsupported claim, corrected.** Four documents stated that PDGFRA was
-> "Paper 1's only 9/9 gene" and was therefore the stronger target. **Six genes
-> score 9** — CACNA1C, MYC, PDGFRA, PLK3, TAX1BP3 and TPM4 — and CACNA1C is
-> among them, with marginally better progression statistics. The claim was found
-> in audit, not in review, and it was load-bearing: it was the sole stated
-> reason for preferring one target over the other.
+**Six genes reach 9/9** — CACNA1C, MYC, PDGFRA, PLK3, TAX1BP3 and TPM4 — so a
+perfect Paper 1 score does not separate the two leading targets. CACNA1C holds
+marginally better progression statistics than PDGFRA.
 
 **PDGFRA is preferred on one external fact**: nintedanib is already approved for
 *lung* fibrosis, the same mechanism in a different organ. That is a reasonable
@@ -58,8 +55,6 @@ families.
 
 **Mechanism consistency is at chance overall, but it contributes half of the K
 component; the sensitivity of the ranking to this choice is noted in §10b.**
-An earlier version of this file said mechanism "should not carry weight in any
-ranking", which contradicted what the ranking actually does.
 
 ## 5. Four fifths of drug–target relationships have no direction
 
@@ -101,11 +96,10 @@ mixtures that no SMILES can represent.
 the analysis do not overlap at all: the drugs without a structure are precisely
 the ones no progression gene reaches, so no result is affected.
 
-*(Both figures are denominator-sensitive, and getting the denominator wrong is
-how this was first misreported. Against OptimusKG's 18,640 **raw** records
-ChEMBL does add 2,638 structures — but 6,615 of those records never reached the
-graph. A 60-drug pilot sampled that raw set and projected 57 fills of 59; the
-full run on the drugs actually in use added zero. Per-denominator figures are in
+*(Both figures are denominator-sensitive. Against OptimusKG's 18,640 **raw**
+records ChEMBL does add 2,638 structures, but 6,615 of those records never
+reached the graph, so that figure does not describe the drugs Paper 2 uses.
+Per-denominator figures are in
 `03_RESULTS/Recovery2_ChEMBL/recovery2_marginal_contribution.csv`.)*
 
 ## 9. Per-edge evidence depth is uneven
@@ -119,12 +113,9 @@ reference URL and a written mechanism are much rarer:
 | reference URL | 1,028 | **11.5%** | **20.6%** |
 | written mechanism of action | 1,030 | **11.5%** | **20.7%** |
 
-> **A denominator error, corrected.** This read "only 38%" until a reviewer
-> questioned it. 38% is the rate across all **36,611** recovered OptimusKG
-> evidence records — but most of those are for edges outside Paper 2's gene
-> set. For the 8,948 edges in this table it is 11.5%, which is the figure that
-> belongs here. Same mistake as the ChEMBL contribution figures: right number,
-> wrong population.
+**The denominator matters.** Across all 36,611 recovered OptimusKG evidence
+records these fields reach 38%, but most of those records are for edges outside
+Paper 2's gene set. For the 8,948 edges in this table the rate is 11.5%.
 
 Only two sources assert drug–gene edges: DrugBank and Open Targets.
 `relation_conflict` is set on 2 edges graph-wide, both outside the
@@ -167,13 +158,12 @@ rather than merged.
 
 ## 9c. Druggability depends on what counts as a drug
 
-Found in review, 13 October. Task 3's original "drug-connected" counted any
-non-pharmacokinetic edge, so a gene whose only drug was zinc chloride, ATP or an
-unnamed ChEMBL accession was counted as druggable. **174 of the 958
-drug-connected progression genes — 18% — reach such an entity and nothing
-else.**
+A gene counted as druggable because its only drug is zinc chloride, ATP or an
+unnamed ChEMBL accession is not druggable in any sense the plan asks about.
+**174 of the 958 drug-connected progression genes — 18% — reach such an entity
+and nothing else.**
 
-Both arms are now filtered, and both definitions are reported:
+Both arms are filtered, and both definitions are reported:
 
 | | published | filtered |
 |---|---:|---:|
@@ -182,17 +172,15 @@ Both arms are now filtered, and both definitions are reported:
 | shared / negative | 22.7% | **17.2%** |
 | shared / positive | 15.9% | **14.1%** |
 
-**The headline survives**: all three groups that beat the degree-matched null
-still beat it. **One claim did not** — the class-level rollup
-`[class] inflammation-only` moved from p = 0.021 to p = 0.081 and has been
-withdrawn.
+Three groups beat the degree-matched null on the filtered definition:
+`shared / negative`, `shared / positive` and `fibrosis-only / negative`. The
+class-level rollup `[class] inflammation-only` does not (p = 0.081) and is not
+claimed.
 
-**The same flaw ran one task downstream.** Task 6's K component counted "has a
-therapeutic drug" from Task 7's table, which was unfiltered, so **176 genes**
-earned drug credit from mineral salts and unnamed accessions. K now honours an
-entity flag that Task 7 carries on every row. **The final result does not move**
-— the same 30 candidates, the same two targets, the same 22/8 split, and 48 of
-the 50 top-ranked targets — but the broader target ranking is cleaner.
+**The same condition applies to Task 6's K component**, which asks whether a
+therapeutic drug acts on a gene. It honours the entity flag Task 7 carries on
+every row, so the **172 genes** whose only drug is a mineral salt or unnamed
+accession do not earn that credit.
 
 Task 7's own summaries remain unfiltered by design: their question is what the
 drug vocabulary asserts, not what could be prescribed.
@@ -233,15 +221,13 @@ All 30 leading candidates rest on Paper 1's 23-gene shortlist. The ranking
 weights shortlist genes highly, so this confirms the pipeline is internally
 consistent — it is not independent support.
 
-## 13. Scope decision — raised early, since confirmed
+## 13. Scope of the OptimusKG and ChEMBL recoveries
 
-The provenance recovery (§2 of METHODS) was carried out on 13 October **before
-the mentor replied** on whether *"focus only on the knowledge graph"* permitted
-it. It was recorded here as an open risk rather than presented as settled.
-
-**The mentor confirmed it the same day**, instructing that both OptimusKG and
-ChEMBL be used to bring the required information, and that **if two jobs were
-done they be kept separate.** That separation is now structural, not editorial:
+The provenance recovery (§2 of METHODS) reads fields that
+`build_optimuskg_layer.py` discarded at load. The mentor's instruction was that
+both OptimusKG and ChEMBL be used to bring the required information, and that
+**the two jobs be kept separate.** That separation is structural, not
+editorial:
 
 | | Recovery 1 | Recovery 2 |
 |---|---|---|

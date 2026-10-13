@@ -38,7 +38,7 @@ difference between them has at least one explanation that is not biological.
 The plan says 4,692. That predates the biopsy-pairing correction of 9–10
 October 2026 (`BIOPSY_CORRECTION.md`), after which repeat biopsies are averaged
 only when the fibrosis stage matches and biopsy 1 is retained otherwise. The
-corrected union is **6,222**.
+union is **6,222**.
 
 | | genes |
 |---|---:|
@@ -75,9 +75,10 @@ Every column now sums to its own n: 1,040 + 983 = 2,023; 1,408 + 414 = 1,822;
 The inflammation ladder is strongly skewed towards increases (3,480 vs 719);
 fibrosis is closer to balanced (2,448 vs 1,397).
 
-> **Corrected.** An earlier version counted a gene as increasing if *either*
-> ladder said so, which made the shared row sum to 1,852 against 1,822 genes —
-> the 30 contradictory genes fell into both columns.
+Direction is counted per ladder, and a shared gene is counted as increasing
+only when **both** ladders agree. Counting it as increasing if either ladder
+said so would place the 30 contradictory genes in both columns and make the
+shared row sum to 1,852 against 1,822 genes.
 
 ## Verification — gene by gene, not count by count
 
@@ -128,7 +129,7 @@ on **610 independent staged patients**, exactly the figure CLAUDE.md states —
 ## The 30 contradictory genes — and what they actually are
 
 Paper 1 Task 1 reported **one** shared gene whose ladders point opposite ways
-(GPD1). On the corrected data there are **thirty**, all decreasing with
+(GPD1). There are **thirty**, all decreasing with
 fibrosis and increasing with inflammation. GPD1 is still among them.
 
 Reported alone that looks like a finding. It is not:

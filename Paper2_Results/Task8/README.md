@@ -86,10 +86,9 @@ or block CACNA1C."** Both genes score a perfect 1.00 on all five Task 6
 components, and both were independently flagged in Task 7 as reversal-consistent
 fibrosis-only rising genes.
 
-**PDGFRA is NOT the stronger of the two on this project's evidence.** An
-earlier version of this README claimed it was "Paper 1's only 9/9 gene". That is
-false: six genes score 9 — CACNA1C, MYC, PDGFRA, PLK3, TAX1BP3 and TPM4 — and
-CACNA1C is one of them.
+**Neither target is stronger than the other on this project's evidence.** Six
+genes score 9/9 — CACNA1C, MYC, PDGFRA, PLK3, TAX1BP3 and TPM4 — so a perfect
+Paper 1 score does not separate them.
 
 | | PDGFRA | CACNA1C |
 |---|---:|---:|

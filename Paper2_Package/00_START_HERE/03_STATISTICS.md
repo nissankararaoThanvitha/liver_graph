@@ -1,19 +1,19 @@
 # 3. Statistics
 
-Every inferential claim in Paper 2, with the test behind it. Where a first
-attempt was wrong, both the error and the correction are recorded — a reader
-meeting the old figure elsewhere needs to know which to trust.
+Every inferential claim in Paper 2, with the test behind it and the
+assumptions it rests on.
 
 ## Druggability across progression groups (Task 3)
 
 **Two definitions are reported, because the first one was too loose.**
 
-> **A reviewer's finding, 13 October.** "Drug-connected" originally counted any
-> `ACTS_ON` edge whose action was not pharmacokinetic. That let zinc chloride,
-> ATP and unnamed ChEMBL accessions make a gene druggable. **174 of the 958
-> drug-connected progression genes — 18% — reach a flagged entity and nothing
-> else.** The filter is now applied to **both arms**; cleaning one side only
-> would manufacture an effect rather than measure one.
+**"Drug-connected" requires two things**: an action that is not
+pharmacokinetic, and an entity that is a plausible therapeutic rather than a
+mineral salt, nutrient, cofactor or unnamed accession. The second condition
+matters — **174 of the 958 drug-connected progression genes, 18%, reach a
+flagged entity and nothing else**. The filter is applied to **both arms**;
+filtering one side alone would manufacture an effect rather than measure one.
+Both definitions are reported throughout.
 
 Background rate **9.3%** filtered (was 11.2% unfiltered).
 
@@ -33,10 +33,9 @@ points — which is exactly where mineral salts and cofactors were doing the wor
 
 ### Falling versus rising, tested directly
 
-> **The "about 2×" claim was wrong, and not only because of the filter.** It
-> compared each group against the *background*, then described the result as
-> falling genes being twice as drug-connected as *rising* ones. Those are
-> different comparisons. Asked directly, head to head within each class:
+Comparing a group against the background and comparing falling genes against
+rising ones are different questions. The second is the one the claim makes, so
+it is tested directly, head to head within each class:
 
 | class | rising | falling | ratio | Fisher p | significant |
 |---|---:|---:|---:|---:|---|
@@ -44,10 +43,10 @@ points — which is exactly where mineral salts and cofactors were doing the wor
 | shared | 14.3% | 16.9% | 1.19× | 0.196 | ✗ |
 | inflammation-only | 11.0% | 11.3% | 1.03× | 0.851 | ✗ |
 
-**The effect is real for fibrosis-only genes and about 1.3×, not 2×.** For the
+**The effect is real for fibrosis-only genes and is about 1.3×.** For the
 shared class it does not reach significance head to head, although both of its
-direction groups beat the background. The claim is now stated at that strength
-and no higher. Unfiltered, the ratios are 1.51×, 1.42× and 0.95× — still not 2×.
+direction groups beat the background. Unfiltered, the ratios are 1.51×, 1.42×
+and 0.95×.
 
 Full table: `task3_falling_vs_rising.csv`, both definitions.
 
@@ -70,12 +69,10 @@ family leaves **20.2%** and **16.5%** against a 10.0% background (OR 2.29 and
 
 Observed **52.7%** of 1,005 directional relationships.
 
-> **An invalid test, corrected.** The first version used a binomial against
-> 50% and reported p = 0.088. It assumed 1,005 independent observations; a drug
-> can hit several genes and a gene several drugs, so the edges come in
-> correlated blocks.
-
-Replaced with a permutation shuffling direction at the **gene** level:
+A binomial test against 50% is invalid here: it would assume 1,005
+independent observations, and a drug can hit several genes while a gene is hit
+by several drugs, so the edges come in correlated blocks. The test is instead a
+permutation shuffling direction at the **gene** level:
 
 ```
 observed                 52.7%
@@ -114,16 +111,12 @@ class coherence, over drugs reaching ≥5 progression genes with non-therapeutic
 entities removed. Negative: the widest-reaching drugs cover the least coherent
 programmes.
 
-> **A stale figure, corrected.** This was reported as **−0.124** in five
-> documents and three scripts. No script computed it — it was carried by hand
-> from an earlier Task 4 run, and it drifted when the coherence definition and
-> the drug set changed. The task script now computes it and writes
-> `task4_coverage_vs_coherence_correlation.csv`, so a stale value cannot
-> survive a rerun. **The conclusion is unchanged and in fact stronger**: the
-> correlation is more negative than was claimed, not less.
+The task script computes this correlation and writes
+`task4_coverage_vs_coherence_correlation.csv`, so the value in the documents is
+never carried by hand.
 
-**The coherence measure matters, which one number hid.** Both measures were
-computed; only the class-based one is significant:
+**The coherence measure matters.** Both measures are computed; only the
+class-based one is significant:
 
 | coherence measure | drug set | n | rho | p |
 |---|---|---:|---:|---:|

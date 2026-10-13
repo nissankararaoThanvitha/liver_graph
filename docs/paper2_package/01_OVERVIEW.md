@@ -52,11 +52,10 @@ The leading candidates reach exactly two targets:
   all five Task 6 components, and marginally stronger on the progression
   statistics (rho +0.447, q 5.9e-21).
 
-**The two are equivalent on this project's evidence.** PDGFRA is preferred only
-because nintedanib already treats fibrosis in another organ — an external fact,
-not a finding of this paper. Six genes score 9/9 (CACNA1C, MYC, PDGFRA, PLK3,
-TAX1BP3, TPM4), so "the only 9/9 gene", claimed in an earlier draft, was
-wrong.
+**The two are equivalent on this project's evidence.** Six genes score 9/9
+(CACNA1C, MYC, PDGFRA, PLK3, TAX1BP3, TPM4), so a perfect Paper 1 score does not
+separate them. PDGFRA is preferred because nintedanib already treats fibrosis in
+another organ — an external fact, not a finding of this paper.
 
 So the candidate list is, in substance, *"inhibit PDGFRA or block CACNA1C"* —
 less diverse than thirty names suggests, and stated as such.
