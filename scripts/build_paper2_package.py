@@ -80,10 +80,11 @@ FIGURES = {
         "genes rise, so the right-way pairing is common by accident."),
     "Task3/task3_druggability_by_group.png": (
         "main",
-        "Druggability by progression group against an 11.2% background. Genes "
-        "that fall as disease worsens are roughly twice as drug-connected as "
-        "genes that rise. Starred groups survive a null matched on non-drug "
-        "degree."),
+        "Druggability by progression group, grey = any drug edge, colour = "
+        "real therapeutics only. Removing mineral salts, nutrients and unnamed "
+        "accessions from BOTH arms drops the background from 11.2% to 9.3% and "
+        "costs the falling groups about 5 points each. All three starred groups "
+        "still survive a degree-matched null on the filtered definition."),
     "Task4/task4_coverage_vs_coherence.png": (
         "main",
         "Coverage against coherence, one point per drug. The widest-reaching "

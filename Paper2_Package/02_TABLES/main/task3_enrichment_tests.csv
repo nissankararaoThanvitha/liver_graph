@@ -1,11 +1,11 @@
-group,genes,drug_connected,percent,background_percent,odds_ratio,fisher_p,degree_matched_null_percent,degree_matched_p,fisher_q_BH,survives_degree_aware
-fibrosis-only / positive,1040,133,12.8,11.2,1.159,1.479e-01,12.1,0.495,1.848e-01,no
-fibrosis-only / negative,983,190,19.3,11.2,1.893,4.135e-12,12.2,0.0,2.068e-11,yes
-inflammation-only / positive,2042,276,13.5,11.2,1.235,4.525e-03,12.4,0.056,6.464e-03,no
-inflammation-only / negative,335,43,12.8,11.2,1.164,3.783e-01,10.8,0.224,3.783e-01,no
-shared / positive,1408,224,15.9,11.2,1.495,1.212e-06,13.2,0.0015,2.425e-06,yes
-shared / negative,384,87,22.7,11.2,2.315,6.046e-10,11.5,0.0,2.015e-09,yes
-shared / discordant,30,5,16.7,11.2,1.58,3.770e-01,13.0,0.571,3.783e-01,no
-[class] fibrosis-only,2023,323,16.0,11.2,1.501,1.262e-08,12.2,0.0,3.156e-08,yes
-[class] inflammation-only,2377,319,13.4,11.2,1.225,3.908e-03,12.2,0.0155,6.464e-03,yes
-[class] shared,1822,316,17.3,11.2,1.658,3.942e-12,12.8,0.0,2.068e-11,yes
+group,genes,drug_connected,percent,background_percent,odds_ratio,fisher_p,degree_matched_null_percent,degree_matched_p,percent_usable,background_percent_usable,odds_ratio_usable,fisher_p_usable,degree_matched_null_percent_usable,degree_matched_p_usable,fisher_q_BH,fisher_q_BH_usable,survives_degree_aware,survives_degree_aware_usable
+fibrosis-only / positive,1040,133,12.8,11.2,1.159,1.479e-01,12.1,0.495,11.1,9.3,1.22,0.06384081728377754,10.1,0.2485,1.848e-01,7.980e-02,no,no
+fibrosis-only / negative,983,190,19.3,11.2,1.893,4.135e-12,12.2,0.0,14.3,9.3,1.643,1.2869095363024913e-06,10.0,0.0,2.068e-11,4.290e-06,yes,yes
+inflammation-only / positive,2042,276,13.5,11.2,1.235,4.525e-03,12.4,0.056,10.9,9.3,1.197,0.026497661817700642,10.3,0.2575,6.464e-03,3.785e-02,no,no
+inflammation-only / negative,335,43,12.8,11.2,1.164,3.783e-01,10.7,0.193,11.3,9.3,1.255,0.21222273885602944,8.8,0.086,3.783e-01,2.358e-01,no,no
+shared / positive,1408,224,15.9,11.2,1.495,1.212e-06,13.2,0.0,14.1,9.3,1.615,6.430140937083614e-08,11.0,0.0,2.425e-06,3.215e-07,yes,yes
+shared / negative,384,87,22.7,11.2,2.315,6.046e-10,11.5,0.0,17.2,9.3,2.036,2.0287422435909687e-06,9.4,0.0,2.015e-09,5.072e-06,yes,yes
+shared / discordant,30,5,16.7,11.2,1.58,3.770e-01,13.1,0.586,6.7,9.3,0.701,1.0,11.3,0.5645,3.783e-01,1.000e+00,no,no
+[class] fibrosis-only,2023,323,16.0,11.2,1.501,1.262e-08,12.1,0.0,12.7,9.3,1.421,7.525405143152669e-06,10.1,0.0,3.156e-08,1.505e-05,yes,yes
+[class] inflammation-only,2377,319,13.4,11.2,1.225,3.908e-03,12.2,0.0205,10.9,9.3,1.205,0.01476680207263866,10.1,0.0805,6.464e-03,2.461e-02,yes,no
+[class] shared,1822,316,17.3,11.2,1.658,3.942e-12,12.8,0.0,14.7,9.3,1.684,3.1954449342257145e-11,10.7,0.0,2.068e-11,3.195e-10,yes,yes

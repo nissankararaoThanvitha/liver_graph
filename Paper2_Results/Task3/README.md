@@ -40,18 +40,24 @@ measuring liver drug metabolism. Both figures are in the summary table;
 
 ## The summary table
 
-Background rate: **11.2%** (963 of 8,572).
+**Two definitions are reported.** A reviewer found on 13 October that
+"drug-connected" counted any non-pharmacokinetic edge, so zinc chloride, ATP and
+unnamed accessions made genes druggable. 174 of the 958 drug-connected
+progression genes (18%) reach such an entity and nothing else. The entity filter
+now runs on **both arms**.
+
+Background rate: **9.3% filtered** (was 11.2% unfiltered, 963 of 8,572).
 
 | Group | Genes | Drug-connected | % | Unique drugs |
 |---|---:|---:|---:|---:|
 | fibrosis-only / positive | 1,040 | 133 | 12.8 | 549 |
-| **fibrosis-only / negative** | 983 | 190 | **19.3** | 847 |
+| **fibrosis-only / negative** | 983 | 190 | **19.3** (filtered **14.3**) | 847 |
 | inflammation-only / positive | 2,042 | 276 | 13.5 | 775 |
 | inflammation-only / negative | 335 | 43 | 12.8 | 173 |
 | shared / positive | 1,408 | 224 | 15.9 | 912 |
-| **shared / negative** | 384 | 87 | **22.7** | 416 |
+| **shared / negative** | 384 | 87 | **22.7** (filtered **17.2**) | 416 |
 | shared / discordant | 30 | 5 | 16.7 | 8 |
-| *background* | 8,572 | 963 | 11.2 | 2,047 |
+| *background* | 8,572 | 963 | 11.2 (filtered **9.3**) | 2,047 |
 
 By class, undivided: fibrosis-only **16.0%**, inflammation-only **13.4%**,
 shared **17.3%**.
@@ -150,3 +156,22 @@ where the surviving signal lives.
    sense that those drugs would help.
 3. **Keep the degree-aware null for Task 4.** It killed one apparently
    significant result here and will do the same for drug-coverage rankings.
+
+## The entity filter, added after review
+
+`percent` counts any therapeutic-action edge. `percent_usable` additionally
+requires the drug to be a plausible therapeutic: not a mineral salt, nutrient,
+cofactor, solvent or unnamed accession. Both columns are in
+`task3_druggability_summary.csv`, and `task3_enrichment_tests.csv` carries the
+Fisher test, BH-q and degree-matched null for **each** definition.
+
+**What changed.** The three groups that beat the degree-matched null still beat
+it. The falling groups lose about 5 points each, which is where the mineral
+salts were. One class-level rollup, `[class] inflammation-only`, moved from
+p = 0.0205 to p = 0.0805 and is no longer claimed.
+
+**Why the filter is a heuristic and stays one.** Molecule type and clinical
+phase were recovered from OptimusKG and do not discriminate: ZINC ACETATE is a
+`Small molecule` at `max_phase 4.0`, because it genuinely is an approved small
+molecule. The rule is name-based, it marks rather than deletes, and both numbers
+are reported so a reader can disagree with it.

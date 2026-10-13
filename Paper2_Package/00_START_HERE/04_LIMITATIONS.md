@@ -153,6 +153,33 @@ substances.
 holds — distinct ChEMBL and DrugBank entries — and because every per-drug
 analysis in Paper 2 runs on those entries.
 
+## 9c. Druggability depends on what counts as a drug
+
+Found in review, 13 October. Task 3's original "drug-connected" counted any
+non-pharmacokinetic edge, so a gene whose only drug was zinc chloride, ATP or an
+unnamed ChEMBL accession was counted as druggable. **174 of the 958
+drug-connected progression genes — 18% — reach such an entity and nothing
+else.**
+
+Both arms are now filtered, and both definitions are reported:
+
+| | published | filtered |
+|---|---:|---:|
+| background | 11.2% | **9.3%** |
+| fibrosis-only / negative | 19.3% | **14.3%** |
+| shared / negative | 22.7% | **17.2%** |
+| shared / positive | 15.9% | **14.1%** |
+
+**The headline survives**: all three groups that beat the degree-matched null
+still beat it. **One claim did not** — the class-level rollup
+`[class] inflammation-only` moved from p = 0.021 to p = 0.081 and has been
+withdrawn.
+
+**The filter is itself a heuristic**, for the reason in §6: molecule type and
+clinical phase do not separate a mineral salt from a drug. So neither number is
+the truth and both are shipped. A reader who rejects the name rule can use the
+unfiltered column; the effect is larger there, not smaller.
+
 ## 10. Inflammation-only genes carry less evidence
 
 Paper 1's trajectory, transition, pathway and tier work covers only the 3,845
