@@ -9,4 +9,4 @@ shared / discordant,30,5,16.7,8,7,23.3,123
 NOT progression (background),8572,963,11.2,2047,1076,12.6,100
 [class] fibrosis-only,2023,323,16.0,1225,358,17.7,111
 [class] inflammation-only,2377,319,13.4,874,355,14.9,112
-[class] both,1822,316,17.3,1163,359,19.7,119
+[class] shared,1822,316,17.3,1163,359,19.7,119

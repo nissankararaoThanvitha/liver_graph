@@ -52,6 +52,20 @@ TASK_DIRS = {
 
 # figure -> (destination, caption)
 FIGURES = {
+    "Task1/task1_gene_set.png": (
+        "main",
+        "The starting set. Left: 6,222 progression genes by class and "
+        "direction. Right: the 1,822 shared genes with both ladders plotted "
+        "against each other. The 30 discordant genes are the point -- and all "
+        "30 sit in one quadrant, falling with fibrosis while rising with "
+        "inflammation. None does the reverse."),
+    "Task8/task8_candidates.png": (
+        "main",
+        "The final result and its limit. Left: 30 leading candidates reach "
+        "only two targets, 22 to CACNA1C and 8 to PDGFRA. Right: mechanism "
+        "evidence per candidate, where grey -- no recorded direction -- covers "
+        "147 of 192 relationships. The CACNA1C drugs are almost entirely grey; "
+        "the PDGFRA kinase inhibitors carry most of what mechanism there is."),
     "Task2/task2_action_classes.png": (
         "main",
         "What the 8,948 drug-gene links are. Two of the four bars -- "

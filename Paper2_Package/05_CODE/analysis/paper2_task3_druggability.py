@@ -104,6 +104,15 @@ def fetch(genes):
     return drugs, degree
 
 
+# The master table stores the shared class as "both"; every group label in this
+# task, and every Paper 2 document, calls it "shared". Reporting both spellings
+# in one file is how the earlier label bug hid 1,792 genes, so matching uses the
+# raw value and the output always uses the display name.
+CLASS_RAW_TO_DISPLAY = {"fibrosis-only": "fibrosis-only",
+                        "inflammation-only": "inflammation-only",
+                        "both": "shared"}
+
+
 def group_of(row):
     """Group label. The master table calls the shared class "both"; the plan
     and every table here call it "shared", so it is renamed once, at the single
@@ -214,11 +223,11 @@ def main():
             "median_nondrug_degree": int(sub.nondrug_degree.median()),
         })
     # the three classes, undivided
-    for cls in ["fibrosis-only", "inflammation-only", "both"]:
+    for cls, shown in CLASS_RAW_TO_DISPLAY.items():
         sub = g[g.progression_class == cls]
         ids = set(sub.Ensembl_ID)
         rows.append({
-            "group": f"[class] {cls}", "total_genes": len(sub),
+            "group": f"[class] {shown}", "total_genes": len(sub),
             "drug_connected_genes": int(sub.drug_connected.sum()),
             "percent": round(100 * sub.drug_connected.mean(), 1),
             "unique_drugs": drugs[drugs.Ensembl_ID.isin(ids)
@@ -243,10 +252,15 @@ def main():
     bg_hit = int(pool.drug_connected.sum())
     bg_n = len(pool)
     tests = []
-    for grp in order + ["[class] fibrosis-only", "[class] inflammation-only",
-                        "[class] both"]:
-        sub = (g[g.progression_class == grp.replace("[class] ", "")]
-               if grp.startswith("[class]") else g[g.group == grp])
+    display_to_raw = {v: k for k, v in CLASS_RAW_TO_DISPLAY.items()}
+    for grp in order + [f"[class] {v}" for v in CLASS_RAW_TO_DISPLAY.values()]:
+        if grp.startswith("[class]"):
+            # map the display name back to the raw class value before matching,
+            # or "[class] shared" would match nothing and silently drop 1,822
+            raw = display_to_raw[grp.replace("[class] ", "")]
+            sub = g[g.progression_class == raw]
+        else:
+            sub = g[g.group == grp]
         if not len(sub):
             continue
         hit, n = int(sub.drug_connected.sum()), len(sub)

@@ -1,5 +1,13 @@
 # Figure captions
 
+**task1_gene_set.png** _(main)_
+
+The starting set. Left: 6,222 progression genes by class and direction. Right: the 1,822 shared genes with both ladders plotted against each other. The 30 discordant genes are the point -- and all 30 sit in one quadrant, falling with fibrosis while rising with inflammation. None does the reverse.
+
+**task8_candidates.png** _(main)_
+
+The final result and its limit. Left: 30 leading candidates reach only two targets, 22 to CACNA1C and 8 to PDGFRA. Right: mechanism evidence per candidate, where grey -- no recorded direction -- covers 147 of 192 relationships. The CACNA1C drugs are almost entirely grey; the PDGFRA kinase inhibitors carry most of what mechanism there is.
+
 **task2_action_classes.png** _(main)_
 
 What the 8,948 drug-gene links are. Two of the four bars -- pharmacokinetic and direction-not-recorded -- carry no usable mechanism between them, leaving 1,005 links (11.2%) that state both that a drug acts on a gene and which way it pushes.
