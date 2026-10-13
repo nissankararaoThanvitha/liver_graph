@@ -1,0 +1,8 @@
+id,metapath,schema,why
+MP1,D-G-Di,Drug -ACTS_ON-> Gene -ASSOCIATED_WITH-> Disease,"plan minimum; disease hubs are generic EFO terms, not a candidate route"
+MP2,D-G-P,Drug -ACTS_ON-> Gene -IN_PATHWAY-> Pathway,"plan minimum; Reactome, the primary bridge"
+MP3,D-G-B,Drug -ACTS_ON-> Gene -INVOLVED_IN-> BioProcess,"plan minimum; GO BP, hub-dominated"
+MP4,D-G-P-G,Drug -> Gene -> Pathway <- Progression gene,plan minimum; the main candidate-generating metapath
+MP5,D-G-B-G,Drug -> Gene -> BioProcess <- Progression gene,"same via GO BP, for comparison"
+MP6,D-G-P-G[traj],Drug -> Gene -> Pathway <- F0-F4 trajectory gene,"plan extension; target restricted to the 3,845 clustered genes"
+MP7,D-G-P-G[trans],Drug -> Gene -> Pathway <- stage-transition gene,plan extension; target restricted to genes with a substantial transition

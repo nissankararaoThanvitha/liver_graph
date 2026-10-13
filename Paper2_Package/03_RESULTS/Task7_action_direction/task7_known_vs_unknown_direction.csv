@@ -1,0 +1,9 @@
+measure,relationships,percent_of_drug_target
+drug-target relationships,4984,100.0
+  action direction KNOWN (lowers or raises),1005,20.2
+    ...lowers the gene,679,13.6
+    ...raises the gene,326,6.5
+  action direction UNKNOWN or MIXED,3979,79.8
+    ...binder or mixed action,21,0.4
+    ...no direction recorded,3958,79.4
+"pharmacokinetic edges (excluded, not drug-target)",3964,
