@@ -27,6 +27,9 @@ python scripts/paper2_task8_final_ranking.py
 python scripts/paper2_task2_robustness.py
 python scripts/paper2_figures.py
 python scripts/paper2_integrate_recovered_evidence.py   # LAST — see below
+# the two recovery reports read the integrated columns, so they follow it
+uv run --with neo4j --with pandas python scripts/paper2_recovery_optimuskg_report.py
+uv run --with neo4j --with pandas python scripts/paper2_recovery_chembl_report.py
 python scripts/paper2_manifest.py
 ```
 
@@ -34,16 +37,40 @@ python scripts/paper2_manifest.py
 place. **Re-running any of those task scripts drops the recovered columns**, so
 run the integration again afterwards.
 
-It needs `data/optimuskg_recovered/`, which is not committed (11 MB,
-regenerable). Rebuild:
+## The two recoveries
+
+Kept separate on the mentor's instruction of 13 October — separate scripts,
+separate directories, separate results folders. Neither reads the other's
+outputs except in one direction: Recovery 2 needs Recovery 1's
+`drug_metadata.csv` to know where OptimusKG is silent.
 
 ```bash
 # fetch the two source files from DOI 10.7910/DVN/IYNGEV into data/optimuskg/
 #   drug_gene.parquet  file id 14220895   (500 KB)
 #   drug.parquet       file id 14220910   (33 MB)
+
+# Recovery 1 -- OptimusKG's own discarded fields     -> data/optimuskg_recovered/
 python scripts/paper2_recover_optimuskg_evidence.py
-python scripts/paper2_fetch_chembl_gaps.py      # optional; adds nothing here
+uv run --with neo4j --with pandas python scripts/paper2_recovery_optimuskg_report.py
+
+# Recovery 2 -- ChEMBL, external                     -> data/chembl_recovered/
+uv run --with pandas python scripts/paper2_fetch_chembl_gaps.py
+uv run --with neo4j --with pandas python scripts/paper2_recovery_chembl_report.py
 ```
+
+Neither data directory is committed (11 MB, regenerable in about a minute).
+
+**Both report scripts are independent checks, not just summaries.** They
+reproduce the limitation figures from the recovered files, against the graph's
+own drug count: Recovery 1 lands on 9,036 SMILES of 12,025 and 1,163
+accession-named drugs; Recovery 2 lands on 16 names and 0 structures added. If
+those numbers move, the documents are stale.
+
+**Watch the denominator.** ChEMBL's contribution reads as 2,638 structures
+against OptimusKG's 18,640 raw records and **zero** against the 12,025 in the
+graph, because 6,615 raw records never reached it. Measuring the raw file is how
+this was first misreported. `recovery2_marginal_contribution.csv` gives all
+three denominators side by side for exactly this reason.
 
 ## Independent checks
 

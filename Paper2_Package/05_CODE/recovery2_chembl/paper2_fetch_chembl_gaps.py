@@ -9,17 +9,30 @@ is already recovered by paper2_recover_optimuskg_evidence.py. Re-fetching all
 12,025 drugs would be slow and would mostly re-download what we have. This asks
 ChEMBL only where OptimusKG is short.
 
-WHAT THE SAMPLE SAID, BEFORE COMMITTING TO THE FULL RUN
-60 drugs from each gap population were tested first:
+WHAT THIS ADDS TO PAPER 2, MEASURED ON THE RIGHT DENOMINATOR
+Kept as a separate step and reported in its own folder
+(Paper2_Results/Recovery2_ChEMBL) on the mentor's instruction of 13 October:
+two jobs were asked for, so the two stay separate.
 
-  no NAME in OptimusKG     ChEMBL supplies a pref_name for  3 / 60
-  no SMILES in OptimusKG   ChEMBL supplies a structure for 57 / 59
+The contribution depends entirely on which drugs you count:
 
-So ChEMBL closes the structure gap and does not close the naming gap -- those
-drugs are genuinely unnamed rather than missing from our copy. A first test on
-four drugs suggested ChEMBL added nothing at all; that test happened to pick
-cisplatin and bismuth subsalicylate, inorganics with no standard SMILES, and
-was misleading. Hence sixty.
+  all 18,640 OptimusKG raw records   +2,638 SMILES  +938 names  +688 phases
+  the graph's 12,025 Drug nodes          +0 SMILES   +16 names   +28 phases
+  the 2,404 drugs in Task 4              +0 SMILES    +8 names   +17 phases
+
+Only the last line matters for the paper: 25 field values, no structures, and
+no result changes. The drugs missing a structure are precisely the ones that
+never reach a progression gene -- ChEMBL holds records for 2,654 of them and
+has a structure for none, because they are biologics, antibodies and mixtures
+that no SMILES can represent.
+
+A 60-drug pilot first suggested ChEMBL would supply structures for 57 of 59.
+It sampled all 18,640 records rather than the subset in use, so it drew almost
+entirely from drugs Paper 2 never touches. The pilot was not wrong about
+ChEMBL; it was wrong about which drugs mattered. An earlier four-drug test
+suggested the opposite -- it drew cisplatin and bismuth subsalicylate,
+inorganics with no standard SMILES. Both small samples misled, in opposite
+directions, for the same reason.
 
 NETWORK
 curl does the fetching. The requests library cannot resolve ebi.ac.uk from
@@ -39,7 +52,7 @@ import time
 import pandas as pd
 
 RECOVERED = "data/optimuskg_recovered/drug_metadata.csv"
-OUT = "data/optimuskg_recovered/chembl_gap_fill.csv"
+OUT = "data/chembl_recovered/chembl_gap_fill.csv"
 BATCH = 20
 API = "https://www.ebi.ac.uk/chembl/api/data/molecule.json"
 
