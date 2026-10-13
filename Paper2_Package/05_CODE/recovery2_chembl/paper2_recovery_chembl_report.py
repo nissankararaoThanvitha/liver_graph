@@ -81,6 +81,35 @@ def graph_drug_ids():
     return {r["id"] for r in rows if r["id"] is not None}
 
 
+def source_database_split(md, graph_ids):
+    """Which database KEYS each drug node, and which fields follow from that.
+
+    This is the measurement that reframes Recovery 2. The graph's drug
+    vocabulary is not merely ChEMBL-derived in spirit -- 11,623 of its 12,025
+    Drug nodes ARE ChEMBL accessions, and molecule type and clinical phase are
+    present for exactly those and for no DrugBank-keyed drug. Those fields are
+    ChEMBL's fields, already inside the source the graph was built from.
+    """
+    chembl = {i for i in graph_ids if str(i).startswith("CHEMBL")}
+    g = md[md.Drug_ID.isin(graph_ids)]
+    rows = []
+    for col, label in [("type", "molecule type"),
+                       ("maximum_clinical_trial_phase", "clinical phase"),
+                       ("canonical_smiles", "SMILES"),
+                       ("inchi_key", "InChI key"),
+                       ("cd_formula", "formula")]:
+        isc = g.Drug_ID.isin(chembl)
+        rows.append({
+            "field": label,
+            "chembl_keyed_drugs": int((g[col].notna() & isc).sum()),
+            "drugbank_keyed_drugs": int((g[col].notna() & ~isc).sum()),
+        })
+    totals = {"field": "— total drugs —",
+              "chembl_keyed_drugs": len(chembl),
+              "drugbank_keyed_drugs": len(g) - len(chembl)}
+    return pd.DataFrame(rows + [totals]), len(chembl), len(g) - len(chembl)
+
+
 def marginal(j, denominator_ids, label):
     """What ChEMBL adds where OptimusKG is silent, within one denominator."""
     s = j if denominator_ids is None else j[j.Drug_ID.isin(denominator_ids)]
@@ -117,6 +146,12 @@ def main():
     print(f"OptimusKG raw records       {len(md):,}")
     print(f"graph Drug nodes            {len(drugs):,}")
     print(f"drugs in Task 4 coverage    {len(t4_ids):,}")
+
+    split, n_chembl_keyed, n_db_keyed = source_database_split(md, drugs)
+    split.to_csv(f"{OUT_DIR}/recovery2_source_database_split.csv", index=False)
+    print(f"\nthe graph's drug vocabulary: {n_chembl_keyed:,} ChEMBL-keyed, "
+          f"{n_db_keyed:,} DrugBank-keyed")
+    print(split.to_string(index=False))
 
     rows = (marginal(j, None, "all OptimusKG raw records")
             + marginal(j, drugs, "the graph's Drug nodes")
@@ -166,11 +201,13 @@ def main():
     print(f"\nin the DELIVERED Task 4 table ({len(t4):,} drugs)")
     print(dv.to_string(index=False))
 
-    write_readme(tab, why, dv, len(gap), len(md), len(drugs), len(t4_ids))
+    write_readme(tab, why, dv, len(gap), len(md), len(drugs), len(t4_ids),
+                 split, n_chembl_keyed, n_db_keyed)
     print(f"\nwrote {OUT_DIR}/")
 
 
-def write_readme(tab, why, dv, n_fetched, n_raw, n_graph, n_t4):
+def write_readme(tab, why, dv, n_fetched, n_raw, n_graph, n_t4,
+                 split, n_chembl_keyed, n_db_keyed):
     w = {r["measure"]: r["value"] for r in why}
     d = dv.set_index("field")
     total_chembl = int(dv.from_ChEMBL.sum())

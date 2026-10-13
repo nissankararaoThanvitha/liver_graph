@@ -106,7 +106,33 @@ RETURN count(a) AS edges, count(DISTINCT g) AS genes, count(DISTINCT dr) AS drug
 MATCH (d:Drug {name:'NINTEDANIB'})-[r:ACTS_ON]->(g:Gene {symbol:'PDGFRA'})
 OPTIONAL MATCH (g)-[t:TRACKS_FIBROSIS]->()
 RETURN r.action, round(t.rho,3) AS rho, t.n_studies;
+
+// the same case with the recovered properties -- the whole evidence chain
+// in one query, which was not possible before the 13 October write-back
+MATCH (d:Drug {name:'NINTEDANIB'})-[r:ACTS_ON]->(g:Gene {symbol:'PDGFRA'})
+RETURN d.node_id, d.molecule_type, d.max_phase, d.smiles_source,
+       r.action, r.evidence_level, r.sources_direct, r.mechanisms_of_action;
+// expect CHEMBL502835 / Small molecule / 4.0 / OptimusKG /
+//        INHIBITOR / multi-source / DRUG_BANK;OPEN_TARGETS / PDGFR inhibitor
+
+// recovered coverage -- expect 9,036 structures and 11,623 molecule types
+MATCH (d:Drug)
+RETURN count(d)                                        AS drugs,
+       count(d.smiles)                                 AS with_smiles,
+       count(d.molecule_type)                          AS with_type,
+       count(d.recovered_name)                         AS with_name;
+
+// every ACTS_ON edge should now name its asserting databases
+MATCH ()-[r:ACTS_ON]->()
+RETURN count(r) AS edges, count(r.sources_direct) AS attributed,
+       count(r.source_urls) AS with_url;
 ```
+
+The write-back is reversible. `paper2_write_recovered_to_graph.py --rollback`
+removes exactly the properties it set and nothing else, returning the graph to
+its pre-13-October state; re-running with `--apply` restores them. It refuses to
+write at all if any target property already exists, so it cannot overwrite
+Team 1's data or double-apply.
 
 ## Three traps that will bite
 
