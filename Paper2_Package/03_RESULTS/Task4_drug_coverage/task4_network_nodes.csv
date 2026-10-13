@@ -160,7 +160,6 @@ drug,ISOLEUCINE,CHEMBL1233584,4.0,5.0,0.376,0.25,,,,,,,,,,,
 drug,FENOLDOPAM,CHEMBL588,4.0,8.0,0.215,0.5,,,,,,,,,,,
 drug,ROPINIROLE,CHEMBL589,4.0,9.0,0.189,0.5,,,,,,,,,,,
 drug,PHTHALIC ACID,CHEMBL1045,4.0,9.0,0.189,0.25,,,,,,,,,,,
-drug,MAGNESIUM SULFATE ANHYDROUS,CHEMBL2021423,4.0,9.0,0.189,0.5,,,,,,,,,,,
 drug,PROGESTERONE,CHEMBL103,4.0,9.0,0.189,0.5,,,,,,,,,,,
 drug,GEMFIBROZIL,CHEMBL457,4.0,5.0,0.376,0.75,,,,,,,,,,,
 drug,ELAIDIC ACID,CHEMBL460657,4.0,5.0,0.376,0.25,,,,,,,,,,,
@@ -468,14 +467,14 @@ gene,CA13,ENSG00000185015,,,,,fibrosis-only,fibrosis-only / negative,-0.2947,,C5
 gene,CA14,ENSG00000118298,,,,,both,shared / negative,-0.2516,-0.5874,C5,Late decrease (largest at F3→F4),F1→F2,Tier 2 - moderate confidence,5.0,,
 gene,CA2,ENSG00000104267,,,,,both,shared / negative,-0.129,-0.1168,C4,Mid decrease (largest at F1→F2),F1→F2,Tier 3,13.0,Xenobiotic metabolism,Hallmark
 gene,CA9,ENSG00000107159,,,,,fibrosis-only,fibrosis-only / positive,0.1529,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,5.0,Morphogenesis of an epithelium,GO_BP
-gene,CACNA1C,ENSG00000151067,,,,,fibrosis-only,fibrosis-only / positive,0.4466,,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,30.0,Dilated cardiomyopathy,KEGG
+gene,CACNA1C,ENSG00000151067,,,,,fibrosis-only,fibrosis-only / positive,0.4466,,C2,Late increase (largest at F3→F4),F3→F4,Tier 1 - high confidence,29.0,Dilated cardiomyopathy,KEGG
 gene,CACNA1H,ENSG00000196557,,,,,fibrosis-only,fibrosis-only / negative,-0.2402,,C5,Late decrease (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,15.0,Organic hydroxy compound metabolic process,GO_BP
 gene,CACNA1I,ENSG00000100346,,,,,fibrosis-only,fibrosis-only / positive,0.2011,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,13.0,,
 gene,CACNA2D1,ENSG00000153956,,,,,both,shared / positive,0.2915,0.2832,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,10.0,Dilated cardiomyopathy,KEGG
 gene,CACNA2D3,ENSG00000157445,,,,,both,shared / positive,0.1179,0.3524,C3,"Early rise, then plateau",F2→F3,Tier 3,5.0,,
-gene,CACNB1,ENSG00000067191,,,,,fibrosis-only,fibrosis-only / positive,0.2964,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,20.0,Dilated cardiomyopathy,KEGG
-gene,CACNB2,ENSG00000165995,,,,,inflammation-only,inflammation-only / negative,,-0.2932,,,,,25.0,,
-gene,CACNB3,ENSG00000167535,,,,,inflammation-only,inflammation-only / positive,,0.1782,,,,,18.0,,
+gene,CACNB1,ENSG00000067191,,,,,fibrosis-only,fibrosis-only / positive,0.2964,,C2,Late increase (largest at F3→F4),F3→F4,Tier 2 - moderate confidence,19.0,Dilated cardiomyopathy,KEGG
+gene,CACNB2,ENSG00000165995,,,,,inflammation-only,inflammation-only / negative,,-0.2932,,,,,24.0,,
+gene,CACNB3,ENSG00000167535,,,,,inflammation-only,inflammation-only / positive,,0.1782,,,,,17.0,,
 gene,CAMK1D,ENSG00000183049,,,,,inflammation-only,inflammation-only / positive,,0.4502,,,,,1.0,,
 gene,CAMK2A,ENSG00000070808,,,,,inflammation-only,inflammation-only / negative,,-0.1336,,,,,2.0,,
 gene,CAMK2D,ENSG00000145349,,,,,both,shared / negative,-0.2097,-0.1626,C4,Mid decrease (largest at F1→F2),F2→F3,Tier 3,1.0,,

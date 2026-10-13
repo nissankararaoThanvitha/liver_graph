@@ -38,6 +38,10 @@ import os
 
 import pandas as pd
 
+import sys, os as _os
+sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+from paper2_drug_filters import is_inorganic
+
 # Two recoveries, two sources, two directories -- deliberately not pooled.
 # Every field either source supplies carries a *_source column saying which one
 # it came from, so a reader can always separate them again.
@@ -220,9 +224,12 @@ def main():
     # heuristic stays beside it as the broader, cruder net. Neither replaces
     # the other, and both are reported.
     t4["flag_molecule_type"] = t4.molecule_type.isin(NON_THERAPEUTIC_TYPES)
-    t4["flag_inorganic"] = (t4.cd_formula.notna()
-                            & ~t4.cd_formula.fillna("").str.contains(
-                                r"C(?![a-z])", regex=True))
+    # The same carbon test the shared filter uses, so Task 4 and Task 8 cannot
+    # disagree about an entity again. Magnesium sulfate was flagged here by
+    # formula and cleared by the name whitelist, so it reached Task 8 as
+    # candidate 24; inorganics are now out of the whitelist and the test lives
+    # in paper2_drug_filters.is_inorganic.
+    t4["flag_inorganic"] = t4.cd_formula.map(is_inorganic)
     t4["likely_non_therapeutic"] = t4.likely_non_therapeutic | t4.flag_inorganic
     t4.to_csv(T4, index=False)
 
