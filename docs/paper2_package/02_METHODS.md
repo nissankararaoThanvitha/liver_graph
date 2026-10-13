@@ -72,6 +72,29 @@ SMILES can represent. Removing Recovery 2 entirely would change no result, which
 is the cleanest available answer to whether it falls inside "focus only on the
 knowledge graph". Full report: `03_RESULTS/Recovery2_ChEMBL/`.
 
+**Both recoveries were written back into the graph on 13 October.** The data had
+been recovered into CSVs but the graph itself still carried only what the
+original load kept: `name` and `node_id` on Drug nodes, `action` on `ACTS_ON`.
+`paper2_write_recovered_to_graph.py` adds the drug properties to the 12,025 Drug
+nodes and the per-edge evidence to all 20,674 `ACTS_ON` relationships, each
+recovered field accompanied by a `*_source` property so the two recoveries stay
+separable in the graph as they are in the tables.
+
+It is additive and reversible by construction: it refuses to run if any target
+key already exists, so it cannot overwrite Team 1's data or its own earlier run;
+it writes nothing without `--apply`; and `--rollback` removes exactly the keys it
+sets. `name` and `action` are never touched — a recovered name is written to
+`recovered_name` beside `name`, not over it. After the write, the Drug node and
+`ACTS_ON` counts, `d.name` and `r.action` were confirmed unchanged, and both Task
+1 verification scripts still pass.
+
+**Nothing was written to Gene nodes.** No recovered field is gene-level, and
+Gene properties are the one place in this graph where duplicating derived data
+has already failed: `fibrosis_rho` sits on 3,645 Gene nodes while 3,845 carry a
+`TRACKS_FIBROSIS` edge, and 191 have the property with no edge. Paper 2 reads the
+edges throughout. That pre-existing divergence is Team 1's to resolve and is
+untouched here.
+
 ## Task 3 — druggability
 
 Background is the **14,794 eligible genes**, the same background Paper 1's

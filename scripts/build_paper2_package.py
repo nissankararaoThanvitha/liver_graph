@@ -173,7 +173,8 @@ CODE = {
                             "paper2_recovery_optimuskg_report.py"],
     "recovery2_chembl": ["paper2_fetch_chembl_gaps.py",
                          "paper2_recovery_chembl_report.py"],
-    "recovery_shared": ["paper2_integrate_recovered_evidence.py"],
+    "recovery_shared": ["paper2_integrate_recovered_evidence.py",
+                        "paper2_write_recovered_to_graph.py"],
     "figures": ["paper2_figures.py"],
 }
 
