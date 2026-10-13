@@ -59,6 +59,27 @@ Use Task1 for the master gene table. Analysis code is in
 | 7 | Drug action / direction evidence table | **done** | [`Task7/`](Task7) — 4,984 relationships; fibrosis-only rising genes 89% consistent |
 | 8 | Final target and drug ranking | **done** | [`Task8/`](Task8) — band 1 is two genes: PDGFRA and CACNA1C |
 
+## Plan items not done, and why
+
+Every numbered task and every bulleted required output is complete. Two things
+the plan mentions outside those bullets are not, and both are scope decisions
+rather than oversights:
+
+**Transcriptomic drug-reversal analysis (LINCS / CMap).** Ruled out of scope by
+the mentor on 13 October 2026 — "repurposing not reversal", "focus only on the
+knowledge graph". Carried in Task 8's evidence summary as a visible
+"out of scope" row rather than dropped.
+
+**Independent validation of the leading candidates.** The plan's
+publication-strengthening addition asks to "validate the leading targets/drugs
+against an independent fibrosis/progression dataset or independent
+perturbational resource where available", kept separate from Paper 1 feature
+selection and Paper 2 weight selection to avoid leakage. **Not done.** Both
+routes need data from outside the knowledge graph, which the 13 October scope
+excludes — but the plan words it as "where available" rather than as a
+requirement, and it is the one thing that would turn these hypotheses into
+something tested. **Worth an explicit decision rather than an assumption.**
+
 ## Standing constraints
 
 - **Do not trim the graph.** Filter at read time, per edge type. The drugs with

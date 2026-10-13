@@ -1,0 +1,5 @@
+transition,genes,drug_connected,percent,overall_percent,enrichment,hypergeom_p,q_BH,converges
+F0→F1,495,78,15.8,16.6,0.948,0.729,0.852,no
+F1→F2,611,116,19.0,16.6,1.142,0.051,0.202,no
+F2→F3,618,104,16.8,16.6,1.013,0.459,0.852,no
+F3→F4,2121,341,16.1,16.6,0.967,0.852,0.852,no
