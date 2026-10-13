@@ -68,29 +68,13 @@ from neo4j import GraphDatabase
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from paper2_io import SupportingTables
+from paper2_drug_filters import flag_entities
 
 EDGES = "Paper2_Results/Task2/task2_drug_gene_edges.csv"
 PATHWAYS = "Paper1_Results/Task4/task4_top_pathways_per_group.csv"
 OUT_DIR = "Paper2_Results/Task4"
 TOP_N = 50
 PHARMACOKINETIC = {"ENZYME", "TRANSPORTER", "CARRIER", "SUBSTRATE"}
-
-# Name-based flag for things that are not therapeutics in the usual sense.
-# Incomplete by construction; it marks, it does not delete.
-NON_THERAPEUTIC = re.compile(
-    r"\b(ZINC|CALCIUM|MAGNESIUM|POTASSIUM|SODIUM|FERROUS|FERRIC|COPPER|"
-    r"MANGANESE|SELENIUM|CHROMIUM|IODIDE|PHOSPHATE|CARBONATE|CITRATE|"
-    r"CHLORIDE|SULFATE|SULPHATE|ACETATE|GLUCONATE|OXIDE|HYDROXIDE)\b"
-    r"|^(ALCOHOL|WATER|OXYGEN|NITROGEN|GLYCEROL|UREA|GLUCOSE|SUCROSE|"
-    r"DEXTROSE|LACTOSE|STARCH)$"
-    r"|\b(VITAMIN|ASCORBIC ACID|CHOLECALCIFEROL|ERGOCALCIFEROL|TOCOPHEROL|"
-    r"RETINOL|THIAMINE|RIBOFLAVIN|NIACIN|PYRIDOXAL|PYRIDOXINE|FOLIC ACID|"
-    r"CYANOCOBALAMIN|BIOTIN|PANTOTHEN)\b"
-    r"|^(ADENOSINE TRIPHOSPHATE|GLUTAMIC ACID|ASPARTIC ACID|GLYCINE|ALANINE|"
-    r"SERINE|CYSTEINE|TAURINE|CREATINE|CHOLINE|INOSITOL)\b"
-    r"|NICOTINAMIDE ADENINE DINUCLEOTIDE|DINUCLEOTIDE|FLAVIN|"
-    r"COENZYME|HEME|HEMIN", re.I)
-
 
 def driver():
     cfg = json.load(open(os.path.expanduser("~/.claude.json"), encoding="utf-8"))
@@ -200,22 +184,21 @@ def main():
         d = d.merge(clus.sum(axis=1).rename("genes_with_a_cluster"),
                     on="Drug_ID", how="left")
 
-    d["flag_name"] = d.Drug.str.contains(NON_THERAPEUTIC, na=False)
+    # The rule lives in paper2_drug_filters.py and is shared with Tasks 3, 6
+    # and 7. It used to be defined here, which is how the tasks drifted to
+    # different answers for the same question.
+    _flags = flag_entities(dict(zip(d.Drug_ID, d.Drug)),
+                           e.groupby("Drug_ID").Gene_ID.apply(set).to_dict())
+    d["flag_name"] = d.Drug_ID.map(lambda i: _flags[i]["flag_name"])
     # An entry whose name is only its ChEMBL id cannot be judged by name at all.
-    d["flag_unnamed"] = d.Drug.str.match(r"^CHEMBL\d+$", na=False)
+    d["flag_unnamed"] = d.Drug_ID.map(lambda i: _flags[i]["flag_unnamed"])
 
-    # Near-duplicate entities. CHEMBL1201279 shares all 126 of its targets with
-    # ZINC ACETATE: it is the same thing under another accession, and no name
-    # rule would catch it. Any drug whose target set is almost entirely
-    # contained in a name-flagged drug's target set is flagged with it.
-    tset = e.groupby("Drug_ID").Gene_ID.apply(set).to_dict()
-    flagged_sets = [tset[i] for i in d.loc[d.flag_name, "Drug_ID"] if i in tset]
-    def duplicate_of_flagged(did):
-        s = tset.get(did)
-        if not s or len(s) < 5:
-            return False
-        return any(len(s & f) / len(s) >= 0.95 for f in flagged_sets)
-    d["flag_duplicate"] = [duplicate_of_flagged(i) for i in d.Drug_ID]
+    # Near-duplicate entities, now restricted to UNNAMED accessions only.
+    # CHEMBL1201279 shares all 126 of its targets with ZINC ACETATE and no name
+    # rule can catch it. Applying the same test to named medicines flagged
+    # omeprazole, erythromycin and warfarin for sharing a CYP panel, so it no
+    # longer runs on them.
+    d["flag_duplicate"] = d.Drug_ID.map(lambda i: _flags[i]["flag_duplicate"])
 
     d["likely_non_therapeutic"] = (d.flag_name | d.flag_unnamed
                                    | d.flag_duplicate)

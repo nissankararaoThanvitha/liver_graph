@@ -54,7 +54,12 @@ blocking either target helps the liver.
 Overall reversal consistency is indistinguishable from chance (52.7% against a
 55.9% null, p = 0.78), robust to six classification schemes. The one subgroup
 that beats its null rests on 32 genes dominated by classic inhibitor-target
-families. Mechanism should not carry weight in any ranking.
+families.
+
+**Mechanism consistency is at chance overall, but it contributes half of the K
+component; the sensitivity of the ranking to this choice is noted in §10b.**
+An earlier version of this file said mechanism "should not carry weight in any
+ranking", which contradicted what the ranking actually does.
 
 ## 5. Four fifths of drug–target relationships have no direction
 
@@ -153,6 +158,13 @@ substances.
 holds — distinct ChEMBL and DrugBank entries — and because every per-drug
 analysis in Paper 2 runs on those entries.
 
+**One pair reaches the leading candidates.** LEVAMLODIPINE (rank 4) and
+AMLODIPINE (rank 8) are the same compound, levamlodipine being the pure
+S-enantiomer, so the thirty candidates are **29 distinct compounds**. `LEV-` is a
+contracted prefix that no safe string rule separates from an ordinary name —
+DEXAMETHASONE is not a `DEX-` enantiomer of anything — so the pair is recorded
+rather than merged.
+
 ## 9c. Druggability depends on what counts as a drug
 
 Found in review, 13 October. Task 3's original "drug-connected" counted any
@@ -198,6 +210,17 @@ effective components against four, and are ranked separately for that reason.
 Their rankings are not equally well-founded and must not be presented as if
 they were. Their underlying axis also rests on 216 patients from three studies,
 against 610 for fibrosis.
+
+## 10b. Band 1 depends on recorded drug direction
+
+**Band 1 depends on recorded drug direction.** PDGFRA and CACNA1C reach the top
+band because each is a Paper 1 9/9 gene with a drug whose recorded action opposes
+the gene's direction of change (K = 1.0). Three other 9/9 genes — MYC, PLK3 and
+TPM4 — have a drug but no recorded direction (K = 0.5), so they rank in the next
+band (score 0.9). TAX1BP3 has no drug (K = 0). Only 11% of drug–target
+relationships carry a recorded direction, so this difference reflects
+**annotation coverage, not evidence against these genes**. Candidate drugs for
+them should be considered part of the wider repurposing space.
 
 ## 11. Exact ranks are not defensible
 

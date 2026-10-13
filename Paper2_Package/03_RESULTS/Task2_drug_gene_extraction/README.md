@@ -285,3 +285,24 @@ fibrosis-associated set — structural, not missing data.
 3. **Mechanism consistency is at chance level.** Do not build a narrative on
    it, and do not weight it heavily in the Task 6 TargetScore without saying
    so.
+
+## Which direction each class is scored against
+
+Mechanism consistency compares a drug's action against the gene's direction of
+change. **The two classes use different ladders, and this is worth stating
+plainly:**
+
+| class | direction used |
+|---|---|
+| fibrosis-only | the fibrosis ladder, F0 to F4 |
+| shared | the fibrosis ladder, F0 to F4 |
+| **inflammation-only** | **the disease-group ladder**, control to NASH |
+
+Inflammation-only genes have no fibrosis direction, so the disease-group
+direction is used instead. That axis rests on 216 patients from three studies
+against 610 for fibrosis, so those rows are built on thinner evidence.
+
+**It changes nothing material.** Consistency is 52.7% over all 1,005 directional
+links and **51.9%** over the 804 that exclude inflammation-only genes. Both sit
+inside the same null, and the conclusion — no better than chance — is the same
+either way.
