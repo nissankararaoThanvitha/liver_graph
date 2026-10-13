@@ -1,0 +1,211 @@
+rank,drug,best_target,layer,verdict,detail
+1,BARNIDIPINE,CACNA1C,L1 progression association,supports,P = 1.00
+1,BARNIDIPINE,CACNA1C,L2 fibrosis specificity,supports,F = 1.00
+1,BARNIDIPINE,CACNA1C,L3 trajectory / stage transition,supports,T = 1.00
+1,BARNIDIPINE,CACNA1C,L4 pathway / process context,supports,B = 1.00
+1,BARNIDIPINE,CACNA1C,L5 knowledge-graph relationship,supports,K = 1.00
+1,BARNIDIPINE,CACNA1C,L6 drug-target mechanism,supports,BLOCKER / reversal-consistent
+1,BARNIDIPINE,CACNA1C,L7 transcriptomic reversal,out of scope,transcriptomic reversal ruled out 13 Oct 2026 (repurposing not reversal; knowledge graph only)
+2,CLEVIDIPINE,CACNA1C,L1 progression association,supports,P = 1.00
+2,CLEVIDIPINE,CACNA1C,L2 fibrosis specificity,supports,F = 1.00
+2,CLEVIDIPINE,CACNA1C,L3 trajectory / stage transition,supports,T = 1.00
+2,CLEVIDIPINE,CACNA1C,L4 pathway / process context,supports,B = 1.00
+2,CLEVIDIPINE,CACNA1C,L5 knowledge-graph relationship,supports,K = 1.00
+2,CLEVIDIPINE,CACNA1C,L6 drug-target mechanism,supports,BLOCKER / reversal-consistent
+2,CLEVIDIPINE,CACNA1C,L7 transcriptomic reversal,out of scope,transcriptomic reversal ruled out 13 Oct 2026 (repurposing not reversal; knowledge graph only)
+3,DILTIAZEM,CACNA1C,L1 progression association,supports,P = 1.00
+3,DILTIAZEM,CACNA1C,L2 fibrosis specificity,supports,F = 1.00
+3,DILTIAZEM,CACNA1C,L3 trajectory / stage transition,supports,T = 1.00
+3,DILTIAZEM,CACNA1C,L4 pathway / process context,supports,B = 1.00
+3,DILTIAZEM,CACNA1C,L5 knowledge-graph relationship,supports,K = 1.00
+3,DILTIAZEM,CACNA1C,L6 drug-target mechanism,supports,BLOCKER / reversal-consistent
+3,DILTIAZEM,CACNA1C,L7 transcriptomic reversal,out of scope,transcriptomic reversal ruled out 13 Oct 2026 (repurposing not reversal; knowledge graph only)
+4,LEVAMLODIPINE,CACNA1C,L1 progression association,supports,P = 1.00
+4,LEVAMLODIPINE,CACNA1C,L2 fibrosis specificity,supports,F = 1.00
+4,LEVAMLODIPINE,CACNA1C,L3 trajectory / stage transition,supports,T = 1.00
+4,LEVAMLODIPINE,CACNA1C,L4 pathway / process context,supports,B = 1.00
+4,LEVAMLODIPINE,CACNA1C,L5 knowledge-graph relationship,supports,K = 1.00
+4,LEVAMLODIPINE,CACNA1C,L6 drug-target mechanism,supports,BLOCKER / reversal-consistent
+4,LEVAMLODIPINE,CACNA1C,L7 transcriptomic reversal,out of scope,transcriptomic reversal ruled out 13 Oct 2026 (repurposing not reversal; knowledge graph only)
+5,EFONIDIPINE,CACNA1C,L1 progression association,supports,P = 1.00
+5,EFONIDIPINE,CACNA1C,L2 fibrosis specificity,supports,F = 1.00
+5,EFONIDIPINE,CACNA1C,L3 trajectory / stage transition,supports,T = 1.00
+5,EFONIDIPINE,CACNA1C,L4 pathway / process context,supports,B = 1.00
+5,EFONIDIPINE,CACNA1C,L5 knowledge-graph relationship,supports,K = 1.00
+5,EFONIDIPINE,CACNA1C,L6 drug-target mechanism,missing,TARGET / unknown
+5,EFONIDIPINE,CACNA1C,L7 transcriptomic reversal,out of scope,transcriptomic reversal ruled out 13 Oct 2026 (repurposing not reversal; knowledge graph only)
+6,IMATINIB,PDGFRA,L1 progression association,supports,P = 1.00
+6,IMATINIB,PDGFRA,L2 fibrosis specificity,supports,F = 1.00
+6,IMATINIB,PDGFRA,L3 trajectory / stage transition,supports,T = 1.00
+6,IMATINIB,PDGFRA,L4 pathway / process context,supports,B = 1.00
+6,IMATINIB,PDGFRA,L5 knowledge-graph relationship,supports,K = 1.00
+6,IMATINIB,PDGFRA,L6 drug-target mechanism,missing,TARGET / unknown
+6,IMATINIB,PDGFRA,L7 transcriptomic reversal,out of scope,transcriptomic reversal ruled out 13 Oct 2026 (repurposing not reversal; knowledge graph only)
+7,VERAPAMIL,CACNA1C,L1 progression association,supports,P = 1.00
+7,VERAPAMIL,CACNA1C,L2 fibrosis specificity,supports,F = 1.00
+7,VERAPAMIL,CACNA1C,L3 trajectory / stage transition,supports,T = 1.00
+7,VERAPAMIL,CACNA1C,L4 pathway / process context,supports,B = 1.00
+7,VERAPAMIL,CACNA1C,L5 knowledge-graph relationship,supports,K = 1.00
+7,VERAPAMIL,CACNA1C,L6 drug-target mechanism,supports,BLOCKER / reversal-consistent
+7,VERAPAMIL,CACNA1C,L7 transcriptomic reversal,out of scope,transcriptomic reversal ruled out 13 Oct 2026 (repurposing not reversal; knowledge graph only)
+8,AMLODIPINE,CACNA1C,L1 progression association,supports,P = 1.00
+8,AMLODIPINE,CACNA1C,L2 fibrosis specificity,supports,F = 1.00
+8,AMLODIPINE,CACNA1C,L3 trajectory / stage transition,supports,T = 1.00
+8,AMLODIPINE,CACNA1C,L4 pathway / process context,supports,B = 1.00
+8,AMLODIPINE,CACNA1C,L5 knowledge-graph relationship,supports,K = 1.00
+8,AMLODIPINE,CACNA1C,L6 drug-target mechanism,supports,BLOCKER / reversal-consistent
+8,AMLODIPINE,CACNA1C,L7 transcriptomic reversal,out of scope,transcriptomic reversal ruled out 13 Oct 2026 (repurposing not reversal; knowledge graph only)
+9,CILNIDIPINE,CACNA1C,L1 progression association,supports,P = 1.00
+9,CILNIDIPINE,CACNA1C,L2 fibrosis specificity,supports,F = 1.00
+9,CILNIDIPINE,CACNA1C,L3 trajectory / stage transition,supports,T = 1.00
+9,CILNIDIPINE,CACNA1C,L4 pathway / process context,supports,B = 1.00
+9,CILNIDIPINE,CACNA1C,L5 knowledge-graph relationship,supports,K = 1.00
+9,CILNIDIPINE,CACNA1C,L6 drug-target mechanism,supports,BLOCKER / reversal-consistent
+9,CILNIDIPINE,CACNA1C,L7 transcriptomic reversal,out of scope,transcriptomic reversal ruled out 13 Oct 2026 (repurposing not reversal; knowledge graph only)
+10,DROTAVERINE,CACNA1C,L1 progression association,supports,P = 1.00
+10,DROTAVERINE,CACNA1C,L2 fibrosis specificity,supports,F = 1.00
+10,DROTAVERINE,CACNA1C,L3 trajectory / stage transition,supports,T = 1.00
+10,DROTAVERINE,CACNA1C,L4 pathway / process context,supports,B = 1.00
+10,DROTAVERINE,CACNA1C,L5 knowledge-graph relationship,supports,K = 1.00
+10,DROTAVERINE,CACNA1C,L6 drug-target mechanism,missing,TARGET / unknown
+10,DROTAVERINE,CACNA1C,L7 transcriptomic reversal,out of scope,transcriptomic reversal ruled out 13 Oct 2026 (repurposing not reversal; knowledge graph only)
+11,LACIDIPINE,CACNA1C,L1 progression association,supports,P = 1.00
+11,LACIDIPINE,CACNA1C,L2 fibrosis specificity,supports,F = 1.00
+11,LACIDIPINE,CACNA1C,L3 trajectory / stage transition,supports,T = 1.00
+11,LACIDIPINE,CACNA1C,L4 pathway / process context,supports,B = 1.00
+11,LACIDIPINE,CACNA1C,L5 knowledge-graph relationship,supports,K = 1.00
+11,LACIDIPINE,CACNA1C,L6 drug-target mechanism,supports,BLOCKER / reversal-consistent
+11,LACIDIPINE,CACNA1C,L7 transcriptomic reversal,out of scope,transcriptomic reversal ruled out 13 Oct 2026 (repurposing not reversal; knowledge graph only)
+13,NILVADIPINE,CACNA1C,L1 progression association,supports,P = 1.00
+13,NILVADIPINE,CACNA1C,L2 fibrosis specificity,supports,F = 1.00
+13,NILVADIPINE,CACNA1C,L3 trajectory / stage transition,supports,T = 1.00
+13,NILVADIPINE,CACNA1C,L4 pathway / process context,supports,B = 1.00
+13,NILVADIPINE,CACNA1C,L5 knowledge-graph relationship,supports,K = 1.00
+13,NILVADIPINE,CACNA1C,L6 drug-target mechanism,supports,BLOCKER / reversal-consistent
+13,NILVADIPINE,CACNA1C,L7 transcriptomic reversal,out of scope,transcriptomic reversal ruled out 13 Oct 2026 (repurposing not reversal; knowledge graph only)
+14,RIPRETINIB,PDGFRA,L1 progression association,supports,P = 1.00
+14,RIPRETINIB,PDGFRA,L2 fibrosis specificity,supports,F = 1.00
+14,RIPRETINIB,PDGFRA,L3 trajectory / stage transition,supports,T = 1.00
+14,RIPRETINIB,PDGFRA,L4 pathway / process context,supports,B = 1.00
+14,RIPRETINIB,PDGFRA,L5 knowledge-graph relationship,supports,K = 1.00
+14,RIPRETINIB,PDGFRA,L6 drug-target mechanism,supports,INHIBITOR / reversal-consistent
+14,RIPRETINIB,PDGFRA,L7 transcriptomic reversal,out of scope,transcriptomic reversal ruled out 13 Oct 2026 (repurposing not reversal; knowledge graph only)
+15,MIDOSTAURIN,PDGFRA,L1 progression association,supports,P = 1.00
+15,MIDOSTAURIN,PDGFRA,L2 fibrosis specificity,supports,F = 1.00
+15,MIDOSTAURIN,PDGFRA,L3 trajectory / stage transition,supports,T = 1.00
+15,MIDOSTAURIN,PDGFRA,L4 pathway / process context,supports,B = 1.00
+15,MIDOSTAURIN,PDGFRA,L5 knowledge-graph relationship,supports,K = 1.00
+15,MIDOSTAURIN,PDGFRA,L6 drug-target mechanism,supports,INHIBITOR / reversal-consistent
+15,MIDOSTAURIN,PDGFRA,L7 transcriptomic reversal,out of scope,transcriptomic reversal ruled out 13 Oct 2026 (repurposing not reversal; knowledge graph only)
+16,SUNITINIB,PDGFRA,L1 progression association,supports,P = 1.00
+16,SUNITINIB,PDGFRA,L2 fibrosis specificity,supports,F = 1.00
+16,SUNITINIB,PDGFRA,L3 trajectory / stage transition,supports,T = 1.00
+16,SUNITINIB,PDGFRA,L4 pathway / process context,supports,B = 1.00
+16,SUNITINIB,PDGFRA,L5 knowledge-graph relationship,supports,K = 1.00
+16,SUNITINIB,PDGFRA,L6 drug-target mechanism,supports,INHIBITOR / reversal-consistent
+16,SUNITINIB,PDGFRA,L7 transcriptomic reversal,out of scope,transcriptomic reversal ruled out 13 Oct 2026 (repurposing not reversal; knowledge graph only)
+17,AMUVATINIB,PDGFRA,L1 progression association,supports,P = 1.00
+17,AMUVATINIB,PDGFRA,L2 fibrosis specificity,supports,F = 1.00
+17,AMUVATINIB,PDGFRA,L3 trajectory / stage transition,supports,T = 1.00
+17,AMUVATINIB,PDGFRA,L4 pathway / process context,supports,B = 1.00
+17,AMUVATINIB,PDGFRA,L5 knowledge-graph relationship,supports,K = 1.00
+17,AMUVATINIB,PDGFRA,L6 drug-target mechanism,supports,INHIBITOR / reversal-consistent
+17,AMUVATINIB,PDGFRA,L7 transcriptomic reversal,out of scope,transcriptomic reversal ruled out 13 Oct 2026 (repurposing not reversal; knowledge graph only)
+19,ARANIDIPINE,CACNA1C,L1 progression association,supports,P = 1.00
+19,ARANIDIPINE,CACNA1C,L2 fibrosis specificity,supports,F = 1.00
+19,ARANIDIPINE,CACNA1C,L3 trajectory / stage transition,supports,T = 1.00
+19,ARANIDIPINE,CACNA1C,L4 pathway / process context,supports,B = 1.00
+19,ARANIDIPINE,CACNA1C,L5 knowledge-graph relationship,supports,K = 1.00
+19,ARANIDIPINE,CACNA1C,L6 drug-target mechanism,missing,TARGET / unknown
+19,ARANIDIPINE,CACNA1C,L7 transcriptomic reversal,out of scope,transcriptomic reversal ruled out 13 Oct 2026 (repurposing not reversal; knowledge graph only)
+21,IBUTILIDE,CACNA1C,L1 progression association,supports,P = 1.00
+21,IBUTILIDE,CACNA1C,L2 fibrosis specificity,supports,F = 1.00
+21,IBUTILIDE,CACNA1C,L3 trajectory / stage transition,supports,T = 1.00
+21,IBUTILIDE,CACNA1C,L4 pathway / process context,supports,B = 1.00
+21,IBUTILIDE,CACNA1C,L5 knowledge-graph relationship,supports,K = 1.00
+21,IBUTILIDE,CACNA1C,L6 drug-target mechanism,missing,TARGET / unknown
+21,IBUTILIDE,CACNA1C,L7 transcriptomic reversal,out of scope,transcriptomic reversal ruled out 13 Oct 2026 (repurposing not reversal; knowledge graph only)
+22,ISAVUCONAZOLE,CACNA1C,L1 progression association,supports,P = 1.00
+22,ISAVUCONAZOLE,CACNA1C,L2 fibrosis specificity,supports,F = 1.00
+22,ISAVUCONAZOLE,CACNA1C,L3 trajectory / stage transition,supports,T = 1.00
+22,ISAVUCONAZOLE,CACNA1C,L4 pathway / process context,supports,B = 1.00
+22,ISAVUCONAZOLE,CACNA1C,L5 knowledge-graph relationship,supports,K = 1.00
+22,ISAVUCONAZOLE,CACNA1C,L6 drug-target mechanism,missing,TARGET / unknown
+22,ISAVUCONAZOLE,CACNA1C,L7 transcriptomic reversal,out of scope,transcriptomic reversal ruled out 13 Oct 2026 (repurposing not reversal; knowledge graph only)
+23,LEVOMENTHOL,CACNA1C,L1 progression association,supports,P = 1.00
+23,LEVOMENTHOL,CACNA1C,L2 fibrosis specificity,supports,F = 1.00
+23,LEVOMENTHOL,CACNA1C,L3 trajectory / stage transition,supports,T = 1.00
+23,LEVOMENTHOL,CACNA1C,L4 pathway / process context,supports,B = 1.00
+23,LEVOMENTHOL,CACNA1C,L5 knowledge-graph relationship,supports,K = 1.00
+23,LEVOMENTHOL,CACNA1C,L6 drug-target mechanism,missing,TARGET / unknown
+23,LEVOMENTHOL,CACNA1C,L7 transcriptomic reversal,out of scope,transcriptomic reversal ruled out 13 Oct 2026 (repurposing not reversal; knowledge graph only)
+25,NINTEDANIB,PDGFRA,L1 progression association,supports,P = 1.00
+25,NINTEDANIB,PDGFRA,L2 fibrosis specificity,supports,F = 1.00
+25,NINTEDANIB,PDGFRA,L3 trajectory / stage transition,supports,T = 1.00
+25,NINTEDANIB,PDGFRA,L4 pathway / process context,supports,B = 1.00
+25,NINTEDANIB,PDGFRA,L5 knowledge-graph relationship,supports,K = 1.00
+25,NINTEDANIB,PDGFRA,L6 drug-target mechanism,supports,INHIBITOR / reversal-consistent
+25,NINTEDANIB,PDGFRA,L7 transcriptomic reversal,out of scope,transcriptomic reversal ruled out 13 Oct 2026 (repurposing not reversal; knowledge graph only)
+26,NIFEDIPINE,CACNA1C,L1 progression association,supports,P = 1.00
+26,NIFEDIPINE,CACNA1C,L2 fibrosis specificity,supports,F = 1.00
+26,NIFEDIPINE,CACNA1C,L3 trajectory / stage transition,supports,T = 1.00
+26,NIFEDIPINE,CACNA1C,L4 pathway / process context,supports,B = 1.00
+26,NIFEDIPINE,CACNA1C,L5 knowledge-graph relationship,supports,K = 1.00
+26,NIFEDIPINE,CACNA1C,L6 drug-target mechanism,supports,BLOCKER / reversal-consistent
+26,NIFEDIPINE,CACNA1C,L7 transcriptomic reversal,out of scope,transcriptomic reversal ruled out 13 Oct 2026 (repurposing not reversal; knowledge graph only)
+27,REGORAFENIB,PDGFRA,L1 progression association,supports,P = 1.00
+27,REGORAFENIB,PDGFRA,L2 fibrosis specificity,supports,F = 1.00
+27,REGORAFENIB,PDGFRA,L3 trajectory / stage transition,supports,T = 1.00
+27,REGORAFENIB,PDGFRA,L4 pathway / process context,supports,B = 1.00
+27,REGORAFENIB,PDGFRA,L5 knowledge-graph relationship,supports,K = 1.00
+27,REGORAFENIB,PDGFRA,L6 drug-target mechanism,supports,INHIBITOR / reversal-consistent
+27,REGORAFENIB,PDGFRA,L7 transcriptomic reversal,out of scope,transcriptomic reversal ruled out 13 Oct 2026 (repurposing not reversal; knowledge graph only)
+28,NIMODIPINE,CACNA1C,L1 progression association,supports,P = 1.00
+28,NIMODIPINE,CACNA1C,L2 fibrosis specificity,supports,F = 1.00
+28,NIMODIPINE,CACNA1C,L3 trajectory / stage transition,supports,T = 1.00
+28,NIMODIPINE,CACNA1C,L4 pathway / process context,supports,B = 1.00
+28,NIMODIPINE,CACNA1C,L5 knowledge-graph relationship,supports,K = 1.00
+28,NIMODIPINE,CACNA1C,L6 drug-target mechanism,supports,BLOCKER / reversal-consistent
+28,NIMODIPINE,CACNA1C,L7 transcriptomic reversal,out of scope,transcriptomic reversal ruled out 13 Oct 2026 (repurposing not reversal; knowledge graph only)
+30,RANOLAZINE,CACNA1C,L1 progression association,supports,P = 1.00
+30,RANOLAZINE,CACNA1C,L2 fibrosis specificity,supports,F = 1.00
+30,RANOLAZINE,CACNA1C,L3 trajectory / stage transition,supports,T = 1.00
+30,RANOLAZINE,CACNA1C,L4 pathway / process context,supports,B = 1.00
+30,RANOLAZINE,CACNA1C,L5 knowledge-graph relationship,supports,K = 1.00
+30,RANOLAZINE,CACNA1C,L6 drug-target mechanism,missing,TARGET / unknown
+30,RANOLAZINE,CACNA1C,L7 transcriptomic reversal,out of scope,transcriptomic reversal ruled out 13 Oct 2026 (repurposing not reversal; knowledge graph only)
+31,AMIODARONE,CACNA1C,L1 progression association,supports,P = 1.00
+31,AMIODARONE,CACNA1C,L2 fibrosis specificity,supports,F = 1.00
+31,AMIODARONE,CACNA1C,L3 trajectory / stage transition,supports,T = 1.00
+31,AMIODARONE,CACNA1C,L4 pathway / process context,supports,B = 1.00
+31,AMIODARONE,CACNA1C,L5 knowledge-graph relationship,supports,K = 1.00
+31,AMIODARONE,CACNA1C,L6 drug-target mechanism,missing,TARGET / unknown
+31,AMIODARONE,CACNA1C,L7 transcriptomic reversal,out of scope,transcriptomic reversal ruled out 13 Oct 2026 (repurposing not reversal; knowledge graph only)
+32,BUTAMBEN,CACNA1C,L1 progression association,supports,P = 1.00
+32,BUTAMBEN,CACNA1C,L2 fibrosis specificity,supports,F = 1.00
+32,BUTAMBEN,CACNA1C,L3 trajectory / stage transition,supports,T = 1.00
+32,BUTAMBEN,CACNA1C,L4 pathway / process context,supports,B = 1.00
+32,BUTAMBEN,CACNA1C,L5 knowledge-graph relationship,supports,K = 1.00
+32,BUTAMBEN,CACNA1C,L6 drug-target mechanism,missing,TARGET / unknown
+32,BUTAMBEN,CACNA1C,L7 transcriptomic reversal,out of scope,transcriptomic reversal ruled out 13 Oct 2026 (repurposing not reversal; knowledge graph only)
+33,TRIMEBUTINE,CACNA1C,L1 progression association,supports,P = 1.00
+33,TRIMEBUTINE,CACNA1C,L2 fibrosis specificity,supports,F = 1.00
+33,TRIMEBUTINE,CACNA1C,L3 trajectory / stage transition,supports,T = 1.00
+33,TRIMEBUTINE,CACNA1C,L4 pathway / process context,supports,B = 1.00
+33,TRIMEBUTINE,CACNA1C,L5 knowledge-graph relationship,supports,K = 1.00
+33,TRIMEBUTINE,CACNA1C,L6 drug-target mechanism,missing,TARGET / unknown
+33,TRIMEBUTINE,CACNA1C,L7 transcriptomic reversal,out of scope,transcriptomic reversal ruled out 13 Oct 2026 (repurposing not reversal; knowledge graph only)
+34,FOSTAMATINIB,PDGFRA,L1 progression association,supports,P = 1.00
+34,FOSTAMATINIB,PDGFRA,L2 fibrosis specificity,supports,F = 1.00
+34,FOSTAMATINIB,PDGFRA,L3 trajectory / stage transition,supports,T = 1.00
+34,FOSTAMATINIB,PDGFRA,L4 pathway / process context,supports,B = 1.00
+34,FOSTAMATINIB,PDGFRA,L5 knowledge-graph relationship,supports,K = 1.00
+34,FOSTAMATINIB,PDGFRA,L6 drug-target mechanism,missing,TARGET / unknown
+34,FOSTAMATINIB,PDGFRA,L7 transcriptomic reversal,out of scope,transcriptomic reversal ruled out 13 Oct 2026 (repurposing not reversal; knowledge graph only)
+35,DRONEDARONE,CACNA1C,L1 progression association,supports,P = 1.00
+35,DRONEDARONE,CACNA1C,L2 fibrosis specificity,supports,F = 1.00
+35,DRONEDARONE,CACNA1C,L3 trajectory / stage transition,supports,T = 1.00
+35,DRONEDARONE,CACNA1C,L4 pathway / process context,supports,B = 1.00
+35,DRONEDARONE,CACNA1C,L5 knowledge-graph relationship,supports,K = 1.00
+35,DRONEDARONE,CACNA1C,L6 drug-target mechanism,supports,BLOCKER / reversal-consistent
+35,DRONEDARONE,CACNA1C,L7 transcriptomic reversal,out of scope,transcriptomic reversal ruled out 13 Oct 2026 (repurposing not reversal; knowledge graph only)

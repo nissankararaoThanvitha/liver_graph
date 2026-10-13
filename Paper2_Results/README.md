@@ -57,7 +57,7 @@ Use Task1 for the master gene table. Analysis code is in
 | 5 | MetaPath implementation and testing | **done** | [`Task5/`](Task5) — 7 metapaths; Reactome 11× cleaner than GO; DWPC vs count ρ = 0.45 |
 | 6 | Target-prioritisation framework design | **done** | [`Task6/`](Task6) — 5 components defined; F redundant within class; top-50 unstable |
 | 7 | Drug action / direction evidence table | **done** | [`Task7/`](Task7) — 4,984 relationships; fibrosis-only rising genes 89% consistent |
-| 8 | Final target and drug ranking | ready | unblocked 13 Oct — reversal layer out of scope |
+| 8 | Final target and drug ranking | **done** | [`Task8/`](Task8) — band 1 is two genes: PDGFRA and CACNA1C |
 
 ## Standing constraints
 
