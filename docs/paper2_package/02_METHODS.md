@@ -37,12 +37,40 @@ pharmacological direction:
 | non-directional | `TARGET`, `MODULATOR`, `BINDING_AGENT` |
 | directional | inhibitor / antagonist / blocker / agonist / activator and modulators of known sign |
 
-**Provenance was recovered on 13 October 2026.** `build_optimuskg_layer.py`
-reads `properties` from every OptimusKG parquet and keeps it only for
-`disease_gene`; for drug-gene edges and drug nodes it was read and discarded.
-Re-reading the same files at DOI `10.7910/DVN/IYNGEV` recovers, for all 8,948
-edges: asserting databases, per-source relation claims, a conflict flag, FDA
-and EuropePMC URLs on 38%, and a written mechanism of action.
+**Provenance was recovered on 13 October 2026, in two separate passes.** On the
+mentor's instruction the two are kept apart throughout — separate scripts,
+separate source directories, separate results folders, and a `*_source` column
+on every recovered field in the delivered tables. They are different acts and a
+reader needs to see which fields came from which.
+
+**Recovery 1 — OptimusKG's own discarded fields.**
+`build_optimuskg_layer.py` reads `properties` from every OptimusKG parquet and
+keeps it only for `disease_gene`; for drug-gene edges and drug nodes it was read
+and discarded. Re-reading the same files at DOI `10.7910/DVN/IYNGEV` recovers,
+for all 8,948 edges: asserting databases, per-source relation claims, a conflict
+flag, FDA and EuropePMC URLs on 38%, and a written mechanism of action — plus,
+for the graph's 12,025 drugs, SMILES (9,036), molecule type (11,623) and
+clinical phase (9,902). **This is not a new source**: it is the source the graph
+was already built from, read more completely. Full report:
+`03_RESULTS/Recovery1_OptimusKG/`.
+
+**Recovery 2 — ChEMBL, an external database.** Queried for the gaps Recovery 1
+left. Its contribution depends entirely on which drugs are counted, so it is
+reported against three denominators:
+
+| denominator | +SMILES | +names | +phases |
+|---|---:|---:|---:|
+| all 18,640 OptimusKG raw records | 2,638 | 938 | 688 |
+| the graph's 12,025 Drug nodes | **0** | 16 | 28 |
+| the 2,404 drugs in Task 4 | **0** | 8 | 17 |
+
+Only the last row bears on the paper: **25 field values, no structures, no
+result changed.** The drugs lacking a structure are precisely those that never
+reach a progression gene — ChEMBL holds records for 2,654 of them and a
+structure for none, because they are biologics, antibodies and mixtures no
+SMILES can represent. Removing Recovery 2 entirely would change no result, which
+is the cleanest available answer to whether it falls inside "focus only on the
+knowledge graph". Full report: `03_RESULTS/Recovery2_ChEMBL/`.
 
 ## Task 3 — druggability
 

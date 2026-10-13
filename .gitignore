@@ -23,6 +23,11 @@ data/optimuskg/
 #   and canonical_smiles. Needs data/optimuskg/drug.parquet and drug_gene.parquet
 #   from the same DOI above (file ids 14220910 and 14220895).
 data/optimuskg_recovered/
+# data/chembl_recovered  800K  rebuild: python scripts/paper2_fetch_chembl_gaps.py
+#   Recovery 2, kept in its own directory on the mentor's instruction of
+#   13 October: the two recoveries stay separate. Needs Recovery 1 to have
+#   run first, since it reads drug_metadata.csv to find the gaps.
+data/chembl_recovered/
 data/graph_all/
 data/graph_primekg_superseded/
 data/graph_okg/

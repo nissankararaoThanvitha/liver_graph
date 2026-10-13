@@ -42,9 +42,25 @@ does not establish that reversing it helps.
 |---|---|
 | `01_FIGURES/` | main and supplementary figures, with captions |
 | `02_TABLES/` | the tables a manuscript would cite, with captions |
-| `03_RESULTS/` | all eight tasks entire, each with its own README |
+| `03_RESULTS/` | all eight tasks entire, plus the two recoveries, each with its own README |
 | `05_CODE/` | pipeline, analysis, validation, recovery and figure scripts |
 | `06_PROVENANCE/` | the biopsy correction and the project context file |
+
+### The two recoveries
+
+`03_RESULTS/` carries two folders that are not numbered tasks. They are the two
+data-recovery jobs asked for on 13 October, and they are **deliberately kept
+separate** — separate scripts, separate source directories, separate reports,
+and a `*_source` column on every recovered field in the delivered tables.
+
+| | source | what it added |
+|---|---|---|
+| `Recovery1_OptimusKG/` | OptimusKG's own discarded fields | per-edge provenance on all 8,948 edges; SMILES, molecule type and clinical phase for the graph's 12,025 drugs |
+| `Recovery2_ChEMBL/` | the ChEMBL API, external | 25 field values across 2,404 drugs; **no structures, no result changed** |
+
+Recovery 1 re-read the source the graph was already built from. Recovery 2 left
+the knowledge graph. Pooling them would have hidden which source carried which
+field, so neither folder cites the other's totals.
 
 Each task's own README in `03_RESULTS/` states its method, its result and its
 caveats, and is the authority for that task. These documents summarise; they do
@@ -66,6 +82,13 @@ schemes. One subgroup beats its null, on 32 genes.
 
 **Why only two targets?** Because that is what the evidence supports. Saying so
 is more useful than a longer list that does not.
+
+**Did anything come from outside the knowledge graph?** One thing, and it
+changed nothing. Recovery 1 re-read OptimusKG's own discarded fields — the same
+source the graph was built from. Recovery 2 queried ChEMBL, which is genuinely
+external, and its entire contribution to the delivered analysis is 25 field
+values across 2,404 drugs, no chemical structures, and no result altered.
+Deleting `Recovery2_ChEMBL/` would leave every number in this package intact.
 
 ## A note on errors
 

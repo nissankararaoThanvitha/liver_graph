@@ -13,9 +13,14 @@ WHAT IS AND IS NOT COPIED
 Figures, the key tables, every task's results and README, and the analysis code
 are copied so the package stands alone. The two large working tables -- the
 8,948-row edge table and the 1,920-row drug ranking -- are copied because a
-reader cannot check a candidate without them. The recovered OptimusKG
-intermediates are not: they are 11 MB, regenerable in a minute, and the
-provenance they carry is already folded into the task outputs.
+reader cannot check a candidate without them.
+
+The two recoveries ship as two folders, Recovery1_OptimusKG and
+Recovery2_ChEMBL, because the mentor asked on 13 October that the two jobs be
+kept separate -- and a package handed to a third reader is exactly where that
+separation would otherwise be lost. Their bulk intermediates are not copied:
+11 MB, regenerable in a minute, and the provenance they carry is already folded
+into the task outputs with a *_source column naming which recovery supplied it.
 
 Usage:
     python scripts/build_paper2_package.py
@@ -38,6 +43,11 @@ TASK_DIRS = {
     "Task6": "Task6_target_scoring",
     "Task7": "Task7_action_direction",
     "Task8": "Task8_final_ranking",
+    # The two recoveries, kept apart on the mentor's instruction of 13 October.
+    # Separate folders in the package as well as in the repo, so the separation
+    # survives being handed to someone who only ever sees the package.
+    "Recovery1_OptimusKG": "Recovery1_OptimusKG",
+    "Recovery2_ChEMBL": "Recovery2_ChEMBL",
 }
 
 # figure -> (destination, caption)
@@ -158,9 +168,12 @@ CODE = {
     "validation": ["paper2_task1_verify_against_neo4j.py",
                    "paper2_task1_verify_stage_means.py",
                    "paper2_task2_robustness.py"],
-    "recovery": ["paper2_recover_optimuskg_evidence.py",
-                 "paper2_fetch_chembl_gaps.py",
-                 "paper2_integrate_recovered_evidence.py"],
+    # Recovery 1 and Recovery 2 each own their extraction and their report.
+    "recovery1_optimuskg": ["paper2_recover_optimuskg_evidence.py",
+                            "paper2_recovery_optimuskg_report.py"],
+    "recovery2_chembl": ["paper2_fetch_chembl_gaps.py",
+                         "paper2_recovery_chembl_report.py"],
+    "recovery_shared": ["paper2_integrate_recovered_evidence.py"],
     "figures": ["paper2_figures.py"],
 }
 

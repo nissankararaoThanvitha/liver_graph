@@ -38,10 +38,14 @@ import os
 
 import pandas as pd
 
-REC = "data/optimuskg_recovered"
-EVIDENCE = f"{REC}/drug_gene_evidence.csv"
-METADATA = f"{REC}/drug_metadata.csv"
-CHEMBL = f"{REC}/chembl_gap_fill.csv"
+# Two recoveries, two sources, two directories -- deliberately not pooled.
+# Every field either source supplies carries a *_source column saying which one
+# it came from, so a reader can always separate them again.
+OKG = "data/optimuskg_recovered"
+CHEMBL_DIR = "data/chembl_recovered"
+EVIDENCE = f"{OKG}/drug_gene_evidence.csv"
+METADATA = f"{OKG}/drug_metadata.csv"
+CHEMBL = f"{CHEMBL_DIR}/chembl_gap_fill.csv"
 
 T2 = "Paper2_Results/Task2/task2_drug_gene_edges.csv"
 T4 = "Paper2_Results/Task4/task4_drug_coverage.csv"
@@ -64,50 +68,79 @@ T7 = "Paper2_Results/Task7/task7_action_direction_evidence.csv"
 NON_THERAPEUTIC_TYPES = {"Unknown", "Inorganic", "Element"}
 
 
+def coalesce(df, okg_col, chembl_col, out, label_okg="OptimusKG",
+             label_chembl="ChEMBL"):
+    """Prefer OptimusKG, fall back to ChEMBL, and RECORD WHICH.
+
+    The mentor's instruction of 13 October was to keep the two recoveries
+    separate. A plain fillna() would merge them into one column where nobody
+    could tell them apart again, so every coalesced field gets a companion
+    <out>_source column. Where ChEMBL is absent the column still exists and
+    reads OptimusKG or nothing, so the schema does not change with the inputs.
+    """
+    okg = df[okg_col]
+    df[out] = okg
+    df[f"{out}_source"] = okg.notna().map({True: label_okg, False: None})
+    if chembl_col is not None and chembl_col in df.columns:
+        fill = okg.isna() & df[chembl_col].notna()
+        df.loc[fill, out] = df.loc[fill, chembl_col]
+        df.loc[fill, f"{out}_source"] = label_chembl
+    return int((df[f"{out}_source"] == label_chembl).sum())
+
+
 def load_drug_metadata():
-    """OptimusKG drug properties, with ChEMBL filling what OptimusKG lacks."""
+    """OptimusKG drug properties, with ChEMBL filling only what OptimusKG lacks.
+
+    Returns the table plus a per-field count of what ChEMBL contributed, so the
+    caller can report the two recoveries separately rather than as one blended
+    "recovered" figure.
+    """
     m = pd.read_csv(METADATA, low_memory=False)
     m = m[["Drug_ID", "name", "type", "maximum_clinical_trial_phase",
            "is_approved", "has_been_withdrawn", "canonical_smiles",
            "inchi_key", "cd_formula", "cd_mol_weight"]]
 
-    if os.path.exists(CHEMBL):
+    # OptimusKG stores an unnamed drug's name AS its ChEMBL accession, so an
+    # accession in the name field means "no name", not a name.
+    m["okg_name"] = m.name.where(m.name != m.Drug_ID)
+
+    have_chembl = os.path.exists(CHEMBL)
+    if have_chembl:
         c = pd.read_csv(CHEMBL, low_memory=False)
         m = m.merge(c, on="Drug_ID", how="left")
-        # OptimusKG first, ChEMBL only where OptimusKG is silent
-        m["molecule_type"] = m.type.fillna(m.chembl_molecule_type)
-        m["max_phase"] = m.maximum_clinical_trial_phase.fillna(m.chembl_max_phase)
-        m["smiles"] = m.canonical_smiles.fillna(m.chembl_canonical_smiles)
-        m["smiles_source"] = m.canonical_smiles.notna().map(
-            {True: "OptimusKG", False: None})
-        m.loc[m.smiles_source.isna() & m.chembl_canonical_smiles.notna(),
-              "smiles_source"] = "ChEMBL"
-        m["drug_name"] = m.name.where(m.name != m.Drug_ID).fillna(
-            m.chembl_pref_name)
     else:
         print("   (no ChEMBL gap-fill file; using OptimusKG alone)")
-        m["molecule_type"] = m.type
-        m["max_phase"] = m.maximum_clinical_trial_phase
-        m["smiles"] = m.canonical_smiles
-        m["smiles_source"] = m.canonical_smiles.notna().map(
-            {True: "OptimusKG", False: None})
-        m["drug_name"] = m.name.where(m.name != m.Drug_ID)
+
+    added = {
+        "drug_name":     coalesce(m, "okg_name", "chembl_pref_name", "drug_name"),
+        "molecule_type": coalesce(m, "type", "chembl_molecule_type", "molecule_type"),
+        "max_phase":     coalesce(m, "maximum_clinical_trial_phase",
+                                  "chembl_max_phase", "max_phase"),
+        "smiles":        coalesce(m, "canonical_smiles",
+                                  "chembl_canonical_smiles", "smiles"),
+    }
 
     m["has_smiles"] = m.smiles.notna()
     m["named"] = m.drug_name.notna()
-    return m
+    return m, added, have_chembl
 
 
 def main():
     ev = pd.read_csv(EVIDENCE, low_memory=False)
-    md = load_drug_metadata()
+    md, chembl_added, have_chembl = load_drug_metadata()
     print(f"recovered evidence edges : {len(ev):,}")
     print(f"recovered drug records   : {len(md):,}")
-    print(f"   with SMILES           : {int(md.has_smiles.sum()):,}"
-          f"  ({md.smiles_source.value_counts().to_dict()})")
-    print(f"   with molecule type    : {int(md.molecule_type.notna().sum()):,}")
-    print(f"   with clinical phase   : {int(md.max_phase.notna().sum()):,}")
-    print(f"   with a real name      : {int(md.named.sum()):,}")
+
+    # Two recoveries, reported apart. Field by field: what OptimusKG gave, then
+    # what ChEMBL added on top of it. Never one pooled "recovered" count.
+    print("\n   field           OptimusKG    +ChEMBL      total")
+    for f in ["drug_name", "molecule_type", "max_phase", "smiles"]:
+        src = md[f"{f}_source"]
+        okg = int((src == "OptimusKG").sum())
+        ch = int((src == "ChEMBL").sum())
+        print(f"   {f:<14} {okg:>9,} {ch:>10,} {okg + ch:>10,}")
+    if have_chembl and sum(chembl_added.values()) == 0:
+        print("\n   ChEMBL added nothing to these records.")
 
     ev_cols = ["Drug_ID", "Gene_ID", "sources_direct", "sources_indirect",
                "relation_assertions", "relation_conflict", "evidence_level",
@@ -146,8 +179,14 @@ def main():
 
     # ---- Task 4 ------------------------------------------------------------
     t4 = pd.read_csv(T4, low_memory=False)
-    keep = ["Drug_ID", "drug_name", "molecule_type", "max_phase", "is_approved",
-            "has_been_withdrawn", "smiles", "smiles_source", "has_smiles",
+    # Every recovered field travels with its *_source companion, so OptimusKG
+    # and ChEMBL stay separable in the delivered table and not just upstream.
+    keep = ["Drug_ID",
+            "drug_name", "drug_name_source",
+            "molecule_type", "molecule_type_source",
+            "max_phase", "max_phase_source",
+            "smiles", "smiles_source",
+            "is_approved", "has_been_withdrawn", "has_smiles",
             "inchi_key", "cd_formula", "cd_mol_weight"]
     t4 = t4.drop(columns=[c for c in keep if c in t4.columns
                           and c != "Drug_ID"], errors="ignore")

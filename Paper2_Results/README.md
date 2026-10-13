@@ -25,6 +25,13 @@ before the final ranking, as an independent evidence layer. That is now **out
 of scope**. Paper 2's evidence comes from the knowledge graph and Paper 1's
 own results, and nothing else.
 
+A second instruction the same day: **use OptimusKG to bring the required
+information, use ChEMBL to bring the required drug information, and if two jobs
+were done, keep them separate.** Both recoveries were run and they are kept
+apart structurally — separate scripts, separate source directories, separate
+results folders below, and a `*_source` column on every recovered field in the
+delivered tables, so a reader can always tell which source supplied which value.
+
 What this changes:
 
 - **Task 8 is unblocked.** It was waiting only on the reversal layer.
@@ -58,6 +65,29 @@ Use Task1 for the master gene table. Analysis code is in
 | 6 | Target-prioritisation framework design | **done** | [`Task6/`](Task6) — 5 components defined; F redundant within class; top-50 unstable |
 | 7 | Drug action / direction evidence table | **done** | [`Task7/`](Task7) — 4,984 relationships; fibrosis-only rising genes 89% consistent |
 | 8 | Final target and drug ranking | **done** | [`Task8/`](Task8) — band 1 is two genes: PDGFRA and CACNA1C |
+
+## Recoveries
+
+Not numbered tasks. Two data-recovery jobs asked for on 13 October, reported
+separately on the same instruction. Neither folder cites the other's totals.
+
+| # | Recovery | Source | Output |
+|---|---|---|---|
+| 1 | OptimusKG's own discarded fields | the same parquets the graph was built from | [`Recovery1_OptimusKG/`](Recovery1_OptimusKG) — provenance on all 8,948 edges; SMILES 9,036 / 12,025 drugs |
+| 2 | ChEMBL drug information | external API | [`Recovery2_ChEMBL/`](Recovery2_ChEMBL) — 25 field values on 2,404 drugs; **0 structures, no result changed** |
+
+Recovery 1 is not a new source: it re-reads what `build_optimuskg_layer.py` read
+and discarded. Recovery 2 genuinely leaves the knowledge graph, and its measured
+contribution is small enough that deleting it would change no number in Paper 2
+— which is the clearest answer available to whether it belongs inside "focus
+only on the knowledge graph".
+
+**The denominator decides what ChEMBL looks like.** Against OptimusKG's 18,640
+raw records it adds 2,638 structures; against the 12,025 drugs in the graph it
+adds **none**, because 6,615 of those records never reached the graph. Measuring
+the raw file is how this was first misreported, and
+`Recovery2_ChEMBL/recovery2_marginal_contribution.csv` now gives all three
+denominators side by side.
 
 ## Plan items not done, and why
 

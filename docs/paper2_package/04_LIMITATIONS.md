@@ -66,16 +66,21 @@ the best-ranked sits at **rank 56**. The problem lives in the long tail.
 
 ## 8. 2,989 drugs have no chemical structure
 
-OptimusKG supplies SMILES for 9,036 of 12,025. ChEMBL was queried for the rest
-and **added none** — it holds records for 2,654 of them and has no structure
-for any, because they are biologics, antibodies and mixtures that no SMILES can
-represent.
+OptimusKG supplies SMILES for **9,036 of the graph's 12,025 drugs**. ChEMBL was
+queried for the remaining 2,989 and **added none** — it holds records for 2,654
+of them and has a structure for none, because they are biologics, antibodies and
+mixtures that no SMILES can represent.
 
-*(A 60-drug pilot suggested ChEMBL would fill 57 of 59. That pilot sampled all
-18,640 OptimusKG records rather than the 12,025 in use, and overstated the
-benefit. The full run is the honest number.)*
+**All 2,404 drugs reaching a progression gene do have structures.** The gap and
+the analysis do not overlap at all: the drugs without a structure are precisely
+the ones no progression gene reaches, so no result is affected.
 
-All 2,404 drugs reaching a progression gene do have structures.
+*(Both figures are denominator-sensitive, and getting the denominator wrong is
+how this was first misreported. Against OptimusKG's 18,640 **raw** records
+ChEMBL does add 2,638 structures — but 6,615 of those records never reached the
+graph. A 60-drug pilot sampled that raw set and projected 57 fills of 59; the
+full run on the drugs actually in use added zero. Per-denominator figures are in
+`03_RESULTS/Recovery2_ChEMBL/recovery2_marginal_contribution.csv`.)*
 
 ## 9. Per-edge evidence depth is uneven
 
@@ -104,9 +109,30 @@ All 30 leading candidates rest on Paper 1's 23-gene shortlist. The ranking
 weights shortlist genes highly, so this confirms the pipeline is internally
 consistent — it is not independent support.
 
-## 13. Scope decision taken ahead of confirmation
+## 13. Scope decision — raised early, since confirmed
 
-The OptimusKG provenance recovery (§2 of METHODS) was carried out on the
-researcher's instruction of 13 October, **before the mentor replied** on
-whether *"focus only on the knowledge graph"* permits reading OptimusKG's own
-discarded fields. Recorded so the provenance is visible if that answer differs.
+The provenance recovery (§2 of METHODS) was carried out on 13 October **before
+the mentor replied** on whether *"focus only on the knowledge graph"* permitted
+it. It was recorded here as an open risk rather than presented as settled.
+
+**The mentor confirmed it the same day**, instructing that both OptimusKG and
+ChEMBL be used to bring the required information, and that **if two jobs were
+done they be kept separate.** That separation is now structural, not editorial:
+
+| | Recovery 1 | Recovery 2 |
+|---|---|---|
+| source | OptimusKG's own discarded fields | ChEMBL API |
+| script | `paper2_recover_optimuskg_evidence.py` | `paper2_fetch_chembl_gaps.py` |
+| data | `data/optimuskg_recovered/` | `data/chembl_recovered/` |
+| report | `03_RESULTS/Recovery1_OptimusKG/` | `03_RESULTS/Recovery2_ChEMBL/` |
+
+Neither folder cites the other's totals, and every recovered field in the
+delivered tables carries a `*_source` column naming which recovery supplied it.
+A plain merge would have pooled them into one "recovered" figure where nobody
+could separate them again.
+
+**The residual limitation is narrower but real.** Recovery 1 re-read a source
+the graph was already built from; Recovery 2 left the knowledge graph. Only
+Recovery 2 is arguably outside the original scope wording, and its entire
+contribution to the delivered analysis is **25 field values across 2,404 drugs,
+no structures, and no result changed.** Deleting it would alter nothing.
