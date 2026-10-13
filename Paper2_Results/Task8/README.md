@@ -200,3 +200,31 @@ supported by strictly less.
    55.9% null, p = 0.78). Only the fibrosis-only rising subgroup beats its null,
    and that subgroup is 32 genes of classic inhibitor-target families.
 5. **Exact ranks are not defensible.** Read bands.
+
+## Limitation — band 1 depends on recorded drug direction
+
+**Band 1 depends on recorded drug direction.** PDGFRA and CACNA1C reach the top
+band because each is a Paper 1 9/9 gene with a drug whose recorded action opposes
+the gene's direction of change (K = 1.0). Three other 9/9 genes — MYC, PLK3 and
+TPM4 — have a drug but no recorded direction (K = 0.5), so they rank in the next
+band (score 0.9). TAX1BP3 has no drug (K = 0). Only 11% of drug–target
+relationships carry a recorded direction, so this difference reflects
+**annotation coverage, not evidence against these genes**. Candidate drugs for
+them should be considered part of the wider repurposing space.
+
+In one sentence for the results text: *"Band 1 contains the 9/9 genes with a recorded reversal-consistent drug; other 9/9 genes lack direction annotation and rank lower for that reason."*
+
+## Two candidates are the same compound
+
+**LEVAMLODIPINE (rank 4) and AMLODIPINE (rank 8) are both in the top 30.**
+Levamlodipine is the pure S-enantiomer of amlodipine, so the list contains 29
+distinct compounds, not 30.
+
+The `parent_drug` column does not catch this pair. It strips stereochemistry
+written as a prefix — `(R)-`, `(S)-`, `(-)-` — and `LEV-` is a contracted form
+that no safe string rule separates from an ordinary name: `DEXAMETHASONE` is not
+a `DEX-` enantiomer of anything. Rather than widen the rule and risk merging
+unrelated drugs, the pair is recorded here.
+
+The same caution applies to any `LEVO-`, `DEX-` or `ES-` prefixed name in the
+wider ranking.

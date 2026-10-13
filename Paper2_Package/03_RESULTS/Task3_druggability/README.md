@@ -139,7 +139,7 @@ progression programs differ in their representation among known drug targets."*
 
 **They do — but the informative split is direction, not class.** All three
 classes exceed the background, and the class-level spread (16.0 / 13.4 / 17.3)
-is modest. The direction split is nearly twice as wide (22.7 vs 12.8) and is
+is modest. The direction split is wider (22.7 vs 12.8 unfiltered) and is
 where the surviving signal lives.
 
 > Team 1's handover predicted a null result here, based on 18.4 / 18.6 / 16.4%

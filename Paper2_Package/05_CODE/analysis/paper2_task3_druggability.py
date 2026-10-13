@@ -363,6 +363,11 @@ def main():
             [[hit, n - hit],
              [int(bg_ex.drug_connected.sum()),
               len(bg_ex) - int(bg_ex.drug_connected.sum())]])
+        # the same check on the entity-filtered definition, which is primary
+        hit_u = int(sub.drug_connected_usable.sum())
+        bg_u = int(bg_ex.drug_connected_usable.sum())
+        odds_u, p_u = stats.fisher_exact(
+            [[hit_u, n - hit_u], [bg_u, len(bg_ex) - bg_u]])
         rows_ex.append({
             "group": grp,
             "percent_all_genes": round(100 * g[g.group == grp].drug_connected.mean(), 1),
@@ -372,7 +377,46 @@ def main():
                 round(100 * bg_ex.drug_connected.mean(), 1),
             "odds_ratio": round(float(odds), 3),
             "fisher_p": f"{p:.3e}",
+            "percent_excluding_classic_usable": round(100 * hit_u / n, 1),
+            "background_excluding_classic_usable":
+                round(100 * bg_ex.drug_connected_usable.mean(), 1),
+            "odds_ratio_usable": round(float(odds_u), 3),
+            "fisher_p_usable": f"{p_u:.3e}",
         })
+    # ---- the claim itself, tested directly -------------------------------
+    # "Genes that fall as disease worsens are about twice as drug-connected as
+    # genes that rise" was supported only indirectly, by each group beating a
+    # shared background. A reviewer asked on 13 October for the comparison the
+    # sentence actually makes: falling against rising, head to head, within
+    # each class. It is a different and stricter test, and it does not give the
+    # same answer everywhere.
+    rows_dir = []
+    for cls_raw, cls_shown in CLASS_RAW_TO_DISPLAY.items():
+        pos = g[g.group == f"{cls_shown} / positive"]
+        neg = g[g.group == f"{cls_shown} / negative"]
+        if not len(pos) or not len(neg):
+            continue
+        for label, col in [("published", "drug_connected"),
+                           ("entity-filtered", "drug_connected_usable")]:
+            hp, hn = int(pos[col].sum()), int(neg[col].sum())
+            odds, p = stats.fisher_exact(
+                [[hn, len(neg) - hn], [hp, len(pos) - hp]])
+            rows_dir.append({
+                "class": cls_shown, "definition": label,
+                "rising_genes": len(pos), "rising_percent": round(100 * hp / len(pos), 1),
+                "falling_genes": len(neg), "falling_percent": round(100 * hn / len(neg), 1),
+                "ratio_falling_over_rising":
+                    round((hn / len(neg)) / (hp / len(pos)), 2) if hp else None,
+                "odds_ratio": round(float(odds), 3),
+                "fisher_p": p,
+            })
+    direct = pd.DataFrame(rows_dir)
+    direct["significant"] = np.where(direct.fisher_p < 0.05, "yes", "no")
+    direct["fisher_p"] = direct.fisher_p.map(lambda v: f"{v:.3e}")
+    direct.to_csv(f"{OUT_DIR}/task3_falling_vs_rising.csv", index=False)
+    print("\nfalling vs rising, tested directly")
+    print(direct.to_string(index=False))
+
     sup.add("classic_druggable_sensitivity", pd.DataFrame(rows_ex))
     sup.write()
 
@@ -386,6 +430,7 @@ def main():
              "survives_degree_aware"]].to_string(index=False))
     print(f"\nwrote {OUT_DIR}/task3_druggability_summary.csv")
     print(f"wrote {OUT_DIR}/task3_enrichment_tests.csv")
+    print(f"wrote {OUT_DIR}/task3_falling_vs_rising.csv")
 
 
 if __name__ == "__main__":

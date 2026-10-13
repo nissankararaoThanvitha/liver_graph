@@ -26,10 +26,30 @@ Background rate **9.3%** filtered (was 11.2% unfiltered).
 | fibrosis-only / positive | 1,040 | 12.8 | 11.1 | 1.22 | 8.0e-02 | 0.2485 | ✗ |
 | inflammation-only / positive | 2,042 | 13.5 | 10.9 | 1.20 | 3.8e-02 | 0.2575 | ✗ |
 
-**The headline survives, and the gap narrows.** All three groups that beat the
-degree-matched null before still beat it with both arms filtered. The falling
-groups lose the most — fibrosis-only / negative drops 5.0 points — which is
-exactly where mineral salts and cofactors were doing the work.
+**The headline survives against the background, and the gap narrows.** All three
+groups that beat the degree-matched null before still beat it with both arms
+filtered. The falling groups lose the most — fibrosis-only / negative drops 5.0
+points — which is exactly where mineral salts and cofactors were doing the work.
+
+### Falling versus rising, tested directly
+
+> **The "about 2×" claim was wrong, and not only because of the filter.** It
+> compared each group against the *background*, then described the result as
+> falling genes being twice as drug-connected as *rising* ones. Those are
+> different comparisons. Asked directly, head to head within each class:
+
+| class | rising | falling | ratio | Fisher p | significant |
+|---|---:|---:|---:|---:|---|
+| fibrosis-only | 11.1% | **14.3%** | **1.30×** | 0.027 | ✅ |
+| shared | 14.3% | 16.9% | 1.19× | 0.196 | ✗ |
+| inflammation-only | 11.0% | 11.3% | 1.03× | 0.851 | ✗ |
+
+**The effect is real for fibrosis-only genes and about 1.3×, not 2×.** For the
+shared class it does not reach significance head to head, although both of its
+direction groups beat the background. The claim is now stated at that strength
+and no higher. Unfiltered, the ratios are 1.51×, 1.42× and 0.95× — still not 2×.
+
+Full table: `task3_falling_vs_rising.csv`, both definitions.
 
 **One result did not survive.** The class-level rollup
 `[class] inflammation-only` had a degree-matched p of 0.0205 unfiltered and

@@ -223,3 +223,14 @@ independent validation.
    of scope ("repurposing not reversal", "focus only on the knowledge graph").
    Task 8 proceeds on the six evidence layers that exist, with the reversal
    layer recorded as a limitation.
+
+## Limitation — band 1 depends on recorded drug direction
+
+**Band 1 depends on recorded drug direction.** PDGFRA and CACNA1C reach the top
+band because each is a Paper 1 9/9 gene with a drug whose recorded action opposes
+the gene's direction of change (K = 1.0). Three other 9/9 genes — MYC, PLK3 and
+TPM4 — have a drug but no recorded direction (K = 0.5), so they rank in the next
+band (score 0.9). TAX1BP3 has no drug (K = 0). Only 11% of drug–target
+relationships carry a recorded direction, so this difference reflects
+**annotation coverage, not evidence against these genes**. Candidate drugs for
+them should be considered part of the wider repurposing space.

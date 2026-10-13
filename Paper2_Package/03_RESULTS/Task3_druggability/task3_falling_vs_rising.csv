@@ -1,0 +1,7 @@
+class,definition,rising_genes,rising_percent,falling_genes,falling_percent,ratio_falling_over_rising,odds_ratio,fisher_p,significant
+fibrosis-only,published,1040,12.8,983,19.3,1.51,1.634,6.029e-05,yes
+fibrosis-only,entity-filtered,1040,11.1,983,14.3,1.3,1.347,2.733e-02,yes
+inflammation-only,published,2042,13.5,335,12.8,0.95,0.942,7.955e-01,no
+inflammation-only,entity-filtered,2042,11.0,335,11.3,1.03,1.038,8.507e-01,no
+shared,published,1408,15.9,384,22.7,1.42,1.548,2.952e-03,yes
+shared,entity-filtered,1408,14.3,384,16.9,1.19,1.224,1.959e-01,no

@@ -6,29 +6,41 @@ task that needs it.
 
 WHY THIS MODULE EXISTS
 The rule lived inside Task 4 alone, so Task 3 counted a gene as "druggable"
-when its only drug was zinc chloride, ATP or an unnamed ChEMBL accession. A
-reviewer found it on 13 October: 174 of the 958 drug-connected progression
-genes -- 18% -- reach a flagged entity and nothing else.
+when its only drug was zinc chloride, ATP or an unnamed ChEMBL accession.
 
-Two tasks asking the same question with two different answers is the failure
-this module prevents. Task 3 and Task 4 now import from here, so the rule
-cannot drift between them.
+WHY IT WAS REWRITTEN, 13 OCTOBER
+The first version was too greedy in two ways, both found in review:
 
-TWO SEPARATE JUDGEMENTS, DELIBERATELY KEPT APART
-  pharmacokinetic   is the EDGE about treating the gene, or about the liver
-                    metabolising the drug? That is a property of the action.
-  non-therapeutic   is the ENTITY a medicine at all? That is a property of
-                    the drug, and it is what Task 3 was missing.
+  1. SALT AND ESTER WORDS ANYWHERE IN THE NAME.  "ACETATE" flagged ZINC
+     ACETATE, which is right, and CORTISONE ACETATE, HYDROCORTISONE ACETATE,
+     DEXAMETHASONE ACETATE, PREDNISOLONE ACETATE, MEDROXYPROGESTERONE ACETATE
+     and MEGESTROL ACETATE, which is wrong. Those are steroid drugs whose
+     ester form is part of the medicine, not a mineral counter-ion.
 
-An edge is useful evidence only when both pass.
+  2. THE DUPLICATE RULE APPLIED TO EVERYTHING.  Any drug sharing 95% of its
+     targets with a flagged drug was flagged too. That caught OMEPRAZOLE,
+     LANSOPRAZOLE, RABEPRAZOLE, ERYTHROMYCIN, WARFARIN, LACIDIPINE,
+     FLUVOXAMINE, BROMAZEPAM and a dozen antivirals -- about thirty real
+     medicines -- because sharing a CYP enzyme panel is not evidence of being
+     the same substance. Worse, it cascaded: DEXAMETHASONE was flagged
+     because DEXAMETHASONE ACETATE had been.
 
-THE RULE IS A HEURISTIC AND IT IS NOT APOLOGISED FOR
-Molecule type and clinical phase were recovered from OptimusKG and DO NOT
-discriminate: ZINC ACETATE and ZINC CHLORIDE are `Small molecule`, `max_phase
-4.0`, `is_approved True`, because they genuinely are approved small molecules.
-A filter built on those fields flags one drug where the name rule flags
-seventy. So names are used, the rule marks rather than deletes, and both the
-filtered and unfiltered figures are reported wherever it matters.
+THE RULE NOW
+  * A mineral or simple chemical is judged by the FIRST word of its name. The
+    entity in "ZINC ACETATE" is zinc; the entity in "CORTISONE ACETATE" is
+    cortisone. Salt and ester words no longer flag anything on their own.
+  * Standalone nutrients, cofactors and solvents are matched whole.
+  * The duplicate rule now applies ONLY to unnamed accessions, which is what
+    it was built for: CHEMBL1201279 shares all 126 of its targets with ZINC
+    ACETATE and no name rule can catch it. A named medicine is never flagged
+    for the company it keeps.
+  * A short whitelist overrides everything, for real medicines whose names
+    begin with a mineral: lithium carbonate, magnesium sulfate and the rest.
+
+It is still a heuristic and it still marks rather than deletes. Molecule type
+and clinical phase cannot do this job -- ZINC ACETATE is a `Small molecule` at
+`max_phase 4.0` because it genuinely is an approved small molecule -- so names
+are what is left, and both filtered and unfiltered figures are reported.
 """
 
 import re
@@ -36,48 +48,81 @@ import re
 # Edge-level: the action describes metabolism or transport, not treatment.
 PHARMACOKINETIC = {"ENZYME", "TRANSPORTER", "CARRIER", "SUBSTRATE"}
 
-# Entity-level: names that are minerals, nutrients, cofactors or solvents.
-# Incomplete by construction; it marks, it does not delete.
-NON_THERAPEUTIC = re.compile(
-    r"\b(ZINC|CALCIUM|MAGNESIUM|POTASSIUM|SODIUM|FERROUS|FERRIC|COPPER|"
-    r"MANGANESE|SELENIUM|CHROMIUM|IODIDE|PHOSPHATE|CARBONATE|CITRATE|"
-    r"CHLORIDE|SULFATE|SULPHATE|ACETATE|GLUCONATE|OXIDE|HYDROXIDE)\b"
-    r"|^(ALCOHOL|WATER|OXYGEN|NITROGEN|GLYCEROL|UREA|GLUCOSE|SUCROSE|"
-    r"DEXTROSE|LACTOSE|STARCH)$"
-    r"|\b(VITAMIN|ASCORBIC ACID|CHOLECALCIFEROL|ERGOCALCIFEROL|TOCOPHEROL|"
-    r"RETINOL|THIAMINE|RIBOFLAVIN|NIACIN|PYRIDOXAL|PYRIDOXINE|FOLIC ACID|"
-    r"CYANOCOBALAMIN|BIOTIN|PANTOTHEN)\b"
-    r"|^(ADENOSINE TRIPHOSPHATE|GLUTAMIC ACID|ASPARTIC ACID|GLYCINE|ALANINE|"
-    r"SERINE|CYSTEINE|TAURINE|CREATINE|CHOLINE|INOSITOL)\b"
-    r"|NICOTINAMIDE ADENINE DINUCLEOTIDE|DINUCLEOTIDE|FLAVIN|"
-    r"COENZYME|HEME|HEMIN", re.I)
+# Real medicines whose names start with a mineral. Checked first, and they win.
+WHITELIST = {
+    "LITHIUM CARBONATE", "LITHIUM CITRATE", "LITHIUM CITRATE ANHYDROUS",
+    "LITHIUM SUCCINATE", "MAGNESIUM SULFATE", "MAGNESIUM SULFATE ANHYDROUS",
+    "MAGNESIUM SALICYLATE", "SODIUM OXYBATE", "SODIUM NITROPRUSSIDE",
+    "SODIUM STIBOGLUCONATE", "SODIUM AUROTHIOMALATE", "SODIUM THIOSULFATE",
+    "SODIUM PHENYLBUTYRATE", "SODIUM BENZOATE", "SODIUM VALPROATE",
+    "SODIUM FLUORIDE", "POTASSIUM IODIDE", "POTASSIUM PERCHLORATE",
+    "CALCIUM CARBIMIDE", "CALCIUM FOLINATE", "CALCIUM LEVOFOLINATE",
+    "FERROUS FUMARATE", "FERROUS SULFATE", "BERAPROST SODIUM",
+    "CHOLINE ALFOSCERATE", "CHOLINE SALICYLATE", "INOSITOL NIACINATE",
+    "METOCURINE IODIDE", "EDETATE CALCIUM DISODIUM ANHYDROUS",
+}
+
+# The entity IS the mineral when the name begins with one.
+MINERAL_FIRST = re.compile(
+    r"^(ZINC|CALCIUM|MAGNESIUM|POTASSIUM|SODIUM|LITHIUM|FERROUS|FERRIC|IRON|"
+    r"COPPER|MANGANESE|SELENIUM|CHROMIUM|ALUMINUM|ALUMINIUM|STRONTIUM|"
+    r"AMMONIUM|BARIUM|BISMUTH|SILVER|STANNOUS|TITANIUM|BORIC|PHOSPHORIC)\b",
+    re.I)
+
+# Nutrients, cofactors, solvents and simple chemicals, matched as whole names
+# or as the leading term, never as a suffix on somebody else's drug.
+SIMPLE_ENTITY = re.compile(
+    r"^(ALCOHOL|WATER|OXYGEN|NITROGEN|NITRIC OXIDE|GLYCEROL|UREA|GLUCOSE|"
+    r"SUCROSE|DEXTROSE|LACTOSE|STARCH|MANNITOL|SORBITOL|XYLITOL)\b"
+    r"|^(VITAMIN|ASCORBIC ACID|CHOLECALCIFEROL|ERGOCALCIFEROL|TOCOPHEROL|"
+    r"ALPHA-TOCOPHEROL|RETINOL|THIAMINE|RIBOFLAVIN|NIACIN|PYRIDOXAL|"
+    r"PYRIDOXAMINE|PYRIDOXINE|FOLIC ACID|CYANOCOBALAMIN|BIOTIN|PANTOTHEN)\b"
+    r"|^(ADENOSINE TRIPHOSPHATE|ADENOSINE PHOSPHATE|GLUTAMIC ACID|"
+    r"ASPARTIC ACID|GLYCINE|ALANINE|SERINE|CYSTEINE|TAURINE|CREATINE|"
+    r"CHOLINE|INOSITOL|CARNITINE|ORNITHINE|CITRULLINE)\b"
+    r"|NICOTINAMIDE ADENINE DINUCLEOTIDE|DINUCLEOTIDE|^FLAVIN|"
+    r"^COENZYME|^HEME$|^HEMIN$", re.I)
 
 UNNAMED = re.compile(r"^CHEMBL\d+$")
 
-# A drug whose target set is this far inside a flagged drug's target set is
-# treated as the same entity under another accession.
 DUPLICATE_OVERLAP = 0.95
 DUPLICATE_MIN_TARGETS = 5
+
+
+def is_non_therapeutic_name(name):
+    """Name-based judgement for a single entity. Whitelist wins."""
+    n = ("" if name is None else str(name)).strip()
+    if n.upper() in WHITELIST:
+        return False
+    return bool(MINERAL_FIRST.match(n) or SIMPLE_ENTITY.match(n)
+                or SIMPLE_ENTITY.search(n) and not MINERAL_FIRST.match(n)
+                and SIMPLE_ENTITY.match(n))
+
+
+def _name_flag(name):
+    n = ("" if name is None else str(name)).strip()
+    if n.upper() in WHITELIST:
+        return False
+    if MINERAL_FIRST.match(n):
+        return True
+    return bool(SIMPLE_ENTITY.match(n)) or bool(
+        re.search(r"NICOTINAMIDE ADENINE DINUCLEOTIDE|DINUCLEOTIDE", n, re.I))
 
 
 def flag_entities(names_by_id, targets_by_id):
     """Which drug ids are probably not therapeutics.
 
     names_by_id    {drug_id: name}
-    targets_by_id  {drug_id: set of gene ids}  -- used for the duplicate rule
+    targets_by_id  {drug_id: set of gene ids}
 
     Returns {drug_id: {"flag_name", "flag_unnamed", "flag_duplicate",
                        "non_therapeutic"}}.
-
-    The duplicate rule exists because CHEMBL1201279 shares all 126 of its
-    targets with ZINC ACETATE: the same thing under another accession, which no
-    name rule can catch.
     """
     by_name, by_unnamed = {}, {}
     for did, name in names_by_id.items():
         n = "" if name is None else str(name)
-        by_name[did] = bool(NON_THERAPEUTIC.search(n))
-        by_unnamed[did] = bool(UNNAMED.match(n))
+        by_name[did] = _name_flag(n)
+        by_unnamed[did] = bool(UNNAMED.match(n.strip()))
 
     flagged_sets = [targets_by_id[d] for d, f in by_name.items()
                     if f and d in targets_by_id]
@@ -86,7 +131,10 @@ def flag_entities(names_by_id, targets_by_id):
     for did in names_by_id:
         s = targets_by_id.get(did)
         dup = False
-        if s and len(s) >= DUPLICATE_MIN_TARGETS and not by_name[did]:
+        # ONLY unnamed accessions. A named medicine is never flagged for
+        # sharing a CYP panel with a mineral salt -- that mistake caught
+        # omeprazole, erythromycin and warfarin.
+        if (by_unnamed[did] and s and len(s) >= DUPLICATE_MIN_TARGETS):
             dup = any(len(s & f) / len(s) >= DUPLICATE_OVERLAP
                       for f in flagged_sets)
         out[did] = {"flag_name": by_name[did],
