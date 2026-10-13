@@ -27,7 +27,7 @@ Built by `scripts/paper2_task2_drug_gene_edges.py` against instance
 | Column: Database ID | ✅ `ChEMBL:<drug>\|Ensembl:<gene>` — unique for all 8,948 rows |
 | **Output:** complete drug-gene edge table | ✅ 8,948 rows |
 | **Output:** genes with ≥1 drug connection | ✅ 1,072 |
-| **Output:** total unique drugs, total relationships | ✅ 3,027 / 8,948 |
+| **Output:** total unique drugs, total relationships | ✅ 3,027 / 8,948 — 3,027 database entries = 3,020 parent compounds; see `task2_near_duplicate_drugs.csv` |
 | **Output:** number and % with known action direction | ✅ 1,005 / 11.2% |
 | **Output:** number and % reconcilable with Paper 1 direction | ✅ 1,005 / 11.2% |
 | **Output:** …and the F0–F4 trajectory pattern where available | ✅ 804 / 9.0% |

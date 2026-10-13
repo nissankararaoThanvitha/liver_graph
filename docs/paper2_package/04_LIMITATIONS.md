@@ -104,6 +104,34 @@ Only two sources assert drug–gene edges: DrugBank and Open Targets.
 `relation_conflict` is set on 2 edges graph-wide, both outside the
 progression-gene subset.
 
+## 9b. "3,027 unique drugs" counts database entries, not distinct compounds
+
+Raised in review, and correct. ChEMBL lists stereoisomers as separate entries,
+so (-)-CAMPHOR and CAMPHOR are two of the 3,027.
+
+| | drugs |
+|---|---:|
+| distinct database entries (the reported figure) | **3,027** |
+| after collapsing stereoisomers | **3,020** |
+| if salt and ester forms were also merged | **3,012** |
+
+**The overstatement is at most 0.5%**, and nothing in Paper 2 turns on it: no
+candidate, ranking or enrichment result changes. `parent_drug` is now a column
+in `task2_drug_gene_edges.csv` and the 13 affected groups are listed in
+`task2_near_duplicate_drugs.csv`.
+
+**Only stereoisomers are collapsed, deliberately.** Those denote the same parent
+compound by definition. Salt and ester forms — DEXAMETHASONE ACETATE against
+DEXAMETHASONE, TEDIZOLID PHOSPHATE against TEDIZOLID — are a judgement call, so
+they are flagged rather than merged. Naive suffix-stripping is worse than
+leaving them: two attempts at it merged CALCIUM CHLORIDE with POTASSIUM CHLORIDE
+and SODIUM CITRATE with SODIUM PHOSPHATE, which are genuinely different
+substances.
+
+3,027 remains the headline because it is the honest count of what the graph
+holds — distinct ChEMBL and DrugBank entries — and because every per-drug
+analysis in Paper 2 runs on those entries.
+
 ## 10. Inflammation-only genes carry less evidence
 
 Paper 1's trajectory, transition, pathway and tier work covers only the 3,845
