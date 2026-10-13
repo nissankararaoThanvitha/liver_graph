@@ -125,7 +125,15 @@ heuristic had missed.** It cannot reach the organic nutrients (ATP, FAD,
 glutamic acid all contain carbon), so the crude name rule stays beside it.
 
 **SMILES are available for all 2,404 drugs in this table** — recovered from the
-same source. Earlier statements in this repository that the project has no
+same source.
+
+ChEMBL was then queried for the drugs OptimusKG leaves short, and **added
+nothing for this project**: 0 structures and 16 names across our 12,025 drugs.
+Of the 2,989 drugs with no OptimusKG structure, ChEMBL holds a record for 2,654
+and has no structure for any of them — they are biologics, antibodies and
+mixtures that no SMILES can represent. A 60-drug pilot had suggested ChEMBL
+would fill 57 of 59; that pilot sampled all 18,640 OptimusKG records rather
+than the 12,025 this project uses, and overstated the benefit. Earlier statements in this repository that the project has no
 chemical structures were wrong; `canonical_smiles` was read at build time and
 discarded.
 
