@@ -175,6 +175,16 @@ still beat it. **One claim did not** — the class-level rollup
 `[class] inflammation-only` moved from p = 0.021 to p = 0.081 and has been
 withdrawn.
 
+**The same flaw ran one task downstream.** Task 6's K component counted "has a
+therapeutic drug" from Task 7's table, which was unfiltered, so **176 genes**
+earned drug credit from mineral salts and unnamed accessions. K now honours an
+entity flag that Task 7 carries on every row. **The final result does not move**
+— the same 30 candidates, the same two targets, the same 22/8 split, and 48 of
+the 50 top-ranked targets — but the broader target ranking is cleaner.
+
+Task 7's own summaries remain unfiltered by design: their question is what the
+drug vocabulary asserts, not what could be prescribed.
+
 **The filter is itself a heuristic**, for the reason in §6: molecule type and
 clinical phase do not separate a mineral salt from a drug. So neither number is
 the truth and both are shipped. A reader who rejects the name rule can use the

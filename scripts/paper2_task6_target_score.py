@@ -108,8 +108,19 @@ def build(master, p1, action):
     g = master.copy()
 
     # ---- K: two binary facts, no degree ----------------------------------
-    has_drug = set(action.Gene_ID)
-    consistent = set(action.loc[action.reversal_class == "reversal-consistent",
+    # "Has a therapeutic drug" must mean a drug, not a mineral salt. Task 7
+    # carries the entity flag; honouring it removes K credit from 175 genes
+    # whose only drug is zinc chloride, ATP or an unnamed accession. Found in
+    # review of Task 3 on 13 October -- the same flaw, one task downstream.
+    if "non_therapeutic_entity" in action.columns:
+        usable = action[~action.non_therapeutic_entity.astype(bool)]
+        dropped = action.Gene_ID.nunique() - usable.Gene_ID.nunique()
+        print(f"K: {dropped} genes lose drug credit (non-therapeutic entities only)")
+    else:
+        raise SystemExit("Task 7 table has no non_therapeutic_entity column; "
+                         "re-run paper2_task7_action_direction.py")
+    has_drug = set(usable.Gene_ID)
+    consistent = set(usable.loc[usable.reversal_class == "reversal-consistent",
                                 "Gene_ID"])
     g["K"] = 0.5 * g.Ensembl_ID.isin(has_drug) + 0.5 * g.Ensembl_ID.isin(consistent)
 

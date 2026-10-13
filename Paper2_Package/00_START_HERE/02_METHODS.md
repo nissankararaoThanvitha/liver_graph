@@ -155,6 +155,33 @@ Uncapped four-node counts are computed arithmetically rather than materialised:
 one GO term joins 616 genes to 1,683 drugs, and building the hub terms would
 mean hundreds of millions of rows to count.
 
+## What "has a drug" means, and where it is enforced
+
+Found in review of Task 3 on 13 October and traced downstream the same day.
+Three places ask whether a gene has a drug, and they must agree:
+
+| | what it counts | filter |
+|---|---|---|
+| Task 3 druggability | genes per group with a drug | entity filter on **both** arms |
+| Task 6 component K | `0.5 x [has a therapeutic drug]` | honours Task 7's entity flag |
+| Task 7 summaries | what the drug vocabulary says | **deliberately unfiltered** |
+
+Task 7 is the exception on purpose. Its question is what the knowledge source
+asserts, not what a clinician could prescribe, so filtering there would answer a
+different question. It carries `non_therapeutic_entity` on every row instead, and
+Task 6 applies it.
+
+**The effect of enforcing it in K: 176 genes lose drug credit** — the ones whose
+only drug is a mineral salt, a cofactor or an unnamed accession. **The final
+result does not move**: the same 30 candidates, the same two targets, the same
+22/8 split, an identical target top-10 and 48 of 50 of the target top-50. PDGFRA
+and CACNA1C keep K = 1.0, since real kinase inhibitors and calcium-channel
+blockers were never the problem.
+
+The rule itself lives in `paper2_drug_filters.py` and is imported by Tasks 3, 6
+and 7, so the three cannot drift to different answers again — which is exactly
+how the gap opened.
+
 ## Task 6 — target scoring
 
 ```
