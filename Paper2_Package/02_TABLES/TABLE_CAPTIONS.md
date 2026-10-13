@@ -10,7 +10,7 @@ Gene counts per progression class, with direction counted per ladder.
 
 **task2_summary.csv** _(main)_
 
-The drug-gene extraction in seven numbers.
+The drug-gene extraction in eight numbers. Drug count is given twice — database entries and parent compounds — because "unique drugs" is ambiguous and the two differ by 7.
 
 **task3_druggability_summary.csv** _(main)_
 

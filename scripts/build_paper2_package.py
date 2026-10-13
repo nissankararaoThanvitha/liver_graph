@@ -121,7 +121,7 @@ TABLES = {
         "main", "Gene counts per progression class, with direction counted per "
         "ladder."),
     "Task2/task2_summary.csv": (
-        "main", "The drug-gene extraction in seven numbers."),
+        "main", "The drug-gene extraction in eight numbers. Drug count is given twice — database entries and parent compounds — because \"unique drugs\" is ambiguous and the two differ by 7."),
     "Task3/task3_druggability_summary.csv": (
         "main", "Druggability per group: total genes, drug-connected genes, "
         "percentage, unique drugs."),
