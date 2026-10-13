@@ -1,7 +1,8 @@
 measure,value,percent_of_relationships
 progression genes in the master table,6222,
 progression genes with >=1 drug connection,1072,
-total unique drugs,3027,
+total unique drugs (database entries),3027,
+  ...as parent compounds (stereoisomers merged),3020,
 total drug-gene relationships,8948,100.0
 relationships with known action direction,1005,11.2
 relationships reconcilable with Paper 1 direction,1005,11.2

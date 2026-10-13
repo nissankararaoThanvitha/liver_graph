@@ -291,7 +291,12 @@ def main():
     summary = pd.DataFrame([
         ("progression genes in the master table", len(master)),
         ("progression genes with >=1 drug connection", e.Gene_ID.nunique()),
-        ("total unique drugs", e.Drug_ID.nunique()),
+        # Two rows, not one. "Unique drugs" is ambiguous and a reviewer read the
+        # single row as disagreeing with the README's 3,020. Both numbers are
+        # true of different things, so both are stated and both are labelled.
+        ("total unique drugs (database entries)", e.Drug_ID.nunique()),
+        ("  ...as parent compounds (stereoisomers merged)",
+         e.parent_drug.nunique()),
         ("total drug-gene relationships", len(e)),
         ("relationships with known action direction", int(directional.sum())),
         ("relationships reconcilable with Paper 1 direction", int(reconciled.sum())),
@@ -302,7 +307,8 @@ def main():
     # a number that would invite the wrong comparison.
     not_a_rate = {"progression genes in the master table",
                   "progression genes with >=1 drug connection",
-                  "total unique drugs"}
+                  "total unique drugs (database entries)",
+                  "  ...as parent compounds (stereoisomers merged)"}
     summary["percent_of_relationships"] = [
         "" if m in not_a_rate else f"{100 * v / len(e):.1f}"
         for m, v in zip(summary.measure, summary.value)]
