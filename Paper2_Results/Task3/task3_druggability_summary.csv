@@ -6,7 +6,7 @@ inflammation-only / negative,335,43,12.8,38,11.3,173,46,13.7,101
 shared / positive,1408,224,15.9,201,14.3,912,247,17.5,123
 shared / negative,384,87,22.7,65,16.9,416,105,27.3,105
 shared / discordant,30,5,16.7,2,6.7,8,7,23.3,123
-NOT progression (background),8572,963,11.2,809,9.4,2047,1076,12.6,100
+NOT progression (background),8572,963,11.2,808,9.4,2047,1076,12.6,100
 [class] fibrosis-only,2023,323,16.0,256,12.7,1225,358,17.7,111
 [class] inflammation-only,2377,319,13.4,262,11.0,874,355,14.9,112
 [class] shared,1822,316,17.3,268,14.7,1163,359,19.7,119

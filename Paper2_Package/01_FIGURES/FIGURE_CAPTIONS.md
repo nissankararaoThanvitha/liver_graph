@@ -6,7 +6,7 @@ The starting set. Left: 6,222 progression genes by class and direction. Right: t
 
 **task8_candidates.png** _(main)_
 
-The final result and its limit. Left: 30 leading candidates reach only two targets, 22 to CACNA1C and 8 to PDGFRA. Right: mechanism evidence per candidate, where grey -- no recorded direction -- covers 147 of 192 relationships. The CACNA1C drugs are almost entirely grey; the PDGFRA kinase inhibitors carry most of what mechanism there is.
+The final result and its limit. Left: 30 leading candidates reach only two targets, 22 to CACNA1C and 8 to PDGFRA. Right: mechanism evidence per candidate, where grey -- no recorded direction -- covers 61 of 107 relationships. The CACNA1C drugs are almost entirely grey; the PDGFRA kinase inhibitors carry most of what mechanism there is.
 
 **task2_action_classes.png** _(main)_
 

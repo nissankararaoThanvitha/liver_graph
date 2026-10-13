@@ -23,7 +23,7 @@ and `task8_evidence_summary.csv` carries L7 as an explicit "out of scope" row.
 
 ## 3. The candidate list is two genes, and the data cannot rank them
 
-Thirty leading candidates reach **CACNA1C** (22 drugs) or **PDGFRA** (8). The
+Thirty leading candidates reach **CACNA1C** (23 drugs) or **PDGFRA** (7). The
 list is less diverse than its length implies.
 
 **Neither target is stronger than the other on this project's evidence:**

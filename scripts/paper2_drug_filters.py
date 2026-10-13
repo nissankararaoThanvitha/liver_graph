@@ -49,17 +49,24 @@ import re
 PHARMACOKINETIC = {"ENZYME", "TRANSPORTER", "CARRIER", "SUBSTRATE"}
 
 # Real medicines whose names start with a mineral. Checked first, and they win.
+# Real ORGANIC medicines whose names start with a mineral word. Checked before
+# the name rule, and they win it.
+#
+# Carbon is the dividing line, and it is not arbitrary: an entity with no carbon
+# is not an organic therapeutic, so it is not a repurposing candidate even when
+# it is a genuine medicine. MAGNESIUM SULFATE, POTASSIUM IODIDE and SODIUM
+# FLUORIDE are real drugs and are deliberately NOT here -- they were, and Task 4
+# flagged them by formula while this whitelist cleared them by name, so Task 8
+# listed magnesium sulfate as candidate 24. One rule now governs both.
 WHITELIST = {
     "LITHIUM CARBONATE", "LITHIUM CITRATE", "LITHIUM CITRATE ANHYDROUS",
-    "LITHIUM SUCCINATE", "MAGNESIUM SULFATE", "MAGNESIUM SULFATE ANHYDROUS",
-    "MAGNESIUM SALICYLATE", "SODIUM OXYBATE", "SODIUM NITROPRUSSIDE",
-    "SODIUM STIBOGLUCONATE", "SODIUM AUROTHIOMALATE", "SODIUM THIOSULFATE",
+    "LITHIUM SUCCINATE", "MAGNESIUM SALICYLATE", "SODIUM OXYBATE",
+    "SODIUM NITROPRUSSIDE", "SODIUM STIBOGLUCONATE", "SODIUM AUROTHIOMALATE",
     "SODIUM PHENYLBUTYRATE", "SODIUM BENZOATE", "SODIUM VALPROATE",
-    "SODIUM FLUORIDE", "POTASSIUM IODIDE", "POTASSIUM PERCHLORATE",
-    "CALCIUM CARBIMIDE", "CALCIUM FOLINATE", "CALCIUM LEVOFOLINATE",
-    "FERROUS FUMARATE", "FERROUS SULFATE", "BERAPROST SODIUM",
-    "CHOLINE ALFOSCERATE", "CHOLINE SALICYLATE", "INOSITOL NIACINATE",
-    "METOCURINE IODIDE", "EDETATE CALCIUM DISODIUM ANHYDROUS",
+    "CALCIUM FOLINATE", "CALCIUM LEVOFOLINATE", "CALCIUM CARBIMIDE",
+    "FERROUS FUMARATE", "BERAPROST SODIUM", "CHOLINE ALFOSCERATE",
+    "CHOLINE SALICYLATE", "INOSITOL NIACINATE", "METOCURINE IODIDE",
+    "EDETATE CALCIUM DISODIUM ANHYDROUS",
 }
 
 # The entity IS the mineral when the name begins with one.
@@ -85,6 +92,18 @@ SIMPLE_ENTITY = re.compile(
 
 UNNAMED = re.compile(r"^CHEMBL\d+$")
 
+# Chemistry, certain where it fires: no carbon means not an organic
+# therapeutic. Lives here rather than in Task 4 so every task applies the same
+# test; Task 4 is the only one that has formulas, and it passes them in.
+CARBON = re.compile(r"C(?![a-z])")
+
+
+def is_inorganic(formula):
+    """True when a formula is present and contains no carbon."""
+    if formula is None or (isinstance(formula, float) and formula != formula):
+        return False
+    return not bool(CARBON.search(str(formula)))
+
 DUPLICATE_OVERLAP = 0.95
 DUPLICATE_MIN_TARGETS = 5
 
@@ -109,11 +128,14 @@ def _name_flag(name):
         re.search(r"NICOTINAMIDE ADENINE DINUCLEOTIDE|DINUCLEOTIDE", n, re.I))
 
 
-def flag_entities(names_by_id, targets_by_id):
+def flag_entities(names_by_id, targets_by_id, formulas_by_id=None):
     """Which drug ids are probably not therapeutics.
 
     names_by_id    {drug_id: name}
     targets_by_id  {drug_id: set of gene ids}
+    formulas_by_id {drug_id: molecular formula}, optional. Where a formula is
+                   present and carbon-free, the entity is inorganic and the
+                   whitelist does not rescue it.
 
     Returns {drug_id: {"flag_name", "flag_unnamed", "flag_duplicate",
                        "non_therapeutic"}}.
@@ -137,8 +159,11 @@ def flag_entities(names_by_id, targets_by_id):
         if (by_unnamed[did] and s and len(s) >= DUPLICATE_MIN_TARGETS):
             dup = any(len(s & f) / len(s) >= DUPLICATE_OVERLAP
                       for f in flagged_sets)
+        inorg = is_inorganic((formulas_by_id or {}).get(did))
         out[did] = {"flag_name": by_name[did],
                     "flag_unnamed": by_unnamed[did],
                     "flag_duplicate": dup,
-                    "non_therapeutic": by_name[did] or by_unnamed[did] or dup}
+                    "flag_inorganic": inorg,
+                    "non_therapeutic": (by_name[did] or by_unnamed[did]
+                                        or dup or inorg)}
     return out

@@ -15,9 +15,9 @@ shared**, **6,222 union**. Paper 1 contributes 447 Tier-1 genes and a balanced
 
 ## The result in three lines
 
-Thirty leading candidates reach **two** targets: **PDGFRA** (8 kinase
+Thirty leading candidates reach **two** targets: **PDGFRA** (7 kinase
 inhibitors, including nintedanib, already approved for lung fibrosis) and
-**CACNA1C** (22 calcium-channel blockers). **Both are Paper 1 9/9 genes and
+**CACNA1C** (23 calcium-channel blockers). **Both are Paper 1 9/9 genes and
 both score 1.00 on all five Task 6 components** — on this project's own
 evidence they are equivalent, and CACNA1C is marginally the stronger
 (rho 0.447 vs 0.417). PDGFRA is preferred only on an *external* fact:

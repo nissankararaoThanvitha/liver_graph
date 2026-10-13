@@ -20,7 +20,7 @@ Built by `scripts/paper2_task8_final_ranking.py`, 13 October 2026.
 `task8_candidates.png` — the result and its limit in one image. Left: the 30
 leading candidates reach **two** targets, 22 to CACNA1C and 8 to PDGFRA. Right:
 mechanism evidence per candidate, where grey — no recorded direction — covers
-**147 of 192** relationships.
+**61 of 107** relationships.
 
 Two things are visible that the ranking table does not make obvious. The
 CACNA1C drugs are **almost entirely grey**, while the PDGFRA kinase inhibitors
@@ -74,11 +74,11 @@ continuous score; with 51 ties they are more so. Read band 1 as a set.
 
 ## FINDING — band 1 is two genes
 
-45 named drugs tie in band 1. They reach exactly **two** targets:
+51 named drugs tie in band 1. They reach exactly **two** targets:
 
 | Target | Drugs | What they are |
 |---|---:|---|
-| **CACNA1C** | 33 | L-type calcium channel blockers — amlodipine, diltiazem, verapamil, the dihydropyridines |
+| **CACNA1C** | 39 | L-type calcium channel blockers — amlodipine, diltiazem, verapamil, the dihydropyridines |
 | **PDGFRA** | 12 | tyrosine kinase inhibitors — imatinib, sunitinib, **nintedanib**, pazopanib, midostaurin, regorafenib |
 
 **Paper 2's final candidate list is, in substance, "drugs that inhibit PDGFRA
@@ -114,7 +114,7 @@ liver.
 ### One artefact to know about
 
 Coherence is **1.0 by construction** for a single-target drug, so those sort to
-the top of the band. Only **4 of 45** band-1 drugs have one target, so the
+the top of the band. Only **4 of 51** band-1 drugs have one target, so the
 effect is small — but barnidipine, clevidipine, diltiazem and levamlodipine
 head the list partly for that reason rather than on strength of evidence.
 
@@ -129,13 +129,13 @@ Seven layers × 30 leading candidates, in the plan's own hierarchy:
 | L3 trajectory / stage transition | 30 | 0 | 0 |
 | L4 pathway / process context | 30 | 0 | 0 |
 | L5 knowledge-graph relationship | 30 | 0 | 0 |
-| **L6 drug-target mechanism** | **19** | **11** | 0 |
+| **L6 drug-target mechanism** | **18** | **12** | 0 |
 | **L7 transcriptomic reversal** | 0 | 0 | **30** |
 
 Every leading candidate is supported on the five Paper-1-derived layers — which
 follows from how they were selected, and is not independent confirmation.
 
-**L6 is where candidates actually differ:** 19 of 30 have a drug whose recorded
+**L6 is where candidates actually differ:** 18 of 30 have a drug whose recorded
 action opposes the gene's direction of travel; for 11 the direction was never
 recorded. No candidate is *contradicted* on mechanism, because a
 reversal-inconsistent pair cannot reach a top band under this ranking.
@@ -150,7 +150,7 @@ only by broader progression evidence."*
 | set | drugs | supported by the 23-gene shortlist | Tier 1 only | broader evidence only |
 |---|---:|---:|---:|---:|
 | all ranked drugs | 1,920 | 184 | 416 | 1,320 |
-| named drugs only | 1,391 | 128 | 313 | 950 |
+| named drugs only | 1,415 | 130 | 315 | 970 |
 | **top 30 candidates** | **30** | **30** | 0 | 0 |
 
 **All 30 leading candidates rest on Paper 1's own 23-gene shortlist**, not on

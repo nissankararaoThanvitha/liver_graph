@@ -45,10 +45,10 @@ the researcher confirmed its use on 12 October.
 
 The leading candidates reach exactly two targets:
 
-- **PDGFRA** — 8 kinase inhibitors including **nintedanib**, already approved
+- **PDGFRA** — 7 kinase inhibitors including **nintedanib**, already approved
   for *lung* fibrosis. A Paper 1 9/9 gene, rho +0.42 in 5 of 5 studies, LOSO
   5/5, flagged by Task 7.
-- **CACNA1C** — 22 calcium-channel blockers. **Also** a 9/9 gene, also 1.00 on
+- **CACNA1C** — 23 calcium-channel blockers. **Also** a 9/9 gene, also 1.00 on
   all five Task 6 components, and marginally stronger on the progression
   statistics (rho +0.447, q 5.9e-21).
 

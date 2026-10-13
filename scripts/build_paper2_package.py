@@ -64,7 +64,7 @@ FIGURES = {
         "The final result and its limit. Left: 30 leading candidates reach "
         "only two targets, 22 to CACNA1C and 8 to PDGFRA. Right: mechanism "
         "evidence per candidate, where grey -- no recorded direction -- covers "
-        "147 of 192 relationships. The CACNA1C drugs are almost entirely grey; "
+        "61 of 107 relationships. The CACNA1C drugs are almost entirely grey; "
         "the PDGFRA kinase inhibitors carry most of what mechanism there is."),
     "Task2/task2_action_classes.png": (
         "main",
@@ -173,7 +173,10 @@ TABLES = {
 
 CODE = {
     "pipeline": ["paper2_task1_master_table.py", "paper2_task2_drug_gene_edges.py",
-                 "paper2_io.py", "paper2_manifest.py"],
+                 "paper2_io.py", "paper2_manifest.py",
+                 # imported by Tasks 3, 4, 6 and 7; it was missing from the
+                 # package, so the shipped code could not be run as given.
+                 "paper2_drug_filters.py"],
     "analysis": ["paper2_task3_druggability.py", "paper2_task4_drug_coverage.py",
                  "paper2_task5_metapaths.py",
                  "paper2_task5_transition_convergence.py",
