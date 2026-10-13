@@ -124,7 +124,9 @@ No name rule would have caught it, and it sat at number two on the raw list.
 
 **648 unnamed entries is the larger problem** and nothing here solves it.
 Doing this properly needs ChEMBL molecule metadata, which this project does not
-have. Worth raising alongside the LINCS/CMap gap.
+have. **Settled 13 October 2026:** the mentor's instruction to focus only on
+the knowledge graph puts external resources out of scope, so these 648 stay
+flagged and unresolved. Any candidate list must carry that caveat.
 
 ## The bipartite network
 

@@ -15,6 +15,33 @@ predates the biopsy-pairing correction of 9-10 October
 6,222. **Confirmed by the researcher on 12 October 2026: Paper 2 uses 6,222
 throughout.** The plan's 4,692 no longer describes any committed gene set.
 
+## Scope decision, 13 October 2026
+
+The mentor's instruction: **"Repurposing not reversal"** and **"Focus only on
+the knowledge graph."**
+
+The Paper 2 plan put a transcriptomic drug-reversal analysis (LINCS / CMap)
+before the final ranking, as an independent evidence layer. That is now **out
+of scope**. Paper 2's evidence comes from the knowledge graph and Paper 1's
+own results, and nothing else.
+
+What this changes:
+
+- **Task 8 is unblocked.** It was waiting only on the reversal layer.
+- **The final evidence chain is six layers, not seven:** progression evidence,
+  fibrosis specificity, F0-F4 trajectory, pathway/process context,
+  knowledge-graph relationships, drug-target mechanism. The reversal layer is
+  recorded as a stated limitation, not a gap to fill.
+- **External resources stay out.** That includes ChEMBL molecule metadata, so
+  the 648 drugs whose only name is an accession can be flagged but not
+  resolved. Task 4 flags them; they cannot be filtered properly without data
+  this project is not bringing in.
+
+Note on wording: "reversal" here means the *transcriptomic* reversal analysis.
+Task 7's `reversal-consistent` classification is a different thing -- it
+compares a drug's recorded action with Paper 1's direction of travel, entirely
+inside the knowledge graph -- and is retained.
+
 Use Task1 for the master gene table. Analysis code is in
 [`scripts/`](../scripts), following the convention Paper 1 settled on.
 `00_FILE_MANIFEST.csv` carries path, bytes and sha256 for every file here.
@@ -30,7 +57,7 @@ Use Task1 for the master gene table. Analysis code is in
 | 5 | MetaPath implementation and testing | **done** | [`Task5/`](Task5) — 7 metapaths; Reactome 11× cleaner than GO; DWPC vs count ρ = 0.45 |
 | 6 | Target-prioritisation framework design | **done** | [`Task6/`](Task6) — 5 components defined; F redundant within class; top-50 unstable |
 | 7 | Drug action / direction evidence table | **done** | [`Task7/`](Task7) — 4,984 relationships; fibrosis-only rising genes 89% consistent |
-| 8 | Final target and drug ranking | not started | |
+| 8 | Final target and drug ranking | ready | unblocked 13 Oct — reversal layer out of scope |
 
 ## Standing constraints
 
