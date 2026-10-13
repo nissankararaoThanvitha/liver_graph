@@ -93,8 +93,14 @@ def permutation_p(d, rng, n=N_PERM):
     null = np.empty(n)
     for i in range(n):
         null[i] = (lowers == rng.permutation(labels)[idx]).mean()
-    # two-sided
-    p = (np.abs(null - 0.5) >= abs(observed - 0.5)).mean()
+    # Two-sided, centred on the NULL mean rather than on 0.5. The null here
+    # averages 55.9%, not 50%: 68% of directional drugs lower their target and
+    # 68% of these genes rise, so the right-way pairing is common by accident.
+    # Measuring deviation from 0.5 asks whether the result differs from a coin
+    # flip, which is not the question -- the question is whether it differs
+    # from what this vocabulary gives for free.
+    centre = null.mean()
+    p = (np.abs(null - centre) >= abs(observed - centre)).mean()
     return observed, null, p
 
 

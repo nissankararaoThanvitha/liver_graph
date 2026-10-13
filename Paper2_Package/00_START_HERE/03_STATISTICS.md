@@ -77,10 +77,15 @@ permutation shuffling direction at the **gene** level:
 ```
 observed                 52.7%
 null (10,000 permutations)  mean 55.9%,  95% range 45.6–66.5%
-permutation p            0.778
+permutation p            0.553
 ```
 
-The observed value sits inside the null and slightly below its mean.
+The observed value sits inside the null and slightly below its mean. The test
+is two-sided and centred on the **null mean**, not on 50%: the question is
+whether the result differs from what this drug vocabulary gives for free, not
+whether it differs from a coin flip.
+
+**No enrichment of reversal consistency was detected under this null model.**
 
 **The baseline is not 50%.** 68% of directional drugs lower their target and
 68% of these genes rise, so the right-way pairing occurs 55.9% of the time by

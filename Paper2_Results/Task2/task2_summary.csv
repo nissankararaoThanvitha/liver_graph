@@ -6,4 +6,5 @@ total unique drugs (database entries),3027,
 total drug-gene relationships,8948,100.0
 relationships with known action direction,1005,11.2
 relationships reconcilable with Paper 1 direction,1005,11.2
-"  ...of those, with an F0-F4 trajectory pattern",804,9.0
+"  ...of those, with an F0-F4 trajectory available",804,9.0
+"  ...of those, consistent with that trajectory",417,4.7

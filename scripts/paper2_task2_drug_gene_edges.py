@@ -83,6 +83,7 @@ import re
 
 import sys
 
+import numpy as np
 import pandas as pd
 from neo4j import GraphDatabase
 
@@ -238,13 +239,41 @@ def main():
     n_unknown = int((e.Action_Mechanism == "unknown").sum())
     print(f"edges with no recorded action (marked 'unknown'): {n_unknown}")
 
+    for _c in ("F0", "F4"):
+        if _c not in e.columns:
+            e = e.merge(master[["Ensembl_ID", _c]].rename(
+                columns={"Ensembl_ID": "Gene_ID"}), on="Gene_ID", how="left")
+
+    # TRAJECTORY CONSISTENCY, not trajectory availability.
+    # This counted every reconciled edge whose gene merely HAD a cluster label,
+    # which answers "is a trajectory on file?" rather than the plan's question,
+    # "can the relationship be reconciled with the F0-F4 trajectory pattern?".
+    #
+    # The rule: take the trajectory's own direction as the sign of F4 - F0, and
+    # ask whether the drug opposes it, exactly as mechanism_consistency asks of
+    # the rho direction. An edge is trajectory-consistent only when the drug
+    # pushes against the way the gene actually moves across the stages.
+    traj_dir = np.where(e.F4 - e.F0 > 0, "increasing",
+                        np.where(e.F4 - e.F0 < 0, "decreasing", None))
+    e["trajectory_direction"] = traj_dir
+    e["trajectory_available"] = e.Cluster.notna() & pd.notna(traj_dir)
+    drug_lowers = e.action_class == "therapeutic-lowers"
+    drug_raises = e.action_class == "therapeutic-raises"
+    opposes_traj = ((drug_lowers & (e.trajectory_direction == "increasing"))
+                    | (drug_raises & (e.trajectory_direction == "decreasing")))
+    e["trajectory_consistency"] = np.where(
+        ~e.trajectory_available, "no trajectory",
+        np.where(opposes_traj, "trajectory-consistent",
+                 "trajectory-inconsistent"))
+
     e["parent_drug"] = e.Drug.map(parent_drug)
     order = ["Drug", "Drug_ID", "parent_drug", "Gene", "Gene_ID", "Relationship",
              "Action_Mechanism", "Evidence_Source", "Database_ID",
              "action_class", "progression_class", "gene_direction",
              "fibrosis_rho", "inflammation_rho", "Cluster", "Cluster_pattern",
              "Largest_transition", "Tier", "in_fibrosis_starting_set",
-             "mechanism_consistency"]
+             "mechanism_consistency", "trajectory_direction",
+             "trajectory_consistency"]
     e = e[order].sort_values(["Gene", "Drug"]).reset_index(drop=True)
     e.to_csv(f"{OUT_DIR}/task2_drug_gene_edges.csv", index=False)
 
@@ -286,7 +315,19 @@ def main():
     directional = e.action_class.isin(["therapeutic-lowers", "therapeutic-raises"])
     reconciled = e.mechanism_consistency.isin(["reversal-consistent",
                                                "reversal-inconsistent"])
-    with_traj = reconciled & e.Cluster.notna()
+    with_traj = reconciled & (e.trajectory_consistency != "no trajectory")
+    traj_consistent = reconciled & (e.trajectory_consistency
+                                    == "trajectory-consistent")
+
+    # The two direction measures should agree; where they do not, the rho
+    # direction and the stage endpoints disagree about the same gene, which is
+    # worth seeing rather than averaging away.
+    traj_vs_rho = ((e.trajectory_consistency != "no trajectory")
+                   & (e.trajectory_direction != e.gene_direction))
+    print(f"\ntrajectory: {int(with_traj.sum()):,} reconciled edges have a trajectory; "
+          f"{int(traj_consistent.sum()):,} of them are consistent with it")
+    print(f"   rho direction disagrees with F4-F0 on "
+          f"{int(traj_vs_rho.sum()):,} edges")
 
     summary = pd.DataFrame([
         ("progression genes in the master table", len(master)),
@@ -300,7 +341,9 @@ def main():
         ("total drug-gene relationships", len(e)),
         ("relationships with known action direction", int(directional.sum())),
         ("relationships reconcilable with Paper 1 direction", int(reconciled.sum())),
-        ("  ...of those, with an F0-F4 trajectory pattern", int(with_traj.sum())),
+        ("  ...of those, with an F0-F4 trajectory available", int(with_traj.sum())),
+        ("  ...of those, consistent with that trajectory",
+         int(traj_consistent.sum())),
     ], columns=["measure", "value"])
     # A percentage only means something for the rows whose denominator is the
     # relationship count; gene and drug counts are left blank rather than given

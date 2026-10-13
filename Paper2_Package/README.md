@@ -80,7 +80,7 @@ of a top-50 survive a random reweighting. Use bands or
 `task6_stable_core.csv`.
 
 **Does drug mechanism support the candidates?** Overall, no better than chance
-— 52.7% against a 55.9% null, p = 0.78, stable across six classification
+— 52.7% against a 55.9% null, p = 0.553, stable across six classification
 schemes. One subgroup beats its null, on 32 genes.
 
 **Why only two targets?** Because that is what the evidence supports. Saying so

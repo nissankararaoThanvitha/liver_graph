@@ -49,7 +49,7 @@ blocking either target helps the liver.
 ## 4. Mechanism evidence is weak and narrow
 
 Overall reversal consistency is indistinguishable from chance (52.7% against a
-55.9% null, p = 0.78), robust to six classification schemes. The one subgroup
+55.9% null, p = 0.553), robust to six classification schemes. The one subgroup
 that beats its null rests on 32 genes dominated by classic inhibitor-target
 families.
 

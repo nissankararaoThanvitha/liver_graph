@@ -148,7 +148,14 @@ def main():
 
     # Evidence level, derived rather than asserted: how many independent
     # databases stand behind the edge, and do they agree.
+    # DISTINCT DATABASES, not assertions. relation_assertions holds entries of
+    # the form "DATABASE:RELATION", and one database can assert several
+    # relations for the same edge -- DrugBank reporting both TARGET and
+    # TRANSPORTER is one source, not two. Counting the entries would call 183
+    # edges multi-source on a single database's word.
     ev["n_sources"] = ev.relation_assertions.fillna("").apply(
+        lambda s: len({x.split(":")[0] for x in s.split(";") if x}))
+    ev["n_assertions"] = ev.relation_assertions.fillna("").apply(
         lambda s: len([x for x in s.split(";") if x]))
     ev["evidence_level"] = ev.apply(
         lambda r: ("conflicting" if r.relation_conflict else

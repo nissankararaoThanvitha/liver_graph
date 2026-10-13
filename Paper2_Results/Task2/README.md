@@ -30,7 +30,7 @@ Built by `scripts/paper2_task2_drug_gene_edges.py` against instance
 | **Output:** total unique drugs, total relationships | ✅ 3,027 / 8,948 — 3,027 database entries = 3,020 parent compounds; see `task2_near_duplicate_drugs.csv` |
 | **Output:** number and % with known action direction | ✅ 1,005 / 11.2% |
 | **Output:** number and % reconcilable with Paper 1 direction | ✅ 1,005 / 11.2% |
-| **Output:** …and the F0–F4 trajectory pattern where available | ✅ 804 / 9.0% |
+| **Output:** …and the F0–F4 trajectory pattern where available | ✅ 804 available / 417 consistent |
 
 Two notes on interpretation:
 
@@ -85,7 +85,8 @@ Nothing was overwritten. **11.2% is exact, not a floor.** Re-checked by
 | **Total drug–gene relationships** | **8,948** | 100% |
 | Relationships with known action direction | 1,005 | **11.2%** |
 | Reconcilable with Paper 1 progression direction | 1,005 | **11.2%** |
-| …of those, also carrying an F0–F4 trajectory pattern | 804 | 9.0% |
+| …of those, with an F0–F4 trajectory available | 804 | 9.0% |
+| …of those, **consistent with** that trajectory | **417** | **4.7%** |
 
 ## RECOVERED, 13 October 2026 — the column the graph could not fill
 
@@ -211,7 +212,7 @@ The known showcase case lands where it should.
 observed                       52.7%
 null (gene-level shuffle, 10,000 permutations)
   mean 55.9%, 95% range 45.6% – 66.5%
-permutation p = 0.778
+permutation p = 0.553
 ```
 
 The observed value sits **inside** the null, and in fact slightly below its
@@ -224,7 +225,7 @@ re-tested with its own null (`task2_mapping_sensitivity.csv`):
 
 | mapping | consistent | null | p |
 |---|---:|---:|---:|
-| as published | 52.7% | 55.9% | 0.778 |
+| as published | 52.7% | 55.9% | 0.553 |
 | STABILISER dropped | 53.3% | 56.1% | 0.740 |
 | DEGRADER dropped | 52.8% | 55.9% | 0.770 |
 | both arguable dropped | 53.4% | 56.1% | 0.731 |
@@ -235,7 +236,9 @@ Restricting to cleaner pharmacology lifts the raw percentage to 61.1%, but it
 also shrinks n and widens the null — **no variant beats its own null.** The
 conclusion is a property of the data, not of my mapping table.
 
-So on this evidence drug action is **essentially uncorrelated** with
+So **no enrichment of reversal consistency was detected under this null
+model**. That is weaker than saying the two are uncorrelated, and it is what
+the test supports. Drug action is not detectably aligned with
 progression direction. That is not a defect — these drugs were developed for
 other diseases and there is no reason their mechanisms should align with liver
 progression. But it means:
@@ -306,3 +309,38 @@ against 610 for fibrosis, so those rows are built on thinner evidence.
 links and **51.9%** over the 804 that exclude inflammation-only genes. Both sit
 inside the same null, and the conclusion — no better than chance — is the same
 either way.
+
+## How the trajectory check is defined
+
+The plan asks how many relationships reconcile with the Paper 1 direction **and,
+where available, the F0–F4 trajectory pattern**. Those are two tests, and the
+second needs a rule rather than a count of what is on file.
+
+**The rule.** The trajectory's own direction is the sign of `F4 - F0`. An edge is
+**trajectory-consistent** when the drug pushes against the way the gene actually
+moves across the stages — the same logic mechanism consistency applies to the
+rho direction, but using the stage endpoints instead.
+
+| | edges |
+|---|---:|
+| reconciled with the rho direction | 1,005 |
+| …of those, a trajectory is available | 804 |
+| …of those, **consistent with that trajectory** | **417** |
+
+Availability and consistency are reported separately because they answer
+different questions: 804 genes have a trajectory on file, and 417 of those
+relationships actually agree with it.
+
+The two direction measures disagree on **14 edges**, where the rho direction and
+the F4 − F0 endpoints point opposite ways for the same gene. They are left
+visible rather than resolved by preferring one measure.
+
+## Two limitations worth stating plainly
+
+**693 drug entries use their identifier as their name.** Their `name` in
+OptimusKG *is* their ChEMBL accession, so they cannot be judged, filtered or
+reported by name. They are flagged, not deleted.
+
+**A reference URL exists for only 1,028 relationships.** Every row carries source
+attribution — which databases assert the edge — but that is not the same as a
+supporting publication or label link, which about one row in nine has.

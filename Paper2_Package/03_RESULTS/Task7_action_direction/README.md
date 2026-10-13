@@ -154,7 +154,7 @@ almost nothing in the drug vocabulary *raises* a gene.
 ## What this table is for, and what it is not
 
 Task 2 established that reversal consistency across **all** these relationships
-sits at 52.7% against a 55.9% null, permutation p = 0.78 — indistinguishable
+sits at 52.7% against a 55.9% null, permutation p = 0.553 — indistinguishable
 from chance overall, and robust to six different action-to-direction mappings.
 Task 7 does not overturn that; it locates the one subgroup where the picture
 differs.
