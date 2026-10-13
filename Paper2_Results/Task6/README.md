@@ -217,5 +217,8 @@ the same underlying data, so it is consistency, not independent validation.
 3. **F is documentation, not evidence.** Four effective components, not five.
 4. **Weights stay equal unless something justifies otherwise**, and any change
    must be re-run through the sensitivity analysis.
-5. The final ranking still needs the transcriptomic reversal layer the plan
-   requires, which this project does not have.
+5. ~~The final ranking still needs the transcriptomic reversal layer.~~
+   **Superseded 13 October 2026:** the mentor ruled transcriptomic reversal out
+   of scope ("repurposing not reversal", "focus only on the knowledge graph").
+   Task 8 proceeds on the six evidence layers that exist, with the reversal
+   layer recorded as a limitation.
