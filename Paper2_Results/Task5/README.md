@@ -142,6 +142,35 @@ exact: L_t drug-gene pairs on the left × R_t targets on the right, minus paths
 whose source gene *is* the target gene — those are a one-hop fact already in
 Task 2, not a metapath.
 
+## Convergence on the important transition — the plan's second ask
+
+Task 5 also says: *"test whether candidate drugs converge on genes involved in
+the transitions identified as molecularly important in Paper 1."* MP7 restricts
+targets to the 2,568 stage-transition genes, but the convergence test itself was
+missing until 13 October. `scripts/paper2_task5_transition_convergence.py`
+closes it.
+
+Paper 1 Task 3 identified **F3→F4** as the molecularly important transition:
+under equal statistical power it produced a median of 311 changing genes
+against 0–2 for the earlier ones. So: do drugs reach those genes more often
+than their number predicts?
+
+| transition | genes | drug-connected | % | enrichment | BH-q | converges |
+|---|---:|---:|---:|---:|---:|---|
+| F0→F1 | 495 | 78 | 15.8 | 0.95 | 0.852 | no |
+| F1→F2 | 611 | 116 | 19.0 | 1.14 | 0.202 | no |
+| F2→F3 | 618 | 104 | 16.8 | 1.01 | 0.852 | no |
+| **F3→F4** | 2,121 | 341 | 16.1 | **0.97** | 0.852 | **no** |
+
+**No convergence anywhere**, against an overall rate of 16.6%. Drugs are no more
+likely to reach the genes that move at the cirrhotic transition than any other.
+
+That is the expected answer and worth stating: drug annotation has no reason to
+know *when* in a disease a gene moves. It also means the stage at which a target
+acts cannot be inferred from how drugged it is — the two are independent, which
+is precisely why Paper 1's trajectory evidence adds something the graph does
+not already contain.
+
 ## Carried forward
 
 1. **Use Reactome, not GO**, as the bridge. 11× fewer paths and 4× less
