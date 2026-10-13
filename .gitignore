@@ -16,6 +16,13 @@ __pycache__/
 #   so dropping zeros removes the switching-on that IS the progression signal.
 data/primekg/
 data/optimuskg/
+# data/optimuskg_recovered  11M  rebuild: python scripts/paper2_recover_optimuskg_evidence.py
+#   then                          python scripts/paper2_fetch_chembl_gaps.py
+#   The evidence and chemistry build_optimuskg_layer.py read and discarded:
+#   per-edge sources, relation assertions, FDA label URLs, mechanisms of action,
+#   and canonical_smiles. Needs data/optimuskg/drug.parquet and drug_gene.parquet
+#   from the same DOI above (file ids 14220910 and 14220895).
+data/optimuskg_recovered/
 data/graph_all/
 data/graph_primekg_superseded/
 data/graph_okg/
