@@ -1,0 +1,5 @@
+coherence_measure,drug_set,min_progression_genes,n_drugs,spearman_rho,p_value
+dominant_class_fraction,not non-therapeutic,5,147,-0.268,0.0010241608445363233
+dominant_class_fraction,named only,5,173,-0.32,1.773537377987136e-05
+dominant_cluster_fraction,not non-therapeutic,5,147,-0.09,0.2792864470902509
+dominant_cluster_fraction,named only,5,173,-0.059,0.43809273667024545

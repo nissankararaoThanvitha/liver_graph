@@ -14,7 +14,7 @@ Druggability by progression group against an 11.2% background. Genes that fall a
 
 **task4_coverage_vs_coherence.png** _(main)_
 
-Coverage against coherence, one point per drug. The widest-reaching drugs are the least coherent; the two measures correlate at -0.124, so ranking by target count selects promiscuity.
+Coverage against coherence, one point per drug. The widest-reaching drugs are the least coherent; the two measures correlate at -0.268 (p = 0.001), so ranking by target count selects promiscuity.
 
 **task4_network.png** _(main)_
 

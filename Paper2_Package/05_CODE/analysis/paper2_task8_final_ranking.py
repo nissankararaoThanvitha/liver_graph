@@ -32,7 +32,7 @@ be visible rather than quietly dropped.
 DRUGS ARE RANKED BY THEIR BEST TARGET, NOT BY HOW MANY THEY HIT
 The obvious rule is to sum target scores over everything a drug touches. That
 rewards promiscuity, and three tasks have already measured the damage: Task 4
-found coverage NEGATIVELY correlated with coherence (rho = -0.124) and its raw
+found coverage NEGATIVELY correlated with coherence (rho = -0.268) and its raw
 ranking led with zinc salts and one scattergun kinase inhibitor; Task 5 found
 DWPC promoting proteasome and tubulin binders because complex subunits share
 annotations.

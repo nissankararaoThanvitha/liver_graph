@@ -122,7 +122,11 @@ def main():
 
     # ---- edge-level evidence ----------------------------------------------
     t2 = pd.read_csv(T2, low_memory=False)
-    matched = t2.evidence_level.notna().sum() if "evidence_level" in t2 else 0
+    # Title_Case is the delivered column; the lowercase working copy was an
+    # exact duplicate and is no longer written. The guard stays, but it must
+    # not silently report 0 -- that is how a stale number survives.
+    assert "Evidence_Level" in t2, "Task 2 has no Evidence_Level column"
+    matched = int((t2.Evidence_Level != "not matched to source").sum())
     ev_rows = [
         {"measure": "evidence records recovered", "value": len(ev)},
         {"measure": "Task 2 edges", "value": len(t2)},
