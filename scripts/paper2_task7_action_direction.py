@@ -74,6 +74,7 @@ from scipy import stats
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from paper2_io import SupportingTables
+from paper2_drug_filters import flag_entities
 
 EDGES = "Paper2_Results/Task2/task2_drug_gene_edges.csv"
 MASTER = "Paper2_Results/Task1/Paper2_progression_genes.csv"
@@ -142,12 +143,28 @@ def main():
     e["Evidence_Source"] = SOURCE
     e["Evidence_Level"] = EVIDENCE_LEVEL
 
+    # ENTITY FLAG, added 13 October after review of Task 3.
+    # This table is read by Task 6 to decide whether a gene "has a therapeutic
+    # drug". Without the flag, 175 genes earn that credit from zinc salts, ATP
+    # and unnamed accessions alone. The flag travels with the row so every
+    # consumer can apply it; Task 7's own summaries deliberately do NOT filter,
+    # because the question there is what the vocabulary says, not what is
+    # prescribable.
+    names = dict(zip(e.Drug_ID, e.Drug))
+    targets = e.groupby("Drug_ID").Gene_ID.apply(set).to_dict()
+    flags = flag_entities(names, targets)
+    e["non_therapeutic_entity"] = e.Drug_ID.map(
+        lambda d: flags[d]["non_therapeutic"])
+    print(f"relationships involving a non-therapeutic entity: "
+          f"{int(e.non_therapeutic_entity.sum()):,} of {len(e):,}")
+
     # ---- the required table ------------------------------------------------
     cols = ["Drug", "Drug_ID", "Gene", "Gene_ID", "gene_direction",
             "fibrosis_rho", "inflammation_rho", "progression_class",
             "Cluster", "Cluster_pattern", "Largest_transition", "Tier",
             "Action_Mechanism", "drug_action_direction",
-            "Evidence_Source", "Evidence_Level", "reversal_class"]
+            "Evidence_Source", "Evidence_Level", "reversal_class",
+            "non_therapeutic_entity"]
     out = e[cols].rename(columns={"gene_direction": "Gene_progression_direction",
                                   "Action_Mechanism": "Drug_action"})
     out = out.sort_values(["reversal_class", "Drug", "Gene"])
