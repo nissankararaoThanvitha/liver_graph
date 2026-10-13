@@ -202,9 +202,10 @@ Fibrosis-only targets at equal weights:
 
 PDGFRA and CACNA1C score a perfect 1.00 on all five components. Both were
 independently flagged in Task 7 as reversal-consistent fibrosis-only rising
-genes, and PDGFRA is Paper 1's own 9/9 gene and the Nintedanib case. Three
-routes converging on the same genes is reassuring — though all three draw on
-the same underlying data, so it is consistency, not independent validation.
+genes, and **both are Paper 1 9/9 genes** — six genes reach 9, PDGFRA and
+CACNA1C among them. Several routes converging on the same genes is reassuring,
+though they all draw on the same underlying data, so it is consistency, not
+independent validation.
 
 ---
 

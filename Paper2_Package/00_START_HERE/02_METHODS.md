@@ -96,6 +96,20 @@ has already failed: `fibrosis_rho` sits on 3,645 Gene nodes while 3,845 carry a
 edges throughout. That pre-existing divergence is Team 1's to resolve and is
 untouched here.
 
+## A naming convention, stated once
+
+The shared class has two spellings in the delivered files, and the rule is
+consistent: a `progression_class` or `target_class` column carries the master
+table's raw value **`both`**; every group-style label — `group`, `set`, and the
+Task 3 and Task 7 summaries — carries **`shared`**. They are the same 1,822
+genes.
+
+Both appear in `task4_network_nodes.csv`, on the same row, in neighbouring
+columns. That is why this is written down rather than renamed: downstream code
+matches on the raw value, and renaming it is precisely the change that once
+produced `both / positive` where `shared / positive` was reported and dropped
+1,792 genes from a table silently.
+
 ## Task 3 — druggability
 
 Background is the **14,794 eligible genes**, the same background Paper 1's

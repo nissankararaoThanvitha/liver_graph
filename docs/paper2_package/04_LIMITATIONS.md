@@ -21,12 +21,33 @@ final ranking, as an independent check. Ruled out of scope on 13 October
 (*"repurposing not reversal"*). The evidence chain is six layers, not seven,
 and `task8_evidence_summary.csv` carries L7 as an explicit "out of scope" row.
 
-## 3. The candidate list is two genes
+## 3. The candidate list is two genes, and the data cannot rank them
 
 Thirty leading candidates reach **CACNA1C** (22 drugs) or **PDGFRA** (8). The
-list is less diverse than its length implies. PDGFRA carries a strong,
-convergent story; CACNA1C reaches the same band on the same measures with a
-thinner one, and nothing here speaks to whether blocking it helps the liver.
+list is less diverse than its length implies.
+
+**Neither target is stronger than the other on this project's evidence:**
+
+| | PDGFRA | CACNA1C |
+|---|---:|---:|
+| Paper 1 score | 9/9 | **9/9** |
+| fibrosis rho | +0.417 | **+0.447** |
+| BH-q | 1.4e-18 | **5.9e-21** |
+| studies | 5/5 | 5/5 |
+| Task 6 components | 1.00 x 5 | **1.00 x 5** |
+| reversal-inconsistent | 0 | 0 |
+
+> **An unsupported claim, corrected.** Four documents stated that PDGFRA was
+> "Paper 1's only 9/9 gene" and was therefore the stronger target. **Six genes
+> score 9** — CACNA1C, MYC, PDGFRA, PLK3, TAX1BP3 and TPM4 — and CACNA1C is
+> among them, with marginally better progression statistics. The claim was found
+> in audit, not in review, and it was load-bearing: it was the sole stated
+> reason for preferring one target over the other.
+
+**PDGFRA is preferred on one external fact**: nintedanib is already approved for
+*lung* fibrosis, the same mechanism in a different organ. That is a reasonable
+argument and it is not a finding of this paper. Nothing here speaks to whether
+blocking either target helps the liver.
 
 ## 4. Mechanism evidence is weak and narrow
 
