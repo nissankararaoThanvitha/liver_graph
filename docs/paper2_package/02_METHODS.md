@@ -47,8 +47,9 @@ reader needs to see which fields came from which.
 `build_optimuskg_layer.py` reads `properties` from every OptimusKG parquet and
 keeps it only for `disease_gene`; for drug-gene edges and drug nodes it was read
 and discarded. Re-reading the same files at DOI `10.7910/DVN/IYNGEV` recovers,
-for all 8,948 edges: asserting databases, per-source relation claims, a conflict
-flag, FDA and EuropePMC URLs on 38%, and a written mechanism of action — plus,
+for all 8,948 edges: asserting databases, per-source relation claims and a
+conflict flag, plus FDA and EuropePMC URLs and a written mechanism of action on
+**11.5%** of them (20.6% of the 4,984 therapeutic links) — plus,
 for the graph's 12,025 drugs, SMILES (9,036), molecule type (11,623) and
 clinical phase (9,902). **This is not a new source**: it is the source the graph
 was already built from, read more completely. Full report:
