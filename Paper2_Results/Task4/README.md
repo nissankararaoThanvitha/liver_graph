@@ -103,7 +103,33 @@ denominator — 1/1 scores 0.21, 6/10 scores 0.31. **Use the bound to rank; keep
 the fraction because the plan asks for it.** The `specificity_trap` sheet lists
 the drugs the raw fraction would promote.
 
-## Filtering the drug vocabulary — what the graph cannot do
+## RECOVERED 13 October 2026 — and a negative result
+
+Team 1's instruction was to *filter on molecule type and clinical phase*. Those
+fields were recovered from OptimusKG's own drug nodes. **They do not work for
+this.**
+
+| | |
+|---|---|
+| All 70 name-flagged entries | `molecule_type = "Small molecule"` |
+| ZINC ACETATE, ZINC CHLORIDE | `max_phase = 4.0`, `is_approved = True` |
+
+They genuinely *are* approved small molecules, so the classification has
+nothing to separate. A filter built on it flags **one** drug where the name
+heuristic flags 70.
+
+What does discriminate, for inorganics, is chemistry: a formula with no carbon
+is not an organic therapeutic. `flag_inorganic` catches ZnCl₂, MgSO₄, Na₂SO₄,
+AlCl₃, CaCl₂ and NO — **certain where it fires, and it caught nothing the name
+heuristic had missed.** It cannot reach the organic nutrients (ATP, FAD,
+glutamic acid all contain carbon), so the crude name rule stays beside it.
+
+**SMILES are available for all 2,404 drugs in this table** — recovered from the
+same source. Earlier statements in this repository that the project has no
+chemical structures were wrong; `canonical_smiles` was read at build time and
+discarded.
+
+## The original note, kept for the record
 
 Team 1's handover says to filter on molecule type and clinical phase before any
 coverage ranking. **The graph cannot do that.** Drug nodes carry exactly two

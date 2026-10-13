@@ -61,7 +61,23 @@ Task 1's 30 shared genes that fall with fibrosis and rise with inflammation.
 Eight relationships touch them. The drug's action is known perfectly well; it
 is the gene that cannot be resolved, which is a different thing from unknown.
 
-## Evidence level cannot be supplied
+## Evidence level — RECOVERED 13 October 2026
+
+The section below was written when the graph was the only source. It is now
+superseded: OptimusKG's own file carries the provenance, and all **4,984**
+drug-target relationships have a real evidence level.
+
+| level | relationships |
+|---|---:|
+| single-source | 3,957 |
+| multi-source | 1,027 |
+| with a reference URL | 1,025 |
+
+`Evidence_Source` names the asserting databases; `mechanisms_of_action` gives a
+written mechanism where one exists, which is richer than the single `action`
+token.
+
+## The original note, kept for the record
 
 The plan asks to *"preserve the source and evidence level"*. `ACTS_ON` carries
 **one** property, `action` — no evidence level, no reference, no assay, no

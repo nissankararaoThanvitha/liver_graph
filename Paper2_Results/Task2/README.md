@@ -14,7 +14,7 @@ Built by `scripts/paper2_task2_drug_gene_edges.py` against instance
 |---|---|
 | Extract all connected drugs for every progression gene | ✅ 8,948 edges, all 6,222 genes queried |
 | …from **CausalKG**/OptimusKG | ⚠️ **CausalKG does not exist in this project.** The knowledge layer is OptimusKG (`data/graph_okg`). PrimeKG is superseded and kept only as `data/graph_primekg_superseded` for the comparison that justified the switch. Source used: OptimusKG |
-| Retain original evidence and source information | ❌ **not available per edge** — see below |
+| Retain original evidence and source information | ✅ **recovered 13 Oct 2026** — see below |
 | Record mechanism/action exactly where present | ✅ stored verbatim, 23 distinct values |
 | Otherwise mark the action as unknown | ✅ rule implemented — **it never fired**: all 8,948 edges carry an action, 0 marked unknown |
 | Column: Drug | ✅ |
@@ -87,7 +87,30 @@ Nothing was overwritten. **11.2% is exact, not a floor.** Re-checked by
 | Reconcilable with Paper 1 progression direction | 1,005 | **11.2%** |
 | …of those, also carrying an F0–F4 trajectory pattern | 804 | 9.0% |
 
-## One column the graph cannot fill
+## RECOVERED, 13 October 2026 — the column the graph could not fill
+
+The statement below was true of the *graph* and false of the *data*.
+`build_optimuskg_layer.py` reads `properties` from every parquet and keeps it
+only for `disease_gene`; for drug-gene edges it was read and discarded. Going
+back to the same source file at the same DOI recovers it, for **8,948 of 8,948
+edges**:
+
+| column | content |
+|---|---|
+| `Evidence_Source` | `OptimusKG: DRUG_BANK;OPEN_TARGETS via FDA;PUBMED` |
+| `Evidence_Level` | single-source · multi-source · conflicting |
+| `relation_assertions` | `DRUG_BANK:TARGET ; OPEN_TARGETS:INHIBITOR` |
+| `source_urls` | FDA label and EuropePMC links |
+| `mechanisms_of_action` | *"Gamma-amino-N-butyrate transaminase inhibitor"* |
+
+Only two databases assert these edges: **DrugBank** and **Open Targets**.
+
+**It changes no result.** The single stored `action` per pair was checked
+against the per-source assertions across all 36,611 source edges: only **15**
+carry a direction not already stored, and **2** are flagged conflicting. The
+11.2% directional figure stands.
+
+## The original note, kept for the record
 
 `ACTS_ON` carries **exactly one** property, `action`. The loader
 (`load_knowledge_layer.cypher`, block 8/11) does `SET r.action = row.rel_type`
@@ -103,7 +126,7 @@ So of the columns the plan asks for:
 | Relationship | `ACTS_ON` for all 8,948 |
 | Action/Mechanism | available, recorded exactly as stored |
 | Database ID | drug ChEMBL id; gene side is the Ensembl id |
-| **Evidence/Source** | **not available per edge** |
+| **Evidence/Source** | ✅ recovered from OptimusKG's own source file |
 
 Per-edge provenance was never loaded into the graph. `Evidence_Source` is
 therefore filled with the dataset-level statement
