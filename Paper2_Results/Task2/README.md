@@ -23,7 +23,7 @@ Built by `scripts/paper2_task2_drug_gene_edges.py` against instance
 | Column: Gene ID | ✅ Ensembl |
 | Column: Relationship | ✅ `ACTS_ON` for all |
 | Column: Action/Mechanism | ✅ |
-| Column: Evidence/Source | ⚠️ dataset-level only, stated explicitly in the cell |
+| Column: Evidence/Source | ✅ per-edge, recovered 13 Oct: the asserting databases for all 8,948 rows |
 | Column: Database ID | ✅ `ChEMBL:<drug>\|Ensembl:<gene>` — unique for all 8,948 rows |
 | **Output:** complete drug-gene edge table | ✅ 8,948 rows |
 | **Output:** genes with ≥1 drug connection | ✅ 1,072 |
@@ -128,12 +128,29 @@ So of the columns the plan asks for:
 | Database ID | drug ChEMBL id; gene side is the Ensembl id |
 | **Evidence/Source** | ✅ recovered from OptimusKG's own source file |
 
-Per-edge provenance was never loaded into the graph. `Evidence_Source` is
-therefore filled with the dataset-level statement
-`"OptimusKG (Harvard Dataverse DOI 10.7910/DVN/IYNGEV); per-edge evidence not
-loaded"` rather than left blank, so nobody later reads a blank cell as "no
-evidence found". Recovering true per-edge evidence means re-parsing the
-OptimusKG parquet, which is not in this repository.
+Per-edge provenance was not loaded into the graph by
+`build_optimuskg_layer.py`, which read `properties` and kept only `name` and
+`relation`. For a time `Evidence_Source` therefore carried a dataset-level
+statement rather than a blank, so nobody would read an empty cell as "no
+evidence found".
+
+**That is no longer the case.** On 13 October the OptimusKG parquets were
+re-parsed from DOI `10.7910/DVN/IYNGEV` and the per-edge evidence recovered, so
+every one of the 8,948 rows now names the databases asserting it — for example
+`OptimusKG: DRUG_BANK;OPEN_TARGETS`. Only two sources assert drug-gene edges at
+all: DrugBank and Open Targets.
+
+The parquets are reachable: the download ids are recorded in `.gitignore` and
+in `05_HOW_TO_VERIFY.md`, and `data/optimuskg/` is excluded from git only for
+its size (33 MB), not because it is unavailable. Recovery 1 rebuilds
+`data/optimuskg_recovered/` from them in about a minute.
+
+**Depth is uneven, and the denominator matters.** A reference URL exists for
+**1,028** of the 8,948 edges and a written mechanism for **1,030** — about
+**11.5%**, or **20.6%** of the 4,984 therapeutic links. Across all 36,611
+recovered OptimusKG evidence records the same fields reach 38%, but most of
+those records are for edges outside Paper 2's gene set, so 38% is not the
+figure for this table.
 
 ## Action is not the same thing as direction
 

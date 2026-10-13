@@ -85,9 +85,24 @@ full run on the drugs actually in use added zero. Per-denominator figures are in
 ## 9. Per-edge evidence depth is uneven
 
 Recovered provenance names the asserting databases for all 8,948 edges, but a
-reference URL and written mechanism exist for only 38%. Only two sources assert
-drug–gene edges: DrugBank and Open Targets. `relation_conflict` is set on 2
-edges graph-wide.
+reference URL and a written mechanism are much rarer:
+
+| | edges | of 8,948 | of the 4,984 therapeutic links |
+|---|---:|---:|---:|
+| asserting database named | 8,948 | 100% | 100% |
+| reference URL | 1,028 | **11.5%** | **20.6%** |
+| written mechanism of action | 1,030 | **11.5%** | **20.7%** |
+
+> **A denominator error, corrected.** This read "only 38%" until a reviewer
+> questioned it. 38% is the rate across all **36,611** recovered OptimusKG
+> evidence records — but most of those are for edges outside Paper 2's gene
+> set. For the 8,948 edges in this table it is 11.5%, which is the figure that
+> belongs here. Same mistake as the ChEMBL contribution figures: right number,
+> wrong population.
+
+Only two sources assert drug–gene edges: DrugBank and Open Targets.
+`relation_conflict` is set on 2 edges graph-wide, both outside the
+progression-gene subset.
 
 ## 10. Inflammation-only genes carry less evidence
 

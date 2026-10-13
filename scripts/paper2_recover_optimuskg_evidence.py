@@ -31,8 +31,14 @@ WHAT COMES BACK
     sources               which databases asserted it, direct and indirect
     relation_assertions   the per-source relation claim
     relation_conflict     whether the sources disagree
-    source_urls           FDA label PDFs, on 38%
-    mechanisms_of_action  free text, on 38%
+    source_urls           FDA label PDFs, on 38% of the 36,611 records
+    mechanisms_of_action  free text, on 38% of the 36,611 records
+
+    Those two percentages are over EVERY recovered record. On the 8,948
+    edges Paper 2 actually uses the rate is 11.5%, because most records
+    here are for edges outside the progression-gene set. Quoting the 38%
+    against Paper 2's table is a denominator error, and was one until a
+    reviewer caught it on 13 October.
 
   drug.parquet (18,640 nodes), per drug:
     type, maximum_clinical_trial_phase, is_approved, has_been_withdrawn
