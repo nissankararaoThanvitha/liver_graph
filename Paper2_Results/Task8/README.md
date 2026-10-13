@@ -149,9 +149,23 @@ supported by strictly less.
    without it, every layer here derives from the same two sources.
 2. **Band 1 is two genes.** The candidate list is less diverse than its length
    suggests.
-3. **529 of 1,920 ranked drugs are flagged non-therapeutic** and 648 across the
-   graph have no name at all. Resolving them needs ChEMBL metadata, which the
-   knowledge-graph-only scope excludes.
+3. **Unnamed drugs: a bounded limitation, measured.** 461 of the 1,920 ranked
+   drugs (24%) have only a ChEMBL accession for a name, so we cannot tell a
+   real therapeutic from a salt or a screening compound. Resolving them needs
+   ChEMBL metadata, which the knowledge-graph-only scope excludes.
+
+   **It does not reach the candidates.** Zero of the 51 drugs in band 1 are
+   unnamed, and zero of the 30 leading candidates. The best-ranked unnamed drug
+   sits at **band 3** (best-target score 0.90, rank 56). The problem lives
+   entirely in the long tail.
+
+   Two things were tried inside the graph before accepting it. Disease evidence
+   rescues almost nothing: of 1,163 unnamed drugs graph-wide, only **27** have
+   any `TREATS` / `OFF_LABEL_FOR` / `CONTRAINDICATED_IN` edge. Target-set
+   containment (Task 4) catches duplicates but not identities. The highest
+   unnamed drugs cluster on **SRC** and are most likely a kinase-inhibitor
+   screening series rather than medicines, which is consistent with them
+   ranking below every named candidate.
 4. **Mechanism consistency is at chance overall** (Task 2: 52.7% against a
    55.9% null, p = 0.78). Only the fibrosis-only rising subgroup beats its null,
    and that subgroup is 32 genes of classic inhibitor-target families.

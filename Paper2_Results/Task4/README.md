@@ -122,7 +122,9 @@ The duplicate rule earns its place: `CHEMBL1201279` shares **all 126** of its
 targets with ZINC ACETATE, so it is the same entity under another accession.
 No name rule would have caught it, and it sat at number two on the raw list.
 
-**648 unnamed entries is the larger problem** and nothing here solves it.
+**648 unnamed entries is the larger problem** and nothing here solves it --
+though Task 8 measures how far it reaches: none of them enters band 1 or the
+leading candidates, and the best sits at band 3.
 Doing this properly needs ChEMBL molecule metadata, which this project does not
 have. **Settled 13 October 2026:** the mentor's instruction to focus only on
 the knowledge graph puts external resources out of scope, so these 648 stay
