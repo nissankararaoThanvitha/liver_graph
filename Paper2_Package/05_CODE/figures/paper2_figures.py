@@ -51,10 +51,20 @@ def task2_actions():
     ax.set_xticks(range(4)); ax.set_xticklabels(labels, fontsize=8.5)
     ax.set_ylabel("drug-gene edges")
     ax.set_ylim(0, max(counts.values) * 1.25)
+    # Computed, not typed. Three numbers were hardcoded here -- 1,072 genes,
+    # 3,027 drugs and "1,005 edges, 11.2%". They were all still correct, but
+    # the coverage-vs-coherence figure of -0.124 was hardcoded in the same
+    # spirit and had silently gone stale, so these are derived now.
+    n_genes, n_drugs = e.Gene_ID.nunique(), e.Drug_ID.nunique()
+    n_dir = int(e.action_class.isin(["therapeutic-lowers",
+                                     "therapeutic-raises"]).sum())
+    pct_dir = 100 * n_dir / len(e)
     ax.set_title(f"What the {len(e):,} drug-gene edges are  "
-                 "(1,072 genes, 3,027 drugs)", fontsize=10, loc="left")
+                 f"({n_genes:,} genes, {n_drugs:,} drugs)",
+                 fontsize=10, loc="left")
     ax.spines[["top", "right"]].set_visible(False)
-    ax.annotate("only these two carry a usable direction: 1,005 edges, 11.2%",
+    ax.annotate(f"only these two carry a usable direction: "
+                f"{n_dir:,} edges, {pct_dir:.1f}%",
                 xy=(2.5, max(counts.values) * .78), ha="center", fontsize=8.5,
                 color=RED)
     fig.tight_layout()
