@@ -115,12 +115,30 @@ produced `both / positive` where `shared / positive` was reported and dropped
 Background is the **14,794 eligible genes**, the same background Paper 1's
 enrichment used; the comparison set is the 8,572 of those that are not
 progression genes. Druggability counts **therapeutic edges only** — a
-percentage over all edges would be partly measuring liver drug metabolism.
+percentage over all edges would be partly measuring liver drug metabolism — and
+the primary definition additionally requires the drug itself to pass the entity
+filter. Both columns are reported; neither is a claim about whether a gene is a
+good target.
 
 Each group is tested twice: Fisher against the background, and against
 background genes **matched on non-drug degree** (`ASSOCIATED_WITH`,
 `INTERACTS_WITH`, `INVOLVED_IN`, `IN_PATHWAY`), 2,000 draws. Drug edges are
 excluded from the matching so the null is not conditioned on the outcome.
+
+Genes are placed in 20 bins by degree rank, and each group gene's replacement
+comes from its own bin. Where a bin holds fewer background genes than the group
+needs, the draw is taken **with replacement** so the per-bin count is never
+silently reduced — shrinking it would re-weight the null towards whichever bins
+happen to be full. `matched_bins_short` and `matched_percent_resampled` report
+how often that happens; on this data both are zero throughout. The permutation
+p is `(r + 1) / (n + 1)`, so it never reports as zero and its floor at 2,000
+draws is 0.0005. `task3_gene_degrees.csv` ships every gene's degree and bin so
+the null can be reproduced.
+
+A third test runs the comparison a *direction* claim actually makes: falling
+versus rising, head to head within each class, BH-corrected across the three
+classes (`task3_falling_vs_rising.csv`). Beating a shared background is weaker
+evidence than beating each other, and the two give different answers here.
 
 ## Task 4 — drug coverage
 

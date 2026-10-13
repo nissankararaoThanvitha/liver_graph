@@ -108,13 +108,12 @@ def task2_null():
 
 
 def task3_druggability():
-    """The bar plot the plan asks for, now with BOTH definitions of
+    """The bar plot the plan asks for, with BOTH definitions of
     "drug-connected" side by side.
 
-    A reviewer pointed out on 13 October that the first version counted a gene
-    as druggable when its only drug was zinc chloride or an unnamed accession.
-    Showing one bar would mean choosing which number to believe; showing two
-    lets the reader watch the effect shrink and survive.
+    Showing one bar would mean choosing which number to believe. Showing two
+    lets the reader see exactly what the entity filter costs, and the labels
+    say what each definition is rather than which is preferred.
     """
     T3 = "Paper2_Results/Task3"
     s = pd.read_csv(f"{T3}/task3_druggability_summary.csv")
@@ -135,13 +134,13 @@ def task3_druggability():
     x = np.arange(len(s))
     w = 0.38
     ax.bar(x - w/2, s.percent, width=w, color=GREY, alpha=.65,
-           label="any drug edge (as first published)")
+           label="therapeutic-action edges (metabolism/transport excluded)")
     bars = ax.bar(x + w/2, s.percent_usable, width=w,
                   color=[BLUE if "positive" in g else
                          (ORANGE if "negative" in g else "#9aa7b8") for g in s.group],
                   edgecolor=["#15202b" if v == "yes" else "none" for v in survives],
                   linewidth=1.7,
-                  label="real therapeutics only (primary)")
+                  label="and drug passes a name-based entity filter (primary)")
 
     ax.axhline(bg, color=GREY, ls=":", lw=1.3)
     ax.axhline(bg_u, color=RED, ls="--", lw=1.4)
@@ -154,17 +153,19 @@ def task3_druggability():
         ax.text(b.get_x() + b.get_width()/2, pct + .35,
                 f"{pct}%" + ("  *" if v == "yes" else ""), ha="center",
                 fontsize=8.8, fontweight="bold" if v == "yes" else "normal")
-    for xi, n in zip(x, s.total_genes):
-        ax.text(xi, .55, f"n={n:,}", ha="center", fontsize=7.4, color="#3b4a5e")
-
+    # n goes under the axis, not inside the bars: at y=0.55 the grey bar hid
+    # the first digit, so "n=384" read as "n=884".
     ax.set_xticks(x)
-    ax.set_xticklabels([g.replace(" / ", "\n") for g in s.group], fontsize=8.5)
+    ax.set_xticklabels([f"{g.replace(' / ', chr(10))}\nn={n:,}"
+                        for g, n in zip(s.group, s.total_genes)],
+                       fontsize=8.5)
     ax.set_ylabel("genes with a drug (%)")
     ax.set_ylim(0, max(s.percent) * 1.24)
-    ax.set_title("Druggability by progression group, before and after removing "
-                 "non-therapeutic entities\n"
-                 "* and bold outline = survives a degree-matched null on the "
-                 "filtered definition", fontsize=10, loc="left")
+    ax.set_title("Genes with a drug, by progression group, under two "
+                 "definitions of \"has a drug\"\n"
+                 "* and bold outline = exceeds a degree-matched null on the "
+                 "filtered definition. Neither definition establishes "
+                 "therapeutic suitability.", fontsize=10, loc="left")
     ax.legend(fontsize=8, framealpha=.95, loc="upper right")
     ax.spines[["top", "right"]].set_visible(False)
     fig.tight_layout()

@@ -160,22 +160,26 @@ rather than merged.
 
 A gene counted as druggable because its only drug is zinc chloride, ATP or an
 unnamed ChEMBL accession is not druggable in any sense the plan asks about.
-**174 of the 958 drug-connected progression genes — 18% — reach such an entity
+**172 of the 958 drug-connected progression genes — 18% — reach such an entity
 and nothing else.**
 
 Both arms are filtered, and both definitions are reported:
 
-| | published | filtered |
+| | therapeutic action | entity-filtered |
 |---|---:|---:|
-| background | 11.2% | **9.3%** |
+| background | 11.2% | **9.4%** |
 | fibrosis-only / negative | 19.3% | **14.3%** |
-| shared / negative | 22.7% | **17.2%** |
-| shared / positive | 15.9% | **14.1%** |
+| shared / negative | 22.7% | **16.9%** |
+| shared / positive | 15.9% | **14.3%** |
 
-Three groups beat the degree-matched null on the filtered definition:
+Three groups exceed the degree-matched null on the filtered definition:
 `shared / negative`, `shared / positive` and `fibrosis-only / negative`. The
-class-level rollup `[class] inflammation-only` does not (p = 0.081) and is not
+class-level rollup `[class] inflammation-only` does not (p = 0.127) and is not
 claimed.
+
+Neither definition establishes therapeutic suitability. The filter is a rule
+about names, not about pharmacology, and "has a drug edge" is not "is a usable
+target".
 
 **The same condition applies to Task 6's K component**, which asks whether a
 therapeutic drug acts on a gene. It honours the entity flag Task 7 carries on
@@ -189,6 +193,26 @@ drug vocabulary asserts, not what could be prescribed.
 clinical phase do not separate a mineral salt from a drug. So neither number is
 the truth and both are shipped. A reader who rejects the name rule can use the
 unfiltered column; the effect is larger there, not smaller.
+
+## 9d. Falling genes are not shown to be more druggable than rising ones
+
+Each direction group was compared against a shared eligible-gene background, and
+three of them exceed it. That is not the same comparison as falling versus
+rising, which is the comparison a direction claim makes. Tested head to head
+within each class on the primary definition, with BH across the three classes:
+fibrosis-only p = 0.027 (q = 0.082), shared p = 0.196 (q = 0.294),
+inflammation-only p = 0.851. **None passes correction**, so Paper 2 reports the
+percentages and does not claim the difference.
+
+The contrast does pass on the therapeutic-action definition (1.51× and 1.42×,
+q = 1.8e-04 and 4.4e-03), which means it rests on exactly the mineral salts,
+cofactors and unnamed accessions the entity filter removes.
+
+**And direction of association is not direction of intervention.** A gene
+falling as fibrosis advances may be a driver worth restoring, a consequence
+worth leaving alone, or a compensatory response worth supporting. A correlation
+with stage cannot separate those, so no part of Paper 2 treats "decreasing"
+as "should be raised".
 
 ## 10. Inflammation-only genes carry less evidence
 

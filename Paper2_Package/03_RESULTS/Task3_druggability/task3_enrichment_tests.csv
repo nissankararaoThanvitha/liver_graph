@@ -1,11 +1,11 @@
-group,genes,drug_connected,percent,background_percent,odds_ratio,fisher_p,degree_matched_null_percent,degree_matched_p,percent_usable,background_percent_usable,odds_ratio_usable,fisher_p_usable,degree_matched_null_percent_usable,degree_matched_p_usable,fisher_q_BH,fisher_q_BH_usable,survives_degree_aware,survives_degree_aware_usable
-fibrosis-only / positive,1040,133,12.8,11.2,1.159,1.479e-01,12.1,0.495,11.1,9.4,1.195,0.09454244353432975,10.2,0.322,1.848e-01,1.182e-01,no,no
-fibrosis-only / negative,983,190,19.3,11.2,1.893,4.135e-12,12.2,0.0,14.3,9.4,1.609,3.522964739958721e-06,10.2,0.0,2.068e-11,1.174e-05,yes,yes
-inflammation-only / positive,2042,276,13.5,11.2,1.235,4.525e-03,12.4,0.056,11.0,9.4,1.184,0.037634562756988024,10.4,0.3475,6.464e-03,5.376e-02,no,no
-inflammation-only / negative,335,43,12.8,11.2,1.164,3.783e-01,10.7,0.193,11.3,9.4,1.229,0.2534664723645302,9.0,0.112,3.783e-01,2.816e-01,no,no
-shared / positive,1408,224,15.9,11.2,1.495,1.212e-06,13.2,0.0,14.3,9.4,1.6,8.219076595833343e-08,11.2,0.0,2.425e-06,4.110e-07,yes,yes
-shared / negative,384,87,22.7,11.2,2.315,6.046e-10,11.5,0.0,16.9,9.4,1.958,8.669681941277457e-06,9.6,0.0,2.015e-09,2.167e-05,yes,yes
-shared / discordant,30,5,16.7,11.2,1.58,3.770e-01,13.1,0.586,6.7,9.4,0.686,1.0,11.5,0.5645,3.783e-01,1.000e+00,no,no
-[class] fibrosis-only,2023,323,16.0,11.2,1.501,1.262e-08,12.1,0.0,12.7,9.4,1.392,2.2219975070893333e-05,10.2,0.0,3.156e-08,4.444e-05,yes,yes
-[class] inflammation-only,2377,319,13.4,11.2,1.225,3.908e-03,12.2,0.0205,11.0,9.4,1.19,0.021300923801162566,10.2,0.1265,6.464e-03,3.550e-02,yes,no
-[class] shared,1822,316,17.3,11.2,1.658,3.942e-12,12.8,0.0,14.7,9.4,1.657,1.0348272203728568e-10,10.9,0.0,2.068e-11,1.035e-09,yes,yes
+group,genes,drug_connected,percent,background_percent,odds_ratio,fisher_p,degree_matched_null_percent,degree_matched_p,percent_usable,background_percent_usable,odds_ratio_usable,fisher_p_usable,degree_matched_null_percent_usable,degree_matched_p_usable,matched_bins_short,matched_percent_resampled,permutations,fisher_q_BH,fisher_q_BH_usable,survives_degree_aware,survives_degree_aware_usable
+fibrosis-only / positive,1040,133,12.8,11.2,1.159,1.479e-01,12.1,0.49525,11.1,9.4,1.195,0.09454244353432975,10.2,0.32234,0,0.0,2000,1.848e-01,1.182e-01,no,no
+fibrosis-only / negative,983,190,19.3,11.2,1.893,4.135e-12,12.2,0.0005,14.3,9.4,1.609,3.522964739958721e-06,10.2,0.0005,0,0.0,2000,2.068e-11,1.174e-05,yes,yes
+inflammation-only / positive,2042,276,13.5,11.2,1.235,4.525e-03,12.4,0.05647,11.0,9.4,1.184,0.037634562756988024,10.4,0.34783,0,0.0,2000,6.464e-03,5.376e-02,no,no
+inflammation-only / negative,335,43,12.8,11.2,1.164,3.783e-01,10.7,0.1934,11.3,9.4,1.229,0.2534664723645302,9.0,0.11244,0,0.0,2000,3.783e-01,2.816e-01,no,no
+shared / positive,1408,224,15.9,11.2,1.495,1.212e-06,13.2,0.0005,14.3,9.4,1.6,8.219076595833343e-08,11.2,0.0005,0,0.0,2000,2.425e-06,4.110e-07,yes,yes
+shared / negative,384,87,22.7,11.2,2.315,6.046e-10,11.5,0.0005,16.9,9.4,1.958,8.669681941277457e-06,9.6,0.0005,0,0.0,2000,2.015e-09,2.167e-05,yes,yes
+shared / discordant,30,5,16.7,11.2,1.58,3.770e-01,13.1,0.58621,6.7,9.4,0.686,1.0,11.5,0.56472,0,0.0,2000,3.783e-01,1.000e+00,no,no
+[class] fibrosis-only,2023,323,16.0,11.2,1.501,1.262e-08,12.1,0.0005,12.7,9.4,1.392,2.2219975070893333e-05,10.2,0.0005,0,0.0,2000,3.156e-08,4.444e-05,yes,yes
+[class] inflammation-only,2377,319,13.4,11.2,1.225,3.908e-03,12.2,0.02099,11.0,9.4,1.19,0.021300923801162566,10.2,0.12694,0,0.0,2000,6.464e-03,3.550e-02,yes,no
+[class] shared,1822,316,17.3,11.2,1.658,3.942e-12,12.8,0.0005,14.7,9.4,1.657,1.0348272203728568e-10,10.9,0.0005,0,0.0,2000,2.068e-11,1.035e-09,yes,yes

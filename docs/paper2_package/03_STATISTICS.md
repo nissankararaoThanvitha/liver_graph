@@ -5,65 +5,93 @@ assumptions it rests on.
 
 ## Druggability across progression groups (Task 3)
 
-**Two definitions are reported, because the first one was too loose.**
+**Two definitions are reported throughout**, and neither establishes that a
+gene is a good target:
 
-**"Drug-connected" requires two things**: an action that is not
-pharmacokinetic, and an entity that is a plausible therapeutic rather than a
-mineral salt, nutrient, cofactor or unnamed accession. The second condition
-matters — **174 of the 958 drug-connected progression genes, 18%, reach a
-flagged entity and nothing else**. The filter is applied to **both arms**;
-filtering one side alone would manufacture an effect rather than measure one.
-Both definitions are reported throughout.
+| Definition | What it requires |
+|---|---|
+| therapeutic action | an `ACTS_ON` edge whose action is not `ENZYME`, `TRANSPORTER`, `CARRIER` or `SUBSTRATE` |
+| **entity-filtered** (primary) | the above **and** the drug's name is not a mineral salt, nutrient, cofactor, solvent or bare ChEMBL accession |
 
-Background rate **9.3%** filtered (was 11.2% unfiltered).
+The second condition matters — **172 of the 958 drug-connected progression
+genes, 18%, reach a flagged entity and nothing else**. The filter is applied to
+**both arms**; filtering one side alone would manufacture an effect rather than
+measure one. It is a heuristic over names, so it marks rather than deletes, and
+both columns ship.
 
-| group | n | % published | **% filtered** | OR filtered | BH-q filtered | degree-matched p | survives |
+Background rate **9.4%** filtered, 11.2% unfiltered.
+
+| group | n | % action | **% filtered** | OR filtered | BH-q filtered | degree-matched p | exceeds null |
 |---|---:|---:|---:|---:|---|---:|---|
-| shared / negative | 384 | 22.7 | **17.2** | 2.04 | 5.1e-06 | 0.0000 | ✅ |
-| shared / positive | 1,408 | 15.9 | **14.1** | 1.62 | 3.2e-07 | 0.0000 | ✅ |
-| fibrosis-only / negative | 983 | 19.3 | **14.3** | 1.64 | 4.3e-06 | 0.0000 | ✅ |
-| inflammation-only / negative | 335 | 12.8 | 11.3 | 1.26 | 2.4e-01 | 0.0860 | ✗ |
-| fibrosis-only / positive | 1,040 | 12.8 | 11.1 | 1.22 | 8.0e-02 | 0.2485 | ✗ |
-| inflammation-only / positive | 2,042 | 13.5 | 10.9 | 1.20 | 3.8e-02 | 0.2575 | ✗ |
+| shared / negative | 384 | 22.7 | **16.9** | 1.96 | 2.2e-05 | 0.0005 | ✅ |
+| fibrosis-only / negative | 983 | 19.3 | **14.3** | 1.61 | 1.2e-05 | 0.0005 | ✅ |
+| shared / positive | 1,408 | 15.9 | **14.3** | 1.60 | 4.1e-07 | 0.0005 | ✅ |
+| inflammation-only / negative | 335 | 12.8 | 11.3 | 1.23 | 2.8e-01 | 0.1124 | ✗ |
+| fibrosis-only / positive | 1,040 | 12.8 | 11.1 | 1.20 | 1.2e-01 | 0.3223 | ✗ |
+| inflammation-only / positive | 2,042 | 13.5 | 11.0 | 1.18 | 5.4e-02 | 0.3478 | ✗ |
+| shared / discordant | 30 | 16.7 | 6.7 | 0.69 | 1.0e+00 | 0.5647 | ✗ |
 
-**The headline survives against the background, and the gap narrows.** All three
-groups that beat the degree-matched null before still beat it with both arms
-filtered. The falling groups lose the most — fibrosis-only / negative drops 5.0
-points — which is exactly where mineral salts and cofactors were doing the work.
+**Enrichment against the background holds for three groups under both
+definitions.** The falling groups lose the most to the filter — fibrosis-only /
+negative drops 5.0 points — which is where the mineral salts and cofactors were.
+
+### How the degree-matched null works, and its two limits
+
+20 bins on non-drug degree rank; for each group gene a replacement is drawn from
+its own bin; 2,000 draws. Drug edges are excluded from the matching so the null
+is not conditioned on the outcome.
+
+- **The per-bin count is always honoured.** Where a bin holds fewer background
+  genes than the group needs, the draw is taken with replacement rather than
+  shrinking, which would re-weight the null towards the bins that happen to be
+  full. `matched_bins_short` and `matched_percent_resampled` report how often
+  this happens; on this data they are **zero for every group**.
+- **p never reports as zero.** It is `(r + 1) / (n + 1)` over 2,000 draws, so
+  its floor is **0.0005**. That is the value the three surviving groups carry —
+  it means "below the resolution of 2,000 draws", not "zero".
+- `task3_gene_degrees.csv` ships every gene's degree, bin and drug counts, so
+  the null can be reproduced from the delivered files.
 
 ### Falling versus rising, tested directly
 
-Comparing a group against the background and comparing falling genes against
-rising ones are different questions. The second is the one the claim makes, so
-it is tested directly, head to head within each class:
+Comparing each group against a shared background and comparing falling genes
+against rising ones are different questions. The second is the one a direction
+claim makes, so it is tested head to head within each class, with BH across the
+three classes:
 
-| class | rising | falling | ratio | Fisher p | significant |
-|---|---:|---:|---:|---:|---|
-| fibrosis-only | 11.1% | **14.3%** | **1.30×** | 0.027 | ✅ |
-| shared | 14.3% | 16.9% | 1.19× | 0.196 | ✗ |
-| inflammation-only | 11.0% | 11.3% | 1.03× | 0.851 | ✗ |
+| class | rising | falling | ratio | Fisher p | BH-q | passes |
+|---|---:|---:|---:|---:|---:|---|
+| fibrosis-only | 11.1% | 14.3% | 1.30× | 0.027 | **0.082** | ✗ |
+| shared | 14.3% | 16.9% | 1.19× | 0.196 | 0.294 | ✗ |
+| inflammation-only | 11.0% | 11.3% | 1.03× | 0.851 | 0.851 | ✗ |
 
-**The effect is real for fibrosis-only genes and is about 1.3×.** For the
-shared class it does not reach significance head to head, although both of its
-direction groups beat the background. Unfiltered, the ratios are 1.51×, 1.42×
-and 0.95×.
+**No class passes correction on the primary definition**, so Paper 2 does not
+claim that decreasing genes are more druggable than increasing ones. On the
+unfiltered definition the ratios are 1.51×, 1.42× and 0.95×, and fibrosis-only
+and shared do pass (BH-q 1.8e-04 and 4.4e-03) — the direction effect lives
+entirely in the entities the filter removes.
 
-Full table: `task3_falling_vs_rising.csv`, both definitions.
+Full table: `task3_falling_vs_rising.csv`, both definitions, both p and q.
 
-**One result did not survive.** The class-level rollup
-`[class] inflammation-only` had a degree-matched p of 0.0205 unfiltered and
-**0.0805 filtered**. It is no longer significant and is no longer claimed.
+**One rollup did not survive.** `[class] inflammation-only` has a degree-matched
+p of 0.021 on the therapeutic-action definition and **0.127 filtered**. It is
+not claimed.
 
 **Two nulls earn their place, not one.** `inflammation-only / positive` has a
-filtered BH-q of 0.038 and looks significant until the degree-matched null puts
-it at p = 0.26. Fisher alone would have put a false positive in the paper under
-either definition.
+filtered BH-q of 0.054 and a therapeutic-action BH-q of 0.0065; the
+degree-matched null puts it at p = 0.35. Fisher alone would have put a false
+positive in the paper under either definition.
 
 **Confound tested, not assumed.** The decreasing groups are led by ADRA1A,
-HTR2A, ESR1, AR, DRD1 and the monoamine oxidases — families that attract drug
-annotation for reasons unrelated to liver. Removing every classically druggable
-family leaves **20.2%** and **16.5%** against a 10.0% background (OR 2.29 and
-1.79) on the unfiltered definition. The effect is smaller and it is not theirs.
+HTR2A, ESR1, AR, CA2 and DRD1 — families that attract drug annotation for
+reasons unrelated to liver. Classically druggable families are 20.3% of the
+drug-connected decreasing genes against 10.7% of the increasing ones, and the
+gap widens under the entity filter (25.0% against 11.3%). Removing those
+families and re-testing against a background cleaned the same way leaves
+**13.7%** (shared / negative) and **11.6%** (fibrosis-only / negative) against
+an 8.2% background, OR 1.79 and 1.47. Enrichment above background survives;
+the direction contrast does not, because shared / positive lands at 13.2% on the
+same test.
 
 ## Mechanism consistency (Tasks 2 and 7)
 

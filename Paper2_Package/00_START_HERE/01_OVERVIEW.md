@@ -34,7 +34,7 @@ the researcher confirmed its use on 12 October.
 |---|---|---|
 | 1 | Master gene table | 6,222 genes, nothing filtered, verified gene by gene against the live graph |
 | 2 | Drug–gene extraction | 8,948 links · 1,072 genes · 3,027 drugs; only 11.2% carry a usable direction |
-| 3 | Druggability by group | **Fibrosis-only** falling genes are 1.3× more drug-connected than rising ones (14.3% vs 11.1%, p = 0.027); the shared class does not reach significance head-to-head |
+| 3 | Druggability by group | All three classes exceed an eligible-gene background; three of seven direction groups also exceed a degree-matched null. Falling vs rising is 1.3× at most and fails BH correction (q = 0.082), so it is reported, not claimed |
 | 4 | Drug coverage | Coverage and coherence correlate **−0.268**: counting targets selects promiscuity |
 | 5 | MetaPaths | Reactome 11× cleaner than GO; raw path counts disagree with DWPC at ρ = 0.45 |
 | 6 | Target scoring | Five components, one of which contributes nothing; exact top-50 not defensible |

@@ -196,7 +196,7 @@ supported by strictly less.
    screening series rather than medicines, which is consistent with them
    ranking below every named candidate.
 4. **Mechanism consistency is at chance overall** (Task 2: 52.7% against a
-   55.9% null, p = 0.78). Only the fibrosis-only rising subgroup beats its null,
+   55.9% null, p = 0.553). Only the fibrosis-only rising subgroup beats its null,
    and that subgroup is 32 genes of classic inhibitor-target families.
 5. **Exact ranks are not defensible.** Read bands.
 

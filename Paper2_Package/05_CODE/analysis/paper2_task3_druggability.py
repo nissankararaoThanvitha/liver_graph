@@ -144,6 +144,27 @@ def degree_matched_null(group_ids, pool, rng, n_perm=N_PERM,
     conn = pool.set_index("Ensembl_ID")[col].to_dict()
     wanted = group_ids.degree_bin.value_counts().to_dict()
 
+    # A degree bin can hold fewer background genes than the group needs, and it
+    # happens precisely where it matters: progression genes concentrate at the
+    # well-connected end, which is the thinnest part of the background. Drawing
+    # only as many as the bin happens to hold would quietly re-weight the null
+    # towards the bins that are full, so the draw would stop being
+    # degree-matched exactly where the matching is doing the work.
+    #
+    # The requested count is therefore always honoured, with replacement in a
+    # bin that cannot supply it, and the amount of resampling is reported beside
+    # the p-value so a reader can see how much of the null leans on it.
+    n_wanted = sum(wanted.values())
+    short = {b: k for b, k in wanted.items() if k > len(bins.get(b, []))}
+    empty = [b for b in wanted if not bins.get(b)]
+    extra = sum(k - len(bins.get(b, [])) for b, k in short.items())
+    diag = {
+        "bins_short_of_background": len(short),
+        "bins_with_no_background": len(empty),
+        "percent_picks_with_replacement":
+            round(100 * extra / n_wanted, 1) if n_wanted else 0.0,
+    }
+
     out = np.empty(n_perm)
     for i in range(n_perm):
         hits = total = 0
@@ -151,11 +172,25 @@ def degree_matched_null(group_ids, pool, rng, n_perm=N_PERM,
             avail = bins.get(b)
             if not avail:
                 continue
-            pick = rng.choice(avail, size=min(k, len(avail)), replace=False)
-            hits += sum(conn[g] for g in pick)
-            total += len(pick)
+            pick = rng.choice(avail, size=k, replace=k > len(avail))
+            hits += sum(conn[gene] for gene in pick)
+            total += k
         out[i] = hits / total if total else np.nan
-    return out
+    return out, diag
+
+
+def permutation_p(observed, null):
+    """Two-sided permutation p, centred on the null and bounded below.
+
+    A simulation cannot measure a probability smaller than it has draws, so
+    reporting p = 0 off 2,000 draws claims a precision the method does not
+    have. The (r + 1) / (n + 1) estimator is the standard fix: it never
+    returns zero and never understates the uncertainty of the simulation.
+    """
+    centre = float(np.nanmean(null))
+    kept = null[~np.isnan(null)]
+    extreme = int(np.sum(np.abs(kept - centre) >= abs(observed - centre)))
+    return (1 + extreme) / (len(kept) + 1)
 
 
 def main():
@@ -173,15 +208,15 @@ def main():
     drugs, degree = fetch(universe.Ensembl_ID.tolist())
     drugs["therapeutic"] = ~drugs.action.isin(PHARMACOKINETIC)
 
-    # ENTITY-LEVEL FILTER, added 13 October after review.
-    # Until now "drug-connected" counted any ACTS_ON edge whose action was not
-    # pharmacokinetic -- which let zinc chloride, ATP and unnamed ChEMBL
-    # accessions make a gene "druggable". 174 of the 958 drug-connected
-    # progression genes (18%) reach a flagged entity and nothing else, so this
-    # was not a rounding issue.
+    # ENTITY-LEVEL FILTER.
+    # A non-pharmacokinetic action is not enough on its own: zinc chloride, ATP
+    # and unnamed ChEMBL accessions all carry one, and a gene whose only drug is
+    # zinc chloride is not druggable in any sense the plan asks about. 172 of
+    # the 958 drug-connected progression genes (18%) reach a flagged entity and
+    # nothing else, so the distinction is not a rounding issue.
     #
-    # The same rule now runs on BOTH arms: a background cleaned on one side and
-    # not the other would manufacture an effect rather than measure one.
+    # The rule runs on BOTH arms: a background cleaned on one side and not the
+    # other would manufacture an effect rather than measure one.
     names = dict(zip(drugs.drug, drugs.drug_name))
     targets = drugs.groupby("drug").Ensembl_ID.apply(set).to_dict()
     flags = flag_entities(names, targets)
@@ -205,10 +240,10 @@ def main():
                          "drugs_usable": 0,
                           "nondrug_degree": 0}))
     g["drug_connected_all"] = g.drugs_all > 0
-    g["drug_connected"] = g.drugs_therapeutic > 0      # as first published
-    # PRIMARY from 13 October: therapeutic action AND a plausible therapeutic
-    # entity. A gene whose only drug is zinc chloride is not druggable in any
-    # sense the plan asks about.
+    # Two definitions, both reported. The broader one asks only that the action
+    # be therapeutic rather than pharmacokinetic; the primary one additionally
+    # requires the drug itself to be a plausible therapeutic entity.
+    g["drug_connected"] = g.drugs_therapeutic > 0      # therapeutic action
     g["drug_connected_usable"] = g.drugs_usable > 0
 
     m = master[["Ensembl_ID", "progression_class", "fibrosis_direction",
@@ -222,6 +257,17 @@ def main():
     # Degree bins, quantile-based so every bin is populated.
     g["degree_bin"] = pd.qcut(g.nondrug_degree.rank(method="first"), 20,
                               labels=False)
+    # The per-gene degree table, written so the degree-matched null can be
+    # reproduced from the delivered files alone. Without it a reader can check
+    # the Fisher tests and nothing else, because the bins are the whole method.
+    g[["Ensembl_ID", "Gene", "group", "progression_class", "nondrug_degree",
+       "degree_bin", "drugs_all", "drugs_therapeutic", "drugs_usable",
+       "drug_connected", "drug_connected_usable"]] \
+        .sort_values(["group", "Ensembl_ID"]) \
+        .to_csv(f"{OUT_DIR}/task3_gene_degrees.csv", index=False)
+    print(f"wrote {OUT_DIR}/task3_gene_degrees.csv "
+          f"({len(g):,} genes, 20 degree bins)")
+
     pool = g[g.progression_class == "NOT progression"]
     print(f"comparison set (eligible, not progression): {len(pool):,} genes")
     print(f"background drug-connected (therapeutic): "
@@ -246,6 +292,8 @@ def main():
             "percent_usable": round(100 * sub.drug_connected_usable.mean(), 1),
             "unique_drugs": drugs[drugs.Ensembl_ID.isin(ids)
                                   & drugs.therapeutic].drug.nunique(),
+            "unique_drugs_usable": drugs[drugs.Ensembl_ID.isin(ids)
+                                         & drugs.usable].drug.nunique(),
             "drug_connected_ALL_edges": int(sub.drug_connected_all.sum()),
             "percent_ALL_edges": round(100 * sub.drug_connected_all.mean(), 1),
             "median_nondrug_degree": int(sub.nondrug_degree.median()),
@@ -262,6 +310,8 @@ def main():
             "percent_usable": round(100 * sub.drug_connected_usable.mean(), 1),
             "unique_drugs": drugs[drugs.Ensembl_ID.isin(ids)
                                   & drugs.therapeutic].drug.nunique(),
+            "unique_drugs_usable": drugs[drugs.Ensembl_ID.isin(ids)
+                                         & drugs.usable].drug.nunique(),
             "drug_connected_ALL_edges": int(sub.drug_connected_all.sum()),
             "percent_ALL_edges": round(100 * sub.drug_connected_all.mean(), 1),
             "median_nondrug_degree": int(sub.nondrug_degree.median()),
@@ -299,21 +349,20 @@ def main():
         hit, n = int(sub.drug_connected.sum()), len(sub)
         table = [[hit, n - hit], [bg_hit, bg_n - bg_hit]]
         odds, p = stats.fisher_exact(table)
-        null = degree_matched_null(sub, pool, rng)
+        null, diag = degree_matched_null(sub, pool, rng)
         obs = hit / n
-        p_perm = (np.abs(null - np.nanmean(null)) >=
-                  abs(obs - np.nanmean(null))).mean()
+        p_perm = permutation_p(obs, null)
 
         # The same three tests on the entity-filtered definition, with the
-        # background filtered too. A reviewer asked for exactly this on
-        # 13 October and was right to: the published effect rests on it.
+        # background filtered too. This is the primary definition, so these are
+        # the numbers the finding rests on.
         hit_u = int(sub.drug_connected_usable.sum())
         table_u = [[hit_u, n - hit_u], [bg_hit_u, bg_n - bg_hit_u]]
         odds_u, p_u = stats.fisher_exact(table_u)
-        null_u = degree_matched_null(sub, pool, rng, col="drug_connected_usable")
+        null_u, _ = degree_matched_null(sub, pool, rng,
+                                        col="drug_connected_usable")
         obs_u = hit_u / n
-        p_perm_u = (np.abs(null_u - np.nanmean(null_u)) >=
-                    abs(obs_u - np.nanmean(null_u))).mean()
+        p_perm_u = permutation_p(obs_u, null_u)
         tests.append({
             "group": grp, "genes": n, "drug_connected": hit,
             "percent": round(100 * obs, 1),
@@ -321,7 +370,7 @@ def main():
             "odds_ratio": round(float(odds), 3),
             "fisher_p": p,
             "degree_matched_null_percent": round(100 * float(np.nanmean(null)), 1),
-            "degree_matched_p": round(float(p_perm), 4),
+            "degree_matched_p": round(float(p_perm), 5),
             # entity-filtered, both arms
             "percent_usable": round(100 * obs_u, 1),
             "background_percent_usable": round(100 * bg_hit_u / bg_n, 1),
@@ -329,7 +378,12 @@ def main():
             "fisher_p_usable": p_u,
             "degree_matched_null_percent_usable":
                 round(100 * float(np.nanmean(null_u)), 1),
-            "degree_matched_p_usable": round(float(p_perm_u), 4),
+            "degree_matched_p_usable": round(float(p_perm_u), 5),
+            # how much the matching had to improvise, reported not hidden
+            "matched_bins_short": diag["bins_short_of_background"],
+            "matched_percent_resampled":
+                diag["percent_picks_with_replacement"],
+            "permutations": N_PERM,
         })
     t = pd.DataFrame(tests)
     t["fisher_q_BH"] = stats.false_discovery_control(t.fisher_p.values)
@@ -384,12 +438,11 @@ def main():
             "fisher_p_usable": f"{p_u:.3e}",
         })
     # ---- the claim itself, tested directly -------------------------------
-    # "Genes that fall as disease worsens are about twice as drug-connected as
-    # genes that rise" was supported only indirectly, by each group beating a
-    # shared background. A reviewer asked on 13 October for the comparison the
-    # sentence actually makes: falling against rising, head to head, within
-    # each class. It is a different and stricter test, and it does not give the
-    # same answer everywhere.
+    # Each group beating a shared background does not establish that falling
+    # genes differ from rising ones -- that needs the comparison the sentence
+    # actually makes: falling against rising, head to head, within each class.
+    # It is a stricter test and it does not give the same answer everywhere, so
+    # it, rather than the background comparison, decides what is claimed.
     rows_dir = []
     for cls_raw, cls_shown in CLASS_RAW_TO_DISPLAY.items():
         pos = g[g.group == f"{cls_shown} / positive"]
@@ -411,11 +464,39 @@ def main():
                 "fisher_p": p,
             })
     direct = pd.DataFrame(rows_dir)
-    direct["significant"] = np.where(direct.fisher_p < 0.05, "yes", "no")
+    # Three classes are tested, so there are three chances to find a
+    # difference. BH is applied within each definition; the uncorrected p stays
+    # beside it.
+    direct["fisher_q_BH"] = (
+        direct.groupby("definition").fisher_p
+              .transform(lambda v: stats.false_discovery_control(v.values)))
+    direct["significant_after_BH"] = np.where(direct.fisher_q_BH < 0.05,
+                                              "yes", "no")
     direct["fisher_p"] = direct.fisher_p.map(lambda v: f"{v:.3e}")
+    direct["fisher_q_BH"] = direct.fisher_q_BH.map(lambda v: f"{v:.3e}")
     direct.to_csv(f"{OUT_DIR}/task3_falling_vs_rising.csv", index=False)
     print("\nfalling vs rising, tested directly")
     print(direct.to_string(index=False))
+
+    # How much of the direction gap is simply which protein families are
+    # involved. Quoted in the README, so it is computed here rather than by
+    # hand, and it is reported for both definitions.
+    rows_share = []
+    for label, col in [("therapeutic action", "drug_connected"),
+                       ("entity-filtered", "drug_connected_usable")]:
+        for direction, key in [("decreasing", "negative"),
+                               ("increasing", "positive")]:
+            sub = g[g.group.fillna("").str.contains(key) & g[col]]
+            rows_share.append({
+                "definition": label,
+                "direction": direction,
+                "drug_connected_genes": len(sub),
+                "classic_family_genes": int(sub.classic_druggable.sum()),
+                "percent_classic_family":
+                    round(100 * float(sub.classic_druggable.mean()), 1)
+                    if len(sub) else None,
+            })
+    sup.add("classic_family_share", pd.DataFrame(rows_share))
 
     sup.add("classic_druggable_sensitivity", pd.DataFrame(rows_ex))
     sup.write()

@@ -87,6 +87,34 @@ direction and symbol. The second recomputes F0–F4 from `EXPRESSES` under the
 biopsy policy, which the first never touched; it independently lands on 610
 staged patients.
 
+## Reproducing the degree-matched null
+
+Task 3's null is the one result that cannot be checked from a summary table, so
+`Paper2_Results/Task3/task3_gene_degrees.csv` ships every eligible gene with its
+non-drug degree, its degree bin and its drug counts. The null is: for each group
+gene, draw a replacement from its own bin out of the 8,572 non-progression
+genes, 2,000 times, and take the fraction drug-connected.
+
+```python
+import pandas as pd, numpy as np
+g = pd.read_csv("Paper2_Results/Task3/task3_gene_degrees.csv")
+pool = g[g.progression_class == "NOT progression"]
+sub = g[g.group == "shared / negative"]
+bins = pool.groupby("degree_bin").Ensembl_ID.apply(list).to_dict()
+conn = pool.set_index("Ensembl_ID").drug_connected_usable.to_dict()
+rng, wanted = np.random.default_rng(42), sub.degree_bin.value_counts().to_dict()
+draws = [np.mean([conn[x] for b, k in wanted.items()
+                  for x in rng.choice(bins[b], k, replace=k > len(bins[b]))])
+         for _ in range(2000)]
+print(round(100 * np.mean(draws), 1))      # expect 9.6, against an observed 16.9
+```
+
+The per-bin count is honoured with replacement where a bin is short, rather than
+shrinking the draw; `matched_bins_short` and `matched_percent_resampled` in
+`task3_enrichment_tests.csv` report how often that was needed, and both are zero
+for every group here. The reported p is `(r + 1) / (n + 1)`, so its floor is
+0.0005 and it never prints as zero.
+
 ## Spot-checks you can run by hand
 
 ```cypher

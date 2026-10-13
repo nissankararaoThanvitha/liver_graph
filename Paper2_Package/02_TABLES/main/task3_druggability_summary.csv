@@ -1,12 +1,12 @@
-group,total_genes,drug_connected_genes,percent,drug_connected_usable,percent_usable,unique_drugs,drug_connected_ALL_edges,percent_ALL_edges,median_nondrug_degree
-fibrosis-only / positive,1040,133,12.8,115,11.1,549,142,13.7,112
-fibrosis-only / negative,983,190,19.3,141,14.3,847,216,22.0,111
-inflammation-only / positive,2042,276,13.5,224,11.0,775,309,15.1,114
-inflammation-only / negative,335,43,12.8,38,11.3,173,46,13.7,101
-shared / positive,1408,224,15.9,201,14.3,912,247,17.5,123
-shared / negative,384,87,22.7,65,16.9,416,105,27.3,105
-shared / discordant,30,5,16.7,2,6.7,8,7,23.3,123
-NOT progression (background),8572,963,11.2,808,9.4,2047,1076,12.6,100
-[class] fibrosis-only,2023,323,16.0,256,12.7,1225,358,17.7,111
-[class] inflammation-only,2377,319,13.4,262,11.0,874,355,14.9,112
-[class] shared,1822,316,17.3,268,14.7,1163,359,19.7,119
+group,total_genes,drug_connected_genes,percent,drug_connected_usable,percent_usable,unique_drugs,unique_drugs_usable,drug_connected_ALL_edges,percent_ALL_edges,median_nondrug_degree
+fibrosis-only / positive,1040,133,12.8,115,11.1,549,410,142,13.7,112
+fibrosis-only / negative,983,190,19.3,141,14.3,847,638,216,22.0,111
+inflammation-only / positive,2042,276,13.5,224,11.0,775,555,309,15.1,114
+inflammation-only / negative,335,43,12.8,38,11.3,173,150,46,13.7,101
+shared / positive,1408,224,15.9,201,14.3,912,737,247,17.5,123
+shared / negative,384,87,22.7,65,16.9,416,340,105,27.3,105
+shared / discordant,30,5,16.7,2,6.7,8,2,7,23.3,123
+NOT progression (background),8572,963,11.2,808,9.4,2047,1520,1076,12.6,100
+[class] fibrosis-only,2023,323,16.0,256,12.7,1225,900,358,17.7,111
+[class] inflammation-only,2377,319,13.4,262,11.0,874,645,355,14.9,112
+[class] shared,1822,316,17.3,268,14.7,1163,933,359,19.7,119

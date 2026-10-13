@@ -14,11 +14,11 @@ What the 8,948 drug-gene links are. Two of the four bars -- pharmacokinetic and 
 
 **task2_consistency_null.png** _(main)_
 
-Mechanism consistency against its null. Observed 52.7% sits inside a null centred on 55.9%, permutation p = 0.78. The null is above 50% because 68% of directional drugs lower their target and 68% of these genes rise, so the right-way pairing is common by accident.
+Mechanism consistency against its null. Observed 52.7% sits inside a null centred on 55.9%, permutation p = 0.553 against that centre. The null is above 50% because 68% of directional drugs lower their target and 68% of these genes rise, so the right-way pairing is common by accident.
 
 **task3_druggability_by_group.png** _(main)_
 
-Druggability by progression group, grey = any drug edge, colour = real therapeutics only. Removing mineral salts, nutrients and unnamed accessions from BOTH arms drops the background from 11.2% to 9.3% and costs the falling groups about 5 points each. All three starred groups still survive a degree-matched null on the filtered definition.
+Genes with a drug, by progression group, under two definitions. Grey = the action is therapeutic rather than pharmacokinetic; colour = the drug additionally passes a name-based entity filter (the primary definition). Applying that filter to BOTH arms drops the background from 11.2% to 9.4% and costs the falling groups about 5 points each. Starred groups exceed a degree-matched null on the filtered definition. Neither definition establishes therapeutic suitability, and the falling-vs-rising gap does not survive BH correction.
 
 **task4_coverage_vs_coherence.png** _(main)_
 

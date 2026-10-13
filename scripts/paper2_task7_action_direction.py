@@ -55,7 +55,7 @@ explicit statement of that rather than left blank, because a blank reads as
 
 WHAT THIS TABLE IS NOT
 Task 2 established that reversal consistency across these relationships sits at
-52.7% against a null of 55.9%, permutation p = 0.78 -- indistinguishable from
+52.7% against a null of 55.9%, permutation p = 0.553 -- indistinguishable from
 chance, and robust to six different action-to-direction mappings. So a
 reversal-consistent label here marks a relationship worth a look, not a
 relationship that works. The plan says it first: this remains a hypothesis
