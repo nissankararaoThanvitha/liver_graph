@@ -424,7 +424,156 @@ def task7_consistency():
 
 PURPLE_OK = "#6b4bd6"
 
+def task1_gene_set():
+    """Task 1 had no figure, which left the starting set as three numbers in a
+    README. Two panels: what the 6,222 genes are, and what the shared class
+    actually looks like when both ladders are plotted against each other.
+
+    The right panel is the one worth having. 1,822 genes move on both ladders,
+    and the interesting claim is not that they agree -- it is that 30 of them
+    disagree on direction, which a bar chart cannot show at all.
+    """
+    t = pd.read_csv(f"{T1}/Paper2_progression_genes.csv", low_memory=False)
+
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(11.6, 4.4),
+                                   gridspec_kw={"width_ratios": [1, 1.15]})
+
+    # ---- panel A: the three classes, split by direction -------------------
+    classes = [("fibrosis-only", "fibrosis_direction"),
+               ("inflammation-only", "inflammation_direction"),
+               ("both", None)]
+    labels, rises, falls, mixed = [], [], [], []
+    for cls, dcol in classes:
+        sub = t[t.progression_class == cls]
+        shown = "shared" if cls == "both" else cls          # never print "both"
+        labels.append(f"{shown}\nn={len(sub):,}")
+        if dcol:
+            rises.append(int((sub[dcol] == "increasing").sum()))
+            falls.append(int((sub[dcol] == "decreasing").sum()))
+            mixed.append(0)
+        else:
+            f, i = sub.fibrosis_direction, sub.inflammation_direction
+            rises.append(int(((f == "increasing") & (i == "increasing")).sum()))
+            falls.append(int(((f == "decreasing") & (i == "decreasing")).sum()))
+            mixed.append(int((f != i).sum()))
+
+    x = np.arange(len(labels))
+    b1 = ax1.bar(x, rises, color=BLUE, width=.6, label="rises as disease worsens")
+    b2 = ax1.bar(x, falls, bottom=rises, color=ORANGE, width=.6,
+                 label="falls as disease worsens")
+    b3 = ax1.bar(x, mixed, bottom=np.array(rises) + np.array(falls),
+                 color=RED, width=.6, label="disagrees between ladders")
+    for xi, (r, f, m) in enumerate(zip(rises, falls, mixed)):
+        if r: ax1.text(xi, r/2, f"{r:,}", ha="center", color="white", fontsize=9)
+        if f: ax1.text(xi, r + f/2, f"{f:,}", ha="center", color="white", fontsize=9)
+        if m: ax1.text(xi, r + f + m + 60, f"{m}", ha="center", color=RED,
+                       fontsize=9, fontweight="bold")
+    ax1.set_xticks(x)
+    ax1.set_xticklabels(labels, fontsize=9)
+    ax1.set_ylabel("genes")
+    ax1.set_title(f"The starting set: {len(t):,} progression genes",
+                  fontsize=10, loc="left")
+    ax1.legend(fontsize=7.6, framealpha=.95, loc="upper left")
+    ax1.spines[["top", "right"]].set_visible(False)
+
+    # ---- panel B: the two ladders against each other ----------------------
+    sh = t[t.progression_class == "both"]
+    disc = sh[sh.fibrosis_direction != sh.inflammation_direction]
+    agree = sh[sh.fibrosis_direction == sh.inflammation_direction]
+    ax2.axhline(0, color=GREY, lw=.8)
+    ax2.axvline(0, color=GREY, lw=.8)
+    ax2.scatter(agree.fibrosis_rho, agree.inflammation_rho, s=7,
+                color=BLUE, alpha=.32, linewidths=0,
+                label=f"agree on direction  ({len(agree):,})")
+    ax2.scatter(disc.fibrosis_rho, disc.inflammation_rho, s=30, color=RED,
+                edgecolor="#15202b", linewidths=.6,
+                label=f"disagree  ({len(disc)})", zorder=3)
+    ax2.set_xlabel("fibrosis rho  (F0 to F4)")
+    ax2.set_ylabel("inflammation rho  (control to NASH)")
+    ax2.set_title(f"The {len(sh):,} shared genes, and the {len(disc)} that "
+                  "disagree", fontsize=10, loc="left")
+    ax2.legend(fontsize=8, framealpha=.95, loc="upper left")
+    ax2.spines[["top", "right"]].set_visible(False)
+
+    fig.tight_layout()
+    fig.savefig(f"{T1}/task1_gene_set.png", dpi=200)
+    plt.close(fig)
+    print(f"wrote {T1}/task1_gene_set.png")
+
+
+def task8_candidates():
+    """Task 8 had no figure either, which is the worst place to lack one: the
+    headline result is that thirty candidates reach only two genes, and a
+    thirty-row table makes the list look more diverse than it is. The figure
+    exists to make that collapse impossible to miss.
+    """
+    T8 = "Paper2_Results/Task8"
+    lc = pd.read_csv(f"{T8}/task8_leading_candidates.csv", low_memory=False)
+
+    by_target = lc.best_target.value_counts()
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(11.6, 4.6),
+                                   gridspec_kw={"width_ratios": [.8, 1.25]})
+
+    # ---- panel A: thirty candidates, two targets -------------------------
+    cols = [BLUE, ORANGE, GREEN, GREY][:len(by_target)]
+    bars = ax1.bar(np.arange(len(by_target)), by_target.values, color=cols,
+                   width=.58)
+    for b, v in zip(bars, by_target.values):
+        ax1.text(b.get_x() + b.get_width()/2, v + .35, f"{v} drugs",
+                 ha="center", fontsize=9, fontweight="bold")
+    ax1.set_xticks(np.arange(len(by_target)))
+    ax1.set_xticklabels(by_target.index, fontsize=10)
+    ax1.set_ylabel("leading candidates")
+    ax1.set_ylim(0, max(by_target.values) * 1.25)
+    ax1.set_title(f"{len(lc)} candidates reach {len(by_target)} targets",
+                  fontsize=10, loc="left")
+    ax1.spines[["top", "right"]].set_visible(False)
+
+    # ---- panel B: mechanism support, which mostly is not there -----------
+    lc2 = lc.sort_values("mechanism_consistent_rate", ascending=True)
+    y = np.arange(len(lc2))
+    known = lc2.n_mechanism_consistent + lc2.n_mechanism_inconsistent
+    ax2.barh(y, lc2.n_mechanism_unknown, color=GREY, height=.74,
+             label="direction not recorded")
+    ax2.barh(y, lc2.n_mechanism_consistent, left=lc2.n_mechanism_unknown,
+             color=GREEN, height=.74, label="reversal-consistent")
+    ax2.barh(y, lc2.n_mechanism_inconsistent,
+             left=lc2.n_mechanism_unknown + lc2.n_mechanism_consistent,
+             color=RED, height=.74, label="reversal-inconsistent")
+    ax2.set_yticks(y)
+    ax2.set_yticklabels([f"{d[:22]}  ({t})" for d, t in
+                         zip(lc2.Drug, lc2.best_target)], fontsize=6.4)
+
+    # One drug has 82 targets and would flatten the other 29 into nothing. Cap
+    # the axis and label it instead of letting it dominate: that drug is
+    # FOSTAMATINIB, the promiscuous kinase inhibitor the Task 8 tie-break fix
+    # demoted, so the outlier IS the point rather than a nuisance.
+    cap = int(np.percentile(lc2.n_targets, 90)) + 4
+    big = lc2[lc2.n_targets > cap]
+    ax2.set_xlim(0, cap)
+    for yi, (_, r) in zip(y, lc2.iterrows()):
+        if r.n_targets > cap:
+            ax2.text(cap * .985, yi, f"  {int(r.n_targets)} targets →",
+                     va="center", ha="right", fontsize=7, color="#15202b",
+                     fontweight="bold")
+    ax2.set_xlabel("drug-target relationships"
+                   + (f"   (axis capped at {cap}; "
+                      f"{len(big)} drug exceeds it)" if len(big) else ""))
+    ax2.set_title("Mechanism evidence per candidate\n"
+                  f"grey dominates: {int(lc.n_mechanism_unknown.sum()):,} of "
+                  f"{int(lc.n_targets.sum()):,} relationships record no direction",
+                  fontsize=10, loc="left")
+    ax2.legend(fontsize=7.6, framealpha=.95, loc="lower right")
+    ax2.spines[["top", "right"]].set_visible(False)
+
+    fig.tight_layout()
+    fig.savefig(f"{T8}/task8_candidates.png", dpi=200)
+    plt.close(fig)
+    print(f"wrote {T8}/task8_candidates.png")
+
+
 if __name__ == "__main__":
+    task1_gene_set()
     task2_actions()
     task2_null()
     task3_druggability()
@@ -433,3 +582,4 @@ if __name__ == "__main__":
     task5_metapaths()
     task6_stability()
     task7_consistency()
+    task8_candidates()

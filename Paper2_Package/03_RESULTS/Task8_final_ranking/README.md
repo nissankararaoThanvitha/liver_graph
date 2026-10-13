@@ -15,6 +15,21 @@ Built by `scripts/paper2_task8_final_ranking.py`, 13 October 2026.
 > relationships, not as proven anti-fibrotic treatments."* Nothing below has
 > been tested in a cell, let alone a liver.
 
+## Figure
+
+`task8_candidates.png` — the result and its limit in one image. Left: the 30
+leading candidates reach **two** targets, 22 to CACNA1C and 8 to PDGFRA. Right:
+mechanism evidence per candidate, where grey — no recorded direction — covers
+**147 of 192** relationships.
+
+Two things are visible that the ranking table does not make obvious. The
+CACNA1C drugs are **almost entirely grey**, while the PDGFRA kinase inhibitors
+carry nearly all of what mechanism evidence exists — which is the clearest
+statement of why PDGFRA is the stronger of the two. And FOSTAMATINIB's bar runs
+off the axis at **82 targets**, against a median of three: it is the
+promiscuous drug the tie-break fix demoted, and the figure shows why counting
+targets was the wrong sort key.
+
 ## Files
 
 | File | Rows | What it is |

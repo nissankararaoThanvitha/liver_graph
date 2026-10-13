@@ -9,6 +9,22 @@ Nothing is filtered. All 6,222 progression genes are carried through.
 Built by `scripts/paper2_task1_master_table.py` from
 `Paper1_HighConfidence/00_all_progression_genes.csv`.
 
+## Figure
+
+`task1_gene_set.png` — two panels. Left: the 6,222 genes by class and
+direction. Right: the 1,822 shared genes with the fibrosis and inflammation
+rho plotted against each other.
+
+**The right panel shows something no table here states.** All **30** discordant
+genes fall in a single quadrant: every one of them *decreases* with fibrosis
+stage while *increasing* with disease group. Not one does the reverse. The
+asymmetry is total, and it is not something a count of "30 discordant" conveys.
+Examples: ALDH8A1, SCP2, GBP7, USO1, ZYG11B, PEX3.
+
+What it means is not settled here — the two ladders rest on different patient
+sets (610 staged patients against 216 from three studies), so a systematic
+difference between them has at least one explanation that is not biological.
+
 ## Files
 
 | File | Rows | What it is |
