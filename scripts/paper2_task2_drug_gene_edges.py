@@ -194,13 +194,36 @@ def main():
             RETURN dr.name AS Drug, dr.node_id AS Drug_ID,
                    g.symbol AS Gene, g.ensembl_id AS Gene_ID,
                    type(a) AS Relationship,
-                   coalesce(a.action, 'unknown') AS Action_Mechanism
+                   coalesce(a.action, 'unknown') AS Action_Mechanism,
+                   a.sources_direct       AS sources_direct,
+                   a.sources_indirect     AS sources_indirect,
+                   a.relation_assertions  AS relation_assertions,
+                   a.relation_conflict    AS relation_conflict,
+                   a.source_urls          AS source_urls,
+                   a.mechanisms_of_action AS mechanisms_of_action,
+                   a.n_sources            AS n_sources,
+                   a.evidence_level       AS graph_evidence_level
         """).data()
     drv.close()
     print(f"instance: {inst}\ndatabase: {db}\n")
 
     e = pd.DataFrame(rows)
     print(f"edges pulled from the graph: {len(e):,}")
+
+    # PER-EDGE PROVENANCE comes off the relationship itself. The loader stored
+    # only `action`, so these properties were written back to ACTS_ON from
+    # OptimusKG's own source file; reading them here rather than stitching them
+    # on in a later pass is what makes a re-run of this script self-contained.
+    # A graph without them simply yields empty columns, and the downstream
+    # fallbacks still apply.
+    n_prov = int(e.sources_direct.notna().sum()) if "sources_direct" in e else 0
+    print(f"  with per-edge provenance:   {n_prov:,}")
+    if "n_sources" in e.columns:
+        # n_sources counts DISTINCT asserting databases. Two assertions from
+        # DrugBank are one source, so the label cannot be earned twice over by
+        # one database describing the same relationship in two ways.
+        e["Evidence_Level"] = np.where(e.n_sources.fillna(0) >= 2,
+                                       "multi-source", "single-source")
 
     # ---- join Paper 1 evidence -------------------------------------------
     cols = ["Ensembl_ID", "progression_class", "fibrosis_rho",
@@ -274,6 +297,12 @@ def main():
              "Largest_transition", "Tier", "in_fibrosis_starting_set",
              "mechanism_consistency", "trajectory_direction",
              "trajectory_consistency"]
+    # the recovered provenance, carried into the delivered table so Task 7 and
+    # the package copies get it without a second pass over the file
+    order += [c for c in ["Evidence_Level", "sources_direct", "sources_indirect",
+                          "relation_assertions", "relation_conflict",
+                          "source_urls", "mechanisms_of_action", "n_sources"]
+              if c in e.columns]
     e = e[order].sort_values(["Gene", "Drug"]).reset_index(drop=True)
     e.to_csv(f"{OUT_DIR}/task2_drug_gene_edges.csv", index=False)
 

@@ -1,0 +1,2 @@
+metapath,target_transition,candidate_drugs,non_candidate_ranked_drugs,candidate_mean_share,non_candidate_mean_share,difference,permutation_null_mean,permutation_p,permutations,converges
+MP7 Drug -> Gene -> Pathway <- transition gene,F3→F4,30,1846,0.3292,0.3092,0.02,0.0004,0.37981,2000,no

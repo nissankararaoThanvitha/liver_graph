@@ -200,6 +200,13 @@ CODE = {
 }
 
 
+# Regenerable intermediates left out of the package. Each is large and the
+# numbers taken from it ship in a smaller table beside it:
+#   task5_mp7_pairs.csv (17 MB) -> task5_mp7_reach_per_drug.csv, which is
+#   what the convergence permutation actually runs on.
+INTERMEDIATE = {"task5_mp7_pairs.csv"}
+
+
 def copy(src, dst):
     os.makedirs(os.path.dirname(dst), exist_ok=True)
     shutil.copy2(src, dst)
@@ -250,6 +257,8 @@ def main():
         if not os.path.isdir(src):
             continue
         for f in sorted(os.listdir(src)):
+            if f in INTERMEDIATE:
+                continue      # see the note beside INTERMEDIATE
             copy(f"{src}/{f}", f"{PKG}/03_RESULTS/{folder}/{f}")
 
     # ---- 05 code -----------------------------------------------------------

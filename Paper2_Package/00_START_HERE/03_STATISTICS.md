@@ -124,25 +124,44 @@ call, so six variants were tested, each against its own null. The strictest
 raises the raw figure to 61.1% — and shrinks n, widening the null. **No variant
 beats its own null.**
 
-### One subgroup does (Task 7)
+### No subgroup does either, once the null preserves direction (Task 7)
 
-| group | n | observed | vocabulary baseline | gene-permuted null | p |
-|---|---:|---:|---:|---:|---:|
-| **fibrosis-only / positive** | 157 | **89.2%** | 67.6% | 53.3% | **0.0010** |
-| shared / positive | 360 | 55.8% | 67.6% | 53.4% | 0.834 |
-| fibrosis-only / negative | 189 | 29.6% | 32.4% | 53.4% | 0.029 *(below)* |
+**The null has to keep progression direction fixed.** Rising and falling genes
+have different consistency baselines by construction — 67.6% and 32.4% — so a
+free shuffle of group labels lets a draw inherit the wrong baseline and makes
+any group whose direction is over-represented look enriched. The permutation
+shuffles only the **class** part of the label, and only among genes sharing a
+direction.
 
-Caveat stated with the result: those 140 relationships cover **32 genes**, led
-by PTGS1 (31), CACNA1C (18), KIT (12), SCN4A (11) — the classes pharmacology
-has spent decades building inhibitors for. The gene-level permutation rules out
-the simplest objection; what it means biologically is not settled here.
+| group | n | observed | vocabulary baseline | permuted null | p | BH-q |
+|---|---:|---:|---:|---:|---:|---:|
+| fibrosis-only / positive | 157 | 89.2% | 67.6% | 66.2% | 0.083 | 0.501 |
+| inflammation-only / positive | 165 | 61.8% | 67.6% | 65.5% | 0.739 | 0.842 |
+| shared / positive | 360 | 55.8% | 67.6% | 65.5% | 0.364 | 0.842 |
+| fibrosis-only / negative | 189 | 29.6% | 32.4% | 26.9% | 0.603 | 0.842 |
+| shared / negative | 98 | 20.4% | 32.4% | 27.0% | 0.587 | 0.842 |
+| inflammation-only / negative | 36 | 30.6% | 32.4% | 26.1% | 0.842 | 0.842 |
+
+`fibrosis-only / positive` is the closest at p = 0.083 uncorrected, q = 0.50
+across the six. The choice of null decides this: mixing directions puts that
+group's baseline near 53%, against which 89.2% looks decisive, while keeping
+direction fixed puts it at 66% — which is simply what rising genes give.
+
+Its 89.2% still covers only **32 genes**, led by PTGS1 (31), CACNA1C (18),
+KIT (12), SCN4A (11) — the classes pharmacology has spent decades building
+inhibitors for.
+
+**The binomial columns are descriptive, not inferential.** 4,984 relationships
+sit on 1,072 genes and 3,027 drugs, so they are not independent draws and BH
+does not repair that. `inference_basis` on every row names the permutation as
+what decides.
 
 ## Coverage versus coherence (Task 4)
 
-Spearman **−0.268** (p = 0.001, 147 drugs) between progression-gene coverage and
-class coherence, over drugs reaching ≥5 progression genes with non-therapeutic
-entities removed. Negative: the widest-reaching drugs cover the least coherent
-programmes.
+Spearman **−0.328** (p = 3.3e-05, 154 drugs) between progression-gene coverage
+and **class × direction** coherence, over drugs reaching ≥5 progression genes
+with non-therapeutic entities removed. Negative: within that subset, the
+widest-reaching drugs spread their targets across more class × direction groups.
 
 The task script computes this correlation and writes
 `task4_coverage_vs_coherence_correlation.csv`, so the value in the documents is
@@ -153,14 +172,23 @@ class-based one is significant:
 
 | coherence measure | drug set | n | rho | p |
 |---|---|---:|---:|---:|
-| dominant **class** fraction | non-therapeutic removed | 147 | **−0.268** | 0.001 |
+| dominant **class** fraction | non-therapeutic removed | 154 | **−0.328** | 3.3e-05 |
 | dominant **class** fraction | named only | 173 | −0.320 | 1.8e-05 |
-| dominant **cluster** fraction | non-therapeutic removed | 147 | −0.090 | 0.28 |
+| dominant **cluster** fraction | non-therapeutic removed | 154 | −0.102 | 0.21 |
 | dominant **cluster** fraction | named only | 173 | −0.059 | 0.44 |
 
-The class-level claim holds on either drug set. The cluster-level one does not
-hold at all, so the argument that coverage selects promiscuity should be made at
-the level of progression class, not trajectory cluster.
+The class-level result holds on either drug set; the cluster-level one does not
+hold at all. **So the claim is specific to that coherence definition and that
+drug subset.** It does not generalise to coherence as such, it does not show
+that wide-coverage drugs hit biologically unrelated programmes, and it says
+nothing about drugs with fewer than five progression targets.
+
+**Coherence itself is descriptive, not an enrichment statistic.** Its value
+depends on target count and on how common each group is: a single-target drug
+scores 1.000 automatically, and the groups are unequal in size, so a drug
+choosing targets at random already scores well above chance. Nothing is compared
+against a null matched for target count and group prevalence, so a high score is
+a property of the target list, not evidence of unusually coherent targeting.
 
 ## MetaPaths (Task 5)
 
@@ -169,29 +197,82 @@ the level of progression class, not trajectory cluster.
 | MP4 via Reactome | 1,283,702 | 1,052,539 | **18%** |
 | MP5 via GO BP | 14,563,118 | 3,577,655 | **75%** |
 
-Raw path count versus DWPC: Spearman **0.454**. The two orderings genuinely
+Membership counts terms that carry at least one valid path. A term can join
+both sides and still support none, because every path through it has the source
+gene equal to the target gene. **364 of MP4's 1,937 terms and 3,565 of MP5's
+9,353** are excluded on that test.
+
+Raw path count versus DWPC: Spearman **0.382**. The two orderings genuinely
 disagree, so a degree-normalised measure was not a formality.
 
-**Transition convergence — a null result.** Against an overall drug-connection
-rate of 16.6%, the four transitions sit at 15.8 / 19.0 / 16.8 / 16.1 per cent,
-enrichment 0.95–1.14, nothing surviving BH correction. F3→F4 — the transition
-Paper 1 found carries 311 genes under equal power — sits at 0.97. Drug
-annotation has no reason to know *when* in a disease a gene moves.
+**DWPC is the published formula.** Each path is weighted by the product over
+every *edge* of the two metaedge-specific degrees at its ends, raised to −0.4.
+A three-edge path carries six factors, and the bridge term's degree enters
+**twice** because the term lies on two edges. A four-factor shortcut counting
+the term once ranks the same pairs at Spearman 0.897; only the published form is
+used downstream, and `dwpc_4factor` ships beside it.
+
+**Transition convergence — two null results, two different questions.**
+
+*Direct connectivity, all fibrosis-associated genes.* Against an overall
+drug-connection rate of 16.6%, the four transitions sit at 15.8 / 19.0 / 16.8 /
+16.1 per cent, enrichment 0.95–1.14, nothing surviving BH. This tests drug
+annotation, not candidates, and is not evidence that timing and drug
+connectivity are independent — only that this comparison found nothing.
+
+*Candidate drugs, by metapath.* The question the plan asks. Task 8's 30 leading
+candidates against the 1,846 other ranked drugs, over MP7
+(`Drug → Gene → Pathway ← transition gene`), on Paper 1's **substantial**
+transition calls (2,568 genes, 781 at F3→F4), with a permutation over which
+drugs carry the candidate label: **32.9% versus 30.9%, difference +2.0 points,
+p = 0.380.** No convergence.
 
 ## Target-score robustness (Task 6)
 
+**Ties are admitted, not broken.** The components are coarse, so the gene
+sitting 50th shares its score with many others: at equal weights **133** shared
+genes, **91** fibrosis-only and **50** inflammation-only hold a top-50 score.
+Taking the literal first 50 would resolve that by row order, and shuffling the
+file would change who is "in the top 50". Every top-N figure is therefore a
+**band** — all genes at or above the 50th score — and retention is measured
+against the band.
+
 2,000 weightings from a Dirichlet(1,1,1,1,1) over the whole simplex:
 
-| class | median ρ vs equal weights | 5th pct | median top-50 retained |
-|---|---:|---:|---:|
-| fibrosis-only | 0.946 | 0.783 | 29 / 50 |
-| shared | 0.923 | 0.810 | 31 / 50 |
-| inflammation-only | 0.978 | 0.887 | 32 / 50 |
+| class | band at equal weights | median ρ | 5th pct | median band retained |
+|---|---:|---:|---:|---:|
+| fibrosis-only | 91 | 0.948 | 0.792 | 50 / 91 (55%) |
+| shared | 133 | 0.924 | 0.815 | 84 / 133 (63%) |
+| inflammation-only | 50 | 0.980 | 0.906 | 38 / 50 (76%) |
 
-**Ordering is stable; an exact top-50 is not.** Use rank bands, or
+**Ordering is stable; exact membership is not.** Use rank bands, or
 `task6_stable_core.csv`.
 
-**Ablation found a dead component.** Removing **F** changes the ranking not at
-all — ρ = 1.000, all 50 retained, in every class — because F is constant within
-a class and within-class scoring is what the missing data forces. Four
-effective components, not five.
+**The stable core is a threshold, not a quota.** A gene enters it by reaching
+the band under at least **80%** of the same 2,000 weightings: 16 shared, 15
+fibrosis-only, 26 inflammation-only, **57 genes** in all, lowest frequency kept
+0.809. Taking a fixed 25 per class instead would fill the file to 75 rows
+whatever the frequencies were, admitting genes as low as 51% and making a class
+with no stable members look as though it had twenty-five.
+
+**Ablation found a component that cannot rank.** Removing **F** changes the
+ranking not at all — ρ = 1.000, the whole band retained, in every class —
+because F is constant within a class and within-class scoring is what the
+missing data forces. This is arithmetic, not an empirical finding, and
+`constant_within_class` says so on the row. Four effective components, not five.
+
+**K is binary, not degree-free.** It carries no drug count, so one inhibitor
+scores the same as forty. It is still sensitive to how well a gene is studied,
+because a better-annotated gene has more chances to satisfy either binary
+condition: Spearman **0.246** against non-drug degree (p = 1.6e-86), and the
+best-connected fifth of genes is nearly **7×** more likely to earn K credit than
+the least. `K_degree_sensitivity` in the Task 6 workbook.
+
+**P scores strength, not significance, and is calibrated differently per
+class.** Significance is eligibility — every gene here already passed Paper 1's
+BH threshold — so q carries no ranking information and P scores |rho| alone.
+Direction enters through K instead. Fibrosis-associated genes use Paper 1's
+frozen three-level cut on |rho|; inflammation-only genes use a within-class
+percentile, because no frozen cut-point exists for the disease-group ladder.
+**Scores are comparable within a class and not across classes**, which is also
+why the three lists are never merged.

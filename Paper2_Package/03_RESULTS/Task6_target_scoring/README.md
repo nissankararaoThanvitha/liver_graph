@@ -41,6 +41,26 @@ inflammation-only   g :  P(g) = percentile_within_class( |inflammation_rho| )
 ≥ 0.30, else 0. Inflammation-only genes have no fibrosis association to score,
 so the same quantity is taken on the ladder they do sit on.
 
+**Three things about P are departures from the plan's "strength, significance
+and direction" component, and are stated rather than smoothed over.**
+
+1. **Significance is eligibility, not score.** A gene reaches this table only
+   by passing Paper 1's BH-adjusted threshold, so every gene scored here is
+   already significant and q carries no further ranking information. P scores
+   *strength* alone. A gene at q = 1e-40 and a gene at q = 0.049 with the same
+   rho receive the same P.
+2. **Direction is handled elsewhere.** It is not in P because direction is not
+   a quality of the evidence; it enters through K, which asks whether a drug's
+   action opposes the gene's direction of travel.
+3. **The two calibrations are not comparable.** Fibrosis-associated genes get a
+   coarse three-level cut on absolute rho, frozen by Paper 1 before Paper 2
+   began; inflammation-only genes get a within-class percentile, because no
+   frozen cut-point exists for the disease-group ladder and inventing one would
+   be a Paper 2 decision dressed as a Paper 1 one. The consequence is that
+   P = 0.5 means "rho between 0.30 and 0.40" in one class and "median of the
+   class" in the other. **Scores are comparable within a class and not across
+   classes**, which is also why the three lists are never merged.
+
 ### F — fibrosis specificity
 ```
 F(g) = 1   if fibrosis-only
@@ -63,13 +83,31 @@ The plan asks T to cover both trajectory and transition, so both are included.
 K(g) = 0.5 · 1{ a therapeutic drug acts on g }
      + 0.5 · 1{ some such drug's action opposes g's direction of travel }
 ```
-**Deliberately degree-free.** The obvious K is "how many drugs act on this
-gene", and every task so far has found degree misleading: Task 3 killed an
-apparently significant result once connectivity was matched, Task 4 found
-coverage *negatively* correlated with coherence (ρ = −0.268), and Task 5 found
-raw path counts disagreeing with DWPC at ρ = 0.45 while DWPC itself promoted
-proteasome and tubulin binders. A gene with one characterised inhibitor scores
-the same as one with forty.
+**Carries no drug count.** The obvious K is "how many drugs act on this gene",
+and every task so far has found degree misleading: Task 3 killed an apparently
+significant result once connectivity was matched, Task 4 found coverage
+*negatively* correlated with coherence, and Task 5 found raw path counts
+disagreeing with DWPC at ρ = 0.45 while DWPC itself promoted proteasome and
+tubulin binders. A gene with one characterised inhibitor scores the same as one
+with forty.
+
+**That is not the same as being degree-free.** K asks whether *any* usable
+drug exists and whether *any* consistent relationship exists, and a
+better-annotated gene has more chances to satisfy either. Measured against the same non-drug degree Task 3 matched on
+(`K_degree_sensitivity` in the supporting workbook):
+
+| non-drug degree | genes | median degree | % with any K credit |
+|---|---:|---:|---:|
+| Q1 least connected | 1,245 | 38 | 4.0 |
+| Q2 | 1,244 | 76 | 6.5 |
+| Q3 | 1,244 | 114 | 11.1 |
+| Q4 | 1,244 | 169 | 14.1 |
+| Q5 most connected | 1,245 | 330 | 27.4 |
+
+Spearman **0.246** (p = 1.6e-86). The best-connected fifth of genes is nearly
+**7×** more likely to earn K credit than the least. K is a binary
+annotation-based component that removes the *count* of drugs, not the influence
+of how well a gene has been studied.
 
 ### B — biological / pathway evidence
 ```
@@ -131,63 +169,101 @@ Equal weights (0.2 each) are the default because nothing in Paper 1 or Paper 2
 justifies preferring one component yet, and the plan warns against *"selecting
 arbitrary weights solely to obtain a desired ranking"*.
 
+### Ties are admitted, not broken
+The components are coarse — P and T take a handful of values, F, K and B take
+two or three — so many genes share a score exactly. At equal weights the gene
+sitting 50th is **tied with dozens of others**: 133 shared genes hold a top-50
+score, 91 fibrosis-only, 50 inflammation-only.
+
+Taking the literal first 50 would resolve those ties by row order, so shuffling
+the file would change who is "in the top 50". Every top-N figure below is
+therefore a **band**: all genes at or above the 50th score, ties included.
+The band sizes are in `task6_weight_sensitivity.csv`
+(`top50_band_at_equal_weights`), and retention is measured against the band.
+
 ### The test
 2,000 weight vectors drawn from a **Dirichlet(1,1,1,1,1)** — the uniform
 distribution over the whole weight simplex, not small nudges around one choice.
 The question is whether the ranking survives *any* reasonable weighting.
 
-| class | genes | median ρ vs equal weights | 5th pct ρ | median top-50 retained | 5th pct |
-|---|---:|---:|---:|---:|---:|
-| fibrosis-only | 2,023 | 0.946 | 0.783 | **29 / 50** | 17 |
-| shared | 1,822 | 0.923 | 0.810 | **31 / 50** | 16 |
-| inflammation-only | 2,377 | 0.978 | 0.887 | **32 / 50** | 22 |
+| class | genes | band at equal weights | median ρ | 5th pct ρ | median band retained | 5th pct |
+|---|---:|---:|---:|---:|---:|---:|
+| fibrosis-only | 2,023 | 91 | 0.948 | 0.792 | **50 / 91** | 38 |
+| shared | 1,822 | 133 | 0.924 | 0.815 | **84 / 133** | 34 |
+| inflammation-only | 2,377 | 50 | 0.980 | 0.906 | **38 / 50** | 20 |
 
 ### Ablation — remove one component, see what moves
 
-| removed | class | ρ vs full | top-50 kept |
-|---|---|---:|---:|
-| **F** | all three | **0.999–1.000** | **100%** |
-| P | fibrosis-only | 0.969 | 54% |
-| P | inflammation-only | 0.476 | 58% |
-| T | fibrosis-only | 0.923 | 78% |
-| K | fibrosis-only | 0.963 | 44% |
-| K | inflammation-only | 0.871 | **18%** |
-| B | fibrosis-only | 0.749 | 76% |
+Band sizes change when a component is removed, so overlap is reported as a
+percentage of the full-weight band, and a component that is constant inside a
+class is marked as such: it cannot reorder that class at all, so any apparent
+movement would be tie-breaking noise.
+
+| removed | class | constant in class | ρ vs full | band kept |
+|---|---|---|---:|---:|
+| **F** | all three | **yes** | **1.000** | **100%** |
+| P | shared | no | 0.926 | 44% |
+| P | fibrosis-only | no | 0.968 | 66% |
+| P | inflammation-only | no | 0.430 | 100% |
+| T | fibrosis-only | no | 0.920 | 62% |
+| K | shared | no | 0.964 | 63% |
+| K | fibrosis-only | no | 0.968 | 62% |
+| K | inflammation-only | no | 0.892 | **16%** |
+| B | fibrosis-only | no | 0.736 | 52% |
+
+Full table, all fifteen combinations: `task6_ablation.csv`.
 
 ---
 
 # Findings
 
 ### 1. F contributes nothing, by construction
-Removing F changes the ranking **not at all** — ρ = 1.000, all 50 top genes
-retained, in every class.
+F is *constant within a class* — 1 for every fibrosis-only gene, 0 for every
+other — and scoring within class, which the missing-data problem forces, makes
+a constant unable to order anything. Removing it leaves ρ = 1.000 and the whole
+band intact, in every class.
 
-The reason is structural: F is *constant within a class* (1 for every
-fibrosis-only gene, 0 for every other). Scoring within class — which the
-missing-data problem forces — makes it a constant, and a constant cannot order
-anything.
+This is structural, not empirical: the ablation reports it because arithmetic
+guarantees it, and `can_reorder_within_class` says so on the row. Resolving ties
+by row order instead would show a little spurious movement here, which is one
+reason the top-N band admits every tied gene.
 
-**F is not wrong, it is redundant under within-class scoring.** It should be
-kept in the formula as documentation of why the classes are scored separately,
-and recognised as carrying zero ranking information. Reporting it as a working
-component would overstate the score's evidence base by a fifth.
+**F is not wrong, it is redundant under within-class scoring.** It belongs in
+the formula as documentation of why the classes are scored separately, and
+carries zero ranking information. Reporting it as a working component would
+overstate the score's evidence base by a fifth.
 
-### 2. The ranking is stable; the top-50 is not
-Overall ordering holds well (median ρ ≈ 0.92–0.98). But a **median of only 29–32
-of 50** top genes survive a random reweighting, and at the 5th percentile as few
-as 16.
+### 2. The ranking is stable; exact membership is not
+Overall ordering holds well (median ρ ≈ 0.92–0.98). But only **55%, 63% and 76%**
+of each class's top band survives a random reweighting, and at the 5th
+percentile as little as a fifth.
 
 So: **rank bands are defensible, an exact top-50 is not.** Any shortlist drawn
-from this should be described as "high-scoring under most weightings", with
-`task6_stable_core.csv` — genes in the top 50 across ≥ 80% of random weightings
-— as the defensible version.
+from this should be described as "high-scoring under most weightings".
 
-### 3. The inflammation-only score is a two-component score
+### 3. The stable core is a threshold, not a quota
+`task6_stable_core.csv` holds the genes that reach the top band under **at least
+80% of the 2,000 weightings** — the same 2,000 the sensitivity table uses, so
+both describe one experiment.
+
+| class | genes meeting ≥ 80% | lowest frequency kept |
+|---|---:|---:|
+| shared | 16 | 0.952 |
+| fibrosis-only | 15 | 0.850 |
+| inflammation-only | 26 | 0.812 |
+
+**57 genes**, not a fixed 25 per class. A quota would have filled the file to
+75 rows whatever the frequencies were, admitting genes as low as 51% and making
+a class with no stable members look as though it had twenty-five. The count per
+class is itself a result: it says how much of each ranking is weighting-proof.
+
+### 3b. The inflammation-only score is a two-component score
 With T and B undefined and F constant, those 2,377 genes are ranked on P and K
-alone. Removing K collapses their top-50 overlap to **18%** — the single
-largest ablation effect anywhere in the table. Their ranking is close to "does
-a drug exist for it", which is a much weaker claim than the four-component
-score made for the other classes.
+alone. Removing K collapses their band overlap to **16%** — the single largest
+ablation effect anywhere in the table. Their ranking is close to "does a drug
+exist for it", which is a much weaker claim than the four-component score made
+for the other classes. Removing P leaves 100% overlap only because the band
+grows to 262 genes once P is gone, not because P does not matter.
 
 ### 4. The top of the list agrees with the rest of Paper 2
 Fibrosis-only targets at equal weights:

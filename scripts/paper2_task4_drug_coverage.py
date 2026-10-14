@@ -68,10 +68,17 @@ from neo4j import GraphDatabase
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from paper2_io import SupportingTables
-from paper2_drug_filters import flag_entities
+from paper2_drug_filters import is_inorganic, flag_entities
 
 EDGES = "Paper2_Results/Task2/task2_drug_gene_edges.csv"
-PATHWAYS = "Paper1_Results/Task4/task4_top_pathways_per_group.csv"
+# Paper 1's COMPLETE significant enrichment results. Its
+# task4_top_pathways_per_group.csv keeps only the leading terms per group
+# (456 rows of 3,945), so a gene enriched only under a lower-ranked term
+# would read as having no significant enrichment at all.
+PATHWAYS = "Paper1_Results/Task4/task4_all_significant.csv"
+# Recovered molecule types that are never a small-molecule therapeutic.
+# Reported, not relied on: see the comment at the flag block.
+NON_THERAPEUTIC_TYPES = {"Unknown"}
 OUT_DIR = "Paper2_Results/Task4"
 TOP_N = 50
 PHARMACOKINETIC = {"ENZYME", "TRANSPORTER", "CARRIER", "SUBSTRATE"}
@@ -135,7 +142,32 @@ def main():
             WHERE NOT a.action IN $pk
             RETURN dr.node_id AS Drug_ID, count(a) AS all_targets
         """, pk=sorted(PHARMACOKINETIC)).data())
+        # The recovered chemistry, read off the Drug node. These properties were
+        # written back from OptimusKG and ChEMBL, so reading them here rather
+        # than stitching them on afterwards is what lets a re-run of this script
+        # stand on its own. A graph without them yields empty columns and the
+        # name heuristic carries on alone.
+        chem = pd.DataFrame(s.run("""
+            MATCH (dr:Drug)
+            RETURN dr.node_id            AS Drug_ID,
+                   dr.recovered_name     AS drug_name,
+                   dr.recovered_name_source AS drug_name_source,
+                   dr.molecule_type      AS molecule_type,
+                   dr.molecule_type_source AS molecule_type_source,
+                   dr.max_phase          AS max_phase,
+                   dr.max_phase_source   AS max_phase_source,
+                   dr.smiles             AS smiles,
+                   dr.smiles_source      AS smiles_source,
+                   dr.is_approved        AS is_approved,
+                   dr.has_been_withdrawn AS has_been_withdrawn,
+                   dr.inchi_key          AS inchi_key,
+                   dr.cd_formula         AS cd_formula,
+                   dr.cd_mol_weight      AS cd_mol_weight
+        """).data())
     drv.close()
+    print(f"recovered chemistry: formula for "
+          f"{int(chem.cd_formula.notna().sum()):,} of {len(chem):,} drugs, "
+          f"molecule type for {int(chem.molecule_type.notna().sum()):,}")
 
     # ---- coverage per drug -------------------------------------------------
     piv = (e.pivot_table(index="Drug_ID", columns="group", values="Gene_ID",
@@ -200,8 +232,23 @@ def main():
     # longer runs on them.
     d["flag_duplicate"] = d.Drug_ID.map(lambda i: _flags[i]["flag_duplicate"])
 
+    # Chemistry, joined from the graph. The carbon test is certain where it
+    # fires -- a formula with no carbon is not an organic therapeutic -- and it
+    # reaches entities no name rule can: ZnCl2, MgSO4, Na2SO4, AlCl3, CaCl2, NO.
+    # It cannot reach the organic nutrients, because ATP, FAD and glutamic acid
+    # all contain carbon, so the name heuristic stays beside it as the broader,
+    # cruder net. Both are reported and neither replaces the other.
+    #
+    # Molecule type and clinical phase were recovered as Team 1 asked and do NOT
+    # work for this: the name-flagged entries are all `Small molecule`, and ZINC
+    # ACETATE carries max_phase 4.0 with is_approved True, because it genuinely
+    # is an approved small molecule. They are reported as data, not used as a
+    # filter.
+    d = d.merge(chem, on="Drug_ID", how="left")
+    d["flag_molecule_type"] = d.molecule_type.isin(NON_THERAPEUTIC_TYPES)
+    d["flag_inorganic"] = d.cd_formula.map(is_inorganic)
     d["likely_non_therapeutic"] = (d.flag_name | d.flag_unnamed
-                                   | d.flag_duplicate)
+                                   | d.flag_duplicate | d.flag_inorganic)
     d = d.sort_values("n_progression_genes", ascending=False).reset_index(drop=True)
 
     ccols = sorted(c for c in d.columns if c.startswith("n_cluster_C"))
@@ -212,7 +259,18 @@ def main():
                "progression_fraction_lower95", "dominant_class_fraction",
                "dominant_cluster_fraction", "genes_with_a_cluster",
                "flag_name", "flag_unnamed", "flag_duplicate",
-               "likely_non_therapeutic", "target_genes"])
+               "flag_molecule_type", "flag_inorganic",
+               "likely_non_therapeutic",
+               # the recovered chemistry, each field beside the source it came
+               # from so OptimusKG and ChEMBL stay separable in the delivered
+               # table and not only upstream
+               "drug_name", "drug_name_source",
+               "molecule_type", "molecule_type_source",
+               "max_phase", "max_phase_source",
+               "smiles", "smiles_source",
+               "is_approved", "has_been_withdrawn",
+               "inchi_key", "cd_formula", "cd_mol_weight",
+               "target_genes"])
     d = d[[c for c in keep if c in d.columns]]
     d.to_csv(f"{OUT_DIR}/task4_drug_coverage.csv", index=False)
 
@@ -291,20 +349,39 @@ def main():
                      n_drugs=("Drug_ID", "nunique")).reset_index())
     # "major fibrosis-associated pathway/process", as the plan requires on the
     # network. Paper 1's gene table carries only booleans per database, so the
-    # name comes from Paper 1's own enrichment: for each gene, the most
-    # significant enriched term it is listed under.
+    # name comes from Paper 1's own enrichment.
+    #
+    # HOW THE REPRESENTATIVE TERM IS CHOSEN. A gene can sit under dozens of
+    # significant terms. The one reported is the most significant: lowest
+    # q_value, ties broken by higher fold_enrichment and then by term label, so
+    # the choice is deterministic and does not depend on row order.
+    #
+    # A blank here means "no significant enriched term lists this gene" and
+    # nothing more -- `pathway_annotation` says which of the two it is, because
+    # absence of annotation and absence of enrichment are different facts.
     pw = pd.read_csv(PATHWAYS)
     pw = pw[pw.significant.astype(str).str.lower() == "true"]
-    pw = pw.sort_values("q_value")
+    pw = pw.sort_values(["q_value", "fold_enrichment", "term_label"],
+                        ascending=[True, False, True])
     best = {}
-    for _, r in pw.iterrows():
+    for r in pw.itertuples(index=False):
         for sym in str(r.genes).split(","):
             sym = sym.strip()
             if sym and sym not in best:
                 best[sym] = (r.term_label, r.database, r.q_value)
+    print(f"pathway lookup: {len(pw):,} significant terms covering "
+          f"{len(best):,} gene symbols")
     gnodes["major_pathway"] = gnodes.Gene.map(lambda g: best.get(g, (None,))[0])
     gnodes["major_pathway_db"] = gnodes.Gene.map(
         lambda g: best[g][1] if g in best else None)
+    gnodes["major_pathway_q"] = gnodes.Gene.map(
+        lambda g: best[g][2] if g in best else None)
+    gnodes["pathway_annotation"] = np.where(
+        gnodes.Gene.isin(best), "significant term",
+        "no significant term in Paper 1 enrichment")
+    n_blank = int((~gnodes.Gene.isin(best)).sum())
+    print(f"   {len(gnodes) - n_blank:,} network genes carry a term, "
+          f"{n_blank:,} have none")
 
     gnodes.insert(0, "node_type", "gene")
     gnodes = gnodes.rename(columns={"Gene": "label", "Gene_ID": "node_id"})

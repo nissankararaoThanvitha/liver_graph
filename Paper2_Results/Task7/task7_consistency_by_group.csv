@@ -1,8 +1,8 @@
-paper1_group,ambiguous,reversal-consistent,reversal-inconsistent,unknown,total
-fibrosis-only / negative,0,56,133,981,1170
-fibrosis-only / positive,0,140,17,567,724
-inflammation-only / negative,0,11,25,156,192
-inflammation-only / positive,0,102,63,887,1052
-shared / contradictory,8,0,0,0,8
-shared / negative,0,20,78,407,505
-shared / positive,0,201,159,973,1333
+paper1_group,reversal-consistent,reversal-inconsistent,unknown,total
+fibrosis-only / negative,56,133,981,1170
+fibrosis-only / positive,140,17,567,724
+inflammation-only / negative,11,25,156,192
+inflammation-only / positive,102,63,887,1052
+shared / contradictory,0,0,8,8
+shared / negative,20,78,407,505
+shared / positive,201,159,973,1333

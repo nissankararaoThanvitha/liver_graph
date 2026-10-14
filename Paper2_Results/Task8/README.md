@@ -56,7 +56,7 @@ its targets, and not a count.
 
 The obvious rule — add up target scores across everything a drug touches —
 rewards promiscuity, and three tasks measured the damage: Task 4 found coverage
-**negatively** correlated with coherence (ρ = −0.268) and its raw ranking led
+**negatively** correlated with class × direction coherence (ρ = −0.328) and its raw ranking led
 with zinc salts; Task 5 found DWPC promoting proteasome and tubulin binders
 because complex subunits share annotations.
 

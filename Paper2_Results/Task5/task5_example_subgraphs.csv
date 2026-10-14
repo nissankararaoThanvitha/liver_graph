@@ -1,37 +1,37 @@
 drug,drug_target,via_term,progression_gene,dwpc
-TILUDRONIC ACID,ATP6V0A2,ROS and RNS production in phagocytes,ATP6V1A,4.001647
-TILUDRONIC ACID,ATP6V0A2,Insulin receptor recycling,ATP6V1A,4.001647
-TILUDRONIC ACID,ATP6V0A2,Transferrin endocytosis and recycling,ATP6V1A,4.001647
-TILUDRONIC ACID,ATP6V0A2,Ion channel transport,ATP6V1A,4.001647
-TILUDRONIC ACID,ATP6V0E2,ROS and RNS production in phagocytes,ATP6V1A,4.001647
-TILUDRONIC ACID,ATP6V0E2,Insulin receptor recycling,ATP6V1A,4.001647
-TILUDRONIC ACID,ATP6V0E2,Transferrin endocytosis and recycling,ATP6V1A,4.001647
-TILUDRONIC ACID,ATP6V0E2,Amino acids regulate mTORC1,ATP6V1A,4.001647
-TILUDRONIC ACID,ATP6V0E2,Ion channel transport,ATP6V1A,4.001647
-TILUDRONIC ACID,ATP6V0E2,Regulation of MITF-M-dependent genes involved in lysosome biogenesis and autophagy,ATP6V1A,4.001647
-TILUDRONIC ACID,ATP6V0A1,ROS and RNS production in phagocytes,ATP6V1A,4.001647
-TILUDRONIC ACID,ATP6V0A1,Insulin receptor recycling,ATP6V1A,4.001647
-TILUDRONIC ACID,ATP6V0A2,ROS and RNS production in phagocytes,ATP6V1C1,3.98739
-TILUDRONIC ACID,ATP6V0A2,Insulin receptor recycling,ATP6V1C1,3.98739
-TILUDRONIC ACID,ATP6V0A2,Transferrin endocytosis and recycling,ATP6V1C1,3.98739
-TILUDRONIC ACID,ATP6V0A2,Ion channel transport,ATP6V1C1,3.98739
-TILUDRONIC ACID,ATP6V0E2,ROS and RNS production in phagocytes,ATP6V1C1,3.98739
-TILUDRONIC ACID,ATP6V0E2,Insulin receptor recycling,ATP6V1C1,3.98739
-TILUDRONIC ACID,ATP6V0E2,Transferrin endocytosis and recycling,ATP6V1C1,3.98739
-TILUDRONIC ACID,ATP6V0E2,Amino acids regulate mTORC1,ATP6V1C1,3.98739
-TILUDRONIC ACID,ATP6V0E2,Ion channel transport,ATP6V1C1,3.98739
-TILUDRONIC ACID,ATP6V0E2,Regulation of MITF-M-dependent genes involved in lysosome biogenesis and autophagy,ATP6V1C1,3.98739
-TILUDRONIC ACID,ATP6V0A1,ROS and RNS production in phagocytes,ATP6V1C1,3.98739
-TILUDRONIC ACID,ATP6V0A1,Insulin receptor recycling,ATP6V1C1,3.98739
-TILUDRONIC ACID,ATP6V0A2,ROS and RNS production in phagocytes,ATP6V1B2,3.964297
-TILUDRONIC ACID,ATP6V0A2,Insulin receptor recycling,ATP6V1B2,3.964297
-TILUDRONIC ACID,ATP6V0A2,Transferrin endocytosis and recycling,ATP6V1B2,3.964297
-TILUDRONIC ACID,ATP6V0A2,Ion channel transport,ATP6V1B2,3.964297
-TILUDRONIC ACID,ATP6V0E2,ROS and RNS production in phagocytes,ATP6V1B2,3.964297
-TILUDRONIC ACID,ATP6V0E2,Insulin receptor recycling,ATP6V1B2,3.964297
-TILUDRONIC ACID,ATP6V0E2,Transferrin endocytosis and recycling,ATP6V1B2,3.964297
-TILUDRONIC ACID,ATP6V0E2,Amino acids regulate mTORC1,ATP6V1B2,3.964297
-TILUDRONIC ACID,ATP6V0E2,Ion channel transport,ATP6V1B2,3.964297
-TILUDRONIC ACID,ATP6V0E2,Regulation of MITF-M-dependent genes involved in lysosome biogenesis and autophagy,ATP6V1B2,3.964297
-TILUDRONIC ACID,ATP6V0A1,ROS and RNS production in phagocytes,ATP6V1B2,3.964297
-TILUDRONIC ACID,ATP6V0A1,Insulin receptor recycling,ATP6V1B2,3.964297
+TILUDRONIC ACID,ATP6V0A2,ROS and RNS production in phagocytes,ATP6V1A,0.525336
+TILUDRONIC ACID,ATP6V0A2,Insulin receptor recycling,ATP6V1A,0.525336
+TILUDRONIC ACID,ATP6V0A2,Transferrin endocytosis and recycling,ATP6V1A,0.525336
+TILUDRONIC ACID,ATP6V0A2,Ion channel transport,ATP6V1A,0.525336
+TILUDRONIC ACID,ATP6V0E2,ROS and RNS production in phagocytes,ATP6V1A,0.525336
+TILUDRONIC ACID,ATP6V0E2,Insulin receptor recycling,ATP6V1A,0.525336
+TILUDRONIC ACID,ATP6V0E2,Transferrin endocytosis and recycling,ATP6V1A,0.525336
+TILUDRONIC ACID,ATP6V0E2,Amino acids regulate mTORC1,ATP6V1A,0.525336
+TILUDRONIC ACID,ATP6V0E2,Ion channel transport,ATP6V1A,0.525336
+TILUDRONIC ACID,ATP6V0E2,Regulation of MITF-M-dependent genes involved in lysosome biogenesis and autophagy,ATP6V1A,0.525336
+TILUDRONIC ACID,ATP6V0A1,ROS and RNS production in phagocytes,ATP6V1A,0.525336
+TILUDRONIC ACID,ATP6V0A1,Insulin receptor recycling,ATP6V1A,0.525336
+TILUDRONIC ACID,ATP6V0A2,ROS and RNS production in phagocytes,ATP6V1C1,0.523493
+TILUDRONIC ACID,ATP6V0A2,Insulin receptor recycling,ATP6V1C1,0.523493
+TILUDRONIC ACID,ATP6V0A2,Transferrin endocytosis and recycling,ATP6V1C1,0.523493
+TILUDRONIC ACID,ATP6V0A2,Ion channel transport,ATP6V1C1,0.523493
+TILUDRONIC ACID,ATP6V0E2,ROS and RNS production in phagocytes,ATP6V1C1,0.523493
+TILUDRONIC ACID,ATP6V0E2,Insulin receptor recycling,ATP6V1C1,0.523493
+TILUDRONIC ACID,ATP6V0E2,Transferrin endocytosis and recycling,ATP6V1C1,0.523493
+TILUDRONIC ACID,ATP6V0E2,Amino acids regulate mTORC1,ATP6V1C1,0.523493
+TILUDRONIC ACID,ATP6V0E2,Ion channel transport,ATP6V1C1,0.523493
+TILUDRONIC ACID,ATP6V0E2,Regulation of MITF-M-dependent genes involved in lysosome biogenesis and autophagy,ATP6V1C1,0.523493
+TILUDRONIC ACID,ATP6V0A1,ROS and RNS production in phagocytes,ATP6V1C1,0.523493
+TILUDRONIC ACID,ATP6V0A1,Insulin receptor recycling,ATP6V1C1,0.523493
+TILUDRONIC ACID,ATP6V0A2,ROS and RNS production in phagocytes,ATP6V1B2,0.520508
+TILUDRONIC ACID,ATP6V0A2,Insulin receptor recycling,ATP6V1B2,0.520508
+TILUDRONIC ACID,ATP6V0A2,Transferrin endocytosis and recycling,ATP6V1B2,0.520508
+TILUDRONIC ACID,ATP6V0A2,Ion channel transport,ATP6V1B2,0.520508
+TILUDRONIC ACID,ATP6V0E2,ROS and RNS production in phagocytes,ATP6V1B2,0.520508
+TILUDRONIC ACID,ATP6V0E2,Insulin receptor recycling,ATP6V1B2,0.520508
+TILUDRONIC ACID,ATP6V0E2,Transferrin endocytosis and recycling,ATP6V1B2,0.520508
+TILUDRONIC ACID,ATP6V0E2,Amino acids regulate mTORC1,ATP6V1B2,0.520508
+TILUDRONIC ACID,ATP6V0E2,Ion channel transport,ATP6V1B2,0.520508
+TILUDRONIC ACID,ATP6V0E2,Regulation of MITF-M-dependent genes involved in lysosome biogenesis and autophagy,ATP6V1B2,0.520508
+TILUDRONIC ACID,ATP6V0A1,ROS and RNS production in phagocytes,ATP6V1B2,0.520508
+TILUDRONIC ACID,ATP6V0A1,Insulin receptor recycling,ATP6V1B2,0.520508

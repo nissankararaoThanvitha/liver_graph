@@ -77,6 +77,7 @@ from paper2_io import SupportingTables
 MASTER = "Paper2_Results/Task1/Paper2_progression_genes.csv"
 TRAJECTORY = "Paper1_HighConfidence/11_final_all_3845_genes.csv"
 TRANSITIONS = "Paper1_Results/Task3/task3_all_genes_all_transitions.csv"
+P1_ENRICHMENT = "Paper1_Results/Task4/task4_all_significant.csv"
 OUT_DIR = "Paper2_Results/Task5"
 
 PK = {"ENZYME", "TRANSPORTER", "CARRIER", "SUBSTRATE"}
@@ -155,6 +156,32 @@ def cap(edges, lo=CAP_MIN, hi=CAP_MAX):
     return edges[edges.term.isin(keep)]
 
 
+def three_node_dwpc(acts, bridge, label, w=W):
+    """Degree-weighted support for a two-edge metapath, Drug -> Gene -> Term.
+
+    MP1-MP3 previously received raw counts and a size cap and no normalised
+    measure at all, so there was no way to compare a drug reaching a term
+    through one specific gene with a drug reaching it through a hub. Two edges
+    means four degree factors, by the same rule the four-node version uses.
+    """
+    j = acts.merge(bridge, on="gene")
+    if not len(j):
+        return pd.DataFrame()
+    deg_acts_drug = acts.groupby("drug").gene.nunique()
+    deg_acts_gene = acts.groupby("gene").drug.nunique()
+    deg_bridge_gene = bridge.groupby("gene").term.nunique()
+    deg_bridge_term = bridge.groupby("term").gene.nunique()
+    j["w"] = (j.drug.map(deg_acts_drug).pow(-w)
+              * j.gene.map(deg_acts_gene).pow(-w)
+              * j.gene.map(deg_bridge_gene).pow(-w)
+              * j.term.map(deg_bridge_term).pow(-w))
+    out = (j.groupby(["drug", "drug_name", "term", "term_name"])
+             .agg(path_count=("w", "size"), dwpc=("w", "sum"))
+             .reset_index().sort_values("dwpc", ascending=False))
+    out.insert(0, "metapath", label)
+    return out
+
+
 def three_node(acts, bridge, label):
     """Drug -> Gene -> <bridge>. Counts only; no target gene on the far side."""
     j = acts.merge(bridge, on="gene")
@@ -180,13 +207,25 @@ def four_node_counts_analytic(acts, bridge, targets, label):
     right = (b[b.gene.isin(targets)].groupby("term").gene.nunique())  # R_t
     self_paths = (b[b.gene.isin(targets)].groupby("term").ndrugs.sum())
 
-    terms = left.index.intersection(right.index)
-    paths = int((left[terms] * right[terms] - self_paths[terms]).clip(lower=0).sum())
-    src = set(b[b.term.isin(terms) & (b.ndrugs > 0)].gene)
-    tgt = set(b[b.term.isin(terms) & b.gene.isin(targets)].gene)
+    # A term that joins drugs and targets on paper can still carry no VALID
+    # path, because every path through it has the source gene equal to the
+    # target gene -- a one-hop fact, already in Task 2, not a metapath. Those
+    # terms were counted as members anyway, so the membership summary described
+    # connectivity the metapath does not have. Membership is now restricted to
+    # terms with at least one surviving path, and the drug and gene counts are
+    # taken over the same restricted set.
+    shared = left.index.intersection(right.index)
+    valid = (left[shared] * right[shared] - self_paths[shared]).clip(lower=0)
+    terms = valid[valid > 0].index
+    paths = int(valid[terms].sum())
+    bt = b[b.term.isin(terms)]
+    src = set(bt[bt.ndrugs > 0].gene)
+    tgt = set(bt[bt.gene.isin(targets)].gene)
     drugs = acts[acts.gene.isin(src)].drug.nunique()
     return {"metapath": label, "paths": paths, "unique_drugs": drugs,
-            "unique_genes": len(src | tgt), "unique_terms": len(terms)}
+            "unique_genes": len(src | tgt), "unique_terms": len(terms),
+            "terms_joining_both_sides": len(shared),
+            "terms_with_no_valid_path": len(shared) - len(terms)}
 
 
 def four_node(acts, bridge, targets, label, w=W):
@@ -205,19 +244,39 @@ def four_node(acts, bridge, targets, label, w=W):
         return ({"metapath": label, "paths": 0, "unique_drugs": 0,
                  "unique_genes": 0, "unique_terms": 0}, pd.DataFrame())
 
-    # degrees along the path: drug, source gene, term, target gene
-    deg_drug = acts.groupby("drug").gene.nunique()
-    deg_gene = acts.groupby("gene").drug.nunique()
-    deg_term = bridge.groupby("term").gene.nunique()
-    deg_tgt = bridge.groupby("gene").term.nunique()
+    # DWPC AS PUBLISHED (Himmelstein & Baranzini 2015). The path weight is the
+    # product over every EDGE of the two metaedge-specific degrees at its ends,
+    # each raised to -w. This path has three edges:
+    #
+    #   Drug -ACTS_ON-> Gene        deg_acts(drug),  deg_acts(gene)
+    #   Gene -bridge->  Term        deg_bridge(gene), deg_bridge(term)
+    #   Term <-bridge-  TargetGene  deg_bridge(term), deg_bridge(target)
+    #
+    # so six factors, and the TERM's degree enters TWICE because the term sits
+    # on two edges. An earlier version used four factors -- it omitted the
+    # source gene's bridge degree and counted the term once -- which under-
+    # penalises hub terms, the exact thing DWPC exists to penalise.
+    deg_acts_drug = acts.groupby("drug").gene.nunique()
+    deg_acts_gene = acts.groupby("gene").drug.nunique()
+    deg_bridge_gene = bridge.groupby("gene").term.nunique()
+    deg_bridge_term = bridge.groupby("term").gene.nunique()
 
-    j["w"] = (j.drug.map(deg_drug).pow(-w)
-              * j.gene.map(deg_gene).pow(-w)
-              * j.term.map(deg_term).pow(-w)
-              * j.target_gene.map(deg_tgt).pow(-w))
+    src_term_deg = j.term.map(deg_bridge_term)
+    j["w"] = (j.drug.map(deg_acts_drug).pow(-w)
+              * j.gene.map(deg_acts_gene).pow(-w)
+              * j.gene.map(deg_bridge_gene).pow(-w)
+              * src_term_deg.pow(-2 * w)
+              * j.target_gene.map(deg_bridge_gene).pow(-w))
+
+    # the previous four-factor weighting, kept so the change is auditable
+    j["w_4factor"] = (j.drug.map(deg_acts_drug).pow(-w)
+                      * j.gene.map(deg_acts_gene).pow(-w)
+                      * src_term_deg.pow(-w)
+                      * j.target_gene.map(deg_bridge_gene).pow(-w))
 
     pairs = (j.groupby(["drug", "drug_name", "target_gene"])
                .agg(path_count=("w", "size"), dwpc=("w", "sum"),
+                    dwpc_4factor=("w_4factor", "sum"),
                     via_terms=("term", "nunique"))
                .reset_index().sort_values("dwpc", ascending=False))
     summary = {"metapath": label, "paths": len(j),
@@ -225,6 +284,39 @@ def four_node(acts, bridge, targets, label, w=W):
                "unique_genes": pd.concat([j.gene, j.target_gene]).nunique(),
                "unique_terms": j.term.nunique()}
     return summary, pairs
+
+
+def paper1_bridge(acts, p1_enrichment):
+    """Paper 1's own significant fibrosis terms as bridge nodes.
+
+    The plan asks for the metapath walk to be extended "using ... the major
+    fibrosis-associated pathways/processes identified in Paper 1". The graph's
+    Reactome and GO nodes are general-purpose connectivity and carry no record
+    of what Paper 1 found, and the two vocabularies do not share identifiers --
+    Paper 1 reports MSigDB names, the graph reports REACT:/GO_ accessions -- so
+    the refinement cannot be done by filtering graph terms by id.
+
+    It is done instead by taking Paper 1's significant terms as bridges in
+    their own right, with their own member genes as the edges. That keeps the
+    Paper 1 layer and the general graph layer separate, which is what the
+    reviewer asked for and what makes the comparison between them meaningful.
+
+    Inflammation-only groups are excluded: the plan says fibrosis-associated.
+    """
+    a = p1_enrichment[p1_enrichment.significant.astype(str).str.lower() == "true"]
+    a = a[~a.group.astype(str).str.startswith("inflammation_only")]
+    sym_to_gene = dict(zip(acts.symbol, acts.gene))
+    rows = []
+    for r in a.itertuples(index=False):
+        term = f"P1:{r.database}:{r.term}"
+        for sym in str(r.genes).split(","):
+            g = sym_to_gene.get(sym.strip())
+            if g:
+                rows.append((g, term, r.term_label))
+    b = pd.DataFrame(rows, columns=["gene", "term", "term_name"]).drop_duplicates()
+    print(f"Paper 1 fibrosis-associated terms: {b.term.nunique():,} "
+          f"covering {b.gene.nunique():,} genes that carry a drug edge")
+    return b
 
 
 def main():
@@ -251,6 +343,10 @@ def main():
     pathc, procc = cap(path), cap(proc)
     disc = dis          # already capped server-side
 
+    # the Paper 1 layer, kept separate from the general graph layers above
+    p1b = paper1_bridge(acts, pd.read_csv(P1_ENRICHMENT))
+    p1bc = cap(p1b)
+
     # ---- the definition table the plan asks for ---------------------------
     defs = pd.DataFrame([
         ("MP1", "D-G-Di", "Drug -ACTS_ON-> Gene -ASSOCIATED_WITH-> Disease",
@@ -269,6 +365,10 @@ def main():
         ("MP7", "D-G-P-G[trans]",
          "Drug -> Gene -> Pathway <- stage-transition gene",
          "plan extension; target restricted to genes with a substantial transition"),
+        ("MP8", "D-G-P1-G",
+         "Drug -> Gene -> Paper 1 significant fibrosis term <- Progression gene",
+         "plan extension; the bridge is Paper 1's own enrichment result, not "
+         "general graph connectivity, and is reported separately from it"),
     ], columns=["id", "metapath", "schema", "why"])
     defs.to_csv(f"{OUT_DIR}/task5_metapath_definitions.csv", index=False)
 
@@ -289,7 +389,8 @@ def main():
             ("MP4 D-G-P-G", path, pathc, prog),
             ("MP5 D-G-B-G", proc, procc, prog),
             ("MP6 D-G-P-G[traj]", path, pathc, cluster_genes),
-            ("MP7 D-G-P-G[trans]", path, pathc, transition_genes)]:
+            ("MP7 D-G-P-G[trans]", path, pathc, transition_genes),
+            ("MP8 D-G-P1-G", p1b, p1bc, prog)]:
         r = four_node_counts_analytic(acts, bridge_raw, targets, tag)
         r["terms_filtered"] = "no"
         c, pairs = four_node(acts, bridge_cap, targets, tag)
@@ -297,9 +398,13 @@ def main():
         rows += [r, c]
         pair_tables[tag] = pairs
 
-    counts = pd.DataFrame(rows)[
-        ["metapath", "terms_filtered", "paths", "unique_drugs", "unique_genes",
-         "unique_terms"]]
+    counts = pd.DataFrame(rows)
+    for c in ("terms_joining_both_sides", "terms_with_no_valid_path"):
+        if c not in counts.columns:
+            counts[c] = pd.NA
+    counts = counts[["metapath", "terms_filtered", "paths", "unique_drugs",
+                     "unique_genes", "unique_terms",
+                     "terms_joining_both_sides", "terms_with_no_valid_path"]]
     counts.to_csv(f"{OUT_DIR}/task5_metapath_counts.csv", index=False)
 
     # ---- what the cap removes, and what the hubs were ---------------------
@@ -319,6 +424,33 @@ def main():
     sup.add("hub_terms", hubs)
 
     # ---- the main candidate table -----------------------------------------
+    # item 20: normalised support for every tested path type, not only MP4.
+    # The three-node metapaths get their own DWPC, and every four-node
+    # metapath's top pairs are exported rather than MP4's alone.
+    three = pd.concat(
+        [three_node_dwpc(acts, disc, "MP1 D-G-Di"),
+         three_node_dwpc(acts, pathc, "MP2 D-G-P"),
+         three_node_dwpc(acts, procc, "MP3 D-G-B")], ignore_index=True)
+    three.groupby("metapath", group_keys=False).head(200).to_csv(
+        f"{OUT_DIR}/task5_three_node_dwpc_top200.csv", index=False)
+    print(f"wrote {OUT_DIR}/task5_three_node_dwpc_top200.csv "
+          f"({len(three):,} drug-term pairs computed, top 200 per metapath kept)")
+
+    all_pairs = pd.concat(
+        [p.assign(metapath=tag) for tag, p in pair_tables.items() if len(p)],
+        ignore_index=True)
+    (all_pairs.sort_values("dwpc", ascending=False)
+              .groupby("metapath", group_keys=False).head(200)
+              .to_csv(f"{OUT_DIR}/task5_four_node_dwpc_top200.csv", index=False))
+    print(f"wrote {OUT_DIR}/task5_four_node_dwpc_top200.csv "
+          f"(top 200 per metapath, {all_pairs.metapath.nunique()} metapaths)")
+
+    # MP7 in full, because the convergence addendum tests every candidate drug
+    # against every non-candidate and cannot work from a top-200 slice.
+    mp7 = pair_tables["MP7 D-G-P-G[trans]"]
+    mp7.to_csv(f"{OUT_DIR}/task5_mp7_pairs.csv", index=False)
+    print(f"wrote {OUT_DIR}/task5_mp7_pairs.csv ({len(mp7):,} drug-gene pairs)")
+
     main_pairs = pair_tables["MP4 D-G-P-G"]
     sym = master.set_index("Ensembl_ID").Gene.to_dict()
     grp = master.set_index("Ensembl_ID").progression_class.to_dict()
@@ -333,6 +465,17 @@ def main():
     mp["rank_count"] = mp.path_count.rank(ascending=False, method="min")
     mp["rank_dwpc"] = mp.dwpc.rank(ascending=False, method="min")
     spearman = mp.rank_count.corr(mp.rank_dwpc, method="spearman")
+    # and how much the corrected six-factor DWPC differs from the four-factor
+    # weighting that preceded it, so the change is visible rather than silent
+    rho_formula = mp.dwpc.corr(mp.dwpc_4factor, method="spearman")
+    print(f"rank correlation, published DWPC vs the earlier four-factor "
+          f"weighting: {rho_formula:.3f}")
+    sup.add("dwpc_formula_comparison", pd.DataFrame([{
+        "measure": "Spearman, 6-factor (published) vs 4-factor",
+        "value": round(float(rho_formula), 3),
+        "pairs": len(mp),
+        "note": "the term's degree enters twice in the published formula, "
+                "because the term lies on two of the three edges"}]))
     sup.add("count_vs_dwpc_top100", mp.nlargest(100, "dwpc")[
         ["drug_name", "target_symbol", "path_count", "dwpc",
          "rank_count", "rank_dwpc"]])
@@ -358,7 +501,9 @@ def main():
     print(main_pairs.head(10)[["drug_name", "target_symbol", "target_class",
                                "path_count", "dwpc"]].to_string(index=False))
     for f in ["task5_metapath_definitions.csv", "task5_metapath_counts.csv",
-              "task5_top_drug_gene_dwpc.csv", "task5_example_subgraphs.csv"]:
+              "task5_top_drug_gene_dwpc.csv", "task5_example_subgraphs.csv",
+              "task5_three_node_dwpc_top200.csv",
+              "task5_four_node_dwpc_top200.csv"]:
         print(f"wrote {OUT_DIR}/{f}")
 
 

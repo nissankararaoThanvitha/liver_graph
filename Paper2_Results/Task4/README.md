@@ -19,7 +19,7 @@ Built by `scripts/paper2_task4_drug_coverage.py`, therapeutic edges only.
 | `task4_top_drugs_raw_coverage.csv` | 50 | top 50 by raw coverage, as the plan asks |
 | **`task4_top_drugs_by_coherence.csv`** | 50 | **ranked by coherence instead of count — read this one first** |
 | `task4_network_nodes.csv` | 986 | bipartite network, annotated with Paper 1 evidence |
-| `task4_network_edges.csv` | 2,033 | — |
+| `task4_network_edges.csv` | 2,085 | — |
 | `task4_supporting.xlsx` | 3 sheets | `coverage_by_group` · `flagged_non_therapeutic` · `specificity_trap` |
 | `task4_coverage_vs_coherence.png` | — | why coverage is not quality |
 | `task4_network.png` | — | coherent drugs and their targets, grouped by fibrosis process |
@@ -31,8 +31,8 @@ Built by `scripts/paper2_task4_drug_coverage.py`, therapeutic edges only.
 | Drugs reaching ≥1 progression gene | **2,404** |
 | …reaching ≥3 | 429 |
 | …named, reaching ≥5 | 147 |
-| Flagged as likely non-therapeutic | **726** |
-| Network shipped | 376 drugs × 610 genes, 2,033 edges |
+| Flagged as likely non-therapeutic | **696** |
+| Network shipped | 387 drugs × 611 genes, 2,085 edges |
 
 ## FINDING — coverage and coherence pull in opposite directions
 
@@ -43,12 +43,44 @@ unrelated genes*. Two measures per drug answer it:
   falling in one class × direction group
 - **`dominant_cluster_fraction`** — the same across F0–F4 trajectory clusters
 
-Correlation between raw coverage and coherence: **−0.268** (Spearman, p = 0.001, 147 drugs). Measured by the task script into
-`task4_coverage_vs_coherence_correlation.csv`, not carried by hand.
+Correlation between raw coverage and coherence, measured by the task script
+rather than carried by hand, on drugs reaching **≥ 5** progression genes:
 
-**Negative.** The drugs reaching the most progression genes cover the *least*
-coherent programmes. Ranking by coverage actively selects promiscuity. The
-plan's warning is not a caution to note and move past — it is the result.
+| coherence measure | drug set | n | Spearman ρ | p |
+|---|---|---:|---:|---:|
+| **class × direction** | non-therapeutic entities removed | 154 | **−0.328** | 3.3e-05 |
+| class × direction | named drugs only | 173 | −0.320 | 1.8e-05 |
+| trajectory cluster | non-therapeutic entities removed | 154 | −0.102 | 0.207 |
+| trajectory cluster | named drugs only | 173 | −0.059 | 0.438 |
+
+**The relationship holds for class coherence and not for cluster coherence.**
+Drugs reaching the most progression genes spread those targets across more
+class × direction groups, so ranking by coverage selects against that particular
+kind of focus. The same drugs are **not** measurably less focused by F0–F4
+trajectory cluster — that correlation is weak and not significant.
+
+So the supported claim is narrow: **among drugs with at least five progression
+targets, wider coverage goes with lower class × direction coherence.** It is not
+a statement about coherence in general, it does not establish that
+wide-coverage drugs hit biologically unrelated programmes, and it says nothing
+about drugs with fewer than five targets, who are excluded precisely because
+their coherence is undefined or trivially perfect.
+
+### What the coherence score is, and is not
+
+`dominant_class_fraction` is the largest share of a drug's progression targets
+falling in one class × direction group. It is **descriptive**: its value depends
+on how many targets the drug has and on how common those groups are among
+progression genes, not only on whether the drug is focused.
+
+A single-target drug scores 1.000 automatically. A two-target drug scores at
+least 0.5. And the largest group is large to begin with — the class × direction
+groups are not equal in size — so a drug picking targets at random already
+scores well above chance. **Nothing here is compared against a null matched for
+target count and group prevalence**, so a high coherence score is a feature of
+the drug's target list, not evidence that the drug targets a programme more
+coherently than expected. Treating it as enrichment would need that matched
+reference first.
 
 ## The top-50 lists, and why there are two
 
@@ -104,7 +136,17 @@ denominator — 1/1 scores 0.21, 6/10 scores 0.31. **Use the bound to rank; keep
 the fraction because the plan asks for it.** The `specificity_trap` sheet lists
 the drugs the raw fraction would promote.
 
-## RECOVERED 13 October 2026 — and a negative result
+**What the Wilson bound is doing here, and what it is not.** Wilson assumes the
+numerator is a binomial draw from the denominator. A drug's recorded target list
+is not a random sample of its true pharmacological repertoire: it is whatever
+has been assayed and curated, and both are biased towards well-studied targets.
+So the number is **not** a validated confidence bound on true specificity. It is
+used for one narrow purpose — penalising a small denominator — and it does that
+correctly because it is monotone in the denominator. Where it enters a ranking,
+it enters as a denominator-sensitive ordering device, not as a probability
+statement about the drug.
+
+## Molecule type and clinical phase — recovered, and a negative result
 
 Team 1's instruction was to *filter on molecule type and clinical phase*. Those
 fields were recovered from OptimusKG's own drug nodes. **They do not work for
@@ -151,7 +193,7 @@ stays in the table with the reason visible.
 | `flag_name` | 70 | salts, elements, vitamins, cofactors, simple metabolites |
 | `flag_unnamed` | 648 | the name is only a ChEMBL accession — unjudgeable |
 | `flag_duplicate` | 27 | ≥95% of targets contained in a flagged drug's target set |
-| **`likely_non_therapeutic`** | **726** | any of the above |
+| **`likely_non_therapeutic`** | **696** | any of the above |
 
 The duplicate rule earns its place: `CHEMBL1201279` shares **all 126** of its
 targets with ZINC ACETATE, so it is the same entity under another accession.
@@ -168,8 +210,8 @@ flagged and unresolved. Any candidate list must carry that caveat.
 ## The bipartite network
 
 `task4_network_nodes.csv` / `task4_network_edges.csv`, for Cytoscape, Gephi or
-networkx. Restricted to named drugs reaching ≥3 progression genes: **376 drugs,
-610 genes, 2,033 edges**.
+networkx. Restricted to named drugs reaching ≥3 progression genes: **387 drugs,
+611 genes, 2,085 edges**.
 
 Annotated with Paper 1 evidence as the plan requires — all four annotations it
 names. Gene nodes carry `progression_class` (fibrosis-only / shared status),
@@ -181,22 +223,26 @@ coherence; edges carry `Action_Mechanism`, `action_class` and
 `mechanism_consistency`. So the network can be laid out by progression biology
 rather than by database connectivity alone.
 
-## Two gaps found on a re-read of the plan, and closed
+## Two columns the plan asks for that are easy to miss
 
-Checked column by column against the plan on 12 October:
+- **Per-cluster coverage.** The plan asks for coverage "calculated separately
+  for … important F0–F4 trajectory clusters", which a single
+  `dominant_cluster_fraction` does not answer. `n_cluster_C1` … `n_cluster_C5`
+  are on every drug.
+- **The network carries the pathway annotation.** The plan names four
+  annotations, and "major fibrosis-associated pathway/process" is one of them.
+  Paper 1's gene table carries only a boolean per database, so the name comes
+  from Paper 1's **complete** significant-enrichment results
+  (`task4_all_significant.csv`, 3,945 terms covering 3,929 symbols) — not its
+  per-group top table, which keeps only 456 leading terms and would leave a gene
+  blank whenever its enrichment sits below the top of its group.
 
-- **Per-cluster coverage was missing.** The plan asks for coverage "calculated
-  separately for … important F0–F4 trajectory clusters", and only a single
-  `dominant_cluster_fraction` existed. `n_cluster_C1` … `n_cluster_C5` are now
-  on every drug.
-- **The network lacked the pathway annotation.** The plan names four
-  annotations; three were present and "major fibrosis-associated
-  pathway/process" was not. Paper 1's gene table carries only a boolean per
-  database, so the name is taken from Paper 1's own enrichment
-  (`task4_top_pathways_per_group.csv`): for each gene, the most significant
-  enriched term it is listed under. **341 of the 610 network genes** now carry
-  one; the rest appear in no significant enriched term, which is a real absence
-  rather than a lookup failure.
+  **503 of the 611 network genes** carry a term; 108 appear in no significant
+  enriched term at all. `pathway_annotation` states which of the two a blank
+  means, because absence of annotation and absence of enrichment are different
+  facts. The representative term is the most significant one listing that gene —
+  lowest q, ties broken by fold enrichment and then term label, so it does not
+  depend on row order — and `major_pathway_q` carries its q-value.
 
 ## Carried forward
 
@@ -205,7 +251,11 @@ Checked column by column against the plan on 12 October:
    wrong quantity.
 2. **Rank specificity by the Wilson bound, not the raw fraction**, or
    single-target drugs win.
-3. **726 of 2,404 drugs should not be in a candidate list at all**, and 648 of
-   those are unnamed entries that cannot be assessed without ChEMBL metadata.
+3. **696 of 2,404 drugs should not be in a candidate list at all**, most of
+   them unnamed entries that cannot be assessed without ChEMBL metadata.
 4. **Coherence is the more useful lens**, and it surfaces TRAPIDIL, MARIMASTAT
-   and GLYCYRRHIZIN — none of which the coverage ranking finds.
+   and GLYCYRRHIZIN — none of which the coverage ranking finds. It remains a
+   descriptive feature, not an enrichment claim, until it is compared against a
+   null matched for target count and group prevalence.
+5. **Quote the coherence definition with the correlation.** Class × direction
+   coherence falls with coverage; trajectory-cluster coherence does not.

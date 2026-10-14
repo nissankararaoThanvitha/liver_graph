@@ -207,9 +207,21 @@ TargetScore(g) = [ Σ w·C ] / [ Σ w·1{C defined} ]     C ∈ {P, F, T, K, B}
 ```
 
 P, F, T and B reuse Paper 1's frozen components rather than re-deriving them,
-which keeps the score traceable. Only **K** is new, and it is deliberately
-degree-free — two binary facts (a therapeutic drug acts on the gene; one of
-them opposes its direction), never a drug count.
+which keeps the score traceable. Only **K** is new: two binary facts — a
+therapeutic drug acts on the gene, and one of them opposes its direction of
+travel — never a drug count. Carrying no count is not the same as being
+degree-free, and `K_degree_sensitivity` measures the difference (Spearman 0.246
+against non-drug degree).
+
+The consistency half of K reads Task 7's `reversal_class_with_trajectory`, so a
+relationship whose association direction disagrees with its F4 − F0 endpoints
+does not earn credit.
+
+**Top-N membership is a band.** The components are coarse and scores tie
+heavily, so "top 50" means every gene at or above the 50th score — 133, 91 and
+50 genes by class — rather than the literal first fifty, which row order would
+decide. The stable core applies the stated **80%** threshold over the same 2,000
+weightings rather than taking a fixed count per class.
 
 Continuous inputs become **within-class percentiles**, not min-max. Classes are
 scored separately with weights renormalised over available components, because

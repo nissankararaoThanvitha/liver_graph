@@ -35,11 +35,32 @@ the researcher confirmed its use on 12 October.
 | 1 | Master gene table | 6,222 genes, nothing filtered, verified gene by gene against the live graph |
 | 2 | Drug–gene extraction | 8,948 links · 1,072 genes · 3,027 drugs; only 11.2% carry a usable direction |
 | 3 | Druggability by group | All three classes exceed an eligible-gene background; three of seven direction groups also exceed a degree-matched null. Falling vs rising is 1.3× at most and fails BH correction (q = 0.082), so it is reported, not claimed |
-| 4 | Drug coverage | Coverage and coherence correlate **−0.268**: counting targets selects promiscuity |
-| 5 | MetaPaths | Reactome 11× cleaner than GO; raw path counts disagree with DWPC at ρ = 0.45 |
-| 6 | Target scoring | Five components, one of which contributes nothing; exact top-50 not defensible |
-| 7 | Action/direction | Mechanism consistency at chance overall; one subgroup beats its null |
+| 4 | Drug coverage | Among drugs with ≥5 progression targets, coverage and class × direction coherence correlate **−0.328**; trajectory-cluster coherence shows no such relationship (−0.102, p = 0.21) |
+| 5 | MetaPaths | Reactome carries a tenth of GO's paths and is far less cap-sensitive; raw path counts disagree with DWPC at ρ = 0.38 |
+| 6 | Target scoring | Five components, one constant within class and so carrying no ranking information; scores tie heavily, so membership is reported as a band and the stable core as a threshold |
+| 7 | Action/direction | Mechanism consistency at chance overall, and **no subgroup** beats a null that preserves progression direction |
 | 8 | Final ranking | 30 candidates collapsing onto **two genes** |
+
+## The endpoint this paper delivers, and the one the plan opened with
+
+The Paper 2 plan asked for **transcriptomic drug-reversal evidence** before the
+final ranking: signatures showing a drug moving the disease genes the other way.
+That layer is **not** in this package. It was scoped out on the researcher's
+"repurposing not reversal" decision, and the evidence summary records it as
+`L7 transcriptomic reversal — out of scope` on all 30 candidates rather than as
+a layer that was attempted and found empty.
+
+So the endpoint delivered is narrower than the one the plan opened with, and it
+should be described as what it is: **knowledge-graph-supported repurposing
+hypotheses**, ranked on association, trajectory, pathway context and existing
+drug–target annotation. Nothing here shows a drug reversing a disease signature.
+
+**Independent validation has also not been performed.** Paper 1 and OptimusKG
+are reused across every task, so agreement between tasks is internal
+consistency, not confirmation. Where Task 7 and Paper 1 agree on the nintedanib
+–PDGFRA relationship, they are reading the same OptimusKG edges. Adding a
+genuinely independent layer needs data outside this graph; until then its
+absence is limitation 1 and the largest one.
 
 ## The headline result
 

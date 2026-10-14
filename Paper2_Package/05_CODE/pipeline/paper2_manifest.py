@@ -21,6 +21,13 @@ ROOT = "Paper2_Results"
 OUT = f"{ROOT}/00_FILE_MANIFEST.csv"
 
 
+# Regenerable intermediates, deliberately not shipped. Each is large and
+# every number taken from it is delivered in a smaller table beside it:
+#   task5_mp7_pairs.csv  ->  task5_mp7_reach_per_drug.csv, which is what
+#                            the convergence permutation actually runs on
+INTERMEDIATE = {"Task5/task5_mp7_pairs.csv"}
+
+
 def sha256(path):
     h = hashlib.sha256()
     with open(path, "rb") as fh:
@@ -37,6 +44,8 @@ def main():
             rel = os.path.relpath(full, ROOT).replace("\\", "/")
             if rel == os.path.basename(OUT):
                 continue          # never hash the manifest into itself
+            if rel in INTERMEDIATE:
+                continue          # large, regenerable, nothing downstream reads it
             rows.append({"path": rel,
                          "bytes": os.path.getsize(full),
                          "sha256": sha256(full)})

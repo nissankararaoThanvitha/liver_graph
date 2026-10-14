@@ -1,6 +1,6 @@
-Cluster,Cluster_pattern,ambiguous,reversal-consistent,reversal-inconsistent,unknown,total
-C1,"Early increase (F0→F1), then continued",0,104,50,566,720
-C2,Late increase (largest at F3→F4),0,171,116,774,1061
-C3,"Early rise, then plateau",0,66,10,200,276
-C4,Mid decrease (largest at F1→F2),5,3,48,352,408
-C5,Late decrease (largest at F3→F4),3,73,163,1036,1275
+Cluster,Cluster_pattern,reversal-consistent,reversal-inconsistent,unknown,total
+C1,"Early increase (F0→F1), then continued",104,50,566,720
+C2,Late increase (largest at F3→F4),171,116,774,1061
+C3,"Early rise, then plateau",66,10,200,276
+C4,Mid decrease (largest at F1→F2),3,48,357,408
+C5,Late decrease (largest at F3→F4),73,163,1039,1275

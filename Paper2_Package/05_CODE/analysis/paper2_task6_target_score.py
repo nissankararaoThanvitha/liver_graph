@@ -90,6 +90,7 @@ from paper2_io import SupportingTables
 MASTER = "Paper2_Results/Task1/Paper2_progression_genes.csv"
 PAPER1 = "Paper1_HighConfidence/11_final_all_3845_genes.csv"
 ACTION = "Paper2_Results/Task7/task7_action_direction_evidence.csv"
+DEGREES = "Paper2_Results/Task3/task3_gene_degrees.csv"
 OUT_DIR = "Paper2_Results/Task6"
 
 COMPONENTS = ["P", "F", "T", "K", "B"]
@@ -107,11 +108,17 @@ def pct(s):
 def build(master, p1, action):
     g = master.copy()
 
-    # ---- K: two binary facts, no degree ----------------------------------
+    # ---- K: two binary facts, no drug COUNT ------------------------------
+    # K deliberately carries no count of drugs, so a gene with one
+    # characterised inhibitor scores the same as one with forty. That is not
+    # the same as being independent of annotation: a better-studied gene has
+    # more chances to satisfy either binary condition, and K_degree_sensitivity
+    # in the supporting workbook measures how much (Spearman 0.25 against
+    # non-drug degree).
+    #
     # "Has a therapeutic drug" must mean a drug, not a mineral salt. Task 7
-    # carries the entity flag; honouring it removes K credit from 175 genes
-    # whose only drug is zinc chloride, ATP or an unnamed accession. Found in
-    # review of Task 3 on 13 October -- the same flaw, one task downstream.
+    # carries the entity flag; honouring it removes K credit from the genes
+    # whose only drug is zinc chloride, ATP or an unnamed accession.
     if "non_therapeutic_entity" in action.columns:
         usable = action[~action.non_therapeutic_entity.astype(bool)]
         dropped = action.Gene_ID.nunique() - usable.Gene_ID.nunique()
@@ -120,8 +127,14 @@ def build(master, p1, action):
         raise SystemExit("Task 7 table has no non_therapeutic_entity column; "
                          "re-run paper2_task7_action_direction.py")
     has_drug = set(usable.Gene_ID)
-    consistent = set(usable.loc[usable.reversal_class == "reversal-consistent",
-                                "Gene_ID"])
+    # Honour Task 7's trajectory rule where it exists. A relationship whose
+    # association direction and stage endpoints disagree is held at ambiguous
+    # there, and crediting it here would make that rule decorative.
+    rc = ("reversal_class_with_trajectory"
+          if "reversal_class_with_trajectory" in usable.columns
+          else "reversal_class")
+    consistent = set(usable.loc[usable[rc] == "reversal-consistent", "Gene_ID"])
+    print(f"K: consistency read from {rc}")
     g["K"] = 0.5 * g.Ensembl_ID.isin(has_drug) + 0.5 * g.Ensembl_ID.isin(consistent)
 
     # ---- P, F, T, B: Paper 1's frozen components where they exist --------
@@ -152,6 +165,31 @@ def build(master, p1, action):
     # B -- biological/pathway evidence from Paper 1's four databases. Same.
     g["B"] = np.where(fib, g.p1_B / 2.0, np.nan)
     return g
+
+
+STABLE_MIN_FREQUENCY = 0.80      # the stated definition of "stable core"
+TIE_TOLERANCE = 1e-12            # scores this close are the same score
+
+
+def top_set(s, n=TOP_N):
+    """Indices in the top n BY SCORE, including everyone tied at the cutoff.
+
+    `nlargest(n)` resolves ties by row order, so two genes with identical
+    scores are separated by where they happen to sit in the file. At the
+    equal-weight cutoff 105 shared genes carry the cutoff score and 47
+    fibrosis-only genes do, so that choice is not a rounding detail: shuffling
+    the rows moves top-50 membership. Admitting the whole tied band instead
+    makes membership a property of the scores and nothing else, at the cost of
+    a set that is sometimes larger than n -- which is the honest shape of the
+    answer.
+    """
+    s = s.dropna()
+    if not len(s):
+        return set()
+    if len(s) <= n:
+        return set(s.index)
+    cut = s.nlargest(n).iloc[-1]
+    return set(s[s >= cut - TIE_TOLERANCE].index)
 
 
 def score(g, weights):
@@ -205,13 +243,24 @@ def main():
             if s[i].notna().sum() < 10 or base[i].notna().sum() < 10:
                 continue
             rho = stats.spearmanr(base[i], s[i], nan_policy="omit").statistic
-            top_base = set(base[i].nlargest(TOP_N).index)
-            top_abl = set(s[i].nlargest(TOP_N).index)
+            top_base = top_set(base[i])
+            top_abl = top_set(s[i])
+            # A component that is constant inside a class carries no ordering
+            # information there, so removing it CANNOT reorder the class. Any
+            # movement reported for such a component is tie-breaking noise, not
+            # an effect, and saying so is the point of the column.
+            vals = g.loc[i, drop].dropna()
+            constant = bool(len(vals)) and float(vals.max() - vals.min()) <= TIE_TOLERANCE
             rows.append({"component_removed": drop, "progression_class": cls,
-                         "spearman_vs_full": round(float(rho), 3),
+                         "constant_within_class": "yes" if constant else "no",
+                         "can_reorder_within_class": "no" if constant else "yes",
+                         "spearman_vs_full": 1.0 if constant else round(float(rho), 3),
+                         f"top{TOP_N}_band_full": len(top_base),
+                         f"top{TOP_N}_band_ablated": len(top_abl),
                          f"top{TOP_N}_overlap": len(top_base & top_abl),
                          f"top{TOP_N}_overlap_pct":
-                             round(100 * len(top_base & top_abl) / TOP_N, 1)})
+                             round(100 * len(top_base & top_abl)
+                                   / max(len(top_base), 1), 1)})
     ablation = pd.DataFrame(rows)
     ablation.to_csv(f"{OUT_DIR}/task6_ablation.csv", index=False)
 
@@ -223,14 +272,15 @@ def main():
     for cls, sub in g.groupby("progression_class"):
         i = sub.index
         b = base[i]
-        top_base = set(b.nlargest(TOP_N).index)
+        top_base = top_set(b)
         rhos, overlaps = [], []
         for _ in range(N_WEIGHT_SAMPLES):
             w = dict(zip(COMPONENTS, rng.dirichlet(np.ones(len(COMPONENTS)))))
             s = score(g.loc[i], w)
             rhos.append(stats.spearmanr(b, s, nan_policy="omit").statistic)
-            overlaps.append(len(top_base & set(s.nlargest(TOP_N).index)))
+            overlaps.append(len(top_base & top_set(s)))
         rows.append({"progression_class": cls, "genes": len(sub),
+                     f"top{TOP_N}_band_at_equal_weights": len(top_base),
                      "median_spearman": round(float(np.median(rhos)), 3),
                      "spearman_5th_pct": round(float(np.percentile(rhos, 5)), 3),
                      f"median_top{TOP_N}_retained": int(np.median(overlaps)),
@@ -240,21 +290,70 @@ def main():
     sens.to_csv(f"{OUT_DIR}/task6_weight_sensitivity.csv", index=False)
 
     # ---- the stable core: genes in the top N under almost any weighting ---
-    rows = []
+    # The definition is a THRESHOLD, not a quota: a gene is in the stable core
+    # when it reaches the top band under at least 80% of sampled weightings.
+    # Taking the 25 highest frequencies per class instead would fill the file
+    # to a fixed length whatever the frequencies were, so a class with no
+    # stable genes would still appear to have 25 of them.
+    #
+    # It uses the same 2,000 weight samples as the sensitivity summary, so the
+    # two tables describe the same experiment.
+    rows, counts = [], []
     for cls, sub in g.groupby("progression_class"):
         i = sub.index
         hits = pd.Series(0, index=i)
-        for _ in range(500):
+        for _ in range(N_WEIGHT_SAMPLES):
             w = dict(zip(COMPONENTS, rng.dirichlet(np.ones(len(COMPONENTS)))))
-            s = score(g.loc[i], w)
-            hits[s.nlargest(TOP_N).index] += 1
-        frac = (hits / 500).rename("top50_frequency")
-        core = (g.loc[i].join(frac).nlargest(25, "top50_frequency")
-                 [["Gene", "progression_class", "TargetScore",
-                   "top50_frequency"] + COMPONENTS])
+            hits[list(top_set(score(g.loc[i], w)))] += 1
+        frac = (hits / N_WEIGHT_SAMPLES).rename("top50_frequency")
+        joined = g.loc[i].join(frac)
+        core = (joined[joined.top50_frequency >= STABLE_MIN_FREQUENCY]
+                .sort_values("top50_frequency", ascending=False)
+                [["Gene", "progression_class", "TargetScore",
+                  "top50_frequency"] + COMPONENTS])
+        counts.append({"progression_class": cls,
+                       "genes_in_class": len(sub),
+                       "weight_samples": N_WEIGHT_SAMPLES,
+                       "threshold": STABLE_MIN_FREQUENCY,
+                       "genes_meeting_threshold": len(core),
+                       "max_frequency": round(float(joined.top50_frequency.max()), 3)})
         rows.append(core)
     stable = pd.concat(rows, ignore_index=True)
     stable.to_csv(f"{OUT_DIR}/task6_stable_core.csv", index=False)
+    core_counts = pd.DataFrame(counts)
+    sup.add("stable_core_counts", core_counts)
+    print("")
+    print(f"STABLE CORE -- top-{TOP_N} band under >= "
+          f"{STABLE_MIN_FREQUENCY:.0%} of {N_WEIGHT_SAMPLES:,} weightings")
+    print(core_counts.to_string(index=False))
+
+    # ---- K against annotation degree -------------------------------------
+    # K carries no drug COUNT, which is what "degree-free" was meant to claim,
+    # but it is not independent of how well studied a gene is: a gene with more
+    # annotation has more chances to satisfy either of its two binary
+    # conditions. Measured rather than asserted, against the same non-drug
+    # degree Task 3 matched on.
+    if os.path.exists(DEGREES):
+        deg = pd.read_csv(DEGREES)[["Ensembl_ID", "nondrug_degree"]]
+        kd = g[["Ensembl_ID", "K"]].merge(deg, on="Ensembl_ID", how="left") \
+                                   .dropna(subset=["K", "nondrug_degree"])
+        rho_k = stats.spearmanr(kd.K, kd.nondrug_degree)
+        kd["degree_quintile"] = pd.qcut(
+            kd.nondrug_degree.rank(method="first"), 5,
+            labels=["Q1 least connected", "Q2", "Q3", "Q4",
+                    "Q5 most connected"])
+        ktab = (kd.groupby("degree_quintile", observed=True)
+                  .agg(genes=("K", "size"),
+                       mean_K=("K", "mean"),
+                       percent_with_any_K=("K", lambda v: 100 * (v > 0).mean()),
+                       median_nondrug_degree=("nondrug_degree", "median"))
+                  .round(3).reset_index())
+        ktab["spearman_K_vs_degree"] = round(float(rho_k.statistic), 3)
+        ktab["spearman_p"] = f"{rho_k.pvalue:.2e}"
+        sup.add("K_degree_sensitivity", ktab)
+        print("")
+        print("K vs annotation degree -- K is binary, not degree-free")
+        print(ktab.to_string(index=False))
 
     sup.add("component_availability", avail)
     sup.add("component_correlations",

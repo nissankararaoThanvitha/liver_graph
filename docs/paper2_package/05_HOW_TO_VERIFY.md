@@ -14,28 +14,41 @@ Credentials are read from the local MCP server configuration, never from source.
 
 ## Run order
 
+**One order, start to finish. Every script is self-contained: re-running any of
+them rebuilds its own outputs, and no later pass is needed to restore columns.**
+
 ```bash
 python scripts/paper2_task1_master_table.py
-python scripts/paper2_task2_drug_gene_edges.py
+python scripts/paper2_task2_drug_gene_edges.py       # reads edge provenance from the graph
 python scripts/paper2_task3_druggability.py          # slow: 2,000 permutations
-python scripts/paper2_task4_drug_coverage.py
+python scripts/paper2_task4_drug_coverage.py         # reads drug chemistry from the graph
 python scripts/paper2_task5_metapaths.py             # slow: 36M-row joins
-python scripts/paper2_task5_transition_convergence.py
+python scripts/paper2_task7_action_direction.py      # before Task 6: K reads its output
 python scripts/paper2_task6_target_score.py          # slow: 2,000 weightings
-python scripts/paper2_task7_action_direction.py
 python scripts/paper2_task8_final_ranking.py
+python scripts/paper2_task5_transition_convergence.py   # needs Task 8's candidates
 python scripts/paper2_task2_robustness.py
 python scripts/paper2_figures.py
-python scripts/paper2_integrate_recovered_evidence.py   # LAST — see below
-# the two recovery reports read the integrated columns, so they follow it
 uv run --with neo4j --with pandas python scripts/paper2_recovery_optimuskg_report.py
 uv run --with neo4j --with pandas python scripts/paper2_recovery_chembl_report.py
 python scripts/paper2_manifest.py
 ```
 
-`paper2_integrate_recovered_evidence.py` rewrites Task 2, 4 and 7 outputs in
-place. **Re-running any of those task scripts drops the recovered columns**, so
-run the integration again afterwards.
+**Why that order and not another.** Three dependencies are real and the rest is
+numbering:
+
+| this | must run after | because |
+|---|---|---|
+| Task 6 | Task 7 | K reads `reversal_class_with_trajectory` |
+| Task 8 | Task 6 | it ranks on `TargetScore` and the stable core |
+| Task 5 convergence | Task 8 | Test B needs the candidate set |
+
+**The recovered OptimusKG and ChEMBL fields live on the graph**, written back to
+the `Drug` nodes and `ACTS_ON` relationships. Task 2 reads the edge provenance
+and Task 4 the drug chemistry straight from there, so both carry those columns
+on a plain re-run. `paper2_integrate_recovered_evidence.py` remains in the
+repository as the fallback for a graph that has not had the write-back applied;
+**it is not part of the run order and does not need to be run.**
 
 ## The two recoveries
 
@@ -114,6 +127,40 @@ shrinking the draw; `matched_bins_short` and `matched_percent_resampled` in
 `task3_enrichment_tests.csv` report how often that was needed, and both are zero
 for every group here. The reported p is `(r + 1) / (n + 1)`, so its floor is
 0.0005 and it never prints as zero.
+
+## Reproducing the two other simulations
+
+**Task 7, the subgroup permutation.** `task7_action_direction_evidence.csv`
+carries every relationship with its group, its reversal class and its
+progression direction, which is everything the null needs: shuffle the CLASS
+part of the group label among genes sharing a direction, 2,000 times, and
+compare each group's observed consistency against its own draws.
+`task7_consistency_significance.csv` reports the result with `permutations`, the
+null mean and a `(r + 1) / (n + 1)` p-value, so the floor is 0.0005 and never
+zero. The `binomial_*_descriptive` columns are not the basis of any claim;
+`inference_basis` on each row names the permutation.
+
+**Task 5, candidate convergence.** `task5_mp7_reach_per_drug.csv` holds, for
+each of the 1,876 ranked drugs, its MP7 reach and the share of that reach
+landing on supported F3→F4 transition genes, with `is_candidate` on the row.
+Test B is a two-sample permutation over that one column:
+
+```python
+import pandas as pd, numpy as np
+d = pd.read_csv("Paper2_Results/Task5/task5_mp7_reach_per_drug.csv")
+v = d.share_at_target_transition.to_numpy()
+n_c = int(d.is_candidate.sum())
+obs = v[d.is_candidate].mean() - v[~d.is_candidate].mean()
+rng = np.random.default_rng(42)
+null = np.array([v[i[:n_c]].mean() - v[i[n_c:]].mean()
+                 for i in (rng.permutation(len(v)) for _ in range(2000))])
+c = null.mean()
+print(round(obs, 4), (1 + int(np.sum(abs(null - c) >= abs(obs - c)))) / 2001)
+# expect 0.02 and p around 0.38
+```
+
+The 194,393-row MP7 pair table this is derived from is a local intermediate and
+is not shipped; `paper2_task5_metapaths.py` regenerates it in one run.
 
 ## Spot-checks you can run by hand
 

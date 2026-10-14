@@ -77,6 +77,7 @@ from paper2_io import SupportingTables
 from paper2_drug_filters import flag_entities
 
 EDGES = "Paper2_Results/Task2/task2_drug_gene_edges.csv"
+N_PERM = 2000
 MASTER = "Paper2_Results/Task1/Paper2_progression_genes.csv"
 OUT_DIR = "Paper2_Results/Task7"
 
@@ -128,20 +129,56 @@ def main():
                                       != direc.inflammation_direction)].index)
     e["gene_direction_contradictory"] = e.Gene_ID.isin(contradictory)
 
+    # TWO INDEPENDENT REASONS A ROW CANNOT BE CLASSIFIED, kept as separate
+    # flags because they are separate facts and a reader needs to know which
+    # applies. Every one of the eight rows that cannot be resolved by gene
+    # direction ALSO has an unrecorded drug direction (all eight are `TARGET`),
+    # so a single "ambiguous" label hid the fact that the drug side was unknown
+    # too.
+    e["drug_direction_known"] = e.drug_action_direction.isin(["lowers", "raises"])
+    e["gene_direction_conflict"] = (e.gene_direction_contradictory
+                                    | e.gene_direction.isna())
+
+    # PRECEDENCE: the drug side is tested first, which is the order Task 2
+    # uses. A row with no recorded drug direction is `unknown` there, so it is
+    # `unknown` here, and the gene-side flag travels beside it rather than
+    # overriding it. The previous order made the same eight rows `ambiguous`
+    # in this table and `unknown` in Task 2's.
     def classify(r):
-        if r.gene_direction_contradictory:
-            return "ambiguous"
-        if r.drug_action_direction in ("binder or mixed", "unknown"):
+        if not r.drug_direction_known:
             return "unknown"
-        if pd.isna(r.gene_direction):
+        if r.gene_direction_conflict:
             return "ambiguous"
         rises = r.gene_direction == "increasing"
         lowers = r.drug_action_direction == "lowers"
         return "reversal-consistent" if lowers == rises else "reversal-inconsistent"
 
     e["reversal_class"] = e.apply(classify, axis=1)
-    e["Evidence_Source"] = SOURCE
-    e["Evidence_Level"] = EVIDENCE_LEVEL
+    print(f"unclassifiable: {int((~e.drug_direction_known).sum()):,} with no "
+          f"recorded drug direction, "
+          f"{int(e.gene_direction_conflict.sum()):,} with no usable gene "
+          f"direction, "
+          f"{int((~e.drug_direction_known & e.gene_direction_conflict).sum()):,} "
+          f"with both")
+    # PER-EDGE PROVENANCE, carried from Task 2's table rather than stamped on
+    # as a constant. Task 2 reads the recovered properties straight off the
+    # ACTS_ON edge, so a plain re-run of this script rebuilds them; the
+    # dataset-level string is only a fallback for an edge that carries none.
+    e["Evidence_Source"] = np.where(
+        e.get("sources_direct", pd.Series(index=e.index, dtype=object)).notna(),
+        "OptimusKG: " + e.get("sources_direct",
+                              pd.Series(index=e.index, dtype=object)).astype(str),
+        SOURCE)
+    if "n_sources" in e.columns:
+        # n_sources counts DISTINCT asserting databases, not assertions.
+        e["Evidence_Level"] = np.where(e.n_sources.fillna(0) >= 2,
+                                       "multi-source", "single-source")
+    else:
+        e["Evidence_Level"] = EVIDENCE_LEVEL
+    n_prov = int(e.get("sources_direct",
+                       pd.Series(index=e.index, dtype=object)).notna().sum())
+    print(f"per-edge provenance present on {n_prov:,} of {len(e):,} "
+          f"relationships")
 
     # ENTITY FLAG, added 13 October after review of Task 3.
     # This table is read by Task 6 to decide whether a gene "has a therapeutic
@@ -158,13 +195,55 @@ def main():
     print(f"relationships involving a non-therapeutic entity: "
           f"{int(e.non_therapeutic_entity.sum()):,} of {len(e):,}")
 
+    # ---- item 33: trajectory evidence that actually bears on the label -----
+    # Cluster and transition were attached and never consulted, so "trajectory
+    # evidence" meant "a trajectory is on file". The reversal label uses the
+    # association direction (the sign of rho); the stage means carry a second,
+    # independent statement of which way the gene moves, namely the sign of
+    # F4 - F0. Where the two agree, the trajectory supports the label; where
+    # they disagree, the label rests on rho alone and the row says so.
+    stage = master.set_index("Ensembl_ID")
+    e["F0"] = e.Gene_ID.map(stage.F0)
+    e["F4"] = e.Gene_ID.map(stage.F4)
+    delta = e.F4 - e.F0
+    e["trajectory_direction"] = np.where(delta > 0, "increasing",
+                                         np.where(delta < 0, "decreasing", None))
+    agrees = e.trajectory_direction == e.gene_direction
+    has_traj = e.trajectory_direction.notna() & e.gene_direction.notna()
+    e["trajectory_support"] = np.where(
+        ~has_traj, "no trajectory",
+        np.where(agrees, "trajectory supports", "trajectory contradicts"))
+
+    # The label itself, with trajectory folded in. A relationship keeps its
+    # reversal class only where the trajectory does not argue against the gene
+    # direction that class was built on; where it does, the row is held at
+    # "ambiguous - directions disagree" rather than being counted either way.
+    e["reversal_class_with_trajectory"] = np.where(
+        e.reversal_class.isin(["reversal-consistent", "reversal-inconsistent"])
+        & (e.trajectory_support == "trajectory contradicts"),
+        "ambiguous - rho and stage endpoints disagree",
+        e.reversal_class)
+    moved = int((e.reversal_class_with_trajectory != e.reversal_class).sum())
+    print(f"trajectory: {int(has_traj.sum()):,} relationships have one; "
+          f"{int((e.trajectory_support == 'trajectory contradicts').sum()):,} "
+          f"contradict the association direction, of which {moved:,} held a "
+          f"reversal label and are now withheld")
+
     # ---- the required table ------------------------------------------------
     cols = ["Drug", "Drug_ID", "Gene", "Gene_ID", "gene_direction",
             "fibrosis_rho", "inflammation_rho", "progression_class",
             "Cluster", "Cluster_pattern", "Largest_transition", "Tier",
             "Action_Mechanism", "drug_action_direction",
             "Evidence_Source", "Evidence_Level", "reversal_class",
+            "drug_direction_known", "gene_direction_conflict",
+            "trajectory_direction", "trajectory_support",
+            "reversal_class_with_trajectory",
             "non_therapeutic_entity"]
+    # whatever provenance Task 2 recovered, carried through unchanged
+    cols += [c for c in ["sources_direct", "sources_indirect",
+                         "relation_assertions", "relation_conflict",
+                         "source_urls", "mechanisms_of_action", "n_sources"]
+             if c in e.columns]
     out = e[cols].rename(columns={"gene_direction": "Gene_progression_direction",
                                   "Action_Mechanism": "Drug_action"})
     out = out.sort_values(["reversal_class", "Drug", "Gene"])
@@ -176,9 +255,11 @@ def main():
         ("drug-target relationships", len(e), 100.0),
         ("  action direction KNOWN (lowers or raises)", int(known.sum()),
          round(100 * known.mean(), 1)),
-        ("    ...lowers the gene", int((e.drug_action_direction == "lowers").sum()),
+        ("    ...lowers the target's ACTIVITY",
+         int((e.drug_action_direction == "lowers").sum()),
          round(100 * (e.drug_action_direction == "lowers").mean(), 1)),
-        ("    ...raises the gene", int((e.drug_action_direction == "raises").sum()),
+        ("    ...raises the target's ACTIVITY",
+         int((e.drug_action_direction == "raises").sum()),
          round(100 * (e.drug_action_direction == "raises").mean(), 1)),
         ("  action direction UNKNOWN or MIXED", int((~known).sum()),
          round(100 * (~known).mean(), 1)),
@@ -236,32 +317,68 @@ def main():
     idx = np.array([pos[g] for g in dd.Gene_ID])
     consistent = (dd.reversal_class == "reversal-consistent").to_numpy()
 
+    # THE NULL PRESERVES PROGRESSION DIRECTION.
+    # A free shuffle moved labels between rising and falling genes, and those
+    # two have different consistency baselines by construction: 68% of
+    # directional drugs lower their target, so a rising gene is consistent 68%
+    # of the time by chance and a falling gene 32%. Mixing them lets a null
+    # draw inherit the wrong baseline, which makes any group whose direction is
+    # over-represented look enriched. Only the CLASS part of the label is
+    # permuted, and only among genes sharing a direction, so each draw keeps
+    # the group's own baseline and tests the thing the claim is about: whether
+    # a class does better than other classes going the same way.
+    strata = np.array([lab.split(" / ")[-1] for lab in labels])
+    classes = np.array([lab.split(" / ")[0] for lab in labels])
+    stratum_idx = {st: np.flatnonzero(strata == st) for st in set(strata)}
+
     rows_t = []
     for g, s in dd.groupby("paper1_group"):
         k, n = int((s.reversal_class == "reversal-consistent").sum()), len(s)
         expected = p_lower if g.endswith("positive") else 1 - p_lower
         p_binom = stats.binomtest(k, n, expected).pvalue
         obs = k / n
-        null = np.empty(2000)
-        for i in range(2000):
-            lab = rng.permutation(labels)[idx]
+        null = np.empty(N_PERM)
+        for i in range(N_PERM):
+            shuffled = classes.copy()
+            for st, where in stratum_idx.items():
+                shuffled[where] = rng.permutation(classes[where])
+            lab = np.char.add(np.char.add(shuffled, " / "), strata)[idx]
             m = lab == g
             null[i] = consistent[m].mean() if m.any() else np.nan
-        p_perm = float(np.nanmean(np.abs(null - np.nanmean(null))
-                                  >= abs(obs - np.nanmean(null))))
+        centre = float(np.nanmean(null))
+        kept = null[~np.isnan(null)]
+        extreme = int(np.sum(np.abs(kept - centre) >= abs(obs - centre)))
+        p_perm = (1 + extreme) / (len(kept) + 1)      # finite-simulation
         rows_t.append({"paper1_group": g, "relationships": n, "consistent": k,
                        "observed_percent": round(100 * obs, 1),
                        "expected_from_vocabulary": round(100 * expected, 1),
-                       "binomial_p": p_binom,
-                       "gene_permutation_null": round(100 * float(np.nanmean(null)), 1),
-                       "gene_permutation_p": round(p_perm, 4)})
+                       # descriptive only: edges on one gene are not
+                       # independent draws, so this p is not inferential
+                       "binomial_p_descriptive": p_binom,
+                       "gene_permutation_null": round(100 * centre, 1),
+                       "gene_permutation_p": round(p_perm, 5),
+                       "permutations": N_PERM})
     tests = pd.DataFrame(rows_t)
-    tests["binomial_q_BH"] = stats.false_discovery_control(tests.binomial_p.values)
-    tests["binomial_p"] = tests.binomial_p.map(lambda v: f"{v:.2e}")
-    tests["binomial_q_BH"] = tests.binomial_q_BH.map(lambda v: f"{v:.2e}")
+    # The binomial treats every relationship as an independent draw. They are
+    # not: 4,984 relationships sit on 1,072 genes and 3,027 drugs, so one
+    # well-annotated gene contributes dozens of correlated rows. BH does not
+    # repair that, it only controls the family error rate among tests that are
+    # each individually wrong. These columns are kept as a descriptive check
+    # and are explicitly not the basis for any claim; the gene-level
+    # permutation is.
+    tests["binomial_q_BH_descriptive"] = stats.false_discovery_control(
+        tests.binomial_p_descriptive.values)
+    tests["binomial_p_descriptive"] = tests.binomial_p_descriptive.map(
+        lambda v: f"{v:.2e}")
+    tests["binomial_q_BH_descriptive"] = tests.binomial_q_BH_descriptive.map(
+        lambda v: f"{v:.2e}")
+    tests["inference_basis"] = "gene-level permutation within progression direction"
+    tests["permutation_q_BH"] = stats.false_discovery_control(
+        tests.gene_permutation_p.values)
     tests["survives_gene_permutation"] = np.where(
         (tests.observed_percent > tests.expected_from_vocabulary)
-        & (tests.gene_permutation_p < 0.05), "yes", "no")
+        & (tests.permutation_q_BH < 0.05), "yes", "no")
+    tests["permutation_q_BH"] = tests.permutation_q_BH.map(lambda v: f"{v:.3e}")
     tests.to_csv(f"{OUT_DIR}/task7_consistency_significance.csv", index=False)
 
     # ---- supporting ---------------------------------------------------------
@@ -301,8 +418,8 @@ def main():
     print("")
     print("is any group more consistent than the drug vocabulary allows?")
     print(tests[["paper1_group", "relationships", "observed_percent",
-                 "expected_from_vocabulary", "binomial_q_BH",
-                 "gene_permutation_null", "gene_permutation_p",
+                 "expected_from_vocabulary", "binomial_q_BH_descriptive",
+                 "gene_permutation_null", "gene_permutation_p", "permutation_q_BH",
                  "survives_gene_permutation"]].to_string(index=False))
     for f in ["task7_action_direction_evidence.csv",
               "task7_consistency_significance.csv",

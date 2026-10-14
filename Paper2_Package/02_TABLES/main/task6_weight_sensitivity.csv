@@ -1,4 +1,4 @@
-progression_class,genes,median_spearman,spearman_5th_pct,median_top50_retained,top50_retained_5th_pct
-both,1822,0.924,0.815,32,16
-fibrosis-only,2023,0.948,0.792,31,19
-inflammation-only,2377,0.981,0.902,32,20
+progression_class,genes,top50_band_at_equal_weights,median_spearman,spearman_5th_pct,median_top50_retained,top50_retained_5th_pct
+both,1822,133,0.924,0.815,84,34
+fibrosis-only,2023,91,0.948,0.792,50,38
+inflammation-only,2377,50,0.98,0.906,38,20

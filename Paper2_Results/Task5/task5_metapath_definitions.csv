@@ -6,3 +6,4 @@ MP4,D-G-P-G,Drug -> Gene -> Pathway <- Progression gene,plan minimum; the main c
 MP5,D-G-B-G,Drug -> Gene -> BioProcess <- Progression gene,"same via GO BP, for comparison"
 MP6,D-G-P-G[traj],Drug -> Gene -> Pathway <- F0-F4 trajectory gene,"plan extension; target restricted to the 3,845 clustered genes"
 MP7,D-G-P-G[trans],Drug -> Gene -> Pathway <- stage-transition gene,plan extension; target restricted to genes with a substantial transition
+MP8,D-G-P1-G,Drug -> Gene -> Paper 1 significant fibrosis term <- Progression gene,"plan extension; the bridge is Paper 1's own enrichment result, not general graph connectivity, and is reported separately from it"

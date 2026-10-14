@@ -88,13 +88,13 @@ Nothing was overwritten. **11.2% is exact, not a floor.** Re-checked by
 | …of those, with an F0–F4 trajectory available | 804 | 9.0% |
 | …of those, **consistent with** that trajectory | **417** | **4.7%** |
 
-## RECOVERED, 13 October 2026 — the column the graph could not fill
+## Per-edge provenance — the column the graph alone could not fill
 
-The statement below was true of the *graph* and false of the *data*.
+The graph stores one property on `ACTS_ON`, `action`, because
 `build_optimuskg_layer.py` reads `properties` from every parquet and keeps it
-only for `disease_gene`; for drug-gene edges it was read and discarded. Going
-back to the same source file at the same DOI recovers it, for **8,948 of 8,948
-edges**:
+only for `disease_gene`; for drug-gene edges it is read and discarded. The
+evidence is in the source file all the same, and reading that file at the same
+DOI recovers it for **8,948 of 8,948 edges**:
 
 | column | content |
 |---|---|
@@ -131,13 +131,14 @@ So of the columns the plan asks for:
 
 Per-edge provenance was not loaded into the graph by
 `build_optimuskg_layer.py`, which read `properties` and kept only `name` and
-`relation`. For a time `Evidence_Source` therefore carried a dataset-level
-statement rather than a blank, so nobody would read an empty cell as "no
-evidence found".
+`relation`. A dataset-level statement would be the most the graph alone could
+offer, and it would still beat a blank, which a reader takes as "no evidence
+found".
 
-**That is no longer the case.** On 13 October the OptimusKG parquets were
-re-parsed from DOI `10.7910/DVN/IYNGEV` and the per-edge evidence recovered, so
-every one of the 8,948 rows now names the databases asserting it — for example
+**The source file carries more.** The OptimusKG parquets at DOI
+`10.7910/DVN/IYNGEV` hold the per-edge evidence, which is written back onto the
+`ACTS_ON` relationships and read from there by this task, so every one of the
+8,948 rows names the databases asserting it — for example
 `OptimusKG: DRUG_BANK;OPEN_TARGETS`. Only two sources assert drug-gene edges at
 all: DrugBank and Open Targets.
 

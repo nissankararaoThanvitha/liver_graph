@@ -49,9 +49,18 @@ blocking either target helps the liver.
 ## 4. Mechanism evidence is weak and narrow
 
 Overall reversal consistency is indistinguishable from chance (52.7% against a
-55.9% null, p = 0.553), robust to six classification schemes. The one subgroup
-that beats its null rests on 32 genes dominated by classic inhibitor-target
-families.
+55.9% null, p = 0.553), robust to six classification schemes. **No subgroup
+beats its null either**, once the null preserves progression direction:
+`fibrosis-only / positive` is the closest at p = 0.083, q = 0.50 across six
+groups, and its 89.2% rests on 32 genes dominated by classic inhibitor-target
+families. A null that shuffled labels across rising and falling genes would
+report that group at p = 0.001, because those two populations have different
+baselines by construction — 67.6% and 32.4% — and mixing them lets a draw
+inherit the wrong one.
+
+The per-edge binomial tests in `task7_consistency_significance.csv` treat
+relationships as independent draws, which they are not — 4,984 relationships sit
+on 1,072 genes. They are labelled `_descriptive` and no claim rests on them.
 
 **Mechanism consistency is at chance overall, but it contributes half of the K
 component; the sensitivity of the ranking to this choice is noted in §10b.**
@@ -213,6 +222,29 @@ falling as fibrosis advances may be a driver worth restoring, a consequence
 worth leaving alone, or a compensatory response worth supporting. A correlation
 with stage cannot separate those, so no part of Paper 2 treats "decreasing"
 as "should be raised".
+
+## 9e. Three measures are descriptive and are not enrichment statistics
+
+**Drug coherence (Task 4).** `dominant_class_fraction` depends on how many
+targets a drug has and on how common each class × direction group is. A
+single-target drug scores 1.000 automatically; the groups are unequal in size,
+so random targeting already scores well above chance. Nothing is compared
+against a null matched for target count and group prevalence, so a high score
+describes the target list, not unusually coherent targeting.
+
+**The Wilson bound (Task 4).** Wilson assumes the numerator is a binomial draw
+from the denominator. A drug's recorded target list is not a random sample of
+its true repertoire — it is whatever has been assayed and curated. The bound is
+used only to penalise a small denominator, which it does correctly because it is
+monotone in the denominator. It is not a confidence bound on true specificity.
+
+**Annotation volume (Task 5).** GO BP produces 11× more paths than Reactome and
+loses 75% of them to the size cap against Reactome's 18%. Those are facts about
+volume and cap sensitivity. They do not establish that Reactome is "cleaner" or
+that GO connectivity "is not biology" — vocabulary size, hierarchy depth and
+annotation coverage differ between the two and any of those alone would produce
+the pattern. Reactome is the primary bridge because it is more selective, which
+is a practical choice, not a verdict.
 
 ## 10. Inflammation-only genes carry less evidence
 
