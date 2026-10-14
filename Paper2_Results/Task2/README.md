@@ -329,12 +329,38 @@ rho direction, but using the stage endpoints instead.
 | …of those, **consistent with that trajectory** | **417** |
 
 Availability and consistency are reported separately because they answer
-different questions: 804 genes have a trajectory on file, and 417 of those
-relationships actually agree with it.
+different questions: 804 relationships sit on a gene with a trajectory on file,
+and 417 of those actually oppose it.
 
-The two direction measures disagree on **14 edges**, where the rho direction and
-the F4 − F0 endpoints point opposite ways for the same gene. They are left
-visible rather than resolved by preferring one measure.
+`trajectory_consistency` carries four values, not two. An edge whose action has
+no recorded direction — every pharmacokinetic edge, and every therapeutic one
+recorded only as `TARGET` — can neither oppose a trajectory nor agree with one,
+so it reads **"no drug direction"** rather than being counted as inconsistent:
+
+| `trajectory_consistency` | edges |
+|---|---:|
+| no drug direction | 7,943 |
+| trajectory-consistent | 417 |
+| trajectory-inconsistent | 387 |
+| no trajectory | 201 |
+
+### Where the two direction measures disagree
+
+The rho direction and the sign of F4 − F0 are different quantities — a rank
+correlation across five stages against the difference between the two end
+stages — so they can disagree. Counting that needs both values present:
+`NaN != "increasing"` is true in pandas, so comparing the columns directly
+reports every row with a missing direction as a disagreement.
+
+Done properly, they disagree on **576 of the 8,923 edges where both are known,
+covering 112 genes — and none of those genes has a Paper 1 trajectory cluster.**
+Every disagreement is on an inflammation-only gene, whose `gene_direction` comes
+from the disease-group ladder (216 patients) while F0–F4 are fibrosis-stage
+means (610 patients). Those are two different contrasts, so this is not a
+trajectory conflict.
+
+**Among the fibrosis-associated genes that actually have a trajectory, the two
+measures agree on every edge.**
 
 ## Two limitations worth stating plainly
 

@@ -52,12 +52,13 @@ reversal logic runs on the remaining 1,005.
 | Class | `reversal_class` | `reversal_class_with_trajectory` |
 |---|---:|---:|
 | unknown | 3,979 | 3,979 |
-| **reversal-consistent** | **530** | **497** |
-| **reversal-inconsistent** | **475** | **424** |
-| ambiguous — rho and stage endpoints disagree | 0 | 84 |
+| **reversal-consistent** | **530** | **530** |
+| **reversal-inconsistent** | **475** | **475** |
+| ambiguous — rho and stage endpoints disagree | 0 | 0 |
 
 Both columns ship. The first is the label from the association direction alone;
-the second applies the trajectory rule below and is the one Task 6 reads.
+the second applies the trajectory rule below and is the one Task 6 reads. They
+are identical here because nothing contradicts its trajectory — see below.
 
 ### Two separate reasons a row cannot be classified
 
@@ -92,17 +93,34 @@ The stage means carry a second and independent statement of which way the gene
 moves: the sign of **F4 − F0**. Where they agree, the trajectory supports the
 label. Where they disagree, the label rests on rho alone.
 
+**The rule only runs where a fibrosis trajectory exists.** F0–F4 are
+fibrosis-stage means and Paper 1 fitted trajectory clusters to the 3,845
+fibrosis-associated genes alone. An inflammation-only gene has stage means in
+the table but no fibrosis trajectory, and its `gene_direction` comes from the
+disease-group ladder — a different contrast on 216 patients rather than 610.
+Comparing those two is a category error, not a disagreement, so those
+relationships are not trajectory-tested.
+
 | `trajectory_support` | relationships |
 |---|---:|
-| trajectory supports | 4,601 |
-| trajectory contradicts | 364 |
-| no trajectory | 19 |
+| trajectory supports | 3,732 |
+| **trajectory contradicts** | **0** |
+| no fibrosis trajectory (inflammation-only genes) | 1,244 |
+| trajectory direction undefined | 8 |
 
-`reversal_class_with_trajectory` applies the rule: of the 364 contradicting
-rows, **84 held a reversal label** and are now held at *"ambiguous — rho and
-stage endpoints disagree"* instead of being counted as evidence either way.
-Task 6's K component reads this column, so the rule changes the ranking rather
-than decorating it.
+**No relationship contradicts its trajectory.** Across all 3,732 relationships
+on genes that have one, the sign of rho and the sign of F4 − F0 agree every
+time. That is a confirmation, not a formality: the two are computed from
+different quantities — a rank correlation across five stages against the
+difference between the two end stages — and they could have disagreed.
+
+`reversal_class_with_trajectory` applies the rule and, on this data, withholds
+nothing, so it is identical to `reversal_class`. Task 6's K reads it, so if a
+future run does produce a contradiction the ranking will feel it.
+
+Dropping the fibrosis-trajectory guard would make the rule fire on 364
+relationships and withhold 84 reversal labels — every one of them on an
+inflammation-only gene, none of which has a fibrosis trajectory at all.
 
 ## Evidence level, per edge
 
@@ -195,8 +213,8 @@ does: the gene-level permutation within progression direction.
 | C1 | early increase, then continues | 104 | 50 | 566 |
 | C2 | late increase (largest F3→F4) | 171 | 116 | 774 |
 | C3 | early rise, then plateau | **66** | **10** | 200 |
-| C4 | mid decrease | 3 | 48 | 352 |
-| C5 | late decrease (largest F3→F4) | 73 | 163 | 1,036 |
+| C4 | mid decrease | 3 | 48 | 357 |
+| C5 | late decrease (largest F3→F4) | 73 | 163 | 1,039 |
 
 The rising clusters (C1–C3) run consistent; the falling ones (C4, C5) run
 inconsistent — the same vocabulary asymmetry, now visible along the disease
@@ -226,7 +244,8 @@ more bluntly: the graph records association direction and timing, it does
 3. **79.8% of relationships have no direction.** A mechanism component applies
    to a fifth of the data and must not silently penalise the rest.
 4. **Honour the trajectory rule downstream.** K reads
-   `reversal_class_with_trajectory`, so the 84 relationships where rho and the
-   stage endpoints disagree do not earn consistency credit.
+   `reversal_class_with_trajectory`. It withholds nothing on this data, because
+   no relationship contradicts its trajectory, but it is the column that would
+   catch one.
 5. **Internal agreement is not validation.** Where this table and Paper 1 agree
    on a relationship, they are reading the same OptimusKG edges.

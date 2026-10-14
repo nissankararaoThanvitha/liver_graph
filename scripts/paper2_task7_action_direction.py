@@ -208,11 +208,25 @@ def main():
     delta = e.F4 - e.F0
     e["trajectory_direction"] = np.where(delta > 0, "increasing",
                                          np.where(delta < 0, "decreasing", None))
+
+    # ONLY WHERE A FIBROSIS TRAJECTORY EXISTS.
+    # F0-F4 are fibrosis-stage means and Paper 1 fitted a trajectory cluster to
+    # the 3,845 fibrosis-associated genes alone. An inflammation-only gene has
+    # stage means in the table but no fibrosis trajectory, and its
+    # gene_direction comes from the disease-group ladder -- a different
+    # contrast, on 216 patients rather than 610. Comparing the two is a
+    # category error, not a disagreement: without this guard the rule fires on
+    # 364 relationships, every one of them inflammation-only, and withholds 84
+    # reversal labels on the strength of it.
+    has_cluster = e.Cluster.notna()
+    both_known = e.trajectory_direction.notna() & e.gene_direction.notna()
+    has_traj = has_cluster & both_known
     agrees = e.trajectory_direction == e.gene_direction
-    has_traj = e.trajectory_direction.notna() & e.gene_direction.notna()
     e["trajectory_support"] = np.where(
-        ~has_traj, "no trajectory",
-        np.where(agrees, "trajectory supports", "trajectory contradicts"))
+        ~has_cluster, "no fibrosis trajectory",
+        np.where(~both_known, "trajectory direction undefined",
+                 np.where(agrees, "trajectory supports",
+                          "trajectory contradicts")))
 
     # The label itself, with trajectory folded in. A relationship keeps its
     # reversal class only where the trajectory does not argue against the gene
@@ -224,10 +238,13 @@ def main():
         "ambiguous - rho and stage endpoints disagree",
         e.reversal_class)
     moved = int((e.reversal_class_with_trajectory != e.reversal_class).sum())
-    print(f"trajectory: {int(has_traj.sum()):,} relationships have one; "
+    print(f"trajectory: {int(has_traj.sum()):,} relationships sit on a gene "
+          f"with a fibrosis trajectory; "
           f"{int((e.trajectory_support == 'trajectory contradicts').sum()):,} "
           f"contradict the association direction, of which {moved:,} held a "
-          f"reversal label and are now withheld")
+          f"reversal label and are withheld")
+    print(f"   {int((~has_cluster).sum()):,} relationships are on "
+          f"inflammation-only genes and are not trajectory-tested")
 
     # ---- the required table ------------------------------------------------
     cols = ["Drug", "Drug_ID", "Gene", "Gene_ID", "gene_direction",

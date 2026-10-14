@@ -284,10 +284,19 @@ def main():
     drug_raises = e.action_class == "therapeutic-raises"
     opposes_traj = ((drug_lowers & (e.trajectory_direction == "increasing"))
                     | (drug_raises & (e.trajectory_direction == "decreasing")))
+    # Three outcomes, not two. An edge whose action has no direction -- a
+    # pharmacokinetic edge, or a therapeutic one recorded only as TARGET --
+    # cannot oppose a trajectory or agree with it, so calling it
+    # "trajectory-inconsistent" states a disagreement that was never tested.
+    # That mislabels 6,267 of the 8,948 edges, four fifths of which are simply
+    # undirected.
+    directional_edge = e.action_class.isin(["therapeutic-lowers",
+                                            "therapeutic-raises"])
     e["trajectory_consistency"] = np.where(
-        ~e.trajectory_available, "no trajectory",
-        np.where(opposes_traj, "trajectory-consistent",
-                 "trajectory-inconsistent"))
+        ~directional_edge, "no drug direction",
+        np.where(~e.trajectory_available, "no trajectory",
+                 np.where(opposes_traj, "trajectory-consistent",
+                          "trajectory-inconsistent")))
 
     e["parent_drug"] = e.Drug.map(parent_drug)
     order = ["Drug", "Drug_ID", "parent_drug", "Gene", "Gene_ID", "Relationship",
@@ -351,12 +360,26 @@ def main():
     # The two direction measures should agree; where they do not, the rho
     # direction and the stage endpoints disagree about the same gene, which is
     # worth seeing rather than averaging away.
-    traj_vs_rho = ((e.trajectory_consistency != "no trajectory")
-                   & (e.trajectory_direction != e.gene_direction))
+    #
+    # BOTH values must be present. `NaN != "increasing"` is True in pandas, so
+    # comparing the columns directly reports every row with a missing direction
+    # as a disagreement -- which is how a figure of 14 arose from 14 rows that
+    # have no gene direction at all, and none of which disagrees with anything.
+    #
+    # Reported twice: over every edge where both directions exist, and over the
+    # subset whose gene carries a Paper 1 trajectory cluster, because F0-F4
+    # stage means exist for inflammation-only genes but no fibrosis trajectory
+    # was ever fitted to them.
+    both_known = e.trajectory_direction.notna() & e.gene_direction.notna()
+    traj_vs_rho = both_known & (e.trajectory_direction != e.gene_direction)
+    traj_vs_rho_clustered = traj_vs_rho & e.Cluster.notna()
     print(f"\ntrajectory: {int(with_traj.sum()):,} reconciled edges have a trajectory; "
           f"{int(traj_consistent.sum()):,} of them are consistent with it")
     print(f"   rho direction disagrees with F4-F0 on "
-          f"{int(traj_vs_rho.sum()):,} edges")
+          f"{int(traj_vs_rho.sum()):,} of {int(both_known.sum()):,} edges "
+          f"where both are known "
+          f"({int(traj_vs_rho_clustered.sum()):,} on genes with a Paper 1 "
+          f"cluster), covering {e.loc[traj_vs_rho, 'Gene_ID'].nunique():,} genes")
 
     summary = pd.DataFrame([
         ("progression genes in the master table", len(master)),

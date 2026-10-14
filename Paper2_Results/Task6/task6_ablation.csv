@@ -1,7 +1,7 @@
 component_removed,progression_class,constant_within_class,can_reorder_within_class,spearman_vs_full,top50_band_full,top50_band_ablated,top50_overlap,top50_overlap_pct
 P,both,no,yes,0.926,133,95,59,44.4
 P,fibrosis-only,no,yes,0.968,91,97,60,65.9
-P,inflammation-only,no,yes,0.43,50,262,50,100.0
+P,inflammation-only,no,yes,0.437,50,262,50,100.0
 F,both,yes,no,1.0,133,133,133,100.0
 F,fibrosis-only,yes,no,1.0,91,91,91,100.0
 F,inflammation-only,yes,no,1.0,50,50,50,100.0
@@ -10,7 +10,7 @@ T,fibrosis-only,no,yes,0.92,91,59,56,61.5
 T,inflammation-only,no,yes,1.0,50,50,50,100.0
 K,both,no,yes,0.964,133,84,84,63.2
 K,fibrosis-only,no,yes,0.968,91,96,56,61.5
-K,inflammation-only,no,yes,0.892,50,52,8,16.0
+K,inflammation-only,no,yes,0.888,50,52,8,16.0
 B,both,no,yes,0.806,133,182,133,100.0
 B,fibrosis-only,no,yes,0.736,91,64,47,51.6
 B,inflammation-only,no,yes,1.0,50,50,50,100.0

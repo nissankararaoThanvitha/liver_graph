@@ -243,14 +243,14 @@ against the band.
 |---|---:|---:|---:|---:|
 | fibrosis-only | 91 | 0.948 | 0.792 | 50 / 91 (55%) |
 | shared | 133 | 0.924 | 0.815 | 84 / 133 (63%) |
-| inflammation-only | 50 | 0.980 | 0.906 | 38 / 50 (76%) |
+| inflammation-only | 50 | 0.981 | 0.902 | 32 / 50 (64%) |
 
 **Ordering is stable; exact membership is not.** Use rank bands, or
 `task6_stable_core.csv`.
 
 **The stable core is a threshold, not a quota.** A gene enters it by reaching
 the band under at least **80%** of the same 2,000 weightings: 16 shared, 15
-fibrosis-only, 26 inflammation-only, **57 genes** in all, lowest frequency kept
+fibrosis-only, 16 inflammation-only, **47 genes** in all, lowest frequency kept
 0.809. Taking a fixed 25 per class instead would fill the file to 75 rows
 whatever the frequencies were, admitting genes as low as 51% and making a class
 with no stable members look as though it had twenty-five.

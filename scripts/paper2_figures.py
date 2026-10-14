@@ -40,7 +40,7 @@ def task2_actions():
              "therapeutic-lowers", "therapeutic-raises"]
     counts = e.action_class.value_counts().reindex(order)
     labels = ["therapeutic,\nno direction recorded", "pharmacokinetic\n(metabolism/transport)",
-              "therapeutic,\nlowers the gene", "therapeutic,\nraises the gene"]
+              "therapeutic, lowers\nthe target's activity", "therapeutic, raises\nthe target's activity"]
     colours = [GREY, ORANGE, BLUE, GREEN]
 
     fig, ax = plt.subplots(figsize=(9, 3.6))
@@ -216,8 +216,19 @@ def task4_coverage():
     ax.set_xscale("log")
     ax.set_xlabel("progression genes reached  (log scale)")
     ax.set_ylabel("coherence\n(largest share in one group)")
-    ax.set_title("Coverage is not quality: the widest-reaching drugs are the "
-                 "least coherent", fontsize=10, loc="left")
+    # The correlation is measured on drugs reaching >= 5 progression genes with
+    # non-therapeutic entities removed, and only for CLASS x DIRECTION
+    # coherence; trajectory-cluster coherence shows no such relationship. The
+    # title says both, because "coverage is not quality" claimed more than the
+    # number supports.
+    ax.set_title("Wider coverage goes with lower class \u00d7 direction "
+                 "coherence\n"
+                 "Spearman \u03c1 = \u22120.328 (p = 3.3e\u221205) on the 154 "
+                 "unflagged drugs reaching \u2265 5 progression genes. "
+                 "Trajectory-cluster\ncoherence shows no such relationship "
+                 "(\u03c1 = \u22120.102, p = 0.21). Points here are drugs "
+                 "reaching \u2265 3.",
+                 fontsize=9, loc="left")
     ax.legend(fontsize=8, loc="upper right", framealpha=.95)
     ax.spines[["top", "right"]].set_visible(False)
     fig.tight_layout()
@@ -551,10 +562,10 @@ def task1_gene_set():
 
 
 def task8_candidates():
-    """Task 8 had no figure either, which is the worst place to lack one: the
-    headline result is that thirty candidates reach only two genes, and a
-    thirty-row table makes the list look more diverse than it is. The figure
-    exists to make that collapse impossible to miss.
+    """Thirty candidates reach only two genes, and a thirty-row table makes the
+    list look more diverse than it is. The figure exists to make that collapse
+    impossible to miss, and to show how little mechanism evidence sits behind
+    it.
     """
     T8 = "Paper2_Results/Task8"
     lc = pd.read_csv(f"{T8}/task8_leading_candidates.csv", low_memory=False)
@@ -593,10 +604,11 @@ def task8_candidates():
     ax2.set_yticklabels([f"{d[:22]}  ({t})" for d, t in
                          zip(lc2.Drug, lc2.best_target)], fontsize=6.4)
 
-    # One drug has 82 targets and would flatten the other 29 into nothing. Cap
-    # the axis and label it instead of letting it dominate: that drug is
-    # FOSTAMATINIB, the promiscuous kinase inhibitor the Task 8 tie-break fix
-    # demoted, so the outlier IS the point rather than a nuisance.
+    # A single very promiscuous drug would flatten the rest into nothing, so the
+    # axis is capped at the 90th percentile plus a margin and any drug beyond it
+    # is labelled with its true count rather than silently clipped. On the
+    # current list nothing exceeds the cap; the guard stays because the
+    # tie-break that keeps such drugs out is itself not firmly justified.
     cap = int(np.percentile(lc2.n_targets, 90)) + 4
     big = lc2[lc2.n_targets > cap]
     ax2.set_xlim(0, cap)
@@ -610,7 +622,8 @@ def task8_candidates():
                       f"{len(big)} drug exceeds it)" if len(big) else ""))
     ax2.set_title("Mechanism evidence per candidate\n"
                   f"grey dominates: {int(lc.n_mechanism_unknown.sum()):,} of "
-                  f"{int(lc.n_targets.sum()):,} relationships record no direction",
+                  f"{int(lc.n_targets.sum()):,} relationships to "
+                  "fibrosis-associated genes record no direction",
                   fontsize=10, loc="left")
     ax2.legend(fontsize=7.6, framealpha=.95, loc="lower right")
     ax2.spines[["top", "right"]].set_visible(False)

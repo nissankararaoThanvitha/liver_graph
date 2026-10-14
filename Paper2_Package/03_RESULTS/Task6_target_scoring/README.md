@@ -190,7 +190,7 @@ The question is whether the ranking survives *any* reasonable weighting.
 |---|---:|---:|---:|---:|---:|---:|
 | fibrosis-only | 2,023 | 91 | 0.948 | 0.792 | **50 / 91** | 38 |
 | shared | 1,822 | 133 | 0.924 | 0.815 | **84 / 133** | 34 |
-| inflammation-only | 2,377 | 50 | 0.980 | 0.906 | **38 / 50** | 20 |
+| inflammation-only | 2,377 | 50 | 0.981 | 0.902 | **32 / 50** | 20 |
 
 ### Ablation — remove one component, see what moves
 
@@ -204,11 +204,11 @@ movement would be tie-breaking noise.
 | **F** | all three | **yes** | **1.000** | **100%** |
 | P | shared | no | 0.926 | 44% |
 | P | fibrosis-only | no | 0.968 | 66% |
-| P | inflammation-only | no | 0.430 | 100% |
+| P | inflammation-only | no | 0.437 | 100% |
 | T | fibrosis-only | no | 0.920 | 62% |
 | K | shared | no | 0.964 | 63% |
 | K | fibrosis-only | no | 0.968 | 62% |
-| K | inflammation-only | no | 0.892 | **16%** |
+| K | inflammation-only | no | 0.888 | **16%** |
 | B | fibrosis-only | no | 0.736 | 52% |
 
 Full table, all fifteen combinations: `task6_ablation.csv`.
@@ -234,7 +234,7 @@ carries zero ranking information. Reporting it as a working component would
 overstate the score's evidence base by a fifth.
 
 ### 2. The ranking is stable; exact membership is not
-Overall ordering holds well (median ρ ≈ 0.92–0.98). But only **55%, 63% and 76%**
+Overall ordering holds well (median ρ ≈ 0.92–0.98). But only **55%, 63% and 64%**
 of each class's top band survives a random reweighting, and at the 5th
 percentile as little as a fifth.
 
@@ -250,9 +250,9 @@ both describe one experiment.
 |---|---:|---:|
 | shared | 16 | 0.952 |
 | fibrosis-only | 15 | 0.850 |
-| inflammation-only | 26 | 0.812 |
+| inflammation-only | 16 | 0.809 |
 
-**57 genes**, not a fixed 25 per class. A quota would have filled the file to
+**47 genes**, not a fixed 25 per class. A quota would have filled the file to
 75 rows whatever the frequencies were, admitting genes as low as 51% and making
 a class with no stable members look as though it had twenty-five. The count per
 class is itself a result: it says how much of each ranking is weighting-proof.

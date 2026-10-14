@@ -95,7 +95,7 @@ indefensible even with one continuous score; with 51 ties they are more so.
 
 ## FINDING — band 1 is two genes
 
-51 named drugs tie in band 1. They reach exactly **two** targets:
+51 drugs tie in band 1, 48 of them unflagged. They reach exactly **two** targets:
 
 | Target | Drugs | What they are |
 |---|---:|---|
