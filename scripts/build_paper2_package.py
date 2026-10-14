@@ -62,10 +62,11 @@ FIGURES = {
     "Task8/task8_candidates.png": (
         "main",
         "The final result and its limit. Left: 30 leading candidates reach "
-        "only two targets, 22 to CACNA1C and 8 to PDGFRA. Right: mechanism "
+        "only two targets, 23 to CACNA1C and 7 to PDGFRA. Right: mechanism "
         "evidence per candidate, where grey -- no recorded direction -- covers "
-        "61 of 107 relationships. The CACNA1C drugs are almost entirely grey; "
-        "the PDGFRA kinase inhibitors carry most of what mechanism there is."),
+        "61 of the 107 relationships these drugs have to fibrosis-associated "
+        "genes. The CACNA1C drugs are almost entirely grey; the PDGFRA kinase "
+        "inhibitors carry most of what mechanism there is."),
     "Task2/task2_action_classes.png": (
         "main",
         "What the 8,948 drug-gene links are. Two of the four bars -- "
@@ -90,9 +91,13 @@ FIGURES = {
         "and the falling-vs-rising gap does not survive BH correction."),
     "Task4/task4_coverage_vs_coherence.png": (
         "main",
-        "Coverage against coherence, one point per drug. The widest-reaching "
-        "drugs are the least coherent; the two measures correlate at -0.268 (p = 0.001), "
-        "so ranking by target count selects promiscuity."),
+        "Coverage against class x direction coherence, one point per drug "
+        "reaching at least three progression genes. Among the 154 unflagged "
+        "drugs reaching five or more, the two correlate at rho = -0.328 "
+        "(p = 3.3e-05), so ranking by target count selects against that kind "
+        "of focus. Trajectory-cluster coherence shows no such relationship "
+        "(rho = -0.102, p = 0.21), and coherence is descriptive: a one-target "
+        "drug scores 1.000 automatically."),
     "Task4/task4_network.png": (
         "main",
         "The most coherent drugs and the progression genes they reach, with "
@@ -102,18 +107,27 @@ FIGURES = {
     "Task5/task5_metapath_sizes.png": (
         "supplementary",
         "Path volume per metapath, with and without a 5-200 gene term cap. "
-        "Capping costs Reactome 18% of its paths and GO 75%, which is the "
-        "measure of how much of GO's volume is annotation breadth."),
+        "Capping costs Reactome 18% of its paths and GO BP 75%, so far "
+        "more of GO's volume runs through very large terms. That measures "
+        "volume and cap sensitivity, not which vocabulary is biologically "
+        "better: GO BP also has a larger vocabulary, a deeper hierarchy and "
+        "broader annotation coverage."),
     "Task6/task6_weight_stability.png": (
         "supplementary",
-        "Left: how little of a top-50 survives a random reweighting -- a "
-        "median of 29 to 32 of 50. Right: the stable core, the genes holding "
-        "their place across 80% of weightings."),
+        "Scores tie heavily, so the top 50 is really a band of every gene "
+        "at or above the 50th score: 133 shared, 91 fibrosis-only, 50 "
+        "inflammation-only. Left: how much of each band survives a random "
+        "reweighting -- 84 of 133, 50 of 91, 32 of 50. Right: the stable "
+        "core, the 47 genes reaching their band under at least 80% of 2,000 "
+        "weightings. A threshold, not a fixed quota per class."),
     "Task7/task7_consistency_vs_null.png": (
         "main",
         "Reversal consistency per progression group against two baselines: "
-        "what the drug vocabulary gives for free, and a gene-level "
-        "permutation. Only fibrosis-only rising genes beat their own null."),
+        "what the drug vocabulary gives for free, and a permutation that "
+        "shuffles the class label WITHIN progression direction so each group "
+        "keeps its own baseline -- 67.6% for rising genes, 32.4% for falling "
+        "ones, never 50%. No group beats its own null; fibrosis-only rising "
+        "is closest at p = 0.083, q = 0.50 across the six."),
 }
 
 # table -> (destination, caption)
