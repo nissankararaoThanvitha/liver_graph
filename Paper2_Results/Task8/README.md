@@ -39,7 +39,8 @@ targets was the wrong sort key.
 | `task8_leading_candidates.csv` | 30 | named drugs only, top of band 1 |
 | `task8_evidence_summary.csv` | 210 | 7 evidence layers × 30 candidates |
 | `task8_shortlist_support.csv` | 3 | shortlist vs broader support, as the plan asks |
-| `task8_supporting.xlsx` | 2 sheets | verdict counts · inflammation-only targets |
+| `task8_tiebreak_sensitivity.csv` | 1 | how much of the candidate list the band-1 tie-break decides |
+| `task8_supporting.xlsx` | 3 sheets | verdict counts · inflammation-only targets · candidates under the alternative tie-break |
 
 ## Six layers, not seven
 
@@ -60,17 +61,37 @@ rewards promiscuity, and three tasks measured the damage: Task 4 found coverage
 with zinc salts; Task 5 found DWPC promoting proteasome and tubulin binders
 because complex subunits share annotations.
 
-> **A tie-break that had to be fixed.** 51 drugs tie at the maximum
-> best-target score, so the tie-break decides the entire top of the list. The
-> first version broke ties on the **number** of shortlist and Tier-1 targets —
-> which put FOSTAMATINIB (82 targets, coherence 0.34) above NINTEDANIB
-> (6 targets, coherence 0.43). That is the promiscuity bias re-entering through
-> the back door. Ties now break on **coherence** and the **rate** of mechanism
-> agreement. Counts are reported and never sorted on.
+**Ties are not sorted on counts.** Breaking ties on the **number** of shortlist
+or Tier-1 targets puts FOSTAMATINIB (82 targets, coherence 0.34) above
+NINTEDANIB (6 targets, coherence 0.43) — the promiscuity bias re-entering
+through the back door. Counts are reported and never sorted on. Ties break on
+**coherence** and the **rate** of mechanism agreement.
 
-**Drugs sharing a best-target score form a band, and order within a band is
-weakly determined.** Task 6 found exact ranks indefensible even with one
-continuous score; with 51 ties they are more so. Read band 1 as a set.
+### The tie-break decides membership, and no measure here justifies one
+
+51 drugs tie at the maximum best-target score, 48 of them unflagged, for **30
+places**. So the tie-break does not merely order the candidate list — it chooses
+who is on it, and the choice is not neutral:
+
+| rule | what it rewards | why that is a problem |
+|---|---|---|
+| **coherence** (used) | a drug whose targets sit in one class × direction group | 1.000 **automatically** for a one-target drug, so a thin record wins |
+| **Wilson lower bound** | a drug with many progression targets among its total | tightens with the denominator, so it rewards exactly the promiscuity Tasks 4 and 5 measured |
+
+The current ranks 1–4 — BARNIDIPINE, CLEVIDIPINE, DILTIAZEM, LEVAMLODIPINE —
+each have **one** recorded target, so their coherence of 1.000 is arithmetic,
+not evidence. Their Wilson bounds are 0.207, **0.046**, 0.095 and 0.095.
+
+`task8_tiebreak_sensitivity.csv` reports both orderings. **They share 18 of 30
+candidates.** Twelve names depend entirely on which rule is used, and nothing
+measured in this project adjudicates between them.
+
+**What is stable is the claim worth making:** both orderings reach the same two
+targets, CACNA1C and PDGFRA. The *set* of candidate drugs is a weak object; the
+*targets* they converge on are not.
+
+**So read band 1 as a set, not a ranking.** Task 6 found exact ranks
+indefensible even with one continuous score; with 51 ties they are more so.
 
 ## FINDING — band 1 is two genes
 
@@ -140,6 +161,17 @@ recorded. No candidate is *contradicted* on mechanism, because a
 reversal-inconsistent pair cannot reach a top band under this ranking.
 
 **L7 is uniformly out of scope**, by the 13 October decision.
+
+### What the summary does and does not count
+
+It has 210 rows: 30 candidates × 7 layers. That reads as 30 independent evidence
+chains and it is not one. Layers L1–L5 describe the **target**, and the 30
+candidates reach only **two** targets, so those five layers carry **2** distinct
+verdicts repeated fifteen times each. Only L6, the drug–target mechanism, varies
+per drug: 18 supporting, 12 with no recorded direction.
+
+Counting "150 supporting verdicts across L1–L5" would be counting the same two
+genes thirty times.
 
 ## Shortlist support — the plan asks for this by name
 

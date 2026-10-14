@@ -246,6 +246,37 @@ annotation coverage differ between the two and any of those alone would produce
 the pattern. Reactome is the primary bridge because it is more selective, which
 is a practical choice, not a verdict.
 
+## 9f. Which 30 drugs are "the candidates" is decided by a tie-break
+
+51 drugs tie at the maximum best-target score, 48 of them unflagged, competing
+for **30 places**. The tie-break therefore chooses the membership of the
+candidate list, not just its order — and the two defensible rules disagree:
+
+| rule | rewards | problem |
+|---|---|---|
+| coherence (used) | targets concentrated in one class × direction group | 1.000 **automatically** for a one-target drug |
+| Wilson lower bound | many progression targets among a drug's total | tightens with the denominator, rewarding promiscuity |
+
+Ranks 1–4 each have a single recorded target, so their coherence of 1.000 is
+arithmetic rather than evidence; their Wilson bounds are 0.207, **0.046**, 0.095
+and 0.095. The two orderings **share 18 of 30 candidates**
+(`task8_tiebreak_sensitivity.csv`), and nothing measured in this project
+adjudicates between them.
+
+**Both orderings reach the same two targets.** The candidate drug *list* is a
+weak object and should be read as a set drawn from a 48-drug tie; the *targets*
+it converges on are stable and are what the paper should claim.
+
+## 9g. The evidence summary describes two genes, thirty times
+
+`task8_evidence_summary.csv` has 210 rows — 30 candidates × 7 layers — which
+reads as thirty independent evidence chains. Layers L1–L5 describe the
+**target**, and the 30 candidates reach only **two** targets, so those layers
+carry two distinct verdicts each repeated fifteen times. Only L6, the
+drug–target mechanism, varies per drug (18 supporting, 12 with no recorded
+direction). Totalling verdicts across L1–L5 counts the same two genes thirty
+times over.
+
 ## 10. Inflammation-only genes carry less evidence
 
 Paper 1's trajectory, transition, pathway and tier work covers only the 3,845

@@ -78,6 +78,11 @@ The leading candidates reach exactly two targets:
 separate them. PDGFRA is preferred because nintedanib already treats fibrosis in
 another organ — an external fact, not a finding of this paper.
 
+**The list of 30 drugs is weaker than the two targets it reaches.** 48 eligible
+drugs tie at the top score for 30 places, so a tie-break chooses the membership;
+the two defensible rules share only 18 of 30 names. Both reach CACNA1C and
+PDGFRA. Claim the targets, read the drug list as a set.
+
 So the candidate list is, in substance, *"inhibit PDGFRA or block CACNA1C"* —
 less diverse than thirty names suggests, and stated as such.
 

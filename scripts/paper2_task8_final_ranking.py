@@ -88,6 +88,15 @@ def main():
 
     scores = pd.read_csv(SCORES)
     action = pd.read_csv(ACTION)
+    # ONE reversal column across the paper. Task 6's K reads Task 7's
+    # trajectory-aware class, so this must read the same one: a relationship
+    # whose association direction disagrees with its F4 - F0 endpoints is held
+    # at ambiguous there and cannot count as supporting evidence here.
+    REVERSAL = ("reversal_class_with_trajectory"
+                if "reversal_class_with_trajectory" in action.columns
+                else "reversal_class")
+    action["reversal_class"] = action[REVERSAL]
+    print(f"reversal evidence read from {REVERSAL}")
     cover = pd.read_csv(COVERAGE)
     p1 = pd.read_csv(PAPER1)
     shortlist = set(pd.read_csv(SHORTLIST).Gene.dropna())
@@ -128,8 +137,18 @@ def main():
     cov = cover.set_index("Drug")
     best["coherence"] = best.Drug.map(cov.dominant_class_fraction)
     best["specificity_lower95"] = best.Drug.map(cov.progression_fraction_lower95)
-    best["likely_non_therapeutic"] = best.Drug.map(
-        cov.likely_non_therapeutic).fillna(False)
+    # A drug absent from Task 4's coverage table has never been judged, and
+    # defaulting it to "fine" would let an unassessed entity into the candidate
+    # list unflagged. Every ranked drug reaches a progression gene, so every one
+    # of them must be there; if that stops being true the run should say so.
+    best["likely_non_therapeutic"] = best.Drug.map(cov.likely_non_therapeutic)
+    unjudged = best[best.likely_non_therapeutic.isna()]
+    if len(unjudged):
+        raise SystemExit(
+            f"{len(unjudged)} ranked drugs are missing from "
+            f"{COVERAGE} and cannot be screened: "
+            f"{', '.join(unjudged.Drug.head(5))}")
+    best["likely_non_therapeutic"] = best.likely_non_therapeutic.astype(bool)
 
     # Primary key is the best target a drug has. 51 drugs tie at the maximum,
     # so the tie-break decides the whole top of the list and has to be chosen
@@ -161,6 +180,49 @@ def main():
     candidates = best[~best.likely_non_therapeutic].head(TOP_CANDIDATES).copy()
     candidates.to_csv(f"{OUT_DIR}/task8_leading_candidates.csv", index=False)
 
+    # ---- how much of the candidate list the tie-break decides -------------
+    # Band 1 holds more drugs than the list has places, so the tie-break does
+    # not merely order the top -- it chooses who is in it. Two defensible rules
+    # exist and they disagree:
+    #
+    #   coherence           1.000 automatically for a one-target drug, so it
+    #                       rewards a thin record (Task 4, limitation 9e)
+    #   Wilson lower bound  tightens with the denominator, so it rewards a drug
+    #                       with many targets -- the promiscuity Tasks 4 and 5
+    #                       measured
+    #
+    # Neither is justified by anything this project measured, so both orderings
+    # are reported and the overlap is stated rather than one being presented as
+    # the answer. What is stable across them is the claim worth making.
+    eligible = best[~best.likely_non_therapeutic]
+    alt = eligible.sort_values(
+        ["best_target_score", "specificity_lower95", "coherence"],
+        ascending=False, na_position="last").head(TOP_CANDIDATES)
+    overlap = len(set(candidates.Drug_ID) & set(alt.Drug_ID))
+    band1 = int((best.score_band == 1).sum())
+    band1_ok = int(((best.score_band == 1) & ~best.likely_non_therapeutic).sum())
+    tie = pd.DataFrame([{
+        "band_1_drugs": band1,
+        "band_1_not_flagged": band1_ok,
+        "places_in_candidate_list": TOP_CANDIDATES,
+        "tie_break_decides_membership": "yes" if band1_ok > TOP_CANDIDATES else "no",
+        "primary_tie_break": "coherence, then mechanism-consistent rate",
+        "alternative_tie_break": "Wilson lower bound on progression fraction",
+        "candidates_shared_by_both": overlap,
+        "targets_primary": "; ".join(sorted(candidates.best_target.unique())),
+        "targets_alternative": "; ".join(sorted(alt.best_target.unique())),
+    }])
+    tie.to_csv(f"{OUT_DIR}/task8_tiebreak_sensitivity.csv", index=False)
+    sup.add("candidates_under_alternative_tiebreak",
+            alt[["rank", "Drug", "best_target", "n_targets", "coherence",
+                 "specificity_lower95", "mechanism_consistent_rate"]])
+    print("")
+    print(f"TIE-BREAK SENSITIVITY -- band 1 holds {band1_ok} eligible drugs for "
+          f"{TOP_CANDIDATES} places")
+    print(f"   the two orderings share {overlap} of {TOP_CANDIDATES} candidates")
+    print(f"   targets reached are the same either way: "
+          f"{', '.join(sorted(candidates.best_target.unique()))}")
+
     # ---- auditable evidence summary, per leading candidate ----------------
     rows = []
     for _, c in candidates.iterrows():
@@ -174,9 +236,17 @@ def main():
                     "transcriptomic reversal ruled out 13 Oct 2026 "
                     "(repurposing not reversal; knowledge graph only)")
             elif layer.startswith("L6"):
-                verdict = {"reversal-consistent": "supports",
-                           "reversal-inconsistent": "contradicts",
-                           "ambiguous": "ambiguous"}.get(mech, "missing")
+                # Any label starting "ambiguous" is ambiguous -- the
+                # trajectory rule emits "ambiguous - rho and stage endpoints
+                # disagree", and matching that on a literal key would send
+                # contradictory evidence to "missing", which a reader takes as
+                # "nothing recorded" rather than "the record disagrees".
+                if str(mech).startswith("ambiguous"):
+                    verdict = "ambiguous"
+                else:
+                    verdict = {"reversal-consistent": "supports",
+                               "reversal-inconsistent": "contradicts",
+                               }.get(mech, "missing")
                 detail = f"{pair.Drug_action.iloc[0] if len(pair) else '?'} / {mech}"
             else:
                 v = gs[comp]
@@ -191,6 +261,15 @@ def main():
                          "verdict": verdict, "detail": detail})
     evidence = pd.DataFrame(rows)
     evidence.to_csv(f"{OUT_DIR}/task8_evidence_summary.csv", index=False)
+    # The summary has one block per candidate, but candidates collapse onto a
+    # couple of targets, so L1-L5 repeat those targets' verdicts many times
+    # over. Counting layer verdicts across 30 rows reads as 30 independent
+    # evidence chains; it is not, and the file says how many distinct ones
+    # there are.
+    n_t = candidates.best_target.nunique()
+    print(f"evidence summary: {len(candidates)} candidates, {n_t} distinct "
+          f"targets -- layers L1-L5 describe the TARGET, so they carry "
+          f"{n_t} distinct verdicts, not {len(candidates)}")
 
     # ---- shortlist support, which the plan asks for by name ---------------
     sup_rows = []
@@ -240,7 +319,7 @@ def main():
                                aggfunc="count", fill_value=0).to_string())
     for f in ["task8_final_target_ranking.csv", "task8_final_drug_ranking.csv",
               "task8_leading_candidates.csv", "task8_evidence_summary.csv",
-              "task8_shortlist_support.csv"]:
+              "task8_shortlist_support.csv", "task8_tiebreak_sensitivity.csv"]:
         print(f"wrote {OUT_DIR}/{f}")
 
 
