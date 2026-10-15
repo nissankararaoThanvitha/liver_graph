@@ -1,0 +1,24 @@
+MetaPath,paths,unique drugs,unique genes,unique end nodes,drug–end pairs,degree-normalised support (sum),mean DNS per pair,candidate drugs,main-list drugs,notes
+M1 Drug→Gene→LiverDisease,24497,1921,437.0,61,16987,712.59,0.0419,926,488,
+M1f Drug→Gene→FibrosisSpectrumDisease,3164,844,82.0,10,2355,143.84,0.0611,537,302,
+M2 Drug→Gene→Pathway,33089,2369,874.0,1445,28373,4725.4,0.1665,1102,559,
+M3 Drug→Gene→BioProcess,131177,2406,948.0,5284,115817,16454.66,0.1421,1109,559,
+M4 Drug→Gene→Pathway←ProgressionGene,1058939,2394,,3888,439580,215468.84,0.4902,1105,558,"middle genes (any pharmacological target in a pathway): 1,869"
+M5 Drug→Gene→Pathway←C1 gene,184201,2272,,561,81701,38980.3,0.4771,1061,539,857 cluster genes
+M5 Drug→Gene→Pathway←C2 gene,249499,2252,,814,103698,53930.1,0.5201,1060,534,1367 cluster genes
+M5 Drug→Gene→Pathway←C3 gene,43870,1979,,147,17338,9712.3,0.5602,967,481,226 cluster genes
+M5 Drug→Gene→Pathway←C4 gene,62456,2012,,251,24135,11645.33,0.4825,925,458,397 cluster genes
+M5 Drug→Gene→Pathway←C5 gene,121510,2307,,612,51577,26918.44,0.5219,1079,543,998 cluster genes
+M6 Drug→F0→F1 transition gene,926,740,136.0,136,926,137.73,0.1487,378,195,858 significant genes; 136 with a drug (125 rising / 11 falling at this step)
+M6 Drug→F1→F2 transition gene,1205,891,220.0,220,1205,202.36,0.1679,437,220,1049 significant genes; 220 with a drug (76 rising / 144 falling at this step)
+M6 Drug→F2→F3 transition gene,1471,845,184.0,184,1471,168.2,0.1143,466,239,1116 significant genes; 184 with a drug (115 rising / 69 falling at this step)
+M6 Drug→F3→F4 transition gene,828,590,116.0,116,828,104.93,0.1267,360,209,781 significant genes; 116 with a drug (102 rising / 14 falling at this step)
+M7 GO_BP [graph node],26126,2226,714.0,753,22848,2508.17,0.1098,1056,545,1079 fibrosis-enriched terms of this kind
+M7 GO_BP [graph proxy (approx.)],586,352,61.0,13,537,63.25,0.1178,117,47,16 fibrosis-enriched terms of this kind
+M7 GO_BP [Paper 1 gene list],10073,1205,360.0,187,8791,514.3,0.0585,582,312,198 fibrosis-enriched terms of this kind
+M7 Reactome [graph node],5314,1547,389.0,115,4302,452.97,0.1053,696,365,126 fibrosis-enriched terms of this kind
+M7 Reactome [graph proxy (approx.)],670,373,96.0,19,557,70.82,0.1272,94,36,22 fibrosis-enriched terms of this kind
+M7 Reactome [Paper 1 gene list],3443,1231,305.0,49,2819,167.37,0.0594,599,307,54 fibrosis-enriched terms of this kind
+M7 KEGG [graph proxy (approx.)],131,116,26.0,3,121,15.18,0.1254,31,8,8 fibrosis-enriched terms of this kind
+M7 KEGG [Paper 1 gene list],4339,828,244.0,83,3494,293.92,0.0841,334,170,84 fibrosis-enriched terms of this kind
+M7 Hallmark [Paper 1 gene list],2694,1100,258.0,36,2471,132.22,0.0535,483,246,36 fibrosis-enriched terms of this kind

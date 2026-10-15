@@ -1,0 +1,26 @@
+ensembl_id,Gene,progression_class,paper1_group,trajectory_cluster,fibrosis_direction,Tier,in_shortlist,P,F,T,B,TargetScore,rank,p_top50_a10,median_rank_a10,rank_p05_a10,rank_p95_a10,p_top50_a1,median_rank_a1,rank_p05_a1,rank_p95_a1,stable_target
+ENSG00000197122,SRC,fibrosis_only,fibrosis_only_positive,C1,positive,Tier 1 - high confidence,False,0.907932,1.0,0.816628,0.998236,0.9307,8,1.0,9.0,5.0,17.0,0.784,15.0,3.0,177.6499999999994,True
+ENSG00000105851,PIK3CG,fibrosis_only,fibrosis_only_positive,C1,positive,Tier 1 - high confidence,False,0.880689,1.0,0.699175,0.99461,0.8936,23,0.897,23.0,12.0,67.0,0.503,49.5,8.0,506.0999999999999,True
+ENSG00000169896,ITGAM,fibrosis_only,fibrosis_only_positive,C1,positive,Tier 1 - high confidence,False,0.82316,1.0,0.724534,0.983144,0.8827,28,0.78,32.0,18.0,86.0,0.418,70.5,12.0,549.2499999999998,False
+ENSG00000108821,COL1A1,shared,shared_positive,C1,positive,Tier 1 - high confidence,False,0.991678,0.666667,0.888113,0.97844,0.8812,29,0.785,31.0,17.0,102.0,0.495,51.0,8.0,1247.149999999998,False
+ENSG00000160255,ITGB2,fibrosis_only,fibrosis_only_positive,C1,positive,Tier 1 - high confidence,False,0.8929,1.0,0.61868,0.98922,0.8752,33,0.648,41.0,18.0,126.19999999999982,0.424,75.0,10.0,762.1999999999998,False
+ENSG00000136997,MYC,fibrosis_only,fibrosis_only_positive,C2,positive,Tier 1 - high confidence,False,0.965813,1.0,0.963034,0.98187,0.9777,1,1.0,1.0,1.0,1.0,1.0,1.0,1.0,6.0,True
+ENSG00000164171,ITGA2,fibrosis_only,fibrosis_only_positive,C2,positive,Tier 1 - high confidence,False,0.948244,1.0,0.955622,0.988044,0.973,2,1.0,2.0,2.0,2.0,0.998,2.0,1.0,11.0,True
+ENSG00000119699,TGFB3,fibrosis_only,fibrosis_only_positive,C2,positive,Tier 1 - high confidence,False,0.895319,1.0,0.92749,0.992846,0.9539,3,1.0,3.0,3.0,5.0,0.939,7.0,3.0,59.0,True
+ENSG00000196924,FLNA,fibrosis_only,fibrosis_only_positive,C2,positive,Tier 1 - high confidence,False,0.898479,1.0,0.898448,0.98579,0.9457,4,1.0,5.0,4.0,9.0,0.904,10.0,4.0,76.0,True
+ENSG00000142627,EPHA2,fibrosis_only,fibrosis_only_positive,C2,positive,Tier 1 - high confidence,False,0.82857,1.0,0.956094,0.987064,0.9429,5,1.0,5.0,4.0,11.0,0.849,10.0,3.0,147.14999999999986,True
+ENSG00000093009,CDC45,shared,shared_positive,C3,positive,Tier 1 - high confidence,True,0.961664,0.666667,0.690881,0.922285,0.8104,187,0.0,196.0,107.0,399.14999999999986,0.017,295.5,62.0,2023.6499999999985,False
+ENSG00000115232,ITGA4,fibrosis_only,fibrosis_only_positive,C3,positive,Tier 1 - high confidence,False,0.834902,1.0,0.413235,0.956096,0.8011,226,0.005,236.0,84.0,575.3499999999997,0.114,298.5,33.95,1879.0,False
+ENSG00000095970,TREM2,shared,shared_positive,C3,positive,Tier 1 - high confidence,True,0.992302,0.666667,0.788757,0.738632,0.7966,249,0.0,250.5,165.0,437.04999999999995,0.003,331.5,93.95,1864.8999999999983,False
+ENSG00000122952,ZWINT,shared,shared_positive,C3,positive,Tier 1 - high confidence,False,0.96143,0.666667,0.705236,0.717366,0.7627,400,0.0,417.0,291.0,652.1499999999999,0.0,526.0,183.95,2153.05,False
+ENSG00000145386,CCNA2,shared,shared_positive,C3,positive,Tier 2 - moderate confidence,False,0.80052,0.666667,0.619982,0.915033,0.7506,456,0.0,488.5,301.0,893.4499999999996,0.0,724.5,184.0,2255.45,False
+ENSG00000182199,SHMT2,fibrosis_only,fibrosis_only_negative,C4,negative,Tier 2 - moderate confidence,False,0.695969,1.0,0.638969,0.845845,0.7952,258,0.0,260.0,145.0,457.0,0.0,346.0,105.0,1190.5999999999995,False
+ENSG00000197894,ADH5,fibrosis_only,fibrosis_only_negative,C4,negative,Tier 2 - moderate confidence,False,0.725189,1.0,0.575501,0.825069,0.7814,314,0.0,324.0,185.0,555.0999999999999,0.0,418.0,125.95,1343.0,False
+ENSG00000065154,OAT,shared,shared_negative,C4,negative,Tier 1 - high confidence,True,0.968895,0.666667,0.694946,0.728391,0.7647,392,0.0,407.0,274.95,639.0,0.0,516.0,167.0,2149.05,False
+ENSG00000180210,F2,fibrosis_only,fibrosis_only_negative,C4,negative,Tier 1 - high confidence,True,0.836489,1.0,0.596803,0.603244,0.7591,423,0.0,438.5,290.9,624.0,0.0,568.0,192.0,1091.2499999999998,False
+ENSG00000187048,CYP4A11,shared,shared_negative,C4,negative,Tier 2 - moderate confidence,False,0.894616,0.666667,0.60576,0.825069,0.748,474,0.0,504.0,340.9,862.1499999999999,0.0,671.0,232.75,2212.0,False
+ENSG00000122787,AKR1D1,fibrosis_only,fibrosis_only_negative,C5,negative,Tier 1 - high confidence,False,0.898648,1.0,0.829436,0.915033,0.9108,14,1.0,15.0,11.0,28.0,0.654,34.0,13.0,192.04999999999995,True
+ENSG00000111275,ALDH2,fibrosis_only,fibrosis_only_negative,C5,negative,Tier 1 - high confidence,False,0.935891,1.0,0.729441,0.938162,0.9009,20,0.958,20.0,12.0,46.0,0.587,38.0,8.0,348.14999999999986,True
+ENSG00000138115,CYP2C8,fibrosis_only,fibrosis_only_negative,C5,negative,Tier 1 - high confidence,False,0.868244,1.0,0.854166,0.818748,0.8853,26,0.885,30.0,20.0,59.0,0.373,68.0,23.0,230.14999999999986,True
+ENSG00000121691,CAT,fibrosis_only,fibrosis_only_negative,C5,negative,Tier 1 - high confidence,False,0.93697,1.0,0.693246,0.907487,0.8844,27,0.822,30.0,18.0,80.0,0.442,61.0,13.0,461.0999999999999,True
+ENSG00000197142,ACSL5,fibrosis_only,fibrosis_only_negative,C5,negative,Tier 1 - high confidence,False,0.924785,1.0,0.671945,0.911505,0.8771,32,0.708,38.0,22.0,100.0,0.374,72.0,18.0,547.3999999999996,False

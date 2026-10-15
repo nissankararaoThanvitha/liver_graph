@@ -1,0 +1,8 @@
+paper1_group,direction-consistent,direction-inconsistent,ambiguous,unknown,total,% consistent among decided
+fibrosis_only_positive,140,17,4,721,882,89.2
+fibrosis_only_negative,56,133,11,2645,2845,29.6
+shared_positive,201,155,10,1192,1558,56.5
+shared_negative,20,78,0,1674,1772,20.4
+shared_discordant_fib_negative,0,0,0,14,14,
+inflammation_only_positive,102,63,3,1387,1555,61.8
+inflammation_only_negative,11,25,0,286,322,30.6

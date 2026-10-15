@@ -1,0 +1,9 @@
+MetaPath,paths_python,paths_neo4j,match
+M1 Drug→Gene→LiverDisease,24497,24497,True
+M2 Drug→Gene→Pathway,33089,33089,True
+M3 Drug→Gene→BioProcess,131177,131177,True
+M4 Drug→Gene→Pathway←ProgressionGene,1058939,1058939,True
+M6 Drug→F0→F1 transition gene,926,926,True
+M6 Drug→F1→F2 transition gene,1205,1205,True
+M6 Drug→F2→F3 transition gene,1471,1471,True
+M6 Drug→F3→F4 transition gene,828,828,True

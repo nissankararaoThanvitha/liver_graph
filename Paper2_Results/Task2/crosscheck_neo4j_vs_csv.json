@@ -1,0 +1,10 @@
+{
+  "source_used": "Neo4j (live liver_kg, read-only)",
+  "edges_source": 8948,
+  "edges_csv": 8948,
+  "counts_match": true,
+  "identical_drug_gene_action_triples": true,
+  "only_in_source": 0,
+  "only_in_csv": 0,
+  "duplicate_drug_gene_pairs": 0
+}

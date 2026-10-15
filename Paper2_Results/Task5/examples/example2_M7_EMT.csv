@@ -1,0 +1,11 @@
+source,target,relation,source_type,target_type,action_direction
+ADAPALENE,JUN ⬆,ACTS_ON,drug,gene,unknown
+PSEUDOEPHEDRINE,JUN ⬆,ACTS_ON,drug,gene,unknown
+MARIMASTAT,MMP14 ⬆,ACTS_ON,drug,gene,unknown
+MARIMASTAT,MMP2 ⬆,ACTS_ON,drug,gene,down
+JUN ⬆,"Hallmark EMT
+(Paper 1 list)",IN_TERM (Paper 1 gene list),gene,term,unknown
+MMP14 ⬆,"Hallmark EMT
+(Paper 1 list)",IN_TERM (Paper 1 gene list),gene,term,unknown
+MMP2 ⬆,"Hallmark EMT
+(Paper 1 list)",IN_TERM (Paper 1 gene list),gene,term,unknown
