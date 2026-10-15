@@ -1,0 +1,5 @@
+database,name,gene_overlap_proxy,none,total,linked_to_graph,pct_linked
+GO_BP,1162,21,203,1386,1183,85.4
+Hallmark,0,0,41,41,0,0.0
+KEGG,0,11,87,98,11,11.2
+Reactome,243,50,85,378,293,77.5

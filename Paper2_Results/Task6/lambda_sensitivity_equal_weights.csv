@@ -1,0 +1,4 @@
+lambda_inflammation_only,spearman_vs_full,top50_overlap,inflammation_only_in_top50
+0.0,0.9765,50,0
+0.5,1.0,50,0
+1.0,0.9992,50,0
