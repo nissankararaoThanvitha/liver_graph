@@ -1,0 +1,26 @@
+rank,Drug,phase,DrugScore,stable,best target,Progression (P),Fibrosis specificity (F),Trajectory / transition (T),Pathway (B),Drug mechanism direction,Graph support (MetaPaths),Liver safety flag,Paper 1 shortlist
+1,MAVORIXAFOR,3.0,0.9297,yes,CXCR4 (#45),✔,✔ shared,✔,✔,✔ consistent,✔,✔ none recorded,–
+2,DROTAVERINE,3.0,0.9222,yes,CACNA1C (#15),✔,✔ fibrosis-only,✔,✔,✔ consistent,✔,✔ none recorded,✔
+3,APLAVIROC,3.0,0.8964,yes,CCR5 (#298),✔,✔ shared,✔,✔,✔ consistent,✔,✔ none recorded,–
+3,MARAVIROC,4.0,0.8964,yes,CCR5 (#298),✔,✔ shared,✔,✔,✔ consistent,✔,✘ contraindicated,–
+3,INCB-9471,2.0,0.8964,yes,CCR5 (#298),✔,✔ shared,✔,✔,✔ consistent,✔,✔ none recorded,–
+3,VICRIVIROC,3.0,0.8964,yes,CCR5 (#298),✔,✔ shared,✔,✔,✔ consistent,✔,✔ none recorded,–
+7,OBATOCLAX,3.0,0.8818,yes,BCL2 (#10),✔,✔ fibrosis-only,✔,✔,✔ consistent,–,✔ none recorded,–
+7,VENETOCLAX,4.0,0.8818,yes,BCL2 (#10),✔,✔ fibrosis-only,✔,✔,✔ consistent,–,✔ none recorded,–
+9,DEXIBUPROFEN,4.0,0.8795,yes,BCL2 (#10),✔,✔ fibrosis-only,✔,✔,✔ consistent,✔,✔ none recorded,–
+10,FENOPROFEN,4.0,0.8738,yes,PTGS2 (#216),✔,✔ shared,✔,✔,✔ consistent,✔,✘ contraindicated,–
+11,TG100-115,2.0,0.8674,yes,PIK3CG (#23),✔,✔ fibrosis-only,✔,✔,✔ consistent,–,✔ none recorded,–
+11,DUVELISIB,4.0,0.8674,yes,PIK3CG (#23),✔,✔ fibrosis-only,✔,✔,✔ consistent,–,✔ none recorded,–
+13,GEMFIBROZIL,4.0,0.8601,yes,SLCO1B3 (#522),–,✔ fibrosis-only,✔,✔,✔ consistent,✔,✘ contraindicated,–
+14,IBUPROFEN,4.0,0.86,yes,BCL2 (#10),✔,✔ fibrosis-only,✔,✔,✔ consistent,✔,✘ contraindicated,–
+15,ASPIRIN,4.0,0.8584,yes,MYC (#1),✔,✔ fibrosis-only,✔,✔,✔ consistent,✔,✔ none recorded,–
+16,PITAVASTATIN,4.0,0.8567,yes,ITGAL (#593),–,✔ fibrosis-only,–,✔,✔ consistent,✔,✔ none recorded,–
+17,LOVASTATIN,4.0,0.8554,yes,ITGAL (#593),–,✔ fibrosis-only,–,✔,✔ consistent,✔,✔ none recorded,–
+18,BARNIDIPINE,2.0,0.8512,yes,CACNA1C (#15),✔,✔ fibrosis-only,✔,✔,✔ consistent,–,✔ none recorded,✔
+19,R-406,2.0,0.8494,yes,SYK (#95),✔,✔ fibrosis-only,–,✔,✔ consistent,–,✔ none recorded,–
+20,SULINDAC,4.0,0.8347,no,PTGS2 (#216),✔,✔ shared,✔,✔,✔ consistent,✔,✔ none recorded,–
+21,CLOFIBRATE,4.0,0.8288,yes,PPARA (#819),–,✔ shared,–,✔,✔ consistent,✔,✔ none recorded,–
+21,CIPROFIBRATE,4.0,0.8288,yes,PPARA (#819),–,✔ shared,–,✔,✔ consistent,✔,✔ none recorded,–
+23,BALSALAZIDE,4.0,0.8281,no,PTGS2 (#216),✔,✔ shared,✔,✔,~ mixed,✔,✔ none recorded,–
+24,EZATIOSTAT,2.0,0.823,no,GSTP1 (#199),✔,✔ shared,✔,✔,✔ consistent,–,✔ none recorded,–
+25,PENTOSTATIN,4.0,0.8204,no,ADA (#369),✔,✔ shared,✔,✔,✔ consistent,–,✔ none recorded,–

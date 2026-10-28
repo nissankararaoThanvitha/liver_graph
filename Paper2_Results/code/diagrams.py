@@ -555,6 +555,217 @@ def final_ranking():
     plt.close(fig)
 
 
+# ---------------------------------------------------------------- Graph schema
+def graph_schema():
+    from matplotlib.patches import Circle, Rectangle, RegularPolygon, Polygon
+    ec = pd.read_csv(RES / "Graph_files/edge_counts.csv").set_index("edge type").links
+    fig = plt.figure(figsize=(15, 9.4))
+    ax = fig.add_axes([0.0, 0.0, 1.0, 1.0])
+    ax.set_xlim(0, 15); ax.set_ylim(0, 9.4); ax.axis("off")
+    ax.text(0.3, 9.1, "The liver knowledge graph: a heterogeneous graph with four node types", fontsize=16,
+            fontweight="bold", va="top")
+    ax.text(0.3, 8.6, "Counts are for the 6,222 Paper 1 progression genes (whole graph in brackets). Files: Graph_files/1–4.",
+            fontsize=10.5, color=MUTED, va="top")
+    # left: schema
+    pos = {"Gene": (3.6, 5.0), "Drug": (1.1, 6.9), "Disease": (6.1, 6.9), "Pathway": (3.6, 2.2)}
+    gene_c, drug_c, dis_c, pw_c = COL["shared"], "#b9770e", COL["fib"], COL["inf"]
+    ax.add_patch(RegularPolygon(pos["Gene"], 6, radius=0.75, fc=gene_c + "30", ec=gene_c, lw=2))
+    ax.add_patch(Circle(pos["Drug"], 0.62, fc=drug_c + "30", ec=drug_c, lw=2))
+    ax.add_patch(Rectangle((pos["Disease"][0] - 0.85, pos["Disease"][1] - 0.45), 1.7, 0.9, fc=dis_c + "25", ec=dis_c, lw=2))
+    px, py = pos["Pathway"]
+    ax.add_patch(Polygon([(px, py + 0.7), (px + 0.85, py), (px, py - 0.7), (px - 0.85, py)], fc=pw_c + "25", ec=pw_c, lw=2))
+    for k, sub in [("Gene", "Gene\n6,222 (53,993)"), ("Drug", "Drug\n3,027\n(12,025)"),
+                   ("Disease", "Disease\n13,502\n(36,044)"), ("Pathway", "Pathway\n1,937\n(2,220)")]:
+        ax.text(*pos[k], sub, ha="center", va="center", fontsize=9.5, fontweight="bold")
+
+    def edge(a, b, label, n, dx=0.0, dy=0.0, style="-", col=INK):
+        (x1, y1), (x2, y2) = pos[a], pos[b]
+        arrow(ax, x1 + (x2 - x1) * 0.22, y1 + (y2 - y1) * 0.22, x1 + (x2 - x1) * 0.76, y1 + (y2 - y1) * 0.76,
+              color=col, lw=2, ls=style)
+        ax.text((x1 + x2) / 2 + dx, (y1 + y2) / 2 + dy, f"{label}\n{n:,} links", ha="center", fontsize=9, color=col)
+
+    edge("Drug", "Gene", "ACTS_ON", int(ec["Gene – Drug"]), dx=-0.85, dy=-0.3)
+    edge("Gene", "Disease", "ASSOCIATED_WITH", int(ec["Gene – Disease"]), dx=0.95, dy=-0.3)
+    edge("Gene", "Pathway", "IN_PATHWAY", int(ec["Gene – Pathway"]), dx=1.05)
+    edge("Drug", "Disease", "TREATS / OFF_LABEL /\nCONTRAINDICATED", int(ec["Drug – Disease (known uses)"]), dy=0.35,
+         style="--", col=MUTED)
+    ax.text(3.6, 0.75, "Dashed = drug–disease pairs already known.\nRepurposing looks for NEW pairs reached through genes.",
+            ha="center", fontsize=9.5, color=MUTED)
+
+    # right: two metapaths
+    ax.text(8.0, 7.9, "MetaPaths = walks through these nodes (2 hops)", fontsize=12.5, fontweight="bold")
+
+    def chain(y, items, note, back=()):
+        x = 8.1
+        for i, (lab, c) in enumerate(items):
+            box(ax, x, y, 1.45, 0.62, lab, c + "25", ec=c, fs=9, bold=True)
+            if i < len(items) - 1:
+                if i in back:
+                    arrow(ax, x + 1.75, y + 0.31, x + 1.45, y + 0.31, lw=1.6)
+                else:
+                    arrow(ax, x + 1.45, y + 0.31, x + 1.75, y + 0.31, lw=1.6)
+            x += 1.75
+        ax.text(8.1, y - 0.18, note, fontsize=9, color=MUTED, va="top")
+
+    chain(6.6, [("Drug", drug_c), ("Gene", gene_c), ("Liver disease", dis_c)],
+          "Drug → Gene → Disease: a drug reaches a liver disease through a gene it acts on.\n"
+          "If the pair is not a known use, it is a repurposing hypothesis.")
+    chain(4.75, [("Drug", drug_c), ("Gene", gene_c), ("Pathway", pw_c)],
+          "Drug → Gene → Pathway: which biological pathways the drug's target sits in.")
+    chain(2.9, [("Drug", drug_c), ("Gene", gene_c), ("Pathway", pw_c), ("Progression\ngene", COL["shared"])],
+          "Drug → Gene → Pathway ← Progression gene: the drug reaches a fibrosis gene through a\n"
+          "shared pathway, even if it does not act on that gene directly. Extended with F0–F4\n"
+          "trajectory clusters, stage-transition genes and Paper 1 fibrosis pathways.", back=(2,))
+    fig.savefig(RES / "Graph_files/graph_schema.png", dpi=160, bbox_inches="tight")
+    plt.close(fig)
+
+
+# ---------------------------------------------------------------- Revised Task 5 and Task 7
+def task5_revised():
+    c = pd.read_csv(RES / "Task5_revised/metapath_counts.csv")
+    c = c[c["links used"] == "all links"].set_index("MetaPath")
+    rp = pd.read_csv(RES / "Task5_revised/drug_liver_disease_pairs.csv")
+    new = rp[rp.status.str.startswith("NEW")]
+    tn = new[~new.drug_has_any_liver_use]
+    fig = plt.figure(figsize=(15, 9.4))
+    fig.text(0.02, 0.97, "Task 5 (revised): MetaPaths, unique counts and new drug–liver-disease pairs", fontsize=16, fontweight="bold", va="top")
+    fig.text(0.02, 0.925, "All drug–gene links. Biological-process path removed. Unique combination = pair joined by exactly one route.",
+             fontsize=10.5, color=MUTED, va="top")
+    a1 = fig.add_axes([0.2, 0.1, 0.33, 0.75])
+    keys = ["MP1 Drug→Gene→LiverDisease", "MP2 Drug→Gene→Pathway", "MP3 Drug→Gene→Pathway←ProgressionGene",
+            "MP7 Drug→Gene→Pathway←ProgressionGene→LiverDisease"]
+    labels = ["MP1 Drug→Gene→Liver disease", "MP2 Drug→Gene→Pathway", "MP3 Drug→Gene→Pathway←Prog. gene", "MP7 … →Prog. gene→Liver disease"]
+    metrics = [("unique drugs", "#b9770e"), ("unique genes", COL["shared"]), ("unique end nodes", COL["fib"]),
+               ("unique combinations (pairs with exactly one route)", "#1e8449")]
+    y = np.arange(len(keys))
+    h = 0.2
+    for j, (m, col) in enumerate(metrics):
+        v = [c.loc[k, m] for k in keys]
+        a1.barh(y + (j - 1.5) * h, v, height=h, color=col, label=m.replace(" (pairs with exactly one route)", ""))
+        for yi, vi in zip(y, v):
+            a1.text(vi * 1.15, yi + (j - 1.5) * h, f"{int(vi):,}", va="center", fontsize=7.5)
+    a1.set_xscale("log")
+    a1.set_yticks(y, labels, fontsize=9.5)
+    a1.invert_yaxis()
+    a1.legend(fontsize=8.5, frameon=False, loc="upper center", bbox_to_anchor=(0.45, -0.07), ncol=4)
+    a1.spines[["top", "right"]].set_visible(False)
+    a1.set_xlabel("")
+    a2 = fig.add_axes([0.62, 0.1, 0.35, 0.75])
+    a2.set_xlim(0, 7); a2.set_ylim(0, 8); a2.axis("off")
+    steps = [("Drug–liver-disease pairs reached", len(rp)), ("New (not a known use)", len(new)),
+             ("Drug has no liver use at all", len(tn)), ("Disease is fibrosis-spectrum", int(tn.fibrosis_spectrum.sum())),
+             ("Drug is on the main list", int((tn.fibrosis_spectrum & tn.main_list_drug).sum()))]
+    for i, (lab, n) in enumerate(steps):
+        yy = 7.0 - i * 1.45
+        w = 2.2 + 4.6 * (n / steps[0][1]) ** 0.35
+        box(a2, 3.5 - w / 2, yy, w, 1.05, "", COL["done"] if i == len(steps) - 1 else COL["data"])
+        a2.text(3.5, yy + 0.68, f"{n:,} pairs", ha="center", fontsize=11, fontweight="bold")
+        a2.text(3.5, yy + 0.3, lab, ha="center", fontsize=9, color=MUTED)
+    a2.set_title("Repurposing pairs (MP1 or MP7)", fontsize=12, fontweight="bold", loc="left")
+    fig.savefig(RES / "Task5_revised/Task5_revised_diagram.png", dpi=160, bbox_inches="tight")
+    plt.close(fig)
+
+
+def task7_revised():
+    v = pd.read_csv(RES / "Task7_revised/pathway_direction.csv")
+    r = pd.read_csv(RES / "Task7_revised/drug_target_pathway_direction.csv")
+    d = pd.read_csv(RES / "Task7_revised/drug_direction_gene_vs_pathway.csv")
+    fig = plt.figure(figsize=(15, 8.6))
+    fig.text(0.02, 0.97, "Task 7 (revised): is the drug pushing the right way, judged through pathways?", fontsize=16, fontweight="bold", va="top")
+    fig.text(0.02, 0.925, "A pathway rises (or falls) when ≥ 3 of its Paper 1 fibrosis genes are present and ≥ 2/3 of them rise (or fall). "
+                          "Right way = blocks a rising pathway or boosts a falling one.", fontsize=10.5, color=MUTED, va="top")
+    a1 = fig.add_axes([0.06, 0.12, 0.26, 0.68])
+    order = ["rising", "falling", "mixed", "too few genes"]
+    cnt = v.pathway_direction.value_counts().reindex(order).fillna(0)
+    a1.bar(range(4), cnt.values, color=[COL["fib"], COL["inf"], "#d4ac0d", "#b0b8c1"])
+    for i, x in enumerate(cnt.values):
+        a1.text(i, x + 10, f"{int(x):,}", ha="center", fontsize=10)
+    a1.set_xticks(range(4), ["rising ⬆", "falling ⬇", "mixed", "too few\ngenes"], fontsize=9.5)
+    a1.spines[["top", "right"]].set_visible(False)
+    a1.set_title("Reactome pathways", fontsize=12, fontweight="bold", loc="left")
+    a2 = fig.add_axes([0.40, 0.12, 0.26, 0.68])
+    o2 = ["direction-consistent", "direction-inconsistent", "ambiguous", "unknown"]
+    c2 = r.pathway_consistency.value_counts().reindex(o2).fillna(0)
+    a2.barh(range(4), c2.values, color=["#1e8449", COL["fib"], "#d4ac0d", "#b0b8c1"])
+    for i, x in enumerate(c2.values):
+        a2.text(x * 1.02, i, f"{int(x):,}", va="center", fontsize=10)
+    a2.set_yticks(range(4), ["right way", "wrong way", "ambiguous", "unknown action"], fontsize=9.5)
+    a2.invert_yaxis()
+    a2.set_xlim(0, c2.max() * 1.25)
+    a2.spines[["top", "right"]].set_visible(False)
+    a2.set_title("Drug → target → pathway routes", fontsize=12, fontweight="bold", loc="left")
+    a3 = fig.add_axes([0.72, 0.12, 0.26, 0.68])
+    a3.set_xlim(0, 7); a3.set_ylim(0, 8); a3.axis("off")
+    ag = d.agreement.value_counts()
+    items = [("Drugs with a gene-level call", int((d.gene_level_call != "no call").sum())),
+             ("Extra drugs judged only through pathways", int((d.call_source == "pathway level only").sum())),
+             ("… of them repurposing candidates", int(((d.call_source == "pathway level only") & d.repurposing_candidate).sum())),
+             ("Gene and pathway level agree", int(ag.get("agree", 0))),
+             ("Gene and pathway level disagree", int(ag.get("disagree", 0)))]
+    for i, (lab, n) in enumerate(items):
+        yy = 6.8 - i * 1.4
+        box(a3, 0.2, yy, 6.6, 1.1, "", COL["done"] if i == 1 else "#ffffff")
+        a3.text(0.45, yy + 0.72, f"{n:,}", fontsize=13, fontweight="bold", va="center")
+        a3.text(0.45, yy + 0.3, lab, fontsize=9.5, color=MUTED, va="center")
+    a3.set_title("Per drug", fontsize=12, fontweight="bold", loc="left")
+    fig.savefig(RES / "Task7_revised/Task7_revised_diagram.png", dpi=160, bbox_inches="tight")
+    plt.close(fig)
+
+
+def task7_external():
+    F = RES / "Task7_external_layer"
+    both = pd.read_csv(F / "drug_action_evidence_graph_plus_external.csv")
+    grp = pd.read_csv(F / "consistency_by_group_graph_vs_plus_external.csv").set_index("paper1_group")
+    cand = pd.read_csv(F / "candidates_graph_vs_plus_external.csv").set_index("Measure")
+    fig = plt.figure(figsize=(15, 8.6))
+    fig.text(0.02, 0.97, "Task 7 external layer: filling missing drug actions from other databases", fontsize=16, fontweight="bold", va="top")
+    fig.text(0.02, 0.925, "Separate layer, clearly labelled. Graph-only results are unchanged. Sources: Guide to Pharmacology, DGIdb, ChEMBL "
+                          "(only links where they agree).", fontsize=10.5, color=MUTED, va="top")
+    a1 = fig.add_axes([0.06, 0.12, 0.25, 0.68])
+    gl = both[both.layer == "graph"].push.isin(["down", "up"]).sum()
+    el = both[both.layer == "external"].push.isin(["down", "up"]).sum()
+    a1.bar([0], [gl], color=COL["inf"], label="knowledge graph")
+    a1.bar([1], [gl], color=COL["inf"])
+    a1.bar([1], [el], bottom=[gl], color="#1e8449", label="external (new)")
+    a1.text(0, gl + 15, f"{gl:,}\n({100 * gl / 8948:.1f}%)", ha="center", fontsize=10)
+    a1.text(1, gl + el + 15, f"{gl + el:,}\n({100 * (gl + el) / 8948:.1f}%)", ha="center", fontsize=10)
+    a1.set_xticks([0, 1], ["graph only", "graph +\nexternal"])
+    a1.set_ylim(0, (gl + el) * 1.25)
+    a1.legend(frameon=False, fontsize=9, loc="upper left")
+    a1.spines[["top", "right"]].set_visible(False)
+    a1.set_title("Links with a known push direction\n(of 8,948)", fontsize=11.5, fontweight="bold", loc="left")
+    a2 = fig.add_axes([0.40, 0.12, 0.30, 0.68])
+    order = [("fibrosis_only_positive", "Scarring-only ⬆"), ("fibrosis_only_negative", "Scarring-only ⬇"), ("shared_positive", "Shared ⬆⬆"),
+             ("shared_negative", "Shared ⬇⬇"), ("inflammation_only_positive", "Inflam.-only ⬆"), ("inflammation_only_negative", "Inflam.-only ⬇")]
+    y = np.arange(len(order))
+    a2.barh(y - 0.2, [grp.loc[k, "graph only: % consistent"] for k, _ in order], height=0.38, color=COL["inf"], label="graph only")
+    a2.barh(y + 0.2, [grp.loc[k, "+ external: % consistent"] for k, _ in order], height=0.38, color="#1e8449", label="graph + external")
+    for yi, (k, _) in zip(y, order):
+        a2.text(grp.loc[k, "+ external: % consistent"] + 1, yi + 0.2, f"{grp.loc[k, '+ external: % consistent']:.0f}%", va="center", fontsize=8.5)
+        a2.text(grp.loc[k, "graph only: % consistent"] + 1, yi - 0.2, f"{grp.loc[k, 'graph only: % consistent']:.0f}%", va="center", fontsize=8.5)
+    a2.set_yticks(y, [o[1] for o in order], fontsize=9.5)
+    a2.invert_yaxis()
+    a2.set_xlim(0, 105)
+    a2.axvline(50, color=MUTED, ls="--", lw=1)
+    a2.legend(frameon=False, fontsize=9, loc="lower right")
+    a2.spines[["top", "right"]].set_visible(False)
+    a2.set_title("% of judged links pushed the right way", fontsize=11.5, fontweight="bold", loc="left")
+    a3 = fig.add_axes([0.75, 0.12, 0.23, 0.68])
+    a3.set_xlim(0, 7); a3.set_ylim(0, 8); a3.axis("off")
+    r = cand.loc["Candidates with ≥1 direction-consistent link"]
+    items = [(f"{int(r['graph only'])} → {int(r['graph + external'])}", "candidates with ≥1 right-way link"),
+             (f"+{int(r['graph + external'] - r['graph only'])}", "candidates gain their first\nright-way link"),
+             (f"{int(el)}", f"external links added\n({int(both[both.layer == 'external'].direction_source.str.count(';').ge(1).sum())} confirmed by 2+ sources)")]
+    for i, (big, lab) in enumerate(items):
+        yy = 6.4 - i * 2.1
+        box(a3, 0.1, yy, 6.8, 1.7, "", COL["done"] if i == 1 else "#ffffff")
+        a3.text(0.4, yy + 1.15, big, fontsize=15, fontweight="bold", va="center")
+        a3.text(0.4, yy + 0.5, lab, fontsize=9.5, color=MUTED, va="center")
+    a3.set_title("Repurposing candidates", fontsize=11.5, fontweight="bold", loc="left")
+    fig.savefig(F / "Task7_external_layer_diagram.png", dpi=160, bbox_inches="tight")
+    plt.close(fig)
+
+
 if __name__ == "__main__":
     roadmap()
     if (RES / "Task1/Paper2_progression_genes.csv").exists():
@@ -573,4 +784,12 @@ if __name__ == "__main__":
         task7()
     if (RES / "Final_ranking/final_drugs_main_list.csv").exists():
         final_ranking()
+    if (RES / "Graph_files/edge_counts.csv").exists():
+        graph_schema()
+    if (RES / "Task5_revised/metapath_counts.csv").exists():
+        task5_revised()
+    if (RES / "Task7_revised/pathway_direction.csv").exists():
+        task7_revised()
+    if (RES / "Task7_external_layer/drug_action_evidence_graph_plus_external.csv").exists():
+        task7_external()
     print("diagrams written")

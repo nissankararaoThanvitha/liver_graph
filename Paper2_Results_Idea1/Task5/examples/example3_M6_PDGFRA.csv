@@ -1,0 +1,14 @@
+source,target,relation,source_type,target_type,action_direction,main_list
+PONATINIB,PDGFRA ⬆,ACTS_ON,drug,gene,unknown,False
+LENVATINIB,PDGFRA ⬆,ACTS_ON,drug,gene,unknown,True
+REGORAFENIB,PDGFRA ⬆,ACTS_ON,drug,gene,down,True
+FOSTAMATINIB,PDGFRA ⬆,ACTS_ON,drug,gene,unknown,True
+AMUVATINIB,PDGFRA ⬆,ACTS_ON,drug,gene,down,True
+ERDAFITINIB,PDGFRA ⬆,ACTS_ON,drug,gene,unknown,True
+RIPRETINIB,PDGFRA ⬆,ACTS_ON,drug,gene,down,True
+PAZOPANIB,PDGFRA ⬆,ACTS_ON,drug,gene,down,True
+NINTEDANIB,PDGFRA ⬆,ACTS_ON,drug,gene,down,True
+SUNITINIB,PDGFRA ⬆,ACTS_ON,drug,gene,down,True
+MIDOSTAURIN,PDGFRA ⬆,ACTS_ON,drug,gene,down,True
+PDGFRA ⬆,"stage step
+F2→F3 (q=2.5e-04)",STAGE_TRANSITION (Paper 1),gene,transition,unknown,

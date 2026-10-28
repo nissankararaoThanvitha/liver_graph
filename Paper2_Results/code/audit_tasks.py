@@ -297,6 +297,94 @@ if (FR / "final_drugs_main_list.csv").exists():
     fs = (FR / "summary.md").read_text(encoding="utf-8")
     check("Final", "summary says repurposing hypotheses, not treatments", "repurposing hypotheses, not treatments" in fs)
 
+# ============================================================ Review revision (16 Oct): Excel files, Task 5 / Task 7 revised
+GF = RES / "Graph_files"
+if (GF / "edge_counts.csv").exists():
+    ecx = pd.read_csv(GF / "edge_counts.csv").set_index("edge type")
+    check("Rev", "gene–drug Excel = Task 2 links (8,948)", int(ecx.loc["Gene – Drug", "links"]) == len(t2))
+    kl = ROOT / "Paper1_Package/04_DATA/knowledge_layer"
+    n_gd = int(pd.read_csv(kl / "edges_disease_gene.csv", usecols=["from_id"]).from_id.isin(set(t1.ensembl_id)).sum())
+    check("Rev", "gene–disease Excel = all ASSOCIATED_WITH links of the 6,222 genes", int(ecx.loc["Gene – Disease", "links"]) == n_gd, f"{n_gd:,}")
+    live_gp = int(q("MATCH (g:Gene)-[r:IN_PATHWAY]->() WHERE g.ensembl_id IN $ids RETURN count(r) AS n", {"ids": t1.ensembl_id.tolist()}).n.iloc[0])
+    check("Rev", "gene–pathway Excel = live graph", int(ecx.loc["Gene – Pathway", "links"]) == live_gp, f"{live_gp:,}")
+if (RES / "Task5_revised/metapath_counts.csv").exists():
+    r5 = pd.read_csv(RES / "Task5_revised/metapath_counts.csv")
+    x5r = pd.read_csv(RES / "Task5_revised/crosscheck_python_vs_neo4j.csv")
+    check("Rev", "Task 5 revised: MP1–MP3 path counts = Neo4j", x5r.match.all())
+    check("Rev", "Task 5 revised: no BioProcess MetaPath", not r5.MetaPath.str.contains("BioProcess|GO_BP").any())
+    ph = r5[(r5["links used"] == "pharmacological only") & (r5.MetaPath == "MP1 Drug→Gene→LiverDisease")].paths.iloc[0]
+    check("Rev", "Task 5 revised pharmacological MP1 = original Task 5 MP1", ph == c5.loc["M1 Drug→Gene→LiverDisease", "paths"], f"{int(ph):,}")
+    rpx = pd.read_csv(RES / "Task5_revised/drug_liver_disease_pairs.csv")
+    kn = q("""MATCH (d:Drug)-[r:TREATS|OFF_LABEL_FOR]->(x:Disease) WHERE d.node_id IN $d AND x.node_id IN $l
+              RETURN d.node_id AS drug, x.node_id AS disease""", {"d": rpx.drug.unique().tolist(), "l": liver_ids})
+    knset = set(map(tuple, kn.values))
+    check("Rev", "Task 5 revised: no 'NEW' pair is a known use (fresh query)",
+          not any((a, b) in knset for a, b in rpx.loc[rpx.status.str.startswith("NEW"), ["drug", "disease"]].values))
+if (RES / "Task7_revised/pathway_direction.csv").exists():
+    pdx = pd.read_csv(RES / "Task7_revised/pathway_direction.csv")
+    rule = np.where(pdx.n_fibrosis_genes < 3, "too few genes", np.where(pdx.share_rising >= 2 / 3, "rising",
+                    np.where(1 - pdx.share_rising >= 2 / 3, "falling", "mixed")))
+    check("Rev", "Task 7 revised: pathway directions follow the stated rule", (rule == pdx.pathway_direction).all())
+    rr = pd.read_csv(RES / "Task7_revised/drug_target_pathway_direction.csv")
+    ok = ((rr.push == "unknown") == (rr.pathway_consistency == "unknown")).all() and \
+         ((rr.pathway_consistency == "direction-consistent") ==
+          (((rr.push == "down") & (rr.pathway_direction == "rising")) | ((rr.push == "up") & (rr.pathway_direction == "falling")))).all()
+    check("Rev", "Task 7 revised: route consistency labels reproduce", ok)
+
+# ============================================================ External action layer (21 Oct)
+XL = RES / "Task7_external_layer"
+if (XL / "drug_action_evidence_graph_plus_external.csv").exists():
+    pc = pd.read_csv(RES / "External_action_check/positive_control.csv")
+    check("Ext", "positive control: external sources agree with graph labels ≥ 99%",
+          (pc["% agree"].str.rstrip("%").astype(float) >= 99).all(), "; ".join(f"{r.source} {r['% agree']}" for _, r in pc.iterrows()))
+    bx = pd.read_csv(XL / "drug_action_evidence_graph_plus_external.csv")
+    gl = bx[bx.layer == "graph"]
+    t7k = t7[t7["Action class"].isin(["down", "up", "mixed"])]
+    check("Ext", "graph layer identical to graph-only Task 7 (same links, same labels)",
+          set(map(tuple, gl[["Drug_ID", "Gene_ID", "Consistency"]].values)) == set(map(tuple, t7k[["Drug_ID", "Gene_ID", "Consistency"]].values)))
+    xl = bx[bx.layer == "external"]
+    lk = pd.read_csv(RES / "External_action_check/unknown_links_external_lookup.csv")
+    check("Ext", "external layer = the 297 agreeing external links, none overlapping graph labels",
+          len(xl) == 297 and set(map(tuple, xl[["Drug_ID", "Gene_ID"]].values)) ==
+          set(map(tuple, lk.loc[lk.external_direction.isin(["down", "up"]), ["Drug_ID", "Gene_ID"]].values))
+          and not set(map(tuple, xl[["Drug_ID", "Gene_ID"]].values)) & set(map(tuple, gl[["Drug_ID", "Gene_ID"]].values)))
+    if (RES / "External_action_check/graph_write/write_log.json").exists():
+        gx = q("""MATCH (d:Drug)-[r:ACTS_ON]->(g:Gene) WHERE r.external_action_direction IS NOT NULL
+                  RETURN d.node_id AS Drug_ID, g.ensembl_id AS Gene_ID, r.external_action_direction AS push, r.action AS action""")
+        check("Ext", "graph: exactly the 297 external directions stored as external_* properties, matching the file",
+              len(gx) == 297 and set(map(tuple, gx[["Drug_ID", "Gene_ID", "push"]].values)) ==
+              set(map(tuple, xl[["Drug_ID", "Gene_ID", "push"]].values)))
+        check("Ext", "graph: original action labels of those links unchanged (no TARGET/ENZYME… overwritten)",
+              set(gx.action) <= {"TARGET", "ENZYME", "TRANSPORTER", "CARRIER"})
+    check("Ext", "every row labelled with its direction source",
+          bx.direction_source.notna().all() and bx.loc[bx.layer == "external", "direction_source"].str.startswith("external:").all())
+
+# ============================================================ Idea 4: new drug–gene links from outside databases (21 Oct)
+NL = RES / "New_drug_gene_links"
+if (NL / "new_links_medicines_curated.csv").exists():
+    eg = pd.read_csv(RES / "Task2/drug_gene_edges.csv")
+    gp = set(zip(eg.Drug_ID, eg.Gene_ID))
+    na = pd.read_csv(NL / "new_links_all.csv", low_memory=False)
+    nm = pd.read_csv(NL / "new_links_medicines_curated.csv")
+    nj = json.loads((NL / "numbers.json").read_text(encoding="utf-8"))
+    check("New", "no 'new' link is already a graph ACTS_ON link", not (set(zip(na.Drug_ID, na.Gene_ID)) & gp))
+    check("New", "all new links are on the 6,222 progression genes", na.Gene_ID.isin(set(pd.read_csv(RES / "Task1/Paper2_progression_genes.csv").ensembl_id)).all())
+    check("New", "headline set = curated evidence, approved or clinical-trial drugs only",
+          (nm.evidence == "curated drug-target").all() and nm.drug_stage.isin(["approved", "clinical trial"]).all())
+    check("New", "headline counts in numbers.json match the file",
+          nj["new_pairs_medicines_curated"]["pairs"] == len(nm) and nj["new_pairs_medicines_curated"]["drugs"] == nm.Drug_ID.nunique()
+          and nj["new_pairs_medicines_curated"]["new_genes"] == nm.loc[~nm.gene_had_drug_in_graph, "Gene_ID"].nunique())
+    check("New", "'first drug' genes really have no drug in the graph",
+          not set(nm.loc[~nm.gene_had_drug_in_graph, "Gene_ID"]) & set(eg.Gene_ID))
+    check("New", "broken DGIdb copies (GuideToPharmacology, ChEMBL) excluded",
+          not na.source_detail.str.contains("DGIdb/GuideToPharmacology|DGIdb/ChEMBL", regex=True).any())
+    pcn = pd.read_csv(NL / "positive_control.csv")
+    ot_e = eg[eg.Evidence_source.str.contains("OPEN_TARGETS")]
+    rr = pd.read_csv(NL / "raw_rows_all_sources.csv.gz", low_memory=False)
+    ok_ = all(sum((d, g) in (set(zip(rr[rr.source == s_].chembl, rr[rr.source == s_].Gene_ID)) | set(zip(rr[rr.source == s_].Drug_key, rr[rr.source == s_].Gene_ID)))
+                  for d, g in zip(ot_e.Drug_ID, ot_e.Gene_ID)) / len(ot_e) >= 0.95 for s_ in ["OpenTargets", "ChEMBL"])
+    check("New", "positive control: graph's Open Targets links recovered ≥ 95% by Open Targets and ChEMBL", ok_)
+
 # ============================================================ Task 8 report
 rep_path = RES / "PAPER2_PROGRESS_REPORT.md"
 if rep_path.exists():

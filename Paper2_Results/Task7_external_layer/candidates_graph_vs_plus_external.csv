@@ -1,0 +1,4 @@
+Measure,graph only,graph + external
+Candidates with ≥1 direction-consistent link,315,378
+… only consistent links,269,307
+… only inconsistent links,222,255

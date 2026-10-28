@@ -1,0 +1,25 @@
+source,target,relation,source_type,target_type,action_direction,score
+INDEGLITAZAR,PPARG ⬆,ACTS_ON,drug,gene,up,
+INDEGLITAZAR,PPARA ⬇,ACTS_ON,drug,gene,up,
+INDEGLITAZAR,PPARD ⬆,ACTS_ON,drug,gene,up,
+PPARG ⬆,biliary liver cirrhosis,ASSOCIATED_WITH,gene,disease,unknown,0.384
+PPARG ⬆,cirrhosis of liver,ASSOCIATED_WITH,gene,disease,unknown,0.386
+PPARG ⬆,"cirrhosis, familial",ASSOCIATED_WITH,gene,disease,unknown,0.384
+PPARG ⬆,fatty liver disease,ASSOCIATED_WITH,gene,disease,unknown,0.407
+PPARG ⬆,non-alcoholic fatty liver disease,ASSOCIATED_WITH,gene,disease,unknown,0.407
+PPARG ⬆,non-alcoholic steatohepatitis,ASSOCIATED_WITH,gene,disease,unknown,0.324
+PPARG ⬆,primary biliary cirrhosis,ASSOCIATED_WITH,gene,disease,unknown,0.384
+PPARA ⬇,biliary liver cirrhosis,ASSOCIATED_WITH,gene,disease,unknown,0.43
+PPARA ⬇,cirrhosis of liver,ASSOCIATED_WITH,gene,disease,unknown,0.433
+PPARA ⬇,"cirrhosis, familial",ASSOCIATED_WITH,gene,disease,unknown,0.43
+PPARA ⬇,fatty liver disease,ASSOCIATED_WITH,gene,disease,unknown,0.33
+PPARA ⬇,non-alcoholic fatty liver disease,ASSOCIATED_WITH,gene,disease,unknown,0.33
+PPARA ⬇,non-alcoholic steatohepatitis,ASSOCIATED_WITH,gene,disease,unknown,0.324
+PPARA ⬇,primary biliary cirrhosis,ASSOCIATED_WITH,gene,disease,unknown,0.43
+PPARD ⬆,biliary liver cirrhosis,ASSOCIATED_WITH,gene,disease,unknown,0.408
+PPARD ⬆,cirrhosis of liver,ASSOCIATED_WITH,gene,disease,unknown,0.408
+PPARD ⬆,"cirrhosis, familial",ASSOCIATED_WITH,gene,disease,unknown,0.408
+PPARD ⬆,fatty liver disease,ASSOCIATED_WITH,gene,disease,unknown,0.305
+PPARD ⬆,non-alcoholic fatty liver disease,ASSOCIATED_WITH,gene,disease,unknown,0.305
+PPARD ⬆,non-alcoholic steatohepatitis,ASSOCIATED_WITH,gene,disease,unknown,0.289
+PPARD ⬆,primary biliary cirrhosis,ASSOCIATED_WITH,gene,disease,unknown,0.408

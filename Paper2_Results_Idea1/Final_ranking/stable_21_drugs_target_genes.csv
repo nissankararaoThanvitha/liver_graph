@@ -1,0 +1,115 @@
+drug_rank,drug,drug_id,gene,gene_id,link_type,drug_action,push,mechanism,gene_class,gene_with_fibrosis_or_inflammation,trajectory_cluster,tier,in_23_gene_shortlist,direction_check,evidence_source
+1,MAVORIXAFOR,CHEMBL518924,CCR5,ENSG00000160791,pharmacological target,TARGET,unknown,,shared,rises,C1,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+1,MAVORIXAFOR,CHEMBL518924,CXCR4,ENSG00000121966,pharmacological target,ANTAGONIST,down,C-X-C chemokine receptor type 4 antagonist,shared,rises,C2,Tier 1 - high confidence,False,direction-consistent,OptimusKG/DRUG_BANK+OPEN_TARGETS
+2,DROTAVERINE,CHEMBL551978,CACNA1C,ENSG00000151067,pharmacological target,TARGET,unknown,,fibrosis_only,rises,C2,Tier 1 - high confidence,True,unknown,OptimusKG/DRUG_BANK
+2,DROTAVERINE,CHEMBL551978,PDE4A,ENSG00000065989,pharmacological target,INHIBITOR,down,Phosphodiesterase 4 inhibitor,shared,rises,C1,Tier 2 - moderate confidence,False,direction-consistent,OptimusKG/DRUG_BANK+OPEN_TARGETS
+3,APLAVIROC,CHEMBL1255794,CCR5,ENSG00000160791,pharmacological target,ANTAGONIST,down,C-C chemokine receptor type 5 antagonist,shared,rises,C1,Tier 2 - moderate confidence,False,direction-consistent,OptimusKG/DRUG_BANK+OPEN_TARGETS
+3,INCB-9471,CHEMBL1688243,CCR5,ENSG00000160791,pharmacological target,ANTAGONIST,down,C-C chemokine receptor type 5 antagonist,shared,rises,C1,Tier 2 - moderate confidence,False,direction-consistent,OptimusKG/DRUG_BANK+OPEN_TARGETS
+3,MARAVIROC,CHEMBL1201187,CCR5,ENSG00000160791,pharmacological target,ANTAGONIST,down,C-C chemokine receptor type 5 antagonist,shared,rises,C1,Tier 2 - moderate confidence,False,direction-consistent,OptimusKG/DRUG_BANK+OPEN_TARGETS
+3,VICRIVIROC,CHEMBL82301,CCR5,ENSG00000160791,pharmacological target,ANTAGONIST,down,C-C chemokine receptor type 5 antagonist,shared,rises,C1,Tier 2 - moderate confidence,False,direction-consistent,OptimusKG/DRUG_BANK+OPEN_TARGETS
+3,VICRIVIROC,CHEMBL82301,CYP3A5,ENSG00000106258,metabolism/transport (not a drug target),ENZYME,unknown,,fibrosis_only,falls,C4,Tier 3,False,unknown,OptimusKG/DRUG_BANK
+7,OBATOCLAX,CHEMBL408194,BCL2,ENSG00000171791,pharmacological target,INHIBITOR,down,Apoptosis regulator Bcl-2 inhibitor,fibrosis_only,rises,C2,Tier 1 - high confidence,False,direction-consistent,OptimusKG/DRUG_BANK+OPEN_TARGETS
+7,VENETOCLAX,CHEMBL3137309,BCL2,ENSG00000171791,pharmacological target,INHIBITOR,down,Apoptosis regulator Bcl-2 inhibitor,fibrosis_only,rises,C2,Tier 1 - high confidence,False,direction-consistent,OptimusKG/DRUG_BANK+OPEN_TARGETS
+7,VENETOCLAX,CHEMBL3137309,ABCG2,ENSG00000118777,metabolism/transport (not a drug target),TRANSPORTER,unknown,,shared,falls,C5,Tier 3,False,unknown,OptimusKG/DRUG_BANK
+7,VENETOCLAX,CHEMBL3137309,SLCO1B1,ENSG00000134538,metabolism/transport (not a drug target),TRANSPORTER,unknown,,fibrosis_only,falls,C5,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+9,DEXIBUPROFEN,CHEMBL175,BCL2,ENSG00000171791,pharmacological target,TARGET,unknown,,fibrosis_only,rises,C2,Tier 1 - high confidence,False,unknown,OptimusKG/DRUG_BANK
+9,DEXIBUPROFEN,CHEMBL175,PLAT,ENSG00000104368,pharmacological target,TARGET,unknown,,shared,rises,C2,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+9,DEXIBUPROFEN,CHEMBL175,PPARA,ENSG00000186951,pharmacological target,TARGET,unknown,,shared,falls,C5,Tier 3,False,unknown,OptimusKG/DRUG_BANK
+9,DEXIBUPROFEN,CHEMBL175,PPARG,ENSG00000132170,pharmacological target,TARGET,unknown,,inflammation_only,rises,,,False,unknown,OptimusKG/DRUG_BANK
+9,DEXIBUPROFEN,CHEMBL175,PTGS1,ENSG00000095303,pharmacological target,INHIBITOR,down,Cyclooxygenase inhibitor,fibrosis_only,rises,C1,Tier 2 - moderate confidence,False,direction-consistent,OptimusKG/DRUG_BANK+OPEN_TARGETS
+9,DEXIBUPROFEN,CHEMBL175,PTGS2,ENSG00000073756,pharmacological target,INHIBITOR,down,Cyclooxygenase inhibitor,shared,rises,C2,Tier 2 - moderate confidence,False,direction-consistent,OptimusKG/DRUG_BANK+OPEN_TARGETS
+9,DEXIBUPROFEN,CHEMBL175,SLC15A1,ENSG00000088386,pharmacological target,TARGET,unknown,,inflammation_only,rises,,,False,unknown,OptimusKG/DRUG_BANK
+9,DEXIBUPROFEN,CHEMBL175,THBD,ENSG00000178726,pharmacological target,TARGET,unknown,,shared,rises,C2,Tier 1 - high confidence,False,unknown,OptimusKG/DRUG_BANK
+9,DEXIBUPROFEN,CHEMBL175,CYP2C19,ENSG00000165841,metabolism/transport (not a drug target),ENZYME,unknown,,shared,falls,C5,Tier 1 - high confidence,True,unknown,OptimusKG/DRUG_BANK
+9,DEXIBUPROFEN,CHEMBL175,ABCC1,ENSG00000103222,metabolism/transport (not a drug target),TRANSPORTER,unknown,,fibrosis_only,rises,C2,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+9,DEXIBUPROFEN,CHEMBL175,ABCC4,ENSG00000125257,metabolism/transport (not a drug target),TRANSPORTER,unknown,,shared,rises,C1,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+9,DEXIBUPROFEN,CHEMBL175,ALB,ENSG00000163631,metabolism/transport (not a drug target),CARRIER,unknown,,fibrosis_only,falls,C5,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+9,DEXIBUPROFEN,CHEMBL175,CYP2C8,ENSG00000138115,metabolism/transport (not a drug target),ENZYME,unknown,,fibrosis_only,falls,C5,Tier 1 - high confidence,False,unknown,OptimusKG/DRUG_BANK
+9,DEXIBUPROFEN,CHEMBL175,SLC22A11,ENSG00000168065,metabolism/transport (not a drug target),TRANSPORTER,unknown,,inflammation_only,rises,,,False,unknown,OptimusKG/DRUG_BANK
+9,DEXIBUPROFEN,CHEMBL175,SLCO1A2,ENSG00000084453,metabolism/transport (not a drug target),TRANSPORTER,unknown,,shared,falls,C5,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+9,DEXIBUPROFEN,CHEMBL175,SLCO2B1,ENSG00000137491,metabolism/transport (not a drug target),TRANSPORTER,unknown,,fibrosis_only,falls,C5,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+9,DEXIBUPROFEN,CHEMBL175,UGT2B4,ENSG00000156096,metabolism/transport (not a drug target),ENZYME,unknown,,inflammation_only,rises,,,False,unknown,OptimusKG/DRUG_BANK
+9,DEXIBUPROFEN,CHEMBL175,UGT2B7,ENSG00000171234,metabolism/transport (not a drug target),ENZYME,unknown,,fibrosis_only,falls,C5,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+10,FENOPROFEN,CHEMBL1297,PPARA,ENSG00000186951,pharmacological target,TARGET,unknown,,shared,falls,C5,Tier 3,False,unknown,OptimusKG/DRUG_BANK
+10,FENOPROFEN,CHEMBL1297,PPARG,ENSG00000132170,pharmacological target,TARGET,unknown,,inflammation_only,rises,,,False,unknown,OptimusKG/DRUG_BANK
+10,FENOPROFEN,CHEMBL1297,PTGS1,ENSG00000095303,pharmacological target,INHIBITOR,down,Cyclooxygenase inhibitor,fibrosis_only,rises,C1,Tier 2 - moderate confidence,False,direction-consistent,OptimusKG/DRUG_BANK+OPEN_TARGETS
+10,FENOPROFEN,CHEMBL1297,PTGS2,ENSG00000073756,pharmacological target,INHIBITOR,down,Cyclooxygenase inhibitor,shared,rises,C2,Tier 2 - moderate confidence,False,direction-consistent,OptimusKG/DRUG_BANK+OPEN_TARGETS
+10,FENOPROFEN,CHEMBL1297,ALB,ENSG00000163631,metabolism/transport (not a drug target),CARRIER,unknown,,fibrosis_only,falls,C5,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+11,DUVELISIB,CHEMBL3039502,PIK3CD,ENSG00000171608,pharmacological target,INHIBITOR,down,PI3-kinase p110-delta subunit inhibitor,fibrosis_only,rises,C1,Tier 2 - moderate confidence,False,direction-consistent,OptimusKG/DRUG_BANK+OPEN_TARGETS
+11,DUVELISIB,CHEMBL3039502,PIK3CG,ENSG00000105851,pharmacological target,INHIBITOR,down,PI3-kinase p110-gamma subunit inhibitor,fibrosis_only,rises,C1,Tier 1 - high confidence,False,direction-consistent,OptimusKG/DRUG_BANK+OPEN_TARGETS
+11,DUVELISIB,CHEMBL3039502,ABCG2,ENSG00000118777,metabolism/transport (not a drug target),TRANSPORTER,unknown,,shared,falls,C5,Tier 3,False,unknown,OptimusKG/DRUG_BANK
+11,TG100-115,CHEMBL230011,PIK3CD,ENSG00000171608,pharmacological target,INHIBITOR,down,PI3-kinase p110-delta subunit inhibitor,fibrosis_only,rises,C1,Tier 2 - moderate confidence,False,direction-consistent,OptimusKG/DRUG_BANK+OPEN_TARGETS
+11,TG100-115,CHEMBL230011,PIK3CG,ENSG00000105851,pharmacological target,INHIBITOR,down,PI3-kinase p110-gamma subunit inhibitor,fibrosis_only,rises,C1,Tier 1 - high confidence,False,direction-consistent,OptimusKG/DRUG_BANK+OPEN_TARGETS
+13,GEMFIBROZIL,CHEMBL457,PPARA,ENSG00000186951,pharmacological target,AGONIST,up,Peroxisome proliferator-activated receptor alpha agonist,shared,falls,C5,Tier 3,False,direction-consistent,OptimusKG/DRUG_BANK+OPEN_TARGETS
+13,GEMFIBROZIL,CHEMBL457,SLCO1B1,ENSG00000134538,pharmacological target,TARGET,unknown,,fibrosis_only,falls,C5,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+13,GEMFIBROZIL,CHEMBL457,SLCO1B3,ENSG00000111700,pharmacological target,TARGET,unknown,,fibrosis_only,falls,C5,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+13,GEMFIBROZIL,CHEMBL457,SLCO2B1,ENSG00000137491,pharmacological target,TARGET,unknown,,fibrosis_only,falls,C5,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+13,GEMFIBROZIL,CHEMBL457,CYP2C19,ENSG00000165841,metabolism/transport (not a drug target),ENZYME,unknown,,shared,falls,C5,Tier 1 - high confidence,True,unknown,OptimusKG/DRUG_BANK
+13,GEMFIBROZIL,CHEMBL457,ALB,ENSG00000163631,metabolism/transport (not a drug target),CARRIER,unknown,,fibrosis_only,falls,C5,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+13,GEMFIBROZIL,CHEMBL457,CYP1A2,ENSG00000140505,metabolism/transport (not a drug target),ENZYME,unknown,,shared,falls,C5,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+13,GEMFIBROZIL,CHEMBL457,CYP2C8,ENSG00000138115,metabolism/transport (not a drug target),ENZYME,unknown,,fibrosis_only,falls,C5,Tier 1 - high confidence,False,unknown,OptimusKG/DRUG_BANK
+13,GEMFIBROZIL,CHEMBL457,UGT2B4,ENSG00000156096,metabolism/transport (not a drug target),ENZYME,unknown,,inflammation_only,rises,,,False,unknown,OptimusKG/DRUG_BANK
+13,GEMFIBROZIL,CHEMBL457,UGT2B7,ENSG00000171234,metabolism/transport (not a drug target),ENZYME,unknown,,fibrosis_only,falls,C5,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+14,IBUPROFEN,CHEMBL521,BCL2,ENSG00000171791,pharmacological target,TARGET,unknown,,fibrosis_only,rises,C2,Tier 1 - high confidence,False,unknown,OptimusKG/DRUG_BANK
+14,IBUPROFEN,CHEMBL521,PPARA,ENSG00000186951,pharmacological target,TARGET,unknown,,shared,falls,C5,Tier 3,False,unknown,OptimusKG/DRUG_BANK
+14,IBUPROFEN,CHEMBL521,PPARG,ENSG00000132170,pharmacological target,TARGET,unknown,,inflammation_only,rises,,,False,unknown,OptimusKG/DRUG_BANK
+14,IBUPROFEN,CHEMBL521,PTGS1,ENSG00000095303,pharmacological target,INHIBITOR,down,Cyclooxygenase inhibitor,fibrosis_only,rises,C1,Tier 2 - moderate confidence,False,direction-consistent,OptimusKG/DRUG_BANK+OPEN_TARGETS
+14,IBUPROFEN,CHEMBL521,PTGS2,ENSG00000073756,pharmacological target,INHIBITOR,down,Cyclooxygenase inhibitor,shared,rises,C2,Tier 2 - moderate confidence,False,direction-consistent,OptimusKG/DRUG_BANK+OPEN_TARGETS
+14,IBUPROFEN,CHEMBL521,THBD,ENSG00000178726,pharmacological target,TARGET,unknown,,shared,rises,C2,Tier 1 - high confidence,False,unknown,OptimusKG/DRUG_BANK
+14,IBUPROFEN,CHEMBL521,CYP2C19,ENSG00000165841,metabolism/transport (not a drug target),ENZYME,unknown,,shared,falls,C5,Tier 1 - high confidence,True,unknown,OptimusKG/DRUG_BANK
+14,IBUPROFEN,CHEMBL521,ABCC1,ENSG00000103222,metabolism/transport (not a drug target),TRANSPORTER,unknown,,fibrosis_only,rises,C2,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+14,IBUPROFEN,CHEMBL521,ABCC4,ENSG00000125257,metabolism/transport (not a drug target),TRANSPORTER,unknown,,shared,rises,C1,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+14,IBUPROFEN,CHEMBL521,ALB,ENSG00000163631,metabolism/transport (not a drug target),CARRIER,unknown,,fibrosis_only,falls,C5,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+14,IBUPROFEN,CHEMBL521,CYP2C8,ENSG00000138115,metabolism/transport (not a drug target),ENZYME,unknown,,fibrosis_only,falls,C5,Tier 1 - high confidence,False,unknown,OptimusKG/DRUG_BANK
+14,IBUPROFEN,CHEMBL521,SLC22A11,ENSG00000168065,metabolism/transport (not a drug target),TRANSPORTER,unknown,,inflammation_only,rises,,,False,unknown,OptimusKG/DRUG_BANK
+14,IBUPROFEN,CHEMBL521,SLCO1A2,ENSG00000084453,metabolism/transport (not a drug target),TRANSPORTER,unknown,,shared,falls,C5,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+14,IBUPROFEN,CHEMBL521,SLCO2B1,ENSG00000137491,metabolism/transport (not a drug target),TRANSPORTER,unknown,,fibrosis_only,falls,C5,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+14,IBUPROFEN,CHEMBL521,UGT2B4,ENSG00000156096,metabolism/transport (not a drug target),ENZYME,unknown,,inflammation_only,rises,,,False,unknown,OptimusKG/DRUG_BANK
+14,IBUPROFEN,CHEMBL521,UGT2B7,ENSG00000171234,metabolism/transport (not a drug target),ENZYME,unknown,,fibrosis_only,falls,C5,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+15,ASPIRIN,CHEMBL25,CASP1,ENSG00000137752,pharmacological target,TARGET,unknown,,shared,rises,C1,Tier 3,False,unknown,OptimusKG/DRUG_BANK
+15,ASPIRIN,CHEMBL25,CASP3,ENSG00000164305,pharmacological target,TARGET,unknown,,inflammation_only,rises,,,False,unknown,OptimusKG/DRUG_BANK
+15,ASPIRIN,CHEMBL25,CCND1,ENSG00000110092,pharmacological target,TARGET,unknown,,shared,rises,C1,Tier 1 - high confidence,False,unknown,OptimusKG/DRUG_BANK
+15,ASPIRIN,CHEMBL25,EDNRA,ENSG00000151617,pharmacological target,TARGET,unknown,,shared,rises,C2,Tier 3,False,unknown,OptimusKG/DRUG_BANK
+15,ASPIRIN,CHEMBL25,HSPA5,ENSG00000044574,pharmacological target,TARGET,unknown,,inflammation_only,rises,,,False,unknown,OptimusKG/DRUG_BANK
+15,ASPIRIN,CHEMBL25,MAPK4,ENSG00000141639,pharmacological target,TARGET,unknown,,inflammation_only,rises,,,False,unknown,OptimusKG/DRUG_BANK
+15,ASPIRIN,CHEMBL25,MAPK6,ENSG00000069956,pharmacological target,TARGET,unknown,,inflammation_only,rises,,,False,unknown,OptimusKG/DRUG_BANK
+15,ASPIRIN,CHEMBL25,MAPK7,ENSG00000166484,pharmacological target,TARGET,unknown,,fibrosis_only,rises,C1,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+15,ASPIRIN,CHEMBL25,MYC,ENSG00000136997,pharmacological target,TARGET,unknown,,fibrosis_only,rises,C2,Tier 1 - high confidence,False,unknown,OptimusKG/DRUG_BANK
+15,ASPIRIN,CHEMBL25,PCNA,ENSG00000132646,pharmacological target,TARGET,unknown,,shared,rises,C1,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+15,ASPIRIN,CHEMBL25,PRKAA1,ENSG00000132356,pharmacological target,TARGET,unknown,,shared,falls,C4,Tier 3,False,unknown,OptimusKG/DRUG_BANK
+15,ASPIRIN,CHEMBL25,PRKAA2,ENSG00000162409,pharmacological target,TARGET,unknown,,shared,rises,C1,Tier 3,False,unknown,OptimusKG/DRUG_BANK
+15,ASPIRIN,CHEMBL25,PRKAG1,ENSG00000181929,pharmacological target,TARGET,unknown,,inflammation_only,rises,,,False,unknown,OptimusKG/DRUG_BANK
+15,ASPIRIN,CHEMBL25,PRKAG2,ENSG00000106617,pharmacological target,TARGET,unknown,,shared,falls,C5,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+15,ASPIRIN,CHEMBL25,PTGS1,ENSG00000095303,pharmacological target,INHIBITOR,down,Cyclooxygenase inhibitor,fibrosis_only,rises,C1,Tier 2 - moderate confidence,False,direction-consistent,OptimusKG/DRUG_BANK+OPEN_TARGETS
+15,ASPIRIN,CHEMBL25,PTGS2,ENSG00000073756,pharmacological target,INHIBITOR,down,Cyclooxygenase inhibitor,shared,rises,C2,Tier 2 - moderate confidence,False,direction-consistent,OptimusKG/DRUG_BANK+OPEN_TARGETS
+15,ASPIRIN,CHEMBL25,RPS6KA3,ENSG00000177189,pharmacological target,TARGET,unknown,,inflammation_only,rises,,,False,unknown,OptimusKG/DRUG_BANK
+15,ASPIRIN,CHEMBL25,CYP2C19,ENSG00000165841,metabolism/transport (not a drug target),ENZYME,unknown,,shared,falls,C5,Tier 1 - high confidence,True,unknown,OptimusKG/DRUG_BANK
+16,PITAVASTATIN,CHEMBL1201753,HMGCR,ENSG00000113161,pharmacological target,INHIBITOR,down,HMG-CoA reductase inhibitor,inflammation_only,rises,,,False,direction-consistent,OptimusKG/DRUG_BANK+OPEN_TARGETS
+16,PITAVASTATIN,CHEMBL1201753,ITGAL,ENSG00000005844,pharmacological target,TARGET,unknown,,fibrosis_only,rises,C1,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+16,PITAVASTATIN,CHEMBL1201753,ABCG2,ENSG00000118777,metabolism/transport (not a drug target),TRANSPORTER,unknown,,shared,falls,C5,Tier 3,False,unknown,OptimusKG/DRUG_BANK
+16,PITAVASTATIN,CHEMBL1201753,ALB,ENSG00000163631,metabolism/transport (not a drug target),CARRIER,unknown,,fibrosis_only,falls,C5,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+16,PITAVASTATIN,CHEMBL1201753,CYP2C8,ENSG00000138115,metabolism/transport (not a drug target),ENZYME,unknown,,fibrosis_only,falls,C5,Tier 1 - high confidence,False,unknown,OptimusKG/DRUG_BANK
+16,PITAVASTATIN,CHEMBL1201753,SLCO1B1,ENSG00000134538,metabolism/transport (not a drug target),TRANSPORTER,unknown,,fibrosis_only,falls,C5,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+16,PITAVASTATIN,CHEMBL1201753,SLCO1B3,ENSG00000111700,metabolism/transport (not a drug target),TRANSPORTER,unknown,,fibrosis_only,falls,C5,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+16,PITAVASTATIN,CHEMBL1201753,SLCO2B1,ENSG00000137491,metabolism/transport (not a drug target),TRANSPORTER,unknown,,fibrosis_only,falls,C5,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+16,PITAVASTATIN,CHEMBL1201753,UGT2B7,ENSG00000171234,metabolism/transport (not a drug target),ENZYME,unknown,,fibrosis_only,falls,C5,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+17,LOVASTATIN,CHEMBL503,HDAC2,ENSG00000196591,pharmacological target,TARGET,unknown,,inflammation_only,rises,,,False,unknown,OptimusKG/DRUG_BANK
+17,LOVASTATIN,CHEMBL503,HMGCR,ENSG00000113161,pharmacological target,INHIBITOR,down,HMG-CoA reductase inhibitor,inflammation_only,rises,,,False,direction-consistent,OptimusKG/DRUG_BANK+OPEN_TARGETS
+17,LOVASTATIN,CHEMBL503,ITGAL,ENSG00000005844,pharmacological target,TARGET,unknown,,fibrosis_only,rises,C1,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+17,LOVASTATIN,CHEMBL503,CYP2C19,ENSG00000165841,metabolism/transport (not a drug target),ENZYME,unknown,,shared,falls,C5,Tier 1 - high confidence,True,unknown,OptimusKG/DRUG_BANK
+17,LOVASTATIN,CHEMBL503,ALB,ENSG00000163631,metabolism/transport (not a drug target),CARRIER,unknown,,fibrosis_only,falls,C5,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+17,LOVASTATIN,CHEMBL503,CYP2C8,ENSG00000138115,metabolism/transport (not a drug target),ENZYME,unknown,,fibrosis_only,falls,C5,Tier 1 - high confidence,False,unknown,OptimusKG/DRUG_BANK
+17,LOVASTATIN,CHEMBL503,PON3,ENSG00000105852,metabolism/transport (not a drug target),ENZYME,unknown,,shared,falls,C5,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+17,LOVASTATIN,CHEMBL503,SLCO1A2,ENSG00000084453,metabolism/transport (not a drug target),TRANSPORTER,unknown,,shared,falls,C5,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+17,LOVASTATIN,CHEMBL503,SLCO1B1,ENSG00000134538,metabolism/transport (not a drug target),TRANSPORTER,unknown,,fibrosis_only,falls,C5,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+17,LOVASTATIN,CHEMBL503,SLCO1B3,ENSG00000111700,metabolism/transport (not a drug target),TRANSPORTER,unknown,,fibrosis_only,falls,C5,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+17,LOVASTATIN,CHEMBL503,SLCO2B1,ENSG00000137491,metabolism/transport (not a drug target),TRANSPORTER,unknown,,fibrosis_only,falls,C5,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+17,LOVASTATIN,CHEMBL503,UGT2B7,ENSG00000171234,metabolism/transport (not a drug target),ENZYME,unknown,,fibrosis_only,falls,C5,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+18,BARNIDIPINE,CHEMBL2103761,CACNA1C,ENSG00000151067,pharmacological target,BLOCKER,down,Voltage-gated L-type calcium channel blocker,fibrosis_only,rises,C2,Tier 1 - high confidence,True,direction-consistent,OptimusKG/DRUG_BANK+OPEN_TARGETS
+19,R-406,CHEMBL475251,SYK,ENSG00000165025,pharmacological target,INHIBITOR,down,Tyrosine-protein kinase SYK inhibitor,fibrosis_only,rises,C1,Tier 2 - moderate confidence,False,direction-consistent,OptimusKG/DRUG_BANK+OPEN_TARGETS
+21,CIPROFIBRATE,CHEMBL557555,PPARA,ENSG00000186951,pharmacological target,AGONIST,up,Peroxisome proliferator-activated receptor alpha agonist,shared,falls,C5,Tier 3,False,direction-consistent,OptimusKG/DRUG_BANK+OPEN_TARGETS
+21,CLOFIBRATE,CHEMBL565,PPARA,ENSG00000186951,pharmacological target,AGONIST,up,Peroxisome proliferator-activated receptor alpha agonist,shared,falls,C5,Tier 3,False,direction-consistent,OptimusKG/DRUG_BANK+OPEN_TARGETS
+21,CLOFIBRATE,CHEMBL565,CYP1A1,ENSG00000140465,metabolism/transport (not a drug target),ENZYME,unknown,,inflammation_only,falls,,,False,unknown,OptimusKG/DRUG_BANK
+21,CLOFIBRATE,CHEMBL565,CYP2E1,ENSG00000130649,metabolism/transport (not a drug target),ENZYME,unknown,,shared,falls,C5,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+21,CLOFIBRATE,CHEMBL565,CYP4A11,ENSG00000187048,metabolism/transport (not a drug target),ENZYME,unknown,,shared,falls,C4,Tier 2 - moderate confidence,False,unknown,OptimusKG/DRUG_BANK
+21,CLOFIBRATE,CHEMBL565,SERPINA7,ENSG00000123561,metabolism/transport (not a drug target),CARRIER,unknown,,inflammation_only,rises,,,False,unknown,OptimusKG/DRUG_BANK

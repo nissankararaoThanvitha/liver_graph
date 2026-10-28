@@ -1,0 +1,1776 @@
+pathway,pathway_name,n_rising,n_falling,pathway_size,n_fibrosis_genes,share_rising,pathway_direction,example_genes
+REACT:R-HSA-9033241,Peroxisomal protein import,1,28,63,29,0.034,falling,ACAA1;ACOX1;ACOX2;AGXT;AMACR;BAAT;CAT;CRAT
+REACT:R-HSA-977606,Regulation of Complement cascade,3,19,103,22,0.136,falling,C1R;C1S;C3AR1;C4BPB;C5;C6;C7;C8A
+REACT:R-HSA-9841922,MLL4 and MLL3 complexes regulate expression of PPARG target genes in adipogenesis and hepatic steatosis,5,12,133,17,0.294,falling,ACSL1;AJUBA;ASH2L;CIDEC;DGAT2;GPAM;LPL;MED13
+REACT:R-HSA-9749641,Aspirin ADME,1,15,44,16,0.062,falling,ACSM2B;ACSM5;ALB;BCHE;BSG;CYP2C19;CYP2C8;CYP2E1
+REACT:R-HSA-9837999,Mitochondrial protein degradation,0,15,98,15,0.0,falling,ACADSB;ACAT1;ALDH2;CLPX;COX5B;DBT;ECH1;FH
+REACT:R-HSA-140837,Intrinsic Pathway of Fibrin Clot Formation,3,10,23,13,0.231,falling,A2M;F10;F11;F12;F2;F9;KLKB1;KNG1
+REACT:R-HSA-2151201,Transcriptional activation of mitochondrial biogenesis,4,8,55,12,0.333,falling,ATF2;CYCS;GABPA;GLUD1;HELZ2;NCOA2;NCOR1;PPARA
+REACT:R-HSA-9707616,Heme signaling,2,10,49,12,0.167,falling,ATF2;CLEC1B;HELZ2;NCOA2;NCOR1;NRIP1;PPARA;RORA
+REACT:R-HSA-193368,Synthesis of bile acids and bile salts via 7alpha-hydroxycholesterol,0,11,23,11,0.0,falling,ACOX2;AKR1C4;AKR1D1;AMACR;BAAT;CYP27A1;HSD17B4;NCOA2
+REACT:R-HSA-204005,COPII-mediated vesicle transport,3,8,69,11,0.273,falling,ANKRD28;CTSC;FOLR1;LMAN1;MCFD2;SAR1B;SEC24B;STX17
+REACT:R-HSA-201451,Signaling by BMP,3,7,31,10,0.3,falling,ACVR2B;ACVRL1;AMHR2;BMP10;BMP2;FSTL1;GREM2;TGFBR3
+REACT:R-HSA-6811438,Intra-Golgi traffic,3,7,44,10,0.3,falling,COG8;CYTH2;CYTH3;CYTH4;GOLIM4;GOSR1;MAN1A1;MAN1A2
+REACT:R-HSA-70895,Branched-chain amino acid catabolism,1,9,21,10,0.1,falling,ACADSB;ACAT1;ALDH6A1;AUH;BCAT1;BCKDHB;DBT;HIBADH
+REACT:R-HSA-9931509,"Expression of BMAL (ARNTL), CLOCK, and NPAS2",2,8,36,10,0.2,falling,ATF2;HELZ2;NCOA2;NCOR1;NRIP1;PPARA;RORA;SIRT1
+REACT:R-HSA-189483,Heme degradation,2,7,15,9,0.222,falling,ABCC1;ABCG2;ALB;BLVRA;BLVRB;GSTA1;SLCO1B1;SLCO1B3
+REACT:R-HSA-196757,Metabolism of folate and pterines,2,7,17,9,0.222,falling,ALDH1L1;DHFR2;MTHFD1;MTHFD1L;MTHFD2;MTHFS;SHMT1;SHMT2
+REACT:R-HSA-4090294,SUMOylation of intracellular receptors,1,8,30,9,0.111,falling,AR;ESR1;NR1H3;NR3C2;NR5A2;PPARA;RORA;THRB
+REACT:R-HSA-8939902,Regulation of RUNX2 expression and activity,3,6,59,9,0.333,falling,BMP2;CBFB;ESR1;PSMD3;SEM1;SKP2;STAT1;UBB
+REACT:R-HSA-159418,Recycling of bile acids and salts,1,7,18,8,0.125,falling,ALB;BAAT;NCOA2;SLC27A5;SLC51B;SLCO1A2;SLCO1B1;SLCO1B3
+REACT:R-HSA-3214847,HATs acetylate histones,2,6,140,8,0.25,falling,ATF2;JADE3;KAT2B;MEAF6;NCOA2;TADA1;YEATS2;ZZZ3
+REACT:R-HSA-390247,Beta-oxidation of very long chain fatty acids,1,7,11,8,0.125,falling,ABCD1;ACAA1;ACOX1;ECI2;EHHADH;HSD17B4;MLYCD;SLC27A2
+REACT:R-HSA-5365859,RA biosynthesis pathway,1,7,22,8,0.125,falling,ADH1A;ADH4;ALDH1A2;ALDH8A1;DHRS4;DHRS9;RDH10;RDH16
+REACT:R-HSA-5661231,Metallothioneins bind metals,0,8,11,8,0.0,falling,MT1A;MT1E;MT1F;MT1G;MT1H;MT1M;MT1X;MT2A
+REACT:R-HSA-71384,Ethanol oxidation,1,7,12,8,0.125,falling,ACSS1;ADH1A;ADH1B;ADH4;ADH5;ADH6;ADH7;ALDH2
+REACT:R-HSA-879518,Transport of organic anions,2,6,11,8,0.25,falling,SLC16A2;SLCO1A2;SLCO1B1;SLCO1B3;SLCO2A1;SLCO2B1;SLCO3A1;SLCO4C1
+REACT:R-HSA-9933387,"RORA,B,C and NR1D1 (REV-ERBA) regulate gene expression",2,6,26,8,0.25,falling,HELZ2;NCOA2;NCOR1;NRIP1;PPARA;RORA;SMARCD3;TBL1X
+REACT:R-HSA-1268020,Mitochondrial protein import,2,5,65,7,0.286,falling,CMC2;DNAJC19;GRPEL1;IDH3G;SLC25A12;SLC25A13;TOMM70
+REACT:R-HSA-1660516,Synthesis of PIPs at the early endosome membrane,2,5,16,7,0.286,falling,INPP5F;MTM1;MTMR10;MTMR2;MTMR4;PI4K2B;PIK3R4
+REACT:R-HSA-2046106,alpha-linolenic acid (ALA) metabolism,2,5,13,7,0.286,falling,ABCD1;ACAA1;ACOX1;ACSL1;ELOVL1;HSD17B4;SCP2
+REACT:R-HSA-211981,Xenobiotics,0,7,22,7,0.0,falling,ARNT;CYP2A6;CYP2C19;CYP2C8;CYP2E1;CYP2J2;CYP3A5
+REACT:R-HSA-2453902,The canonical retinoid cycle in rods (twilight vision),1,6,22,7,0.143,falling,CYP4V2;DHRS9;HSD17B6;RBP4;RDH10;RDH16;TTR
+REACT:R-HSA-525793,Myogenesis,2,5,29,7,0.286,falling,BNIP2;BOC;CDH2;CDON;MEF2A;SPAG9;TCF3
+REACT:R-HSA-6782210,Gap-filling DNA repair synthesis and ligation in TC-NER,2,5,62,7,0.286,falling,AQR;LIG1;PCNA;POLK;POLR2C;TCEA1;UBB
+REACT:R-HSA-8866654,E3 ubiquitin ligases ubiquitinate target proteins,1,6,59,7,0.143,falling,HLTF;PCNA;PEX14;PEX5;RNF152;UBB;UBE2D3
+REACT:R-HSA-9603798,Class I peroxisomal membrane protein import,2,5,20,7,0.286,falling,ABCD1;ABCD2;ABCD3;ACBD5;ALDH3A2;PEX14;PEX3
+REACT:R-HSA-1475029,Reversible hydration of carbon dioxide,2,4,12,6,0.333,falling,CA1;CA12;CA13;CA14;CA2;CA9
+REACT:R-HSA-156584,Cytosolic sulfonation of small molecules,2,4,18,6,0.333,falling,SULT1A2;SULT1B1;SULT1C2;SULT1C4;SULT1E1;TPST1
+REACT:R-HSA-159740,Gamma-carboxylation of protein precursors,1,5,10,6,0.167,falling,F10;F2;F9;GAS6;GGCX;PROZ
+REACT:R-HSA-166663,Initial triggering of complement,1,5,73,6,0.167,falling,C1R;C1S;COLEC10;FCN1;FCN2;MASP2
+REACT:R-HSA-166665,Terminal pathway of complement,1,5,8,6,0.167,falling,C5;C6;C7;C8A;C8B;C9
+REACT:R-HSA-193775,Synthesis of bile acids and bile salts via 24-hydroxycholesterol,0,6,13,6,0.0,falling,AKR1C4;AKR1D1;AMACR;CYP27A1;SLC27A2;SLC27A5
+REACT:R-HSA-211976,Endogenous sterols,2,4,24,6,0.333,falling,ARNT;CYP11A1;CYP27A1;CYP4V2;FDXR;NCOA2
+REACT:R-HSA-2408508,"Metabolism of ingested SeMet, Sec, MeSec into H2Se",0,6,8,6,0.0,falling,AHCY;CBS;CTH;GNMT;HNMT;MAT1A
+REACT:R-HSA-388844,Receptor-type tyrosine-protein phosphatases,1,5,20,6,0.167,falling,IL1RAP;LRRC4B;PPFIBP1;PTPRD;PTPRF;SLITRK3
+REACT:R-HSA-389661,Glyoxylate metabolism and glycine degradation,0,6,12,6,0.0,falling,AGXT;AGXT2;GNMT;GRHPR;HAO1;PRODH2
+REACT:R-HSA-400206,Regulation of lipid metabolism by PPARalpha,2,4,20,6,0.333,falling,HELZ2;NCOA2;NCOR1;PPARA;SMARCD3;TBL1X
+REACT:R-HSA-4085001,Sialic acid metabolism,2,4,33,6,0.333,falling,CTSA;GNE;NEU3;NEU4;ST3GAL6;ST6GALNAC4
+REACT:R-HSA-425410,Metal ion SLC transporters,2,4,9,6,0.333,falling,CP;HEPH;SLC30A10;SLC31A1;SLC41A1;SLC41A2
+REACT:R-HSA-4641263,Regulation of FZD by ubiquitination,1,5,21,6,0.167,falling,FZD8;LGR4;LRP6;RSPO3;UBB;USP8
+REACT:R-HSA-5601884,PIWI-interacting RNA (piRNA) biogenesis,2,4,29,6,0.333,falling,HENMT1;MAEL;PIWIL2;PIWIL4;PLD6;POLR2C
+REACT:R-HSA-5610780,Degradation of GLI1 by the proteasome,1,5,47,6,0.167,falling,GLI1;ITCH;NUMB;PSMD3;SEM1;UBB
+REACT:R-HSA-5694530,Cargo concentration in the ER,2,4,33,6,0.333,falling,CTSC;FOLR1;LMAN1;MCFD2;SAR1B;SEC24B
+REACT:R-HSA-6782135,Dual incision in TC-NER,1,5,63,6,0.167,falling,AQR;PCNA;POLK;POLR2C;TCEA1;UBB
+REACT:R-HSA-6782315,tRNA modification in the nucleus and cytosol,2,4,38,6,0.333,falling,ALKBH8;FTSJ1;NSUN6;PUS3;TRMT1;TRMT10A
+REACT:R-HSA-71064,Lysine catabolism,0,6,9,6,0.0,falling,AADAT;AASS;ALDH7A1;GCDH;PIPOX;SLC25A21
+REACT:R-HSA-73621,Pyrimidine catabolism,1,5,12,6,0.167,falling,AGXT2;DPYD;DPYS;NT5E;TYMP;UPB1
+REACT:R-HSA-75109,Triglyceride biosynthesis,1,5,14,6,0.167,falling,AGMO;DGAT2;GPAM;MOGAT1;MOGAT2;MOGAT3
+REACT:R-HSA-8948751,Regulation of PTEN stability and activity,1,5,56,6,0.167,falling,AKT3;FRK;NEDD4;PSMD3;SEM1;UBB
+REACT:R-HSA-8964058,HDL remodeling,1,5,10,6,0.167,falling,ALB;APOC3;CETP;LCAT;LIPG;PLTP
+REACT:R-HSA-1234176,Oxygen-dependent proline hydroxylation of Hypoxia-inducible Factor Alpha,1,4,53,5,0.2,falling,AJUBA;PSMD3;SEM1;UBB;UBE2D3
+REACT:R-HSA-1253288,Downregulation of ERBB4 signaling,1,4,9,5,0.2,falling,ITCH;NEDD4;SRC;UBB;WWP1
+REACT:R-HSA-156588,Glucuronidation,0,5,22,5,0.0,falling,ABHD10;UGT2A1;UGT2B10;UGT2B28;UGT2B7
+REACT:R-HSA-156590,Glutathione conjugation,1,4,23,5,0.2,falling,GSTA1;GSTA5;GSTM4;GSTP1;GSTZ1
+REACT:R-HSA-159763,Transport of gamma-carboxylated protein precursors from the endoplasmic reticulum to the Golgi apparatus,1,4,9,5,0.2,falling,F10;F2;F9;GAS6;PROZ
+REACT:R-HSA-159782,Removal of aminoterminal propeptides from gamma-carboxylated proteins,1,4,10,5,0.2,falling,F10;F2;F9;GAS6;PROZ
+REACT:R-HSA-174084,Autodegradation of Cdh1 by Cdh1:APC/C,1,4,54,5,0.2,falling,ANAPC16;PSMD3;SEM1;UBB;UBE2C
+REACT:R-HSA-177128,Conjugation of salicylate with glycine,0,5,8,5,0.0,falling,ACSM2B;ACSM5;GLYAT;GLYATL1;GLYATL3
+REACT:R-HSA-177135,Conjugation of benzoate with glycine,1,4,6,5,0.2,falling,ACSM1;ACSM2B;GLYAT;GLYATL1;GLYATL3
+REACT:R-HSA-189451,Heme biosynthesis,1,4,14,5,0.2,falling,ABCG2;ALAD;ALB;CPOX;FLVCR1
+REACT:R-HSA-2142670,Synthesis of epoxy (EET) and dihydroxyeicosatrienoic acids (DHET),0,5,8,5,0.0,falling,CYP1A2;CYP2C19;CYP2C8;CYP2J2;EPHX2
+REACT:R-HSA-2168880,Scavenging of heme from plasma,1,4,69,5,0.2,falling,ALB;AMBP;HP;HPR;JCHAIN
+REACT:R-HSA-3322077,Glycogen synthesis,1,4,14,5,0.2,falling,EPM2A;GYG1;GYS2;PGM1;UBB
+REACT:R-HSA-389887,Beta-oxidation of pristanoyl-CoA,0,5,9,5,0.0,falling,ACOX2;AMACR;CRAT;HSD17B4;SCP2
+REACT:R-HSA-4641258,Degradation of DVL,1,4,44,5,0.2,falling,CUL3;DACT1;PSMD3;SEM1;UBB
+REACT:R-HSA-5678895,Defective CFTR causes cystic fibrosis,1,4,48,5,0.2,falling,DERL3;ERLIN2;PSMD3;SEM1;UBB
+REACT:R-HSA-70921,Histidine catabolism,1,4,8,5,0.2,falling,AMDHD1;CARNMT1;HAL;HDC;HNMT
+REACT:R-HSA-71240,Tryptophan catabolism,0,5,14,5,0.0,falling,AADAT;ACMSD;AFMID;HAAO;KYNU
+REACT:R-HSA-74259,Purine catabolism,1,4,10,5,0.2,falling,DNPH1;ITPA;NT5E;PNP;XDH
+REACT:R-HSA-8963693,Aspartate and asparagine metabolism,1,4,11,5,0.2,falling,ASPA;ASPG;FOLH1;SLC25A12;SLC25A13
+REACT:R-HSA-9664873,Pexophagy,1,4,11,5,0.2,falling,NBR1;PEX5;SQSTM1;UBB;USP30
+REACT:R-HSA-9932298,Degradation of CRY and PER proteins,0,5,48,5,0.0,falling,CRY2;PER3;PSMD3;SEM1;UBB
+REACT:R-HSA-140834,Extrinsic Pathway of Fibrin Clot Formation,1,3,5,4,0.25,falling,F10;F3;F9;TFPI
+REACT:R-HSA-1660514,Synthesis of PIPs at the Golgi membrane,1,3,18,4,0.25,falling,ARF3;PI4K2B;PIK3C2G;PIK3R4
+REACT:R-HSA-1660517,Synthesis of PIPs at the late endosome membrane,1,3,11,4,0.25,falling,MTM1;MTMR2;MTMR4;PIK3R4
+REACT:R-HSA-166662,Lectin pathway of complement activation,1,3,8,4,0.25,falling,COLEC10;FCN1;FCN2;MASP2
+REACT:R-HSA-174113,SCF-beta-TrCP mediated degradation of Emi1,1,3,42,4,0.25,falling,CDC20;PSMD3;SEM1;UBB
+REACT:R-HSA-180534,Vpu mediated degradation of CD4,0,4,39,4,0.0,falling,CD4;PSMD3;SEM1;UBB
+REACT:R-HSA-180585,Vif-mediated degradation of APOBEC3G,1,3,41,4,0.25,falling,APOBEC3G;PSMD3;SEM1;UBB
+REACT:R-HSA-193807,Synthesis of bile acids and bile salts via 27-hydroxycholesterol,0,4,14,4,0.0,falling,AKR1C4;AKR1D1;CYP27A1;NCOA2
+REACT:R-HSA-211935,Fatty acids,0,4,15,4,0.0,falling,CYP2J2;CYP4A11;CYP4F11;CYP4F3
+REACT:R-HSA-211979,Eicosanoids,1,3,12,4,0.25,falling,CYP4A11;CYP4F11;CYP4F3;PTGIS
+REACT:R-HSA-211999,CYP2E1 reactions,0,4,11,4,0.0,falling,CYP2A6;CYP2C19;CYP2C8;CYP2E1
+REACT:R-HSA-2142816,Synthesis of (16-20)-hydroxyeicosatetraenoic acids (HETE),0,4,9,4,0.0,falling,CYP1A2;CYP2C19;CYP2C8;CYP4A11
+REACT:R-HSA-4641257,Degradation of AXIN,1,3,42,4,0.25,falling,AXIN1;PSMD3;SEM1;UBB
+REACT:R-HSA-5205685,PINK1-PRKN Mediated Mitophagy,1,3,32,4,0.25,falling,SQSTM1;TOMM70;UBB;UBE2D3
+REACT:R-HSA-5358346,Hedgehog ligand biogenesis,1,3,47,4,0.25,falling,HHAT;PSMD3;SEM1;UBB
+REACT:R-HSA-5578749,Transcriptional regulation by small RNAs,1,3,105,4,0.25,falling,IPO8;NUP88;NUP93;POLR2C
+REACT:R-HSA-5578768,Physiological factors,1,3,14,4,0.25,falling,HIPK2;KAT2B;MME;WWTR1
+REACT:R-HSA-5610783,Degradation of GLI2 by the proteasome,1,3,47,4,0.25,falling,GLI2;PSMD3;SEM1;UBB
+REACT:R-HSA-5661270,Formation of xylulose-5-phosphate,0,4,5,4,0.0,falling,CRYL1;DCXR;SORD;XYLB
+REACT:R-HSA-6781823,Formation of TC-NER Pre-Incision Complex,0,4,51,4,0.0,falling,AQR;POLR2C;TCEA1;UBB
+REACT:R-HSA-6781827,Transcription-Coupled Nucleotide Excision Repair (TC-NER),0,4,42,4,0.0,falling,AQR;POLR2C;TCEA1;UBB
+REACT:R-HSA-6798163,Choline catabolism,0,4,6,4,0.0,falling,ALDH7A1;BHMT;DMGDH;SARDH
+REACT:R-HSA-70635,Urea cycle,0,4,10,4,0.0,falling,ARG1;ASL;CPS1;NAGS
+REACT:R-HSA-77289,Mitochondrial Fatty Acid Beta-Oxidation,1,3,19,4,0.25,falling,ACAA2;ACOT13;ACOT9;DBI
+REACT:R-HSA-8851907,MET activates PI3K/AKT signaling,1,3,6,4,0.25,falling,HGF;MET;PIK3CA;PIK3R1
+REACT:R-HSA-8854050,FBXL7 down-regulates AURKA during mitotic entry and in early mitosis,1,3,42,4,0.25,falling,FBXL7;PSMD3;SEM1;UBB
+REACT:R-HSA-8949215,Mitochondrial calcium ion transport,1,3,13,4,0.25,falling,AKAP1;MCUB;MICU1;MICU3
+REACT:R-HSA-8949664,Processing of SMDT1,1,3,16,4,0.25,falling,MAIP1;MCUB;MICU1;MICU3
+REACT:R-HSA-8964041,LDL remodeling,0,4,6,4,0.0,falling,APOF;CETP;LPA;MTTP
+REACT:R-HSA-9013695,NOTCH4 Intracellular Domain Regulates Transcription,1,3,20,4,0.25,falling,HEY2;KAT2B;MAML2;MAML3
+REACT:R-HSA-9022692,Regulation of MECP2 expression and activity,0,4,32,4,0.0,falling,CAMK2D;HIPK2;NCOR1;TBL1X
+REACT:R-HSA-9033500,TYSND1 cleaves peroxisomal proteins,0,4,7,4,0.0,falling,ACAA1;ACOX1;HSD17B4;SCP2
+REACT:R-HSA-947581,Molybdenum cofactor biosynthesis,0,4,6,4,0.0,falling,GPHN;MOCS1;MOCS2;NFS1
+REACT:R-HSA-9604323,Negative regulation of NOTCH4 signaling,1,3,44,4,0.25,falling,PSMD3;SEM1;UBB;YWHAZ
+REACT:R-HSA-9615017,"FOXO-mediated transcription of oxidative stress, metabolic and neuronal genes",0,4,30,4,0.0,falling,ABCA6;CAT;G6PC1;PCK1
+REACT:R-HSA-9752946,Expression and translocation of olfactory receptors,1,3,364,4,0.25,falling,OR10J5;OR13C3;OR51E1;OR5AN1
+REACT:R-HSA-9754706,Atorvastatin ADME,0,4,9,4,0.0,falling,PON3;SLCO1B1;SLCO1B3;SLCO2B1
+REACT:R-HSA-9772755,Formation of WDR5-containing histone-modifying complexes,1,3,41,4,0.25,falling,ASH2L;KAT2B;YEATS2;ZZZ3
+REACT:R-HSA-9793528,Ciprofloxacin ADME,0,4,5,4,0.0,falling,ABCG2;ALB;SLC22A1;SLCO1A2
+REACT:R-HSA-983170,"Antigen Presentation: Folding, assembly and peptide loading of class I MHC",1,3,29,4,0.25,falling,PIK3R4;SAR1B;SEC24B;TAP1
+REACT:R-HSA-9854311,Maturation of TCA enzymes and regulation of TCA cycle,0,4,20,4,0.0,falling,ACAT1;NFS1;SDHAF3;SDHAF4
+REACT:R-HSA-9931510,Phosphorylated BMAL1:CLOCK (ARNTL:CLOCK) activates expression of core clock genes,0,4,22,4,0.0,falling,CIPC;CRY2;PER3;RORA
+REACT:R-HSA-9931521,The CRY:PER:kinase complex represses transactivation by the BMAL:CLOCK (ARNTL:CLOCK) complex,1,3,14,4,0.25,falling,CRY2;CSNK1E;PER3;RORA
+REACT:R-HSA-112311,Neurotransmitter clearance,1,2,4,3,0.333,falling,ACHE;BCHE;SLC22A1
+REACT:R-HSA-1170546,Prolactin receptor signaling,1,2,15,3,0.333,falling,GHR;PRLR;STAT5A
+REACT:R-HSA-1181150,Signaling by NODAL,0,3,23,3,0.0,falling,ACVR1C;ACVR2B;CRIPTO
+REACT:R-HSA-1234158,Regulation of gene expression by Hypoxia-inducible Factor,1,2,11,3,0.333,falling,ARNT;CA9;CITED2
+REACT:R-HSA-1237044,Erythrocytes take up carbon dioxide and release oxygen,1,2,13,3,0.333,falling,AQP1;CA1;CA2
+REACT:R-HSA-1247673,Erythrocytes take up oxygen and release carbon dioxide,1,2,9,3,0.333,falling,AQP1;CA1;CA2
+REACT:R-HSA-1433617,Regulation of signaling by NODAL,0,3,12,3,0.0,falling,ACVR1C;ACVR2B;CRIPTO
+REACT:R-HSA-1502540,Signaling by Activin,0,3,15,3,0.0,falling,ACVR1C;ACVR2B;TGFBR3
+REACT:R-HSA-156581,Methylation,0,3,14,3,0.0,falling,AHCY;CYP1A2;MAT1A
+REACT:R-HSA-159231,Transport of Mature mRNA Derived from an Intronless Transcript,1,2,42,3,0.333,falling,NUP88;NUP93;WDR33
+REACT:R-HSA-1614635,Sulfur amino acid metabolism,0,3,6,3,0.0,falling,AHCY;BHMT;MAT1A
+REACT:R-HSA-166208,mTORC1-mediated signalling,1,2,24,3,0.333,falling,EIF4B;LAMTOR4;RPS6KB1
+REACT:R-HSA-167152,Formation of HIV elongation complex in the absence of HIV Tat,1,2,45,3,0.333,falling,NELFB;POLR2C;TCEA1
+REACT:R-HSA-167200,Formation of HIV-1 elongation complex containing HIV-1 Tat,1,2,43,3,0.333,falling,NELFB;POLR2C;TCEA1
+REACT:R-HSA-167238,Pausing and recovery of Tat-mediated HIV elongation,1,2,31,3,0.333,falling,NELFB;POLR2C;TCEA1
+REACT:R-HSA-167243,Tat-mediated HIV elongation arrest and recovery,1,2,31,3,0.333,falling,NELFB;POLR2C;TCEA1
+REACT:R-HSA-167246,Tat-mediated elongation of the HIV-1 transcript,1,2,41,3,0.333,falling,NELFB;POLR2C;TCEA1
+REACT:R-HSA-167287,HIV elongation arrest and recovery,1,2,33,3,0.333,falling,NELFB;POLR2C;TCEA1
+REACT:R-HSA-167290,Pausing and recovery of HIV elongation,1,2,33,3,0.333,falling,NELFB;POLR2C;TCEA1
+REACT:R-HSA-168325,Viral Messenger RNA Synthesis,1,2,44,3,0.333,falling,NUP88;NUP93;POLR2C
+REACT:R-HSA-174577,Activation of C3 and C5,0,3,7,3,0.0,falling,C5;CFB;CFP
+REACT:R-HSA-1855167,Synthesis of pyrophosphates in the cytosol,1,2,10,3,0.333,falling,IPPK;NUDT4;PPIP5K2
+REACT:R-HSA-198203,PI3K/AKT activation,1,2,9,3,0.333,falling,PIK3CA;PIK3R1;RHOA
+REACT:R-HSA-204174,Regulation of pyruvate dehydrogenase (PDH) complex,0,3,15,3,0.0,falling,GSTZ1;PDHX;PDK4
+REACT:R-HSA-210744,Regulation of gene expression in late stage (branching morphogenesis) pancreatic bud precursor cells,1,2,16,3,0.333,falling,KAT2B;MAML2;MAML3
+REACT:R-HSA-210745,Regulation of gene expression in beta cells,1,2,18,3,0.333,falling,HNF4G;PDX1;SLC2A2
+REACT:R-HSA-211733,Regulation of activated PAK-2p34 by proteasome mediated degradation,0,3,37,3,0.0,falling,PSMD3;SEM1;UBB
+REACT:R-HSA-211958,Miscellaneous substrates,0,3,12,3,0.0,falling,CYP4A11;CYP4F11;CYP4F3
+REACT:R-HSA-2161517,Abacavir transmembrane transport,0,3,5,3,0.0,falling,ABCG2;SLC22A1;SLC22A3
+REACT:R-HSA-2468052,Establishment of Sister Chromatid Cohesion,1,2,11,3,0.333,falling,CDCA5;PDS5A;STAG2
+REACT:R-HSA-2855086,Ficolins bind to repetitive carbohydrate structures on the target cell surface,1,2,5,3,0.333,falling,FCN1;FCN2;MASP2
+REACT:R-HSA-2892247,"POU5F1 (OCT4), SOX2, NANOG activate genes related to proliferation",1,2,13,3,0.333,falling,CRIPTO;DPPA4;STAT3
+REACT:R-HSA-349425,Autodegradation of the E3 ubiquitin ligase COP1,0,3,39,3,0.0,falling,PSMD3;SEM1;UBB
+REACT:R-HSA-3785653,Myoclonic epilepsy of Lafora,1,2,9,3,0.333,falling,EPM2A;GYG1;UBB
+REACT:R-HSA-429947,Deadenylation of mRNA,0,3,25,3,0.0,falling,CNOT7;EIF4B;TUT7
+REACT:R-HSA-430039,mRNA decay by 5' to 3' exoribonuclease,1,2,15,3,0.333,falling,LSM4;PATL1;XRN1
+REACT:R-HSA-442380,Zinc influx into cells by the SLC39 gene family,1,2,10,3,0.333,falling,SLC39A10;SLC39A5;SLC39A8
+REACT:R-HSA-450408,AUF1 (hnRNP D0) binds and destabilizes mRNA,0,3,42,3,0.0,falling,PSMD3;SEM1;UBB
+REACT:R-HSA-5362768,Hh mutants are degraded by ERAD,0,3,43,3,0.0,falling,PSMD3;SEM1;UBB
+REACT:R-HSA-5368286,Mitochondrial translation initiation,0,3,89,3,0.0,falling,MRPL14;MRPL24;MRPS18B
+REACT:R-HSA-5389840,Mitochondrial translation elongation,0,3,89,3,0.0,falling,MRPL14;MRPL24;MRPS18B
+REACT:R-HSA-5419276,Mitochondrial translation termination,0,3,89,3,0.0,falling,MRPL14;MRPL24;MRPS18B
+REACT:R-HSA-5610785,GLI3 is processed to GLI3R by the proteasome,0,3,47,3,0.0,falling,PSMD3;SEM1;UBB
+REACT:R-HSA-5693565,Recruitment and ATM-mediated phosphorylation of repair and signaling proteins at DNA double strand breaks,1,2,77,3,0.333,falling,CHEK2;MAPK8;UBB
+REACT:R-HSA-5696395,Formation of Incision Complex in GG-NER,1,2,43,3,0.333,falling,DDB2;RAD23B;UBB
+REACT:R-HSA-69481,G2/M Checkpoints,0,3,38,3,0.0,falling,PSMD3;SEM1;UBB
+REACT:R-HSA-70350,Fructose catabolism,0,3,5,3,0.0,falling,ALDOB;GLYCTK;KHK
+REACT:R-HSA-71403,Citric acid cycle (TCA cycle),1,2,17,3,0.333,falling,FH;IDH3G;SUCLA2
+REACT:R-HSA-72203,Processing of Capped Intron-Containing Pre-mRNA,0,3,70,3,0.0,falling,PAPOLA;POLR2C;WDR33
+REACT:R-HSA-749476,RNA Polymerase III Abortive And Retractive Initiation,1,2,41,3,0.333,falling,NFIA;POLR3G;SNAPC2
+REACT:R-HSA-77111,Synthesis of Ketone Bodies,0,3,8,3,0.0,falling,ACAT1;HMGCL;HMGCS2
+REACT:R-HSA-77352,Beta oxidation of butanoyl-CoA to acetyl-CoA,0,3,5,3,0.0,falling,ACADS;ACSM3;HADH
+REACT:R-HSA-8866376,Reelin signalling pathway,1,2,5,3,0.333,falling,DAB1;RELN;SH3KBP1
+REACT:R-HSA-8866910,TFAP2 (AP-2) family regulates transcription of growth factors and their receptors,1,2,15,3,0.333,falling,EGFR;ESR1;KIT
+REACT:R-HSA-8874211,CREB3 factors activate genes,1,2,9,3,0.333,falling,CREB3;CREB3L4;CREBRF
+REACT:R-HSA-888593,Reuptake of GABA,1,2,4,3,0.333,falling,SLC6A1;SLC6A11;SLC6A13
+REACT:R-HSA-8948747,Regulation of PTEN localization,1,2,9,3,0.333,falling,NEDD4;PML;UBB
+REACT:R-HSA-8963888,Chylomicron assembly,0,3,10,3,0.0,falling,APOC3;MTTP;SAR1B
+REACT:R-HSA-8963901,Chylomicron remodeling,1,2,10,3,0.333,falling,APOA5;APOC3;LPL
+REACT:R-HSA-8964038,LDL clearance,1,2,19,3,0.333,falling,CES3;NCEH1;SOAT2
+REACT:R-HSA-8964208,Phenylalanine metabolism,1,2,6,3,0.333,falling,IL4I1;PAH;QDPR
+REACT:R-HSA-901032,ER Quality Control Compartment (ERQC),0,3,21,3,0.0,falling,EDEM1;RNF139;UBB
+REACT:R-HSA-9027307,Biosynthesis of maresin-like SPMs,0,3,6,3,0.0,falling,CYP1A2;CYP2C8;CYP2E1
+REACT:R-HSA-937072,TRAF6-mediated induction of TAK1 complex within TLR4 complex,1,2,16,3,0.333,falling,CD14;TICAM1;UBB
+REACT:R-HSA-9603381,Activated NTRK3 signals through PI3K,1,2,6,3,0.333,falling,PIK3CA;PIK3R1;SRC
+REACT:R-HSA-9632974,NR1H2 & NR1H3 regulate gene expression linked to gluconeogenesis ,0,3,5,3,0.0,falling,NR1H3;NRIP1;PCK1
+REACT:R-HSA-9657688,Defective factor XII causes hereditary angioedema,0,3,3,3,0.0,falling,F12;F2;KLKB1
+REACT:R-HSA-9670095,Inhibition of DNA recombination at telomere,1,2,66,3,0.333,falling,ACD;POLR2C;POT1
+REACT:R-HSA-9673768,Signaling by membrane-tethered fusions of PDGFRA or PDGFRB,1,2,5,3,0.333,falling,BIN2;KANK1;KDR
+REACT:R-HSA-9687136,Aberrant regulation of mitotic exit in cancer due to RB1 defects,1,2,20,3,0.333,falling,ANAPC16;SKP2;UBE2C
+REACT:R-HSA-9700645,ALK mutants bind TKIs,1,2,12,3,0.333,falling,BCL11A;BIRC6;PPM1B
+REACT:R-HSA-9703648,Signaling by FLT3 ITD and TKD mutants,1,2,10,3,0.333,falling,HRAS;PIK3CA;PIK3R1
+REACT:R-HSA-975163,IRAK2 mediated activation of TAK1 complex upon TLR7/8 or 9 stimulation,1,2,15,3,0.333,falling,CD14;TICAM1;UBB
+REACT:R-HSA-9757110,Prednisone ADME,0,3,10,3,0.0,falling,ALB;HSD11B1;UGT2B7
+REACT:R-HSA-9762114,GSK3B and BTRC:CUL1-mediated-degradation of NFE2L2,0,3,42,3,0.0,falling,PSMD3;SEM1;UBB
+REACT:R-HSA-9820841,M-decay: degradation of maternal mRNAs by maternally stored factors,1,2,33,3,0.333,falling,CNOT7;EIF4B;ZFP36L2
+REACT:R-HSA-9912529,H139Hfs13* PPM1K causes a mild variant of  MSUD,0,3,5,3,0.0,falling,BCKDHB;DBT;PPM1K
+REACT:R-HSA-9930044,Nuclear RNA decay,0,3,35,3,0.0,falling,TENT4A;TENT4B;ZCCHC8
+REACT:R-HSA-9931512,"Phosphorylation of CLOCK, acetylation of BMAL1 (ARNTL) at target gene promoters",0,3,11,3,0.0,falling,CRY2;PER3;RORA
+REACT:R-HSA-9931530,Phosphorylation and nuclear translocation of the CRY:PER:kinase complex,1,2,14,3,0.333,falling,CRY2;CSNK1E;PER3
+REACT:R-HSA-9933937,Formation of the canonical BAF (cBAF) complex,1,2,18,3,0.333,falling,SMARCA2;SMARCA4;SS18L1
+REACT:R-HSA-983168,Antigen processing: Ubiquitination & Proteasome degradation,25,31,295,56,0.446,mixed,ASB11;ASB2;ASB4;ASB6;ASB9;CBLB;CDC20;CUL3
+REACT:R-HSA-8980692,RHOA GTPase cycle,34,18,149,52,0.654,mixed,ABCD3;ABR;ACBD5;ANLN;ARAP3;ARHGAP11A;ARHGAP20;ARHGAP29
+REACT:R-HSA-381426,Regulation of Insulin-like Growth Factor (IGF) transport and uptake by Insulin-like Growth Factor Binding Proteins (IGFBPs),27,15,124,42,0.643,mixed,AHSG;ALB;APLP2;APOA5;CCN1;CDH2;CP;CSF1
+REACT:R-HSA-8951664,Neddylation,20,21,232,41,0.488,mixed,ASB11;ASB2;ASB4;ASB6;ASB9;CDKN1A;COMMD5;COMMD8
+REACT:R-HSA-8957275,Post-translational protein phosphorylation,22,13,107,35,0.629,mixed,AHSG;ALB;APLP2;APOA5;CCN1;CDH2;CP;CSF1
+REACT:R-HSA-1989781,PPARA activates gene expression,9,17,116,26,0.346,mixed,ABCA1;ACADM;ACOX1;ACSL1;ANKRD1;APOA5;ARNT;CDK19
+REACT:R-HSA-212436,Generic Transcription Pathway,14,12,351,26,0.538,mixed,KRABD3;MED13;MED27;ZFP1;ZFP69B;ZIK1;ZKSCAN1;ZNF135
+REACT:R-HSA-9018519,Estrogen-dependent gene expression,15,11,148,26,0.577,mixed,ATF2;AXIN1;BCL2;CBFB;CCND1;CTSD;CXCL12;DDX5
+REACT:R-HSA-5689880,Ub-specific processing proteases,12,13,203,25,0.48,mixed,AR;ARRB1;AXIN1;BIRC3;CCNA2;CCP110;CDC20;CDC25A
+REACT:R-HSA-9013026,RHOB GTPase cycle,15,9,70,24,0.625,mixed,ABR;ANLN;ARHGAP35;ARHGAP39;ARHGEF12;ARHGEF17;ARHGEF2;ARHGEF25
+REACT:R-HSA-9705671,SARS-CoV-2 activates/modulates innate and adaptive immune responses,15,9,125,24,0.625,mixed,CNBP;IL17RC;IRAK1;IRF3;ISG15;KPNA2;MASP2;NLRP3
+REACT:R-HSA-9013408,RHOG GTPase cycle,11,10,74,21,0.524,mixed,ARHGAP35;ARHGAP39;ARHGDIB;ARHGEF16;ARHGEF26;CDC42EP1;DIAPH3;DOCK2
+REACT:R-HSA-381340,Transcriptional regulation of white adipocyte differentiation,13,7,84,20,0.65,mixed,CCND3;CDK19;CDK4;EGR2;HELZ2;KLF4;KLF5;LPL
+REACT:R-HSA-6794361,Neurexins and neuroligins,11,9,56,20,0.55,mixed,APBA1;APBA2;DLG2;DLG3;DLGAP4;EPB41L1;EPB41L5;GRIN2D
+REACT:R-HSA-6802952,Signaling by BRAF and RAF1 fusions,12,7,65,19,0.632,mixed,AGTRAP;AKAP9;ARRB1;CAMK2D;CNKSR2;CSK;FXR1;HRAS
+REACT:R-HSA-193648,NRAGE signals death through JNK,11,7,59,18,0.611,mixed,ABR;ARHGEF12;ARHGEF16;ARHGEF17;ARHGEF2;ARHGEF26;ARHGEF3;ARHGEF35
+REACT:R-HSA-2672351,Stimuli-sensing channels,10,7,78,17,0.588,mixed,ANO4;ANO9;CLCN4;CLCN5;CLCN7;FKBP1B;NALCN;NEDD4L
+REACT:R-HSA-383280,Nuclear Receptor transcription pathway,6,11,53,17,0.353,mixed,AR;ESR1;ESRRG;HNF4G;NCOR1;NR1H3;NR1I3;NR2C2AP
+REACT:R-HSA-8876198,RAB GEFs exchange GTP for GDP on RABs,11,6,90,17,0.647,mixed,AKT3;DENND1A;DENND2C;DENND3;DENND5B;DENND6B;GDI1;GDI2
+REACT:R-HSA-9707564,Cytoprotection by HMOX1,8,9,56,17,0.471,mixed,ABCC1;ALB;BLVRA;BLVRB;COX5B;COX7A1;COX7A2L;CYCS
+REACT:R-HSA-2644606,Constitutive Signaling by NOTCH1 PEST Domain Mutants,10,6,58,16,0.625,mixed,APH1B;DLL1;HDAC11;HEY2;HEYL;JAG1;JAG2;KAT2B
+REACT:R-HSA-2894862,Constitutive Signaling by NOTCH1 HD+PEST Domain Mutants,10,6,58,16,0.625,mixed,APH1B;DLL1;HDAC11;HEY2;HEYL;JAG1;JAG2;KAT2B
+REACT:R-HSA-9013405,RHOD GTPase cycle,8,8,53,16,0.5,mixed,ACTN1;ARHGAP35;ARHGAP39;CPNE8;DBN1;DIAPH1;DIAPH2;DIAPH3
+REACT:R-HSA-9696270,RND2 GTPase cycle,7,9,43,16,0.438,mixed,ALDH3A2;ARHGAP35;BLTP3B;DSG1;EPHA2;KTN1;LEMD3;LRRC1
+REACT:R-HSA-9833110,RSV-host interactions,10,6,65,16,0.625,mixed,AGRN;CD14;CDK19;CLEC4M;GPC3;GPC4;HERC5;HSPG2
+REACT:R-HSA-432722,Golgi Associated Vesicle Biogenesis,8,7,56,15,0.533,mixed,AP1B1;AP1M2;AP1S3;ARRB1;CLINT1;DNAJC6;HIP1R;PICALM
+REACT:R-HSA-1660499,Synthesis of PIPs at the plasma membrane,9,5,53,14,0.643,mixed,INPP5D;MTM1;MTMR2;PI4K2B;PIK3C2G;PIK3CA;PIK3CD;PIK3CG
+REACT:R-HSA-2022928,HS-GAG biosynthesis,8,6,31,14,0.571,mixed,AGRN;EXT1;GPC3;GPC4;HS2ST1;HS3ST1;HS3ST2;HS3ST3A1
+REACT:R-HSA-975634,Retinoid metabolism and transport,9,5,44,14,0.643,mixed,AGRN;AKR1B10;AKR1C4;APOC3;GPC3;GPC4;HSPG2;LPL
+REACT:R-HSA-1169408,ISG15 antiviral mechanism,8,5,74,13,0.615,mixed,EIF4G3;HERC5;IRF3;ISG15;KPNA2;NEDD4;NUP88;NUP93
+REACT:R-HSA-1483166,Synthesis of PA,8,5,39,13,0.615,mixed,ACP6;AGPAT5;GPAM;GPD1;GPD1L;GPD2;LPCAT1;LPCAT4
+REACT:R-HSA-5632684,Hedgehog 'on' state,7,6,60,13,0.538,mixed,CUL3;DZIP1;EVC;EVC2;GLI1;GLI2;GPR161;ITCH
+REACT:R-HSA-9010553,Regulation of expression of SLITs and ROBOs,7,6,159,13,0.538,mixed,DAG1;MSI1;PSMD3;ROBO1;RPL22L1;RPL36AL;RPS19;RPS27L
+REACT:R-HSA-9035034,RHOF GTPase cycle,8,5,42,13,0.615,mixed,ACTN1;ARHGAP39;BAIAP2L2;DIAPH1;DIAPH2;DIAPH3;FAM169A;MCAM
+REACT:R-HSA-9696264,RND3 GTPase cycle,7,6,42,13,0.538,mixed,ARHGAP35;CKB;DSG1;EPHA2;KTN1;LEMD3;MUC13;PICALM
+REACT:R-HSA-2122947,NOTCH1 Intracellular Domain Regulates Transcription,6,6,48,12,0.5,mixed,HDAC11;HEY2;HEYL;KAT2B;MAML2;MAML3;MYC;NBEA
+REACT:R-HSA-72163,mRNA Splicing - Major Pathway,5,7,204,12,0.417,mixed,AQR;CDC40;CDC5L;CTNNBL1;DDX5;DHX8;GCFC2;LSM4
+REACT:R-HSA-9609736,Assembly and cell surface presentation of NMDA receptors,6,6,44,12,0.5,mixed,APBA1;CAMK2D;DLG2;DLG3;GRIN2D;GRIN3A;LIN7C;NBEA
+REACT:R-HSA-382556,ABC-family proteins mediated transport,4,7,68,11,0.364,mixed,ABCA8;ABCC1;ABCC4;ABCC5;ABCC6;ABCC9;DERL3;ERLIN2
+REACT:R-HSA-390471,Association of TriC/CCT with target proteins during biosynthesis,7,4,39,11,0.636,mixed,CCNE1;CCT6B;FBXL5;FBXO4;FBXO6;FBXW9;LONP2;NOP56
+REACT:R-HSA-5578775,Ion homeostasis,7,4,54,11,0.636,mixed,ABCC9;ATP1B3;ATP2A3;ATP2B4;CAMK2D;FKBP1B;FXYD1;FXYD2
+REACT:R-HSA-611105,Respiratory electron transport,4,7,88,11,0.364,mixed,COQ10A;COQ10B;COX5B;COX7A1;COX7A2L;CYCS;ETFDH;HCCS
+REACT:R-HSA-8939236,RUNX1 regulates transcription of genes involved in differentiation of HSCs,7,4,115,11,0.636,mixed,CBFB;GATA2;ITCH;PSMD3;RUNX1;SEM1;SPI1;TAL1
+REACT:R-HSA-9020702,Interleukin-1 signaling,7,4,74,11,0.636,mixed,IL1B;IL1RAP;IRAK1;IRAK3;NFKB1;NOD1;NOD2;PSMD3
+REACT:R-HSA-917937,Iron uptake and transport,5,6,28,11,0.455,mixed,ABCG2;ACO1;CP;CYBRD1;FBXL5;FLVCR1;HEPH;LCN2
+REACT:R-HSA-9609690,HCMV Early Events,6,5,137,11,0.545,mixed,EGFR;NCOR1;NFKB1;NUP88;NUP93;PML;TBL1X;TUBA1A
+REACT:R-HSA-9664565,Signaling by ERBB2 KD Mutants,7,4,25,11,0.636,mixed,EGFR;ERBB3;HBEGF;HRAS;NRG1;NRG2;NRG3;PIK3CA
+REACT:R-HSA-9696273,RND1 GTPase cycle,7,4,42,11,0.636,mixed,ALDH3A2;ARHGAP35;EPHA2;LEMD3;MUC13;PIK3R1;PLXNA1;SACK1B
+REACT:R-HSA-9753281,Paracetamol ADME,7,4,29,11,0.636,mixed,ABCC1;ABCC4;ABCC5;ABCG2;CYP2E1;GGT5;GGT6;GSTP1
+REACT:R-HSA-1236974,ER-Phagosome pathway,4,6,82,10,0.4,mixed,BTK;CD14;HMGB1;PSMB10;PSMD3;SEC61A2;SEM1;TAP1
+REACT:R-HSA-140875,Common Pathway of Fibrin Clot Formation,4,6,22,10,0.4,mixed,F10;F13A1;F13B;F2;PROCR;SERPINA5;SERPINC1;SERPIND1
+REACT:R-HSA-3108214,SUMOylation of DNA damage response and repair proteins,6,4,77,10,0.6,mixed,BLM;BMI1;CBX8;CDKN2A;NUP88;NUP93;PHC2;PML
+REACT:R-HSA-5620924,Intraflagellar transport,5,5,54,10,0.5,mixed,DYNLT5;IFT46;IFT70A;IFT74;KIF3A;KIF3C;TUBA1A;TUBA1C
+REACT:R-HSA-5658442,Regulation of RAS by GAPs,5,5,55,10,0.5,mixed,CUL3;HRAS;KBTBD7;PSMD3;RASA3;RASAL3;SEM1;SPRED1
+REACT:R-HSA-5689896,Ovarian tumor domain proteases,6,4,39,10,0.6,mixed,ESR1;NOD1;NOD2;RHOA;RNF128;TNFAIP3;TNIP2;TRAF3
+REACT:R-HSA-8939243,RUNX1 interacts with co-factors whose precise effect on RUNX1 targets is not known,6,4,37,10,0.6,mixed,BMI1;CBFB;CBX8;HIPK2;PCGF5;PHC2;RUNX1;SMARCA2
+REACT:R-HSA-936440,Negative regulators of DDX58/IFIH1 signaling,6,4,35,10,0.6,mixed,HERC5;IRF3;ISG15;ITCH;NLRC5;PIN1;TNFAIP3;TRAF3
+REACT:R-HSA-1296072,Voltage gated Potassium channels,5,4,43,9,0.556,mixed,KCNA2;KCNA3;KCNAB2;KCNC2;KCND1;KCND3;KCNH1;KCNH7
+REACT:R-HSA-1660661,Sphingolipid de novo biosynthesis,4,5,37,9,0.444,mixed,ABCC1;ABCG2;CERS2;CERT1;ORMDL2;SGMS1;SGMS2;SPHK1
+REACT:R-HSA-174178,APC/C:Cdh1 mediated degradation of Cdc20 and other APC/C:Cdh1 targeted proteins in late mitosis/early G1,4,5,61,9,0.444,mixed,ANAPC16;CDC20;PLK1;PSMD3;PTTG1;SEM1;SKP2;UBB
+REACT:R-HSA-187577,SCF(Skp2)-mediated degradation of p27/p21,5,4,50,9,0.556,mixed,CCNA2;CCND1;CCNE1;CDK4;CDKN1A;PSMD3;SEM1;SKP2
+REACT:R-HSA-2022377,Metabolism of Angiotensinogen to Angiotensins,4,5,17,9,0.444,mixed,ACE2;ANPEP;CPA3;CPB2;CTSD;CTSG;ENPEP;MME
+REACT:R-HSA-422356,Regulation of insulin secretion,5,4,28,9,0.556,mixed,CACNA1C;GNAI1;ITPR1;ITPR2;RAPGEF4;SLC2A2;SNAP25;STX1A
+REACT:R-HSA-5655302,Signaling by FGFR1 in disease,4,5,33,9,0.444,mixed,CEP43;ERLIN2;FGF17;FGF23;HRAS;PIK3CA;PIK3R1;PLCG1
+REACT:R-HSA-5687128,MAPK6/MAPK4 signaling,4,5,78,9,0.444,mixed,CCND3;CDC14B;JUN;MMP2;MYC;PSMD3;RAG1;SEM1
+REACT:R-HSA-70263,Gluconeogenesis,5,4,25,9,0.556,mixed,ALDOA;ALDOB;G6PC1;G6PC3;GPI;PCK1;PCK2;SLC37A1
+REACT:R-HSA-8852276,The role of GTSE1 in G2/M progression after G2 checkpoint,5,4,66,9,0.556,mixed,CDKN1A;PLK1;PSMD3;SEM1;TUBA1A;TUBA1C;TUBB1;TUBB6
+REACT:R-HSA-8940973,RUNX2 regulates osteoblast differentiation,5,4,24,9,0.556,mixed,AR;CBFB;COL1A1;HEY2;MAF;SRC;WWTR1;YAP1
+REACT:R-HSA-9755511,KEAP1-NFE2L2 pathway,5,4,64,9,0.556,mixed,AKT3;CDKN1A;CUL3;PSMD3;SEM1;SESN1;SQSTM1;TRIM21
+REACT:R-HSA-1227986,Signaling by ERBB2,5,3,18,8,0.625,mixed,EGFR;ERBB3;HBEGF;NRG1;NRG2;NRG3;SRC;YES1
+REACT:R-HSA-1236382,Constitutive Signaling by Ligand-Responsive EGFR Cancer Variants,4,4,19,8,0.5,mixed,CBL;EGFR;HRAS;PIK3CA;PIK3R1;PLCG1;SHC1;UBB
+REACT:R-HSA-1368108,"BMAL1:CLOCK,NPAS2 activates circadian expression",4,4,26,8,0.5,mixed,BHLHE41;BMAL2;HELZ2;KLF15;NCOA2;PPARA;SMARCD3;TBL1X
+REACT:R-HSA-1369062,ABC transporters in lipid homeostasis,4,4,18,8,0.5,mixed,ABCA12;ABCA2;ABCA5;ABCA6;ABCD1;ABCD2;ABCD3;PEX3
+REACT:R-HSA-1632852,Macroautophagy,4,4,68,8,0.5,mixed,ATG101;CHMP4B;LAMTOR4;PIK3R4;PRKAA1;PRKAA2;PRKAG2;RB1CC1
+REACT:R-HSA-174184,Cdc20:Phospho-APC/C mediated degradation of Cyclin A,4,4,60,8,0.5,mixed,ANAPC16;CCNA2;CDC20;MAD2L1;PSMD3;SEM1;UBB;UBE2C
+REACT:R-HSA-182971,EGFR downregulation,5,3,31,8,0.625,mixed,CBL;EGFR;HBEGF;PTPRK;SH3GL2;SH3KBP1;SPRY1;UBB
+REACT:R-HSA-195253,Degradation of beta-catenin by the destruction complex,4,4,56,8,0.5,mixed,AXIN1;PPP2CB;PPP2R1A;PPP2R5B;PSMD3;SEM1;UBB;ZRANB1
+REACT:R-HSA-1963642,PI3K events in ERBB2 signaling,4,4,16,8,0.5,mixed,EGFR;ERBB3;HBEGF;NRG1;NRG2;NRG3;PIK3CA;PIK3R1
+REACT:R-HSA-2173788,Downregulation of TGF-beta receptor signaling,5,3,26,8,0.625,mixed,BAMBI;MTMR4;NEDD4L;PMEPA1;PPP1R15A;TGFB1;UBB;USP15
+REACT:R-HSA-2426168,Activation of gene expression by SREBF (SREBP),3,5,42,8,0.375,mixed,ACACB;GPAM;HELZ2;MVD;NCOA2;PPARA;SMARCD3;TBL1X
+REACT:R-HSA-2871837,FCERI mediated NF-kB activation,5,3,123,8,0.625,mixed,CARD11;FCER1A;NFKB1;PRKCQ;PSMD3;RASGRP1;SEM1;UBB
+REACT:R-HSA-3899300,SUMOylation of transcription cofactors,4,4,43,8,0.5,mixed,BMI1;CBX8;DDX5;HIPK2;MRTFA;NCOA2;NRIP1;PHC2
+REACT:R-HSA-6783310,Fanconi Anemia Pathway,5,3,39,8,0.625,mixed,DCLRE1A;DCLRE1B;FAN1;FANCB;FANCD2;MUS81;UBB;UBE2T
+REACT:R-HSA-6785631,ERBB2 Regulates Cell Motility,5,3,15,8,0.625,mixed,DIAPH1;EGFR;ERBB3;HBEGF;NRG1;NRG2;NRG3;RHOA
+REACT:R-HSA-6796648,TP53 Regulates Transcription of DNA Repair Genes,5,3,62,8,0.625,mixed,ATF2;DDB2;FANCD2;FOS;JUN;NELFB;POLR2C;TCEA1
+REACT:R-HSA-6807004,Negative regulation of MET activity,5,3,21,8,0.625,mixed,CBL;HGF;MET;PTPN1;SH3GL2;SH3KBP1;UBB;USP8
+REACT:R-HSA-69017,CDK-mediated phosphorylation and removal of Cdc6,4,4,60,8,0.5,mixed,ANAPC16;CCNA2;CCNE1;CDC6;PSMD3;SEM1;UBB;UBE2C
+REACT:R-HSA-9029569,NR1H3 & NR1H2 regulate gene expression linked to cholesterol transport and efflux,3,5,37,8,0.375,mixed,ABCA1;ARL4C;CETP;EEPD1;NCOR1;NR1H3;PLTP;TBL1X
+REACT:R-HSA-912631,Regulation of signaling by CBL,4,4,22,8,0.5,mixed,CBL;PIK3CA;PIK3CD;PIK3R1;PIK3R3;SYK;UBB;YES1
+REACT:R-HSA-109704,PI3K Cascade,4,3,39,7,0.571,mixed,FGF17;FGF23;FGF7;FGFR2;PIK3CA;PIK3R1;PIK3R4
+REACT:R-HSA-1221632,Meiotic synapsis,3,4,77,7,0.429,mixed,ACD;HSPA2;LMNA;POT1;STAG2;SYCE1;SYCP1
+REACT:R-HSA-174154,APC/C:Cdc20 mediated degradation of Securin,3,4,55,7,0.429,mixed,ANAPC16;CDC20;PSMD3;PTTG1;SEM1;UBB;UBE2C
+REACT:R-HSA-1799339,SRP-dependent cotranslational protein targeting to membrane,3,4,113,7,0.429,mixed,RPL22L1;RPL36AL;RPS19;RPS27L;SEC61A2;SRP54;SRPRA
+REACT:R-HSA-180292,GAB1 signalosome,4,3,17,7,0.571,mixed,CSK;EGFR;HBEGF;PAG1;PIK3CA;PIK3R1;SRC
+REACT:R-HSA-1839117,Signaling by cytosolic FGFR1 fusion mutants,3,4,18,7,0.429,mixed,CEP43;PIK3CA;PIK3R1;STAT1;STAT3;STAT5A;TRIM24
+REACT:R-HSA-212676,Dopamine Neurotransmitter Release Cycle,3,4,23,7,0.429,mixed,APBA1;LIN7C;SNAP25;STX1A;STXBP1;SYN3;SYT1
+REACT:R-HSA-2142691,Synthesis of Leukotrienes (LT) and Eoxins (EX),4,3,20,7,0.571,mixed,ABCC1;ALOX5;ALOX5AP;CYP4A11;CYP4F11;CYP4F3;GGT5
+REACT:R-HSA-2160916,Hyaluronan degradation,4,3,12,7,0.571,mixed,CD44;CHP1;HEXA;HYAL2;LYVE1;SLC9A1;STAB2
+REACT:R-HSA-2173795,Downregulation of SMAD2/3:SMAD4 transcriptional activity,3,4,31,7,0.429,mixed,NCOR1;NEDD4L;STAT1;TRIM33;UBB;UBE2D3;WWTR1
+REACT:R-HSA-350054,Notch-HLH transcription pathway,3,4,28,7,0.429,mixed,HDAC11;KAT2B;MAML2;MAML3;NCOR1;NOTCH3;TBL1X
+REACT:R-HSA-381676,Glucagon-like Peptide-1 (GLP1) regulates insulin secretion,4,3,42,7,0.571,mixed,GNB1;IQGAP1;ITPR1;ITPR2;KCNC2;KCNS3;RAPGEF4
+REACT:R-HSA-420029,Tight junction interactions,4,3,29,7,0.571,mixed,CLDN10;CLDN11;CLDN12;CLDN18;CLDN5;PALS1;PARD3
+REACT:R-HSA-442660,Na+/Cl- dependent neurotransmitter transporters,4,3,19,7,0.571,mixed,SLC22A1;SLC6A1;SLC6A11;SLC6A13;SLC6A19;SLC6A2;SLC6A6
+REACT:R-HSA-5637810,Constitutive Signaling by EGFRvIII,4,3,15,7,0.571,mixed,CBL;EGFR;HRAS;PIK3CA;PIK3R1;PLCG1;SHC1
+REACT:R-HSA-5685942,HDR through Homologous Recombination (HRR),4,3,49,7,0.571,mixed,BLM;PCNA;POLK;RAD51AP1;RMI2;SEM1;UBB
+REACT:R-HSA-5689603,UCH proteinases,3,4,87,7,0.429,mixed,PSMD3;SEM1;TFPT;TGFB1;UBB;UCHL1;USP15
+REACT:R-HSA-8863795,Downregulation of ERBB2 signaling,4,3,24,7,0.571,mixed,EGFR;ERBB3;HBEGF;NRG1;NRG2;NRG3;UBB
+REACT:R-HSA-8953750,Transcriptional Regulation by E2F6,4,3,34,7,0.571,mixed,APAF1;BMI1;CDC7;E2F1;PCGF6;RRM2;TFDP2
+REACT:R-HSA-9619483,Activation of AMPK downstream of NMDARs,4,3,29,7,0.571,mixed,PRKAA1;PRKAA2;PRKAG2;TUBA1A;TUBA1C;TUBB1;TUBB6
+REACT:R-HSA-975957,Nonsense Mediated Decay (NMD) enhanced by the Exon Junction Complex (EJC),4,3,116,7,0.571,mixed,PPP2R1A;RPL22L1;RPL36AL;RPS19;RPS27L;SMG1;UPF2
+REACT:R-HSA-9820960,Respiratory syncytial virus (RSV) attachment and entry,4,3,23,7,0.571,mixed,AGRN;CD14;EGFR;GPC3;GPC4;HSPG2;SDC2
+REACT:R-HSA-9824585,Regulation of MITF-M-dependent genes involved in pigmentation,4,3,42,7,0.571,mixed,DCT;IRF4;LEF1;SMARCA2;SMARCA4;SMARCD3;SS18L1
+REACT:R-HSA-9861718,Regulation of pyruvate metabolism,3,4,18,7,0.429,mixed,MAEA;ME1;MKLN1;PKM;RANBP9;RMND5A;UBB
+REACT:R-HSA-1169091,Activation of NF-kappaB in B cells,3,3,54,6,0.5,mixed,CARD11;NFKB1;NFKBIE;PSMD3;SEM1;UBB
+REACT:R-HSA-1358803,Downregulation of ERBB2:ERBB3 signaling,3,3,13,6,0.5,mixed,AKT3;ERBB3;NRG1;NRG2;UBB;USP8
+REACT:R-HSA-168928,DDX58/IFIH1-mediated induction of interferon-alpha/beta,3,3,23,6,0.5,mixed,HERC5;IRF3;ISG15;NLRC5;TOMM70;UBB
+REACT:R-HSA-181430,Norepinephrine Neurotransmitter Release Cycle,3,3,18,6,0.5,mixed,MAOA;SLC22A1;SNAP25;STX1A;STXBP1;SYT1
+REACT:R-HSA-200425,Carnitine shuttle,3,3,14,6,0.5,mixed,ACACB;MID1IP1;PPARD;PRKAA2;PRKAG2;THRSP
+REACT:R-HSA-3214841,PKMTs methylate histone lysines,3,3,70,6,0.5,mixed,ASH2L;NFKB1;NFKB2;SETD7;SETDB2;SMYD2
+REACT:R-HSA-418990,Adherens junctions interactions,3,3,32,6,0.5,mixed,CADM2;CDH11;CDH2;CDH24;CDH6;NECTIN3
+REACT:R-HSA-72706,GTP hydrolysis and joining of the 60S ribosomal subunit,3,3,113,6,0.5,mixed,EIF4B;EIF5;RPL22L1;RPL36AL;RPS19;RPS27L
+REACT:R-HSA-73856,RNA Polymerase II Transcription Termination,3,3,67,6,0.5,mixed,CDC40;DDX39A;PAPOLA;SNRPB;THOC6;WDR33
+REACT:R-HSA-9022699,MECP2 regulates neuronal receptors and channels,3,3,18,6,0.5,mixed,GPRIN1;MET;PTPN1;PTPN4;SLC2A3;TRPC3
+REACT:R-HSA-936964,"Activation of IRF3, IRF7 mediated by TBK1, IKKε (IKBKE)",3,3,18,6,0.5,mixed,CD14;IRF3;TANK;TICAM1;TRAF3;UBB
+REACT:R-HSA-937041,IKK complex recruitment mediated by RIP1,3,3,23,6,0.5,mixed,BIRC3;CD14;RIPK3;TICAM1;UBB;UBE2D3
+REACT:R-HSA-9665348,Signaling by ERBB2 ECD mutants,3,3,16,6,0.5,mixed,EGFR;HRAS;PIK3CA;PIK3R1;PLCG1;SHC1
+REACT:R-HSA-1362300,Transcription of E2F targets under negative control by p107 (RBL1) and p130 (RBL2) in complex with HDAC1,3,2,16,5,0.6,mixed,CCNA2;E2F1;MYBL2;RBL2;TFDP2
+REACT:R-HSA-139853,Elevation of cytosolic Ca2+ levels,2,3,16,5,0.4,mixed,ITPR1;ITPR2;P2RX1;P2RX3;TRPC3
+REACT:R-HSA-1483191,Synthesis of PC,3,2,28,5,0.6,mixed,ACHE;BCHE;LPCAT1;PEMT;SLC44A3
+REACT:R-HSA-156827,L13a-mediated translational silencing of Ceruloplasmin expression,3,2,112,5,0.6,mixed,EIF4B;RPL22L1;RPL36AL;RPS19;RPS27L
+REACT:R-HSA-159236,Transport of Mature mRNA derived from an Intron-Containing Transcript,3,2,75,5,0.6,mixed,CDC40;DDX39A;NUP88;NUP93;THOC6
+REACT:R-HSA-166016,Toll Like Receptor 4 (TLR4) Cascade,3,2,18,5,0.6,mixed,CD14;ITGAM;ITGB2;LY86;PTPN4
+REACT:R-HSA-168927,"TICAM1, RIP1-mediated IKK complex recruitment",3,2,19,5,0.6,mixed,BIRC3;RIPK3;TICAM1;UBB;UBE2D3
+REACT:R-HSA-171319,Telomere Extension By Telomerase,3,2,23,5,0.6,mixed,ACD;ANKRD28;CCNA2;PIF1;POT1
+REACT:R-HSA-177929,Signaling by EGFR,3,2,17,5,0.6,mixed,EGFR;HBEGF;SACK1B;SACK1D;SRC
+REACT:R-HSA-179409,APC-Cdc20 mediated degradation of Nek2A,3,2,26,5,0.6,mixed,ANAPC16;CDC20;MAD2L1;UBB;UBE2C
+REACT:R-HSA-181429,Serotonin Neurotransmitter Release Cycle,3,2,18,5,0.6,mixed,SNAP25;STX1A;STXBP1;SYN3;SYT1
+REACT:R-HSA-191859,snRNP Assembly,2,3,54,5,0.4,mixed,GEMIN5;GEMIN6;NUP88;NUP93;SNRPB
+REACT:R-HSA-192105,Synthesis of bile acids and bile salts,3,2,14,5,0.6,mixed,CH25H;NCOA2;OSBPL3;OSBPL6;OSBPL7
+REACT:R-HSA-205043,NRIF signals cell death from the nucleus,3,2,16,5,0.6,mixed,APH1B;MAPK8;PSEN2;SQSTM1;UBB
+REACT:R-HSA-211945,Phase I - Functionalization of compounds,2,3,22,5,0.4,mixed,ALDH3A1;ARNT;CBR3;CES3;CMBL
+REACT:R-HSA-2173791,TGF-beta receptor signaling in EMT (epithelial to mesenchymal transition),2,3,16,5,0.4,mixed,CGN;PARD3;RHOA;TGFB1;UBB
+REACT:R-HSA-2408557,Selenocysteine synthesis,3,2,94,5,0.6,mixed,RPL22L1;RPL36AL;RPS19;RPS27L;SEPSECS
+REACT:R-HSA-264876,Insulin processing,3,2,25,5,0.6,mixed,ERO1B;KIF5B;KIF5C;PCSK2;STX1A
+REACT:R-HSA-2730905,Role of LAT2/NTAL/LAB on calcium mobilization,3,2,71,5,0.6,mixed,FCER1A;PIK3CA;PIK3R1;SHC1;SYK
+REACT:R-HSA-380972,Energy dependent regulation of mTOR by LKB1-AMPK,2,3,29,5,0.4,mixed,LAMTOR4;PRKAA1;PRKAA2;PRKAG2;STRADB
+REACT:R-HSA-381753,Olfactory Signaling Pathway,3,2,67,5,0.6,mixed,ADCY3;GNB1;OR10J5;OR13C3;OR51E1
+REACT:R-HSA-389960,Formation of tubulin folding intermediates by CCT/TriC,3,2,26,5,0.6,mixed,CCT6B;TUBA1A;TUBA1C;TUBB1;TUBB6
+REACT:R-HSA-418890,Role of second messengers in netrin-1 signaling,3,2,10,5,0.6,mixed,PLCG1;TRPC1;TRPC3;TRPC4;TRPC5
+REACT:R-HSA-420499,Class C/3 (Metabotropic glutamate/pheromone receptors),3,2,38,5,0.6,mixed,CASR;GABBR1;GABBR2;GRM1;TAS1R1
+REACT:R-HSA-432047,Passive transport by Aquaporins,2,3,13,5,0.4,mixed,AQP1;AQP11;AQP3;AQP4;AQP9
+REACT:R-HSA-438066,"Unblocking of NMDA receptors, glutamate binding and activation",3,2,21,5,0.6,mixed,CAMK2D;DLG2;DLG3;GRIA3;GRIN2D
+REACT:R-HSA-442982,Ras activation upon Ca2+ influx through NMDA receptor,3,2,20,5,0.6,mixed,CAMK2D;DLG2;DLG3;GRIN2D;HRAS
+REACT:R-HSA-450341,Activation of the AP-1 family of transcription factors,3,2,10,5,0.6,mixed,ATF2;FOS;JUN;MAPK10;MAPK8
+REACT:R-HSA-4570464,SUMOylation of RNA binding proteins,3,2,47,5,0.6,mixed,BMI1;CBX8;NUP88;NUP93;PHC2
+REACT:R-HSA-549127,Organic cation transport,3,2,10,5,0.6,mixed,RUNX1;SLC22A1;SLC22A15;SLC22A3;SLC67A1
+REACT:R-HSA-5607761,Dectin-1 mediated noncanonical NF-kB signaling,2,3,49,5,0.4,mixed,NFKB2;PSMD3;RELB;SEM1;UBB
+REACT:R-HSA-5676590,NIK-->noncanonical NF-kB signaling,2,3,46,5,0.4,mixed,NFKB2;PSMD3;RELB;SEM1;UBB
+REACT:R-HSA-674695,RNA Polymerase II Pre-transcription Events,3,2,81,5,0.6,mixed,MLLT3;NELFB;POLR2C;TAF4B;TCEA1
+REACT:R-HSA-6790901,rRNA modification in the nucleus and cytosol,2,3,60,5,0.4,mixed,DHX37;KRR1;NOP56;RCL1;UTP25
+REACT:R-HSA-6804114,TP53 Regulates Transcription of Genes Involved in G2 Cell Cycle Arrest,3,2,18,5,0.6,mixed,BAX;CDC25C;PCNA;RBL2;TFDP2
+REACT:R-HSA-6807505,RNA polymerase II transcribes snRNA genes,3,2,81,5,0.6,mixed,ELL2;NABP1;POLR2C;POU2F2;SNAPC2
+REACT:R-HSA-6811440,Retrograde transport at the Trans-Golgi-Network,2,3,49,5,0.4,mixed,COG8;PLIN3;RAB9B;RHOBTB3;VPS54
+REACT:R-HSA-69601,Ubiquitin-Mediated Degradation of Phosphorylated Cdc25A,2,3,39,5,0.4,mixed,CDC25A;CHEK2;PSMD3;SEM1;UBB
+REACT:R-HSA-70221,Glycogen breakdown (glycogenolysis),2,3,15,5,0.4,mixed,AGL;GYG1;PGM1;PHKA1;PYGB
+REACT:R-HSA-70268,Pyruvate metabolism,2,3,19,5,0.4,mixed,GPT;HAGH;LDHC;ME1;PKM
+REACT:R-HSA-72165,mRNA Splicing - Minor Pathway,2,3,50,5,0.4,mixed,POLR2C;SF3B4;SNRNP25;SNRNP48;SNRPB
+REACT:R-HSA-72187,mRNA 3'-end processing,2,3,58,5,0.4,mixed,CDC40;DDX39A;PAPOLA;THOC6;WDR33
+REACT:R-HSA-73614,Pyrimidine salvage,3,2,11,5,0.6,mixed,CDA;DCK;TK1;TYMP;UCK1
+REACT:R-HSA-75105,Fatty acyl-CoA biosynthesis,2,3,13,5,0.4,mixed,ACLY;CBR4;HSD17B8;PPT1;SLC27A2
+REACT:R-HSA-75815,Ubiquitin-dependent degradation of Cyclin D,2,3,39,5,0.4,mixed,CCND1;CDK4;PSMD3;SEM1;UBB
+REACT:R-HSA-8851805,MET activates RAS signaling,3,2,11,5,0.6,mixed,HGF;HRAS;MET;RANBP9;SHC1
+REACT:R-HSA-8875360,InlB-mediated entry of Listeria monocytogenes into host cell,3,2,15,5,0.6,mixed,CBL;MET;SH3GL2;SH3KBP1;UBB
+REACT:R-HSA-8931987,RUNX1 regulates estrogen receptor mediated transcription,3,2,6,5,0.6,mixed,AXIN1;CBFB;ESR1;GPAM;RUNX1
+REACT:R-HSA-8941856,RUNX3 regulates NOTCH signaling,3,2,14,5,0.6,mixed,JAG1;KAT2B;MAML2;MAML3;RUNX3
+REACT:R-HSA-8964539,Glutamate and glutamine metabolism,2,3,14,5,0.4,mixed,GLS;GLS2;GLUD1;OAT;RIMKLB
+REACT:R-HSA-9013422,RHOBTB1 GTPase cycle,3,2,23,5,0.6,mixed,CUL3;DBN1;RHOBTB1;SPEN;VIM
+REACT:R-HSA-9013973,TICAM1-dependent activation of IRF3/IRF7,3,2,13,5,0.6,mixed,IRF3;TANK;TICAM1;TRAF3;UBB
+REACT:R-HSA-9027276,Erythropoietin activates Phosphoinositide-3-kinase (PI3K),3,2,12,5,0.6,mixed,PIK3CA;PIK3CD;PIK3CG;PIK3R1;PIK3R5
+REACT:R-HSA-9607240,FLT3 Signaling,3,2,19,5,0.6,mixed,AKT3;GRAP2;HRAS;PIK3CA;PIK3R1
+REACT:R-HSA-9617324,Negative regulation of NMDA receptor-mediated neuronal transmission,2,3,21,5,0.4,mixed,CAMK2D;DLG2;DLG3;GRIN2D;PPM1E
+REACT:R-HSA-9648002,RAS processing,3,2,24,5,0.6,mixed,ABHD17B;BCL2L1;HRAS;PRKCQ;UBB
+REACT:R-HSA-9703465,Signaling by FLT3 fusion proteins,3,2,19,5,0.6,mixed,CDKN1A;HRAS;PIK3CA;PIK3R1;STAT5A
+REACT:R-HSA-9754678,SARS-CoV-2 modulates host translation machinery,3,2,51,5,0.6,mixed,GEMIN5;GEMIN6;RPS19;RPS27L;SNRPB
+REACT:R-HSA-9793380,Formation of paraxial mesoderm,3,2,22,5,0.6,mixed,DLL1;KAT2B;LEF1;MAML2;MAML3
+REACT:R-HSA-9824272,Somitogenesis,3,2,45,5,0.6,mixed,DLL1;LEF1;LFNG;PSMD3;SEM1
+REACT:R-HSA-9824878,"Regulation of TBK1, IKKε (IKBKE)-mediated activation of IRF3, IRF7 ",2,3,14,5,0.4,mixed,CD14;TANK;TICAM1;TRAF3;UBB
+REACT:R-HSA-9842663,Signaling by LTK,3,2,12,5,0.6,mixed,ALKAL1;ALKAL2;PIK3CA;PIK3R1;SHC1
+REACT:R-HSA-9864848,Complex IV assembly,2,3,48,5,0.4,mixed,COQ10A;COQ10B;COX5B;COX7A1;COX7A2L
+REACT:R-HSA-9907900,Proteasome assembly,2,3,52,5,0.4,mixed,PSMB10;PSMD3;PSMD5;PSMG3;SEM1
+REACT:R-HSA-9925561,Developmental Lineage of Pancreatic Acinar Cells,3,2,32,5,0.6,mixed,GNMT;PDX1;RNASE1;SERPINA4;SOX9
+REACT:R-HSA-112382,Formation of RNA Pol II elongation complex ,2,2,58,4,0.5,mixed,MLLT3;NELFB;POLR2C;TCEA1
+REACT:R-HSA-1296052,Ca2+ activated K+ channels,2,2,9,4,0.5,mixed,KCNMA1;KCNMB2;KCNN2;KCNN4
+REACT:R-HSA-1483206,Glycerophospholipid biosynthesis,2,2,6,4,0.5,mixed,CPNE3;CPNE6;CPNE7;PGP
+REACT:R-HSA-1538133,G0 and Early G1,2,2,18,4,0.5,mixed,CCNA2;CCNE1;RBL2;TFDP2
+REACT:R-HSA-1614558,Degradation of cysteine and homocysteine,2,2,10,4,0.5,mixed,ADO;CDO1;CTH;FMO1
+REACT:R-HSA-170670,Adenylate cyclase inhibitory pathway,2,2,14,4,0.5,mixed,ADCY1;ADCY3;ADCY7;GNAI1
+REACT:R-HSA-174048,APC/C:Cdc20 mediated degradation of Cyclin B,2,2,24,4,0.5,mixed,ANAPC16;CDC20;UBB;UBE2C
+REACT:R-HSA-199220,Vitamin B5 (pantothenate) metabolism,2,2,13,4,0.5,mixed,ENPP1;ENPP2;ENPP3;VNN2
+REACT:R-HSA-416550,Sema4D mediated inhibition of cell attachment and migration,2,2,8,4,0.5,mixed,ARHGAP35;MET;RHOA;RRAS
+REACT:R-HSA-5423646,Aflatoxin activation and detoxification,2,2,18,4,0.5,mixed,CYP1A2;CYP3A5;GGT5;GGT6
+REACT:R-HSA-5602498,MyD88 deficiency (TLR2/4),2,2,17,4,0.5,mixed,BTK;CD14;HMGB1;TLR2
+REACT:R-HSA-5603041,IRAK4 deficiency (TLR2/4),2,2,18,4,0.5,mixed,BTK;CD14;HMGB1;TLR2
+REACT:R-HSA-5607763,CLEC7A (Dectin-1) induces NFAT activation,2,2,11,4,0.5,mixed,ITPR1;ITPR2;NFATC1;NFATC3
+REACT:R-HSA-5654689,PI-3K cascade:FGFR1,2,2,21,4,0.5,mixed,FGF17;FGF23;PIK3CA;PIK3R1
+REACT:R-HSA-5654710,PI-3K cascade:FGFR3,2,2,18,4,0.5,mixed,FGF17;FGF23;PIK3CA;PIK3R1
+REACT:R-HSA-5654720,PI-3K cascade:FGFR4,2,2,20,4,0.5,mixed,FGF17;FGF23;PIK3CA;PIK3R1
+REACT:R-HSA-5655291,Signaling by FGFR4 in disease,2,2,11,4,0.5,mixed,HRAS;PIK3CA;PIK3R1;PLCG1
+REACT:R-HSA-5655862,Translesion synthesis by POLK,2,2,17,4,0.5,mixed,MAD2L2;PCNA;POLK;UBB
+REACT:R-HSA-5656169,Termination of translesion DNA synthesis,2,2,32,4,0.5,mixed,ISG15;PCNA;POLK;UBB
+REACT:R-HSA-5686938,Regulation of TLR by endogenous ligand,2,2,22,4,0.5,mixed,CD14;HMGB1;TLR2;TLR7
+REACT:R-HSA-5689877,Josephin domain DUBs,2,2,12,4,0.5,mixed,JOSD1;JOSD2;RAD23B;UBB
+REACT:R-HSA-5689901,Metalloprotease DUBs,2,2,36,4,0.5,mixed,KAT2B;NLRP3;STAMBPL1;UBB
+REACT:R-HSA-5696394,DNA Damage Recognition in GG-NER,2,2,38,4,0.5,mixed,DDB2;RAD23B;TFPT;UBB
+REACT:R-HSA-5696397,Gap-filling DNA repair synthesis and ligation in GG-NER,2,2,25,4,0.5,mixed,LIG1;PCNA;POLK;UBB
+REACT:R-HSA-5696400,Dual Incision in GG-NER,2,2,41,4,0.5,mixed,DDB2;PCNA;POLK;UBB
+REACT:R-HSA-72702,Ribosomal scanning and start codon recognition,2,2,59,4,0.5,mixed,EIF4B;EIF5;RPS19;RPS27L
+REACT:R-HSA-75955,RNA Polymerase II Transcription Elongation,2,2,56,4,0.5,mixed,MLLT3;NELFB;POLR2C;TCEA1
+REACT:R-HSA-8963889,Assembly of active LPL and LIPC lipase complexes,2,2,19,4,0.5,mixed,APOA5;CIDEC;LIPC;LPL
+REACT:R-HSA-9629569,Protein hydroxylation,2,2,20,4,0.5,mixed,F9;KDM8;OGFOD1;RIOX2
+REACT:R-HSA-9717207,"Sensory perception of sweet, bitter, and umami (glutamate) taste",2,2,40,4,0.5,mixed,GNB1;GRM1;PLCB2;TAS1R1
+REACT:R-HSA-9818027,NFE2L2 regulating anti-oxidant/detoxification enzymes,2,2,19,4,0.5,mixed,GCLC;GSTA1;SOD3;TXNRD1
+REACT:R-HSA-9819196,Zygotic genome activation (ZGA),2,2,17,4,0.5,mixed,DPPA4;TEAD4;TUT7;YAP1
+REACT:R-HSA-9828211,"Regulation of TBK1, IKKε-mediated activation of IRF3, IRF7 upon TLR3 ligation",2,2,11,4,0.5,mixed,TANK;TICAM1;TRAF3;UBB
+REACT:R-HSA-9933947,Formation of the non-canonical BAF (ncBAF) complex,2,2,17,4,0.5,mixed,SMARCA2;SMARCA4;SMARCD3;SS18L1
+REACT:R-HSA-6798695,Neutrophil degranulation,121,34,476,155,0.781,rising,ABCA13;ACAA1;ACLY;ACP3;ACTR1B;ADA2;ADGRE5;AGL
+REACT:R-HSA-9013149,RAC1 GTPase cycle,45,14,184,59,0.763,rising,ABR;AMIGO2;ARAP3;ARHGAP15;ARHGAP20;ARHGAP25;ARHGAP27;ARHGAP29
+REACT:R-HSA-418594,G alpha (i) signalling events,48,7,256,55,0.873,rising,ADCY1;ADCY3;ADCY7;ADORA1;ADRA2A;ADRA2C;ANXA1;C3AR1
+REACT:R-HSA-9013148,CDC42 GTPase cycle,36,17,155,53,0.679,rising,ABR;ARAP3;ARHGAP20;ARHGAP27;ARHGAP29;ARHGAP30;ARHGAP31;ARHGAP35
+REACT:R-HSA-114608,Platelet degranulation ,39,12,127,51,0.765,rising,A2M;ABCC4;ACTN1;AHSG;ALB;ALDOA;ANXA5;APLP2
+REACT:R-HSA-216083,Integrin cell surface interactions,44,4,85,48,0.917,rising,AGRN;BSG;CD44;COL16A1;COL1A1;COL1A2;COL23A1;COL3A1
+REACT:R-HSA-6785807,Interleukin-4 and Interleukin-13 signaling,42,5,111,47,0.894,rising,ALOX5;ANXA1;BATF;BCL2;BCL2L1;CCL2;CCND1;CDKN1A
+REACT:R-HSA-198933,Immunoregulatory interactions between a Lymphoid and a non-Lymphoid cell,38,4,186,42,0.905,rising,CD19;CD1B;CD1C;CD226;CD247;CD300LB;CD300LF;CD34
+REACT:R-HSA-3000178,ECM proteoglycans,39,1,76,40,0.975,rising,AGRN;ASPN;BGN;COL1A1;COL1A2;COL3A1;COL4A1;COL4A2
+REACT:R-HSA-416476,G alpha (q) signalling events,30,10,173,40,0.75,rising,ADRA1A;ANXA1;ARHGEF25;AVPR1A;BTK;CASR;EDNRA;F2
+REACT:R-HSA-6811558,"PI5P, PP2A and IER3 Regulate PI3K/AKT Signaling",33,7,114,40,0.825,rising,CD19;CD80;EGFR;ERBB3;ESR1;FGF17;FGF23;FGF7
+REACT:R-HSA-5673001,RAF/MAP kinase cascade,28,11,131,39,0.718,rising,ANGPT1;ARTN;CAMK2D;DLG2;DLG3;EGFR;ERBB3;FGF17
+REACT:R-HSA-1257604,PIP3 activates AKT signaling,30,8,105,38,0.789,rising,AKT3;CD19;CD80;EGFR;ERBB3;ESR1;FGF17;FGF23
+REACT:R-HSA-2132295,MHC class II antigen presentation,31,5,124,36,0.861,rising,ACTR1A;ACTR1B;AP1B1;AP1M2;AP1S3;CD74;CENPE;CTSA
+REACT:R-HSA-202733,Cell surface interactions at the vascular wall,29,6,145,35,0.829,rising,CD2;CD44;CD48;CD58;CD74;CD84;CD99L2;CEACAM8
+REACT:R-HSA-5663220,RHO GTPases Activate Formins,29,6,140,35,0.829,rising,AHCTF1;CDC20;CENPA;CENPE;CENPK;CENPU;DIAPH1;DIAPH2
+REACT:R-HSA-2467813,Separation of Sister Chromatids,24,9,178,33,0.727,rising,AHCTF1;ANAPC16;CDC20;CDCA5;CENPA;CENPE;CENPK;CENPU
+REACT:R-HSA-2219530,Constitutive Signaling by Aberrant PI3K in Cancer,26,6,86,32,0.812,rising,CD19;CD80;EGFR;ERBB3;ESR1;FGF17;FGF23;FGF7
+REACT:R-HSA-418555,G alpha (s) signalling events,25,7,144,32,0.781,rising,ADCY1;ADCY3;ADCY7;ARRB1;DRD1;GNAI1;GNAZ;GNB1
+REACT:R-HSA-877300,Interferon gamma signaling,28,3,90,31,0.903,rising,CAMK2D;CD44;CIITA;FCGR1A;GBP7;HLA-DPA1;HLA-DPB1;HLA-DQA1
+REACT:R-HSA-1442490,Collagen degradation,27,3,64,30,0.9,rising,COL11A1;COL11A2;COL12A1;COL14A1;COL16A1;COL1A1;COL1A2;COL23A1
+REACT:R-HSA-1650814,Collagen biosynthesis and modifying enzymes,24,6,67,30,0.8,rising,ADAMTS2;ADAMTS3;COL11A1;COL11A2;COL12A1;COL14A1;COL16A1;COL1A1
+REACT:R-HSA-8856828,Clathrin-mediated endocytosis,22,8,129,30,0.733,rising,AAK1;ARPC2;ARPC3;ARPC4;ARPC5;ARRB1;CBL;CD3D
+REACT:R-HSA-9925563,Developmental Lineage of Pancreatic Ductal Cells,28,2,48,30,0.933,rising,ANXA1;ANXA2;ANXA3;AQP1;CA2;CD74;CLDN10;COL11A1
+REACT:R-HSA-1474228,Degradation of the extracellular matrix,25,3,81,28,0.893,rising,A2M;ADAMTS1;ADAMTS9;BSG;CAPN1;CAPN11;CAPN2;CAPN5
+REACT:R-HSA-9013423,RAC3 GTPase cycle,21,7,94,28,0.75,rising,ABR;AMIGO2;ARAP3;ARHGAP15;ARHGAP35;ARHGAP39;ARHGAP42;ARHGDIB
+REACT:R-HSA-2500257,Resolution of Sister Chromatid Cohesion,22,5,127,27,0.815,rising,AHCTF1;CDC20;CDCA5;CENPA;CENPE;CENPK;CENPU;DSN1
+REACT:R-HSA-3000171,Non-integrin membrane-ECM interactions,24,3,40,27,0.889,rising,AGRN;COL11A1;COL11A2;COL1A1;COL1A2;COL3A1;COL4A1;COL4A2
+REACT:R-HSA-9013106,RHOC GTPase cycle,18,9,74,27,0.667,rising,ABCD3;ABR;ACBD5;ANLN;ARHGAP35;ARHGAP39;ARHGEF12;ARHGEF17
+REACT:R-HSA-2022090,Assembly of collagen fibrils and other multimeric structures,24,2,51,26,0.923,rising,CD151;COL11A1;COL11A2;COL12A1;COL14A1;COL1A1;COL1A2;COL3A1
+REACT:R-HSA-9013404,RAC2 GTPase cycle,20,6,88,26,0.769,rising,ABR;ARHGAP35;ARHGAP39;ARHGAP42;CDC42EP1;CYBA;DEF6;DIAPH3
+REACT:R-HSA-68877,Mitotic Prometaphase,21,3,113,24,0.875,rising,AHCTF1;CDC20;CENPA;CENPE;CENPK;CENPU;DSN1;KIF2A
+REACT:R-HSA-9648025,EML4 and NUDC in mitotic spindle formation,21,3,117,24,0.875,rising,AHCTF1;CDC20;CENPA;CENPE;CENPK;CENPU;DSN1;KIF2A
+REACT:R-HSA-9679191,Potential therapeutics for SARS,19,5,154,24,0.792,rising,ACE2;ARID4A;ATP1B3;BRMS1;BTK;CD79A;CHD3;CHD4
+REACT:R-HSA-9725370,Signaling by ALK fusions and activated point mutants,16,8,60,24,0.667,rising,BCL11A;BIRC6;CDKN1A;JUN;KIF5B;LMO7;MAPK8;MCL1
+REACT:R-HSA-416482,G alpha (12/13) signalling events,16,7,80,23,0.696,rising,ABR;ADRA1A;ARHGEF12;ARHGEF16;ARHGEF17;ARHGEF2;ARHGEF26;ARHGEF3
+REACT:R-HSA-8856825,Cargo recognition for clathrin-mediated endocytosis,16,7,105,23,0.696,rising,AAK1;ARRB1;CBL;CD3D;CD3G;CD4;DAB2;EGFR
+REACT:R-HSA-8948216,Collagen chain trimerization,19,4,44,23,0.826,rising,COL11A1;COL11A2;COL12A1;COL14A1;COL16A1;COL1A1;COL1A2;COL23A1
+REACT:R-HSA-186797,Signaling by PDGF,19,2,33,21,0.905,rising,COL3A1;COL4A1;COL4A2;COL4A3;COL4A4;COL5A1;COL5A2;COL5A3
+REACT:R-HSA-202424,Downstream TCR signaling,15,6,87,21,0.714,rising,CARD11;CD247;CD3D;CD3E;CD3G;CD4;HLA-DPA1;HLA-DPB1
+REACT:R-HSA-380320,Recruitment of NuMA to mitotic centrosomes,15,6,95,21,0.714,rising,ACTR1A;AKAP9;CCP110;CEP131;CEP135;CEP43;CSNK1E;DCTN2
+REACT:R-HSA-6783783,Interleukin-10 signaling,21,0,45,21,1.0,rising,CCL19;CCL2;CCL20;CCR2;CCR5;CD80;CSF1;CXCL1
+REACT:R-HSA-6811434,COPI-dependent Golgi-to-ER retrograde traffic,19,2,100,21,0.905,rising,ARF3;CENPE;COPE;KDELR3;KIF20A;KIF21B;KIF26B;KIF2A
+REACT:R-HSA-141444,Amplification  of signal from unattached  kinetochores via a MAD2  inhibitory signal,18,2,94,20,0.9,rising,AHCTF1;CDC20;CENPA;CENPE;CENPK;CENPU;DSN1;KIF2A
+REACT:R-HSA-419037,NCAM1 interactions,17,3,42,20,0.85,rising,AGRN;ARTN;CACNA1C;CACNA1H;CACNA1I;CACNB1;COL3A1;COL4A1
+REACT:R-HSA-5628897,TP53 Regulates Metabolic Genes,14,6,84,20,0.7,rising,AKT3;COX5B;COX7A1;COX7A2L;CYCS;DDIT4;G6PD;GLS
+REACT:R-HSA-8874081,MET activates PTK2 signaling,18,2,30,20,0.9,rising,COL11A1;COL11A2;COL1A1;COL1A2;COL3A1;COL5A1;COL5A2;COL5A3
+REACT:R-HSA-2129379,Molecules associated with elastic fibres,18,1,37,19,0.947,rising,BMP10;BMP2;EFEMP1;EFEMP2;EMILIN1;FBLN2;FBLN5;FBN1
+REACT:R-HSA-2565942,Regulation of PLK1 Activity at G2/M Transition,14,5,87,19,0.737,rising,ACTR1A;AJUBA;AKAP9;CCP110;CEP131;CEP135;CEP43;CSNK1E
+REACT:R-HSA-380108,Chemokine receptors bind chemokines,19,0,57,19,1.0,rising,CCL19;CCL2;CCL20;CCL21;CCR2;CCR4;CCR5;CCRL2
+REACT:R-HSA-69231,Cyclin D associated events in G1,15,4,47,19,0.789,rising,CCND1;CCND3;CCNE1;CDK4;CDKN1A;CDKN1C;CDKN2A;CDKN2B
+REACT:R-HSA-202433,Generation of second messenger molecules,17,1,37,18,0.944,rising,CD247;CD3D;CD3E;CD3G;CD4;ENAH;FYB1;GRAP2
+REACT:R-HSA-2029482,Regulation of actin dynamics for phagocytic cup formation,17,1,118,18,0.944,rising,ARPC1B;ARPC2;ARPC3;ARPC4;ARPC5;BTK;CD247;CD3G
+REACT:R-HSA-2559580,Oxidative Stress Induced Senescence,14,4,123,18,0.778,rising,BMI1;CBX8;CDK4;CDKN2A;CDKN2B;CDKN2C;CDKN2D;E2F1
+REACT:R-HSA-2559582,Senescence-Associated Secretory Phenotype (SASP),16,2,110,18,0.889,rising,ANAPC16;CCNA2;CDK4;CDKN1A;CDKN2A;CDKN2B;CDKN2C;CDKN2D
+REACT:R-HSA-3000157,Laminin interactions,16,2,30,18,0.889,rising,COL4A1;COL4A2;COL4A3;COL4A4;HSPG2;ITGA1;ITGA2;ITGA3
+REACT:R-HSA-380270,Recruitment of mitotic centrosome proteins and complexes,13,5,81,18,0.722,rising,ACTR1A;AKAP9;CCP110;CEP131;CEP135;CEP43;CSNK1E;DCTN2
+REACT:R-HSA-9031628,NGF-stimulated transcription,15,3,39,18,0.833,rising,ATF2;CHD4;EGR1;EGR2;EGR3;F3;FOS;FOSB
+REACT:R-HSA-9616222,Transcriptional regulation of granulopoiesis,16,2,88,18,0.889,rising,CBFB;CDK4;CDKN1A;CSF3R;E2F1;FLI1;GATA2;GFI1
+REACT:R-HSA-9664422,FCGR3A-mediated phagocytosis,16,2,116,18,0.889,rising,ARPC1B;ARPC2;ARPC3;ARPC4;ARPC5;BTK;CD247;CD3G
+REACT:R-HSA-380259,Loss of Nlp from mitotic centrosomes,13,4,69,17,0.765,rising,ACTR1A;AKAP9;CCP110;CEP131;CEP135;CEP43;CSNK1E;DCTN2
+REACT:R-HSA-380284,Loss of proteins required for interphase microtubule organization from the centrosome,13,4,69,17,0.765,rising,ACTR1A;AKAP9;CCP110;CEP131;CEP135;CEP43;CSNK1E;DCTN2
+REACT:R-HSA-5620912,Anchoring of the basal body to the plasma membrane,13,4,97,17,0.765,rising,ACTR1A;AKAP9;CCP110;CEP131;CEP135;CEP43;CSNK1E;DCTN2
+REACT:R-HSA-6807878,COPI-mediated anterograde transport,12,5,102,17,0.706,rising,ACTR1A;ANK3;ARF3;COG8;COPE;DCTN2;FOLR1;GOSR1
+REACT:R-HSA-8853659,RET signaling,13,4,40,17,0.765,rising,ARTN;DOK1;DOK2;DOK5;DOK6;GDNF;GFRA1;MAPK7
+REACT:R-HSA-8854518,AURKA Activation by TPX2,13,4,72,17,0.765,rising,ACTR1A;AKAP9;CCP110;CEP131;CEP135;CEP43;CSNK1E;DCTN2
+REACT:R-HSA-913709,O-linked glycosylation of mucins,15,2,54,17,0.882,rising,B3GNT3;B3GNT5;B3GNT7;B3GNT9;B4GALT5;C1GALT1;CHST4;GALNT10
+REACT:R-HSA-9662360,Sensory processing of sound by inner hair cells of the cochlea,13,4,69,17,0.765,rising,CDH23;CIB2;DNAJC5;EPB41L1;ESPNL;EZR;KCNMA1;MSN
+REACT:R-HSA-983189,Kinesins,15,2,61,17,0.882,rising,CENPE;KIF20A;KIF21B;KIF26B;KIF2A;KIF2C;KIF3A;KIF3C
+REACT:R-HSA-9856530,High laminar flow shear stress activates signaling by PIEZO1 and PECAM1:CDH5:KDR in endothelial cells,12,5,69,17,0.706,rising,ADCY1;ADCY3;ADCY7;CAPN2;CAPNS1;GNB1;KDR;MMP14
+REACT:R-HSA-3928662,EPHB-mediated forward signaling,13,3,42,16,0.812,rising,ARPC1B;ARPC2;ARPC3;ARPC4;ARPC5;EFNB3;EPHB2;EPHB6
+REACT:R-HSA-9009391,Extra-nuclear estrogen signaling,11,5,56,16,0.688,rising,CAV2;EGFR;ESR1;GNAI1;GNB1;HBEGF;MMP2;MMP7
+REACT:R-HSA-9013406,RHOQ GTPase cycle,12,4,59,16,0.75,rising,ARHGAP35;CDC42BPA;CDC42EP1;CPNE8;DIAPH3;GIT1;GJA1;IQGAP1
+REACT:R-HSA-936837,Ion transport by P-type ATPases,11,5,55,16,0.688,rising,ATP10A;ATP11C;ATP13A1;ATP13A2;ATP13A4;ATP1B3;ATP2A3;ATP2B4
+REACT:R-HSA-9662361,Sensory processing of sound by outer hair cells of the cochlea,12,4,50,16,0.75,rising,CDH23;CIB2;EPB41L1;ESPNL;EZR;GSN;MPP1;MSN
+REACT:R-HSA-9856649,Transcriptional and post-translational regulation of MITF-M expression and activity,13,3,62,16,0.812,rising,AKT3;CSF1;DARS1;ID1;KIT;KITLG;LEF1;MARS1
+REACT:R-HSA-114604,GPVI-mediated activation cascade,12,3,35,15,0.8,rising,CLEC1B;COL1A1;COL1A2;LCK;LCP2;PIK3CA;PIK3CG;PIK3R1
+REACT:R-HSA-1251985,Nuclear signaling by ERBB4,13,2,32,15,0.867,rising,ADAP1;APH1B;CXCL12;ESR1;HBEGF;NCOR1;NRG1;NRG2
+REACT:R-HSA-1433557,Signaling by SCF-KIT,11,4,37,15,0.733,rising,GRAP2;HRAS;KIT;KITLG;LCK;MMP9;PIK3CA;PIK3R1
+REACT:R-HSA-3000170,Syndecan interactions,14,1,27,15,0.933,rising,ACTN1;COL1A1;COL1A2;COL3A1;COL5A1;COL5A2;COL5A3;ITGA2
+REACT:R-HSA-437239,Recycling pathway of L1,11,4,49,15,0.733,rising,DPYSL2;EZR;KIF4A;MSN;NUMB;RDX;RPS6KA1;RPS6KA4
+REACT:R-HSA-4420097,VEGFA-VEGFR2 Pathway,11,4,62,15,0.733,rising,BCAR1;CYBA;ELMO1;ELMO2;ITGAV;KDR;NCF2;NCF4
+REACT:R-HSA-445355,Smooth Muscle Contraction,12,3,43,15,0.8,rising,ALDH2;ANXA1;ANXA2;CACNA1H;CACNA1I;GUCY1A1;GUCY1B1;ITGA1
+REACT:R-HSA-6809371,Formation of the cornified envelope,12,3,125,15,0.8,rising,CAPN1;CAPNS1;DSG1;KRT18;KRT19;KRT23;KRT7;KRT8
+REACT:R-HSA-9013409,RHOJ GTPase cycle,11,4,55,15,0.733,rising,ARHGAP35;CDC42BPA;CDC42EP1;CPNE8;DIAPH3;DOCK8;FMNL3;GIT1
+REACT:R-HSA-9664323,FCGR3A-mediated IL10 synthesis,12,3,95,15,0.8,rising,ADCY1;ADCY3;ADCY7;CD247;CD3G;FCGR1A;FCGR2A;FGR
+REACT:R-HSA-9692916,SARS-CoV-1 activates/modulates innate immune responses,12,3,41,15,0.8,rising,CASP1;IRF3;ITCH;KPNA2;NFKB1;NLRP3;PYCARD;RCAN3
+REACT:R-HSA-1592389,Activation of Matrix Metalloproteinases,11,3,33,14,0.786,rising,CTSG;CTSK;KLKB1;MMP11;MMP14;MMP2;MMP25;MMP7
+REACT:R-HSA-202427,Phosphorylation of CD3 and TCR zeta chains,13,1,25,14,0.929,rising,CD247;CD3D;CD3E;CD3G;CD4;CSK;HLA-DPA1;HLA-DPB1
+REACT:R-HSA-3299685,Detoxification of Reactive Oxygen Species,11,3,37,14,0.786,rising,CAT;CYBA;CYCS;GPX2;GPX3;GPX7;GPX8;GSTP1
+REACT:R-HSA-3928665,EPH-ephrin mediated repulsion of cells,12,2,51,14,0.857,rising,APH1B;EFNA1;EFNA5;EFNB3;EPHA2;EPHA3;EPHA6;EPHB2
+REACT:R-HSA-5610787,Hedgehog 'off' state,11,3,56,14,0.786,rising,ADCY1;ADCY10;ADCY3;ADCY7;GLI1;GLI2;GPR161;KIF3A
+REACT:R-HSA-5668541,TNFR2 non-canonical NF-kB pathway,11,3,55,14,0.786,rising,BIRC3;CD40LG;LTA;LTB;PSMD3;SEM1;TNF;TNFRSF11A
+REACT:R-HSA-6804756,Regulation of TP53 Activity through Phosphorylation,10,4,92,14,0.714,rising,BLM;CCNA2;CHEK2;DYRK2;HIPK2;MDM2;PIN1;PLK3
+REACT:R-HSA-909733,Interferon alpha/beta signaling,13,1,75,14,0.929,rising,EGR1;IFI6;IRF1;IRF3;IRF4;IRF8;ISG15;ISG20
+REACT:R-HSA-9680350,Signaling by CSF1 (M-CSF) in myeloid cells,10,4,31,14,0.714,rising,CBL;CSF1;GRAP2;IL34;INPP5D;PIK3CA;PIK3CD;PIK3R1
+REACT:R-HSA-9913351,Formation of the dystrophin-glycoprotein complex (DGC),13,1,36,14,0.929,rising,AGRN;DAG1;DTNA;HSPG2;LAMA2;LAMA3;LAMB2;LAMB3
+REACT:R-HSA-1445148,Translocation of SLC2A4 (GLUT4) to the plasma membrane,10,3,72,13,0.769,rising,KIF3A;MYH9;MYO1C;PRKAA2;PRKAG2;RALGAPA2;RHOQ;TUBA1A
+REACT:R-HSA-176187,Activation of ATR in response to replication stress,13,0,37,13,1.0,rising,CDC25A;CDC25C;CDC45;CDC6;CDC7;CLSPN;MCM2;MCM3
+REACT:R-HSA-186763,Downstream signal transduction,11,2,29,13,0.846,rising,BCAR1;HRAS;NCK2;PDGFA;PDGFRA;PDGFRB;PIK3CA;PIK3R1
+REACT:R-HSA-2029485,Role of phospholipids in phagocytosis,10,3,82,13,0.769,rising,CD247;CD3G;FCGR1A;FCGR2A;ITPR1;ITPR2;PIK3CA;PIK3R1
+REACT:R-HSA-389948,Co-inhibition by PD-1,12,1,26,13,0.923,rising,CD247;CD3D;CD3E;CD3G;CD4;CSK;HLA-DPA1;HLA-DPB1
+REACT:R-HSA-418597,G alpha (z) signalling events,10,3,48,13,0.769,rising,ADCY1;ADCY3;ADCY7;ADRA2A;ADRA2C;GNAI1;GNAZ;GNB1
+REACT:R-HSA-5083635,Defective B3GALTL causes PpS,11,2,38,13,0.846,rising,ADAMTS1;ADAMTS10;ADAMTS12;ADAMTS15;ADAMTS2;ADAMTS3;ADAMTS9;ADAMTSL2
+REACT:R-HSA-5173214,O-glycosylation of TSR domain-containing proteins,11,2,39,13,0.846,rising,ADAMTS1;ADAMTS10;ADAMTS12;ADAMTS15;ADAMTS2;ADAMTS3;ADAMTS9;ADAMTSL2
+REACT:R-HSA-6791226,Major pathway of rRNA processing in the nucleolus and cytosol,9,4,183,13,0.692,rising,BYSL;CSNK1E;DHX37;KRR1;NIP7;NOP56;RCL1;RPL22L1
+REACT:R-HSA-68867,Assembly of the pre-replicative complex,9,4,69,13,0.692,rising,ANAPC16;CDC6;MCM2;MCM3;MCM4;MCM5;MCM6;MCM7
+REACT:R-HSA-68949,Orc1 removal from chromatin,9,4,58,13,0.692,rising,CCNA2;CDC6;MCM2;MCM3;MCM4;MCM5;MCM6;MCM7
+REACT:R-HSA-8873719,RAB geranylgeranylation,11,2,65,13,0.846,rising,RAB17;RAB19;RAB20;RAB25;RAB31;RAB32;RAB33A;RAB33B
+REACT:R-HSA-977225,Amyloid fiber formation,9,4,109,13,0.692,rising,APCS;APH1B;GSN;H2AZ1;HSPG2;LYZ;MFGE8;SORL1
+REACT:R-HSA-983231,Factors involved in megakaryocyte development and platelet production,9,4,108,13,0.692,rising,AKAP1;DOCK11;DOCK2;DOCK8;EHD3;GATA2;GATA6;IRF1
+REACT:R-HSA-9833482,PKR-mediated signaling,11,2,76,13,0.846,rising,FANCB;HERC5;HSPA2;ISG15;PPP2CB;PPP2R1A;SPHK1;STAT1
+REACT:R-HSA-9860927,"Turbulent (oscillatory, disturbed) flow shear stress activates signaling by PIEZO1 and integrins in endothelial cells",13,0,31,13,1.0,rising,ANXA2;CAPN2;CAPNS1;ITGAV;NFKB1;NLRP3;PDE4D;PIEZO1
+REACT:R-HSA-1266695,Interleukin-7 signaling,9,3,36,12,0.75,rising,BRWD1;HGF;IL2RG;IL7R;JAK3;PIK3R1;PIK3R3;RAG1
+REACT:R-HSA-1971475,Glycosaminoglycan-protein linkage region biosynthesis,11,1,27,12,0.917,rising,AGRN;B3GAT3;BGN;CSPG5;DCN;GPC3;GPC4;HSPG2
+REACT:R-HSA-201556,Signaling by ALK,10,2,19,12,0.833,rising,ALKAL1;ALKAL2;JAK3;MDK;MYC;PIK3CA;PIK3R1;PLCG1
+REACT:R-HSA-2022870,CS-GAG biosynthesis,11,1,20,12,0.917,rising,BGN;CHPF2;CHST11;CHST15;CHST3;CHST7;CHST9;CHSY1
+REACT:R-HSA-202430,Translocation of ZAP-70 to Immunological synapse,11,1,22,12,0.917,rising,CD247;CD3D;CD3E;CD3G;CD4;HLA-DPA1;HLA-DPB1;HLA-DQA1
+REACT:R-HSA-2173789,TGF-beta receptor signaling activates SMADs,11,1,27,12,0.917,rising,CBL;FBN1;ITGA8;ITGAV;ITGB5;ITGB8;LTBP2;LTBP4
+REACT:R-HSA-2243919,Crosslinking of collagen fibrils,12,0,18,12,1.0,rising,COL1A1;COL1A2;COL4A1;COL4A2;COL4A3;COL4A4;LOX;LOXL1
+REACT:R-HSA-2871796,FCERI mediated MAPK activation,11,1,87,12,0.917,rising,FCER1A;FOS;GRAP2;HRAS;JUN;LCP2;MAP3K1;MAPK10
+REACT:R-HSA-2871809,FCERI mediated Ca+2 mobilization,9,3,86,12,0.75,rising,BTK;FCER1A;GRAP2;ITPR1;ITPR2;LCP2;NFATC1;NFATC3
+REACT:R-HSA-3295583,TRP channels,8,4,28,12,0.667,rising,RIPK3;TRPA1;TRPC1;TRPC3;TRPC4;TRPC5;TRPM2;TRPM6
+REACT:R-HSA-3371453,Regulation of HSF1-mediated heat shock response,8,4,82,12,0.667,rising,BAG3;HSPA12B;HSPA2;HSPB2;HSPH1;NUP88;NUP93;SERPINH1
+REACT:R-HSA-352230,Amino acid transport across the plasma membrane,8,4,33,12,0.667,rising,SLC16A10;SLC1A5;SLC38A1;SLC38A4;SLC43A1;SLC43A2;SLC6A19;SLC6A6
+REACT:R-HSA-389357,CD28 dependent PI3K/Akt signaling,9,3,27,12,0.75,rising,AKT3;CD80;LCK;MAP3K8;PIK3CA;PIK3CD;PIK3CG;PIK3R1
+REACT:R-HSA-5669034,TNFs bind their physiological receptors,11,1,29,12,0.917,rising,CD27;EDA;EDA2R;FASLG;LTA;TNFRSF11B;TNFRSF14;TNFRSF1B
+REACT:R-HSA-6802946,Signaling by moderate kinase activity BRAF mutants,9,3,45,12,0.75,rising,ARRB1;CAMK2D;CNKSR2;CSK;HRAS;IQGAP1;KSR1;PEBP1
+REACT:R-HSA-6802955,Paradoxical activation of RAF signaling by kinase inactive BRAF,9,3,45,12,0.75,rising,ARRB1;CAMK2D;CNKSR2;CSK;HRAS;IQGAP1;KSR1;PEBP1
+REACT:R-HSA-69205,G1/S-Specific Transcription,10,2,29,12,0.833,rising,CCNE1;CDC25A;CDC45;CDC6;E2F1;ORC1;PCNA;RBL2
+REACT:R-HSA-8943724,Regulation of PTEN gene transcription,10,2,61,12,0.833,rising,ATF2;BMI1;CBX8;CHD3;CHD4;EGR1;GATAD2A;JUN
+REACT:R-HSA-9619665,EGR2 and SOX10-mediated initiation of Schwann cell myelination,8,4,29,12,0.667,rising,ADGRG6;ADGRV1;DAG1;EGR2;GJB1;LAMA2;LAMC1;NAB1
+REACT:R-HSA-9649948,Signaling downstream of RAS mutants,9,3,45,12,0.75,rising,ARRB1;CAMK2D;CNKSR2;CSK;HRAS;IQGAP1;KSR1;PEBP1
+REACT:R-HSA-9660826,Purinergic signaling in leishmaniasis infection,10,2,26,12,0.833,rising,C3AR1;CASP1;CTSG;ENTPD5;IL18;IL1B;NFKB1;NFKB2
+REACT:R-HSA-983695,Antigen activates B Cell Receptor (BCR) leading to generation of second messengers,10,2,86,12,0.833,rising,BTK;CD19;CD79A;DAPP1;ITPR1;ITPR2;PIK3CD;PIK3R1
+REACT:R-HSA-1482788,Acyl chain remodelling of PC,9,2,27,11,0.818,rising,LPCAT1;LPCAT2;LPCAT3;LPCAT4;MBOAT2;PLA2G4A;PLA2G5;PLA2R1
+REACT:R-HSA-1912408,Pre-NOTCH Transcription and Translation,8,3,95,11,0.727,rising,CCND1;E2F1;E2F3;ELF3;JUN;KAT2B;MAML2;MAML3
+REACT:R-HSA-2022854,Keratan sulfate biosynthesis,10,1,28,11,0.909,rising,B3GNT3;B3GNT7;B4GALT2;B4GALT5;CHST1;CHST2;FMOD;LUM
+REACT:R-HSA-2122948,Activated NOTCH1 Transmits Signal to the Nucleus,8,3,31,11,0.727,rising,APH1B;ARRB1;DLL1;DTX1;ITCH;JAG1;JAG2;NEURL1B
+REACT:R-HSA-2424491,DAP12 signaling,9,2,29,11,0.818,rising,BTK;GRAP2;HRAS;LCK;LCP2;PIK3CA;PIK3R1;PLCG1
+REACT:R-HSA-2559585,Oncogene Induced Senescence,9,2,34,11,0.818,rising,CDK4;CDKN2A;CDKN2B;CDKN2C;CDKN2D;E2F1;E2F3;ID1
+REACT:R-HSA-381038,XBP1(S) activates chaperone genes,8,3,48,11,0.727,rising,ATP6V0D1;EDEM1;EXTL1;KDELR3;LMNA;PDIA5;PPP2R5B;SHC1
+REACT:R-HSA-416700,Other semaphorin interactions,9,2,19,11,0.818,rising,CD72;ITGA1;PLXNA1;PLXNC1;PLXND1;PTPRC;SEMA3E;SEMA4A
+REACT:R-HSA-5674135,MAP2K and MAPK activation,9,2,40,11,0.818,rising,ARRB1;CNKSR2;CSK;HRAS;IQGAP1;KSR1;PEBP1;SRC
+REACT:R-HSA-5675221,Negative regulation of MAPK pathway,8,3,41,11,0.727,rising,DUSP10;DUSP7;DUSP8;HRAS;KSR1;PEBP1;PPP2CB;PPP2R1A
+REACT:R-HSA-6802948,Signaling by high-kinase activity BRAF mutants,9,2,36,11,0.818,rising,ARRB1;CNKSR2;CSK;HRAS;IQGAP1;KSR1;PEBP1;SRC
+REACT:R-HSA-9013508,NOTCH3 Intracellular Domain Regulates Transcription,8,3,25,11,0.727,rising,DLGAP5;HEY2;HEYL;IKZF1;KAT2B;MAML2;MAML3;NOTCH3
+REACT:R-HSA-9639288,Amino acids regulate mTORC1,8,3,55,11,0.727,rising,ATP6V0B;ATP6V0D1;ATP6V1E2;ATP6V1F;FNIP1;FNIP2;LAMTOR4;MIOS
+REACT:R-HSA-9656223,Signaling by RAF1 mutants,9,2,41,11,0.818,rising,ARRB1;CAMK2D;CNKSR2;CSK;HRAS;IQGAP1;KSR1;SRC
+REACT:R-HSA-9670439,"Signaling by phosphorylated juxtamembrane, extracellular and kinase domain KIT mutants",8,3,20,11,0.727,rising,HRAS;KIT;LCK;PIK3CA;PIK3R1;PIK3R3;SRC;STAT1
+REACT:R-HSA-1222556,ROS and RNS production in phagocytes,10,0,34,10,1.0,rising,ATP6V0A1;ATP6V0B;ATP6V0D1;ATP6V1E2;ATP6V1F;CYBA;NCF2;NCF4
+REACT:R-HSA-1474244,Extracellular matrix organization,10,0,15,10,1.0,rising,COL1A1;COL1A2;COL3A1;COL4A1;COL4A2;COL4A3;COL4A4;COL5A1
+REACT:R-HSA-163125,Post-translational modification: synthesis of GPI-anchored proteins,8,2,66,10,0.8,rising,CD109;CD52;CNTN4;GPLD1;LYPD1;MDGA2;NTNG2;RECK
+REACT:R-HSA-168638,NOD1/2 Signaling Pathway,8,2,36,10,0.8,rising,BIRC3;CARD9;CASP1;CASP4;IRAK1;ITCH;NOD1;NOD2
+REACT:R-HSA-210500,Glutamate Neurotransmitter Release Cycle,7,3,24,10,0.7,rising,ARL6IP5;GLS;GLS2;SLC1A1;SLC1A3;SLC1A7;SNAP25;STX1A
+REACT:R-HSA-2682334,EPH-Ephrin signaling,8,2,26,10,0.8,rising,EFNA1;EFNA5;EFNB3;EPHA2;EPHA3;EPHA6;EPHB2;EPHB6
+REACT:R-HSA-3371497,HSP90 chaperone cycle for steroid hormone receptors (SHR) in the presence of ligand,7,3,57,10,0.7,rising,ACTR1A;AR;DCTN2;DNAJA4;HSPA2;NR3C2;TUBA1A;TUBA1C
+REACT:R-HSA-3560801,Defective B3GAT3 causes JDSSDHD,9,1,20,10,0.9,rising,AGRN;B3GAT3;BGN;CSPG5;DCN;GPC3;GPC4;HSPG2
+REACT:R-HSA-373080,Class B/2 (Secretin family receptors),9,1,51,10,0.9,rising,ADGRE1;ADGRE2;ADGRE5;FZD1;FZD2;FZD3;FZD7;FZD8
+REACT:R-HSA-375276,Peptide ligand-binding receptors,7,3,105,10,0.7,rising,ACKR1;C3AR1;C5;CXCL8;EDNRA;F2;F2RL1;KNG1
+REACT:R-HSA-3928663,EPHA-mediated growth cone collapse,8,2,29,10,0.8,rising,EFNA1;EFNA5;EPHA2;EPHA3;EPHA6;MYH9;MYL9;RHOA
+REACT:R-HSA-4086398,Ca2+ pathway,9,1,62,10,0.9,rising,FZD2;FZD3;GNB1;ITPR1;ITPR2;LEF1;MYC;NFATC1
+REACT:R-HSA-4608870,Asymmetric localization of PCP proteins,7,3,51,10,0.7,rising,FZD1;FZD2;FZD3;FZD7;FZD8;PRICKLE1;PSMD3;SEM1
+REACT:R-HSA-5357905,Regulation of TNFR1 signaling,8,2,48,10,0.8,rising,BIRC3;CLIP3;RBCK1;TNF;TNFAIP3;TRADD;TRAF1;TRAF2
+REACT:R-HSA-5620971,Pyroptosis,9,1,27,10,0.9,rising,BAK1;BAX;CASP1;CASP4;CHMP4B;CYCS;HMGB1;IL18
+REACT:R-HSA-5625740,RHO GTPases activate PKNs,9,1,28,10,0.9,rising,CDC25C;MYH9;MYL9;PKN2;PKN3;PPP1R14A;RHOA;RHOC
+REACT:R-HSA-6804757,Regulation of TP53 Degradation,8,2,36,10,0.8,rising,AKT3;CCNA2;CDKN2A;CHEK2;MDM2;PPP2CB;PPP2R1A;RICTOR
+REACT:R-HSA-6811436,COPI-independent Golgi-to-ER retrograde traffic,9,1,53,10,0.9,rising,ACTR1A;BICD1;BICD2;DCTN2;PAFAH1B3;PLA2G4A;TUBA1A;TUBA1C
+REACT:R-HSA-68962,Activation of the pre-replicative complex,10,0,33,10,1.0,rising,CDC45;CDC6;CDC7;MCM2;MCM3;MCM4;MCM5;MCM6
+REACT:R-HSA-75205,Dissolution of Fibrin Clot,8,2,13,10,0.8,rising,ANXA2;PLAT;PLAU;PLAUR;PLG;S100A10;SERPINB6;SERPINB8
+REACT:R-HSA-9013407,RHOH GTPase cycle,9,1,37,10,0.9,rising,ARHGDIB;CSK;DBN1;DBT;LCK;PAK5;RHOH;SLC1A5
+REACT:R-HSA-912526,Interleukin receptor SHC signaling,8,2,27,10,0.8,rising,IL2RA;IL2RG;INPP5D;JAK3;PIK3CA;PIK3CD;PIK3R1;PIK3R3
+REACT:R-HSA-9845323,Regulation of endogenous retroelements by Piwi-interacting RNAs (piRNAs),7,3,96,10,0.7,rising,CHD3;CHD4;DNMT3L;GATAD2A;MTA2;PIWIL4;SMARCA2;SMARCA4
+REACT:R-HSA-1433559,Regulation of KIT signaling,8,1,16,9,0.889,rising,CBL;KIT;KITLG;LCK;PTPN6;SH2B3;SOCS1;SRC
+REACT:R-HSA-1482839,Acyl chain remodelling of PE,7,2,29,9,0.778,rising,LPCAT3;LPCAT4;MBOAT1;MBOAT2;PLA2G4A;PLA2G5;PLA2R1;PLBD1
+REACT:R-HSA-1566948,Elastic fibre formation,9,0,18,9,1.0,rising,FBLN5;FBN1;ITGAV;LOX;LOXL1;LOXL2;LOXL3;LOXL4
+REACT:R-HSA-1855204,Synthesis of IP3 and IP4 in the cytosol,9,0,26,9,1.0,rising,INPP5D;ITPKA;ITPKB;PLCB2;PLCB3;PLCB4;PLCG1;PLCH1
+REACT:R-HSA-190861,Gap junction assembly,6,3,38,9,0.667,rising,GJA1;GJA4;GJB1;GJB5;GJC2;TUBA1A;TUBA1C;TUBB1
+REACT:R-HSA-2214320,Anchoring fibril formation,9,0,15,9,1.0,rising,COL1A1;COL1A2;COL4A1;COL4A2;COL4A3;COL4A4;LAMA3;LAMB3
+REACT:R-HSA-3214815,HDACs deacetylate histones,6,3,93,9,0.667,rising,ARID4A;BRMS1;CHD3;CHD4;GATAD2A;MTA2;NCOR1;SAP30
+REACT:R-HSA-354192,Integrin signaling,8,1,23,9,0.889,rising,CSK;PTPN1;RAPGEF4;RASGRP1;SHC1;SRC;SYK;TLN1
+REACT:R-HSA-3560783,"Defective B4GALT7 causes EDS, progeroid type",8,1,20,9,0.889,rising,AGRN;BGN;CSPG5;DCN;GPC3;GPC4;HSPG2;SDC2
+REACT:R-HSA-389356,Co-stimulation by CD28,8,1,19,9,0.889,rising,CD80;CTLA4;GRAP2;LCK;PPP2CB;PPP2R1A;PPP2R5B;SRC
+REACT:R-HSA-389513,Co-inhibition by CTLA4,8,1,21,9,0.889,rising,AKT3;CD80;CTLA4;LCK;PPP2CB;PPP2R1A;PPP2R5B;SRC
+REACT:R-HSA-4420332,Defective B3GALT6 causes EDSP2 and SEMDJL1,8,1,20,9,0.889,rising,AGRN;BGN;CSPG5;DCN;GPC3;GPC4;HSPG2;SDC2
+REACT:R-HSA-449836,Other interleukin signaling,8,1,24,9,0.889,rising,CD4;CSF1;CSF3R;IL32;IL34;SNAP25;STX1A;STX3
+REACT:R-HSA-512988,"Interleukin-3, Interleukin-5 and GM-CSF signaling",6,3,24,9,0.667,rising,PIK3CA;PIK3CD;PIK3R1;PIK3R3;PTPN6;SHC1;STAT5A;TEC
+REACT:R-HSA-5607764,CLEC7A (Dectin-1) signaling,6,3,66,9,0.667,rising,CARD11;CARD9;CLEC7A;NFKB1;PSMD3;SEM1;SRC;SYK
+REACT:R-HSA-5617472,Activation of anterior HOX genes in hindbrain development during early embryogenesis,6,3,121,9,0.667,rising,AJUBA;ASH2L;EGR2;HOXA1;JUN;NCOR1;POLR2C;RARB
+REACT:R-HSA-5676594,TNF receptor superfamily (TNFSF) members mediating non-canonical NF-kB pathway,9,0,17,9,1.0,rising,BIRC3;CD40LG;LTA;LTB;TNFRSF11A;TNFRSF12A;TNFSF12;TRAF2
+REACT:R-HSA-6805567,Keratinization,7,2,139,9,0.778,rising,DSG1;KRT18;KRT19;KRT23;KRT7;KRT8;KRT80;KRT86
+REACT:R-HSA-70171,Glycolysis,8,1,30,9,0.889,rising,ALDOA;ALDOB;GNPDA1;GPI;HK1;HK2;HKDC1;PFKP
+REACT:R-HSA-77387,Insulin receptor recycling,8,1,30,9,0.889,rising,ATP6V0A1;ATP6V0B;ATP6V0D1;ATP6V1E2;ATP6V1F;CTSD;PTPN1;PTPRF
+REACT:R-HSA-8941858,Regulation of RUNX3 expression and activity,6,3,45,9,0.667,rising,CBFB;CDKN2A;MDM2;PSMD3;RUNX3;SEM1;SRC;TGFB1
+REACT:R-HSA-9013420,RHOU GTPase cycle,8,1,40,9,0.889,rising,ARHGAP30;ARHGAP31;EPHA2;GIT1;IQGAP1;NCK2;PIK3R1;SPTAN1
+REACT:R-HSA-9013424,RHOV GTPase cycle,6,3,37,9,0.667,rising,CCP110;EPHA2;GIT1;IQGAP1;MYO9A;NCK2;PIK3R1;SPTAN1
+REACT:R-HSA-9013507,NOTCH3 Activation and Transmission of Signal to the Nucleus,7,2,24,9,0.778,rising,APH1B;DLL1;EGFR;JAG1;JAG2;NEURL1B;NOTCH3;PSEN2
+REACT:R-HSA-9661069,"Defective binding of RB1 mutants to E2F1,(E2F2, E2F3)",8,1,17,9,0.889,rising,CCND1;CCND3;CCNE1;CDK4;CDKN1A;CDKN1C;E2F1;E2F3
+REACT:R-HSA-9665686,Signaling by ERBB2 TMD/JMD mutants,7,2,22,9,0.778,rising,EGFR;ERBB3;HBEGF;HRAS;NRG1;NRG2;NRG3;PLCG1
+REACT:R-HSA-9705462,Inactivation of CSF3 (G-CSF) signaling,7,2,25,9,0.778,rising,CSF3R;SOCS1;SOCS3;STAT1;STAT3;STAT5A;SYK;UBB
+REACT:R-HSA-9725371,Nuclear events stimulated by ALK signaling in cancer,9,0,35,9,1.0,rising,BCL2A1;DNMT1;ICOS;IRF4;JUNB;PTPN6;STAT3;STAT5A
+REACT:R-HSA-9725554,Differentiation of Keratinocytes in Interfollicular Epidermis in Mammalian Skin,6,3,40,9,0.667,rising,ABCG2;AQP3;DLL1;DMKN;FABP5;ITGA6;KRT19;NUMB
+REACT:R-HSA-982772,Growth hormone receptor signaling,7,2,24,9,0.778,rising,GHR;PRLR;PTPN1;PTPN6;SOCS1;SOCS3;STAT1;STAT3
+REACT:R-HSA-9840310,Glycosphingolipid catabolism,6,3,38,9,0.667,rising,ARSJ;ARSK;CTSA;GLA;GM2A;HEXA;NEU3;NEU4
+REACT:R-HSA-1250196,SHC1 events in ERBB2 signaling,6,2,22,8,0.75,rising,EGFR;ERBB3;HBEGF;HRAS;NRG1;NRG2;NRG3;SHC1
+REACT:R-HSA-1362277,Transcription of E2F targets under negative control by DREAM complex,6,2,19,8,0.75,rising,CDC25A;CDC6;E2F1;MYC;PCNA;RBL2;TFDP2;TOP2A
+REACT:R-HSA-140534,Caspase activation via Death Receptors in the presence of ligand,6,2,15,8,0.75,rising,CD14;FAS;FASLG;TICAM1;TNFRSF10B;TNFSF10;TRADD;TRAF2
+REACT:R-HSA-166058,MyD88:MAL(TIRAP) cascade initiated on plasma membrane,6,2,26,8,0.75,rising,BTK;CD14;HMGB1;IRAK1;IRAK3;MAP3K1;SOCS1;TLR2
+REACT:R-HSA-176974,Unwinding of DNA,8,0,12,8,1.0,rising,CDC45;GINS2;MCM2;MCM3;MCM4;MCM5;MCM6;MCM7
+REACT:R-HSA-2029481,FCGR activation,7,1,69,8,0.875,rising,CD247;CD3G;FCGR1A;FCGR2A;FGR;SRC;SYK;YES1
+REACT:R-HSA-2979096,NOTCH2 Activation and Transmission of Signal to the Nucleus,7,1,23,8,0.875,rising,APH1B;DLL1;JAG1;JAG2;MDK;NEURL1B;PSEN2;UBB
+REACT:R-HSA-3371571,HSF1-dependent transactivation,6,2,34,8,0.75,rising,CAMK2D;CRYAB;HSPB2;HSPB8;HSPH1;SERPINH1;TNFRSF21;UBB
+REACT:R-HSA-376176,Signaling by ROBO receptors,7,1,15,8,0.875,rising,CXCL12;CXCR4;ENAH;NRP1;PFN2;ROBO1;SLIT2;VASP
+REACT:R-HSA-3769402,Deactivation of the beta-catenin transactivating complex,6,2,42,8,0.75,rising,ASH2L;LEF1;PYGO1;SOX4;SOX9;TLE3;UBB;YWHAZ
+REACT:R-HSA-4086400,PCP/CE pathway,8,0,21,8,1.0,rising,FZD1;FZD3;FZD7;RAC2;RHOA;ROR2;VANGL2;WNT4
+REACT:R-HSA-5213460,RIPK1-mediated regulated necrosis,7,1,22,8,0.875,rising,BIRC3;FAS;FASLG;RIPK3;TNFRSF10B;TNFSF10;TRADD;TRAF2
+REACT:R-HSA-5223345,Miscellaneous transport and binding events,6,2,26,8,0.75,rising,ANKH;AZGP1;CTNS;DMTN;MMGT1;NIPAL1;NIPAL2;TUSC3
+REACT:R-HSA-5357956,TNFR1-induced NF-kappa-B signaling pathway,7,1,33,8,0.875,rising,BIRC3;RBCK1;TNF;TNFAIP3;TRADD;TRAF1;TRAF2;UBB
+REACT:R-HSA-5635838,Activation of SMO,7,1,18,8,0.875,rising,ARRB1;BOC;CDON;EVC;EVC2;GRK2;IQCE;KIF3A
+REACT:R-HSA-5655253,Signaling by FGFR2 in disease,6,2,27,8,0.75,rising,FGF17;FGF23;FGF7;FGFR2;HRAS;PIK3CA;PIK3R1;PLCG1
+REACT:R-HSA-5663213,RHO GTPases Activate WASPs and WAVEs,8,0,36,8,1.0,rising,ARPC1B;ARPC2;ARPC3;ARPC4;ARPC5;BTK;WIPF1;WIPF3
+REACT:R-HSA-69202,Cyclin E associated events during G1/S transition ,6,2,28,8,0.75,rising,AKT3;CCNE1;CDC25A;CDKN1A;E2F1;MYC;RBL2;TFDP2
+REACT:R-HSA-69273,Cyclin A/B1/B2 associated events during G2/M transition,8,0,32,8,1.0,rising,CCNA2;CDC25A;CDC25C;HJURP;PKMYT1;PLK1;PPP2CB;PPP2R1A
+REACT:R-HSA-69656,Cyclin A:Cdk2-associated events at S phase entry,6,2,30,8,0.75,rising,AKT3;CCNA2;CDC25A;CDKN1A;E2F1;MYC;RBL2;TFDP2
+REACT:R-HSA-8862803,Deregulated CDK5 triggers multiple neurodegenerative pathways in Alzheimer's disease models,8,0,22,8,1.0,rising,CAPN1;CAPN2;CAPNS1;CDC25A;CDC25C;FASLG;JUN;LMNA
+REACT:R-HSA-8878166,Transcriptional regulation by RUNX2,8,0,15,8,1.0,rising,BAX;BMP2;CBFB;CCND1;CDK4;CDKN1A;HAND2;SOX9
+REACT:R-HSA-8955332,Carboxyterminal post-translational modifications of tubulin,7,1,46,8,0.875,rising,TTL;TTLL1;TTLL3;TUBA1A;TUBA1C;TUBB1;TUBB6;VASH1
+REACT:R-HSA-9008059,Interleukin-37 signaling,7,1,21,8,0.875,rising,CASP1;IL18BP;PTPN14;PTPN23;PTPN4;PTPN6;PTPN7;STAT3
+REACT:R-HSA-917977,Transferrin endocytosis and recycling,7,1,31,8,0.875,rising,ATP6V0A1;ATP6V0B;ATP6V0D1;ATP6V1E2;ATP6V1F;STEAP4;TCIRG1;TFR2
+REACT:R-HSA-9634597,GPER1 signaling,6,2,45,8,0.75,rising,ADCY1;ADCY3;ADCY7;GNAI1;GNAZ;GNB1;SHC1;SRC
+REACT:R-HSA-9674555,Signaling by CSF3 (G-CSF),8,0,19,8,1.0,rising,CSF3R;SHC1;SOCS1;SOCS3;STAT1;STAT3;STAT5A;SYK
+REACT:R-HSA-9694614,Attachment and Entry,7,1,19,8,0.875,rising,ACE2;AGRN;GPC3;GPC4;HSPG2;NRP1;SDC2;TMPRSS2
+REACT:R-HSA-9748787,Azathioprine ADME,6,2,23,8,0.75,rising,ABCC4;ABCC5;GSTA1;GUK1;IMPDH1;NME2;SLC28A3;XDH
+REACT:R-HSA-9856532,Mechanical load activates signaling by PIEZO1 and integrins in osteocytes,7,1,17,8,0.875,rising,CACNA1H;CACNA2D1;CACNB1;GJA1;HSPG2;ITGAV;PIEZO1;SPP1
+REACT:R-HSA-114508,Effects of PIP2 hydrolysis,5,2,22,7,0.714,rising,DGKQ;DGKZ;ITPR1;ITPR2;PRKCQ;RASGRP1;TRPC3
+REACT:R-HSA-1236394,Signaling by ERBB4,5,2,19,7,0.714,rising,EGFR;ERBB3;GABRB3;HBEGF;NRG1;NRG2;NRG3
+REACT:R-HSA-1482801,Acyl chain remodelling of PS,6,1,22,7,0.857,rising,LPCAT3;LPCAT4;MBOAT1;OSBPL5;PLA2G4A;PLA2G5;PLA2R1
+REACT:R-HSA-201681,TCF dependent signaling in response to WNT,5,2,36,7,0.714,rising,AXIN1;DKK2;FZD1;FZD2;LRP6;UBB;WNT4
+REACT:R-HSA-2028269,Signaling by Hippo,5,2,20,7,0.714,rising,AMOTL1;AMOTL2;LATS2;STK3;WWC1;WWTR1;YAP1
+REACT:R-HSA-2032785,YAP1- and WWTR1 (TAZ)-stimulated gene expression,5,2,15,7,0.714,rising,CCN2;HIPK2;KAT2B;TEAD2;TEAD4;WWTR1;YAP1
+REACT:R-HSA-210990,PECAM1 interactions,6,1,12,7,0.857,rising,INPP5D;ITGAV;LCK;PLCG1;PTPN6;SRC;YES1
+REACT:R-HSA-210991,Basigin interactions,7,0,25,7,1.0,rising,ATP1B3;BSG;ITGA3;ITGA6;SLC16A3;SLC7A6;SLC7A7
+REACT:R-HSA-2173796,SMAD2/SMAD3:SMAD4 heterotrimer regulates transcription,5,2,36,7,0.714,rising,CDKN2B;COL1A2;JUNB;MYC;TFDP2;UBB;WWTR1
+REACT:R-HSA-373752,Netrin-1 signaling,5,2,19,7,0.714,rising,EZR;HJV;NTN4;PRKCQ;ROBO1;SLIT2;UNC5B
+REACT:R-HSA-373753,Nephrin family interactions,5,2,23,7,0.714,rising,ACTN1;IQGAP1;KIRREL1;NCK2;PIK3CA;PIK3R1;SPTAN1
+REACT:R-HSA-390522,Striated Muscle Contraction,7,0,36,7,1.0,rising,MYL3;TMOD2;TNNI2;TNNT3;TPM1;TPM4;VIM
+REACT:R-HSA-3928664,Ephrin signaling,7,0,19,7,1.0,rising,EFNB3;EPHB2;EPHB6;GIT1;MYL12A;NCK2;SRC
+REACT:R-HSA-416572,Sema4D induced cell migration and growth-cone collapse,6,1,20,7,0.857,rising,ARHGEF12;LIMK1;LIMK2;MYH9;MYL9;RHOA;RHOC
+REACT:R-HSA-430116,GP1b-IX-V activation signalling,6,1,12,7,0.857,rising,COL1A1;COL1A2;FLNA;PIK3R1;SRC;VWF;YWHAZ
+REACT:R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,5,2,43,7,0.714,rising,ADCY1;ADCY3;ADCY7;AQP1;AQP3;AQP4;GNB1
+REACT:R-HSA-432142,Platelet sensitization by LDL,7,0,17,7,1.0,rising,FGR;LRP8;PLA2G4A;PPP2CB;PPP2R1A;PPP2R5B;PTPN6
+REACT:R-HSA-432720,Lysosome Vesicle Biogenesis,7,0,35,7,1.0,rising,AP1B1;AP1M2;AP1S3;AP4M1;ARRB1;DNAJC6;SH3GL2
+REACT:R-HSA-445989,TAK1-dependent IKK and NF-kappa-B activation  ,5,2,35,7,0.714,rising,HMGB1;IRAK1;NFKB1;NFKB2;NOD1;NOD2;UBB
+REACT:R-HSA-446353,Cell-extracellular matrix interactions,6,1,12,7,0.857,rising,FBLIM1;FERMT2;FLNA;FLNC;ILK;PARVA;VASP
+REACT:R-HSA-4641262,Disassembly of the destruction complex and recruitment of AXIN to the membrane,6,1,31,7,0.857,rising,AXIN1;FZD1;FZD2;LRP6;PPP2CB;PPP2R1A;PPP2R5B
+REACT:R-HSA-499943,Interconversion of nucleotide di- and triphosphates,6,1,29,7,0.857,rising,AK1;CTPS1;GUK1;NME2;RRM2;TXNRD1;TYMS
+REACT:R-HSA-5218921,VEGFR2 mediated cell proliferation,5,2,19,7,0.714,rising,HRAS;ITPR1;ITPR2;KDR;PLCG1;SPHK1;SRC
+REACT:R-HSA-5576892,Phase 0 - rapid depolarisation,5,2,32,7,0.714,rising,CACNA1C;CACNB1;CAMK2D;FGF14;RANGRF;SCN4A;SCN8A
+REACT:R-HSA-5626467,RHO GTPases activate IQGAPs,5,2,32,7,0.714,rising,IQGAP1;IQGAP2;IQGAP3;TUBA1A;TUBA1C;TUBB1;TUBB6
+REACT:R-HSA-5673000,RAF activation,6,1,34,7,0.857,rising,CAMK2D;HRAS;KSR1;PPP2CB;PPP2R1A;PPP2R5B;SRC
+REACT:R-HSA-5683826,Surfactant metabolism,5,2,30,7,0.714,rising,ADA2;ADGRF5;ADRA2A;ADRA2C;GATA6;LMCD1;SLC34A1
+REACT:R-HSA-5693607,Processing of DNA double-strand break ends,5,2,97,7,0.714,rising,BLM;CCNA2;CLSPN;PPP4C;PPP4R2;RMI2;UBB
+REACT:R-HSA-6804115,TP53 regulates transcription of additional cell cycle genes whose exact role in the p53 pathway remain uncertain,6,1,21,7,0.857,rising,BTG2;CDC25C;CNOT7;PLAGL1;PLK2;PLK3;RGCC
+REACT:R-HSA-6804116,TP53 Regulates Transcription of Genes Involved in G1 Cell Cycle Arrest,7,0,14,7,1.0,rising,CCNA2;CCNE1;CDKN1A;E2F1;E2F7;E2F8;PCBP4
+REACT:R-HSA-6804758,Regulation of TP53 Activity through Acetylation,7,0,23,7,1.0,rising,AKT3;CHD3;CHD4;GATAD2A;MEAF6;MTA2;PML
+REACT:R-HSA-877312,Regulation of IFNG signaling,7,0,14,7,1.0,rising,IFNGR1;IFNGR2;PTPN1;PTPN6;SOCS1;SOCS3;STAT1
+REACT:R-HSA-8936459,RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function,5,2,95,7,0.714,rising,ASH2L;CBFB;KAT2B;MYL9;PRKCQ;RUNX1;THBS1
+REACT:R-HSA-9020558,Interleukin-2 signaling,7,0,12,7,1.0,rising,IL2RA;IL2RG;JAK3;LCK;SHC1;STAT5A;SYK
+REACT:R-HSA-9620244,Long-term potentiation,5,2,23,7,0.714,rising,CAMK2D;DLG2;DLG3;GRIN2D;NRG1;NRGN;SRC
+REACT:R-HSA-9633012,Response of EIF2AK4 (GCN2) to amino acid deficiency,5,2,102,7,0.714,rising,ATF2;ATF3;RPL22L1;RPL36AL;RPS19;RPS27L;TRIB3
+REACT:R-HSA-9660821,ADORA2B mediated anti-inflammatory cytokines production,5,2,43,7,0.714,rising,ADCY1;ADCY3;ADCY7;GNAI1;GNAZ;GNB1;PRKX
+REACT:R-HSA-9825892,Regulation of MITF-M-dependent genes involved in cell cycle and proliferation,6,1,18,7,0.857,rising,CCND1;CDKN1A;CDKN2A;LEF1;MET;PLK1;TBX2
+REACT:R-HSA-9927354,Co-stimulation by ICOS,5,2,11,7,0.714,rising,ICOS;PIK3CA;PIK3CD;PIK3CG;PIK3R1;PIK3R3;PIK3R5
+REACT:R-HSA-112043,PLC beta mediated events,5,1,12,6,0.833,rising,GNA15;ITPR1;ITPR2;PLCB2;PLCB3;PLCB4
+REACT:R-HSA-1236978,Cross-presentation of soluble exogenous antigens (endosomes),4,2,42,6,0.667,rising,CD207;FCGR1A;MRC2;PSMB10;PSMD3;SEM1
+REACT:R-HSA-1250342,PI3K events in ERBB4 signaling,4,2,10,6,0.667,rising,HBEGF;NRG1;NRG2;NRG3;PIK3CA;PIK3R1
+REACT:R-HSA-1250347,SHC1 events in ERBB4 signaling,6,0,14,6,1.0,rising,HBEGF;HRAS;NRG1;NRG2;NRG3;SHC1
+REACT:R-HSA-1296041,Activation of G protein gated Potassium channels,4,2,29,6,0.667,rising,GABBR1;GABBR2;GNB1;KCNJ10;KCNJ16;KCNJ3
+REACT:R-HSA-189200,Cellular hexose transport,5,1,21,6,0.833,rising,SLC2A14;SLC2A2;SLC2A3;SLC2A6;SLC5A1;SLC5A10
+REACT:R-HSA-1963640,GRB2 events in ERBB2 signaling,5,1,16,6,0.833,rising,EGFR;HBEGF;HRAS;NRG1;NRG2;NRG3
+REACT:R-HSA-201722,Formation of the beta-catenin:TCF transactivating complex,5,1,88,6,0.833,rising,ASH2L;LEF1;MYC;PYGO1;SMARCA4;TLE3
+REACT:R-HSA-2024096,HS-GAG degradation,5,1,24,6,0.833,rising,AGRN;GPC3;GPC4;HPSE;HSPG2;SDC2
+REACT:R-HSA-210993,Tie2 Signaling,4,2,18,6,0.667,rising,ANGPT1;DOK2;HRAS;PIK3CA;PIK3R1;SHC1
+REACT:R-HSA-2162123,Synthesis of Prostaglandins (PG) and Thromboxanes (TX),6,0,15,6,1.0,rising,PRXL2B;PTGDS;PTGES2;PTGIS;PTGS1;PTGS2
+REACT:R-HSA-3371378,Regulation by c-FLIP,5,1,11,6,0.833,rising,FAS;FASLG;TNFRSF10B;TNFSF10;TRADD;TRAF2
+REACT:R-HSA-3371568,Attenuation phase,5,1,28,6,0.833,rising,HSPA2;HSPB2;HSPH1;SERPINH1;TNFRSF21;UBB
+REACT:R-HSA-3656237,Defective EXT2 causes exostoses 2,5,1,14,6,0.833,rising,AGRN;EXT1;GPC3;GPC4;HSPG2;SDC2
+REACT:R-HSA-3656253,"Defective EXT1 causes exostoses 1, TRPS2 and CHDS",5,1,14,6,0.833,rising,AGRN;EXT1;GPC3;GPC4;HSPG2;SDC2
+REACT:R-HSA-389957,Prefoldin mediated transfer of substrate  to CCT/TriC,4,2,28,6,0.667,rising,CCT6B;PFDN1;TUBA1A;TUBA1C;TUBB1;TUBB6
+REACT:R-HSA-399955,SEMA3A-Plexin repulsion signaling by inhibiting Integrin adhesion,6,0,14,6,1.0,rising,NRP1;PIP5K1C;PLXNA1;PLXNA3;RRAS;TLN1
+REACT:R-HSA-399956,CRMPs in Sema3A signaling,6,0,16,6,1.0,rising,CRMP1;DPYSL2;DPYSL3;NRP1;PLXNA1;PLXNA3
+REACT:R-HSA-445095,Interaction between L1 and Ankyrins,4,2,31,6,0.667,rising,ANK3;NFASC;SCN4A;SCN8A;SPTAN1;SPTBN2
+REACT:R-HSA-448706,Interleukin-1 processing,6,0,9,6,1.0,rising,CASP1;CTSG;IL18;IL1B;NFKB1;NFKB2
+REACT:R-HSA-450321,JNK (c-Jun kinases) phosphorylation and  activation mediated by activated human TAK1,4,2,22,6,0.667,rising,IRAK1;MAPK10;MAPK8;NOD1;NOD2;UBB
+REACT:R-HSA-4551638,SUMOylation of chromatin organization proteins,4,2,71,6,0.667,rising,BMI1;CBX8;CHD3;NUP88;NUP93;PHC2
+REACT:R-HSA-456926,Thrombin signalling through proteinase activated receptors (PARs),5,1,32,6,0.833,rising,ARRB1;F2;GNA12;GNA15;GNB1;SRC
+REACT:R-HSA-5218900,CASP8 activity is inhibited,5,1,11,6,0.833,rising,FAS;FASLG;TNFRSF10B;TNFSF10;TRADD;TRAF2
+REACT:R-HSA-5357786,TNFR1-induced proapoptotic signaling,6,0,25,6,1.0,rising,BIRC3;RBCK1;TNF;TNFAIP3;TRADD;TRAF2
+REACT:R-HSA-5362517,Signaling by Retinoic Acid,4,2,19,6,0.667,rising,FABP5;PDHX;PDK4;PPARD;RARB;RARG
+REACT:R-HSA-5621480,Dectin-2 family,6,0,26,6,1.0,rising,CLEC10A;CLEC4D;MUC12;MUC13;MUC6;SYK
+REACT:R-HSA-5625970,RHO GTPases activate KTN1,4,2,11,6,0.667,rising,KIF5B;KLC2;KLC4;KTN1;RHOA;RHOG
+REACT:R-HSA-5627117,RHO GTPases Activate ROCKs,6,0,19,6,1.0,rising,LIMK1;LIMK2;MYH9;MYL9;RHOA;RHOC
+REACT:R-HSA-5654695,PI-3K cascade:FGFR2,4,2,23,6,0.667,rising,FGF17;FGF23;FGF7;FGFR2;PIK3CA;PIK3R1
+REACT:R-HSA-5654699,SHC-mediated cascade:FGFR2,6,0,23,6,1.0,rising,FGF17;FGF23;FGF7;FGFR2;HRAS;SHC1
+REACT:R-HSA-5654727,Negative regulation of FGFR2 signaling,5,1,27,6,0.833,rising,CBL;FGF17;FGF23;FGF7;FGFR2;UBB
+REACT:R-HSA-5655332,Signaling by FGFR3 in disease,4,2,22,6,0.667,rising,FGF17;FGF23;HRAS;PIK3CA;PIK3R1;PLCG1
+REACT:R-HSA-5668599,RHO GTPases Activate NADPH Oxidases,5,1,24,6,0.833,rising,CYBA;NCF2;NCF4;PIK3R4;PIN1;RAC2
+REACT:R-HSA-5675482,Regulation of necroptotic cell death,4,2,26,6,0.667,rising,BIRC3;ITCH;RIPK3;TRADD;TRAF2;UBB
+REACT:R-HSA-69052,Switching of origins to a post-replicative state,6,0,8,6,1.0,rising,MCM2;MCM3;MCM4;MCM5;MCM6;MCM7
+REACT:R-HSA-69416,Dimerization of procaspase-8,5,1,11,6,0.833,rising,FAS;FASLG;TNFRSF10B;TNFSF10;TRADD;TRAF2
+REACT:R-HSA-74217,Purine salvage,4,2,13,6,0.667,rising,ADA;ADK;AMPD1;DCK;DGUOK;PNP
+REACT:R-HSA-75876,Synthesis of very long-chain fatty acyl-CoAs,4,2,24,6,0.667,rising,ACSL1;ACSL4;ACSL5;ELOVL1;ELOVL7;HACD4
+REACT:R-HSA-844456,The NLRP3 inflammasome,6,0,16,6,1.0,rising,CASP1;NFKB1;NFKB2;NLRP3;PSTPIP1;PYCARD
+REACT:R-HSA-8847993,ERBB2 Activates PTK6 Signaling,4,2,13,6,0.667,rising,EGFR;ERBB3;HBEGF;NRG1;NRG2;NRG3
+REACT:R-HSA-8849471,"PTK6 Regulates RHO GTPases, RAS GTPase and MAP kinases",4,2,14,6,0.667,rising,ARHGAP35;BCAR1;ELMO1;ELMO2;HRAS;RHOA
+REACT:R-HSA-8849932,Synaptic adhesion-like molecules,4,2,21,6,0.667,rising,DLG3;GRIA3;GRIN2D;LRFN4;PTPRD;PTPRF
+REACT:R-HSA-8853884,Transcriptional Regulation by VENTX,5,1,40,6,0.833,rising,ANAPC16;CCND1;CDKN2A;LEF1;NFKB1;UBE2C
+REACT:R-HSA-8854214,TBC/RABGAPs,4,2,44,6,0.667,rising,RAB33A;RAB33B;RAB35;TBC1D10C;TBC1D14;TBC1D20
+REACT:R-HSA-8854691,Interleukin-20 family signaling,6,0,26,6,1.0,rising,IL20RA;JAK3;SOCS3;STAT1;STAT3;STAT5A
+REACT:R-HSA-8934593,Regulation of RUNX1 Expression and Activity,6,0,17,6,1.0,rising,CBFB;CCND1;CCND3;PML;RUNX1;SRC
+REACT:R-HSA-8939256,RUNX1 regulates transcription of genes involved in WNT signaling,4,2,6,6,0.667,rising,AXIN1;CBFB;ESR1;FOXP3;RSPO3;RUNX1
+REACT:R-HSA-8950505,Gene and protein expression by JAK-STAT signaling after Interleukin-12 stimulation,4,2,38,6,0.667,rising,ANXA2;CA1;CNN2;LCP1;MSN;SOD1
+REACT:R-HSA-8951671,RUNX3 regulates YAP1-mediated transcription,6,0,8,6,1.0,rising,CCN2;RUNX3;TEAD2;TEAD4;WWTR1;YAP1
+REACT:R-HSA-8951936,RUNX3 regulates p14-ARF,6,0,10,6,1.0,rising,CBFB;CCND1;CDKN2A;RUNX1;RUNX3;TGFB1
+REACT:R-HSA-8983432,Interleukin-15 signaling,6,0,14,6,1.0,rising,IL15RA;IL2RG;JAK3;SHC1;STAT3;STAT5A
+REACT:R-HSA-9020958,Interleukin-21 signaling,6,0,10,6,1.0,rising,IL21R;IL2RG;JAK3;STAT1;STAT3;STAT5A
+REACT:R-HSA-9615710,Late endosomal microautophagy,5,1,34,6,0.833,rising,CHMP4B;PLIN3;RNASE1;UBB;VIM;VPS37C
+REACT:R-HSA-9617828,FOXO-mediated transcription of cell cycle genes,5,1,17,6,0.833,rising,BTG1;CCNG2;CDKN1A;KLF4;PCBP4;RBL2
+REACT:R-HSA-9634638,Estrogen-dependent nuclear events downstream of ESR-membrane signaling,5,1,24,6,0.833,rising,AKT3;BCL2;CCND1;EGFR;FOS;HBEGF
+REACT:R-HSA-9646399,Aggrephagy,4,2,44,6,0.667,rising,TUBA1A;TUBA1C;TUBB1;TUBB6;UBB;VIM
+REACT:R-HSA-9673767,"Signaling by PDGFRA transmembrane, juxtamembrane and kinase domain mutants",4,2,12,6,0.667,rising,HRAS;PDGFRA;PIK3CA;PIK3R1;STAT1;STAT3
+REACT:R-HSA-9673770,Signaling by PDGFRA extracellular domain mutants,4,2,12,6,0.667,rising,HRAS;PDGFRA;PIK3CA;PIK3R1;STAT1;STAT3
+REACT:R-HSA-9706019,RHOBTB3 ATPase cycle,4,2,10,6,0.667,rising,CCNE1;CUL3;HTR7;PLIN3;RAB9B;RHOBTB3
+REACT:R-HSA-9706369,Negative regulation of FLT3,5,1,15,6,0.833,rising,CBL;CSK;SH2B3;SLA;SLA2;UBB
+REACT:R-HSA-9755088,Ribavirin ADME,4,2,11,6,0.667,rising,ADA;ADK;ITPA;NME2;PNP;SLC28A3
+REACT:R-HSA-9768919,NPAS4 regulates expression of target genes,4,2,22,6,0.667,rising,ARNT;FOS;GEM;MDM2;PLK2;SYT10
+REACT:R-HSA-9830674,Formation of the ureteric bud,5,1,20,6,0.833,rising,FOXC1;GDNF;GFRA1;ITGA8;NPNT;SLIT2
+REACT:R-HSA-983712,Ion channel transport,6,0,24,6,1.0,rising,ATP6V0A1;ATP6V0B;ATP6V0D1;ATP6V1E2;ATP6V1F;TCIRG1
+REACT:R-HSA-9839383,TGFBR3 PTM regulation,5,1,11,6,0.833,rising,APH1B;MMP14;PSEN2;TGFBR3;TIMP1;TIMP2
+REACT:R-HSA-9843940,Regulation of endogenous retroelements by KRAB-ZFP proteins,5,1,106,6,0.833,rising,CHD3;CHD4;GATAD2A;MTA2;ZNF382;ZNF680
+REACT:R-HSA-9844594,Transcriptional regulation of brown and beige adipocyte differentiation by EBF2,5,1,31,6,0.833,rising,CHD3;CHD4;COX7A1;GATAD2A;MTA2;PPARA
+REACT:R-HSA-9845614,Sphingolipid catabolism,4,2,12,6,0.667,rising,ACER3;ALDH3A2;ALDH3B1;PLPP2;PLPP3;SGPP2
+REACT:R-HSA-9934037,Formation of neuronal progenitor and neuronal BAF (npBAF and nBAF),4,2,25,6,0.667,rising,BCL11A;BCL11B;SMARCA2;SMARCA4;SMARCD3;SS18L1
+REACT:R-HSA-997272,Inhibition  of voltage gated Ca2+ channels via Gbeta/gamma subunits,4,2,29,6,0.667,rising,GABBR1;GABBR2;GNB1;KCNJ10;KCNJ16;KCNJ3
+REACT:R-HSA-1059683,Interleukin-6 signaling,4,1,11,5,0.8,rising,CBL;IL6R;SOCS3;STAT1;STAT3
+REACT:R-HSA-1236973,Cross-presentation of particulate exogenous antigens (phagosomes),5,0,8,5,1.0,rising,CYBA;ITGAV;ITGB5;NCF2;NCF4
+REACT:R-HSA-1295596,Spry regulation of FGF signaling,4,1,16,5,0.8,rising,CBL;PPP2CB;PPP2R1A;SRC;UBB
+REACT:R-HSA-1482922,Acyl chain remodelling of PI,5,0,17,5,1.0,rising,MBOAT7;PLA2G4A;PLA2G5;PLA2R1;PLBD1
+REACT:R-HSA-1482925,Acyl chain remodelling of PG,5,0,18,5,1.0,rising,LPCAT1;LPCAT4;PLA2G4A;PLA2G5;PLA2R1
+REACT:R-HSA-156711,Polo-like kinase mediated events,5,0,16,5,1.0,rising,CDC25A;CDC25C;MYBL2;PKMYT1;PLK1
+REACT:R-HSA-174414,Processive synthesis on the C-strand of the telomere,4,1,14,5,0.8,rising,ACD;BLM;LIG1;PCNA;POT1
+REACT:R-HSA-190840,Microtubule-dependent trafficking of connexons from Golgi to the plasma membrane,4,1,20,5,0.8,rising,GJA1;TUBA1A;TUBA1C;TUBB1;TUBB6
+REACT:R-HSA-196108,Pregnenolone biosynthesis,5,0,12,5,1.0,rising,AKR1B1;CYP11A1;FDXR;STARD3NL;TSPO
+REACT:R-HSA-198753,ERK/MAPK targets,4,1,17,5,0.8,rising,MAPK7;MEF2A;PPP2CB;PPP2R1A;RPS6KA1
+REACT:R-HSA-2022857,Keratan sulfate degradation,5,0,15,5,1.0,rising,FMOD;HEXA;LUM;OMD;PRELP
+REACT:R-HSA-2024101,CS/DS degradation,5,0,14,5,1.0,rising,BGN;CSPG5;DCN;HEXA;VCAN
+REACT:R-HSA-2559586,DNA Damage/Telomere Stress Induced Senescence,4,1,64,5,0.8,rising,ACD;CCNA2;CCNE1;CDKN1A;POT1
+REACT:R-HSA-2691232,Constitutive Signaling by NOTCH1 HD Domain Mutants,4,1,15,5,0.8,rising,DLL1;JAG1;JAG2;NEURL1B;UBB
+REACT:R-HSA-3000480,Scavenging by Class A Receptors,5,0,19,5,1.0,rising,COL1A1;COL1A2;COL3A1;COL4A1;COL4A2
+REACT:R-HSA-3214858,RMTs methylate histone arginines,4,1,77,5,0.8,rising,CCND1;CDK4;SMARCA2;SMARCA4;SMARCD3
+REACT:R-HSA-3371511,HSF1 activation,4,1,30,5,0.8,rising,HSPB2;HSPH1;SERPINH1;TNFRSF21;UBB
+REACT:R-HSA-3595172,Defective CHST3 causes SEDCJD,5,0,8,5,1.0,rising,BGN;CHST3;CSPG5;DCN;VCAN
+REACT:R-HSA-3595177,Defective CHSY1 causes TPBS,5,0,8,5,1.0,rising,BGN;CHSY1;CSPG5;DCN;VCAN
+REACT:R-HSA-373076,Class A/1 (Rhodopsin-like receptors),5,0,19,5,1.0,rising,GPBAR1;GPR132;GPR35;GPR55;PTAFR
+REACT:R-HSA-389977,Post-chaperonin tubulin folding pathway,4,1,23,5,0.8,rising,TBCD;TUBA1A;TUBA1C;TUBB1;TUBB6
+REACT:R-HSA-392451,G beta:gamma signalling through PI3Kgamma,5,0,25,5,1.0,rising,AKT3;GNB1;PIK3CG;PIK3R5;RHOA
+REACT:R-HSA-392517,Rap1 signalling,4,1,16,5,0.8,rising,RAP1GAP;RAP1GAP2;RAPGEF4;RASGRP1;YWHAZ
+REACT:R-HSA-400042,"Adrenaline,noradrenaline inhibits insulin secretion",4,1,28,5,0.8,rising,ADRA2A;ADRA2C;CACNA1C;GNAI1;GNB1
+REACT:R-HSA-418457,cGMP effects,4,1,16,5,0.8,rising,IRAG1;ITPR1;KCNMA1;KCNMB2;PDE1A
+REACT:R-HSA-418592,ADP signalling through P2Y purinoceptor 1,5,0,25,5,1.0,rising,GNA15;GNB1;P2RY1;PLA2G4A;SRC
+REACT:R-HSA-419408,Lysosphingolipid and LPA receptors,5,0,14,5,1.0,rising,LPAR1;LPAR2;LPAR5;S1PR2;S1PR3
+REACT:R-HSA-422085,"Synthesis, secretion, and deacylation of Ghrelin",4,1,19,5,0.8,rising,ACHE;BCHE;KLF4;MBOAT4;PLA2G7
+REACT:R-HSA-446107,Type I hemidesmosome assembly,5,0,11,5,1.0,rising,CD151;ITGA6;LAMA3;LAMB3;LAMC2
+REACT:R-HSA-4615885,SUMOylation of DNA replication proteins,4,1,46,5,0.8,rising,NUP88;NUP93;PCNA;RANGAP1;TOP2A
+REACT:R-HSA-5621575,CD209 (DC-SIGN) signaling,4,1,21,5,0.8,rising,HRAS;ICAM2;ICAM3;NFKB1;RELB
+REACT:R-HSA-5625900,RHO GTPases activate CIT,5,0,19,5,1.0,rising,CIT;MYH9;MYL9;RHOA;RHOC
+REACT:R-HSA-5654221,Phospholipase C-mediated cascade; FGFR2,5,0,18,5,1.0,rising,FGF17;FGF23;FGF7;FGFR2;PLCG1
+REACT:R-HSA-5654700,FRS-mediated FGFR2 signaling,5,0,25,5,1.0,rising,FGF17;FGF23;FGF7;FGFR2;HRAS
+REACT:R-HSA-5666185,RHO GTPases Activate Rhotekin and Rhophilins,4,1,9,5,0.8,rising,RHOA;RHOC;RHPN1;ROPN1;TAX1BP3
+REACT:R-HSA-5693568,Resolution of D-loop Structures through Holliday Junction Intermediates,4,1,36,5,0.8,rising,BLM;MUS81;RAD51AP1;RMI2;SEM1
+REACT:R-HSA-606279,Deposition of new CENPA-containing nucleosomes at the centromere,5,0,71,5,1.0,rising,CENPA;CENPK;CENPU;CENPW;HJURP
+REACT:R-HSA-73762,RNA Polymerase I Transcription Initiation,4,1,47,5,0.8,rising,CHD3;CHD4;GATAD2A;KAT2B;MTA2
+REACT:R-HSA-75035,Chk1/Chk2(Cds1) mediated inactivation of Cyclin B:Cdk1 complex,5,0,15,5,1.0,rising,CCNA2;CDC25C;CHEK2;YWHAH;YWHAZ
+REACT:R-HSA-75892,Platelet Adhesion to exposed collagen,4,1,16,5,0.8,rising,COL1A1;COL1A2;ITGA1;ITGA2;VWF
+REACT:R-HSA-8877330,RUNX1 and FOXP3 control the development of regulatory T lymphocytes (Tregs),5,0,10,5,1.0,rising,CBFB;CTLA4;FOXP3;IL2RA;RUNX1
+REACT:R-HSA-888590,"GABA synthesis, release, reuptake and degradation",4,1,13,5,0.8,rising,DNAJC5;SNAP25;STX1A;STXBP1;SYT1
+REACT:R-HSA-8949275,RUNX3 Regulates Immune Response and Cell Migration,5,0,6,5,1.0,rising,CBFB;ITGA4;ITGAL;RUNX3;SPP1
+REACT:R-HSA-8985947,Interleukin-9 signaling,5,0,9,5,1.0,rising,IL2RG;JAK3;STAT1;STAT3;STAT5A
+REACT:R-HSA-9020956,Interleukin-27 signaling,4,1,11,5,0.8,rising,CRLF1;IL27;IL27RA;STAT1;STAT3
+REACT:R-HSA-912694,Regulation of IFNA/IFNB signaling,5,0,25,5,1.0,rising,PTPN1;PTPN6;SOCS1;SOCS3;STAT1
+REACT:R-HSA-933542,TRAF6 mediated NF-kB activation,4,1,25,5,0.8,rising,HMGB1;MAP3K1;NFKB1;NFKB2;TRAF2
+REACT:R-HSA-9668328,Sealing of the nuclear envelope (NE) by ESCRT-III,4,1,32,5,0.8,rising,CHMP4B;TUBA1A;TUBA1C;TUBB1;TUBB6
+REACT:R-HSA-9694548,Maturation of spike protein,4,1,41,5,0.8,rising,MAN2A1;MGAT4C;MGAT5;ST6GALNAC4;TUSC3
+REACT:R-HSA-9762293,Regulation of CDH11 gene transcription,5,0,10,5,1.0,rising,BHLHE22;CDH11;HEYL;PRDM8;SNAI1
+REACT:R-HSA-9831926,Nephron development,5,0,13,5,1.0,rising,DLL1;JAG1;LFNG;WNT4;WT1
+REACT:R-HSA-9839389,TGFBR3 regulates TGF-beta signaling,4,1,8,5,0.8,rising,ARRB1;GIPC1;TGFB1;TGFB2;TGFBR3
+REACT:R-HSA-9926550,"Regulation of MITF-M-dependent genes involved in extracellular matrix, focal adhesion and epithelial-to-mesenchymal transition",4,1,12,5,0.8,rising,CDH2;EDIL3;GXYLT2;ITGA2;PXDN
+REACT:R-HSA-9937080,Developmental Lineage of Multipotent Pancreatic Progenitor Cells,5,0,18,5,1.0,rising,CXCR4;FGF7;GATA6;PDX1;SOX9
+REACT:R-HSA-111447,Activation of BAD and translocation to mitochondria ,4,0,15,4,1.0,rising,AKT3;BCL2;YWHAH;YWHAZ
+REACT:R-HSA-111453,BH3-only proteins associate with and inactivate anti-apoptotic BCL-2 members,4,0,9,4,1.0,rising,BBC3;BCL2;BCL2L1;STAT3
+REACT:R-HSA-112409,RAF-independent MAPK1/3 activation,3,1,13,4,0.75,rising,DUSP10;DUSP7;DUSP8;PEA15
+REACT:R-HSA-113501,Inhibition of replication initiation of damaged DNA by RB1/E2F1,3,1,13,4,0.75,rising,E2F1;PPP2CB;PPP2R1A;TFDP2
+REACT:R-HSA-139915,Activation of PUMA and translocation to mitochondria,3,1,9,4,0.75,rising,BBC3;E2F1;TFDP2;TP53BP2
+REACT:R-HSA-141430,Inactivation of APC/C via direct inhibition of the APC/C complex,3,1,21,4,0.75,rising,ANAPC16;CDC20;MAD2L1;UBE2C
+REACT:R-HSA-156902,Peptide chain elongation,3,1,90,4,0.75,rising,RPL22L1;RPL36AL;RPS19;RPS27L
+REACT:R-HSA-162588,Budding and maturation of HIV virion,3,1,28,4,0.75,rising,CHMP4B;NEDD4L;UBB;VPS37C
+REACT:R-HSA-163359,Glucagon signaling in metabolic regulation,3,1,26,4,0.75,rising,ADCY1;ADCY3;ADCY7;GNB1
+REACT:R-HSA-163615,PKA activation,3,1,18,4,0.75,rising,ADCY1;ADCY3;ADCY7;NBEA
+REACT:R-HSA-164940,Nef mediated downregulation of MHC class I complex cell surface expression,4,0,10,4,1.0,rising,AP1B1;AP1M2;AP1S3;PACS1
+REACT:R-HSA-164944,Nef and signal transduction,3,1,8,4,0.75,rising,CD247;DOCK2;ELMO1;LCK
+REACT:R-HSA-165054,Rev-mediated nuclear export of HIV RNA,3,1,35,4,0.75,rising,NUP88;NUP93;RANGAP1;RCC1
+REACT:R-HSA-1679131,Trafficking and processing of endosomal TLR,4,0,13,4,1.0,rising,CTSK;TLR7;TLR8;UNC93B1
+REACT:R-HSA-168276,NS1 Mediated Effects on Host Pathways,3,1,38,4,0.75,rising,ISG15;KPNA2;NUP88;NUP93
+REACT:R-HSA-174437,Removal of the Flap Intermediate from the C-strand,3,1,17,4,0.75,rising,ACD;FEN1;PCNA;POT1
+REACT:R-HSA-176408,Regulation of APC/C activators between G1/S and early anaphase,3,1,25,4,0.75,rising,ANAPC16;CCNA2;CDC20;UBE2C
+REACT:R-HSA-176409,APC/C:Cdc20 mediated degradation of mitotic proteins,3,1,21,4,0.75,rising,ANAPC16;CDC20;MAD2L1;UBE2C
+REACT:R-HSA-180024,DARPP-32 events,4,0,24,4,1.0,rising,PDE4A;PDE4D;PPP2CB;PPP2R1A
+REACT:R-HSA-180336,SHC1 events in EGFR signaling,3,1,14,4,0.75,rising,EGFR;HBEGF;HRAS;SHC1
+REACT:R-HSA-1810476,RIP-mediated NFkB activation via ZBP1,4,0,17,4,1.0,rising,NFKB1;NFKB2;RIPK3;TICAM1
+REACT:R-HSA-1834941,STING mediated induction of host immune responses,4,0,5,4,1.0,rising,CGAS;IFI16;STING1;TRIM21
+REACT:R-HSA-190373,FGFR1c ligand binding and activation,3,1,14,4,0.75,rising,FGF17;FGF23;GIPC1;TGFBR3
+REACT:R-HSA-1912420,Pre-NOTCH Processing in Golgi,3,1,18,4,0.75,rising,ATP2A3;LFNG;NOTCH3;ST3GAL6
+REACT:R-HSA-192823,Viral mRNA Translation,3,1,90,4,0.75,rising,RPL22L1;RPL36AL;RPS19;RPS27L
+REACT:R-HSA-193634,Axonal growth inhibition (RHOA activation),3,1,9,4,0.75,rising,LINGO1;OMG;RHOA;RTN4
+REACT:R-HSA-196299,Beta-catenin phosphorylation cascade,4,0,17,4,1.0,rising,AXIN1;PPP2CB;PPP2R1A;PPP2R5B
+REACT:R-HSA-2022923,DS-GAG biosynthesis,4,0,11,4,1.0,rising,BGN;CSPG5;DCN;VCAN
+REACT:R-HSA-202670,ERKs are inactivated,4,0,13,4,1.0,rising,DUSP7;MAPK7;PPP2CB;PPP2R1A
+REACT:R-HSA-2033519,Activated point mutants of FGFR2,4,0,17,4,1.0,rising,FGF17;FGF23;FGF7;FGFR2
+REACT:R-HSA-209560,NF-kB is activated and signals survival,3,1,13,4,0.75,rising,IRAK1;NFKB1;SQSTM1;UBB
+REACT:R-HSA-2142688,Synthesis of 5-eicosatetraenoic acids,3,1,9,4,0.75,rising,ALOX5;ALOX5AP;GPX2;PON3
+REACT:R-HSA-2514859,"Inactivation, recovery and regulation of the phototransduction cascade",3,1,33,4,0.75,rising,CNGA1;GNB1;PRKCQ;RGS9
+REACT:R-HSA-2559584,Formation of Senescence-Associated Heterochromatin Foci (SAHF),4,0,17,4,1.0,rising,CABIN1;CDKN1A;H1-3;HMGA1
+REACT:R-HSA-264642,Acetylcholine Neurotransmitter Release Cycle,3,1,17,4,0.75,rising,SNAP25;STX1A;STXBP1;SYT1
+REACT:R-HSA-3134975,Regulation of innate immune responses to cytosolic DNA,3,1,14,4,0.75,rising,IRF3;STING1;TRIM21;UBB
+REACT:R-HSA-3232142,SUMOylation of ubiquitinylation proteins,3,1,39,4,0.75,rising,MDM2;NUP88;NUP93;PML
+REACT:R-HSA-3247509,Chromatin modifying enzymes,3,1,20,4,0.75,rising,BRWD1;PADI1;PADI2;SMARCA4
+REACT:R-HSA-3270619,IRF3-mediated induction of type I IFN,3,1,13,4,0.75,rising,IFI16;IRF3;STING1;XRCC5
+REACT:R-HSA-3595174,"Defective CHST14 causes EDS, musculocontractural type",4,0,8,4,1.0,rising,BGN;CSPG5;DCN;VCAN
+REACT:R-HSA-3656225,Defective CHST6 causes MCDC1,4,0,8,4,1.0,rising,FMOD;LUM;OMD;PRELP
+REACT:R-HSA-3656243,Defective ST3GAL3 causes MCT12 and EIEE15,4,0,8,4,1.0,rising,FMOD;LUM;OMD;PRELP
+REACT:R-HSA-3656244,Defective B4GALT1 causes B4GALT1-CDG (CDG-2d),4,0,8,4,1.0,rising,FMOD;LUM;OMD;PRELP
+REACT:R-HSA-372708,p130Cas linkage to MAPK signaling for integrins,4,0,15,4,1.0,rising,BCAR1;SRC;TLN1;VWF
+REACT:R-HSA-373760,L1CAM interactions,3,1,13,4,0.75,rising,EPHB2;LAMC1;LYPLA2;RANBP9
+REACT:R-HSA-375165,NCAM signaling for neurite out-growth,3,1,22,4,0.75,rising,HRAS;SPTAN1;SPTBN2;SRC
+REACT:R-HSA-379716,Cytosolic tRNA aminoacylation,3,1,24,4,0.75,rising,DARS1;MARS1;PPA1;WARS1
+REACT:R-HSA-391160,Signal regulatory protein family interactions,4,0,16,4,1.0,rising,FYB1;PTPN6;SIRPG;SRC
+REACT:R-HSA-391908,Prostanoid ligand receptors,4,0,9,4,1.0,rising,PTGDR;PTGER4;PTGFR;PTGIR
+REACT:R-HSA-399719,Trafficking of AMPA receptors,3,1,17,4,0.75,rising,CAMK2D;EPB41L1;GRIA3;MDM2
+REACT:R-HSA-399954,Sema3A PAK dependent Axon repulsion,4,0,16,4,1.0,rising,LIMK1;NRP1;PLXNA1;PLXNA3
+REACT:R-HSA-417957,P2Y receptors,4,0,12,4,1.0,rising,P2RY1;P2RY10;P2RY11;P2RY14
+REACT:R-HSA-425393,Transport of inorganic cations/anions and amino acids/oligopeptides,3,1,8,4,0.75,rising,CTNS;SLC1A1;SLC1A3;SLC1A7
+REACT:R-HSA-427389,ERCC6 (CSB) and EHMT2 (G9a) positively regulate rRNA expression,4,0,74,4,1.0,rising,CHD3;CHD4;GATAD2A;MTA2
+REACT:R-HSA-428540,Activation of RAC1,4,0,13,4,1.0,rising,NCK2;PAK5;ROBO1;SLIT2
+REACT:R-HSA-428542,Regulation of commissural axon pathfinding by SLIT and ROBO,4,0,10,4,1.0,rising,NELL2;ROBO1;SLIT2;SRC
+REACT:R-HSA-428543,Inactivation of CDC42 and RAC1,4,0,8,4,1.0,rising,ARHGAP39;ROBO1;SLIT2;SRGAP1
+REACT:R-HSA-428890,Role of ABL in ROBO-SLIT signaling,4,0,8,4,1.0,rising,CAP1;CAP2;ROBO1;SLIT2
+REACT:R-HSA-445144,Signal transduction by L1,3,1,21,4,0.75,rising,EGFR;ITGA9;ITGAV;NRP1
+REACT:R-HSA-450302,activated TAK1 mediates p38 MAPK activation,3,1,23,4,0.75,rising,IRAK1;NOD1;NOD2;UBB
+REACT:R-HSA-4655427,SUMOylation of DNA methylation proteins,3,1,16,4,0.75,rising,BMI1;CBX8;DNMT1;PHC2
+REACT:R-HSA-5083632,Defective C1GALT1C1 causes TNPS,3,1,17,4,0.75,rising,C1GALT1;MUC12;MUC13;MUC6
+REACT:R-HSA-5083636,Defective GALNT12 causes CRCS1,4,0,16,4,1.0,rising,GALNT12;MUC12;MUC13;MUC6
+REACT:R-HSA-5339716,Signaling by GSK3beta mutants,4,0,15,4,1.0,rising,AXIN1;PPP2CB;PPP2R1A;PPP2R5B
+REACT:R-HSA-5358747,CTNNB1 S33 mutants aren't phosphorylated,4,0,15,4,1.0,rising,AXIN1;PPP2CB;PPP2R1A;PPP2R5B
+REACT:R-HSA-5358749,CTNNB1 S37 mutants aren't phosphorylated,4,0,15,4,1.0,rising,AXIN1;PPP2CB;PPP2R1A;PPP2R5B
+REACT:R-HSA-5358751,CTNNB1 S45 mutants aren't phosphorylated,4,0,15,4,1.0,rising,AXIN1;PPP2CB;PPP2R1A;PPP2R5B
+REACT:R-HSA-5358752,CTNNB1 T41 mutants aren't phosphorylated,4,0,15,4,1.0,rising,AXIN1;PPP2CB;PPP2R1A;PPP2R5B
+REACT:R-HSA-5467337,APC truncation mutants have impaired AXIN binding,4,0,14,4,1.0,rising,AXIN1;PPP2CB;PPP2R1A;PPP2R5B
+REACT:R-HSA-5467340,AXIN missense mutants destabilize the destruction complex,4,0,14,4,1.0,rising,AXIN1;PPP2CB;PPP2R1A;PPP2R5B
+REACT:R-HSA-5467348,Truncations of AMER1 destabilize the destruction complex,4,0,14,4,1.0,rising,AXIN1;PPP2CB;PPP2R1A;PPP2R5B
+REACT:R-HSA-5617833,Cilium Assembly,3,1,20,4,0.75,rising,TUBA1A;TUBA1C;TUBB1;TUBB6
+REACT:R-HSA-5627123,RHO GTPases activate PAKs,4,0,21,4,1.0,rising,FLNA;LIMK1;MYH9;MYL9
+REACT:R-HSA-5654688,SHC-mediated cascade:FGFR1,4,0,21,4,1.0,rising,FGF17;FGF23;HRAS;SHC1
+REACT:R-HSA-5654704,SHC-mediated cascade:FGFR3,4,0,18,4,1.0,rising,FGF17;FGF23;HRAS;SHC1
+REACT:R-HSA-5654719,SHC-mediated cascade:FGFR4,4,0,20,4,1.0,rising,FGF17;FGF23;HRAS;SHC1
+REACT:R-HSA-5654726,Negative regulation of FGFR1 signaling,3,1,26,4,0.75,rising,CBL;FGF17;FGF23;UBB
+REACT:R-HSA-5654732,Negative regulation of FGFR3 signaling,3,1,22,4,0.75,rising,CBL;FGF17;FGF23;UBB
+REACT:R-HSA-5654733,Negative regulation of FGFR4 signaling,3,1,24,4,0.75,rising,CBL;FGF17;FGF23;UBB
+REACT:R-HSA-5674400,Constitutive Signaling by AKT1 E17K in Cancer,3,1,26,4,0.75,rising,AKT3;CDKN1A;MDM2;RICTOR
+REACT:R-HSA-5684264,MAP3K8 (TPL2)-dependent MAPK1/3 activation,3,1,16,4,0.75,rising,MAP3K8;NFKB1;TNIP2;UBB
+REACT:R-HSA-5693554,Resolution of D-loop Structures through Synthesis-Dependent Strand Annealing (SDSA),3,1,27,4,0.75,rising,BLM;RAD51AP1;RMI2;SEM1
+REACT:R-HSA-5693579,Homologous DNA Pairing and Strand Exchange,3,1,26,4,0.75,rising,BLM;RAD51AP1;RMI2;SEM1
+REACT:R-HSA-6788467,IL-6-type cytokine receptor ligand interactions,4,0,17,4,1.0,rising,CLCF1;CRLF1;LIF;OSMR
+REACT:R-HSA-6803204,TP53 Regulates Transcription of Genes Involved in Cytochrome C Release,4,0,20,4,1.0,rising,BAX;BBC3;BNIP3L;TP53BP2
+REACT:R-HSA-6803211,TP53 Regulates Transcription of Death Receptors and Ligands,4,0,12,4,1.0,rising,FAS;TNFRSF10B;TNFRSF10D;TP53BP2
+REACT:R-HSA-6804760,Regulation of TP53 Activity through Methylation,3,1,19,4,0.75,rising,CHEK2;MDM2;SMYD2;UBB
+REACT:R-HSA-6806942,MET Receptor Activation,3,1,6,4,0.75,rising,HGF;MET;SPINT1;SPINT2
+REACT:R-HSA-6814122,Cooperation of PDCL (PhLP1) and TRiC/CCT in G-protein beta folding,3,1,38,4,0.75,rising,CCT6B;GNA15;GNB1;RGS9
+REACT:R-HSA-69541,Stabilization of p53,3,1,11,4,0.75,rising,CDKN2A;CHEK2;MDM2;UBB
+REACT:R-HSA-72689,Formation of a pool of free 40S subunits,3,1,102,4,0.75,rising,RPL22L1;RPL36AL;RPS19;RPS27L
+REACT:R-HSA-72764,Eukaryotic Translation Termination,3,1,94,4,0.75,rising,RPL22L1;RPL36AL;RPS19;RPS27L
+REACT:R-HSA-76009,Platelet Aggregation (Plug Formation),3,1,10,4,0.75,rising,COL1A1;COL1A2;F2;VWF
+REACT:R-HSA-8850843,Phosphate bond hydrolysis by NTPDase proteins,3,1,8,4,0.75,rising,ENTPD2;ENTPD4;ENTPD5;ENTPD6
+REACT:R-HSA-8866652,Synthesis of active ubiquitin: roles of E1 and E2 enzymes,3,1,30,4,0.75,rising,UBB;UBE2C;UBE2Q2;UBE2T
+REACT:R-HSA-8939242,RUNX1 regulates transcription of genes involved in differentiation of keratinocytes,4,0,8,4,1.0,rising,CBFB;CTSK;RUNX1;SOCS3
+REACT:R-HSA-8951430,RUNX3 regulates WNT signaling,4,0,8,4,1.0,rising,CCND1;LEF1;MYC;RUNX3
+REACT:R-HSA-9013700,NOTCH4 Activation and Transmission of Signal to the Nucleus,4,0,11,4,1.0,rising,APH1B;JAG1;PSEN2;YWHAZ
+REACT:R-HSA-912446,Meiotic recombination,3,1,87,4,0.75,rising,BLM;CDK4;MND1;TEX15
+REACT:R-HSA-9610379,HCMV Late Events,3,1,115,4,0.75,rising,CHMP4B;NUP88;NUP93;VPS37C
+REACT:R-HSA-9613829,Chaperone Mediated Autophagy,3,1,22,4,0.75,rising,PLIN3;RNASE1;UBB;VIM
+REACT:R-HSA-9615933,Postmitotic nuclear pore complex (NPC) reformation,3,1,27,4,0.75,rising,AHCTF1;NUP93;RANGAP1;RCC1
+REACT:R-HSA-9634600,"Regulation of glycolysis by fructose 2,6-bisphosphate metabolism",3,1,12,4,0.75,rising,PFKFB1;PFKFB4;PPP2CB;PPP2R1A
+REACT:R-HSA-9673324,WNT5:FZD7-mediated leishmania damping,3,1,12,4,0.75,rising,CYBA;FZD7;JUN;MAPK8
+REACT:R-HSA-9690406,Transcriptional regulation of testis differentiation,4,0,13,4,1.0,rising,PTGDS;SOX9;WNT4;WT1
+REACT:R-HSA-9701192,Defective homologous recombination repair (HRR) due to BRCA1 loss of function,3,1,25,4,0.75,rising,BLM;RAD51AP1;RMI2;SEM1
+REACT:R-HSA-9701898,STAT3 nuclear events downstream of ALK signaling,4,0,11,4,1.0,rising,DNMT1;IL2RG;PRDM1;STAT3
+REACT:R-HSA-9704331,Defective HDR through Homologous Recombination Repair (HRR) due to PALB2 loss of BRCA1 binding function,3,1,25,4,0.75,rising,BLM;RAD51AP1;RMI2;SEM1
+REACT:R-HSA-9704646,Defective HDR through Homologous Recombination Repair (HRR) due to PALB2 loss of BRCA2/RAD51/RAD51C binding function,3,1,25,4,0.75,rising,BLM;RAD51AP1;RMI2;SEM1
+REACT:R-HSA-9733458,Induction of Cell-Cell Fusion,4,0,13,4,1.0,rising,ACE2;ANO4;ANO9;TMPRSS2
+REACT:R-HSA-9733709,Cardiogenesis,3,1,27,4,0.75,rising,GATA6;HAND2;HEY2;LEF1
+REACT:R-HSA-975577,N-Glycan antennae elongation,4,0,15,4,1.0,rising,B4GALT2;B4GALT5;MGAT4C;MGAT5
+REACT:R-HSA-975956,Nonsense Mediated Decay (NMD) independent of the Exon Junction Complex (EJC),3,1,96,4,0.75,rising,RPL22L1;RPL36AL;RPS19;RPS27L
+REACT:R-HSA-977068,Termination of O-glycan biosynthesis,4,0,23,4,1.0,rising,MUC12;MUC13;MUC6;ST6GALNAC4
+REACT:R-HSA-9796292,Formation of axial mesoderm,4,0,14,4,1.0,rising,LEF1;TEAD2;TEAD4;YAP1
+REACT:R-HSA-9830364,Formation of the nephric duct,4,0,18,4,1.0,rising,ID4;NPNT;OSR1;WFDC2
+REACT:R-HSA-9839394,TGFBR3 expression,3,1,28,4,0.75,rising,HELLS;KLF16;TCF3;TGFBR3
+REACT:R-HSA-9857377,Regulation of MITF-M-dependent genes involved in lysosome biogenesis and autophagy,4,0,17,4,1.0,rising,ATP6V0A1;ATP6V0B;ATP6V0D1;ATP6V1F
+REACT:R-HSA-9933946,Formation of the embryonic stem cell BAF (esBAF) complex,4,0,19,4,1.0,rising,BCL11A;BCL11B;SMARCA4;SMARCD3
+REACT:R-HSA-110312,Translesion synthesis by REV1,2,1,16,3,0.667,rising,MAD2L2;PCNA;UBB
+REACT:R-HSA-110314,Recognition of DNA damage by PCNA-containing replication complex,2,1,30,3,0.667,rising,DTL;PCNA;UBB
+REACT:R-HSA-110362,POLB-Dependent Long Patch Base Excision Repair,3,0,8,3,1.0,rising,ADPRS;FEN1;LIG1
+REACT:R-HSA-111457,Release of apoptotic factors from the mitochondria,3,0,7,3,1.0,rising,BAK1;BAX;CYCS
+REACT:R-HSA-1306955,GRB7 events in ERBB2 signaling,2,1,5,3,0.667,rising,ERBB3;NRG1;NRG2
+REACT:R-HSA-1461957,Beta defensins,3,0,34,3,1.0,rising,CCR2;DEFB1;TLR2
+REACT:R-HSA-1483115,Hydrolysis of LPC,3,0,9,3,1.0,rising,GPCPD1;PLA2G4A;PLBD1
+REACT:R-HSA-1483148,Synthesis of PG,2,1,8,3,0.667,rising,PLD2;PLD4;PLD6
+REACT:R-HSA-1489509,DAG and IP3 signaling,2,1,7,3,0.667,rising,ITPR1;ITPR2;PLCG1
+REACT:R-HSA-163560,Triglyceride catabolism,3,0,24,3,1.0,rising,FABP5;GPD2;PLIN3
+REACT:R-HSA-163767,PP2A-mediated dephosphorylation of key metabolic factors,2,1,7,3,0.667,rising,PFKFB1;PPP2CB;PPP2R1A
+REACT:R-HSA-164378,PKA activation in glucagon signalling,2,1,17,3,0.667,rising,ADCY1;ADCY3;ADCY7
+REACT:R-HSA-1663150,The activation of arylsulfatases,2,1,13,3,0.667,rising,ARSJ;ARSK;SUMF2
+REACT:R-HSA-170660,Adenylate cyclase activating pathway,2,1,10,3,0.667,rising,ADCY1;ADCY3;ADCY7
+REACT:R-HSA-171007,p38MAPK events,3,0,13,3,1.0,rising,HRAS;RALGDS;SRC
+REACT:R-HSA-173107,Binding and entry of HIV virion,2,1,4,3,0.667,rising,CCR5;CD4;CXCR4
+REACT:R-HSA-174403,Glutathione synthesis and recycling,2,1,12,3,0.667,rising,GCLC;GGT5;GGT6
+REACT:R-HSA-174411,Polymerase switching on the C-strand of the telomere,2,1,26,3,0.667,rising,ACD;PCNA;POT1
+REACT:R-HSA-174417,Telomere C-strand (Lagging Strand) Synthesis,2,1,11,3,0.667,rising,ACD;PCNA;POT1
+REACT:R-HSA-176407,Conversion from APC/C:Cdc20 to APC/C:Cdh1 in late anaphase,2,1,20,3,0.667,rising,ANAPC16;CDC20;UBE2C
+REACT:R-HSA-176412,Phosphorylation of the APC/C,2,1,20,3,0.667,rising,ANAPC16;PLK1;UBE2C
+REACT:R-HSA-179812,GRB2 events in EGFR signaling,2,1,13,3,0.667,rising,EGFR;HBEGF;HRAS
+REACT:R-HSA-180746,Nuclear import of Rev protein,2,1,34,3,0.667,rising,NUP88;NUP93;RCC1
+REACT:R-HSA-180910,Vpr-mediated nuclear import of PICs,2,1,34,3,0.667,rising,HMGA1;NUP88;NUP93
+REACT:R-HSA-190375,FGFR2c ligand binding and activation,3,0,13,3,1.0,rising,FGF17;FGF23;FGFR2
+REACT:R-HSA-193692,Regulated proteolysis of p75NTR,3,0,11,3,1.0,rising,APH1B;NFKB1;PSEN2
+REACT:R-HSA-196791,Vitamin D (calciferol) metabolism,2,1,12,3,0.667,rising,CYP27B1;GC;VDR
+REACT:R-HSA-196843,Vitamin B2 (riboflavin) metabolism,2,1,7,3,0.667,rising,ACP5;ENPP1;SLC52A2
+REACT:R-HSA-198323,AKT phosphorylates targets in the cytosol,3,0,14,3,1.0,rising,AKT3;CDKN1A;MDM2
+REACT:R-HSA-199418,Negative regulation of the PI3K/AKT network,2,1,8,3,0.667,rising,AKT3;PHLPP1;TRIB3
+REACT:R-HSA-2046105,Linoleic acid (LA) metabolism,2,1,8,3,0.667,rising,ABCD1;ACSL1;ELOVL1
+REACT:R-HSA-209543,p75NTR recruits signalling complexes,2,1,13,3,0.667,rising,IRAK1;SQSTM1;UBB
+REACT:R-HSA-212718,EGFR interacts with phospholipase C-gamma,2,1,9,3,0.667,rising,EGFR;HBEGF;PLCG1
+REACT:R-HSA-2142770,Synthesis of 15-eicosatetraenoic acid derivatives,3,0,6,3,1.0,rising,ALOX15B;GPX2;PTGS2
+REACT:R-HSA-2172127,DAP12 interactions,3,0,17,3,1.0,rising,CD300LB;CLEC5A;TREM2
+REACT:R-HSA-2179392,EGFR Transactivation by Gastrin,2,1,9,3,0.667,rising,EGFR;HBEGF;HRAS
+REACT:R-HSA-2197563,NOTCH2 intracellular domain regulates transcription,2,1,12,3,0.667,rising,FCER2;MAML2;MAML3
+REACT:R-HSA-2562578,TRIF-mediated programmed cell death,2,1,9,3,0.667,rising,CD14;RIPK3;TICAM1
+REACT:R-HSA-2586552,Signaling by Leptin,3,0,11,3,1.0,rising,SOCS3;STAT3;STAT5A
+REACT:R-HSA-264870,Caspase-mediated cleavage of cytoskeletal proteins,3,0,12,3,1.0,rising,GSN;SPTAN1;VIM
+REACT:R-HSA-2660826,Constitutive Signaling by NOTCH1 t(7;9)(NOTCH1:M1580_K2555) Translocation Mutant,3,0,7,3,1.0,rising,DLL1;JAG1;JAG2
+REACT:R-HSA-2995383,Initiation of Nuclear Envelope (NE) Reformation,2,1,19,3,0.667,rising,LEMD3;LMNA;PPP2R1A
+REACT:R-HSA-3134963,DEx/H-box helicases activate type I IFN and inflammatory cytokines production ,2,1,7,3,0.667,rising,DHX36;NFKB1;NFKB2
+REACT:R-HSA-3232118,SUMOylation of transcription factors,3,0,20,3,1.0,rising,CDKN2A;HIC1;MDM2
+REACT:R-HSA-3238698,WNT ligand biogenesis and trafficking,3,0,26,3,1.0,rising,WLS;WNT10B;WNT4
+REACT:R-HSA-354194,GRB2:SOS provides linkage to MAPK signaling for Integrins ,3,0,15,3,1.0,rising,SRC;TLN1;VWF
+REACT:R-HSA-3772470,Negative regulation of TCF-dependent signaling by WNT ligand antagonists,2,1,15,3,0.667,rising,DKK2;LRP6;WNT4
+REACT:R-HSA-380994,ATF4 activates genes in response to endoplasmic reticulum  stress,3,0,27,3,1.0,rising,ATF3;CCL2;CXCL8
+REACT:R-HSA-390666,Serotonin receptors,2,1,12,3,0.667,rising,HTR2A;HTR2B;HTR7
+REACT:R-HSA-390696,Adrenoceptors,2,1,9,3,0.667,rising,ADRA1A;ADRA2A;ADRA2C
+REACT:R-HSA-399997,Acetylcholine regulates insulin secretion,3,0,10,3,1.0,rising,GNA15;PLCB2;PLCB3
+REACT:R-HSA-418217,G beta:gamma signalling through PLC beta,3,0,20,3,1.0,rising,GNB1;PLCB2;PLCB3
+REACT:R-HSA-418886,Netrin mediated repulsion signals,3,0,8,3,1.0,rising,SRC;UNC5B;UNC5C
+REACT:R-HSA-425381,Bicarbonate transporters,2,1,10,3,0.667,rising,SLC4A10;SLC4A3;SLC4A7
+REACT:R-HSA-426048,Arachidonate production from DAG,2,1,5,3,0.667,rising,ABHD12;ABHD6;DAGLA
+REACT:R-HSA-433692,Proton-coupled monocarboxylate transport,3,0,6,3,1.0,rising,BSG;EMB;SLC16A3
+REACT:R-HSA-434316,Fatty Acids bound to GPR40 (FFAR1) regulate insulin secretion,3,0,8,3,1.0,rising,GNA15;PLCB2;PLCB3
+REACT:R-HSA-4411364,Binding of TCF/LEF:CTNNB1 to target gene promoters,3,0,8,3,1.0,rising,LEF1;MYC;RUNX3
+REACT:R-HSA-446210,Synthesis of UDP-N-acetyl-glucosamine,2,1,8,3,0.667,rising,GFPT2;NAGK;UAP1
+REACT:R-HSA-447041,CHL1 interactions,2,1,9,3,0.667,rising,ITGA1;ITGA2;NRP1
+REACT:R-HSA-4641265,Repression of WNT target genes,3,0,14,3,1.0,rising,LEF1;MYC;TLE3
+REACT:R-HSA-500657,Presynaptic function of Kainate receptors,3,0,21,3,1.0,rising,GNB1;PLCB2;PLCB3
+REACT:R-HSA-5083625,Defective GALNT3 causes HFTC,3,0,16,3,1.0,rising,MUC12;MUC13;MUC6
+REACT:R-HSA-5173105,O-linked glycosylation,3,0,15,3,1.0,rising,DAG1;EMID1;POFUT4
+REACT:R-HSA-5218920,VEGFR2 mediated vascular permeability,2,1,27,3,0.667,rising,AKT3;RICTOR;TRIB3
+REACT:R-HSA-5336415,Uptake and function of diphtheria toxin,3,0,6,3,1.0,rising,CD9;HBEGF;TXNRD1
+REACT:R-HSA-5576893,Phase 2 - plateau phase,2,1,15,3,0.667,rising,AKAP9;CACNA1C;CACNB1
+REACT:R-HSA-5635851,GLI proteins bind promoters of Hh responsive genes to promote transcription,3,0,7,3,1.0,rising,BOC;GLI1;GLI2
+REACT:R-HSA-5651801,PCNA-Dependent Long Patch Base Excision Repair,3,0,21,3,1.0,rising,FEN1;LIG1;PCNA
+REACT:R-HSA-5654219,Phospholipase C-mediated cascade: FGFR1,3,0,16,3,1.0,rising,FGF17;FGF23;PLCG1
+REACT:R-HSA-5654227,Phospholipase C-mediated cascade; FGFR3,3,0,13,3,1.0,rising,FGF17;FGF23;PLCG1
+REACT:R-HSA-5654228,Phospholipase C-mediated cascade; FGFR4,3,0,15,3,1.0,rising,FGF17;FGF23;PLCG1
+REACT:R-HSA-5654687,Downstream signaling of activated FGFR1,3,0,18,3,1.0,rising,FGF17;FGF23;FLRT2
+REACT:R-HSA-5654693,FRS-mediated FGFR1 signaling,3,0,23,3,1.0,rising,FGF17;FGF23;HRAS
+REACT:R-HSA-5654706,FRS-mediated FGFR3 signaling,3,0,20,3,1.0,rising,FGF17;FGF23;HRAS
+REACT:R-HSA-5654712,FRS-mediated FGFR4 signaling,3,0,22,3,1.0,rising,FGF17;FGF23;HRAS
+REACT:R-HSA-5656121,Translesion synthesis by POLI,2,1,17,3,0.667,rising,MAD2L2;PCNA;UBB
+REACT:R-HSA-5658623,FGFRL1 modulation of FGFR1 signaling,3,0,13,3,1.0,rising,FGF17;FGF23;SPRED1
+REACT:R-HSA-5660668,CLEC7A/inflammasome pathway,3,0,6,3,1.0,rising,IL1B;NFKB1;PYCARD
+REACT:R-HSA-5693616,Presynaptic phase of homologous DNA pairing and strand exchange,2,1,40,3,0.667,rising,BLM;RMI2;SEM1
+REACT:R-HSA-6784531,tRNA processing in the nucleus,2,1,59,3,0.667,rising,NUP88;NUP93;RPP25
+REACT:R-HSA-6803157,Antimicrobial peptides,3,0,36,3,1.0,rising,CTSG;LYZ;RNASE6
+REACT:R-HSA-6803205,TP53 regulates transcription of several additional cell death genes whose specific roles in p53-dependent apoptosis remain uncertain,3,0,14,3,1.0,rising,PERP;TP53BP2;TP53I3
+REACT:R-HSA-6803207,TP53 Regulates Transcription of Caspase Activators and Caspases,2,1,12,3,0.667,rising,APAF1;CASP1;CRADD
+REACT:R-HSA-68911,G2 Phase,3,0,5,3,1.0,rising,CCNA2;E2F1;E2F3
+REACT:R-HSA-69473,G2/M DNA damage checkpoint,3,0,83,3,1.0,rising,BLM;CHEK2;RMI2
+REACT:R-HSA-69563,p53-Dependent G1 DNA Damage Response,3,0,7,3,1.0,rising,CCNA2;CCNE1;CDKN1A
+REACT:R-HSA-71288,Creatine metabolism,2,1,11,3,0.667,rising,CKB;GATM;SLC6A11
+REACT:R-HSA-71336,Pentose phosphate pathway,2,1,12,3,0.667,rising,DERA;G6PD;TKT
+REACT:R-HSA-72200,mRNA Editing: C to U Conversion,2,1,8,3,0.667,rising,A1CF;APOBEC3C;APOBEC3H
+REACT:R-HSA-72649,Translation initiation complex formation,2,1,59,3,0.667,rising,EIF4B;RPS19;RPS27L
+REACT:R-HSA-75094,Formation of the Editosome,2,1,8,3,0.667,rising,A1CF;APOBEC3C;APOBEC3H
+REACT:R-HSA-75158,TRAIL  signaling,2,1,8,3,0.667,rising,TNFRSF10B;TNFRSF10D;TNFSF10
+REACT:R-HSA-75893,TNF signaling,3,0,7,3,1.0,rising,TNF;TRADD;TRAF2
+REACT:R-HSA-844455,The NLRP1 inflammasome,3,0,3,3,1.0,rising,BCL2;BCL2L1;NLRP1
+REACT:R-HSA-8849469,PTK6 Regulates RTKs and Their Effectors AKT1 and DOK1,2,1,9,3,0.667,rising,CBL;DOK1;UBB
+REACT:R-HSA-8849470,PTK6 Regulates Cell Cycle,3,0,6,3,1.0,rising,CCND1;CCNE1;CDK4
+REACT:R-HSA-8851680,Butyrophilin (BTN) family interactions,2,1,12,3,0.667,rising,BTN2A1;BTN2A2;XDH
+REACT:R-HSA-8852405,Signaling by MST1,3,0,5,3,1.0,rising,MST1R;SPINT1;SPINT2
+REACT:R-HSA-8857538,PTK6 promotes HIF1A stabilization,2,1,6,3,0.667,rising,EGFR;GPNMB;HBEGF
+REACT:R-HSA-8875513,MET interacts with TNS proteins,2,1,5,3,0.667,rising,HGF;MET;TNS3
+REACT:R-HSA-8875791,MET activates STAT3,2,1,3,3,0.667,rising,HGF;MET;STAT3
+REACT:R-HSA-8935964,RUNX1 regulates expression of components of tight junctions,3,0,5,3,1.0,rising,CBFB;CLDN5;RUNX1
+REACT:R-HSA-8939246,RUNX1 regulates transcription of genes involved in differentiation of myeloid cells,3,0,7,3,1.0,rising,CBFB;LGALS3;RUNX1
+REACT:R-HSA-8941332,RUNX2 regulates genes involved in cell migration,3,0,8,3,1.0,rising,AKT3;CBFB;ITGBL1
+REACT:R-HSA-8941333,RUNX2 regulates genes involved in differentiation of myeloid cells,3,0,4,3,1.0,rising,CBFB;LGALS3;RUNX1
+REACT:R-HSA-8941855,RUNX3 regulates CDKN1A transcription,3,0,7,3,1.0,rising,CDKN1A;RUNX3;TGFB1
+REACT:R-HSA-8951911,RUNX3 regulates RUNX1-mediated transcription,3,0,3,3,1.0,rising,CBFB;RUNX1;RUNX3
+REACT:R-HSA-8984722,Interleukin-35 Signalling,3,0,12,3,1.0,rising,IL27RA;STAT1;STAT3
+REACT:R-HSA-8985586,SLIT2:ROBO1 increases RHOA activity,3,0,4,3,1.0,rising,RHOA;ROBO1;SLIT2
+REACT:R-HSA-8986944,Transcriptional Regulation by MECP2,2,1,17,3,0.667,rising,IRAK1;PVALB;SGK1
+REACT:R-HSA-9012546,Interleukin-18 signaling,3,0,8,3,1.0,rising,ALOX5;IL18;IL18BP
+REACT:R-HSA-9013418,RHOBTB2 GTPase cycle,2,1,23,3,0.667,rising,ACTN1;CUL3;DBN1
+REACT:R-HSA-9017802,Noncanonical activation of NOTCH3,3,0,8,3,1.0,rising,APH1B;NOTCH3;PSEN2
+REACT:R-HSA-917729,Endosomal Sorting Complex Required For Transport (ESCRT),2,1,31,3,0.667,rising,CHMP4B;UBB;VPS37C
+REACT:R-HSA-933541,TRAF6 mediated IRF7 activation,2,1,29,3,0.667,rising,IRF3;TANK;TRAF2
+REACT:R-HSA-9613354,Lipophagy,2,1,9,3,0.667,rising,PLIN3;PRKAA2;PRKAG2
+REACT:R-HSA-9614657,FOXO-mediated transcription of cell death genes,2,1,16,3,0.667,rising,BBC3;CITED2;FASLG
+REACT:R-HSA-9648895,Response of EIF2AK1 (HRI) to heme deficiency,3,0,15,3,1.0,rising,ATF3;PPP1R15A;TRIB3
+REACT:R-HSA-9652817,Signaling by MAPK mutants,2,1,7,3,0.667,rising,DUSP10;DUSP7;DUSP8
+REACT:R-HSA-9662834,CD163 mediating an anti-inflammatory response,3,0,9,3,1.0,rising,MYH9;PLK2;RHBDF2
+REACT:R-HSA-9702518,STAT5 activation downstream of FLT3 ITD mutants,3,0,10,3,1.0,rising,BCL2L1;CDKN1A;STAT5A
+REACT:R-HSA-9709570,Impaired BRCA2 binding to RAD51,2,1,35,3,0.667,rising,BLM;RMI2;SEM1
+REACT:R-HSA-9709603,Impaired BRCA2 binding to PALB2,3,0,24,3,1.0,rising,BLM;RAD51AP1;RMI2
+REACT:R-HSA-975110,TRAF6 mediated IRF7 activation in TLR7/8 or 9 signaling,2,1,13,3,0.667,rising,IRAK1;TLR7;UBB
+REACT:R-HSA-975138,TRAF6 mediated induction of NFkB and MAP kinases upon TLR7/8 or 9 activation,3,0,9,3,1.0,rising,IRAK1;MAP3K1;TLR7
+REACT:R-HSA-9754119,Drug-mediated inhibition of CDK4/CDK6 activity,3,0,5,3,1.0,rising,CCND1;CCND3;CDK4
+REACT:R-HSA-9755779,SARS-CoV-2 targets host intracellular signalling and regulatory pathways,3,0,12,3,1.0,rising,AKT3;YWHAH;YWHAZ
+REACT:R-HSA-9758274,Regulation of NF-kappa B signaling,2,1,18,3,0.667,rising,NLRC5;TRAF2;UBB
+REACT:R-HSA-975871,MyD88 cascade initiated on plasma membrane,3,0,9,3,1.0,rising,IRAK1;MAP3K1;TLR5
+REACT:R-HSA-9759194,Nuclear events mediated by NFE2L2,3,0,9,3,1.0,rising,CDKN2A;PRKAA2;SQSTM1
+REACT:R-HSA-9818030,NFE2L2 regulating tumorigenic genes,3,0,11,3,1.0,rising,BCL2;BCL2L1;PDGFA
+REACT:R-HSA-9825895,"Regulation of MITF-M-dependent genes involved in DNA replication, damage repair and senescence",3,0,6,3,1.0,rising,LIG1;MCM2;MCM5
+REACT:R-HSA-9840309,Glycosphingolipid biosynthesis,3,0,19,3,1.0,rising,B3GNT5;B4GALT5;UGCG
+REACT:R-HSA-9845619,Enhanced cleavage of VWF variant by ADAMTS13,3,0,4,3,1.0,rising,COL1A1;COL1A2;VWF
+REACT:R-HSA-9845620,Enhanced binding of GP1BA variant to VWF multimer:collagen ,3,0,7,3,1.0,rising,COL1A1;COL1A2;VWF
+REACT:R-HSA-9845621,Defective VWF cleavage by ADAMTS13 variant,3,0,4,3,1.0,rising,COL1A1;COL1A2;VWF
+REACT:R-HSA-9845622,Defective VWF binding to collagen type I ,3,0,3,3,1.0,rising,COL1A1;COL1A2;VWF
+REACT:R-HSA-9846298,Defective binding of VWF variant to GPIb:IX:V,3,0,7,3,1.0,rising,COL1A1;COL1A2;VWF
+REACT:R-HSA-9909505,Modulation of host responses by IFN-stimulated genes,2,1,19,3,0.667,rising,HERC5;IFI6;ISG15
+REACT:R-HSA-9927353,Co-inhibition by BTLA,3,0,5,3,1.0,rising,BTLA;PTPN6;TNFRSF14
+REACT:R-HSA-9933939,Formation of the polybromo-BAF (pBAF) complex,2,1,18,3,0.667,rising,SMARCA2;SMARCA4;SMARCD3
+REACT:R-HSA-110320,Translesion Synthesis by POLH,1,1,19,2,0.5,too few genes,PCNA;UBB
+REACT:R-HSA-110328,Recognition and association of DNA glycosylase with site containing an affected pyrimidine,1,1,59,2,0.5,too few genes,ACD;POT1
+REACT:R-HSA-110329,Cleavage of the damaged pyrimidine ,1,1,59,2,0.5,too few genes,ACD;POT1
+REACT:R-HSA-110330,Recognition and association of DNA glycosylase with site containing an affected purine,1,1,54,2,0.5,too few genes,ACD;POT1
+REACT:R-HSA-110331,Cleavage of the damaged purine,1,1,54,2,0.5,too few genes,ACD;POT1
+REACT:R-HSA-111448,Activation of NOXA and translocation to mitochondria,1,1,5,2,0.5,too few genes,E2F1;TFDP2
+REACT:R-HSA-111458,Formation of apoptosome,2,0,6,2,1.0,too few genes,APAF1;CYCS
+REACT:R-HSA-111459,Activation of caspases through apoptosome-mediated cleavage,2,0,6,2,1.0,too few genes,APAF1;CYCS
+REACT:R-HSA-111463,SMAC (DIABLO) binds to IAPs ,2,0,7,2,1.0,too few genes,APAF1;CYCS
+REACT:R-HSA-111464,SMAC(DIABLO)-mediated dissociation of IAP:caspase complexes ,2,0,7,2,1.0,too few genes,APAF1;CYCS
+REACT:R-HSA-111465,Apoptotic cleavage of cellular proteins,2,0,18,2,1.0,too few genes,CLSPN;PRKCQ
+REACT:R-HSA-111932,CaMK IV-mediated phosphorylation of CREB,1,1,10,2,0.5,too few genes,CAMK2D;KPNA2
+REACT:R-HSA-112308,Presynaptic depolarization and calcium channel opening,2,0,11,2,1.0,too few genes,CACNA2D3;CACNB1
+REACT:R-HSA-112314,Neurotransmitter receptors and postsynaptic signal transmission,2,0,10,2,1.0,too few genes,GLRB;NBEA
+REACT:R-HSA-112399,IRS-mediated signalling,0,2,6,2,0.0,too few genes,PIK3CA;PIK3R1
+REACT:R-HSA-113418,Formation of the Early Elongation Complex,1,1,33,2,0.5,too few genes,NELFB;POLR2C
+REACT:R-HSA-1169092,Activation of RAS in B cells,2,0,5,2,1.0,too few genes,HRAS;RASGRP1
+REACT:R-HSA-1237112,Methionine salvage pathway,1,1,6,2,0.5,too few genes,ADI1;ENOPH1
+REACT:R-HSA-1251932,PLCG1 events in ERBB2 signaling,1,1,4,2,0.5,too few genes,EGFR;PLCG1
+REACT:R-HSA-1296067,Potassium transport channels,1,1,3,2,0.5,too few genes,KCNJ10;KCNJ16
+REACT:R-HSA-140342,Apoptosis induced DNA fragmentation,1,1,13,2,0.5,too few genes,H1-3;HMGB1
+REACT:R-HSA-141333,Biogenic amines are oxidatively deaminated to aldehydes by MAOA and MAOB,0,2,2,2,0.0,too few genes,MAOA;MAOB
+REACT:R-HSA-141405,Inhibition of the proteolytic activity of APC/C required for the onset of anaphase by mitotic spindle checkpoint components,2,0,2,2,1.0,too few genes,CDC20;MAD2L1
+REACT:R-HSA-1482883,Acyl chain remodeling of DAG and TAG,0,2,7,2,0.0,too few genes,DGAT2;PNPLA3
+REACT:R-HSA-1483226,Synthesis of PI,1,1,5,2,0.5,too few genes,PITPNM1;PITPNM3
+REACT:R-HSA-1483248,Synthesis of PIPs at the ER membrane,1,1,5,2,0.5,too few genes,MTMR2;PI4K2B
+REACT:R-HSA-159227,Transport of the SLBP independent Mature mRNA,1,1,35,2,0.5,too few genes,NUP88;NUP93
+REACT:R-HSA-159230,Transport of the SLBP Dependant Mature mRNA,1,1,36,2,0.5,too few genes,NUP88;NUP93
+REACT:R-HSA-1614603,Cysteine formation from homocysteine,0,2,2,2,0.0,too few genes,CBS;CTH
+REACT:R-HSA-162594,Early Phase of HIV Life Cycle,2,0,3,2,1.0,too few genes,FEN1;LIG1
+REACT:R-HSA-162658,Golgi Cisternae Pericentriolar Stack Reorganization,1,1,14,2,0.5,too few genes,PLK1;USO1
+REACT:R-HSA-163680,AMPK inhibits chREBP transcriptional activation activity,1,1,8,2,0.5,too few genes,PRKAA2;PRKAG2
+REACT:R-HSA-163685,Integration of energy metabolism,2,0,5,2,1.0,too few genes,PPP2CB;PPP2R1A
+REACT:R-HSA-163765,ChREBP activates metabolic gene expression,1,1,8,2,0.5,too few genes,ACACB;ACLY
+REACT:R-HSA-164843,2-LTR circle formation,1,1,7,2,0.5,too few genes,HMGA1;XRCC5
+REACT:R-HSA-1655829,Regulation of cholesterol biosynthesis by SREBP (SREBF),0,2,15,2,0.0,too few genes,SAR1B;SEC24B
+REACT:R-HSA-166166,MyD88-independent TLR4 cascade ,1,1,6,2,0.5,too few genes,CD14;TICAM1
+REACT:R-HSA-167044,Signalling to RAS,2,0,10,2,1.0,too few genes,HRAS;SHC1
+REACT:R-HSA-167158,Formation of the HIV-1 Early Elongation Complex,1,1,33,2,0.5,too few genes,NELFB;POLR2C
+REACT:R-HSA-167161,HIV Transcription Initiation,1,1,47,2,0.5,too few genes,POLR2C;TAF4B
+REACT:R-HSA-167162,RNA Polymerase II HIV Promoter Escape,1,1,47,2,0.5,too few genes,POLR2C;TAF4B
+REACT:R-HSA-167172,Transcription of the HIV genome,1,1,47,2,0.5,too few genes,POLR2C;TAF4B
+REACT:R-HSA-167242,Abortive elongation of HIV-1 transcript in the absence of Tat,1,1,23,2,0.5,too few genes,NELFB;POLR2C
+REACT:R-HSA-167590,Nef Mediated CD4 Down-regulation,1,1,9,2,0.5,too few genes,CD4;LCK
+REACT:R-HSA-168138,Toll Like Receptor 9 (TLR9) Cascade,0,2,5,2,0.0,too few genes,PIK3R4;RBSN
+REACT:R-HSA-168179,Toll Like Receptor TLR1:TLR2 Cascade,1,1,6,2,0.5,too few genes,CD14;TLR2
+REACT:R-HSA-168181,Toll Like Receptor 7/8 (TLR7/8) Cascade,2,0,2,2,1.0,too few genes,TLR7;TLR8
+REACT:R-HSA-168188,Toll Like Receptor TLR6:TLR2 Cascade,1,1,4,2,0.5,too few genes,CD14;TLR2
+REACT:R-HSA-168271,Transport of Ribonucleoproteins into the Host Nucleus,1,1,32,2,0.5,too few genes,NUP88;NUP93
+REACT:R-HSA-168333,NEP/NS2 Interacts with the Cellular Export Machinery,1,1,32,2,0.5,too few genes,NUP88;NUP93
+REACT:R-HSA-170822,Regulation of Glucokinase by Glucokinase Regulatory Protein,1,1,32,2,0.5,too few genes,NUP88;NUP93
+REACT:R-HSA-171306,Packaging Of Telomere Ends,1,1,50,2,0.5,too few genes,ACD;POT1
+REACT:R-HSA-173599,"Formation of the active cofactor, UDP-glucuronate",1,1,5,2,0.5,too few genes,SLC35D1;UXS1
+REACT:R-HSA-173623,Classical antibody-mediated complement activation,0,2,63,2,0.0,too few genes,C1R;C1S
+REACT:R-HSA-173736,Alternative complement activation,0,2,5,2,0.0,too few genes,CFB;CFP
+REACT:R-HSA-174362,Transport and metabolism of PAPS,2,0,6,2,1.0,too few genes,PAPSS1;SLC26A2
+REACT:R-HSA-174430,Telomere C-strand synthesis initiation,1,1,13,2,0.5,too few genes,ACD;POT1
+REACT:R-HSA-174490,Membrane binding and targetting of GAG proteins,1,1,14,2,0.5,too few genes,UBB;VPS37C
+REACT:R-HSA-176417,Phosphorylation of Emi1,2,0,6,2,1.0,too few genes,CDC20;PLK1
+REACT:R-HSA-177162,Conjugation of phenylacetate with glutamine,1,1,2,2,0.5,too few genes,ACSM1;ACSM2B
+REACT:R-HSA-180689,APOBEC3G mediated resistance to HIV-1 infection,2,0,5,2,1.0,too few genes,APOBEC3G;HMGA1
+REACT:R-HSA-1834949,Cytosolic sensors of pathogen-associated DNA ,0,2,23,2,0.0,too few genes,POLR3G;XRCC5
+REACT:R-HSA-1839122,Signaling by activated point mutants of FGFR1,2,0,11,2,1.0,too few genes,FGF17;FGF23
+REACT:R-HSA-1839130,Signaling by activated point mutants of FGFR3,2,0,12,2,1.0,too few genes,FGF17;FGF23
+REACT:R-HSA-1855183,"Synthesis of IP2, IP, and Ins in the cytosol",1,1,14,2,0.5,too few genes,IMPA1;ISYNA1
+REACT:R-HSA-190322,FGFR4 ligand binding and activation,2,0,13,2,1.0,too few genes,FGF17;FGF23
+REACT:R-HSA-190370,FGFR1b ligand binding and activation,1,1,8,2,0.5,too few genes,GIPC1;TGFBR3
+REACT:R-HSA-190372,FGFR3c ligand binding and activation,2,0,13,2,1.0,too few genes,FGF17;FGF23
+REACT:R-HSA-190377,FGFR2b ligand binding and activation,2,0,10,2,1.0,too few genes,FGF7;FGFR2
+REACT:R-HSA-190704,Oligomerization of connexins into connexons,1,1,3,2,0.5,too few genes,GJA1;GJB1
+REACT:R-HSA-190827,Transport of connexins along the secretory pathway,1,1,3,2,0.5,too few genes,GJA1;GJB1
+REACT:R-HSA-190873,Gap junction degradation,2,0,12,2,1.0,too few genes,DAB2;GJA1
+REACT:R-HSA-1912399,Pre-NOTCH Processing in the Endoplasmic Reticulum,1,1,6,2,0.5,too few genes,NOTCH3;POFUT1
+REACT:R-HSA-191650,Regulation of gap junction activity,2,0,3,2,1.0,too few genes,GJA1;SRC
+REACT:R-HSA-193048,Androgen biosynthesis,0,2,11,2,0.0,too few genes,CYP17A1;SRD5A1
+REACT:R-HSA-194002,Glucocorticoid biosynthesis,0,2,10,2,0.0,too few genes,CYP17A1;HSD11B1
+REACT:R-HSA-194306,Neurophilin interactions with VEGF and VEGFR,1,1,4,2,0.5,too few genes,KDR;NRP1
+REACT:R-HSA-195399,VEGF binds to VEGFR leading to receptor dimerization,1,1,8,2,0.5,too few genes,KDR;VEGFC
+REACT:R-HSA-196025,Formation of annular gap junctions,2,0,11,2,1.0,too few genes,DAB2;GJA1
+REACT:R-HSA-196780,Biotin transport and metabolism,0,2,11,2,0.0,too few genes,ACACB;BTD
+REACT:R-HSA-196807,Nicotinate metabolism,0,2,13,2,0.0,too few genes,NMRK1;NT5E
+REACT:R-HSA-196836,Vitamin C (ascorbate) metabolism,1,1,8,2,0.5,too few genes,SLC23A2;SLC2A3
+REACT:R-HSA-202040,G-protein activation,2,0,24,2,1.0,too few genes,GNA15;GNB1
+REACT:R-HSA-2025928,Calcineurin activates NFAT,1,1,9,2,0.5,too few genes,NFATC1;NFATC3
+REACT:R-HSA-210455,Astrocytic Glutamate-Glutamine Uptake And Metabolism,2,0,4,2,1.0,too few genes,SLC1A3;SLC38A1
+REACT:R-HSA-210747,Regulation of gene expression in early pancreatic precursor cells,1,1,8,2,0.5,too few genes,NR5A2;PDX1
+REACT:R-HSA-212300,PRC2 methylates histones and DNA,2,0,71,2,1.0,too few genes,DNMT1;PHF19
+REACT:R-HSA-2142700,Biosynthesis of Lipoxins (LX),2,0,6,2,1.0,too few genes,ALOX5;ALOX5AP
+REACT:R-HSA-2142753,Arachidonate metabolism,1,1,5,2,0.5,too few genes,FAAH2;PLA2G4A
+REACT:R-HSA-2151209,Activation of PPARGC1A (PGC-1alpha) by phosphorylation,1,1,10,2,0.5,too few genes,PRKAA2;PRKAG2
+REACT:R-HSA-2161541,Abacavir metabolism,0,2,4,2,0.0,too few genes,ADH1A;PCK1
+REACT:R-HSA-217271,FMO oxidises nucleophiles,2,0,3,2,1.0,too few genes,FMO1;FMO2
+REACT:R-HSA-2393930,Phosphate bond hydrolysis by NUDT proteins,0,2,7,2,0.0,too few genes,ADPRM;NUDT16
+REACT:R-HSA-2408522,Selenoamino acid metabolism,1,1,11,2,0.5,too few genes,DARS1;MARS1
+REACT:R-HSA-2408550,Metabolism of ingested H2SeO4 and H2SeO3 into H2Se,2,0,4,2,1.0,too few genes,PAPSS1;TXNRD1
+REACT:R-HSA-2428933,SHC-related events triggered by IGF1R,2,0,9,2,1.0,too few genes,HRAS;SHC1
+REACT:R-HSA-2454202,Fc epsilon receptor (FCERI) signaling,2,0,61,2,1.0,too few genes,FCER1A;SYK
+REACT:R-HSA-2465910,MASTL Facilitates Mitotic Progression,2,0,10,2,1.0,too few genes,PPP2CB;PPP2R1A
+REACT:R-HSA-2470946,Cohesin Loading onto Chromatin,0,2,10,2,0.0,too few genes,PDS5A;STAG2
+REACT:R-HSA-2473224,Antagonism of Activin by Follistatin,1,1,4,2,0.5,too few genes,FST;FSTL3
+REACT:R-HSA-2485179,Activation of the phototransduction cascade,1,1,11,2,0.5,too few genes,CNGA1;GNB1
+REACT:R-HSA-2514853,Condensation of Prometaphase Chromosomes,2,0,11,2,1.0,too few genes,NCAPG;NCAPH
+REACT:R-HSA-2892245,"POU5F1 (OCT4), SOX2, NANOG repress genes related to differentiation",2,0,10,2,1.0,too few genes,GATA6;TSC22D1
+REACT:R-HSA-2980766,Nuclear Envelope Breakdown,1,1,9,2,0.5,too few genes,LEMD3;LMNA
+REACT:R-HSA-3000471,Scavenging by Class B Receptors,1,1,6,2,0.5,too few genes,SCARB1;SSC5D
+REACT:R-HSA-3000497,Scavenging by Class H Receptors,1,1,4,2,0.5,too few genes,SPARC;STAB2
+REACT:R-HSA-3214842,HDMs demethylate histones,2,0,50,2,1.0,too few genes,ARID5B;RIOX2
+REACT:R-HSA-3301854,Nuclear Pore Complex (NPC) Disassembly,1,1,36,2,0.5,too few genes,NUP88;NUP93
+REACT:R-HSA-350562,Regulation of ornithine decarboxylase (ODC),0,2,38,2,0.0,too few genes,PSMD3;SEM1
+REACT:R-HSA-351202,Metabolism of polyamines,2,0,4,2,1.0,too few genes,AMD1;SRM
+REACT:R-HSA-375281,Hormone ligand-binding receptors,0,2,12,2,0.0,too few genes,GPHA2;TSHR
+REACT:R-HSA-380612,Metabolism of serotonin,0,2,2,2,0.0,too few genes,ALDH2;MAOA
+REACT:R-HSA-389359,CD28 dependent Vav1 pathway,2,0,12,2,1.0,too few genes,CD80;LCK
+REACT:R-HSA-389542,NADPH regeneration,0,2,2,2,0.0,too few genes,ACO1;IDH1
+REACT:R-HSA-389599,Alpha-oxidation of phytanate,0,2,6,2,0.0,too few genes,ALDH3A2;SLC27A2
+REACT:R-HSA-390918,Peroxisomal lipid metabolism,0,2,5,2,0.0,too few genes,ACBD5;HAO2
+REACT:R-HSA-392023,Adrenaline signalling through Alpha-2 adrenergic receptor,2,0,3,2,1.0,too few genes,ADRA2A;ADRA2C
+REACT:R-HSA-392154,Nitric oxide stimulates guanylate cyclase,2,0,6,2,1.0,too few genes,GUCY1A1;GUCY1B1
+REACT:R-HSA-392170,ADP signalling through P2Y purinoceptor 12,1,1,22,2,0.5,too few genes,GNAI1;GNB1
+REACT:R-HSA-392851,Prostacyclin signalling through prostacyclin receptor,2,0,19,2,1.0,too few genes,GNB1;PTGIR
+REACT:R-HSA-4085377,SUMOylation of SUMOylation proteins,1,1,35,2,0.5,too few genes,NUP88;NUP93
+REACT:R-HSA-416993,Trafficking of GluR2-containing AMPA receptors,1,1,17,2,0.5,too few genes,GRIA3;TSPAN7
+REACT:R-HSA-418346,Platelet homeostasis,1,1,8,2,0.5,too few genes,P2RX1;P2RX3
+REACT:R-HSA-418359,Reduction of cytosolic Ca++ levels,2,0,12,2,1.0,too few genes,ATP2A3;ATP2B4
+REACT:R-HSA-418885,DCC mediated attractive signaling,2,0,14,2,1.0,too few genes,ABLIM2;SRC
+REACT:R-HSA-420597,Nectin/Necl  trans heterodimerization,1,1,7,2,0.5,too few genes,NECTIN3;PVR
+REACT:R-HSA-425366,"Transport of bile salts and organic acids, metal ions and amine compounds",1,1,11,2,0.5,too few genes,SLC44A3;SLC47A1
+REACT:R-HSA-425986,Sodium/Proton exchangers,2,0,9,2,1.0,too few genes,SLC9A1;SLC9A5
+REACT:R-HSA-426117,Cation-coupled Chloride cotransporters,2,0,7,2,1.0,too few genes,SLC12A2;SLC12A4
+REACT:R-HSA-427413,NoRC negatively regulates rRNA expression,2,0,104,2,1.0,too few genes,DNMT1;SAP30
+REACT:R-HSA-428930,Thromboxane signalling through TP receptor,2,0,24,2,1.0,too few genes,GNA15;GNB1
+REACT:R-HSA-429958,mRNA decay by 3' to 5' exoribonuclease,0,2,16,2,0.0,too few genes,HBS1L;NT5C3B
+REACT:R-HSA-433137,"Sodium-coupled sulphate, di- and tri-carboxylate transporters",0,2,5,2,0.0,too few genes,SLC13A2;SLC13A5
+REACT:R-HSA-4419969,Depolymerization of the Nuclear Lamina,1,1,15,2,0.5,too few genes,LEMD3;LMNA
+REACT:R-HSA-442720,CREB1 phosphorylation through the activation of Adenylate Cyclase,1,1,12,2,0.5,too few genes,ADCY1;PRKX
+REACT:R-HSA-442742,CREB1 phosphorylation through NMDA receptor-mediated activation of RAS signaling,1,1,5,2,0.5,too few genes,RPS6KA1;RPS6KA6
+REACT:R-HSA-444257,RSK activation,1,1,7,2,0.5,too few genes,RPS6KA1;RPS6KA6
+REACT:R-HSA-444473,Formyl peptide receptors bind formyl peptides and many other ligands,2,0,8,2,1.0,too few genes,ANXA1;FPR3
+REACT:R-HSA-446203,Asparagine N-linked glycosylation,1,1,15,2,0.5,too few genes,ASGR1;TUSC3
+REACT:R-HSA-446343,Localization of the PINCH-ILK-PARVIN complex to focal adhesions,2,0,4,2,1.0,too few genes,ILK;PARVA
+REACT:R-HSA-446388,Regulation of cytoskeletal remodeling and cell spreading by IPP complex components,2,0,8,2,1.0,too few genes,ACTN1;PARVA
+REACT:R-HSA-450513,"Tristetraprolin (TTP, ZFP36) binds and destabilizes mRNA",1,1,17,2,0.5,too few genes,XRN1;ZFP36
+REACT:R-HSA-451927,Interleukin-2 family signaling,2,0,2,2,1.0,too few genes,HAVCR2;LGALS9
+REACT:R-HSA-452723,Transcriptional regulation of pluripotent stem cells,2,0,17,2,1.0,too few genes,KLF4;STAT3
+REACT:R-HSA-5083630,Defective LFNG causes SCDO3,2,0,5,2,1.0,too few genes,LFNG;NOTCH3
+REACT:R-HSA-5140745,"WNT5A-dependent internalization of FZD2, FZD5 and ROR2",2,0,13,2,1.0,too few genes,FZD2;ROR2
+REACT:R-HSA-5250924,B-WICH complex positively regulates rRNA expression,1,1,89,2,0.5,too few genes,KAT2B;MYO1C
+REACT:R-HSA-5250968,Toxicity of botulinum toxin type A (botA),2,0,4,2,1.0,too few genes,SNAP25;SV2A
+REACT:R-HSA-5250971,Toxicity of botulinum toxin type C (botC),2,0,3,2,1.0,too few genes,SNAP25;STX1A
+REACT:R-HSA-5250992,Toxicity of botulinum toxin type E (botE),2,0,3,2,1.0,too few genes,SNAP25;SV2A
+REACT:R-HSA-532668,N-glycan trimming in the ER and Calnexin/Calreticulin cycle,0,2,16,2,0.0,too few genes,RAD23B;UBB
+REACT:R-HSA-5334118,DNA methylation,1,1,63,2,0.5,too few genes,DNMT1;DNMT3L
+REACT:R-HSA-5340588,Signaling by RNF43 mutants,1,1,8,2,0.5,too few genes,FZD8;LRP6
+REACT:R-HSA-5358565,Mismatch repair (MMR) directed by MSH2:MSH6 (MutSalpha),2,0,14,2,1.0,too few genes,LIG1;PCNA
+REACT:R-HSA-5358606,Mismatch repair (MMR) directed by MSH2:MSH3 (MutSbeta),2,0,14,2,1.0,too few genes,LIG1;PCNA
+REACT:R-HSA-5576894,Phase 1 - inactivation of fast Na+ channels,1,1,7,2,0.5,too few genes,KCND1;KCND3
+REACT:R-HSA-5579026,Defective CYP11A1 causes AICSR,2,0,4,2,1.0,too few genes,CYP11A1;FDXR
+REACT:R-HSA-5602571,TRAF3 deficiency - HSE,2,0,3,2,1.0,too few genes,TICAM1;TRAF3
+REACT:R-HSA-5603029,IkBA variant leads to EDA-ID,2,0,7,2,1.0,too few genes,NFKB1;NFKB2
+REACT:R-HSA-5619107,Defective TPR may confer susceptibility towards thyroid papillary carcinoma (TPC),1,1,32,2,0.5,too few genes,NUP88;NUP93
+REACT:R-HSA-5625886,Activated PKN1 stimulates transcription of AR (androgen receptor) regulated genes KLK2 and KLK3,0,2,65,2,0.0,too few genes,AR;NCOA2
+REACT:R-HSA-5626978,TNFR1-mediated ceramide production,2,0,6,2,1.0,too few genes,NSMAF;TNF
+REACT:R-HSA-5632681,Ligand-receptor interactions,1,1,8,2,0.5,too few genes,BOC;CDON
+REACT:R-HSA-5638303,Inhibition of Signaling by Overexpressed EGFR,1,1,8,2,0.5,too few genes,EGFR;HBEGF
+REACT:R-HSA-5652227,Fructose biosynthesis,1,1,2,2,0.5,too few genes,AKR1B1;SORD
+REACT:R-HSA-5662702,Melanin biosynthesis,1,1,5,2,0.5,too few genes,DCT;OCA2
+REACT:R-HSA-5676934,Protein repair,1,1,6,2,0.5,too few genes,MSRB3;PCMT1
+REACT:R-HSA-5685938,HDR through Single Strand Annealing (SSA),2,0,37,2,1.0,too few genes,BLM;RMI2
+REACT:R-HSA-5690714,CD22 mediated BCR regulation,2,0,61,2,1.0,too few genes,CD79A;PTPN6
+REACT:R-HSA-629594,Highly calcium permeable postsynaptic nicotinic acetylcholine receptors,0,2,11,2,0.0,too few genes,CHRNA2;CHRNA4
+REACT:R-HSA-629597,Highly calcium permeable nicotinic acetylcholine receptors,0,2,9,2,0.0,too few genes,CHRNA2;CHRNA4
+REACT:R-HSA-6799198,Complex I biogenesis,0,2,68,2,0.0,too few genes,NDUFA5;NDUFS1
+REACT:R-HSA-6802953,RAS signaling downstream of NF1 loss-of-function variants,2,0,7,2,1.0,too few genes,HRAS;SPRED1
+REACT:R-HSA-6803529,FGFR2 alternative splicing,1,1,27,2,0.5,too few genes,FGFR2;POLR2C
+REACT:R-HSA-6804759,Regulation of TP53 Activity through Association with Co-factors,2,0,14,2,1.0,too few genes,AKT3;TP53BP2
+REACT:R-HSA-6811555,PI5P Regulates TP53 Acetylation,2,0,9,2,1.0,too few genes,PIN1;PIP4K2A
+REACT:R-HSA-6814848,Glycerophospholipid catabolism,2,0,7,2,1.0,too few genes,GDPD3;PNPLA6
+REACT:R-HSA-68689,CDC6 association with the ORC:origin complex,2,0,8,2,1.0,too few genes,CDC6;ORC1
+REACT:R-HSA-68884,Mitotic Telophase/Cytokinesis,2,0,3,2,1.0,too few genes,KIF20A;PLK1
+REACT:R-HSA-69166,Removal of the Flap Intermediate,2,0,14,2,1.0,too few genes,FEN1;PCNA
+REACT:R-HSA-69183,Processive synthesis on the lagging strand,2,0,10,2,1.0,too few genes,LIG1;PCNA
+REACT:R-HSA-69478,G2/M DNA replication checkpoint,2,0,7,2,1.0,too few genes,CCNA2;PKMYT1
+REACT:R-HSA-69895,Transcriptional  activation of  cell cycle inhibitor p21 ,2,0,4,2,1.0,too few genes,CDKN1A;PCBP4
+REACT:R-HSA-70370,Galactose catabolism,1,1,6,2,0.5,too few genes,AKR1B1;PGM1
+REACT:R-HSA-71032,Propionyl-CoA catabolism,0,2,5,2,0.0,too few genes,MCEE;MMUT
+REACT:R-HSA-71262,Carnitine synthesis,0,2,4,2,0.0,too few genes,BBOX1;SHMT1
+REACT:R-HSA-72695,"Formation of the ternary complex, and subsequently, the 43S complex",2,0,52,2,1.0,too few genes,RPS19;RPS27L
+REACT:R-HSA-727802,Transport of nucleotide sugars,1,1,9,2,0.5,too few genes,SLC35C1;SLC35D1
+REACT:R-HSA-73776,RNA Polymerase II Promoter Escape,1,1,47,2,0.5,too few genes,POLR2C;TAF4B
+REACT:R-HSA-73779,RNA Polymerase II Transcription Pre-Initiation And Promoter Opening,1,1,47,2,0.5,too few genes,POLR2C;TAF4B
+REACT:R-HSA-73980,RNA Polymerase III Transcription Termination,0,2,23,2,0.0,too few genes,NFIA;POLR3G
+REACT:R-HSA-74751,Insulin receptor signalling cascade,2,0,9,2,1.0,too few genes,HRAS;SHC1
+REACT:R-HSA-75157,FasL/ CD95L signaling,2,0,5,2,1.0,too few genes,FAS;FASLG
+REACT:R-HSA-75953,RNA Polymerase II Transcription Initiation,1,1,47,2,0.5,too few genes,POLR2C;TAF4B
+REACT:R-HSA-76042,RNA Polymerase II Transcription Initiation And Promoter Clearance,1,1,47,2,0.5,too few genes,POLR2C;TAF4B
+REACT:R-HSA-76071,RNA Polymerase III Transcription Initiation From Type 3 Promoter,1,1,28,2,0.5,too few genes,POLR3G;SNAPC2
+REACT:R-HSA-77346,Beta oxidation of decanoyl-CoA to octanoyl-CoA-CoA,0,2,6,2,0.0,too few genes,ACADM;HADH
+REACT:R-HSA-77348,Beta oxidation of octanoyl-CoA to hexanoyl-CoA,0,2,5,2,0.0,too few genes,ACADM;HADH
+REACT:R-HSA-77350,Beta oxidation of hexanoyl-CoA to butanoyl-CoA,0,2,5,2,0.0,too few genes,ACADS;HADH
+REACT:R-HSA-77595,Processing of Intronless Pre-mRNAs,0,2,20,2,0.0,too few genes,PAPOLA;WDR33
+REACT:R-HSA-83936,Transport of nucleosides and free purine and pyrimidine bases across the plasma membrane,2,0,12,2,1.0,too few genes,ARL2BP;SLC28A3
+REACT:R-HSA-844615,The AIM2 inflammasome,2,0,3,2,1.0,too few genes,CASP1;PYCARD
+REACT:R-HSA-879415,Advanced glycosylation endproduct receptor signaling,1,1,13,2,0.5,too few genes,HMGB1;LGALS3
+REACT:R-HSA-881907,Gastrin-CREB signalling pathway via PKC and MAPK,2,0,9,2,1.0,too few genes,MAPK7;RPS6KA1
+REACT:R-HSA-8849474,PTK6 Activates STAT3,2,0,4,2,1.0,too few genes,SOCS3;STAT3
+REACT:R-HSA-8851708,Signaling by FGFR2 IIIa TM,1,1,19,2,0.5,too few genes,FGFR2;POLR2C
+REACT:R-HSA-8865999,MET activates PTPN11,1,1,5,2,0.5,too few genes,HGF;MET
+REACT:R-HSA-8866427,VLDLR internalisation and degradation,0,2,16,2,0.0,too few genes,NR1H3;UBB
+REACT:R-HSA-8866907,Activation of the TFAP2 (AP-2) family of transcription factors,1,1,12,2,0.5,too few genes,CITED2;CITED4
+REACT:R-HSA-8866911,TFAP2 (AP-2) family regulates transcription of cell cycle factors,2,0,5,2,1.0,too few genes,CDKN1A;MYC
+REACT:R-HSA-8875555,MET activates RAP1 and RAC1,1,1,11,2,0.5,too few genes,HGF;MET
+REACT:R-HSA-8875656,MET receptor recycling,1,1,10,2,0.5,too few genes,HGF;MET
+REACT:R-HSA-8876493,InlA-mediated entry of Listeria monocytogenes into host cells,1,1,9,2,0.5,too few genes,SRC;UBB
+REACT:R-HSA-8939245,RUNX1 regulates transcription of genes involved in BCR signaling,2,0,6,2,1.0,too few genes,CBFB;RUNX1
+REACT:R-HSA-8939247,RUNX1 regulates transcription of genes involved in interleukin signaling,2,0,5,2,1.0,too few genes,CBFB;RUNX1
+REACT:R-HSA-8941237,Invadopodia formation,1,1,4,2,0.5,too few genes,ADAM19;SH3PXD2A
+REACT:R-HSA-8941284,RUNX2 regulates chondrocyte maturation,2,0,5,2,1.0,too few genes,CBFB;GLI2
+REACT:R-HSA-8963684,Tyrosine catabolism,0,2,5,2,0.0,too few genes,GSTZ1;TAT
+REACT:R-HSA-8963896,HDL assembly,1,1,8,2,0.5,too few genes,A2M;ABCA1
+REACT:R-HSA-8964011,HDL clearance,0,2,5,2,0.0,too few genes,HDLBP;SCARB1
+REACT:R-HSA-8964315,G beta:gamma signalling through BTK,2,0,18,2,1.0,too few genes,BTK;GNB1
+REACT:R-HSA-8964540,Alanine metabolism,0,2,2,2,0.0,too few genes,GPT;GPT2
+REACT:R-HSA-8964572,Lipid particle organization,1,1,6,2,0.5,too few genes,CIDEC;FITM1
+REACT:R-HSA-8981373,Intestinal hexose absorption,1,1,4,2,0.5,too few genes,SLC2A2;SLC5A1
+REACT:R-HSA-8983711,OAS antiviral response,2,0,9,2,1.0,too few genes,FLNA;OAS2
+REACT:R-HSA-8985801,Regulation of cortical dendrite branching,2,0,4,2,1.0,too few genes,NCK2;ROBO1
+REACT:R-HSA-9013425,RHOT1 GTPase cycle,0,2,5,2,0.0,too few genes,RAP1GDS1;RHOT1
+REACT:R-HSA-9013957,TLR3-mediated TICAM1-dependent programmed cell death,2,0,6,2,1.0,too few genes,RIPK3;TICAM1
+REACT:R-HSA-9014325,"TICAM1,TRAF6-dependent induction of TAK1 complex",1,1,11,2,0.5,too few genes,TICAM1;UBB
+REACT:R-HSA-9018682,Biosynthesis of maresins,1,1,2,2,0.5,too few genes,ALOX5;EPHX2
+REACT:R-HSA-9022537,Loss of MECP2 binding ability to the NCoR/SMRT complex,0,2,7,2,0.0,too few genes,NCOR1;TBL1X
+REACT:R-HSA-9026519,Activated NTRK2 signals through RAS,2,0,9,2,1.0,too few genes,HRAS;SHC1
+REACT:R-HSA-9027284,Erythropoietin activates RAS,2,0,14,2,1.0,too few genes,HRAS;SHC1
+REACT:R-HSA-9027604,Biosynthesis of electrophilic ω-3 PUFA oxo-derivatives,2,0,2,2,1.0,too few genes,ALOX5;PTGS2
+REACT:R-HSA-9028335,Activated NTRK2 signals through PI3K,0,2,7,2,0.0,too few genes,PIK3CA;PIK3R1
+REACT:R-HSA-9029558,NR1H2 & NR1H3 regulate gene expression linked to lipogenesis,0,2,9,2,0.0,too few genes,NR1H3;NRIP1
+REACT:R-HSA-9034864,Activated NTRK3 signals through RAS,2,0,8,2,1.0,too few genes,HRAS;SHC1
+REACT:R-HSA-918233,TRAF3-dependent IRF activation pathway,2,0,15,2,1.0,too few genes,IRF3;TRAF3
+REACT:R-HSA-937039,IRAK1 recruits IKK complex,1,1,14,2,0.5,too few genes,IRAK1;UBB
+REACT:R-HSA-948021,Transport to the Golgi and subsequent modification,0,2,2,2,0.0,too few genes,LMAN1;MCFD2
+REACT:R-HSA-9603505,NTRK3 as a dependence receptor,2,0,3,2,1.0,too few genes,BAX;NELFB
+REACT:R-HSA-9609523,Insertion of tail-anchored proteins into the endoplasmic reticulum membrane,1,1,22,2,0.5,too few genes,ALDH3A2;STX1A
+REACT:R-HSA-9614399,Regulation of localization of FOXO transcription factors,2,0,12,2,1.0,too few genes,AKT3;YWHAZ
+REACT:R-HSA-9617629,Regulation of FOXO transcriptional activity by acetylation,0,2,10,2,0.0,too few genes,KAT2B;SIRT1
+REACT:R-HSA-9623433,NR1H2 & NR1H3 regulate gene expression to control bile acid homeostasis,0,2,9,2,0.0,too few genes,NCOR1;NR1H3
+REACT:R-HSA-9627069,Regulation of the apoptosome activity,2,0,11,2,1.0,too few genes,APAF1;CYCS
+REACT:R-HSA-9630791,Evasion of Oncogene Induced Senescence Due to Defective p16INK4A binding to CDK4,2,0,2,2,1.0,too few genes,CDK4;CDKN2A
+REACT:R-HSA-9630794,Evasion of Oncogene Induced Senescence Due to Defective p16INK4A binding to CDK4 and CDK6,2,0,3,2,1.0,too few genes,CDK4;CDKN2A
+REACT:R-HSA-9632697,Evasion of Oxidative Stress Induced Senescence Due to Defective p16INK4A binding to CDK4,2,0,2,2,1.0,too few genes,CDK4;CDKN2A
+REACT:R-HSA-9632700,Evasion of Oxidative Stress Induced Senescence Due to Defective p16INK4A binding to CDK4 and CDK6,2,0,3,2,1.0,too few genes,CDK4;CDKN2A
+REACT:R-HSA-9634285,Constitutive Signaling by Overexpressed ERBB2,2,0,11,2,1.0,too few genes,HRAS;SHC1
+REACT:R-HSA-9635465,Suppression of apoptosis,2,0,7,2,1.0,too few genes,CTSG;RNF213
+REACT:R-HSA-9636383,Prevention of phagosomal-lysosomal fusion,1,1,9,2,0.5,too few genes,CORO1A;UBB
+REACT:R-HSA-9637628,Modulation by Mtb of host immune system,1,1,7,2,0.5,too few genes,TLR2;UBB
+REACT:R-HSA-964827,"Progressive trimming of alpha-1,2-linked mannose residues from Man9/8/7GlcNAc2 to produce Man5GlcNAc2",0,2,3,2,0.0,too few genes,MAN1A1;MAN1A2
+REACT:R-HSA-9657689,Defective SERPING1 causes hereditary angioedema,0,2,3,2,0.0,too few genes,F12;KLKB1
+REACT:R-HSA-9667769,Acetylcholine inhibits contraction of outer hair cells,0,2,5,2,0.0,too few genes,KCNMA1;KCNN2
+REACT:R-HSA-9672383,Defective factor IX causes thrombophilia,0,2,3,2,0.0,too few genes,F10;F9
+REACT:R-HSA-9672391,Defective F8 cleavage by thrombin,1,1,3,2,0.5,too few genes,F2;VWF
+REACT:R-HSA-9672396,Defective cofactor function of FVIIIa variant,0,2,3,2,0.0,too few genes,F10;F9
+REACT:R-HSA-9673202,Defective F9 variant does not activate FX,0,2,3,2,0.0,too few genes,F10;F9
+REACT:R-HSA-9673221,Defective F9 activation,0,2,6,2,0.0,too few genes,F11;F9
+REACT:R-HSA-9673240,Defective gamma-carboxylation of F9,0,2,2,2,0.0,too few genes,F9;GGCX
+REACT:R-HSA-9678110,Attachment and Entry,2,0,4,2,1.0,too few genes,ACE2;TMPRSS2
+REACT:R-HSA-9679504,Translation of Replicase and Assembly of the Replication Transcription Complex,1,1,13,2,0.5,too few genes,CHMP4B;PIK3R4
+REACT:R-HSA-9692913,SARS-CoV-1-mediated effects on programmed cell death,2,0,3,2,1.0,too few genes,BCL2L1;RIPK3
+REACT:R-HSA-9693928,Defective RIPK1-mediated regulated necrosis,2,0,5,2,1.0,too few genes,TRADD;TRAF2
+REACT:R-HSA-9694676,Translation of Replicase and Assembly of the Replication Transcription Complex,1,1,13,2,0.5,too few genes,CHMP4B;PIK3R4
+REACT:R-HSA-9705677,SARS-CoV-2 targets PDZ proteins in cell-cell junction,1,1,5,2,0.5,too few genes,GJA1;PALS1
+REACT:R-HSA-9706374,FLT3 signaling through SRC family kinases,2,0,6,2,1.0,too few genes,LCK;SYK
+REACT:R-HSA-9706377,FLT3 signaling by CBL mutants,1,1,7,2,0.5,too few genes,CBL;UBB
+REACT:R-HSA-9708530,Regulation of BACH1 activity,0,2,11,2,0.0,too few genes,SKP2;UBB
+REACT:R-HSA-9732724,IFNG signaling activates MAPKs,2,0,8,2,1.0,too few genes,IFNGR1;IFNGR2
+REACT:R-HSA-9734091,Drug-mediated inhibition of MET activation,1,1,2,2,0.5,too few genes,HGF;MET
+REACT:R-HSA-9735869,SARS-CoV-1 modulates host translation machinery,2,0,37,2,1.0,too few genes,RPS19;RPS27L
+REACT:R-HSA-9735871,SARS-CoV-1 targets host intracellular signalling and regulatory pathways,2,0,16,2,1.0,too few genes,YWHAH;YWHAZ
+REACT:R-HSA-975144,IRAK1 recruits IKK complex upon TLR7/8 or 9 stimulation,1,1,14,2,0.5,too few genes,IRAK1;UBB
+REACT:R-HSA-975155,MyD88 dependent cascade initiated on endosome,2,0,7,2,1.0,too few genes,IRAK1;TLR7
+REACT:R-HSA-9754189,Germ layer formation at gastrulation,1,1,17,2,0.5,too few genes,LEF1;TRIM33
+REACT:R-HSA-975578,Reactions specific to the complex N-glycan synthesis pathway,1,1,10,2,0.5,too few genes,CHST10;MAN2A1
+REACT:R-HSA-9758890,Transport of RCbl within the body,2,0,8,2,1.0,too few genes,ABCC1;CD320
+REACT:R-HSA-9759218,Cobalamin (Cbl) metabolism,0,2,7,2,0.0,too few genes,MMACHC;MMUT
+REACT:R-HSA-9761174,Formation of intermediate mesoderm,2,0,8,2,1.0,too few genes,FOXC1;OSR1
+REACT:R-HSA-9762292,Regulation of CDH11 function,2,0,9,2,1.0,too few genes,ADAM19;CDH11
+REACT:R-HSA-977347,Serine metabolism,1,1,11,2,0.5,too few genes,PHGDH;SERINC2
+REACT:R-HSA-977444,GABA B receptor activation,2,0,2,2,1.0,too few genes,GABBR1;GABBR2
+REACT:R-HSA-9818025,NFE2L2 regulating TCA cycle genes,1,1,3,2,0.5,too few genes,IDH1;ME1
+REACT:R-HSA-9818028,NFE2L2 regulates pentose phosphate pathway genes,2,0,8,2,1.0,too few genes,G6PD;TKT
+REACT:R-HSA-9818032,NFE2L2 regulating MDR associated enzymes,1,1,8,2,0.5,too few genes,ABCC1;ABCG2
+REACT:R-HSA-9818749,Regulation of NFE2L2 gene expression,2,0,8,2,1.0,too few genes,MYC;NFKB1
+REACT:R-HSA-9820865,Z-decay: degradation of maternal mRNAs by zygotically expressed factors,0,2,12,2,0.0,too few genes,EIF4B;TUT7
+REACT:R-HSA-9823730,Formation of definitive endoderm,2,0,17,2,1.0,too few genes,CXCR4;GATA6
+REACT:R-HSA-9824594,Regulation of MITF-M-dependent genes involved in apoptosis,2,0,19,2,1.0,too few genes,BCL2;BCL2A1
+REACT:R-HSA-9827857,Specification of primordial germ cells,2,0,12,2,1.0,too few genes,CXCR4;PRDM1
+REACT:R-HSA-9833109,Evasion by RSV of host interferon responses,1,1,34,2,0.5,too few genes,IRF3;UBB
+REACT:R-HSA-9833576,CDH11 homotypic and heterotypic interactions,2,0,7,2,1.0,too few genes,CDH11;CDH24
+REACT:R-HSA-9839397,TGFBR3 regulates FGF2 signaling,1,1,3,2,0.5,too few genes,GIPC1;TGFBR3
+REACT:R-HSA-9841251,Mitochondrial unfolded protein response (UPRmt),0,2,18,2,0.0,too few genes,CAT;ESR1
+REACT:R-HSA-9842640,Signaling by LTK in cancer,0,2,7,2,0.0,too few genes,PIK3CA;PIK3R1
+REACT:R-HSA-9845576,Glycosphingolipid transport,2,0,8,2,1.0,too few genes,GLTP;PLEKHA8
+REACT:R-HSA-9856872,Malate-aspartate shuttle,1,1,9,2,0.5,too few genes,SLC25A12;SLC25A13
+REACT:R-HSA-9857492,Protein lipoylation,0,2,10,2,0.0,too few genes,DBT;LIPT2
+REACT:R-HSA-9859138,"BCKDH synthesizes BCAA-CoA from KIC, KMVA, KIV",0,2,4,2,0.0,too few genes,BCKDHB;DBT
+REACT:R-HSA-9865113,Loss-of-function mutations in DBT cause MSUD2,0,2,4,2,0.0,too few genes,BCKDHB;DBT
+REACT:R-HSA-9865125,Loss-of-function mutations in BCKDHA or BCKDHB cause MSUD,0,2,3,2,0.0,too few genes,BCKDHB;DBT
+REACT:R-HSA-9865881,Complex III assembly,0,2,26,2,0.0,too few genes,LYRM7;NFS1
+REACT:R-HSA-9907570,Loss-of-function mutations in DLD cause MSUD3/DLDD,0,2,4,2,0.0,too few genes,BCKDHB;DBT
+REACT:R-HSA-9912481,Branched-chain ketoacid dehydrogenase kinase deficiency,0,2,5,2,0.0,too few genes,BCKDHB;DBT
+REACT:R-HSA-9918449,Defective visual phototransduction due to STRA6 loss of function,0,2,3,2,0.0,too few genes,RBP4;TTR
+REACT:R-HSA-110056,MAPK3 (ERK1) activation,0,1,10,1,0.0,too few genes,IL6R
+REACT:R-HSA-111367,SLBP independent Processing of Histone Pre-mRNAs,1,0,10,1,1.0,too few genes,SNRPB
+REACT:R-HSA-111446,Activation of BIM and translocation to mitochondria ,0,1,3,1,0.0,too few genes,MAPK8
+REACT:R-HSA-111452,Activation and oligomerization of BAK protein,1,0,2,1,1.0,too few genes,BAK1
+REACT:R-HSA-111471,Apoptotic factor-mediated response,1,0,2,1,1.0,too few genes,CDKN2A
+REACT:R-HSA-111931,PKA-mediated phosphorylation of CREB,1,0,5,1,1.0,too few genes,PRKX
+REACT:R-HSA-111933,Calmodulin induced events,1,0,5,1,1.0,too few genes,GRK2
+REACT:R-HSA-111957,Cam-PDE 1 activation,1,0,4,1,1.0,too few genes,PDE1A
+REACT:R-HSA-111995,phospho-PLA2 pathway,1,0,2,1,1.0,too few genes,PLA2G4A
+REACT:R-HSA-112126,ALKBH3 mediated reversal of alkylation damage,1,0,4,1,1.0,too few genes,ASCC3
+REACT:R-HSA-112310,Neurotransmitter release cycle,0,1,1,1,0.0,too few genes,NAAA
+REACT:R-HSA-112411,MAPK1 (ERK2) activation,0,1,9,1,0.0,too few genes,IL6R
+REACT:R-HSA-112412,SOS-mediated signalling,1,0,7,1,1.0,too few genes,HRAS
+REACT:R-HSA-113507,E2F-enabled inhibition of pre-replication complex formation,1,0,9,1,1.0,too few genes,ORC1
+REACT:R-HSA-114294,"Activation, translocation and oligomerization of BAX",1,0,2,1,1.0,too few genes,BAX
+REACT:R-HSA-1296025,ATP sensitive Potassium channels,0,1,4,1,0.0,too few genes,ABCC9
+REACT:R-HSA-1296061,HCN channels,1,0,4,1,1.0,too few genes,HCN1
+REACT:R-HSA-1299316,TWIK-releated acid-sensitive K+ channel (TASK),0,1,2,1,0.0,too few genes,KCNK3
+REACT:R-HSA-1300645,Acrosome Reaction and Sperm:Oocyte Membrane Binding,1,0,6,1,1.0,too few genes,CD9
+REACT:R-HSA-1362409,Mitochondrial iron-sulfur cluster biogenesis,0,1,12,1,0.0,too few genes,NFS1
+REACT:R-HSA-139910,Activation of BMF and translocation to mitochondria,0,1,3,1,0.0,too few genes,MAPK8
+REACT:R-HSA-140180,COX reactions,1,0,1,1,1.0,too few genes,PTGS1
+REACT:R-HSA-141334,PAOs oxidise polyamines to amines,1,0,2,1,1.0,too few genes,SMOX
+REACT:R-HSA-1461973,Defensins,1,0,35,1,1.0,too few genes,DEFB1
+REACT:R-HSA-1462054,Alpha-defensins,0,1,10,1,0.0,too few genes,CD4
+REACT:R-HSA-1474151,"Tetrahydrobiopterin (BH4) synthesis, recycling, salvage and regulation",0,1,10,1,0.0,too few genes,GCHFR
+REACT:R-HSA-1482798,Acyl chain remodeling of CL,1,0,6,1,1.0,too few genes,PLA2G4A
+REACT:R-HSA-1483152,Hydrolysis of LPE,1,0,2,1,1.0,too few genes,GPCPD1
+REACT:R-HSA-1483213,Synthesis of PE,0,1,13,1,0.0,too few genes,ETNK2
+REACT:R-HSA-1483255,PI Metabolism,1,0,4,1,1.0,too few genes,TNFAIP8
+REACT:R-HSA-156582,Acetylation,0,1,2,1,0.0,too few genes,NAT1
+REACT:R-HSA-1566977,Fibronectin matrix formation,0,1,6,1,0.0,too few genes,CEACAM8
+REACT:R-HSA-1606341,IRF3 mediated activation of type 1 IFN,1,0,5,1,1.0,too few genes,IRF3
+REACT:R-HSA-1614517,Sulfide oxidation to sulfate,0,1,6,1,0.0,too few genes,SUOX
+REACT:R-HSA-162592,Integration of provirus,1,0,5,1,1.0,too few genes,HMGA1
+REACT:R-HSA-162791,Attachment of GPI anchor to uPAR,1,0,7,1,1.0,too few genes,PLAUR
+REACT:R-HSA-163358,PKA-mediated phosphorylation of key metabolic factors,0,1,5,1,0.0,too few genes,PFKFB1
+REACT:R-HSA-163754,Insulin effects increased synthesis of Xylulose-5-Phosphate,1,0,2,1,1.0,too few genes,TKT
+REACT:R-HSA-163841,"Gamma carboxylation, hypusinylation, hydroxylation, and arylsulfatase activation",0,1,6,1,0.0,too few genes,TPST1
+REACT:R-HSA-165158,Activation of AKT2,1,0,4,1,1.0,too few genes,TRIB3
+REACT:R-HSA-165159,MTOR signalling,1,0,17,1,1.0,too few genes,LAMTOR4
+REACT:R-HSA-165160,PDE3B signalling,0,1,2,1,0.0,too few genes,PDE3B
+REACT:R-HSA-166020,Transfer of LPS from LBP carrier to CD14,0,1,2,1,0.0,too few genes,CD14
+REACT:R-HSA-167021,PLC-gamma1 signalling,1,0,3,1,1.0,too few genes,PLCG1
+REACT:R-HSA-167160,RNA Pol II CTD phosphorylation and interaction with CE during HIV infection,0,1,27,1,0.0,too few genes,POLR2C
+REACT:R-HSA-168164,Toll Like Receptor 3 (TLR3) Cascade,1,0,3,1,1.0,too few genes,TICAM1
+REACT:R-HSA-168176,Toll Like Receptor 5 (TLR5) Cascade,1,0,1,1,1.0,too few genes,TLR5
+REACT:R-HSA-168277,Influenza Virus Induced Apoptosis,1,0,2,1,1.0,too few genes,TGFB1
+REACT:R-HSA-169911,Regulation of Apoptosis,0,1,2,1,0.0,too few genes,OPA1
+REACT:R-HSA-175474,Assembly Of The HIV Virion,0,1,5,1,0.0,too few genes,UBB
+REACT:R-HSA-175567,Integration of viral DNA into host genomic DNA,1,0,3,1,1.0,too few genes,HMGA1
+REACT:R-HSA-177504,Retrograde neurotrophin signalling,1,0,14,1,1.0,too few genes,SH3GL2
+REACT:R-HSA-177539,Autointegration results in viral DNA circles,1,0,3,1,1.0,too few genes,HMGA1
+REACT:R-HSA-182218,Nef Mediated CD8 Down-regulation,1,0,7,1,1.0,too few genes,CD8B
+REACT:R-HSA-1855191,Synthesis of IPs in the nucleus,1,0,4,1,1.0,too few genes,IPPK
+REACT:R-HSA-187706,Signalling to p38 via RIT and RIN,1,0,5,1,1.0,too few genes,RIT1
+REACT:R-HSA-189085,Digestion of dietary carbohydrate,1,0,11,1,1.0,too few genes,CHIT1
+REACT:R-HSA-190371,FGFR3b ligand binding and activation,1,0,7,1,1.0,too few genes,FGF17
+REACT:R-HSA-190374,FGFR1c and Klotho ligand binding and activation,1,0,3,1,1.0,too few genes,FGF23
+REACT:R-HSA-191273,Cholesterol biosynthesis,1,0,24,1,1.0,too few genes,MVD
+REACT:R-HSA-192905,vRNP Assembly,0,1,2,1,0.0,too few genes,IPO5
+REACT:R-HSA-193144,Estrogen biosynthesis,0,1,6,1,0.0,too few genes,HSD17B14
+REACT:R-HSA-194313,VEGF ligand-receptor interactions,1,0,5,1,1.0,too few genes,VEGFC
+REACT:R-HSA-196783,Coenzyme A biosynthesis,0,1,7,1,0.0,too few genes,PANK1
+REACT:R-HSA-196819,Vitamin B1 (thiamin) metabolism,0,1,5,1,0.0,too few genes,SLC19A2
+REACT:R-HSA-198693,AKT phosphorylates targets in the nucleus,1,0,10,1,1.0,too few genes,AKT3
+REACT:R-HSA-198745,Signalling to STAT3,1,0,3,1,1.0,too few genes,STAT3
+REACT:R-HSA-198765,Signalling to ERK5,1,0,2,1,1.0,too few genes,MAPK7
+REACT:R-HSA-199920,CREB phosphorylation,1,0,7,1,1.0,too few genes,RPS6KA1
+REACT:R-HSA-201688,WNT mediated activation of DVL,1,0,8,1,1.0,too few genes,CSNK1E
+REACT:R-HSA-2023837,Signaling by FGFR2 amplification mutants,1,0,1,1,1.0,too few genes,FGFR2
+REACT:R-HSA-203615,eNOS activation,1,0,13,1,1.0,too few genes,CYGB
+REACT:R-HSA-203927,MicroRNA (miRNA) biogenesis,0,1,25,1,0.0,too few genes,POLR2C
+REACT:R-HSA-209563,Axonal growth stimulation,1,0,4,1,1.0,too few genes,RHOA
+REACT:R-HSA-209968,Thyroxine biosynthesis,0,1,7,1,0.0,too few genes,IYD
+REACT:R-HSA-211163,AKT-mediated inactivation of FOXO1A,1,0,4,1,1.0,too few genes,AKT3
+REACT:R-HSA-211916,Vitamins,1,0,6,1,1.0,too few genes,CYP27B1
+REACT:R-HSA-211957,Aromatic amines can be N-hydroxylated or N-dealkylated by CYP1A2,0,1,1,1,0.0,too few genes,CYP1A2
+REACT:R-HSA-2142712,Synthesis of 12-eicosatetraenoic acid derivatives,1,0,7,1,1.0,too few genes,GPX2
+REACT:R-HSA-2142789,Ubiquinol biosynthesis,0,1,13,1,0.0,too few genes,COQ5
+REACT:R-HSA-2160456,Phenylketonuria,0,1,1,1,0.0,too few genes,PAH
+REACT:R-HSA-2299718,Condensation of Prophase Chromosomes,1,0,72,1,1.0,too few genes,PLK1
+REACT:R-HSA-2395516,Electron transport from NADPH to Ferredoxin,1,0,3,1,1.0,too few genes,FDXR
+REACT:R-HSA-2404192,Signaling by Type 1 Insulin-like Growth Factor 1 Receptor (IGF1R),1,0,4,1,1.0,too few genes,CILP
+REACT:R-HSA-2408552,Methylation of MeSeH for excretion,1,0,1,1,1.0,too few genes,INMT
+REACT:R-HSA-2466712,"Biosynthesis of A2E, implicated in retinal degradation",0,1,1,1,0.0,too few genes,NAPEPLD
+REACT:R-HSA-2534343,Interaction With Cumulus Cells And The Zona Pellucida,0,1,11,1,0.0,too few genes,OVGP1
+REACT:R-HSA-2978092,Abnormal conversion of 2-oxoglutarate to 2-hydroxyglutarate,0,1,1,1,0.0,too few genes,IDH1
+REACT:R-HSA-2980767,"Activation of NIMA Kinases NEK9, NEK6, NEK7",1,0,7,1,1.0,too few genes,PLK1
+REACT:R-HSA-3000484,Scavenging by Class F Receptors,1,0,6,1,1.0,too few genes,HSPH1
+REACT:R-HSA-3065676,SUMO is conjugated to E1 (UBA2:SAE1),1,0,5,1,1.0,too few genes,SAE1
+REACT:R-HSA-3065678,"SUMO is transferred from E1 to E2 (UBE2I, UBC9)",1,0,7,1,1.0,too few genes,SAE1
+REACT:R-HSA-3065679,SUMO is proteolytically processed,0,1,6,1,0.0,too few genes,SENP2
+REACT:R-HSA-3134973,LRR FLII-interacting protein 1 (LRRFIP1) activates type I IFN production,1,0,5,1,1.0,too few genes,IRF3
+REACT:R-HSA-3249367,STAT6-mediated induction of chemokines,1,0,3,1,1.0,too few genes,STING1
+REACT:R-HSA-3274531,Glycogen storage disease type Ia (G6PC),0,1,1,1,0.0,too few genes,G6PC1
+REACT:R-HSA-3282872,Severe congenital neutropenia type 4 (G6PC3),1,0,1,1,1.0,too few genes,G6PC3
+REACT:R-HSA-3304356,SMAD2/3 Phosphorylation Motif Mutants in Cancer,1,0,6,1,1.0,too few genes,TGFB1
+REACT:R-HSA-3359473,Defective MMADHC causes MMAHCD,0,1,2,1,0.0,too few genes,MMACHC
+REACT:R-HSA-3359474,Defective MMACHC causes MAHCC,0,1,1,1,0.0,too few genes,MMACHC
+REACT:R-HSA-3359475,"Defective MMAA causes MMA, cblA type",0,1,2,1,0.0,too few genes,MMUT
+REACT:R-HSA-3359478,Defective MUT causes MMAM,0,1,2,1,0.0,too few genes,MMUT
+REACT:R-HSA-3359485,Defective CD320 causes MMATC,1,0,2,1,1.0,too few genes,CD320
+REACT:R-HSA-3371598,Defective BTD causes biotidinase deficiency,0,1,1,1,0.0,too few genes,BTD
+REACT:R-HSA-350864,Regulation of thyroid hormone activity,0,1,3,1,0.0,too few genes,DIO1
+REACT:R-HSA-351143,Agmatine biosynthesis,0,1,2,1,0.0,too few genes,AGMAT
+REACT:R-HSA-351200,Interconversion of polyamines,1,0,3,1,1.0,too few genes,SMOX
+REACT:R-HSA-351906,Apoptotic cleavage of cell adhesion  proteins,0,1,11,1,0.0,too few genes,DSG1
+REACT:R-HSA-352238,Breakdown of the nuclear lamina,1,0,3,1,1.0,too few genes,LMNA
+REACT:R-HSA-3560792,Defective SLC26A2 causes chondrodysplasias,1,0,1,1,1.0,too few genes,SLC26A2
+REACT:R-HSA-3642279,TGFBR2 MSI Frameshift Mutants in Cancer,1,0,2,1,1.0,too few genes,TGFB1
+REACT:R-HSA-3645790,TGFBR2 Kinase Domain Mutants in Cancer,1,0,3,1,1.0,too few genes,TGFB1
+REACT:R-HSA-3656234,Defective HEXA causes GM2G1 (Hyaluronan metabolism),1,0,1,1,1.0,too few genes,HEXA
+REACT:R-HSA-3656532,TGFBR1 KD Mutants in Cancer,1,0,6,1,1.0,too few genes,TGFB1
+REACT:R-HSA-3656535,TGFBR1 LBD Mutants in Cancer,1,0,4,1,1.0,too few genes,TGFB1
+REACT:R-HSA-379397,Enzymatic degradation of dopamine by COMT,0,1,4,1,0.0,too few genes,MAOA
+REACT:R-HSA-379398,Enzymatic degradation of Dopamine by monoamine oxidase,0,1,2,1,0.0,too few genes,MAOA
+REACT:R-HSA-379401,Dopamine clearance from the synaptic cleft,0,1,2,1,0.0,too few genes,MAOA
+REACT:R-HSA-381070,IRE1alpha activates chaperones,0,1,3,1,0.0,too few genes,ERN1
+REACT:R-HSA-3814836,Glycogen storage disease type XV (GYG1),1,0,2,1,1.0,too few genes,GYG1
+REACT:R-HSA-381771,"Synthesis, secretion, and inactivation of Glucagon-like Peptide-1 (GLP-1)",1,0,21,1,1.0,too few genes,GNB1
+REACT:R-HSA-3828062,Glycogen storage disease type 0 (muscle GYS1),1,0,2,1,1.0,too few genes,GYG1
+REACT:R-HSA-3858516,Glycogen storage disease type 0 (liver GYS2),0,1,2,1,0.0,too few genes,GYS2
+REACT:R-HSA-3878781,Glycogen storage disease type IV (GBE1),0,1,3,1,0.0,too few genes,GYS2
+REACT:R-HSA-388479,Vasopressin-like receptors,0,1,6,1,0.0,too few genes,AVPR1A
+REACT:R-HSA-390450,Folding of actin by CCT/TriC,0,1,10,1,0.0,too few genes,CCT6B
+REACT:R-HSA-390651,Dopamine receptors,0,1,5,1,0.0,too few genes,DRD1
+REACT:R-HSA-399710,Activation of AMPA receptors,1,0,4,1,1.0,too few genes,GRIA3
+REACT:R-HSA-4085011,"Defective GNE causes sialuria, NK and IBM2",0,1,1,1,0.0,too few genes,GNE
+REACT:R-HSA-417973,Adenosine P1 receptors,1,0,4,1,1.0,too few genes,ADORA1
+REACT:R-HSA-418889,Caspase activation via Dependence Receptors in the absence of ligand,1,0,10,1,1.0,too few genes,UNC5B
+REACT:R-HSA-419812,Calcitonin-like ligand receptors,1,0,10,1,1.0,too few genes,RAMP2
+REACT:R-HSA-420092,Glucagon-type ligand receptors,1,0,33,1,1.0,too few genes,GNB1
+REACT:R-HSA-425561,Sodium/Calcium exchangers,0,1,11,1,0.0,too few genes,SLC24A2
+REACT:R-HSA-427359,SIRT1 negatively regulates rRNA expression,0,1,66,1,0.0,too few genes,SIRT1
+REACT:R-HSA-427589,Type II Na+/Pi cotransporters,0,1,3,1,0.0,too few genes,SLC34A1
+REACT:R-HSA-427601,Multifunctional anion exchangers,1,0,9,1,1.0,too few genes,SLC26A2
+REACT:R-HSA-427652,Sodium-coupled phosphate cotransporters,1,0,2,1,1.0,too few genes,SLC20A1
+REACT:R-HSA-427975,Proton/oligopeptide cotransporters,1,0,3,1,1.0,too few genes,SLC15A3
+REACT:R-HSA-432030,Transport of glycerol from adipocytes to the liver by Aquaporins,0,1,2,1,0.0,too few genes,AQP9
+REACT:R-HSA-4341670,Defective NEU1 causes sialidosis,1,0,3,1,1.0,too few genes,CTSA
+REACT:R-HSA-434313,Intracellular metabolism of fatty acids regulates insulin secretion,1,0,3,1,1.0,too few genes,ACSL4
+REACT:R-HSA-435368,Zinc efflux and compartmentalization by the SLC30 family,0,1,5,1,0.0,too few genes,SLC30A1
+REACT:R-HSA-442729,CREB1 phosphorylation through the activation of CaMKII/CaMKK/CaMKIV cascasde,1,0,8,1,1.0,too few genes,KPNA2
+REACT:R-HSA-444821,Relaxin receptors,0,1,8,1,0.0,too few genes,RXFP1
+REACT:R-HSA-446199,Synthesis of dolichyl-phosphate,1,0,7,1,1.0,too few genes,MVD
+REACT:R-HSA-446205,Synthesis of GDP-mannose,1,0,6,1,1.0,too few genes,HK1
+REACT:R-HSA-447038,NrCAM interactions,1,0,7,1,1.0,too few genes,DLG3
+REACT:R-HSA-447043,Neurofascin interactions,1,0,7,1,1.0,too few genes,NFASC
+REACT:R-HSA-448424,Interleukin-17 signaling,0,1,8,1,0.0,too few genes,IL17RC
+REACT:R-HSA-450385,Butyrate Response Factor 1 (BRF1) binds and destabilizes mRNA,0,1,17,1,0.0,too few genes,XRN1
+REACT:R-HSA-450604,KSRP (KHSRP) binds and destabilizes mRNA,1,0,17,1,1.0,too few genes,YWHAZ
+REACT:R-HSA-451308,Activation of Ca-permeable Kainate Receptor,1,0,10,1,1.0,too few genes,DLG3
+REACT:R-HSA-4755510,SUMOylation of immune response proteins,1,0,12,1,1.0,too few genes,NFKB2
+REACT:R-HSA-500753,Pyrimidine biosynthesis,0,1,3,1,0.0,too few genes,DHODH
+REACT:R-HSA-5083628,"Defective POMGNT1 causes MDDGA3, MDDGB3 and MDDGC3",1,0,2,1,1.0,too few genes,DAG1
+REACT:R-HSA-5083629,"Defective POMT2 causes MDDGA2, MDDGB2 and MDDGC2",1,0,3,1,1.0,too few genes,DAG1
+REACT:R-HSA-5083633,"Defective POMT1 causes MDDGA1, MDDGB1 and MDDGC1",1,0,3,1,1.0,too few genes,DAG1
+REACT:R-HSA-5210891,Uptake and function of anthrax toxins,1,0,11,1,1.0,too few genes,ANTXR1
+REACT:R-HSA-5250955,Toxicity of botulinum toxin type D (botD),1,0,5,1,1.0,too few genes,SV2A
+REACT:R-HSA-5250958,Toxicity of botulinum toxin type B (botB),0,1,3,1,0.0,too few genes,SYT1
+REACT:R-HSA-5250981,Toxicity of botulinum toxin type F (botF),1,0,5,1,1.0,too few genes,SV2A
+REACT:R-HSA-5250989,Toxicity of botulinum toxin type G (botG),0,1,3,1,0.0,too few genes,SYT1
+REACT:R-HSA-5263617,Metabolism of ingested MeSeO2H into MeSeH,1,0,1,1,1.0,too few genes,TXNRD1
+REACT:R-HSA-5339717,Signaling by LRP5 mutants ,1,0,6,1,1.0,too few genes,DKK2
+REACT:R-HSA-5357609,Glycogen storage disease type II (GAA),1,0,2,1,1.0,too few genes,GYG1
+REACT:R-HSA-5358493,Synthesis of diphthamide-EEF2,1,0,8,1,1.0,too few genes,DPH2
+REACT:R-HSA-5368598,Negative regulation of TCF-dependent signaling by DVL-interacting proteins,0,1,5,1,0.0,too few genes,CXXC4
+REACT:R-HSA-5467345,Deletions in the AXIN1 gene destabilize the destruction complex,1,0,1,1,1.0,too few genes,AXIN1
+REACT:R-HSA-5576886,Phase 4 - resting membrane potential,0,1,19,1,0.0,too few genes,KCNK3
+REACT:R-HSA-5576890,Phase 3 - rapid repolarisation,0,1,9,1,0.0,too few genes,AKAP9
+REACT:R-HSA-5578996,Defective CYP27A1 causes CTX,0,1,1,1,0.0,too few genes,CYP27A1
+REACT:R-HSA-5578997,Defective AHCY causes HMAHCHD,0,1,1,1,0.0,too few genes,AHCY
+REACT:R-HSA-5578999,Defective GCLC causes HAGGSD,0,1,2,1,0.0,too few genes,GCLC
+REACT:R-HSA-5579012,Defective MAOA causes BRUNS,0,1,1,1,0.0,too few genes,MAOA
+REACT:R-HSA-5579014,Defective CYP27B1 causes VDDR1A,1,0,1,1,1.0,too few genes,CYP27B1
+REACT:R-HSA-5579020,Defective SLC35D1 causes SCHBCKD,0,1,1,1,0.0,too few genes,SLC35D1
+REACT:R-HSA-5579024,Defective MAT1A causes MATD,0,1,1,1,0.0,too few genes,MAT1A
+REACT:R-HSA-5579028,Defective CYP17A1 causes AH5,0,1,1,1,0.0,too few genes,CYP17A1
+REACT:R-HSA-5602415,UNC93B1 deficiency - HSE,1,0,2,1,1.0,too few genes,UNC93B1
+REACT:R-HSA-5602566,TICAM1 deficiency - HSE,1,0,2,1,1.0,too few genes,TICAM1
+REACT:R-HSA-5602680,MyD88 deficiency (TLR5),1,0,2,1,1.0,too few genes,TLR5
+REACT:R-HSA-5603037,IRAK4 deficiency (TLR5),1,0,4,1,1.0,too few genes,TLR5
+REACT:R-HSA-5609974,Defective PGM1 causes PGM1-CDG,0,1,1,1,0.0,too few genes,PGM1
+REACT:R-HSA-5619040,Defective SLC34A1 causes hypophosphatemic nephrolithiasis/osteoporosis 1 (NPHLOP1),0,1,1,1,0.0,too few genes,SLC34A1
+REACT:R-HSA-5619044,Defective SLC6A19 causes Hartnup disorder (HND),1,0,1,1,1.0,too few genes,SLC6A19
+REACT:R-HSA-5619049,Defective SLC40A1 causes hemochromatosis 4 (HFE4) (macrophages),0,1,2,1,0.0,too few genes,CP
+REACT:R-HSA-5619056,Defective HK1 causes hexokinase deficiency (HK deficiency),1,0,1,1,1.0,too few genes,HK1
+REACT:R-HSA-5619058,"Defective SLCO1B3 causes hyperbilirubinemia, Rotor type (HBLRR)",0,1,1,1,0.0,too few genes,SLCO1B3
+REACT:R-HSA-5619060,Defective CP causes aceruloplasminemia (ACERULOP),0,1,2,1,0.0,too few genes,CP
+REACT:R-HSA-5619062,Defective SLC1A3 causes episodic ataxia 6 (EA6),1,0,1,1,1.0,too few genes,SLC1A3
+REACT:R-HSA-5619066,Defective SLC22A18 causes lung cancer (LNCR) and embryonal rhabdomyosarcoma 1 (RMSE1),1,0,1,1,1.0,too few genes,SLC67A1
+REACT:R-HSA-5619067,Defective SLC1A1 is implicated in schizophrenia 18 (SCZD18) and dicarboxylic aminoaciduria (DCBXA),0,1,1,1,0.0,too few genes,SLC1A1
+REACT:R-HSA-5619070,Defective SLC16A1 causes symptomatic deficiency in lactate transport (SDLT),1,0,2,1,1.0,too few genes,BSG
+REACT:R-HSA-5619078,Defective SLC35C1 causes congenital disorder of glycosylation 2C (CDG2C),1,0,1,1,1.0,too few genes,SLC35C1
+REACT:R-HSA-5619095,"Defective SLCO2A1 causes primary, autosomal recessive hypertrophic osteoarthropathy 2 (PHOAR2)",1,0,1,1,1.0,too few genes,SLCO2A1
+REACT:R-HSA-5619098,Defective SLC2A2 causes Fanconi-Bickel syndrome (FBS),0,1,1,1,0.0,too few genes,SLC2A2
+REACT:R-HSA-5619099,"Defective AVP does not bind AVPR1A,B and causes neurohypophyseal diabetes insipidus (NDI)",0,1,3,1,0.0,too few genes,AVPR1A
+REACT:R-HSA-5619108,Defective SLC27A4 causes ichthyosis prematurity syndrome (IPS),1,0,1,1,1.0,too few genes,SLC27A4
+REACT:R-HSA-5619109,Defective SLC6A2 causes orthostatic intolerance (OI),1,0,1,1,1.0,too few genes,SLC6A2
+REACT:R-HSA-5619110,"Defective SLCO1B1 causes hyperbilirubinemia, Rotor type (HBLRR)",0,1,1,1,0.0,too few genes,SLCO1B1
+REACT:R-HSA-5620916,VxPx cargo-targeting to cilium,1,0,21,1,1.0,too few genes,ASAP1
+REACT:R-HSA-5620922,BBSome-mediated cargo-targeting to cilium,1,0,23,1,1.0,too few genes,BBS12
+REACT:R-HSA-5624138,Trafficking of myristoylated proteins to the cilium,1,0,5,1,1.0,too few genes,CYS1
+REACT:R-HSA-5627083,RHO GTPases regulate CFTR trafficking,1,0,3,1,1.0,too few genes,RHOQ
+REACT:R-HSA-5649702,APEX1-Independent Resolution of AP Sites via the Single Nucleotide Replacement Pathway,1,0,7,1,1.0,too few genes,PNKP
+REACT:R-HSA-5655799,Defective SLC40A1 causes hemochromatosis 4 (HFE4) (duodenum),1,0,2,1,1.0,too few genes,HEPH
+REACT:R-HSA-5656364,Defective SLC5A1 causes congenital glucose/galactose malabsorption (GGM),1,0,1,1,1.0,too few genes,SLC5A1
+REACT:R-HSA-5657560,Hereditary fructose intolerance,0,1,1,1,0.0,too few genes,ALDOB
+REACT:R-HSA-5657562,Essential fructosuria,0,1,1,1,0.0,too few genes,KHK
+REACT:R-HSA-5657655,MGMT-mediated DNA damage reversal,0,1,1,1,0.0,too few genes,MGMT
+REACT:R-HSA-5658034,HHAT G278V doesn't palmitoylate Hh-Np,1,0,4,1,1.0,too few genes,HHAT
+REACT:R-HSA-5659735,Defective SLC6A19 causes Hartnup disorder (HND),1,0,1,1,1.0,too few genes,SLC6A19
+REACT:R-HSA-5660862,Defective SLC7A7 causes lysinuric protein intolerance (LPI),1,0,2,1,1.0,too few genes,SLC7A7
+REACT:R-HSA-5662853,Essential pentosuria,0,1,1,1,0.0,too few genes,DCXR
+REACT:R-HSA-5678420,"Defective ABCC9 causes CMD10, ATFB12 and Cantu syndrome",0,1,2,1,0.0,too few genes,ABCC9
+REACT:R-HSA-5682113,Defective ABCA1 causes TGD,0,1,2,1,0.0,too few genes,ABCA1
+REACT:R-HSA-5682294,Defective ABCA12 causes ARCI4B,1,0,1,1,1.0,too few genes,ABCA12
+REACT:R-HSA-5682910,LGI-ADAM interactions,1,0,14,1,1.0,too few genes,STX1A
+REACT:R-HSA-5684045,Defective ABCD1 causes ALD,1,0,1,1,1.0,too few genes,ABCD1
+REACT:R-HSA-5685939,HDR through MMEJ (alt-NHEJ),1,0,12,1,1.0,too few genes,FEN1
+REACT:R-HSA-5690338,Defective ABCC6 causes PXE,0,1,1,1,0.0,too few genes,ABCC6
+REACT:R-HSA-5693548,Sensing of DNA Double Strand Breaks,1,0,6,1,1.0,too few genes,KPNA2
+REACT:R-HSA-5693571,Nonhomologous End-Joining (NHEJ),0,1,68,1,0.0,too few genes,XRCC5
+REACT:R-HSA-629587,Highly sodium permeable postsynaptic acetylcholine nicotinic receptors,0,1,7,1,0.0,too few genes,CHRNA4
+REACT:R-HSA-6785470,tRNA processing in the mitochondrion,0,1,7,1,0.0,too few genes,HSD17B10
+REACT:R-HSA-6787450,tRNA modification in the mitochondrion,0,1,9,1,0.0,too few genes,HSD17B10
+REACT:R-HSA-6787639,GDP-fucose biosynthesis,1,0,6,1,1.0,too few genes,SLC35C1
+REACT:R-HSA-6799990,Metal sequestration by antimicrobial proteins,1,0,6,1,1.0,too few genes,LCN2
+REACT:R-HSA-6804754,Regulation of TP53 Expression,1,0,2,1,1.0,too few genes,PRDM1
+REACT:R-HSA-6809583,Retinoid metabolism disease events,0,1,1,1,0.0,too few genes,RBP4
+REACT:R-HSA-68616,Assembly of the ORC complex at the origin of replication,1,0,67,1,1.0,too few genes,ORC1
+REACT:R-HSA-68881,Mitotic Metaphase/Anaphase Transition,1,0,2,1,1.0,too few genes,PLK1
+REACT:R-HSA-69091,Polymerase switching,1,0,14,1,1.0,too few genes,PCNA
+REACT:R-HSA-69200,Phosphorylation of proteins involved in G1/S transition by active Cyclin E:Cdk2 complexes,1,0,4,1,1.0,too few genes,CCNE1
+REACT:R-HSA-70688,Proline catabolism,0,1,3,1,0.0,too few genes,PRODH2
+REACT:R-HSA-71737,Pyrophosphate hydrolysis,1,0,3,1,1.0,too few genes,PPA1
+REACT:R-HSA-72086,mRNA Capping,0,1,29,1,0.0,too few genes,POLR2C
+REACT:R-HSA-72662,"Activation of the mRNA upon binding of the cap-binding complex and eIFs, and subsequent binding to 43S",0,1,7,1,0.0,too few genes,EIF4B
+REACT:R-HSA-73780,RNA Polymerase III Chain Elongation,0,1,18,1,0.0,too few genes,POLR3G
+REACT:R-HSA-73817,Purine ribonucleoside monophosphate biosynthesis,1,0,11,1,1.0,too few genes,IMPDH1
+REACT:R-HSA-73843,5-Phosphoribose 1-diphosphate biosynthesis,0,1,3,1,0.0,too few genes,PRPS1
+REACT:R-HSA-73863,RNA Polymerase I Transcription Termination,1,0,31,1,1.0,too few genes,CAVIN1
+REACT:R-HSA-74749,Signal attenuation,1,0,10,1,1.0,too few genes,SHC1
+REACT:R-HSA-75153,Apoptotic execution phase,1,0,4,1,1.0,too few genes,DNM1L
+REACT:R-HSA-76061,RNA Polymerase III Transcription Initiation From Type 1 Promoter,0,1,28,1,0.0,too few genes,POLR3G
+REACT:R-HSA-76066,RNA Polymerase III Transcription Initiation From Type 2 Promoter,0,1,27,1,0.0,too few genes,POLR3G
+REACT:R-HSA-77075,RNA Pol II CTD phosphorylation and interaction with CE,0,1,27,1,0.0,too few genes,POLR2C
+REACT:R-HSA-77108,Utilization of Ketone Bodies,0,1,4,1,0.0,too few genes,ACAT1
+REACT:R-HSA-77288,mitochondrial fatty acid beta-oxidation of unsaturated fatty acids,0,1,6,1,0.0,too few genes,ACADM
+REACT:R-HSA-77310,Beta oxidation of lauroyl-CoA to decanoyl-CoA-CoA,0,1,5,1,0.0,too few genes,HADH
+REACT:R-HSA-77588,SLBP Dependent Processing of Replication-Dependent Histone Pre-mRNAs,1,0,11,1,1.0,too few genes,SNRPB
+REACT:R-HSA-804914,Transport of fatty acids,1,0,8,1,1.0,too few genes,SLC27A4
+REACT:R-HSA-844623,The IPAF inflammasome,1,0,2,1,1.0,too few genes,CASP1
+REACT:R-HSA-880009,Interconversion of 2-oxoglutarate and 2-hydroxyglutarate,0,1,3,1,0.0,too few genes,L2HGDH
+REACT:R-HSA-8847453,Synthesis of PIPs in the nucleus,1,0,4,1,1.0,too few genes,PIP4K2A
+REACT:R-HSA-8849175,Threonine catabolism,0,1,3,1,0.0,too few genes,RIDA
+REACT:R-HSA-8849472,PTK6 Down-Regulation,1,0,3,1,1.0,too few genes,PTPN1
+REACT:R-HSA-8853333,Signaling by FGFR2 fusions,1,0,1,1,1.0,too few genes,FGFR2
+REACT:R-HSA-8853336,Signaling by plasma membrane FGFR1 fusions,0,1,3,1,0.0,too few genes,ERLIN2
+REACT:R-HSA-8853383,Lysosomal oligosaccharide catabolism,1,0,4,1,1.0,too few genes,MAN2B1
+REACT:R-HSA-8854521,Interaction between PHLDA1 and AURKA,1,0,2,1,1.0,too few genes,PHLDA1
+REACT:R-HSA-8866423,VLDL assembly,0,1,5,1,0.0,too few genes,MTTP
+REACT:R-HSA-8866906,TFAP2 (AP-2) family regulates transcription of other transcription factors,0,1,4,1,0.0,too few genes,CITED2
+REACT:R-HSA-8868766,rRNA processing in the mitochondrion,0,1,6,1,0.0,too few genes,HSD17B10
+REACT:R-HSA-8869496,TFAP2A acts as a transcriptional repressor during retinoic acid induced cell differentiation,1,0,5,1,1.0,too few genes,MYBL2
+REACT:R-HSA-8876725,Protein methylation,0,1,17,1,0.0,too few genes,ETFBKMT
+REACT:R-HSA-8877627,Vitamin E transport,0,1,1,1,0.0,too few genes,TTPA
+REACT:R-HSA-8934903,Receptor Mediated Mitophagy,1,0,11,1,1.0,too few genes,SRC
+REACT:R-HSA-8935690,Digestion,0,1,5,1,0.0,too few genes,GUCY2C
+REACT:R-HSA-8937144,Aryl hydrocarbon receptor signalling,0,1,6,1,0.0,too few genes,ARNT
+REACT:R-HSA-8939211,ESR-mediated signaling,0,1,11,1,0.0,too few genes,ESR1
+REACT:R-HSA-8941326,RUNX2 regulates bone development,1,0,6,1,1.0,too few genes,CBFB
+REACT:R-HSA-8942233,Intestinal infectious diseases,0,1,2,1,0.0,too few genes,GUCY2C
+REACT:R-HSA-8952158,RUNX3 regulates BCL2L11 (BIM) transcription,1,0,5,1,1.0,too few genes,RUNX3
+REACT:R-HSA-8964026,Chylomicron clearance,0,1,5,1,0.0,too few genes,LIPC
+REACT:R-HSA-8964046,VLDL clearance,1,0,6,1,1.0,too few genes,APOBR
+REACT:R-HSA-8964616,G beta:gamma signalling through CDC42,1,0,20,1,1.0,too few genes,GNB1
+REACT:R-HSA-8981607,Intracellular oxygen transport,1,0,3,1,1.0,too few genes,CYGB
+REACT:R-HSA-9007892,Interleukin-38 signaling,0,1,4,1,0.0,too few genes,MAPK8
+REACT:R-HSA-9013419,RHOT2 GTPase cycle,0,1,7,1,0.0,too few genes,RAP1GDS1
+REACT:R-HSA-9014826,Interleukin-36 pathway,0,1,7,1,0.0,too few genes,IL1RAP
+REACT:R-HSA-9014843,Interleukin-33 signaling,0,1,3,1,0.0,too few genes,IL1RAP
+REACT:R-HSA-9018676,Biosynthesis of D-series resolvins,1,0,4,1,1.0,too few genes,ALOX5
+REACT:R-HSA-9018677,Biosynthesis of DHA-derived SPMs,1,0,3,1,1.0,too few genes,PTGS2
+REACT:R-HSA-9018679,Biosynthesis of EPA-derived SPMs,1,0,1,1,1.0,too few genes,PTGS2
+REACT:R-HSA-9018681,Biosynthesis of protectins,0,1,4,1,0.0,too few genes,CYP1A2
+REACT:R-HSA-9018896,Biosynthesis of E-series 18(S)-resolvins,1,0,5,1,1.0,too few genes,ALOX5
+REACT:R-HSA-9020265,Biosynthesis of aspirin-triggered D-series resolvins,1,0,3,1,1.0,too few genes,ALOX5
+REACT:R-HSA-9020933,Interleukin-23 signaling,1,0,9,1,1.0,too few genes,STAT3
+REACT:R-HSA-9022702,MECP2 regulates transcription of neuronal ligands,1,0,8,1,1.0,too few genes,DLL1
+REACT:R-HSA-9023661,Biosynthesis of E-series 18(R)-resolvins,1,0,4,1,1.0,too few genes,ALOX5
+REACT:R-HSA-9025094,Biosynthesis of DPAn-3 SPMs,1,0,1,1,1.0,too few genes,PTGS2
+REACT:R-HSA-9026286,Biosynthesis of DPAn-3-derived protectins and resolvins,1,0,2,1,1.0,too few genes,ALOX5
+REACT:R-HSA-9026290,Biosynthesis of DPAn-3-derived maresins,1,0,2,1,1.0,too few genes,ALOX5
+REACT:R-HSA-9026403,Biosynthesis of DPAn-3-derived 13-series resolvins,1,0,1,1,1.0,too few genes,ALOX5
+REACT:R-HSA-9026527,Activated NTRK2 signals through PLCG1,1,0,4,1,1.0,too few genes,PLCG1
+REACT:R-HSA-9026762,Biosynthesis of maresin conjugates in tissue regeneration (MCTR),0,1,2,1,0.0,too few genes,GSTM4
+REACT:R-HSA-9027277,Erythropoietin activates Phospholipase C gamma (PLCG),1,0,7,1,1.0,too few genes,PLCG1
+REACT:R-HSA-9027283,Erythropoietin activates STAT5,1,0,7,1,1.0,too few genes,STAT5A
+REACT:R-HSA-9028731,Activated NTRK2 signals through FRS2 and FRS3,1,0,11,1,1.0,too few genes,HRAS
+REACT:R-HSA-9031525,NR1H2 & NR1H3 regulate gene expression to limit cholesterol uptake ,0,1,5,1,0.0,too few genes,NR1H3
+REACT:R-HSA-9031528,NR1H2 & NR1H3 regulate gene expression linked to triglyceride lipolysis in adipose,0,1,5,1,0.0,too few genes,NR1H3
+REACT:R-HSA-9032500,Activated NTRK2 signals through FYN,1,0,5,1,1.0,too few genes,SRC
+REACT:R-HSA-9034015,Signaling by NTRK3 (TRKC),1,0,4,1,1.0,too few genes,PTPRO
+REACT:R-HSA-9034793,Activated NTRK3 signals through PLCG1,1,0,3,1,1.0,too few genes,PLCG1
+REACT:R-HSA-9037629,Lewis blood group biosynthesis,0,1,16,1,0.0,too few genes,ST3GAL6
+REACT:R-HSA-916853,Degradation of GABA,0,1,2,1,0.0,too few genes,ABAT
+REACT:R-HSA-937042,IRAK2 mediated activation of TAK1 complex,0,1,10,1,0.0,too few genes,UBB
+REACT:R-HSA-9619229,Activation of RAC1 downstream of NMDARs,1,0,7,1,1.0,too few genes,GIT1
+REACT:R-HSA-9634635,Estrogen-stimulated signaling through PRKCZ,1,0,6,1,1.0,too few genes,HRAS
+REACT:R-HSA-9640463,Wax biosynthesis,1,0,4,1,1.0,too few genes,FAR1
+REACT:R-HSA-9645135,STAT5 Activation,1,0,7,1,1.0,too few genes,STAT5A
+REACT:R-HSA-9645460,Alpha-protein kinase 1 signaling pathway,0,1,11,1,0.0,too few genes,UBB
+REACT:R-HSA-9645722,Defective Intrinsic Pathway for Apoptosis Due to p14ARF Loss of Function,1,0,2,1,1.0,too few genes,CDKN2A
+REACT:R-HSA-9646303,Evasion of Oncogene Induced Senescence Due to p14ARF Defects,1,0,1,1,1.0,too few genes,CDKN2A
+REACT:R-HSA-9646304,Evasion of Oxidative Stress Induced Senescence Due to p14ARF Defects,1,0,1,1,1.0,too few genes,CDKN2A
+REACT:R-HSA-964975,Vitamin B6 activation to pyridoxal phosphate,0,1,3,1,0.0,too few genes,AOX1
+REACT:R-HSA-9664535,LTC4-CYSLTR mediated IL4 production,1,0,6,1,1.0,too few genes,GGT5
+REACT:R-HSA-9669914,Dasatinib-resistant KIT mutants,1,0,1,1,1.0,too few genes,KIT
+REACT:R-HSA-9669917,Imatinib-resistant KIT mutants,1,0,1,1,1.0,too few genes,KIT
+REACT:R-HSA-9669921,KIT mutants bind TKIs,1,0,1,1,1.0,too few genes,KIT
+REACT:R-HSA-9669924,Masitinib-resistant KIT mutants,1,0,1,1,1.0,too few genes,KIT
+REACT:R-HSA-9669926,Nilotinib-resistant KIT mutants,1,0,1,1,1.0,too few genes,KIT
+REACT:R-HSA-9669929,Regorafenib-resistant KIT mutants,1,0,1,1,1.0,too few genes,KIT
+REACT:R-HSA-9669933,Signaling by kinase domain mutants of KIT,1,0,1,1,1.0,too few genes,KIT
+REACT:R-HSA-9669934,Sunitinib-resistant KIT mutants,1,0,1,1,1.0,too few genes,KIT
+REACT:R-HSA-9669935,Signaling by juxtamembrane domain KIT mutants,1,0,1,1,1.0,too few genes,KIT
+REACT:R-HSA-9669936,Sorafenib-resistant KIT mutants,1,0,1,1,1.0,too few genes,KIT
+REACT:R-HSA-9672393,Defective F8 binding to von Willebrand factor,1,0,2,1,1.0,too few genes,VWF
+REACT:R-HSA-9673218,Defective F9 secretion,0,1,1,1,0.0,too few genes,F9
+REACT:R-HSA-9674396,Imatinib-resistant PDGFR mutants,1,0,1,1,1.0,too few genes,PDGFRA
+REACT:R-HSA-9674401,Sunitinib-resistant PDGFR mutants,1,0,1,1,1.0,too few genes,PDGFRA
+REACT:R-HSA-9674403,Regorafenib-resistant PDGFR mutants,1,0,1,1,1.0,too few genes,PDGFRA
+REACT:R-HSA-9674404,Sorafenib-resistant PDGFR mutants,1,0,1,1,1.0,too few genes,PDGFRA
+REACT:R-HSA-9674428,PDGFR mutants bind TKIs,1,0,1,1,1.0,too few genes,PDGFRA
+REACT:R-HSA-9674519,Defective F8 sulfation at Y1699,0,1,3,1,0.0,too few genes,TPST1
+REACT:R-HSA-9680187,Signaling by extracellular domain mutants of KIT,1,0,1,1,1.0,too few genes,KIT
+REACT:R-HSA-9682706,Replication of the SARS-CoV-1 genome,1,0,4,1,1.0,too few genes,DDX5
+REACT:R-HSA-9683610,Maturation of nucleoprotein,1,0,11,1,1.0,too few genes,PARP8
+REACT:R-HSA-9683673,Maturation of protein 3a,1,0,9,1,1.0,too few genes,ST6GALNAC4
+REACT:R-HSA-9683683,Maturation of protein E,0,1,4,1,0.0,too few genes,UBB
+REACT:R-HSA-9686347,Microbial modulation of RIPK1-mediated regulated necrosis,1,0,4,1,1.0,too few genes,RIPK3
+REACT:R-HSA-9692912,SARS-CoV-1 targets PDZ proteins in cell-cell junction,0,1,1,1,0.0,too few genes,PALS1
+REACT:R-HSA-9694493,Maturation of protein E,0,1,4,1,0.0,too few genes,UBB
+REACT:R-HSA-9694631,Maturation of nucleoprotein,1,0,15,1,1.0,too few genes,PARP8
+REACT:R-HSA-9694686,Replication of the SARS-CoV-2 genome,1,0,4,1,1.0,too few genes,DDX5
+REACT:R-HSA-9694719,Maturation of protein 3a,1,0,9,1,1.0,too few genes,ST6GALNAC4
+REACT:R-HSA-9709275,Impaired BRCA2 translocation to the nucleus,0,1,2,1,0.0,too few genes,SEM1
+REACT:R-HSA-9710421,Defective pyroptosis,1,0,71,1,1.0,too few genes,DNMT1
+REACT:R-HSA-9734735,Defective ADA disrupts (deoxy)adenosine deamination,1,0,1,1,1.0,too few genes,ADA
+REACT:R-HSA-9735763,Defective PNP disrupts phosphorolysis of (deoxy)guanosine and (deoxy)inosine,0,1,1,1,0.0,too few genes,PNP
+REACT:R-HSA-9753510,Signaling by RAS GAP mutants,1,0,3,1,1.0,too few genes,HRAS
+REACT:R-HSA-9753512,Signaling by RAS GTPase mutants,1,0,3,1,1.0,too few genes,HRAS
+REACT:R-HSA-9754560,SARS-CoV-2 modulates autophagy,1,0,11,1,1.0,too few genes,VPS18
+REACT:R-HSA-975574,Reactions specific to the hybrid N-glycan synthesis pathway,1,0,1,1,1.0,too few genes,MGAT3
+REACT:R-HSA-9758919,Epithelial-Mesenchymal Transition (EMT) during gastrulation,1,0,7,1,1.0,too few genes,SNAI1
+REACT:R-HSA-9759811,Regulation of CDH11 mRNA translation by microRNAs,1,0,9,1,1.0,too few genes,CDH11
+REACT:R-HSA-9763198,Impaired BRCA2 binding to SEM1 (DSS1),0,1,2,1,0.0,too few genes,SEM1
+REACT:R-HSA-9764302,Regulation of CDH19 Expression and Function,1,0,7,1,1.0,too few genes,ZC3H12A
+REACT:R-HSA-977443,GABA receptor activation,1,0,17,1,1.0,too few genes,GABRB3
+REACT:R-HSA-9793242,SUMOylation of nuclear envelope proteins,1,0,3,1,1.0,too few genes,RANGAP1
+REACT:R-HSA-9818026,NFE2L2 regulating inflammation associated genes,1,0,5,1,1.0,too few genes,CCL2
+REACT:R-HSA-9818564,Epigenetic regulation of gene expression by MLL3 and MLL4 complexes,0,1,10,1,0.0,too few genes,ASH2L
+REACT:R-HSA-9824856,Defective regulation of TLR7 by endogenous ligand,1,0,1,1,1.0,too few genes,TLR7
+REACT:R-HSA-9834899,Specification of the neural plate border,1,0,17,1,1.0,too few genes,MSX1
+REACT:R-HSA-9839406,TGFBR3 regulates activin signaling,0,1,4,1,0.0,too few genes,TGFBR3
+REACT:R-HSA-9843970,Regulation of endogenous retroelements by the Human Silencing Hub (HUSH) complex,0,1,69,1,0.0,too few genes,ZCCHC8
+REACT:R-HSA-9851151,MDK and PTN in ALK signaling,1,0,4,1,1.0,too few genes,MDK
+REACT:R-HSA-9854907,Regulation of MITF-M dependent genes involved in metabolism,0,1,4,1,0.0,too few genes,SIRT1
+REACT:R-HSA-9854909,Regulation of MITF-M dependent genes involved in invasion,0,1,4,1,0.0,too few genes,DIAPH1
+REACT:R-HSA-9858328,OADH complex synthesizes glutaryl-CoA from 2-OA,0,1,3,1,0.0,too few genes,DHTKD1
+REACT:R-HSA-9860276,SLC15A4:TASL-dependent IRF5 activation,1,0,6,1,1.0,too few genes,TASL
+REACT:R-HSA-9861559,PDH complex synthesizes acetyl-CoA from PYR,0,1,6,1,0.0,too few genes,PDHX
+REACT:R-HSA-9912633,"Antigen processing: Ub, ATP-independent proteasomal degradation",1,0,19,1,1.0,too few genes,PSMB10
+REACT:R-HSA-9914274,3-methylglutaconic aciduria,0,1,1,1,0.0,too few genes,AUH
+REACT:R-HSA-9915355,Beta-ketothiolase deficiency,0,1,1,1,0.0,too few genes,ACAT1

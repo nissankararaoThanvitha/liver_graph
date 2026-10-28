@@ -1,6 +1,6 @@
 # Paper 2 — report (Tasks 1–8, including the final ranking)
 
-*Liver fibrosis progression: knowledge-graph drug repurposing. Prepared 15 Oct 2026.*
+*Liver fibrosis progression: knowledge-graph drug repurposing. Prepared 16 Oct 2026.*
 
 ## Scope (project scope decision, 13 Oct 2026)
 - **Knowledge-graph-only drug repurposing:** Neo4j `liver_kg` (OptimusKG layer, read-only queries) plus Paper 1 results.

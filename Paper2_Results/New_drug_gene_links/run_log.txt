@@ -1,0 +1,162 @@
+genes 6,222; graph drug–gene links 8,948 (3,027 drugs, 1,072 genes)
+GtoPdb: 7,059 human, non-endogenous ligand–gene rows on our genes
+DGIdb: dropped 6,095 GuideToPharmacology rows (gene-ID mix-up) and 4,748 ChEMBL rows (non-human targets; ChEMBL used directly) on our genes
+DGIdb: 26,163 drug–gene rows on 1,480 of our genes
+ChEMBL: 7,561 mechanisms; 5,081 rows on our genes
+Open Targets Platform 26.09: 5,325 drug–gene rows on 605 of our genes
+     source          graph links tested    n  found by source  % found
+     GtoPdb             all graph links 8948              736      8.2
+     GtoPdb pharmacological graph links 4987              696     14.0
+      DGIdb             all graph links 8948             1539     17.2
+      DGIdb pharmacological graph links 4987             1167     23.4
+     ChEMBL             all graph links 8948             1035     11.6
+     ChEMBL pharmacological graph links 4987             1033     20.7
+OpenTargets             all graph links 8948             1025     11.5
+OpenTargets pharmacological graph links 4987             1023     20.5
+{
+  "new_pairs_medicines_any_evidence": {
+    "pairs": 12363,
+    "drugs": 3746,
+    "genes": 1391,
+    "new_genes": 743
+  },
+  "new_pairs_by_evidence": {
+    "curated drug-target": {
+      "pairs": 9694,
+      "drugs": 5962,
+      "genes": 1089,
+      "new_genes": 495
+    },
+    "curated, TTD only (gene matched by protein name)": {
+      "pairs": 1196,
+      "drugs": 810,
+      "genes": 485,
+      "new_genes": 183
+    },
+    "lab binding screen": {
+      "pairs": 8803,
+      "drugs": 3911,
+      "genes": 426,
+      "new_genes": 129
+    },
+    "literature / biomarker only": {
+      "pairs": 5638,
+      "drugs": 1537,
+      "genes": 991,
+      "new_genes": 556
+    }
+  },
+  "headline_set": "approved or clinical-trial drugs with a curated drug-target source",
+  "release": {
+    "GtoPdb": "2026.3.1",
+    "DGIdb": "5 (interactions.tsv, downloaded Oct 2026)",
+    "ChEMBL": "REST API (Oct 2026)",
+    "OpenTargets": "Open Targets Platform 26.09"
+  },
+  "new_pairs_all": {
+    "pairs": 25331,
+    "drugs": 10783,
+    "genes": 1727,
+    "new_genes": 979
+  },
+  "new_pairs_medicines_curated": {
+    "pairs": 5216,
+    "drugs": 2623,
+    "genes": 767,
+    "new_genes": 319
+  },
+  "new_pairs_approved_curated": {
+    "pairs": 2218,
+    "drugs": 1168,
+    "genes": 508,
+    "new_genes": 187
+  },
+  "new_pairs_approved": {
+    "pairs": 8052,
+    "drugs": 2102,
+    "genes": 1215,
+    "new_genes": 635
+  },
+  "medicine_pairs_with_direction": 4346,
+  "medicine_pairs_consistent": 2829,
+  "medicine_pairs_2plus_sources": 3732,
+  "medicines_new_to_progression_genes": 2091,
+  "task4_candidates_gaining_links": 295,
+  "shortlist_genes_reached_first_time": 0,
+  "drugs_with_consistent_new_link": 1485,
+  "candidates_with_consistent_link_before": 315,
+  "candidates_with_consistent_link_graph_plus_297_layer": 378,
+  "task4_candidates_gaining_consistent_link": 161,
+  "candidates_with_consistent_link_all_layers": 472,
+  "new_task4_style_candidates": 1805,
+  "new_task4_style_candidates_approved": 647,
+  "new_task4_style_candidates_with_consistent_link": 1079,
+  "genes_with_drug_graph": 1072,
+  "genes_with_drug_graph_plus_new": 1391,
+  "neo4j_check": "21 Oct 2026: 120 random new pairs -> 0 have any Drug\u2013Gene relationship in Neo4j; 150 random new-link drugs -> 121 exist as Drug nodes, 7 have any ACTS_ON"
+}
+     source  drug–gene pairs on our genes  already in graph  NEW pairs  NEW pairs with a medicine  found ONLY by this source
+     GtoPdb                          6471               734       5737                       1703                       4760
+      DGIdb                         19443              1528      17915                       8885                      16579
+     ChEMBL                          4755              1029       3726                       3720                        134
+OpenTargets                          4629              1019       3610                       3607                         21
+drug_stage                                        approved  ...    all
+evidence                                                    ...       
+curated drug-target                                   2218  ...   9694
+curated, TTD only (gene matched by protein name)       216  ...   1196
+lab binding screen                                    2002  ...   8803
+literature / biomarker only                           3616  ...   5638
+all                                                   8052  ...  25331
+
+[5 rows x 4 columns]
+                   pairs  drugs  genes  new_genes
+approved            8052   2102   1215        635
+clinical trial      4311   1682    739        316
+research compound  12968   7045   1263        623
+all                25331  10783   1727        979
+consistency     direction-consistent  direction-inconsistent  unknown
+drug_stage                                                           
+approved                         979                     639      600
+clinical trial                  1850                     878      270
+                   pairs  genes  genes_with_no_drug_before
+progression_class                                         
+fibrosis_only       1813    268                        113
+inflammation_only   1623    219                         89
+shared              1780    280                        117
+        Gene_ID    Gene progression_class                         Tier  in_shortlist  n_medicines  approved  consistent                                                                                                                      examples
+ENSG00000137285  TUBB2B inflammation_only                          NaN         False           81        20          71                                     ABT-751; AGS-16C3F; ANETUMAB RAVTANSINE; ANG1005; ANVATABART OPADOTIN; APRUTUMAB IXADOTIN
+ENSG00000176014   TUBB6            shared Tier 2 - moderate confidence         False           81        20          71                                     ABT-751; AGS-16C3F; ANETUMAB RAVTANSINE; ANG1005; ANVATABART OPADOTIN; APRUTUMAB IXADOTIN
+ENSG00000156738   MS4A1            shared                       Tier 3         False           21        14           0                                               EPCORITAMAB; FBT-A05; GLOFITAMAB; IBRITUMOMAB TIUXETAN; LFB-R603; MOSUNETUZUMAB
+ENSG00000100300    TSPO            shared Tier 2 - moderate confidence         False           16        14           1                                                     ALPIDEM; ALPRAZOLAM; CHLORMEZANONE; CLONAZEPAM; CLORAZEPIC ACID; DIAZEPAM
+ENSG00000108556   CHRNE inflammation_only                          NaN         False           14        14           2                                                   ATRACURIUM; CISATRACURIUM; DECAMETHONIUM; DOXACURIUM; GALLAMINE; METOCURINE
+ENSG00000198851    CD3E     fibrosis_only Tier 2 - moderate confidence         False           23        13           4                                                     BLINATUMOMAB; CATUMAXOMAB; ELRANATAMAB; EPCORITAMAB; ERTUMAXOMAB; FBT-A05
+ENSG00000160654    CD3G            shared                       Tier 3         False           17        11           2                                                    BLINATUMOMAB; CATUMAXOMAB; ELRANATAMAB; EPCORITAMAB; FBT-A05; FLOTETUZUMAB
+ENSG00000167286    CD3D            shared                       Tier 3         False           17        11           2                                                    BLINATUMOMAB; CATUMAXOMAB; ELRANATAMAB; EPCORITAMAB; FBT-A05; FLOTETUZUMAB
+ENSG00000119535   CSF3R     fibrosis_only Tier 2 - moderate confidence         False           12        11           1                                     ANUMIGILIMAB; BALUGRASTIM; EFBEMALENOGRASTIM ALFA; EFLAPEGRASTIM; FILGRASTIM; LENOGRASTIM
+ENSG00000061918 GUCY1B1     fibrosis_only Tier 2 - moderate confidence         False           15        10           1                      ATACIGUAT; CINACIGUAT; ISOSORBIDE DINITRATE; ISOSORBIDE MONONITRATE; METHYLENE BLUE CATION; NITRIC OXIDE
+ENSG00000164116 GUCY1A1     fibrosis_only     Tier 1 - high confidence         False           15        10           1                      ATACIGUAT; CINACIGUAT; ISOSORBIDE DINITRATE; ISOSORBIDE MONONITRATE; METHYLENE BLUE CATION; NITRIC OXIDE
+ENSG00000177455    CD19     fibrosis_only                       Tier 3         False           16         9           1      AMG-729; AXICABTAGENE CILOLEUCEL; BLINATUMOMAB; BREXUCABTAGENE AUTOLEUCEL; COLTUXIMAB RAVTANSINE; DENINTUZUMAB MAFODOTIN
+ENSG00000112964     GHR     fibrosis_only Tier 2 - moderate confidence         False            9         7           5                                                ACP-001; ALBUSOMATROPIN; LONAPEGSOMATROPIN; PEGVISOMANT; SOMAPACITAN; SOMATREM
+ENSG00000132639  SNAP25            shared     Tier 1 - high confidence         False            8         7           4 ABOBOTULINUMTOXINA; BOTULINUM TOXIN TYPE A; DAXIBOTULINUMTOXINA; INCOBOTULINUMTOXINA; LETIBOTULINUMTOXINA; ONABOTULINUMTOXINA
+ENSG00000215644    GCGR inflammation_only                          NaN         False           17         6          10                                ADOMEGLIVANT; COTADUTIDE; CROTEDUMAB; DASIGLUCAGON; DASIGLUCAGON HYDROCHLORIDE; EFINOPEGDUTIDE
+     Drug_key                                 Drug     drug_stage                        drug_in_graph  drug_is_task4_candidate  drug_has_liver_use_in_graph  new_task4_style_candidate  new_genes  consistent  first_drug_for                                                                                                                                                                      genes
+CHEMBL2095222                          OCRIPLASMIN       approved                        no (new drug)                    False                        False                       True         25           0              24 COL11A1;COL11A2;COL15A1;COL1A1;COL1A2;COL28A1;COL3A1;COL4A1;COL4A2;COL4A3;COL4A4;COL5A1;COL5A2;COL5A3;COL6A2;COL6A3;COL6A6;LAMA2;LAMA3;LAMB1;LAMB2;LAMB3;LAMC1;LAMC2;LAMC3
+CHEMBL2103884                            OPROZOMIB clinical trial                        no (new drug)                    False                        False                       True         19          17              15                                                       PSMA4;PSMB10;PSMB2;PSMB7;PSMB8;PSMB9;PSMC1;PSMC2;PSMC4;PSMC6;PSMD1;PSMD12;PSMD13;PSMD14;PSMD2;PSMD3;PSMD6;PSMD7;SEM1
+CHEMBL3545432                     IXAZOMIB CITRATE       approved                        no (new drug)                    False                        False                       True         19          17              15                                                       PSMA4;PSMB10;PSMB2;PSMB7;PSMB8;PSMB9;PSMC1;PSMC2;PSMC4;PSMC6;PSMD1;PSMD12;PSMD13;PSMD14;PSMD2;PSMD3;PSMD6;PSMD7;SEM1
+ CHEMBL325041                           BORTEZOMIB       approved yes, acts on other progression genes                    False                         True                      False         19          17              15                                                       PSMA4;PSMB10;PSMB2;PSMB7;PSMB8;PSMB9;PSMC1;PSMC2;PSMC4;PSMC6;PSMD1;PSMD12;PSMD13;PSMD14;PSMD2;PSMD3;PSMD6;PSMD7;SEM1
+CHEMBL2141296                             IXAZOMIB       approved yes, acts on other progression genes                    False                        False                       True         19          17              15                                                       PSMA4;PSMB10;PSMB2;PSMB7;PSMB8;PSMB9;PSMC1;PSMC2;PSMC4;PSMC6;PSMD1;PSMD12;PSMD13;PSMD14;PSMD2;PSMD3;PSMD6;PSMD7;SEM1
+CHEMBL2108709 COLLAGENASE CLOSTRIDIUM HISTOLYTICUM       approved                        no (new drug)                    False                        False                       True         17           0              16                                                 COL11A1;COL11A2;COL15A1;COL1A1;COL1A2;COL28A1;COL3A1;COL4A1;COL4A2;COL4A3;COL4A4;COL5A1;COL5A2;COL5A3;COL6A2;COL6A3;COL6A6
+ CHEMBL451887                          CARFILZOMIB       approved yes, acts on other progression genes                     True                        False                      False         15          13              15                                                                                PSMA4;PSMB7;PSMC1;PSMC2;PSMC4;PSMC6;PSMD1;PSMD12;PSMD13;PSMD14;PSMD2;PSMD3;PSMD6;PSMD7;SEM1
+  CHEMBL52885                          ENMD-981693 clinical trial                        no (new drug)                    False                        False                       True         13           7               0                                                                                                         AURKA;BLK;FGFR2;FGFR3;FGFR4;FGR;FRK;KDR;LCK;PDGFRA;PDGFRB;SRC;YES1
+CHEMBL2107762                         NERISPIRDINE clinical trial                        no (new drug)                    False                        False                       True         12           6               1                                                                                                    KCNA2;KCNA3;KCNB1;KCNC2;KCND1;KCND3;KCNH1;KCNH7;KCNS3;SCN2A;SCN4A;SCN8A
+CHEMBL2109575                             BIIB-015 clinical trial                        no (new drug)                    False                        False                      False         11           9               3                                                                                                  CRIPTO;TUBA1A;TUBA1B;TUBA1C;TUBB1;TUBB2A;TUBB2B;TUBB3;TUBB4A;TUBB4B;TUBB6
+CHEMBL3545132            MIRVETUXIMAB SORAVTANSINE       approved                        no (new drug)                    False                        False                       True         11           9               2                                                                                                   FOLR1;TUBA1A;TUBA1B;TUBA1C;TUBB1;TUBB2A;TUBB2B;TUBB3;TUBB4A;TUBB4B;TUBB6
+CHEMBL4650293                   APRUTUMAB IXADOTIN clinical trial                        no (new drug)                    False                        False                      False         11           9               2                                                                                                   FGFR2;TUBA1A;TUBA1B;TUBA1C;TUBB1;TUBB2A;TUBB2B;TUBB3;TUBB4A;TUBB4B;TUBB6
+CHEMBL4297859                AZINTUXIZUMAB VEDOTIN clinical trial                        no (new drug)                    False                        False                       True         11           9               3                                                                                                  SLAMF7;TUBA1A;TUBA1B;TUBA1C;TUBB1;TUBB2A;TUBB2B;TUBB3;TUBB4A;TUBB4B;TUBB6
+CHEMBL4297841                    TISOTUMAB VEDOTIN       approved                        no (new drug)                    False                        False                       True         11           9               2                                                                                                      F3;TUBA1A;TUBA1B;TUBA1C;TUBB1;TUBB2A;TUBB2B;TUBB3;TUBB4A;TUBB4B;TUBB6
+CHEMBL4297736              PRALUZATAMAB RAVTANSINE clinical trial                        no (new drug)                    False                        False                       True         11           9               3                                                                                                   ALCAM;TUBA1A;TUBA1B;TUBA1C;TUBB1;TUBB2A;TUBB2B;TUBB3;TUBB4A;TUBB4B;TUBB6
+ CHEMBL482968                            ENMD-2076 clinical trial                        no (new drug)                    False                        False                       True         11           5               0                                                                                                                      AURKA;BLK;FGFR2;FGFR3;KDR;KIT;LCK;PDGFRA;RET;SRC;YES1
+CHEMBL2109556                             MLN-2704 clinical trial                        no (new drug)                    False                        False                      False         11           9               2                                                                                                   FOLH1;TUBA1A;TUBA1B;TUBA1C;TUBB1;TUBB2A;TUBB2B;TUBB3;TUBB4A;TUBB4B;TUBB6
+CHEMBL3707277              DEPATUXIZUMAB MAFODOTIN clinical trial                        no (new drug)                    False                        False                       True         11           9               2                                                                                                    EGFR;TUBA1A;TUBA1B;TUBA1C;TUBB1;TUBB2A;TUBB2B;TUBB3;TUBB4A;TUBB4B;TUBB6
+CHEMBL1089636                              ANG1005 clinical trial                        no (new drug)                    False                        False                       True         11           9               2                                                                                                    BCL2;TUBA1A;TUBA1B;TUBA1C;TUBB1;TUBB2A;TUBB2B;TUBB3;TUBB4A;TUBB4B;TUBB6
+CHEMBL1742994                  BRENTUXIMAB VEDOTIN       approved                        no (new drug)                    False                        False                       True         11          10               3                                                                                                 TNFRSF8;TUBA1A;TUBA1B;TUBA1C;TUBB1;TUBB2A;TUBB2B;TUBB3;TUBB4A;TUBB4B;TUBB6

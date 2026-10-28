@@ -1,0 +1,8 @@
+paper1_group,graph only: decided,graph only: % consistent,+ external: decided,+ external: % consistent
+fibrosis_only_positive,157,89.2,201,83.6
+fibrosis_only_negative,189,29.6,261,28.4
+shared_positive,356,56.5,415,59.5
+shared_negative,98,20.4,146,25.3
+shared_discordant_fib_negative,0,,0,
+inflammation_only_positive,165,61.8,231,67.1
+inflammation_only_negative,36,30.6,44,36.4

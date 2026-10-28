@@ -1,0 +1,35 @@
+MetaPath,links used,paths,unique drugs,unique genes,unique end nodes,drug–end pairs,unique combinations (pairs with exactly one route),unique pathways
+MP1 Drug→Gene→LiverDisease,all links,37615,2458,459,63,22662,15520,
+MP1f Drug→Gene→FibrosisSpectrumDisease,all links,4008,1108,85,10,3056,2431,
+MP2 Drug→Gene→Pathway,all links,52514,2984,980,1484,43357,37298,1484.0
+MP3 Drug→Gene→Pathway←ProgressionGene,all links,1530593,3010,2133,3933,661214,385735,1587.0
+MP4 Drug→Gene→Pathway←C1 gene,all links,230883,2819,1696,565,110187,69227,963.0
+MP4 Drug→Gene→Pathway←C2 gene,all links,328788,2879,1826,822,149335,87819,1021.0
+MP4 Drug→Gene→Pathway←C3 gene,all links,51402,2547,1217,149,22469,13885,342.0
+MP4 Drug→Gene→Pathway←C4 gene,all links,93579,2695,1584,253,39408,22268,680.0
+MP4 Drug→Gene→Pathway←C5 gene,all links,281236,2932,1946,626,107513,57134,857.0
+MP5 Drug→Gene→Pathway←F0→F1 transition gene,all links,234747,2898,1764,568,111542,69296,914.0
+MP5 Drug→Gene→Pathway←F1→F2 transition gene,all links,336356,2941,1967,711,140621,79923,1066.0
+MP5 Drug→Gene→Pathway←F2→F3 transition gene,all links,290926,2913,1885,710,124755,71794,973.0
+MP5 Drug→Gene→Pathway←F3→F4 transition gene,all links,219224,2861,1715,476,96402,57088,781.0
+MP6 Drug→Gene→Paper1 fibrosis pathway [Reactome],all links,31345,2648,1003,189,19239,13422,189.0
+MP6 Drug→Gene→Paper1 fibrosis pathway [KEGG],all links,10763,1562,270,91,7796,5923,91.0
+MP6 Drug→Gene→Paper1 fibrosis pathway [Hallmark],all links,4247,1730,289,36,3799,3457,36.0
+MP7 Drug→Gene→Pathway←ProgressionGene→LiverDisease,all links,5216164,2964,1993,83,104008,17418,1399.0
+MP1 Drug→Gene→LiverDisease,pharmacological only,24497,1921,437,61,16987,12982,
+MP1f Drug→Gene→FibrosisSpectrumDisease,pharmacological only,3164,844,82,10,2355,1833,
+MP2 Drug→Gene→Pathway,pharmacological only,33089,2369,874,1445,28373,25322,1445.0
+MP3 Drug→Gene→Pathway←ProgressionGene,pharmacological only,1100522,2667,1895,3892,464232,284637,1560.0
+MP4 Drug→Gene→Pathway←C1 gene,pharmacological only,190897,2524,1562,562,85992,54763,957.0
+MP4 Drug→Gene→Pathway←C2 gene,pharmacological only,259541,2508,1642,815,110052,66319,1012.0
+MP4 Drug→Gene→Pathway←C3 gene,pharmacological only,45536,2180,1129,147,18342,11065,338.0
+MP4 Drug→Gene→Pathway←C4 gene,pharmacological only,64945,2250,1456,252,25477,15152,678.0
+MP4 Drug→Gene→Pathway←C5 gene,pharmacological only,126191,2566,1735,612,54476,33484,839.0
+MP5 Drug→Gene→Pathway←F0→F1 transition gene,pharmacological only,185388,2499,1599,565,83550,53156,906.0
+MP5 Drug→Gene→Pathway←F1→F2 transition gene,pharmacological only,192014,2579,1756,704,84596,53544,1053.0
+MP5 Drug→Gene→Pathway←F2→F3 transition gene,pharmacological only,207276,2546,1701,701,84341,50222,962.0
+MP5 Drug→Gene→Pathway←F3→F4 transition gene,pharmacological only,161403,2492,1554,470,67166,41051,774.0
+MP6 Drug→Gene→Paper1 fibrosis pathway [Reactome],pharmacological only,12520,2079,904,187,9063,7281,187.0
+MP6 Drug→Gene→Paper1 fibrosis pathway [KEGG],pharmacological only,4505,840,250,90,3638,2986,90.0
+MP6 Drug→Gene→Paper1 fibrosis pathway [Hallmark],pharmacological only,2694,1100,258,36,2471,2317,36.0
+MP7 Drug→Gene→Pathway←ProgressionGene→LiverDisease,pharmacological only,4179412,2613,1789,82,85249,14462,1387.0

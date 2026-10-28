@@ -1,0 +1,796 @@
+<title>Paper 2 Progress Report</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@600;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one reading column with a sticky contents rail on wide screens; colours borrow from H&E-stained liver histology (hematoxylin violet, eosin pink). */
+:root {
+  --bg: #f7f7fa; --surface: #ffffff; --fg: #1d1b2b; --muted: #5c5a70; --rule: #dcdbe6;
+  --accent: #4b3f8f; --eosin: #b8456f; --plate: #ffffff; --chip: #ecebf5;
+  --f-display: "Libre Franklin", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --f-mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #15141d; --surface: #1d1c28; --fg: #e9e8f2; --muted: #a6a4ba; --rule: #34324a;
+  --accent: #a99cf0; --eosin: #e48aac; --plate: #f4f4f7; --chip: #2a2840; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #15141d; --surface: #1d1c28; --fg: #e9e8f2; --muted: #a6a4ba; --rule: #34324a;
+  --accent: #a99cf0; --eosin: #e48aac; --plate: #f4f4f7; --chip: #2a2840; color-scheme: dark }
+body { background: var(--bg); color: var(--fg); font: 17px/1.6 var(--f-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.wrap { max-width: 1120px; margin: 0 auto; padding-block: 40px 72px; display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 48px; }
+header { grid-column: 1 / -1; display: grid; gap: 12px; }
+.eyebrow { font: 600 12px/1 var(--f-display); letter-spacing: .14em; text-transform: uppercase; color: var(--eosin); }
+h1 { font: 800 clamp(30px, 5vw, 46px)/1.08 var(--f-display); margin: 0; text-wrap: balance; letter-spacing: -.01em; }
+.sub { color: var(--muted); margin: 0; max-width: 62ch; }
+.stages { display: flex; gap: 4px; margin-top: 8px; max-width: 420px; }
+.stages span { flex: 1; font: 600 11px/1 var(--f-mono); padding: 6px 0; text-align: center; border-radius: 3px; color: #fff; }
+nav { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 24px); align-self: start; }
+nav p { font: 600 12px/1 var(--f-display); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0 0 12px; }
+nav ol { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; font: 14px/1.35 var(--f-display); }
+nav a { color: var(--fg); text-decoration: none; border-left: 2px solid var(--rule); padding-left: 10px; display: block; }
+nav a:hover, nav a:focus-visible { border-color: var(--accent); color: var(--accent); outline: none; }
+main { min-width: 0; }
+main > * { max-width: 72ch; }
+main > figure, main > .tablewrap { max-width: 100%; }
+h2 { font: 800 24px/1.2 var(--f-display); margin: 56px 0 14px; padding-top: 18px; border-top: 1px solid var(--rule); text-wrap: balance; scroll-margin-top: 20px; }
+h2:first-of-type { margin-top: 0; }
+strong { font-weight: 600; }
+a { color: var(--accent); }
+code { font: 0.86em var(--f-mono); background: var(--chip); padding: 1px 5px; border-radius: 3px; overflow-wrap: anywhere; }
+ul, ol { padding-left: 1.3em; }
+li + li { margin-top: 6px; }
+hr { border: 0; height: 0; margin: 8px 0; }
+.tablewrap { overflow-x: auto; margin: 16px 0 20px; border: 1px solid var(--rule); border-radius: 6px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font: 14px/1.4 var(--f-display); font-variant-numeric: tabular-nums; }
+th { text-align: left; font-weight: 600; color: var(--muted); font-size: 12px; letter-spacing: .04em; text-transform: uppercase; padding: 10px 12px; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+td { padding: 9px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+figure.plate { margin: 20px 0 28px; background: var(--plate); border: 1px solid var(--rule); border-radius: 8px; padding: 10px; }
+figure.plate img { display: block; width: 100%; height: auto; max-width: 100%; }
+figcaption { font: 12px/1.3 var(--f-display); color: #5c5a70; padding: 8px 4px 0; letter-spacing: .04em; text-transform: uppercase; }
+footer { grid-column: 1 / -1; color: var(--muted); font: 13px/1.5 var(--f-display); border-top: 1px solid var(--rule); padding-top: 16px; }
+@media (max-width: 860px) {
+  .wrap { grid-template-columns: minmax(0, 1fr); gap: 28px; padding-block: 28px 56px; }
+  nav { position: static; }
+  nav ol { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }
+  body { font-size: 16px; }
+}
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Paper 2 · Knowledge-graph drug repurposing</div>
+    <h1>Paper 2 — report (Tasks 1–8, including the final ranking)</h1>
+    <p class="sub">Liver fibrosis progression: knowledge-graph drug repurposing. Prepared 15 Oct 2026 for the supervisor. Outputs are repurposing hypotheses, not treatments.</p>
+    <div class="stages" aria-label="Fibrosis stages F0 to F4">
+      <span style="background:#8d86b8">F0</span><span style="background:#7468a8">F1</span><span style="background:#7b5296">F2</span><span style="background:#94467f">F3</span><span style="background:#b8456f">F4</span>
+    </div>
+  </header>
+  <nav aria-label="Contents"><p>Contents</p><ol><li><a href="#scope-following-mentor-direction-13-oct-2026">Scope (following mentor direction, 13 Oct 2026)</a></li><li><a href="#executive-summary">Executive summary</a></li><li><a href="#task-1-master-progression-gene-table">Task 1: master progression-gene table</a></li><li><a href="#task-2-drug-gene-relationships-from-the-knowledge-graph">Task 2: drug–gene relationships from the knowledge graph</a></li><li><a href="#task-3-druggability-across-progression-groups">Task 3: druggability across progression groups</a></li><li><a href="#task-4-drug-coverage-and-repurposing-candidates">Task 4: drug coverage and repurposing candidates</a></li><li><a href="#task-5-metapaths">Task 5: MetaPaths</a></li><li><a href="#task-6-target-prioritisation-framework-design-and-test-run">Task 6: target-prioritisation framework (design and test run)</a></li><li><a href="#task-7-drug-action-vs-progression-direction">Task 7: drug action vs. progression direction</a></li><li><a href="#final-target-and-drug-ranking-plan-task-8">Final target and drug ranking (plan Task 8)</a></li><li><a href="#shortlist-supported-vs-broad-evidence-only-candidates">Shortlist-supported vs. broad-evidence-only candidates</a></li><li><a href="#limitations">Limitations</a></li><li><a href="#next-steps">Next steps</a></li><li><a href="#files-and-reproducibility">Files and reproducibility</a></li></ol></nav>
+  <main>
+<h2 id="scope-following-mentor-direction-13-oct-2026">Scope (following mentor direction, 13 Oct 2026)</h2>
+<ul>
+<li><strong>Knowledge-graph-only drug repurposing:</strong> Neo4j <code>liver_kg</code> (OptimusKG layer, read-only queries) plus Paper 1 results.</li>
+<li><strong>Out of scope:</strong> transcriptomic drug-reversal analysis (LINCS/CMap), external databases, and independent external validation.</li>
+<li>All outputs are <strong>repurposing hypotheses / candidate relationships</strong>, not treatments and not evidence of anti-fibrotic efficacy.</li>
+<li><strong>Gene set:</strong> the plan cites 4,692 progression genes, which was the pre-correction count. Paper 2 uses the <strong>corrected Paper 1 union of 6,222 genes</strong> (final combined version, 10 Oct 2026): fibrosis-only 2,023, shared 1,822, inflammation-only 2,377.</li>
+</ul>
+<figure class="plate"><img alt="Roadmap diagram" src="00_roadmap.png" loading="lazy"><figcaption>Roadmap</figcaption></figure>
+<h2 id="executive-summary">Executive summary</h2>
+<ol>
+<li><strong>1,072 / 6,222 progression genes</strong> (17.2%) have ≥1 drug in the graph: 8,948 drug–gene links, 3,027 drugs. Neo4j and the knowledge-layer CSV agree exactly.</li>
+<li><strong>Fibrosis-associated genes are over-represented among drug targets</strong> (16.6% vs 13.0% background; 1.30× a degree-matched null), while inflammation-only genes are not. The excess comes mainly from genes that <strong>fall</strong> with fibrosis.</li>
+<li><strong>1,109 repurposing candidates</strong> (phase ≥ 2, not withdrawn, no existing liver-disease use); <strong>559</strong> have mechanism annotation (main list); <strong>315</strong> have ≥1 direction-consistent link.</li>
+<li><strong>MetaPaths</strong> connect drugs to liver disease, pathways, processes, trajectory clusters, stage transitions and Paper 1 fibrosis programs. Every count was verified inside Neo4j. The strongest fibrosis-spectrum support comes from <strong>PPAR agonists</strong> (INDEGLITAZAR, TESAGLITAZAR, MURAGLITAZAR, GW501516, FENOFIBRIC ACID …), which are direction-<strong>mixed</strong> (consistent on PPARA, inconsistent on PPARG/PPARD).</li>
+<li><strong>Only 1,001 of 8,948 links (11.2%) have a known action direction.</strong> Rising fibrosis-only genes are mostly targeted in the consistent direction (89%); falling genes rarely are (30%), because activators are scarce.</li>
+<li><strong>Only 84 of 1,109 candidates (7.6%)</strong> act on a gene from the Paper 1 23-gene shortlist; the other 1,025 rely on broad progression evidence only.</li>
+<li><strong>Final ranking (Paper 1 final, rules frozen first):</strong> 29 stable actionable targets and 27 stable biology targets; 19 stable drugs in the top 25. The top-ranked repurposing hypotheses include a CXCR4 antagonist (mavorixafor), CCR5 antagonists (maraviroc and others), BCL2 inhibitors (venetoclax, obatoclax), NSAIDs acting on PTGS1/2, statins and fibrates.</li>
+<li><strong>Quality:</strong> an independent audit (<code>AUDIT.md</code>) re-computes the key numbers with separate code and fresh Neo4j queries: <strong>86/86 checks pass.</strong> All scripts re-run to identical outputs.</li>
+</ol>
+<hr />
+<h2 id="task-1-master-progression-gene-table">Task 1: master progression-gene table</h2>
+<p><strong>Done:</strong> <code>Task1/Paper2_progression_genes.csv</code> holds all 6,222 genes with fibrosis/inflammation ρ and q, direction, F0–F4 profile, trajectory cluster, membership confidence, largest stage transition, tier and shortlist flag. No gene was dropped.</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Group</th>
+<th>Genes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fibrosis-only ⬆ / ⬇</td>
+<td>1,040 / 983</td>
+</tr>
+<tr>
+<td>shared ⬆⬆ / ⬇⬇ / discordant</td>
+<td>1,408 / 384 / 30</td>
+</tr>
+<tr>
+<td>inflammation-only ⬆ / ⬇</td>
+<td>2,042 / 335</td>
+</tr>
+</tbody>
+</table></div>
+<p>All 11 group counts match Paper 1 Task 1.</p>
+<figure class="plate"><img alt="Task 1 diagram" src="Task1/Task1_diagram.png" loading="lazy"><figcaption>Task 1</figcaption></figure>
+<h2 id="task-2-drug-gene-relationships-from-the-knowledge-graph">Task 2: drug–gene relationships from the knowledge graph</h2>
+<p><strong>Done:</strong> <code>Task2/drug_gene_edges.csv</code> contains every <code>Drug-[:ACTS_ON]-&gt;Gene</code> link for the progression genes, read-only from Neo4j, with source evidence (DrugBank / Open Targets, evidence level, mechanism text, literature URLs, approval and phase).</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Measure</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Links (Neo4j = CSV, identical triples)</td>
+<td>8,948 = 8,948</td>
+</tr>
+<tr>
+<td>Genes with ≥1 drug</td>
+<td>1,072 (17.2%)</td>
+</tr>
+<tr>
+<td>Unique drugs</td>
+<td>3,027</td>
+</tr>
+<tr>
+<td>Known action direction</td>
+<td>1,001 (11.2%)</td>
+</tr>
+<tr>
+<td>Evidence level single / multi-source</td>
+<td>7,855 / 1,093</td>
+</tr>
+</tbody>
+</table></div>
+<figure class="plate"><img alt="Task 2 diagram" src="Task2/Task2_diagram.png" loading="lazy"><figcaption>Task 2</figcaption></figure>
+<h2 id="task-3-druggability-across-progression-groups">Task 3: druggability across progression groups</h2>
+<p><strong>Done:</strong> Fisher's exact tests versus the 14,794-gene Paper 1 eligible background (BH-FDR), plus a degree-aware permutation null (1,000 sets matched on network degree). The main definition counts <strong>pharmacological-target links</strong> only, because ENZYME/TRANSPORTER/CARRIER links describe drug metabolism (CYPs, ABC/SLC transporters). Both definitions are reported, and the conclusions agree.</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Group</th>
+<th>% drug-target</th>
+<th>Fold vs degree-matched</th>
+<th>Permutation FDR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fibrosis-associated</td>
+<td>16.6</td>
+<td>1.30</td>
+<td>0.004</td>
+</tr>
+<tr>
+<td>fibrosis-only ⬆</td>
+<td>12.8</td>
+<td>1.01</td>
+<td>0.955</td>
+</tr>
+<tr>
+<td>fibrosis-only ⬇</td>
+<td>19.3</td>
+<td>1.55</td>
+<td>0.004</td>
+</tr>
+<tr>
+<td>shared ⬆⬆</td>
+<td>15.9</td>
+<td>1.19</td>
+<td>0.0137</td>
+</tr>
+<tr>
+<td>shared ⬇⬇</td>
+<td>22.7</td>
+<td>1.85</td>
+<td>0.004</td>
+</tr>
+<tr>
+<td>inflammation-only</td>
+<td>13.4</td>
+<td>0.98</td>
+<td>0.827</td>
+</tr>
+</tbody>
+</table></div>
+<p>Background: 13.0%. Fibrosis-only vs inflammation-only: OR 1.23 (FDR 0.028); shared vs inflammation-only: OR 1.35 (FDR 0.00151).</p>
+<figure class="plate"><img alt="Task 3 diagram" src="Task3/Task3_diagram.png" loading="lazy"><figcaption>Task 3</figcaption></figure>
+<h2 id="task-4-drug-coverage-and-repurposing-candidates">Task 4: drug coverage and repurposing candidates</h2>
+<p><strong>Done:</strong> per-drug coverage of each Paper 1 group and cluster, progression-target fraction (specificity), approval, phase, withdrawal and existing disease uses from the graph. The liver-disease set is EFO "liver disease" plus descendants, <strong>cleaned of 70 non-hepatic entries</strong> (malaria, gallbladder/ampulla tumours, erythropoietic porphyrias), leaving 161 diseases.</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Drugs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pharmacological link to a progression gene</td>
+<td>2,407</td>
+</tr>
+<tr>
+<td>Phase ≥ 2</td>
+<td>1,392</td>
+</tr>
+<tr>
+<td>Not withdrawn</td>
+<td>1,333</td>
+</tr>
+<tr>
+<td>No existing liver-disease use → <strong>repurposing candidates</strong></td>
+<td><strong>1,109</strong></td>
+</tr>
+<tr>
+<td>Mechanism-annotated → <strong>main list</strong></td>
+<td><strong>559</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>151 candidates are liver-contraindicated (kept and flagged). Nutrients and cofactors without mechanism (zinc salts, glycine, ATP …) are kept in the full list but separated from the main list. A Cytoscape-ready network of the top 30 main-list candidates is provided. <strong>Candidate generation only; no drug is called the best candidate.</strong></p>
+<figure class="plate"><img alt="Task 4 diagram" src="Task4/Task4_diagram.png" loading="lazy"><figcaption>Task 4</figcaption></figure>
+<h2 id="task-5-metapaths">Task 5: MetaPaths</h2>
+<p><strong>Done:</strong> M1 (Drug→Gene→liver disease), M1f (fibrosis-spectrum diseases), M2 (Reactome), M3 (GO BP), M4/M5 (Drug→Gene→Pathway←progression / cluster genes), M6 (stage-transition genes), M7 (Paper 1 fibrosis-enriched GO/Reactome/KEGG/Hallmark terms, via graph nodes or Paper 1 gene lists). Degree-normalised support = paths / √(drug degree × end-node degree). All queries are in <code>Task5/metapath_queries.cypher</code>.</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>MetaPath</th>
+<th>Paths</th>
+<th>Drugs</th>
+<th>Candidate drugs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M1 Drug→Gene→LiverDisease</td>
+<td>24,497</td>
+<td>1,921</td>
+<td>926</td>
+</tr>
+<tr>
+<td>M1f Drug→Gene→FibrosisSpectrumDisease</td>
+<td>3,164</td>
+<td>844</td>
+<td>537</td>
+</tr>
+<tr>
+<td>M2 Drug→Gene→Pathway</td>
+<td>33,089</td>
+<td>2,369</td>
+<td>1,102</td>
+</tr>
+<tr>
+<td>M3 Drug→Gene→BioProcess</td>
+<td>131,177</td>
+<td>2,406</td>
+<td>1,109</td>
+</tr>
+<tr>
+<td>M4 Drug→Gene→Pathway←ProgressionGene</td>
+<td>1,058,939</td>
+<td>2,394</td>
+<td>1,105</td>
+</tr>
+<tr>
+<td>M6 Drug→F0→F1 transition gene</td>
+<td>926</td>
+<td>740</td>
+<td>378</td>
+</tr>
+<tr>
+<td>M6 Drug→F1→F2 transition gene</td>
+<td>1,205</td>
+<td>891</td>
+<td>437</td>
+</tr>
+<tr>
+<td>M6 Drug→F2→F3 transition gene</td>
+<td>1,471</td>
+<td>845</td>
+<td>466</td>
+</tr>
+<tr>
+<td>M6 Drug→F3→F4 transition gene</td>
+<td>828</td>
+<td>590</td>
+<td>360</td>
+</tr>
+<tr>
+<td>M5 (5 clusters), M7 (4 databases × link type)</td>
+<td>see <code>Task5/metapath_counts.csv</code></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p>Python counts equal Neo4j counts for all 8 cross-checks. Three quality-check subgraphs are in <code>Task5/examples/</code>: a PPAR agonist → fibrosis-spectrum diseases, Hallmark EMT, and PDGFRA.</p>
+<figure class="plate"><img alt="Task 5 diagram" src="Task5/Task5_diagram.png" loading="lazy"><figcaption>Task 5</figcaption></figure>
+<h2 id="task-6-target-prioritisation-framework-design-and-test-run">Task 6: target-prioritisation framework (design and test run)</h2>
+<p><strong>Done:</strong> <code>Task6/target_score_framework.md</code> defines TargetScore = w1·P + w2·F + w3·T + w4·K + w5·B with every component in [0, 1] and traceable to Paper 1 / Paper 2 columns. It covers normalisation (percentile ranks), structural zeros instead of imputation, and the ablation and Dirichlet weight-sensitivity plans. An equal-weight <strong>design test</strong> (whose weights were later frozen for the final ranking) runs on all 6,222 genes:
+- K is zero for 83% of genes, and removing K keeps only 24/50 of the top 50. <strong>Report two lists:</strong> a biology score (P, F, T, B) for novel targets and an actionable score (with K) for repurposing.
+- Under Dirichlet α = 1, only 7 genes stay in the top 50 in ≥ 80% of draws (29 at α = 10). Report <strong>stable</strong> targets, not single-weight ranks.
+- P, F and T overlap (they all describe fibrosis association). Consider merging them before the weights are frozen.</p>
+<figure class="plate"><img alt="Task 6 diagram" src="Task6/Task6_diagram.png" loading="lazy"><figcaption>Task 6</figcaption></figure>
+<h2 id="task-7-drug-action-vs-progression-direction">Task 7: drug action vs. progression direction</h2>
+<p><strong>Done:</strong> each link is classed as direction-consistent (inhibits a rising gene / activates a falling gene), direction-inconsistent, ambiguous or unknown, using knowledge-graph action labels only.</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Consistency</th>
+<th>Links</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>direction-consistent</td>
+<td>530</td>
+</tr>
+<tr>
+<td>direction-inconsistent</td>
+<td>471</td>
+</tr>
+<tr>
+<td>ambiguous</td>
+<td>28</td>
+</tr>
+<tr>
+<td>unknown</td>
+<td>7,919</td>
+</tr>
+</tbody>
+</table></div>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Group</th>
+<th>% consistent among judged links</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fibrosis_only_positive</td>
+<td>89%</td>
+</tr>
+<tr>
+<td>fibrosis_only_negative</td>
+<td>30%</td>
+</tr>
+<tr>
+<td>shared_positive</td>
+<td>56%</td>
+</tr>
+<tr>
+<td>shared_negative</td>
+<td>20%</td>
+</tr>
+<tr>
+<td>inflammation_only_positive</td>
+<td>62%</td>
+</tr>
+<tr>
+<td>inflammation_only_negative</td>
+<td>31%</td>
+</tr>
+</tbody>
+</table></div>
+<p>315 of 1,109 candidates have ≥1 direction-consistent link (269 only consistent, 46 mixed, 222 only inconsistent).</p>
+<figure class="plate"><img alt="Task 7 diagram" src="Task7/Task7_diagram.png" loading="lazy"><figcaption>Task 7</figcaption></figure>
+<hr />
+<h2 id="final-target-and-drug-ranking-plan-task-8">Final target and drug ranking (plan Task 8)</h2>
+<p><strong>Paper 1 confirmed final (10 Oct 2026 version).</strong> The ranking rules and equal weights were frozen in <code>Final_ranking/PREREGISTRATION.md</code> before any rank was computed; nothing was tuned. Stability = rank under 1,000 near-equal random weightings (Dirichlet α = 10); a target or drug is <strong>stable</strong> if it stays in the top 50 / top 25 in at least 80% of draws.</p>
+<p><strong>Targets.</strong> Two lists: <em>biology</em> (P, F, T, B) for new targets and <em>actionable</em> (P, F, T, K, B) for repurposing. Stable: 27 biology, 29 actionable. Top 10 actionable targets:</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Gene</th>
+<th>Class</th>
+<th>Cluster</th>
+<th>TargetScore</th>
+<th>Stable</th>
+<th>Shortlist</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>BCL2 ⬆</td>
+<td>fibrosis_only</td>
+<td>C2</td>
+<td>0.9008</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>CACNA1C ⬆</td>
+<td>fibrosis_only</td>
+<td>C2</td>
+<td>0.8872</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>3</td>
+<td>SRC ⬆</td>
+<td>fibrosis_only</td>
+<td>C1</td>
+<td>0.8858</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>EPHA2 ⬆</td>
+<td>fibrosis_only</td>
+<td>C2</td>
+<td>0.8763</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>PDGFRA ⬆</td>
+<td>fibrosis_only</td>
+<td>C2</td>
+<td>0.8744</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>6</td>
+<td>PIK3CG ⬆</td>
+<td>fibrosis_only</td>
+<td>C1</td>
+<td>0.8472</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>PDGFRB ⬆</td>
+<td>shared</td>
+<td>C1</td>
+<td>0.8358</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>ALDH2 ⬇</td>
+<td>fibrosis_only</td>
+<td>C5</td>
+<td>0.8327</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>CXCR4 ⬆</td>
+<td>shared</td>
+<td>C2</td>
+<td>0.8326</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>DPYD ⬇</td>
+<td>fibrosis_only</td>
+<td>C5</td>
+<td>0.8289</td>
+<td>yes</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Drugs.</strong> DrugScore = mean of D1 target relevance (best biology TargetScore among the drug's targets), D2 direction-consistency (Task 7), D3 specificity (progression-target fraction) and D4 knowledge-graph support (Task 5). Ranked among the 559 mechanism-annotated candidates; 19 are stable in the top 25. Top 15:</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Drug</th>
+<th>Phase</th>
+<th>DrugScore</th>
+<th>Stable</th>
+<th>Right-way targets</th>
+<th>Liver flag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>MAVORIXAFOR</td>
+<td>3</td>
+<td>0.9306</td>
+<td>yes</td>
+<td>CXCR4</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>DROTAVERINE</td>
+<td>3</td>
+<td>0.9253</td>
+<td>yes</td>
+<td>PDE4A</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>INCB-9471</td>
+<td>2</td>
+<td>0.8976</td>
+<td>yes</td>
+<td>CCR5</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>MARAVIROC</td>
+<td>4</td>
+<td>0.8976</td>
+<td>yes</td>
+<td>CCR5</td>
+<td>contraindicated</td>
+</tr>
+<tr>
+<td>3</td>
+<td>APLAVIROC</td>
+<td>3</td>
+<td>0.8976</td>
+<td>yes</td>
+<td>CCR5</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>VICRIVIROC</td>
+<td>3</td>
+<td>0.8976</td>
+<td>yes</td>
+<td>CCR5</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>VENETOCLAX</td>
+<td>4</td>
+<td>0.8833</td>
+<td>yes</td>
+<td>BCL2</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>OBATOCLAX</td>
+<td>3</td>
+<td>0.8833</td>
+<td>yes</td>
+<td>BCL2</td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>DEXIBUPROFEN</td>
+<td>4</td>
+<td>0.8799</td>
+<td>yes</td>
+<td>PTGS1;PTGS2</td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>FENOPROFEN</td>
+<td>4</td>
+<td>0.8758</td>
+<td>yes</td>
+<td>PTGS1;PTGS2</td>
+<td>contraindicated</td>
+</tr>
+<tr>
+<td>11</td>
+<td>TG100-115</td>
+<td>2</td>
+<td>0.8696</td>
+<td>yes</td>
+<td>PIK3CD;PIK3CG</td>
+<td></td>
+</tr>
+<tr>
+<td>12</td>
+<td>IBUPROFEN</td>
+<td>4</td>
+<td>0.8614</td>
+<td>yes</td>
+<td>PTGS1;PTGS2</td>
+<td>contraindicated</td>
+</tr>
+<tr>
+<td>13</td>
+<td>GEMFIBROZIL</td>
+<td>4</td>
+<td>0.8613</td>
+<td>yes</td>
+<td>PPARA</td>
+<td>contraindicated</td>
+</tr>
+<tr>
+<td>14</td>
+<td>PITAVASTATIN</td>
+<td>4</td>
+<td>0.8589</td>
+<td>yes</td>
+<td>HMGCR</td>
+<td></td>
+</tr>
+<tr>
+<td>15</td>
+<td>LOVASTATIN</td>
+<td>4</td>
+<td>0.8576</td>
+<td>yes</td>
+<td>HMGCR</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p>Shortlist-supported drugs in the top 25: 2; broad-evidence-only: 23. Ablation: dropping D4 (graph support) changes the top 25 the most (top-25 overlap 9/25), and dropping D2 (direction) changes overall order the most (Spearman 0.73). Evidence cards (which layers support, contradict or are missing for each of the top 25) are in <code>Final_ranking/evidence_cards_top25.csv</code> and <code>Final_ranking/summary.md</code>.</p>
+<figure class="plate"><img alt="Final ranking diagram" src="Final_ranking/Final_ranking_diagram.png" loading="lazy"><figcaption>Final ranking</figcaption></figure>
+<h2 id="shortlist-supported-vs-broad-evidence-only-candidates">Shortlist-supported vs. broad-evidence-only candidates</h2>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Candidate set</th>
+<th>Total</th>
+<th>Supported by 23-gene shortlist</th>
+<th>Broad progression evidence only</th>
+<th>% shortlist-supported</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>All repurposing candidates</td>
+<td>1,109</td>
+<td>84</td>
+<td>1,025</td>
+<td>7.6</td>
+</tr>
+<tr>
+<td>Main list (mechanism-annotated)</td>
+<td>559</td>
+<td>46</td>
+<td>513</td>
+<td>8.2</td>
+</tr>
+<tr>
+<td>With ≥1 direction-consistent link</td>
+<td>315</td>
+<td>20</td>
+<td>295</td>
+<td>6.3</td>
+</tr>
+</tbody>
+</table></div>
+<p>Shortlist genes reached by candidates (13 of 23):</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Gene</th>
+<th>direction</th>
+<th>candidate_drugs</th>
+<th>direction_consistent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CACNA1C</td>
+<td>rises (positive)</td>
+<td>31</td>
+<td>17</td>
+</tr>
+<tr>
+<td>HTR7</td>
+<td>rises (positive)</td>
+<td>30</td>
+<td>1</td>
+</tr>
+<tr>
+<td>F2</td>
+<td>falls (negative)</td>
+<td>7</td>
+<td>0</td>
+</tr>
+<tr>
+<td>PDGFRA</td>
+<td>rises (positive)</td>
+<td>4</td>
+<td>2</td>
+</tr>
+<tr>
+<td>MME</td>
+<td>falls (negative)</td>
+<td>4</td>
+<td>0</td>
+</tr>
+<tr>
+<td>LYZ</td>
+<td>rises (positive)</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ACADSB</td>
+<td>falls (negative)</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>KNG1</td>
+<td>falls (negative)</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>EPHA3</td>
+<td>rises (positive)</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>OAT</td>
+<td>falls (negative)</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>PLK3</td>
+<td>rises (positive)</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>SULT1E1</td>
+<td>falls (negative)</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>TYMS</td>
+<td>rises (positive)</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<p>Most shortlist-supported candidates come from two rising genes, <strong>CACNA1C</strong> (calcium channel) and <strong>HTR7</strong> (serotonin receptor). CACNA1C has 17 direction-consistent links (blockers of a rising gene), whereas HTR7 links are mostly "target" with unknown direction (1 consistent of 30).</p>
+<h2 id="limitations">Limitations</h2>
+<ol>
+<li><strong>88.5% of drug–gene links have unknown action direction</strong> (TARGET/ENZYME/TRANSPORTER/CARRIER). Direction-consistency can only be judged for 1,001 links, and unknown is not the same as inconsistent.</li>
+<li><strong>No affinity or potency values</strong> in the graph, so drug strength cannot be weighted.</li>
+<li><strong>No per-assertion accession IDs.</strong> Links are identified by ChEMBL drug ID | Ensembl gene ID with source names and, where available, literature URLs.</li>
+<li><strong>Knowledge-graph study bias:</strong> well-studied (high-degree) genes have more known drugs (background druggability rises from 5.8% to 23.8% across degree bins). This is addressed with degree-matched nulls and degree-normalised MetaPath support, but not removed.</li>
+<li><strong>Graph housekeeping (does not affect results):</strong> in the live Neo4j graph the <code>fibrosis_rho</code> property stored on Gene nodes is from the pre-correction Paper 1 run (3,645 genes; missing for 391 current fibrosis genes). The <code>TRACKS_FIBROSIS</code> edges are current and match the corrected Paper 1 table exactly. Paper 2 uses only the corrected tables and edges, but the node property should be refreshed by the Paper 1 team.</li>
+<li>"No liver indication" means none is recorded in the graph, not necessarily none in practice. EFO filed some non-hepatic diseases under "liver disease"; the cleaning rule is documented.</li>
+<li>Target-score weights were frozen as equal weights for the final ranking (<code>Final_ranking/PREREGISTRATION.md</code>); Task 6 keeps the design test that motivated the two-list, stable-target reporting.</li>
+<li>Scope limits by design: no transcriptomic reversal, no external validation.</li>
+</ol>
+<h2 id="next-steps">Next steps</h2>
+<ol>
+<li><strong>Done:</strong> final target and drug ranking with frozen rules, stability and ablation analyses, and evidence cards (section above). Shortlist-supported (84) and broad-evidence-only (1,025) candidates are reported separately.</li>
+<li><strong>Safety and literature review</strong> of the stable top candidates, starting with those flagged as liver-contraindicated in the graph, before any experimental follow-up.</li>
+<li><strong>Experimental or clinical validation</strong> of selected hypotheses is outside this knowledge-graph study (mentor direction) and would be the next project.</li>
+<li>Mentor decisions needed: (a) accept the pharmacological-target definition (Task 3), (b) accept the cleaned liver-disease set (Task 4), (c) main list = mechanism-annotated candidates, (d) the two-list target-score reporting.</li>
+</ol>
+<h2 id="files-and-reproducibility">Files and reproducibility</h2>
+<p>Every task folder has <code>summary.md</code>, a diagram and CSV outputs; scripts are in <code>Paper2_Results/code/</code>. Re-check everything with <code>python Paper2_Results/code/audit_tasks.py</code>. Guide and prompts: <code>PAPER2_GUIDE.md</code>.</p>
+  </main>
+  <footer>Generated from <code>Paper2_Results/PAPER2_PROGRESS_REPORT.md</code>. Every number is read from the Task 1–7 output files and checked by an independent audit script.</footer>
+</div>

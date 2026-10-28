@@ -2,7 +2,7 @@
 
 Independent re-computation from source files and a fresh read-only Neo4j query. Script: `Paper2_Results/code/audit_tasks.py`.
 
-**86 / 86 checks passed.**
+**108 / 108 checks passed.**
 
 | Task | Check | Result | Detail |
 |---|---|---|---|
@@ -81,6 +81,28 @@ Independent re-computation from source files and a fresh read-only Neo4j query. 
 | Final | D2 reproduces independently | ✅ |  |
 | Final | no ranked drug already has a liver-disease use | ✅ |  |
 | Final | summary says repurposing hypotheses, not treatments | ✅ |  |
+| Rev | gene–drug Excel = Task 2 links (8,948) | ✅ |  |
+| Rev | gene–disease Excel = all ASSOCIATED_WITH links of the 6,222 genes | ✅ | 704,892 |
+| Rev | gene–pathway Excel = live graph | ✅ | 17,469 |
+| Rev | Task 5 revised: MP1–MP3 path counts = Neo4j | ✅ |  |
+| Rev | Task 5 revised: no BioProcess MetaPath | ✅ |  |
+| Rev | Task 5 revised pharmacological MP1 = original Task 5 MP1 | ✅ | 24,497 |
+| Rev | Task 5 revised: no 'NEW' pair is a known use (fresh query) | ✅ |  |
+| Rev | Task 7 revised: pathway directions follow the stated rule | ✅ |  |
+| Rev | Task 7 revised: route consistency labels reproduce | ✅ |  |
+| Ext | positive control: external sources agree with graph labels ≥ 99% | ✅ | ChEMBL mechanisms 100%; Guide to Pharmacology 99%; DGIdb 100% |
+| Ext | graph layer identical to graph-only Task 7 (same links, same labels) | ✅ |  |
+| Ext | external layer = the 297 agreeing external links, none overlapping graph labels | ✅ |  |
+| Ext | graph: exactly the 297 external directions stored as external_* properties, matching the file | ✅ |  |
+| Ext | graph: original action labels of those links unchanged (no TARGET/ENZYME… overwritten) | ✅ |  |
+| Ext | every row labelled with its direction source | ✅ |  |
+| New | no 'new' link is already a graph ACTS_ON link | ✅ |  |
+| New | all new links are on the 6,222 progression genes | ✅ |  |
+| New | headline set = curated evidence, approved or clinical-trial drugs only | ✅ |  |
+| New | headline counts in numbers.json match the file | ✅ |  |
+| New | 'first drug' genes really have no drug in the graph | ✅ |  |
+| New | broken DGIdb copies (GuideToPharmacology, ChEMBL) excluded | ✅ |  |
+| New | positive control: graph's Open Targets links recovered ≥ 95% by Open Targets and ChEMBL | ✅ |  |
 | T8 | report states KG-only repurposing scope and out-of-scope items | ✅ |  |
 | T8 | report has the 6,222 vs 4,692 note | ✅ |  |
 | T8 | report lists the 4 required limitations | ✅ |  |

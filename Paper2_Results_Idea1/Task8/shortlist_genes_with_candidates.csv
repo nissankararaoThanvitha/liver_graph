@@ -1,0 +1,14 @@
+Gene,direction,candidate_drugs,direction_consistent
+HTR7,rises (positive),35,1
+CACNA1C,rises (positive),33,18
+PDGFRA,rises (positive),11,7
+TYMS,rises (positive),9,6
+F2,falls (negative),8,0
+MME,falls (negative),4,0
+ACADSB,falls (negative),2,0
+LYZ,rises (positive),2,0
+KNG1,falls (negative),2,0
+EPHA3,rises (positive),1,0
+OAT,falls (negative),1,0
+PLK3,rises (positive),1,0
+SULT1E1,falls (negative),1,0

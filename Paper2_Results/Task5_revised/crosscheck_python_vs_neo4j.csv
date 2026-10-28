@@ -1,0 +1,4 @@
+MetaPath,python,neo4j,match
+MP1 Drug→Gene→LiverDisease,37615,37615,True
+MP2 Drug→Gene→Pathway,52514,52514,True
+MP3 Drug→Gene→Pathway←ProgressionGene,1530593,1530593,True

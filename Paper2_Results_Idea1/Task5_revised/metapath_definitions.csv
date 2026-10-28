@@ -1,0 +1,8 @@
+MetaPath,Pattern,End nodes,Unique combination
+MP1,Drug -[ACTS_ON]-> Gene (progression) -[ASSOCIATED_WITH]-> Disease,161 liver diseases (MP1f: fibrosis-spectrum subset),"a drug–end pair joined by exactly one route (one gene, or one gene–pathway–gene chain)"
+MP2,Drug -[ACTS_ON]-> Gene (progression) -[IN_PATHWAY]-> Pathway,Reactome pathways,"a drug–end pair joined by exactly one route (one gene, or one gene–pathway–gene chain)"
+MP3,Drug -[ACTS_ON]-> Gene -[IN_PATHWAY]-> Pathway <-[IN_PATHWAY]- Progression gene (different gene),progression genes,"a drug–end pair joined by exactly one route (one gene, or one gene–pathway–gene chain)"
+MP4,MP3 with the end gene in one F0–F4 trajectory cluster,Paper 1 clusters C1–C5,"a drug–end pair joined by exactly one route (one gene, or one gene–pathway–gene chain)"
+MP5,MP3 with the end gene significant at one stage transition (q < 0.05),Paper 1 Task 3 transitions,"a drug–end pair joined by exactly one route (one gene, or one gene–pathway–gene chain)"
+MP6,Drug -[ACTS_ON]-> Gene ∈ Paper 1 fibrosis-enriched pathway,"Reactome (graph node), KEGG and Hallmark (Paper 1 gene lists); GO BP omitted","a drug–end pair joined by exactly one route (one gene, or one gene–pathway–gene chain)"
+MP7,Drug -[ACTS_ON]-> Gene -[IN_PATHWAY]-> Pathway <-[IN_PATHWAY]- Progression gene -[ASSOCIATED_WITH]-> Liver disease,161 liver diseases,"a drug–end pair joined by exactly one route (one gene, or one gene–pathway–gene chain)"

@@ -1,0 +1,747 @@
+
+===== task1_master_gene_table (exit 0, 2s)
+# Paper 2 — Task 1: master progression-gene table
+
+**Gene set note:** the Paper 2 plan refers to 4,692 progression genes; that was the pre-correction count.
+This table uses the corrected Paper 1 union of **6,222 genes** (`Paper1_HighConfidence/00_all_progression_genes.csv`, final combined version 10 Oct 2026). No gene was removed.
+
+Output: `Paper2_progression_genes.csv` (6,222 rows). Script: `Paper2_Results_Idea1/code/task1_master_gene_table.py`.
+
+![Task 1 diagram](Task1_diagram.png)
+
+## Genes per progression class
+
+| Progression class | Genes | % of 6,222 |
+|---|---|---|
+| fibrosis_only | 2,023 | 32.5 |
+| inflammation_only | 2,377 | 38.2 |
+| shared | 1,822 | 29.3 |
+
+Fibrosis-associated genes (fibrosis_only + shared): **3,845**.
+
+## Genes per class x direction (Paper 1 group definitions)
+
+Direction = fibrosis direction for fibrosis_only, inflammation direction for inflammation_only, and agreement of both for shared (as in Paper 1 Task 1).
+
+| Group | Genes |
+|---|---|
+| fibrosis_only_positive | 1,040 |
+| fibrosis_only_negative | 983 |
+| shared_positive | 1,408 |
+| shared_negative | 384 |
+| shared_discordant_fib_negative | 30 |
+| shared_discordant_fib_positive | 0 |
+| inflammation_only_positive | 2,042 |
+| inflammation_only_negative | 335 |
+
+Shared genes split by **fibrosis** direction only: positive 1,408, negative 414.
+
+## Paper 1 annotations available
+
+| Annotation | Genes annotated | Source |
+|---|---|---|
+| Trajectory cluster (C1–C5) + membership confidence | 3,845 | Paper1_Results/Task2/task2_gene_clusters.csv |
+| Largest stage transition + beta + q | 3,845 | Paper1_HighConfidence/01_master_table.csv |
+| Tier | 3,845 | Paper1_HighConfidence/01_master_table.csv |
+| In 23-gene shortlist | 23 | Paper1_HighConfidence/11_FINAL_shortlist_25_genes.csv |
+
+These annotations exist only for the 3,845 fibrosis-associated genes; inflammation-only genes are blank by design (Paper 1 clustered and scored fibrosis genes only).
+
+Trajectory clusters: C1 857, C2 1,367, C3 226, C4 397, C5 998.
+Tiers: Tier 3 1,995, Tier 2 - moderate confidence 1,403, Tier 1 - high confidence 447.
+
+## Check against Paper 1 Task 1
+
+| Group | Direction | Paper 1 | Paper 2 | Match |
+|---|---|---|---|---|
+| fibrosis_only | all | 2023 | 2023 | True |
+| fibrosis_only | positive | 1040 | 1040 | True |
+| fibrosis_only | negative | 983 | 983 | True |
+| inflammation_only | all | 2377 | 2377 | True |
+| inflammation_only | positive | 2042 | 2042 | True |
+| inflammation_only | negative | 335 | 335 | True |
+| shared | all | 1822 | 1822 | True |
+| shared | positive (both up) | 1408 | 1408 | True |
+| shared | negative (both down) | 384 | 384 | True |
+| shared | discordant (fib up, inf down) | 0 | 0 | True |
+| shared | discordant (fib down, inf up) | 30 | 30 | True |
+
+**All counts match Paper 1: YES.**
+
+
+
+
+===== task2_drug_gene_edges (exit 0, 2s)
+E g.ensembl_id IN $ids` (read-only).
+Script: `Paper2_Results_Idea1/code/task2_drug_gene_edges.py`. Output: `drug_gene_edges.csv` (8,948 rows).
+
+![Task 2 diagram](Task2_diagram.png)
+
+## Cross-check: Neo4j vs. CSV export
+
+| Check | Result |
+|---|---|
+| Edges from source | 8,948 |
+| Edges in edges_drug_gene.csv (same genes) | 8,948 |
+| Counts match | YES |
+| Identical drug–gene–action triples | YES |
+| Duplicate drug–gene pairs | 0 |
+
+## Headline numbers
+
+| Measure | Value |
+|---|---|
+| Progression genes with ≥1 drug | 1,072 / 6,222 (17.2%) |
+| Unique drugs | 3,027 (1,423 approved) |
+| Total drug–gene relationships | 8,948 |
+| Relationships with known direction (down/up) | 1,001 (11.2%) |
+| …comparable with Paper 1 gene direction | 1,001 (11.2%) |
+| …comparable with an F0–F4 trajectory cluster | 800 (8.9%) |
+| 23-gene shortlist genes with ≥1 drug | 17 / 23 |
+
+"Comparable" means the drug pushes the gene down or up **and** Paper 1 gives the gene a direction (fibrosis direction; inflammation direction for inflammation-only genes) or a trajectory cluster. Whether each comparison is direction-consistent is Task 7. A comparable relationship is a check of mechanism consistency, not proof that a drug would help (repurposing hypothesis only).
+
+## Drug action direction
+
+| Direction | Edges | % | Raw actions included |
+|---|---|---|---|
+| down | 679 | 7.6% | ALLOSTERIC_ANTAGONIST, ANTAGONIST, BLOCKER, DEGRADER, INHIBITOR, INVERSE_AGONIST, NEGATIVE_ALLOSTERIC_MODULATOR, NEGATIVE_MODULATOR |
+| up | 322 | 3.6% | ACTIVATOR, AGONIST, OPENER, PARTIAL_AGONIST, POSITIVE_ALLOSTERIC_MODULATOR, POSITIVE_MODULATOR, STABILISER |
+| mixed | 28 | 0.3% | BINDING_AGENT, MODULATOR, RELEASING_AGENT, SUBSTRATE; or sources disagree (down vs up) |
+| unknown | 7,919 | 88.5% | CARRIER, ENZYME, TARGET, TRANSPORTER |
+
+Raw action counts: TARGET 3,958, ENZYME 2,241, TRANSPORTER 1,225, CARRIER 495, INHIBITOR 470, AGONIST 216, ANTAGONIST 135, POSITIVE_ALLOSTERIC_MODULATOR 68, BLOCKER 62, MODULATOR 19, STABILISER 16, POSITIVE_MODULATOR 12, NEGATIVE_ALLOSTERIC_MODULATOR 5, RELEASING_AGENT 4, PARTIAL_AGONIST 4, ACTIVATOR 3, OPENER 3, SUBSTRATE 3, BINDING_AGENT 2, DEGRADER 2, ALLOSTERIC_ANTAGONIST 2, INVERSE_AGONIST 2, NEGATIVE_MODULATOR 1.
+Edges flagged `relation_conflict` by OptimusKG: 0.
+
+## By progression class
+
+| Class | Genes | Genes with drug | % | Unique drugs | Edges |
+|---|---|---|---|---|---|
+| fibrosis_only | 2,023 | 358 | 17.7% | 1,794 | 3,727 |
+| shared | 1,822 | 359 | 19.7% | 1,761 | 3,344 |
+| inflammation_only | 2,377 | 355 | 14.9% | 1,202 | 1,877 |
+
+(Statistics comparing these groups are Task 3.)
+
+## Evidence level
+
+| Evidence level | Edges |
+|---|---|
+| single-source | 7,855 |
+| multi-source | 1,093 |
+
+## What the source does and does not contain (honest notes)
+
+- **Present on every Neo4j edge:** consolidated action, per-source assertions (`relation_assertions`), contributing sources (`sources_direct`: DrugBank, Open Targets, etc.), number of sources, evidence level (single-/multi-source), conflict flag.
+- **Present only on some edges:** mechanism-of-action text, literature URLs (PubMed/Europe PMC), indirect sources.
+- **Not available:** a per-source record or accession ID for each assertion. `Database_ID` is therefore the stable pair `ChEMBL drug ID | Ensembl gene ID`. There is also no quantitative affinity/potency, and no dose or tissue context.
+- The CSV export (`edges_drug_gene.csv`) keeps only drug, gene and action; its `score` column is empty for drug–gene edges. The extra evidence fields come from Neo4j only.
+- Action labels such as TARGET, ENZYME, TRANSPORTER and CARRIER describe what the gene product is for the drug, not whether the drug switches it down or up. They are counted as **unknown direction**.
+
+{
+  "source_used": "Neo4j (live liver_kg, read-only)",
+  "edges_source": 8948,
+  "edges_csv": 8948,
+  "counts_match": true,
+  "identical_drug_gene_action_triples": true,
+  "only_in_source": 0,
+  "only_in_csv": 0,
+  "duplicate_drug_gene_pairs": 0
+}
+
+
+
+===== task3_druggability (exit 0, 21s)
+| OR (95% CI) | BH-FDR |
+|---|---|---|---|---|
+| fibrosis_only vs inflammation_only | 17.7 | 14.9 | 1.23 (1.04–1.44) | 0.021 |
+| shared vs inflammation_only | 19.7 | 14.9 | 1.40 (1.19–1.65) | 1.71e-04 |
+| fibrosis_only vs shared | 17.7 | 19.7 | 0.88 (0.74–1.03) | 0.115 |
+
+## B. Pharmacological target only (recommended)
+
+| Group | Genes | Connected | % (95% CI) | Drugs | OR (95% CI) | Fisher FDR | Matched exp. % | Fold vs matched | Perm FDR |
+|---|---|---|---|---|---|---|---|---|---|
+| All progression genes | 6,222 | 958 | 15.4 (14.5–16.3) | 2,407 | 1.44 (1.30–1.58) | 8.53e-13 | 13.2 | 1.17 | 0.004 |
+| Fibrosis-associated (fibrosis-only + shared) | 3,845 | 639 | 16.6 (15.5–17.8) | 1,923 | 1.50 (1.35–1.67) | 3.43e-13 | 12.8 | 1.30 | 0.004 |
+| fibrosis_only | 2,023 | 323 | 16.0 (14.4–17.6) | 1,225 | 1.33 (1.16–1.51) | 6.08e-05 | 12.6 | 1.27 | 0.004 |
+| shared | 1,822 | 316 | 17.3 (15.7–19.1) | 1,166 | 1.49 (1.30–1.70) | 3.42e-08 | 13.1 | 1.33 | 0.004 |
+| inflammation_only | 2,377 | 319 | 13.4 (12.1–14.8) | 874 | 1.05 (0.92–1.19) | 0.646 | 13.7 | 0.98 | 0.827 |
+| fibrosis_only_positive | 1,040 | 133 | 12.8 (10.9–15.0) | 549 | 0.98 (0.81–1.19) | 0.966 | 12.7 | 1.01 | 0.955 |
+| fibrosis_only_negative | 983 | 190 | 19.3 (17.0–21.9) | 847 | 1.67 (1.41–1.98) | 2.35e-08 | 12.4 | 1.55 | 0.004 |
+| shared_positive | 1,408 | 224 | 15.9 (14.1–17.9) | 915 | 1.30 (1.11–1.52) | 0.001 | 13.3 | 1.19 | 0.014 |
+| shared_negative | 384 | 87 | 22.7 (18.8–27.1) | 416 | 2.01 (1.55–2.57) | 2.97e-07 | 12.3 | 1.85 | 0.004 |
+| shared_discordant_fib_negative | 30 | 5 | 16.7 (7.3–33.6) | 8 | 1.34 (0.40–3.57) | 0.699 | 12.9 | 1.29 | 0.827 |
+| inflammation_only_positive | 2,042 | 276 | 13.5 (12.1–15.1) | 775 | 1.05 (0.92–1.21) | 0.646 | 13.9 | 0.97 | 0.827 |
+| inflammation_only_negative | 335 | 43 | 12.8 (9.7–16.8) | 173 | 0.99 (0.70–1.37) | 1.000 | 12.6 | 1.02 | 0.955 |
+
+Pairwise class comparisons (Fisher, BH-FDR):
+
+| Comparison | %A | %B | OR (95% CI) | BH-FDR |
+|---|---|---|---|---|
+| fibrosis_only vs inflammation_only | 16.0 | 13.4 | 1.23 (1.03–1.46) | 0.028 |
+| shared vs inflammation_only | 17.3 | 13.4 | 1.35 (1.14–1.61) | 0.002 |
+| fibrosis_only vs shared | 16.0 | 17.3 | 0.91 (0.76–1.08) | 0.259 |
+
+![Bar plot](druggability_barplot.png)
+
+**Column guide:** % = observed drug-connected fraction (95% Wilson CI). OR/Fisher = group vs rest of background (2×2 Fisher's exact; conditional MLE odds ratio), BH-FDR across the 12 groups. Matched exp. % = mean of 1,000 random background gene sets with the same INTERACTS_WITH degree profile (10 deciles + a degree-0 bin, seed 42). Perm FDR = two-sided empirical p, BH across groups.
+
+## Why degree matters (study bias)
+Background genes with more known protein–protein interactions are more likely to have a known drug:
+
+| degree_bin | genes | degree range | pct_any | pct_pharm |
+|---|---|---|---|---|
+| 0 | 571 | 0–0 | 6.8 | 5.8 |
+| 1 | 1423 | 1–3 | 11.2 | 8.6 |
+| 2 | 1422 | 3–6 | 12.1 | 9.5 |
+| 3 | 1422 | 6–10 | 14.6 | 12.7 |
+| 4 | 1422 | 10–15 | 14.3 | 12.5 |
+| 5 | 1423 | 15–21 | 13.9 | 12.5 |
+| 6 | 1422 | 21–28 | 13.3 | 11.8 |
+| 7 | 1422 | 28–38 | 14.8 | 13.4 |
+| 8 | 1422 | 38–53 | 14.1 | 13.2 |
+| 9 | 1422 | 53–88 | 15.5 | 14.8 |
+| 10 | 1423 | 88–5189 | 24.4 | 23.8 |
+
+A raw difference can therefore just mean "better-studied genes". The degree-matched permutation removes this: a group counts as more or less druggable **beyond connectivity** only if its observed % lies outside its degree-matched null.
+
+## Interpretation and caveats
+- Percentages describe **representation among known drug targets in the knowledge graph**. They partly reflect which genes scientists have studied and drugged (DrugBank/Open Targets annotation bias), not biology alone.
+- Druggability is not therapeutic relevance. A drug-connected gene is a *repurposing hypothesis entry point*, not evidence a drug would help.
+- Groups are kept separate as in Paper 1. The 30 shared genes with discordant direction are reported on their own and are small (wide CIs).
+
+
+
+
+===== task4_drug_coverage (exit 0, 6s)
+ | 5 | 6 | 3 | 2 | 21 | 42 | 0.50 | 0 | 0 |  |  |
+| 9 | GLYCINE | 4 | 12 | 1 | 4 | 0 | 7 | 14 | 24 | 0.58 | 0 | 0 |  |  |
+| 10 | PSEUDOEPHEDRINE | 4 | 11 | 2 | 2 | 7 | 0 | 12 | 19 | 0.63 | 0 | 0 |  | ⚠️ yes |
+| 11 | PROCAINE | 4 | 11 | 2 | 4 | 2 | 3 | 12 | 19 | 0.63 | 0 | 0 |  |  |
+| 12 | ASPIRIN | 4 | 11 | 3 | 0 | 6 | 2 | 17 | 28 | 0.61 | 2 | 0 |  |  |
+| 13 | ZONISAMIDE | 4 | 11 | 3 | 4 | 1 | 3 | 13 | 31 | 0.42 | 2 | 0 |  |  |
+| 14 | DASATINIB | 4 | 10 | 4 | 1 | 4 | 1 | 13 | 23 | 0.56 | 8 | 0 |  |  |
+| 15 | GLUTATHIONE | 3 | 10 | 1 | 4 | 5 | 0 | 13 | 37 | 0.35 | 0 | 0 |  |  |
+| 16 | AMOXAPINE | 4 | 10 | 1 | 2 | 6 | 1 | 12 | 44 | 0.27 | 3 | 0 | HTR7 |  |
+| 17 | ENFLURANE | 4 | 10 | 4 | 2 | 4 | 0 | 12 | 52 | 0.23 | 0 | 2 | CACNA1C |  |
+| 18 | DEXTROMETHORPHAN | 4 | 9 | 4 | 4 | 1 | 0 | 10 | 21 | 0.48 | 0 | 1 |  | ⚠️ yes |
+| 19 | CALCIUM CITRATE | 4 | 9 | 4 | 2 | 2 | 1 | 15 | 32 | 0.47 | 0 | 0 |  |  |
+| 20 | CALCIUM PHOSPHATE, TRIBASIC | 2 | 9 | 4 | 2 | 2 | 1 | 15 | 32 | 0.47 | 0 | 0 |  |  |
+
+Full list: `repurposing_candidates.csv` (1,269 drugs, with current indications, target genes, cluster counts and action counts).
+
+## Top 15 drugs by raw progression-gene coverage (all drugs, incl. existing liver drugs)
+
+| Drug | max_phase | n_progression_genes | n_fibrosis_genes | inflammation_only_targets | pharm_targets_graph | frac | liver use |
+|---|---|---|---|---|---|---|---|
+| FOSTAMATINIB | 4.0 | 131 | 82 | 49 | 302 | 0.43 |  |
+| CHEMBL1201279 |  | 50 | 40 | 10 | 125 | 0.40 |  |
+| ZINC ACETATE ANHYDROUS | 4.0 | 49 | 39 | 10 | 124 | 0.40 |  |
+| ZINC CHLORIDE | 4.0 | 41 | 31 | 10 | 97 | 0.42 |  |
+| GLUTAMIC ACID | 3.0 | 33 | 22 | 11 | 61 | 0.54 |  |
+| CANNABIDIOL | 4.0 | 26 | 17 | 9 | 41 | 0.63 | yes |
+| NABIXIMOLS | 3.0 | 26 | 16 | 10 | 41 | 0.63 | yes |
+| PHENETHYLISOTHIOCYANATE |  | 26 | 14 | 12 | 44 | 0.59 |  |
+| PYRIDOXAL PHOSPHATE ANHYDROUS | 3.0 | 23 | 20 | 3 | 49 | 0.47 |  |
+| ADENOSINE TRIPHOSPHATE | 2.0 | 21 | 16 | 5 | 42 | 0.50 |  |
+| CHEMBL384759 |  | 21 | 5 | 16 | 36 | 0.58 |  |
+| SODIUM beta-NICOTINAMIDE ADENINE DINUCLEOTIDE PHOSPHATE |  | 19 | 12 | 7 | 30 | 0.63 |  |
+| FLAVIN ADENIN DINUCLEOTIDE | -1.0 | 18 | 11 | 7 | 25 | 0.72 |  |
+| ASPIRIN | 4.0 | 17 | 11 | 6 | 28 | 0.61 | yes |
+| CALCIUM CITRATE | 4.0 | 15 | 9 | 6 | 32 | 0.47 |  |
+
+Full top 50: `top50_by_coverage.csv`.
+
+## Drugs that already have a fibrosis-type liver use (reference, not candidates)
+
+| Drug | max_phase | n_fibrosis_genes | n_progression_genes | fibrosis_type_liver_uses |
+|---|---|---|---|---|
+| CAFFEINE | 4.0 | 11 | 13 | non-alcoholic steatohepatitis |
+| SPIRONOLACTONE | 4.0 | 10 | 14 | cirrhosis of liver; non-alcoholic steatohepatitis |
+| RESVERATROL | 3.0 | 9 | 11 | non-alcoholic fatty liver disease |
+| ALCOHOL | 4.0 | 9 | 10 | cirrhosis of liver |
+| ERGOCALCIFEROL | 4.0 | 7 | 9 | non-alcoholic fatty liver disease |
+| ICOSAPENT | 3.0 | 5 | 7 | non-alcoholic fatty liver disease |
+| CYCLOBENZAPRINE | 4.0 | 5 | 5 | cirrhosis of liver |
+| ORNITHINE | 3.0 | 5 | 5 | cirrhosis of liver |
+| ADEMETIONINE | 4.0 | 4 | 4 | alcoholic liver cirrhosis; non-alcoholic fatty liver disease; primary biliary cirrhosis |
+| CARVEDILOL | 4.0 | 4 | 4 | portal hypertension |
+
+## Network
+`network_nodes.csv` / `network_edges.csv` (Cytoscape-ready): top 30 candidates → their progression-gene targets (236 genes, 410 links). Gene attributes: class, direction, trajectory cluster, main Paper 1 pathway (Hallmark > Reactome > KEGG > GO, most significant), shortlist flag. Drug attribute: is_approved. Edge attribute: action direction.
+
+(Network picture not drawn in this rerun.)
+
+## Caveats
+- Coverage counts known drug–target annotations, which favour well-studied drugs and genes.
+- Most links have unknown push direction (Task 2). Whether a candidate's action opposes the fibrosis direction is checked in Task 7.
+- "No fibrosis-type liver use in the graph" means none is recorded in OptimusKG, not necessarily none in practice.
+- Candidates are **repurposing hypotheses**, not treatments.
+
+
+E:\Urop_clear\liver_graph-main\Paper2_Results_Idea1\code\task4_drug_coverage.py:153: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  cov["mechanism_annotated"] = cov.mechanism_annotated.fillna(False).astype(bool)
+
+
+===== task5_prep_pathway_map (exit 0, 28s)
+the corrected 6,222-gene union (the plan's 4,692 was the pre-correction count).
+**Scope:** knowledge graph + Paper 1 only (project scope decision); no external pathway resources.
+**Graph source:** Neo4j (live liver_kg, read-only). Graph members: 46,751 Gene→Pathway (Reactome) and 157,081 Gene→BioProcess (GO BP) lines.
+
+## The problem
+Paper 1 enrichment used four collections (GO BP, Reactome, KEGG, Hallmark). The graph holds only GO BP (`BioProcess`) and Reactome (`Pathway`). KEGG and Hallmark terms have no graph node of their own.
+
+## The fix (two matching steps, best first)
+1. **name**: identical normalised name, same collection (GO→BioProcess, Reactome→Pathway).
+2. **gene_overlap_proxy**: the graph node whose progression-gene members best overlap the term's Paper 1 genes (Jaccard ≥ 0.5, ≥ 5 shared genes). This is how KEGG/Hallmark terms reach the graph. Proxies are labelled and must be reported as approximate.
+
+Fuzzy (character-similarity) name matching was tried and **rejected**: it paired different biology (e.g. "catabolic" with "metabolic", "type II" with "type III" interferon, "amide" with "amine").
+
+Terms that stay unlinked are still usable: `paper1_term_genes_long.csv` holds their Paper 1 gene lists, so MetaPath M7 can test Drug → Gene ∈ term directly.
+
+## Coverage of the 1,903 significant Paper 1 terms
+
+| Database | Exact name | Gene-overlap proxy | Not linked (Paper 1 genes only) | Total | Linked to graph |
+|---|---|---|---|---|---|
+| GO_BP | 1162 | 21 | 203 | 1386 | 1183 (85.4%) |
+| Hallmark | 0 | 0 | 41 | 41 | 0 (0.0%) |
+| KEGG | 0 | 11 | 87 | 98 | 11 (11.2%) |
+| Reactome | 243 | 50 | 85 | 378 | 293 (77.5%) |
+
+**Result:** 1,487 / 1,903 terms (78.1%) are linked to a graph node. **1,903 / 1,903 terms are usable in MetaPaths**, because unlinked terms fall back to their Paper 1 gene lists (Drug →ACTS_ON→ Gene ∈ term).
+KEGG and Hallmark sets rarely match one Reactome/GO node closely, because they are broad, mixed collections. That is expected, not an error. Their nearest graph node and Jaccard are still recorded (`nearest_*` columns) for transparency.
+
+## Best KEGG/Hallmark proxies (top 10)
+
+| Paper 1 term | Graph node | Jaccard | Shared genes |
+|---|---|---|---|
+| KEGG_PROTEASOME | Proteasome assembly (REACT:R-HSA-9907900) | 0.76 | 19 |
+| KEGG_AMINOACYL_TRNA_BIOSYNTHESIS | tRNA aminoacylation for protein translation (GO_0006418) | 0.706 | 12 |
+| KEGG_PRIMARY_BILE_ACID_BIOSYNTHESIS | Synthesis of bile acids and bile salts via 7alpha-hydroxycholesterol (REACT:R-HSA-193368) | 0.692 | 9 |
+| KEGG_ASTHMA | antigen processing and presentation of peptide or polysaccharide antigen via MHC class II (GO_0002504) | 0.636 | 7 |
+| KEGG_ONE_CARBON_POOL_BY_FOLATE | tetrahydrofolate interconversion (GO_0035999) | 0.625 | 5 |
+| KEGG_AUTOIMMUNE_THYROID_DISEASE | antigen processing and presentation of peptide or polysaccharide antigen via MHC class II (GO_0002504) | 0.583 | 7 |
+| KEGG_PEROXISOME | Peroxisomal protein import (REACT:R-HSA-9033241) | 0.581 | 25 |
+| KEGG_MISMATCH_REPAIR | Mismatch repair (MMR) directed by MSH2:MSH6 (MutSalpha) (REACT:R-HSA-5358565) | 0.545 | 6 |
+| KEGG_ALLOGRAFT_REJECTION | antigen processing and presentation of peptide or polysaccharide antigen via MHC class II (GO_0002504) | 0.538 | 7 |
+| KEGG_GRAFT_VERSUS_HOST_DISEASE | antigen processing and presentation of peptide or polysaccharide antigen via MHC class II (GO_0002504) | 0.5 | 7 |
+
+## Files
+- `paper1_term_to_graph_map.csv`: one row per Paper 1 term → graph node, match type, score, and `use_in_metapaths`.
+- `paper1_term_genes_long.csv`: Paper 1 term → progression gene (symbol + Ensembl), per group.
+- `graph_pathway_process_nodes.csv`: all graph Pathway/BioProcess nodes with total and progression-gene member counts.
+- `mapping_coverage.csv`: the coverage table above.
+
+Note: Paper 1 gene lists contain only the progression genes in each term (the enrichment overlap), not the full pathway membership. Full membership is available only for graph-linked terms.
+
+
+
+
+===== task5_metapaths (exit 0, 49s)
+ Drug→F1→F2 transition gene     1205           891         220.0               220            1205                           202.36             0.1679              514              272  1049 significant genes; 220 with a drug (76 rising / 144 falling at this step)
+12          M6 Drug→F2→F3 transition gene     1471           845         184.0               184            1471                           168.20             0.1143              532              285  1116 significant genes; 184 with a drug (115 rising / 69 falling at this step)
+13          M6 Drug→F3→F4 transition gene      828           590         116.0               116             828                           104.93             0.1267              403              241   781 significant genes; 116 with a drug (102 rising / 14 falling at this step)
+14                  M7 GO_BP [graph node]    26126          2226         714.0               753           22848                          2508.17             0.1098             1207              647                                       1079 fibrosis-enriched terms of this kind
+15       M7 GO_BP [graph proxy (approx.)]      586           352          61.0                13             537                            63.25             0.1178              137               57                                         16 fibrosis-enriched terms of this kind
+16           M7 GO_BP [Paper 1 gene list]    10073          1205         360.0               187            8791                           514.30             0.0585              676              376                                        198 fibrosis-enriched terms of this kind
+17               M7 Reactome [graph node]     5314          1547         389.0               115            4302                           452.97             0.1053              825              456                                        126 fibrosis-enriched terms of this kind
+18    M7 Reactome [graph proxy (approx.)]      670           373          96.0                19             557                            70.82             0.1272              121               55                                         22 fibrosis-enriched terms of this kind
+19        M7 Reactome [Paper 1 gene list]     3443          1231         305.0                49            2819                           167.37             0.0594              695              367                                         54 fibrosis-enriched terms of this kind
+20        M7 KEGG [graph proxy (approx.)]      131           116          26.0                 3             121                            15.18             0.1254               44               17                                          8 fibrosis-enriched terms of this kind
+21            M7 KEGG [Paper 1 gene list]     4339           828         244.0                83            3494                           293.92             0.0841              400              212                                         84 fibrosis-enriched terms of this kind
+22        M7 Hallmark [Paper 1 gene list]     2694          1100         258.0                36            2471                           132.22             0.0535              560              295                                         36 fibrosis-enriched terms of this kind
+                               MetaPath  paths_python  paths_neo4j  match
+0             M1 Drug→Gene→LiverDisease         24497        24497   True
+1                  M2 Drug→Gene→Pathway         33089        33089   True
+2               M3 Drug→Gene→BioProcess        131177       131177   True
+3  M4 Drug→Gene→Pathway←ProgressionGene       1058939      1058939   True
+4         M6 Drug→F0→F1 transition gene           926          926   True
+5         M6 Drug→F1→F2 transition gene          1205         1205   True
+6         M6 Drug→F2→F3 transition gene          1471         1471   True
+7         M6 Drug→F3→F4 transition gene           828          828   True
+
+
+
+===== task5_revised_metapaths (exit 0, 18s)
+1,402 | 45,536 |
+| MP4 Drug→Gene→Pathway←C4 gene | 93,579 | 64,945 |
+| MP4 Drug→Gene→Pathway←C5 gene | 281,236 | 126,191 |
+| MP5 Drug→Gene→Pathway←F0→F1 transition gene | 234,747 | 185,388 |
+| MP5 Drug→Gene→Pathway←F1→F2 transition gene | 336,356 | 192,014 |
+| MP5 Drug→Gene→Pathway←F2→F3 transition gene | 290,926 | 207,276 |
+| MP5 Drug→Gene→Pathway←F3→F4 transition gene | 219,224 | 161,403 |
+| MP6 Drug→Gene→Paper1 fibrosis pathway [Reactome] | 31,345 | 12,520 |
+| MP6 Drug→Gene→Paper1 fibrosis pathway [KEGG] | 10,763 | 4,505 |
+| MP6 Drug→Gene→Paper1 fibrosis pathway [Hallmark] | 4,247 | 2,694 |
+| MP7 Drug→Gene→Pathway←ProgressionGene→LiverDisease | 5,216,164 | 4,179,412 |
+
+## Repurposing pairs: drug → liver disease through genes
+Drug–liver-disease pairs reached by MP1 (through a gene the drug acts on) or MP7 (through a pathway shared with a progression gene associated with the disease): **104,573 pairs**. Of these, **608** are already known uses in the graph (TREATS / OFF_LABEL_FOR) and **103,965 are NEW pairs**. Of the new pairs, **100,268** come from drugs with **no fibrosis-type liver use** in the graph (true repurposing under Idea 1; drugs used only for liver cancer or hepatitis count as repurposing), 16,758 of them for fibrosis-spectrum diseases (fatty liver, NASH, cirrhosis, liver failure …). 26,129 of these true-repurposing pairs involve main-list (mechanism-annotated) candidate drugs, 4,239 of them for fibrosis-spectrum diseases. 176 new pairs are flagged as contraindicated.
+
+| Pair set | Pairs |
+|---|---|
+| All drug–liver-disease pairs reached (MP1 or MP7) | 104,573 |
+| Known uses (TREATS / OFF_LABEL_FOR) | 608 |
+| New pairs | 103,965 |
+| New pairs, drug has no fibrosis-type liver use (Idea 1) | 100,268 |
+| … and disease is fibrosis-spectrum | 16,758 |
+| … and drug is on the main list | 4,239 |
+| New pairs reached by exactly one MP1 route (unique combination) | 15,350 |
+
+### New fibrosis-spectrum pairs from main-list drugs with no fibrosis-type liver use (most direct MP1 routes)
+| drug_name | disease_name | MP1_paths | MP1_genes | MP7_paths | contraindicated |
+|---|---|---|---|---|---|
+| FOSTAMATINIB | non-alcoholic fatty liver disease | 5 | DCLK2;MAP3K1;MTOR;PRKAA1;PRKAA2 | 982 |  |
+| FOSTAMATINIB | fatty liver disease | 5 | DCLK2;MAP3K1;MTOR;PRKAA1;PRKAA2 | 982 |  |
+| ARIPIPRAZOLE | cirrhosis of liver | 5 | ADRA2A;ADRA2C;GRIN2D;GRIN3A;HTR2A | 239 |  |
+| ENFLURANE | cirrhosis of liver | 5 | CACNA2D1;GABRB3;GABRE;GRIN2D;GRIN3A | 128 |  |
+| AMOXAPINE | cirrhosis of liver | 5 | ADRA2A;ADRA2C;GABRB3;GABRE;HTR2A | 116 |  |
+| INAMRINONE | non-alcoholic fatty liver disease | 5 | PDE3A;PDE3B;PDE4A;PDE4D;TNF | 52 |  |
+| INAMRINONE | fatty liver disease | 5 | PDE3A;PDE3B;PDE4A;PDE4D;TNF | 52 |  |
+| INAMRINONE | non-alcoholic steatohepatitis | 5 | PDE3A;PDE3B;PDE4A;PDE4D;TNF | 44 |  |
+| INAMRINONE | cirrhosis of liver | 5 | PDE3A;PDE3B;PDE4A;PDE4D;TNF | 39 |  |
+| PATUPILONE | cirrhosis of liver | 4 | TUBB1;TUBB3;TUBB4A;TUBB4B | 1,939 |  |
+| EPOTHILONE D | cirrhosis of liver | 4 | TUBB1;TUBB3;TUBB4A;TUBB4B | 1,939 |  |
+| PATUPILONE | biliary liver cirrhosis | 4 | TUBB1;TUBB3;TUBB4A;TUBB4B | 1,889 |  |
+| PATUPILONE | primary biliary cirrhosis | 4 | TUBB1;TUBB3;TUBB4A;TUBB4B | 1,889 |  |
+| PATUPILONE | cirrhosis, familial | 4 | TUBB1;TUBB3;TUBB4A;TUBB4B | 1,889 |  |
+| EPOTHILONE D | biliary liver cirrhosis | 4 | TUBB1;TUBB3;TUBB4A;TUBB4B | 1,889 |  |
+
+Full list: `drug_liver_disease_pairs.csv`.
+
+## Verification
+MP1, MP2 and MP3 path counts were re-counted inside Neo4j: MP1 37,615 = 37,615, MP2 52,514 = 52,514, MP3 1,530,593 = 1,530,593 (all match). LIMIT 5 test query for MP7 run first. All queries: `metapath_queries.cypher`.
+
+## Caveats
+- More routes mean more graph connectivity, not efficacy. Well-studied drugs and genes have more routes.
+- Gene–disease links are Open Targets associations (score ≥ 0.1), many from cancer studies.
+- KEGG and Hallmark pathways reach drugs only through their Paper 1 progression genes (no graph node).
+
+
+
+
+===== task6_target_score_prototype (exit 0, 8s)
+# Task 6 design test run (equal weights)
+
+> **Design test with equal weights (0.2 each).** After Paper 1 was confirmed final, equal weights were frozen for the final ranking; the final, stability-checked results are in `Final_ranking/`.
+
+Gene set: corrected Paper 1 union of **6,222 genes** (the plan's 4,692 was the pre-correction count). Script: `Paper2_Results_Idea1/code/task6_target_score_prototype.py`.
+
+## Did it run?
+Yes. All five components are in [0, 1] for all 6,222 genes, with no missing values after the documented rules. Paper 1 `n_databases` is reproduced for 99.2% of fibrosis genes by the B input (from the Task 5 prep term lists).
+
+## Component distributions
+| index | mean | 50% | min | max | share of genes = 0 |
+|---|---|---|---|---|---|
+| P | 0.523 | 0.471 | 0.156 | 1.0 | 0.0 |
+| F | 0.519 | 0.667 | 0.0 | 1.0 | 0.382 |
+| T | 0.35 | 0.381 | 0.0 | 0.993 | 0.382 |
+| K | 0.044 | 0.0 | 0.0 | 0.898 | 0.829 |
+| B | 0.206 | 0.0 | 0.0 | 1.0 | 0.59 |
+
+## Component correlations (Spearman)
+| index | P | F | T | K | B |
+|---|---|---|---|---|---|
+| P | 1.0 | 0.561 | 0.8 | 0.073 | 0.54 |
+| F | 0.561 | 1.0 | 0.728 | 0.047 | 0.51 |
+| T | 0.8 | 0.728 | 1.0 | 0.064 | 0.619 |
+| K | 0.073 | 0.047 | 0.064 | 1.0 | 0.214 |
+| B | 0.54 | 0.51 | 0.619 | 0.214 | 1.0 |
+
+## Ablation (drop one component; remaining weights renormalised)
+| variant | spearman_vs_full | kendall_vs_full | top50_overlap | median_abs_rank_shift | shortlist_median_rank | shortlist_in_top_500 |
+|---|---|---|---|---|---|---|
+| full (equal weights) | 1.0 | 1.0 | 50 | 0.0 | 247.0 | 18 |
+| without P | 0.9594 | 0.8384 | 40 | 372.0 | 451.0 | 13 |
+| without F | 0.9881 | 0.9324 | 34 | 240.0 | 146.0 | 19 |
+| without T | 0.9852 | 0.9167 | 34 | 70.0 | 293.0 | 17 |
+| without K | 0.9875 | 0.9469 | 24 | 99.5 | 249.0 | 16 |
+| without B | 0.9552 | 0.8589 | 29 | 139.0 | 239.0 | 18 |
+| without K and B | 0.9302 | 0.8045 | 10 | 247.0 | 389.0 | 14 |
+
+## Weight sensitivity (Dirichlet, 1,000 draws, seed 42)
+| dirichlet_alpha | draws | median_spearman_vs_equal | p05_spearman_vs_equal | median_top50_overlap | genes_in_top50_in_>=80%_of_draws | genes_ever_in_top50 |
+|---|---|---|---|---|---|---|
+| 1.0 | 1000.0 | 0.9669 | 0.9055 | 28.0 | 7.0 | 408.0 |
+| 10.0 | 1000.0 | 0.9958 | 0.9844 | 41.0 | 29.0 | 173.0 |
+
+α = 1: weights anywhere on the simplex (stress test). α = 10: weights near equal (plausible range).
+
+## λ sensitivity (P scale for inflammation-only genes)
+| lambda_inflammation_only | spearman_vs_full | top50_overlap | inflammation_only_in_top50 |
+|---|---|---|---|
+| 0.0 | 0.9765 | 50.0 | 0.0 |
+| 0.5 | 1.0 | 50.0 | 0.0 |
+| 1.0 | 0.9992 | 50.0 | 0.0 |
+
+## Sanity check against Paper 1
+Spearman between this prototype score and Paper 1's HighConfidenceScore (fibrosis genes): **0.871**. Expected to be positive but not 1: P, T and B reuse Paper 1 evidence (partly circular), while K is new and F is graded differently.
+
+## First 10 genes under equal weights (design test; see Final_ranking/ for the final lists)
+| Gene | progression_class | trajectory_cluster | P | F | T | K | B | TargetScore_equal_weights |
+|---|---|---|---|---|---|---|---|---|
+| BCL2 | fibrosis_only | C2 | 0.845 | 1.0 | 0.873 | 0.789 | 0.997 | 0.901 |
+| CACNA1C | fibrosis_only | C2 | 0.982 | 1.0 | 0.867 | 0.8 | 0.787 | 0.887 |
+| SRC | fibrosis_only | C1 | 0.908 | 1.0 | 0.817 | 0.706 | 0.998 | 0.886 |
+| EPHA2 | fibrosis_only | C2 | 0.829 | 1.0 | 0.956 | 0.61 | 0.987 | 0.876 |
+| PDGFRA | fibrosis_only | C2 | 0.973 | 1.0 | 0.816 | 0.718 | 0.864 | 0.874 |
+| PIK3CG | fibrosis_only | C1 | 0.881 | 1.0 | 0.699 | 0.661 | 0.995 | 0.847 |
+| PDGFRB | shared | C1 | 0.891 | 0.667 | 0.84 | 0.8 | 0.981 | 0.836 |
+| ALDH2 | fibrosis_only | C5 | 0.936 | 1.0 | 0.729 | 0.56 | 0.938 | 0.833 |
+| CXCR4 | shared | C2 | 0.979 | 0.667 | 0.856 | 0.681 | 0.98 | 0.833 |
+| DPYD | fibrosis_only | C5 | 0.897 | 1.0 | 0.784 | 0.67 | 0.794 | 0.829 |
+
+
+
+
+===== task7_direction_consistency (exit 0, 3s)
+ted, n=666) | 382 | 317 | 65 | 259 | 25 |
+
+**382 of 1,269 repurposing candidates** have at least one direction-consistent link (382 of 666 on the main list). Per-drug detail: `drug_direction_summary.csv`.
+
+### Main-list drugs with the most direction-consistent fibrosis-gene links (NOT a ranking)
+| Drug | max_phase | n_consistent_fibrosis_genes | n_consistent | n_inconsistent | direction_pattern | consistent_genes | inconsistent_genes |
+|---|---|---|---|---|---|---|---|
+| REGORAFENIB | 4.0 | 6 | 8 | 2 | mixed (consistent + inconsistent) | DDR2;EPHA2;FGFR2;KIT;MAPK11;PDGFRA;PDGFRB;RET | FRK;KDR |
+| DASATINIB | 4.0 | 6 | 6 | 2 | mixed (consistent + inconsistent) | EPHA2;FGR;KIT;LCK;PDGFRB;SRC | FRK;YES1 |
+| DALFAMPRIDINE | 4.0 | 3 | 4 | 2 | mixed (consistent + inconsistent) | KCNA2;KCNA3;KCNB1;KCND1 | KCNC2;KCND3 |
+| OXTRIPHYLLINE | 4.0 | 3 | 3 | 0 | only consistent | ADORA1;PDE3A;PDE4A |  |
+| THEOPHYLLINE | 4.0 | 3 | 3 | 0 | only consistent | ADORA1;PDE3A;PDE4A |  |
+| IBUDILAST | 4.0 | 3 | 3 | 0 | only consistent | PDE3A;PDE4A;PDE4D |  |
+| MARIMASTAT | 3.0 | 3 | 3 | 0 | only consistent | MMP2;MMP7;MMP9 |  |
+| SULFASALAZINE | 4.0 | 3 | 3 | 0 | only consistent | ALOX5;PTGS1;PTGS2 |  |
+| MECLOFENAMIC ACID | 4.0 | 3 | 3 | 0 | only consistent | ALOX5;PTGS1;PTGS2 |  |
+| BALSALAZIDE | 4.0 | 3 | 3 | 1 | mixed (consistent + inconsistent) | ALOX5;PTGS1;PTGS2 | PPARG |
+| SUNITINIB | 4.0 | 3 | 3 | 1 | mixed (consistent + inconsistent) | KIT;PDGFRA;PDGFRB | KDR |
+| MIDOSTAURIN | 4.0 | 3 | 3 | 1 | mixed (consistent + inconsistent) | KIT;PDGFRA;PDGFRB | KDR |
+| MESALAMINE | 4.0 | 3 | 3 | 1 | mixed (consistent + inconsistent) | ALOX5;PTGS1;PTGS2 | PPARG |
+| PAZOPANIB | 4.0 | 3 | 3 | 2 | mixed (consistent + inconsistent) | KIT;PDGFRA;PDGFRB | FGFR3;KDR |
+| NINTEDANIB | 4.0 | 3 | 3 | 2 | mixed (consistent + inconsistent) | FGFR2;PDGFRA;PDGFRB | FGFR3;KDR |
+
+### Checks on earlier examples
+- **PPAR agonists (Task 5, Example 1):**
+
+| Drug | n_consistent | n_inconsistent | consistent_genes | inconsistent_genes |
+|---|---|---|---|---|
+| FENOFIBRIC ACID | 1 | 0 | PPARA |  |
+| MURAGLITAZAR | 1 | 1 | PPARA | PPARG |
+| TESAGLITAZAR | 1 | 1 | PPARA | PPARG |
+| ALEGLITAZAR | 1 | 1 | PPARA | PPARG |
+| INDEGLITAZAR | 1 | 2 | PPARA | PPARD;PPARG |
+| GW501516 | 0 | 1 |  | PPARD |
+
+  PPARA falls with fibrosis and is activated (consistent). PPARG/PPARD rise and are also activated (inconsistent). These drugs are **mixed**, as flagged in Task 5.
+- **PDGFRA (Task 5, Example 3):** AMUVATINIB: INHIBITOR → direction-consistent; ERDAFITINIB: TARGET → unknown; FOSTAMATINIB: TARGET → unknown; LENVATINIB: TARGET → unknown; MIDOSTAURIN: INHIBITOR → direction-consistent; NINTEDANIB: INHIBITOR → direction-consistent; PAZOPANIB: INHIBITOR → direction-consistent; PONATINIB: TARGET → unknown; REGORAFENIB: INHIBITOR → direction-consistent; RIPRETINIB: INHIBITOR → direction-consistent; SUNITINIB: INHIBITOR → direction-consistent.
+
+## 5. Is the pairing different from chance? (descriptive)
+Among decided links (known direction, unambiguous gene): 1,001 links, 530 direction-consistent vs. 564 expected if drug action were independent of gene direction (Fisher OR 0.69, p = 0.017).
+So known drug actions are slightly **less** often direction-consistent than chance. The main reason is visible in section 2: genes that **fall** with fibrosis mostly have *inhibitors* in the graph (fibrosis-only ⬇ 30% consistent, shared ⬇⬇ 20%, cluster C4 6%), while rising fibrosis-only genes are mostly inhibited, which is consistent (89%). This matches the Task 3 warning: falling genes would need activators, and few exist. The graph contains no fibrosis information, so this pattern says which drugs exist, not whether they would work.
+
+## Files
+`drug_action_evidence.csv` (one row per link, all requested columns), `summary_known_vs_unknown.csv`, `consistency_by_paper1_group.csv`, `consistency_by_cluster.csv`, `candidates_direction_summary.csv`, `drug_direction_summary.csv` (per drug, for the later DrugScore).
+
+
+
+
+===== task7_revised_pathway_direction (exit 0, 3s)
+ent | 4,995 |
+| direction-inconsistent | 2,353 |
+| ambiguous | 5,193 |
+| unknown | 82,331 |
+
+**3,039** decided routes come from targets that are **not** progression genes. These drugs could not be judged at all in the first Task 7.
+
+## 3. Gene level vs pathway level, per drug
+| Drug set | gene-level call | call only through pathways | combined: consistent | combined: inconsistent |
+|---|---|---|---|---|
+| All drugs | 717 | 260 | 527 | 412 |
+| Repurposing candidates | 641 | 101 | 397 | 317 |
+| Main list | 641 | 0 | 332 | 282 |
+
+Where both levels give a call, they **agree for 367 drugs and disagree for 192**. Combined call = gene level where it exists, otherwise the pathway majority.
+
+### Repurposing candidates judged only through pathways, consistent (most pathways)
+These candidates act on progression genes only through links of unknown direction, so the first Task 7 could not judge them. Their other targets have a known action, so they can be judged through pathways. The main list has none, because every main-list drug already has a gene-level call.
+| drug_name | pathway_level_consistent | pathway_level_inconsistent | consistent_pathways |
+|---|---|---|---|
+| VX-702 | 12 | 1 | ADP signalling through P2Y purinoceptor 1; CD163 mediating an anti-inflammatory response; ERK/MAPK targets; NOD1/2 Signaling Pathway; Neutrophil degranulation |
+| PONATINIB | 12 | 3 | CDC42 GTPase cycle; Cyclin D associated events in G1; FCGR3A-mediated phagocytosis; Factors involved in megakaryocyte development and platelet production; RAC1 GTPase cycle |
+| TALMAPIMOD | 12 | 1 | ADP signalling through P2Y purinoceptor 1; CD163 mediating an anti-inflammatory response; ERK/MAPK targets; NOD1/2 Signaling Pathway; Neutrophil degranulation |
+| DABRAFENIB | 9 | 0 | MAP2K and MAPK activation; Negative regulation of MAPK pathway; Paradoxical activation of RAF signaling by kinase inactive BRAF; RAF activation; Signaling by RAF1 mutants |
+| ENCORAFENIB | 9 | 0 | MAP2K and MAPK activation; Negative regulation of MAPK pathway; Paradoxical activation of RAF signaling by kinase inactive BRAF; RAF activation; Signaling by RAF1 mutants |
+| BINIMETINIB | 8 | 0 | MAP2K and MAPK activation; Paradoxical activation of RAF signaling by kinase inactive BRAF; RAF activation; Signal transduction by L1; Signaling by RAF1 mutants |
+| NILOTINIB | 7 | 3 | Cyclin D associated events in G1; FCGR3A-mediated phagocytosis; Factors involved in megakaryocyte development and platelet production; RHO GTPases Activate WASPs and WAVEs; Regulation of actin dynamics for phagocytic cup formation |
+| GILTERITINIB | 7 | 1 | Constitutive Signaling by Aberrant PI3K in Cancer; Negative regulation of FLT3; PI5P, PP2A and IER3 Regulate PI3K/AKT Signaling; PIP3 activates AKT signaling; RAF/MAP kinase cascade |
+| TANDUTINIB | 6 | 1 | Constitutive Signaling by Aberrant PI3K in Cancer; Negative regulation of FLT3; PI5P, PP2A and IER3 Regulate PI3K/AKT Signaling; PIP3 activates AKT signaling; RAF/MAP kinase cascade |
+| CHENODIOL | 5 | 0 | Endogenous sterols; Recycling of bile acids and salts; SUMOylation of intracellular receptors; Synthesis of bile acids and bile salts via 27-hydroxycholesterol; Synthesis of bile acids and bile salts via 7alpha-hydroxycholesterol |
+| TELMISARTAN | 4 | 0 | Cargo recognition for clathrin-mediated endocytosis; Clathrin-mediated endocytosis; G alpha (q) signalling events; Peptide ligand-binding receptors |
+| IRBESARTAN | 4 | 0 | Cargo recognition for clathrin-mediated endocytosis; Clathrin-mediated endocytosis; G alpha (q) signalling events; Peptide ligand-binding receptors |
+
+## Files
+`pathway_direction.csv`, `drug_target_pathway_direction.csv` (every route), `drug_direction_gene_vs_pathway.csv` (per drug).
+
+## Caveats
+- A pathway's direction is a vote of its measured genes. Pathways contain activators and inhibitors, so a pathway vote is a simplification.
+- The action labels still decide everything: TARGET / ENZYME / TRANSPORTER / CARRIER links stay unknown at both levels.
+
+
+
+
+===== final_ranking (exit 0, 15s)
+n | Graph support (MetaPaths) | Liver safety flag | Paper 1 shortlist |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | MAVORIXAFOR | 3.0 | 0.9297 | yes | CXCR4 (#45) | ✔ | ✔ shared | ✔ | ✔ | ✔ consistent | ✔ | ✔ none recorded | – |
+| 2 | DROTAVERINE | 3.0 | 0.9222 | yes | CACNA1C (#15) | ✔ | ✔ fibrosis-only | ✔ | ✔ | ✔ consistent | ✔ | ✔ none recorded | ✔ |
+| 3 | APLAVIROC | 3.0 | 0.8964 | yes | CCR5 (#298) | ✔ | ✔ shared | ✔ | ✔ | ✔ consistent | ✔ | ✔ none recorded | – |
+| 3 | MARAVIROC | 4.0 | 0.8964 | yes | CCR5 (#298) | ✔ | ✔ shared | ✔ | ✔ | ✔ consistent | ✔ | ✘ contraindicated | – |
+| 3 | INCB-9471 | 2.0 | 0.8964 | yes | CCR5 (#298) | ✔ | ✔ shared | ✔ | ✔ | ✔ consistent | ✔ | ✔ none recorded | – |
+| 3 | VICRIVIROC | 3.0 | 0.8964 | yes | CCR5 (#298) | ✔ | ✔ shared | ✔ | ✔ | ✔ consistent | ✔ | ✔ none recorded | – |
+| 7 | OBATOCLAX | 3.0 | 0.8818 | yes | BCL2 (#10) | ✔ | ✔ fibrosis-only | ✔ | ✔ | ✔ consistent | – | ✔ none recorded | – |
+| 7 | VENETOCLAX | 4.0 | 0.8818 | yes | BCL2 (#10) | ✔ | ✔ fibrosis-only | ✔ | ✔ | ✔ consistent | – | ✔ none recorded | – |
+| 9 | DEXIBUPROFEN | 4.0 | 0.8795 | yes | BCL2 (#10) | ✔ | ✔ fibrosis-only | ✔ | ✔ | ✔ consistent | ✔ | ✔ none recorded | – |
+| 10 | FENOPROFEN | 4.0 | 0.8738 | yes | PTGS2 (#216) | ✔ | ✔ shared | ✔ | ✔ | ✔ consistent | ✔ | ✘ contraindicated | – |
+| 11 | TG100-115 | 2.0 | 0.8674 | yes | PIK3CG (#23) | ✔ | ✔ fibrosis-only | ✔ | ✔ | ✔ consistent | – | ✔ none recorded | – |
+| 11 | DUVELISIB | 4.0 | 0.8674 | yes | PIK3CG (#23) | ✔ | ✔ fibrosis-only | ✔ | ✔ | ✔ consistent | – | ✔ none recorded | – |
+| 13 | GEMFIBROZIL | 4.0 | 0.8601 | yes | SLCO1B3 (#522) | – | ✔ fibrosis-only | ✔ | ✔ | ✔ consistent | ✔ | ✘ contraindicated | – |
+| 14 | IBUPROFEN | 4.0 | 0.86 | yes | BCL2 (#10) | ✔ | ✔ fibrosis-only | ✔ | ✔ | ✔ consistent | ✔ | ✘ contraindicated | – |
+| 15 | ASPIRIN | 4.0 | 0.8584 | yes | MYC (#1) | ✔ | ✔ fibrosis-only | ✔ | ✔ | ✔ consistent | ✔ | ✔ none recorded | – |
+| 16 | PITAVASTATIN | 4.0 | 0.8567 | yes | ITGAL (#593) | – | ✔ fibrosis-only | – | ✔ | ✔ consistent | ✔ | ✔ none recorded | – |
+| 17 | LOVASTATIN | 4.0 | 0.8554 | yes | ITGAL (#593) | – | ✔ fibrosis-only | – | ✔ | ✔ consistent | ✔ | ✔ none recorded | – |
+| 18 | BARNIDIPINE | 2.0 | 0.8512 | yes | CACNA1C (#15) | ✔ | ✔ fibrosis-only | ✔ | ✔ | ✔ consistent | – | ✔ none recorded | ✔ |
+| 19 | R-406 | 2.0 | 0.8494 | yes | SYK (#95) | ✔ | ✔ fibrosis-only | – | ✔ | ✔ consistent | – | ✔ none recorded | – |
+| 20 | SULINDAC | 4.0 | 0.8347 | no | PTGS2 (#216) | ✔ | ✔ shared | ✔ | ✔ | ✔ consistent | ✔ | ✔ none recorded | – |
+| 21 | CLOFIBRATE | 4.0 | 0.8288 | yes | PPARA (#819) | – | ✔ shared | – | ✔ | ✔ consistent | ✔ | ✔ none recorded | – |
+| 21 | CIPROFIBRATE | 4.0 | 0.8288 | yes | PPARA (#819) | – | ✔ shared | – | ✔ | ✔ consistent | ✔ | ✔ none recorded | – |
+| 23 | BALSALAZIDE | 4.0 | 0.8281 | no | PTGS2 (#216) | ✔ | ✔ shared | ✔ | ✔ | ~ mixed | ✔ | ✔ none recorded | – |
+| 24 | EZATIOSTAT | 2.0 | 0.823 | no | GSTP1 (#199) | ✔ | ✔ shared | ✔ | ✔ | ✔ consistent | – | ✔ none recorded | – |
+| 25 | PENTOSTATIN | 4.0 | 0.8204 | no | ADA (#369) | ✔ | ✔ shared | ✔ | ✔ | ✔ consistent | – | ✔ none recorded | – |
+
+### Drug ablation (drop one component)
+| dropped | spearman | kendall | top25_overlap |
+|---|---|---|---|
+| D1_target_relevance | 0.9333 | 0.8015 | 19 |
+| D2_direction | 0.7196 | 0.576 | 13 |
+| D3_specificity | 0.8974 | 0.7249 | 15 |
+| D4_graph_support | 0.9555 | 0.8192 | 10 |
+
+## 3. How to read this
+- A high rank means **several independent knowledge-graph and Paper 1 layers agree**. It does not show that a drug would help patients. Every candidate remains a **repurposing hypothesis**.
+- D2 = 0.5 means the graph does not say which way the drug pushes its targets (unknown, not wrong).
+- ⚠️ = contraindicated in some liver disease in the graph: high priority for safety review, not automatically excluded.
+- Independent validation and transcriptomic reversal are out of scope by the project scope decision.
+
+
+
+
+===== audit_tasks (exit 0, 6s)
+patterns add up to 1,109  True                                                                                               
+67     T7                             summary states consistency is a hypothesis, not proof  True                                                                                               
+68  Final                                        pre-registration written with frozen rules  True                                                                                               
+69  Final  target scores = equal-weight mean of components (biology P,F,T,B; actionable +K)  True                                                                                               
+70  Final                                           both target lists cover all 6,222 genes  True                                                                                               
+71  Final                                   drug lists = 559 main-list and 1,109 candidates  True                                                                                               
+72  Final                             DrugScore = equal-weight mean of D1–D4, all in [0, 1]  True                                                                                               
+73  Final                                                       D1 reproduces independently  True                                                                                               
+74  Final                                                       D2 reproduces independently  True                                                                                               
+75  Final                              no ranked drug already has a fibrosis-type liver use  True                                                                                               
+76  Final                               summary says repurposing hypotheses, not treatments  True                                                                                               
+77    Rev                                       Task 5 revised: MP1–MP3 path counts = Neo4j  True                                                                                               
+78    Rev                                            Task 5 revised: no BioProcess MetaPath  True                                                                                               
+79    Rev                          Task 5 revised pharmacological MP1 = original Task 5 MP1  True                                                                                         24,497
+80    Rev                        Task 5 revised: no 'NEW' pair is a known use (fresh query)  True                                                                                               
+81    Rev                         Task 7 revised: pathway directions follow the stated rule  True                                                                                               
+82    Rev                                Task 7 revised: route consistency labels reproduce  True                                                                                               
+83  Rules                                               no anti-fibrotic claim in summaries  True                                                                                               
+84  Rules                                            no old 'reversal' wording in summaries  True                                                                                               
+85  Rules                                              no best-candidate claim in summaries  True                                                                                               
+86  Rules                                        every task summary mentions 6,222 vs 4,692  True                                                                                               
+
+87/87 passed
+
+E:\Urop_clear\liver_graph-main\Paper2_Results_Idea1\code\audit_tasks.py:324: DtypeWarning: Columns (9) have mixed types. Specify dtype option on import or set low_memory=False.
+  rpx = pd.read_csv(RES / "Task5_revised/drug_liver_disease_pairs.csv")
+
+
+===== task8_progress_report (exit 0, 2s)
+anking/summary.md`.
+
+![Final ranking](Final_ranking/Final_ranking_diagram.png)
+
+## Shortlist-supported vs. broad-evidence-only candidates
+| Candidate set | Total | Supported by 23-gene shortlist | Broad progression evidence only | % shortlist-supported |
+|---|---|---|---|---|
+| All repurposing candidates | 1,269 | 107 | 1,162 | 8.4 |
+| Main list (mechanism-annotated) | 666 | 64 | 602 | 9.6 |
+| With ≥1 direction-consistent link | 382 | 32 | 350 | 8.4 |
+
+Shortlist genes reached by candidates (13 of 23):
+
+| Gene | direction | candidate_drugs | direction_consistent |
+|---|---|---|---|
+| HTR7 | rises (positive) | 35 | 1 |
+| CACNA1C | rises (positive) | 33 | 18 |
+| PDGFRA | rises (positive) | 11 | 7 |
+| TYMS | rises (positive) | 9 | 6 |
+| F2 | falls (negative) | 8 | 0 |
+| MME | falls (negative) | 4 | 0 |
+| ACADSB | falls (negative) | 2 | 0 |
+| LYZ | rises (positive) | 2 | 0 |
+| KNG1 | falls (negative) | 2 | 0 |
+| EPHA3 | rises (positive) | 1 | 0 |
+| OAT | falls (negative) | 1 | 0 |
+| PLK3 | rises (positive) | 1 | 0 |
+| SULT1E1 | falls (negative) | 1 | 0 |
+
+Most shortlist-supported candidates come from two rising genes, **CACNA1C** (calcium channel) and **HTR7** (serotonin receptor). CACNA1C has 18 direction-consistent links (blockers of a rising gene), whereas HTR7 links are mostly "target" with unknown direction (1 consistent of 35).
+
+## Limitations
+1. **88.5% of drug–gene links have unknown action direction** (TARGET/ENZYME/TRANSPORTER/CARRIER). Direction-consistency can only be judged for 1,001 links, and unknown is not the same as inconsistent.
+2. **No affinity or potency values** in the graph, so drug strength cannot be weighted.
+3. **No per-assertion accession IDs.** Links are identified by ChEMBL drug ID | Ensembl gene ID with source names and, where available, literature URLs.
+4. **Knowledge-graph study bias:** well-studied (high-degree) genes have more known drugs (background druggability rises from 5.8% to 23.8% across degree bins). This is addressed with degree-matched nulls and degree-normalised MetaPath support, but not removed.
+5. **Graph housekeeping (does not affect results):** in the live Neo4j graph the `fibrosis_rho` property stored on Gene nodes is from the pre-correction Paper 1 run (3,645 genes; missing for 391 current fibrosis genes). The `TRACKS_FIBROSIS` edges are current and match the corrected Paper 1 table exactly. Paper 2 uses only the corrected tables and edges, but the node property should be refreshed by the Paper 1 team.
+6. "No liver indication" means none is recorded in the graph, not necessarily none in practice. EFO filed some non-hepatic diseases under "liver disease"; the cleaning rule is documented.
+7. Target-score weights were frozen as equal weights for the final ranking (`Final_ranking/PREREGISTRATION.md`); Task 6 keeps the design test that motivated the two-list, stable-target reporting.
+8. Scope limits by design: no transcriptomic reversal, no external validation.
+
+## Next steps
+1. **Done:** final target and drug ranking with frozen rules, stability and ablation analyses, and evidence cards (section above). Shortlist-supported (107) and broad-evidence-only (1,162) candidates are reported separately.
+2. **Safety and literature review** of the stable top candidates, starting with those flagged as liver-contraindicated in the graph, before any experimental follow-up.
+3. **Experimental or clinical validation** of selected hypotheses is outside this knowledge-graph study (project scope decision) and would be the next project.
+4. Decisions to confirm: (a) accept the pharmacological-target definition (Task 3), (b) accept the cleaned liver-disease set (Task 4), (c) main list = mechanism-annotated candidates, (d) the two-list target-score reporting.
+
+## Files and reproducibility
+Every task folder has `summary.md`, a diagram and CSV outputs; scripts are in `Paper2_Results_Idea1/code/`. Re-check everything with `python Paper2_Results_Idea1/code/audit_tasks.py`. Guide and prompts: `PAPER2_GUIDE.md`.
+
+
+
+
+===== audit_tasks (exit 0, 6s)
+ of D1–D4, all in [0, 1]  True                                                                                               
+73  Final                                                       D1 reproduces independently  True                                                                                               
+74  Final                                                       D2 reproduces independently  True                                                                                               
+75  Final                              no ranked drug already has a fibrosis-type liver use  True                                                                                               
+76  Final                               summary says repurposing hypotheses, not treatments  True                                                                                               
+77    Rev                                       Task 5 revised: MP1–MP3 path counts = Neo4j  True                                                                                               
+78    Rev                                            Task 5 revised: no BioProcess MetaPath  True                                                                                               
+79    Rev                          Task 5 revised pharmacological MP1 = original Task 5 MP1  True                                                                                         24,497
+80    Rev                        Task 5 revised: no 'NEW' pair is a known use (fresh query)  True                                                                                               
+81    Rev                         Task 7 revised: pathway directions follow the stated rule  True                                                                                               
+82    Rev                                Task 7 revised: route consistency labels reproduce  True                                                                                               
+83     T8                    report states KG-only repurposing scope and out-of-scope items  True                                                                                               
+84     T8                                                report has the 6,222 vs 4,692 note  True                                                                                               
+85     T8                                           report lists the 4 required limitations  True                                                                                               
+86     T8                                       shortlist-supported vs broad counts correct  True                                                                                   107 vs 1,162
+87     T8                             known-direction share correct (1,001 / 8,948 = 11.2%)  True                                                                                               
+88     T8                                                 'treatment' only used in negation  True                                                                                               
+89  Rules                                               no anti-fibrotic claim in summaries  True                                                                                               
+90  Rules                                            no old 'reversal' wording in summaries  True                                                                                               
+91  Rules                                              no best-candidate claim in summaries  True                                                                                               
+92  Rules                                        every task summary mentions 6,222 vs 4,692  True                                                                                               
+
+93/93 passed
+
+E:\Urop_clear\liver_graph-main\Paper2_Results_Idea1\code\audit_tasks.py:324: DtypeWarning: Columns (9) have mixed types. Specify dtype option on import or set low_memory=False.
+  rpx = pd.read_csv(RES / "Task5_revised/drug_liver_disease_pairs.csv")
+

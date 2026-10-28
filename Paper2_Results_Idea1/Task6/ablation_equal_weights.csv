@@ -1,0 +1,8 @@
+variant,spearman_vs_full,kendall_vs_full,top50_overlap,median_abs_rank_shift,shortlist_median_rank,shortlist_in_top_500
+full (equal weights),1.0,1.0,50,0.0,247.0,18
+without P,0.9594,0.8384,40,372.0,451.0,13
+without F,0.9881,0.9324,34,240.0,146.0,19
+without T,0.9852,0.9167,34,70.0,293.0,17
+without K,0.9875,0.9469,24,99.5,249.0,16
+without B,0.9552,0.8589,29,139.0,239.0,18
+without K and B,0.9302,0.8045,10,247.0,389.0,14

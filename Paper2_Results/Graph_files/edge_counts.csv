@@ -1,0 +1,5 @@
+edge type,links,first-node count,second-node count,file
+Gene – Drug,8948,1072,3027,1_gene_drug.xlsx
+Gene – Disease,704892,6168,13502,2_gene_disease.xlsx
+Drug – Disease (known uses),34062,1789,2109,3_drug_disease.xlsx
+Gene – Pathway,17469,4084,1937,4_gene_pathway.xlsx
