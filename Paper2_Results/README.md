@@ -27,5 +27,9 @@ Start with `PAPER2_PROGRESS_REPORT.md`; independent checks are in `AUDIT.md` (10
 | `Task7_external_layer/` | Task 7 re-counted with those extra directions |
 | `New_drug_gene_links/` | New drug–gene links from GtoPdb 2026.3.1, DGIdb 5, ChEMBL and Open Targets 26.09: 5,216 curated links for approved / clinical-trial drugs, 319 genes get their first drug. Written to Neo4j as `EXTERNAL_ACTS_ON` with 519 new drug nodes (undo script in `graph_write/`). Raw API downloads are not in git; `code/new_links_search.py` fetches them again |
 
-## Related folder
-`../Paper2_Results_Idea1/` is a full rerun where only drugs already used for a **fibrosis-type** liver disease are excluded from the candidates (graph only, no diagrams). See its `IDEA1_CHANGES.md`: candidates 1,109 → 1,269, stable drugs on the main list 19 → 21.
+## Related folders
+| Folder | What it holds |
+|---|---|
+| `../Paper2_Results_Idea1/` | **Option 1**: full rerun where only drugs already used for a **fibrosis-type** liver disease are excluded (graph only, no diagrams). See `IDEA1_CHANGES.md`: candidates 1,109 → 1,269, main list 559 → 666, stable drugs 19 → 21 (27 opposite-acting links on 12 genes, none in the same direction). One-page summaries: `Paper2_option1_summary.pdf`, `Paper2_option1_21_drugs_table.pdf`; per-drug gene list: `Final_ranking/stable_21_drugs_target_genes.xlsx` |
+| `../Paper2_Results_Idea1_pathway/` | Option 1 + pathway direction (graph only): drugs with no gene-level direction take it from their Reactome pathways (Task 7 revised). 101 more candidates judged, ranked list 666 → 767; stable drugs 21 → 18 (no new drug; aspirin and two fibrates fall just under the 80% cut-off). See `summary.md` |
+| `../Paper2_Required_outputs/` | Only the files each task's **Required outputs** in the plan asks for, one folder per task, plus the four graph tables (`Task5_metapaths/Graph_tables_4_files/`) |

@@ -1,0 +1,7 @@
+﻿source,target,relation,source_type,target_type,action_direction,main_list
+PONATINIB,PDGFRA ⬆,ACTS_ON,drug,gene,unknown,False
+FOSTAMATINIB,PDGFRA ⬆,ACTS_ON,drug,gene,unknown,True
+AMUVATINIB,PDGFRA ⬆,ACTS_ON,drug,gene,down,True
+RIPRETINIB,PDGFRA ⬆,ACTS_ON,drug,gene,down,True
+PDGFRA ⬆,"stage step
+F2→F3 (q=2.5e-04)",STAGE_TRANSITION (Paper 1),gene,transition,unknown,

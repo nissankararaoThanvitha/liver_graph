@@ -1,0 +1,8 @@
+﻿Plan required output,Measure,Number,Percentage
+Complete drug-gene edge table,Drug-gene relationships (rows in drug_gene_edges.csv),8948,100%
+Progression genes with at least one drug connection,Genes with >=1 drug,1072,"17.2% of 6,222 genes"
+Total unique drugs,Unique drugs,3027,
+Total drug-gene relationships,Drug-gene relationships,8948,
+Relationships with known action direction,Known direction (drug pushes gene down or up),1001,"11.2% of 8,948 links"
+Relationships reconcilable with Paper 1 progression direction,Known drug direction AND Paper 1 gene direction,1001,"11.2% of 8,948 links"
+Relationships reconcilable with the F0-F4 trajectory pattern,Known drug direction AND gene has a trajectory cluster,800,"8.9% of 8,948 links"

@@ -1,0 +1,4 @@
+﻿Example,Drugs,Genes,End nodes
+Example 1 (M1f),INDEGLITAZAR,PPARG;PPARA;PPARD,"biliary liver cirrhosis; cirrhosis of liver; cirrhosis, familial; fatty liver disease; non-alcoholic fatty liver disease; non-alcoholic steatohepatitis; primary biliary cirrhosis"
+Example 2 (M7),"MARIMASTAT, ADAPALENE, PSEUDOEPHEDRINE",JUN;MMP14;MMP2,Hallmark EMT
+Example 3 (M6),"AMUVATINIB, FOSTAMATINIB, PONATINIB, RIPRETINIB",PDGFRA,F2→F3 (q=2.5e-04)

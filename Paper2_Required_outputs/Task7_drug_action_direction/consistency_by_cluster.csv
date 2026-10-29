@@ -1,0 +1,6 @@
+cluster,cluster direction,direction-consistent,direction-inconsistent,ambiguous,unknown,total,% consistent among decided
+C1,positive,104,50,0,737,891,67.5
+C2,positive,171,116,6,940,1233,59.6
+C3,positive,66,6,8,236,316,91.7
+C4,negative,3,48,0,702,753,5.9
+C5,negative,73,163,11,3631,3878,30.9

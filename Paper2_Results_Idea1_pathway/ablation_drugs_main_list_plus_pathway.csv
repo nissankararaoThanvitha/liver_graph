@@ -1,0 +1,5 @@
+dropped,spearman,kendall,top25_overlap
+D1_target_relevance,0.9324,0.7995,19
+D2_direction,0.7474,0.5944,13
+D3_specificity,0.9012,0.7311,15
+D4_graph_support,0.9561,0.8196,9
