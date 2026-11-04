@@ -1,6 +1,6 @@
 {
   "date": "2026-11-04",
-  "mode": "files and write logs only",
+  "mode": "live",
   "target": {
     "nodes": 126999,
     "relationships": 35160254,
@@ -82,5 +82,29 @@
     "0.8 log TREATS after = files": true
   },
   "files_match_target": true,
+  "live": {
+    "nodes": 126999,
+    "relationships": 35160254,
+    "relationship_types": 15,
+    "counts": {
+      "EXPRESSES": 32471042,
+      "IN_DATASET": 1085,
+      "TREATS": 59688,
+      "IN_PATHWAY": 66782,
+      "ASSOCIATED_WITH": 1832441,
+      "CONTRAINDICATED_IN": 11718,
+      "OFF_LABEL_FOR": 1061,
+      "HAS_PHENOTYPE": 157144,
+      "INVOLVED_IN": 157081,
+      "INTERACTS_WITH": 324116,
+      "ACTS_ON": 25890,
+      "PARENT_OF": 44073,
+      "TRACKS_FIBROSIS": 3845,
+      "TRACKS_INFLAMMATION": 4199,
+      "IMPLICATED_IN": 89
+    }
+  },
+  "live_per_type_differences": {},
+  "live_matches_target": true,
   "verified": true
 }

@@ -16,11 +16,29 @@ The final objective is to support the next team’s drug repurposing for interru
 The extended graph adds, on top of Paper 1 (nothing from Paper 1 is changed or removed):
 
 - 519 Drug nodes and 5,216 drug–gene `ACTS_ON` links from ChEMBL, DGIdb, GtoPdb and Open Targets, plus action directions on 297 existing `ACTS_ON` links (data/graph_drug_layer);
-- 236 KEGG legacy and Hallmark Pathway nodes with 20,031 `IN_PATHWAY` links, from the MSigDB 2024.1 files Paper 1 used for enrichment (data/graph_msigdb);
+- 236 KEGG legacy and Hallmark Pathway nodes with 20,031 `IN_PATHWAY` links, from the MSigDB 2024.1 files Paper 1 used for enrichment (data/graph_msigdb holds the Hallmark rows; KEGG rows are not redistributed);
 - 89 Pathway → NAFLD `IMPLICATED_IN` links, kept only where Paper 1 enrichment (BH-FDR < 0.05, fibrosis groups) and CTD agree (data/graph_pathway_disease);
 - 2,087 `TREATS` links from ChEMBL_37 indications for the added drugs (data/graph_drug_layer).
 
 The Paper 2 drug-repurposing analysis that uses this graph is on the paper2-rerun-newgraph branch.
+
+## Download the graph
+
+The extended graph is available as a GitHub release, **without the KEGG pathways**. KEGG data may not be redistributed, so the release is not the complete graph:
+
+- **Release page:** https://github.com/nissankararaoThanvitha/liver_graph/releases/tag/graph-export-2026-11-03
+- **CSV files** (all nodes, relationships and properties, neo4j-admin import format): [liver_kg_graph_export_2026-11-03.zip](https://github.com/nissankararaoThanvitha/liver_graph/releases/download/graph-export-2026-11-03/liver_kg_graph_export_2026-11-03.zip)
+- **Neo4j dump** (load with `neo4j-admin database load`, Neo4j 2026.10 or newer): [liver_kg_2026-11-03.dump](https://github.com/nissankararaoThanvitha/liver_graph/releases/download/graph-export-2026-11-03/liver_kg_2026-11-03.dump)
+
+| | Full graph | Release |
+|---|---|---|
+| Nodes | 126,999 | 126,813 |
+| Relationships | 35,160,254 | 35,147,469 |
+| Entity / relationship types | 8 / 15 | 8 / 15 |
+
+Left out: 186 KEGG Pathway nodes, their 12,724 `IN_PATHWAY` links and the 61 `IMPLICATED_IN` links whose pathway is KEGG. With your own MSigDB download they can be added back with scripts/add_msigdb_pathways.py and scripts/build_pathway_nafld_links.py.
+
+The release includes import instructions (IMPORT.md), constraints, a manifest with row counts and SHA-256 checksums (MANIFEST.csv, SHA256SUMS.txt), the count check (VERIFICATION.json) and each source's terms (DATA_TERMS.md). Use the data non-commercially, credit the sources, and share derived data under the same terms (OptimusKG is CC BY-NC-SA 4.0). The export is made with scripts/export_graph.py and scripts/package_graph_release.py; their documents are in docs/graph_export.
 
 ## Active files
 

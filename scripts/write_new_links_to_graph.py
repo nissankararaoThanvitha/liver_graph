@@ -15,7 +15,8 @@ Graph-only queries use ACTS_ON and :Drug, so all graph-only results stay identic
 NOTE (main branch copy): in the live graph these 5,216 links are now ACTS_ON relationships
 carrying layer = 'external (Idea 4)' (Paper 2 Task 2 reads them that way), and EXTERNAL_ACTS_ON
 no longer exists. That change from EXTERNAL_ACTS_ON to ACTS_ON was made directly in the
-database; no script or log for it is saved. Running this script as it stands recreates the
+database; no script or log for it is saved, but every ACTS_ON link now carries
+original_relationship_type ('ACTS_ON' or 'EXTERNAL_ACTS_ON') and migration_record_id. Running this script as it stands recreates the
 EXTERNAL_ACTS_ON layer of 21 Oct 2026, not the final graph. See data/graph_drug_layer/README.md.
 
 Default is a DRY RUN that changes nothing.
