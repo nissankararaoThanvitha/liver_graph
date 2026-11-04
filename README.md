@@ -1,6 +1,6 @@
 # Stage-resolved transcriptomic analysis of liver fibrosis
 
-Code, result tables and graph exports for the paper *Stage-Resolved Transcriptomic Analysis Reveals Distinct Molecular Programs Associated with Liver Fibrosis Severity* (N. Thanvitha, V. Lakshmi Nikitha, K. Venkata Dinesh).
+Code, result tables and graph exports for the paper *Stage-Resolved Transcriptomic Analysis Reveals Distinct Molecular Programs Associated with Liver Fibrosis Severity* (N. Thanvitha, V. Lakshmi Nikitha, K. Venkata Dinesh, Biswajit Maity, Ashmita Dey; Department of Computer Science and Engineering, SRM University-AP). Correspondence: Ashmita Dey, ashmita.de@srmap.edu.in.
 
 Eight public human liver RNA-sequencing studies (1,085 samples; 1,027 recorded patients) are integrated at the patient level and linked to the OptimusKG biomedical knowledge graph. Within-study Spearman correlations with fibrosis stage (610 patients) and ordered control–NAFL–NASH labels (216 patients) are combined across studies. Fibrosis-associated genes are clustered by their F0–F4 profiles, adjacent stages are compared, and genes are prioritised with a nine-point score checked by leave-one-study-out and sensitivity analyses.
 

@@ -1,6 +1,6 @@
 # Where each part of Paper 1 lives in this repository
 
-Paper: *Stage-Resolved Transcriptomic Analysis Reveals Distinct Molecular Programs Associated with Liver Fibrosis Severity* (Thanvitha, Nikitha, Dinesh). Run every script from the repository root. The order of the full pipeline is in [provenance/REBUILD.md](provenance/REBUILD.md).
+Paper: *Stage-Resolved Transcriptomic Analysis Reveals Distinct Molecular Programs Associated with Liver Fibrosis Severity* (Thanvitha, Nikitha, Dinesh, Maity, Dey). Run every script from the repository root. The order of the full pipeline is in [provenance/REBUILD.md](provenance/REBUILD.md).
 
 ## Methods
 
