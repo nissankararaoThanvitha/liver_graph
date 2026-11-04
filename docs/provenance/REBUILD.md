@@ -38,6 +38,25 @@ The selected final approach is documented in final_combined_2026-10-10/FINAL_SEL
 
 Mechanism CSVs and current selected memberships match the live graph at final verification. Source-node constraints and imported annotations are preserved. The archive holds historical outputs and is excluded from normal analysis paths.
 
+## Graph extensions for Paper 2
+
+These steps take the Paper 1 graph (126,244 nodes; 35,132,831 relationships; 14 types) to the extended graph (126,999; 35,160,254; 15). Run them in this order from the repository root. Each one does a dry run unless told to write.
+
+```bash
+python scripts/write_new_links_to_graph.py --apply
+python scripts/write_new_links_to_graph.py --as-drug
+python scripts/write_external_directions_to_graph.py --apply
+python scripts/add_msigdb_pathways.py
+python scripts/build_pathway_nafld_links.py --load
+python scripts/write_added_drug_indications_to_graph.py --apply
+python scripts/verify_extended_graph_counts.py --live
+```
+
+- Step 0.4 (new drug–gene links) and 0.5 (action directions) read the committed tables in data/graph_drug_layer. The API search scripts that made those tables are on the paper2-rerun-newgraph branch.
+- add_msigdb_pathways.py needs the MSigDB 2024.1 GMT files in data/genesets. build_pathway_nafld_links.py needs data/ctd/CTD_diseases_pathways.csv.gz, data/optimuskg/pathway.parquet and data/graph_okg/nodes_pathway.csv. None of these are committed (see .gitignore for sources). The CSVs these two scripts wrote are committed in data/graph_msigdb and data/graph_pathway_disease.
+- Known gap: step 0.4 writes its links as `EXTERNAL_ACTS_ON`. In the final graph they are `ACTS_ON` with `layer = 'external (Idea 4)'`, and no script for that conversion is saved. Convert them, keeping their properties, before running steps 0.6–0.8 and the check. Details are in data/graph_drug_layer/README.md.
+- Without `--live`, verify_extended_graph_counts.py rebuilds the expected counts from the committed tables and write logs. It writes docs/provenance/extended_graph_verification.json.
+
 ## Final combined inputs
 
 Five flagged GSE130970 disease labels are unclassified (fibrosis/histology retained); normalize_clinical.py reproduces this policy. GSE193066 uses deposited linear RLE counts without CPM rescaling; build_graph_all.py preserves this transform. The active core contains the matching final value_z measurements. The verified raw GCT is retained in unit_audit_GSE193066_2026-10-10. Final shortlist23: up to five Tier1 genes per cluster, C4 only three. Alternative sensitivity outputs are removed from active folders and retained in a local recovery archive. Retained comparison evidence and original commands are in final_combined_2026-10-10.

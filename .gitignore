@@ -43,6 +43,10 @@ data/prediction/
 #   https://data.broadinstitute.org/gsea-msigdb/msigdb/release/2024.1.Hs/
 #   Not committed: KEGG-derived sets may not be redistributed.
 data/genesets/
+# data/ctd  CTD_diseases_pathways.csv.gz (CTD inferred disease-pathway links) from
+#   https://ctdbase.org/reports/CTD_diseases_pathways.csv.gz
+#   Read by scripts/build_pathway_nafld_links.py; the derived links are in data/graph_pathway_disease.
+data/ctd/
 # Zipped copy of Paper1_Results/ for emailing.
 Paper1_Results.zip
 
