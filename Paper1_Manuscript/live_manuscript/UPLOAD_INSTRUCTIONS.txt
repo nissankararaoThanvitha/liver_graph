@@ -1,4 +1,0 @@
-Import this ZIP as a new Overleaf project.
-Select XeLaTeX as compiler and main.tex as main document.
-Keep all Paper1_Results and Paper1_HighConfidence directories intact.
-Use Recompile from scratch if old auxiliary files remain.

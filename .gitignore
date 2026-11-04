@@ -69,3 +69,15 @@ handover_exports/
 CLAUDE.md
 .claude/
 .mcp.json
+
+# Local manuscript drafts, audit notes and migration backups are not release assets.
+/Paper1_Manuscript/
+/manuscript_planning/
+/graph_label_cleanup_2026-10-28/
+/graph_relationship_unification_2026-10-28/
+/biopsy_correction_2026-10-10/
+/docs/provenance/REBUILD_FIXES_2026-11-04.md
+/docs/provenance/SOURCE_CHECKSUMS.md
+/source_checksums.txt
+/scripts/render_cluster_number_figure.py
+/scripts/render_stage_heatmap_figure.py
