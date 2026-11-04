@@ -52,4 +52,4 @@ Paper: *Stage-Resolved Transcriptomic Analysis Reveals Distinct Molecular Progra
 - **The final paper figures** (Figs. 1–6, S1–S2) were laid out in the manuscript project. The PNG figures in `Paper1_Results/` are the analysis figures they were built from.
 - **Raw downloads** (GEO matrices, HGNC, OptimusKG parquet, MSigDB, CTD) are not committed; [provenance/DATA_SOURCES.md](provenance/DATA_SOURCES.md) and `.gitignore` say where each comes from.
 - **The full expression layer** (32,471,042 measurements) is in the graph export release, not in git.
-- **The Paper 2 drug-repurposing analysis** is on the `paper2-rerun-newgraph` branch.
+- **The Paper 2 drug-repurposing analysis** is in its own repository: https://github.com/knarendrakumar187/Drug_Repurposing.

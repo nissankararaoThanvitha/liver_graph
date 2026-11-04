@@ -69,7 +69,7 @@ The graph integrates the expression layer, the OptimusKG knowledge layer and the
 
 As the paper states, these additions were not used in its analyses. `python scripts/verify_extended_graph_counts.py --live` checks the counts against a running database; the saved result is in `docs/provenance/extended_graph_verification.json`.
 
-The drug-repurposing study that uses this graph (Paper 2) is on the `paper2-rerun-newgraph` branch.
+The drug-repurposing study that uses this graph (Paper 2) is in its own repository: https://github.com/knarendrakumar187/Drug_Repurposing.
 
 ## Licence
 

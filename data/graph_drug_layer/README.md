@@ -14,7 +14,7 @@ All three writers do a dry run by default; `--apply` writes and `--undo` removes
 
 ## Not in this folder
 
-The tables here were produced by search scripts that query the source APIs and read the Paper 2 gene and drug–gene tables. Those scripts belong to the Paper 2 analysis and are on the `paper2-rerun-newgraph` branch under `Paper2_Results/code/`: `new_links_search.py`, `new_links_report.py`, `external_action_check.py` and `task4_added_drug_indications.py`.
+The tables here were produced by search scripts that query the source APIs and read the Paper 2 gene and drug–gene tables. Those scripts belong to the Paper 2 analysis and are in the Paper 2 repository (https://github.com/knarendrakumar187/Drug_Repurposing) under `Paper2_Results/code/`: `new_links_search.py`, `new_links_report.py`, `external_action_check.py` and `task4_added_drug_indications.py`.
 
 ## Known gap: relationship type of the step 0.4 links
 
