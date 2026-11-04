@@ -1,0 +1,10 @@
+#
+# Re-checked on 4 November 2026: all 15 checksums above still match the files on the analysis machine.
+#
+# MSigDB 2024.1 gene sets read by paper1_task4_enrichment.py (and add_msigdb_pathways.py for KEGG/Hallmark).
+# Checksums computed on 4 November 2026 from the files on the analysis machine; the files are dated 3 October 2026,
+# before the enrichment analysis. Source: https://data.broadinstitute.org/gsea-msigdb/msigdb/release/2024.1.Hs/
+06a5d7f82d90a0a6a2e464579d049fc42d279fc23fa9f79a956e56c4a442447f  data/genesets/c2.cp.kegg_legacy.v2024.1.Hs.symbols.gmt  (file modified 2026-10-03 19:15)
+9ea1b5e656597daf423e41c5ebcaa9892bfedf3292fff768605d7b0d5e5e9703  data/genesets/c2.cp.reactome.v2024.1.Hs.symbols.gmt  (file modified 2026-10-03 19:21)
+71df041c352cc810c11847db328bb94925c5448a009f310d224f2e8baa60b792  data/genesets/c5.go.bp.v2024.1.Hs.symbols.gmt  (file modified 2026-10-03 19:23)
+ee2463540042078bfa3f67828e1e223bb354446d9fbb4d22845866835ba5c772  data/genesets/h.all.v2024.1.Hs.symbols.gmt  (file modified 2026-10-03 19:14)

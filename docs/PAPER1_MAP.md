@@ -26,6 +26,7 @@ Paper: *Stage-Resolved Transcriptomic Analysis Reveals Distinct Molecular Progra
 | Graph composition (126,999 nodes; 35,160,254 relationships; 15 types) | `scripts/verify_extended_graph_counts.py` | `docs/provenance/extended_graph_verification.json` (live check) |
 | Knowledge-graph annotation analysis (3,980 annotations; 42 genes, 12 annotations, 154 links) | `scripts/kg_subgraph.py`, `scripts/verify_against_neo4j.py` | `Paper1_HighConfidence/12_KG_supplementary.xlsx`, `12_mechanistic_subgraph.png` |
 | Software versions | — | `requirements.txt` |
+| Reference-file versions and checksums (HGNC, OptimusKG, MSigDB) | — | `docs/provenance/SOURCE_CHECKSUMS.txt` |
 
 ## Results
 
