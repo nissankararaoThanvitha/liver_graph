@@ -6,7 +6,7 @@ extended for Paper 2 in these steps:
   0.4  5,216 drug-gene links and 519 new Drug nodes       data/graph_drug_layer/new_drug_gene_links
   0.5  action directions on 297 existing ACTS_ON links    data/graph_drug_layer/external_action_directions
        (properties only; no count change)
-  0.6  236 KEGG/Hallmark Pathway nodes, 20,031 IN_PATHWAY data/graph_msigdb
+  0.6  236 KEGG/Hallmark Pathway nodes, 20,031 IN_PATHWAY data/graph_msigdb (counts.json)
   0.7  89 Pathway -> NAFLD IMPLICATED_IN links (new type) data/graph_pathway_disease
   0.8  2,087 TREATS links for the drugs added in 0.4      data/graph_drug_layer/added_drug_indications
 
@@ -60,8 +60,15 @@ def expected():
 
     links = rows(DL / "new_drug_gene_links/graph_write/links_written.csv")
     new_drugs = {r["Drug_ID"] for r in links if r["node_kind"].startswith("ExternalDrug")}
-    pathways = rows(ROOT / "data/graph_msigdb/nodes_pathway_msigdb.csv")
-    in_pathway = rows(ROOT / "data/graph_msigdb/edges_pathway_gene_msigdb.csv")
+    # KEGG rows are not committed (KEGG data may not be redistributed), so the
+    # KEGG counts come from counts.json; the Hallmark counts are checked against it
+    msig = log(ROOT / "data/graph_msigdb/counts.json")
+    hallmark_nodes = rows(ROOT / "data/graph_msigdb/nodes_pathway_msigdb.csv")
+    hallmark_links = rows(ROOT / "data/graph_msigdb/edges_pathway_gene_msigdb.csv")
+    assert (len(hallmark_nodes), len(hallmark_links)) == (msig["Hallmark"]["pathways"],
+                                                         msig["Hallmark"]["in_pathway_links"])
+    pathways = [None] * sum(msig[s]["pathways"] for s in ("KEGG_legacy", "Hallmark"))
+    in_pathway = [None] * sum(msig[s]["in_pathway_links"] for s in ("KEGG_legacy", "Hallmark"))
     implicated = rows(ROOT / "data/graph_pathway_disease/edges_pathway_nafld.csv")
     treats = rows(DL / "added_drug_indications/graph_write/indication_pairs_plan.csv",
                   lambda r: r["status"] == "write")

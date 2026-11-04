@@ -38,7 +38,9 @@ ROOT = Path(__file__).resolve().parent.parent
 TASK4 = ROOT / "Paper1_Results/Task4/task4_all_significant.csv"
 OKG_PATHWAYS = ROOT / "data/optimuskg/pathway.parquet"
 GRAPH_PATHWAYS = ROOT / "data/graph_okg/nodes_pathway.csv"
-MSIGDB_NODES = ROOT / "data/graph_msigdb/nodes_pathway_msigdb.csv"
+MSIGDB_NODES = [ROOT / "data/graph_msigdb/nodes_pathway_msigdb.csv",   # Hallmark (committed)
+                ROOT / "data/graph_msigdb/nodes_pathway_kegg.csv"]     # KEGG (not committed; run
+                                                                       # add_msigdb_pathways.py first)
 CTD = ROOT / "data/ctd/CTD_diseases_pathways.csv.gz"
 OUT = ROOT / "data/graph_pathway_disease"
 
@@ -68,7 +70,10 @@ def main_link():
     for pid, props in zip(okg.id, okg.properties):
         if pid in in_graph:
             react.setdefault(norm(props.get("name")), []).append(pid)
-    msig = set(pd.read_csv(MSIGDB_NODES).node_id)
+    missing = [str(p.relative_to(ROOT)) for p in MSIGDB_NODES if not p.exists()]
+    if missing:
+        raise SystemExit(f"missing {missing}: run scripts/add_msigdb_pathways.py first")
+    msig = set(pd.concat([pd.read_csv(p) for p in MSIGDB_NODES]).node_id)
 
     rows = []
     for (db, term), g in e.groupby(["database", "term"]):

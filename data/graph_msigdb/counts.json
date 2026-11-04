@@ -1,0 +1,6 @@
+{
+  "note": "Rows written by scripts/add_msigdb_pathways.py and loaded into the graph. The committed CSVs hold the Hallmark rows only; KEGG rows go to the *_kegg.csv files, which are not committed because KEGG data may not be redistributed.",
+  "msigdb_version": "2024.1",
+  "KEGG_legacy": {"pathways": 186, "in_pathway_links": 12724, "unmatched_symbols": 71},
+  "Hallmark": {"pathways": 50, "in_pathway_links": 7307, "unmatched_symbols": 15}
+}

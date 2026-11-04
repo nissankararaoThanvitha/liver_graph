@@ -20,7 +20,11 @@ that should stay Reactome-only filters on the "REACT:" prefix or on
     MATCH (p:Pathway) WHERE p.source IN ['KEGG_legacy','Hallmark'] DETACH DELETE p
 
 Genes are matched by HGNC symbol, which is unique in the graph. MSigDB symbols
-with no Gene node are listed in the unmatched file, not loaded.
+with no Gene node are listed in the unmatched files, not loaded.
+
+Output (data/graph_msigdb): Hallmark rows in *_msigdb.csv (committed); KEGG rows
+in *_kegg.csv (not committed: KEGG data may not be redistributed). counts.json
+records the row counts of both.
 
 Run from the project root:
     python scripts/add_msigdb_pathways.py            # write CSVs and load
@@ -100,9 +104,13 @@ def main():
         nodes, edges, unmatched = build(syms)
 
         OUT.mkdir(parents=True, exist_ok=True)
-        nodes.to_csv(OUT / "nodes_pathway_msigdb.csv", index=False)
-        edges.to_csv(OUT / "edges_pathway_gene_msigdb.csv", index=False)
-        unmatched.to_csv(OUT / "unmatched_symbols_msigdb.csv", index=False)
+        # KEGG rows go to separate *_kegg.csv files, which git ignores: KEGG data
+        # may not be redistributed. Hallmark rows go to the committed files.
+        for df, stem in ((nodes, "nodes_pathway"), (edges, "edges_pathway_gene"),
+                         (unmatched, "unmatched_symbols")):
+            kegg = df.source == "KEGG_legacy"
+            df[~kegg].to_csv(OUT / f"{stem}_msigdb.csv", index=False)
+            df[kegg].to_csv(OUT / f"{stem}_kegg.csv", index=False)
         for src in ("KEGG_legacy", "Hallmark"):
             print(f"{src:12s} pathways {int((nodes.source == src).sum()):4d}  "
                   f"links {int((edges.source == src).sum()):6,d}  "
