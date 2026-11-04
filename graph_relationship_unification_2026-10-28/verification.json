@@ -1,0 +1,13 @@
+{
+  "records_before": 25890,
+  "records_after": 25890,
+  "all_ACTS_ON": true,
+  "one_record_per_original": true,
+  "endpoints_preserved": true,
+  "original_properties_preserved": true,
+  "original_types_preserved": true,
+  "nodes_unchanged": true,
+  "total_relationships_unchanged": true,
+  "other_relationship_types_unchanged": true,
+  "normalized_fields_exact": true
+}

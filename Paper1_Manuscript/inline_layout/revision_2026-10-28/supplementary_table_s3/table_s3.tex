@@ -1,0 +1,34 @@
+\clearpage
+\begingroup
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\theHtable}{S\arabic{table}}
+\setcounter{table}{2}
+\fontsize{9}{11}\selectfont
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.08\textwidth}>{\raggedright\arraybackslash}p{0.25\textwidth}>{\raggedright\arraybackslash}p{0.57\textwidth}}
+\caption{Gene-prioritisation component scores and decision rules}\label{tab:S3}\\
+\toprule
+\textbf{Score} & \textbf{Evidence} & \textbf{Assignment rule} \\
+\midrule\endfirsthead
+\multicolumn{3}{l}{\textbf{Table S3 continued}}\\
+\toprule
+\textbf{Score} & \textbf{Evidence} & \textbf{Assignment rule} \\
+\midrule\endhead
+\bottomrule\endfoot
+$P_g$ & Fibrosis-association magnitude & \textbf{2}: $|\operatorname{median}\rho|\geq0.40$. \textbf{1}: $0.30\leq|\operatorname{median}\rho|<0.40$. \textbf{0}: otherwise. Applied to genes already passing fibrosis-association discovery criteria. \\
+$T_g$ & F0--F4 endpoint separation & Let $\Delta_g=\overline{z}_{F4}-\overline{z}_{F0}$. First require direction agreement with the median fibrosis correlation: both values positive or both non-positive. If agreement holds, assign \textbf{2} for $|\Delta_g|\geq1$, \textbf{1} for $0.5\leq|\Delta_g|<1$, and \textbf{0} otherwise. Direction disagreement assigns \textbf{0}. A zero difference receives \textbf{0} by magnitude. Cluster direction does not override this rule. \\
+$X_g$ & Largest adjacent-stage contrast and matched-refit reproducibility & Select the full-data comparison with the largest available $|\beta|$. Define A: $q<0.05$ and $|\beta|\geq0.20$ in that comparison. Define B: at least 50\% of matched draws have $|\beta|\geq0.20$ and the same sign as the selected full-data coefficient. Assign \textbf{2} if A and B hold, \textbf{1} if exactly one holds, and \textbf{0} if neither holds. Matched-draw significance does not contribute. \\
+$F_g$ & Operational fibrosis-only membership & \textbf{1}: selected in the fibrosis analysis but not in the ordered disease-group analysis. \textbf{0}: otherwise. This selection status does not establish biological specificity. \\
+$B_g$ & Functional-annotation support & Count annotation collections containing at least one significantly enriched term (BH $q<0.05$) whose overlapping-gene list contains the gene, using its own concordant direction group or its full expression cluster. \textbf{2}: at least two collections; \textbf{1}: one; \textbf{0}: none. Eligible collections: GO Biological Process, KEGG legacy, Reactome and Hallmark. Each counts once across both routes; confidence-core enrichment is excluded. \\
+\end{longtable}
+\small
+\textbf{Precision and thresholds.} Scoring uses exported median correlations and stage means recorded to three decimal places; the endpoint difference is also rounded to three decimals before comparison. Lower score thresholds are inclusive; statistical significance requires $q<0.05$.
+
+\textbf{Contrast selection and missing evidence.} Exact ties in $|\beta|$ retain the first comparison in the order F0--F1, F1--F2, F2--F3, F3--F4. A missing full-data q-value does not satisfy condition A. Missing matched evidence for the selected contrast, or absence of a selected contrast, stops scoring rather than automatically assigning zero. All 3,845 fibrosis-associated genes had finite full-data coefficients and q-values for all four contrasts and matched evidence for the selected contrast.
+
+\textbf{Annotation eligibility.} All significant terms are eligible, including terms not displayed in figures. Discordant shared genes have no concordant direction-group route but can receive support through their full expression cluster. Multiple terms within one collection do not increase its contribution.
+
+\textbf{Total score and shortlist.} $S_g=P_g+T_g+X_g+F_g+B_g$ has a maximum of nine. Tier 1: $S_g\geq7$; Tier 2: $5\leq S_g<7$; Tier 3: $S_g<5$. Up to five Tier 1 genes per cluster are selected by descending total score, then descending absolute median fibrosis correlation. Clusters with fewer than five qualifying genes contribute fewer candidates. The components share evidence and do not constitute independent validation.
+\endgroup
+

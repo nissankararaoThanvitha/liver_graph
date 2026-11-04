@@ -1,81 +1,23 @@
-"""Focused mechanistic subgraph for the high-confidence fibrosis genes.
+"""Original-layer annotation subgraph for the current 447 Tier 1 genes.
 
-The knowledge graph is NOT rebuilt. This reads the same CSVs that are loaded
-into Neo4j (data/graph_okg) and filters them, which is what the brief asks for
-and does not need the database running. That equality is checked rather than
-asserted: verify_against_neo4j.py diffs the two, down to the gene IDs of every
-mechanism in the figure.
+Reads the original OptimusKG Reactome/GO CSVs in data/graph_okg; added
+KEGG/Hallmark pathways are intentionally outside this analysis universe.
+For a fresh clone recover this layer with prepare_analysis_core.py
+--annotations-only; see docs/provenance/REBUILD.md.
 
-WHAT ENRICHMENT ALREADY SAID, AND WHAT THIS ADDS
-Task 4 said WHICH processes are over-represented among fibrosis genes. It
-could not say which gene connects to which mechanism, or where several genes
-land on the same one. That wiring is what the graph holds.
+Test Tier 1 enrichment against the 14,794 eligible Ensembl genes, with BH
+across reached annotations. Retain sets with 10–500 background genes,
+at least ten Tier 1 genes and q < .05; rank by q and skip Jaccard > .5
+near-duplicates until twelve annotations are selected. Display genes linked
+to at least three selected annotations, plus shortlisted genes reaching at
+least one. The committed result has 42 genes, twelve annotations and 154
+links; four of the 23 shortlisted genes appear. These are contextual
+annotations, not physical interactions or causal validation.
 
-WHICH KNOWLEDGE LAYER
-data/graph_okg -- the OptimusKG layer that is actually loaded into Neo4j. Its
-counts match the live graph exactly (IN_PATHWAY 46,751, INVOLVED_IN 157,081,
-Pathway 2,220, BioProcess 12,203). An earlier version of this script read
-data/graph_kg, the superseded PrimeKG-era layer (42,478 / 143,156 edges;
-that OptimusKG replaced; its numbers do not match the graph and it should not
-be used.
+Use scripts/verify_against_neo4j.py to compare original annotation membership
+with a running graph; added pathway nodes are excluded from that check.
 
-STRUCTURE, WHICH IS NOT THE CHAIN THE BRIEF DESCRIBES
-The brief writes "Gene -> Pathway -> Biological Process". In this graph
-Pathways (Reactome) and BioProcesses (GO) are both attached to genes and not
-to each other:
-
-    BioProcess  <-INVOLVED_IN-  Gene  -IN_PATHWAY->  Pathway
-
-So each gene's neighbourhood is a star, not a path. All the requested
-information is present; convergence still reads normally, as
-Gene A -> node <- Gene B.
-
-WHY THE FIGURE IS BUILT ON THE 507 AND NOT THE 25
-Measured first: among the final 25, only 2 pathways connect to two or more of
-them and none to three or more. That is not a data problem, it is our own
-selection -- step 9 deliberately chose genes as unlike each other as possible,
-one set per trajectory pattern, both directions, no pathway dominating. Asking
-that set to converge is asking it to undo its own design. Across all 507
-Tier 1 genes, 328 pathways connect two or more genes and 163 connect three or
-more, so the convergence figure is built there with the 25 marked inside it.
-The low convergence of the 25 is reported in the workbook's notes sheet rather
-than left for a reader to infer from a sparse figure.
-
-HOW THE 12 MECHANISMS ARE CHOSEN
-Ranking nodes by raw Tier 1 gene count returns the largest terms in GO rather
-than the most relevant ones, so each node is tested for enrichment the same
-way Task 4 tested its gene sets: a hypergeometric test of Tier 1 genes against
-the 14,794-gene eligible background, BH-FDR across nodes.
-
-  size      10-500 member genes in the background, the window Task 4 used.
-  major     at least 10 Tier 1 genes, so the node is actually well connected.
-  enriched  q < 0.05 -- over-represented, not merely large.
-  ranked    by q-value, then deduplicated, then the top 12.
-
-Ranked by q and not by gene count. Count alone put "positive regulation of
-gene expression", "negative regulation of apoptotic process" and
-"positive/negative regulation of cell population proliferation" in the top
-twelve: terms that appear in almost any gene list. They are significant here
-too, but only 2.3-3.0x enriched against 4-7.5x for the specific mechanisms,
-and q weighs size and fold together, so they fall away without a hand-picked
-fold cutoff.
-
-Tested on the graph's own nodes rather than by matching their names to Task
-4's terms. Name matching was tried first and is brittle: MSigDB 2024.1 has no
-GOBP_EXTRACELLULAR_MATRIX_ORGANIZATION because GO renamed that term to
-external encapsulating structure organization, so the single most connected
-mechanism in the graph -- 56 Tier 1 genes, 7.5x enriched, q = 3e-31 -- was
-marked "not enriched" and dropped from the figure over a vocabulary change.
-Matching on gene membership instead was no better: that node's best Jaccard
-against any significant term is 0.45. Testing the node directly needs no
-vocabulary at all.
-
-  deduplicated  GO carries "wound healing" and "response to wounding" with
-                largely the same members; showing both spends two of the
-                figure's twelve slots on one mechanism.
-
-Usage:
-    python Paper1_HighConfidence/kg_subgraph.py
+    python scripts/kg_subgraph.py --out Paper1_HighConfidence --results Paper1_Results
 """
 import pathlib
 from pathlib import Path
@@ -126,7 +68,7 @@ MIN_TIER1_GENES = 10      # "major": a node must actually be well connected
 FDR = 0.05
 JACCARD_DUP = 0.5         # above this two nodes are the same mechanism
 MIN_GENE_DEGREE = 3       # a gene is drawn if it reaches >= 3 major nodes,
-                          # or if it is one of the final 25. At 2 the figure
+                          # or if it is a shortlisted gene. At 2 the figure
                           # held 125 genes and stopped being readable.
 
 # --- the gene sets ---

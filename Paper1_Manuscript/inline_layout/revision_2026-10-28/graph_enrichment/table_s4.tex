@@ -1,0 +1,53 @@
+\clearpage
+\begingroup
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\theHtable}{S\arabic{table}}
+\setcounter{table}{3}
+\fontsize{9}{11}\selectfont
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.48\textwidth}>{\raggedright\arraybackslash}p{0.19\textwidth}>{\raggedright\arraybackslash}p{0.24\textwidth}}
+\caption{Analysis snapshot and subsequently enriched graph resource}\label{tab:S4}\\
+\toprule
+\textbf{Measure} & \textbf{Analysis snapshot} & \textbf{Enriched snapshot} \\
+\midrule\endfirsthead
+\multicolumn{3}{l}{\textbf{Table S4 continued}}\\
+\toprule
+\textbf{Measure} & \textbf{Analysis snapshot} & \textbf{Enriched snapshot} \\
+\midrule\endhead
+\bottomrule\endfoot
+Total nodes & 126,244 & 126,763 \\
+Total relationships & 35,132,831 & 35,138,047 \\
+Broad entity categories & 8 & 8 \\
+Relationship types & 14 & 15 \\
+Drug nodes, including the added subset & 12,025 & 12,544 \\
+Drug nodes additionally labelled ExternalDrug & 0 & 519 \\
+External drug--gene relationships & 0 & 5,216 \\
+External links involving newly added drugs & 0 & 846 \\
+External links involving original Drug nodes & 0 & 4,370 (2,104 drugs) \\
+Original ACTS\_ON relationships & 20,674 & 20,674 \\
+Expression relationships & 32,471,042 & 32,471,042 \\
+Fibrosis / disease-group progression links & 3,845 / 4,199 & 3,845 / 4,199 \\
+Displayed gene--annotation subgraph & 42 genes; 12 annotations; 154 links & Exact membership retained \\
+\midrule
+\multicolumn{3}{l}{\textbf{Populated fields among the 12,025 original Drug nodes}}\\
+SMILES & --- & 9,036 \\
+Molecule type & --- & 11,623 \\
+Maximum clinical phase & --- & 9,930 \\
+Approval flag & --- & 9,902 \\
+Withdrawal flag & --- & 11,623 \\
+Recovered name & --- & 10,878 \\
+\midrule
+\multicolumn{3}{l}{\textbf{Populated fields on the 20,674 original ACTS\_ON edges}}\\
+Direct-source, assertion, conflict and evidence-level fields & --- & 20,674 each \\
+Reference URLs & --- & 2,893 \\
+Mechanism text & --- & 2,898 \\
+\end{longtable}
+\small
+The enriched snapshot was inspected on 28 October 2026. Original relationship-type counts were compared with the final combined analysis record. Progression-link endpoints and reported properties matched for all 8,044 links; the figure subgraph matched by gene identifier, annotation identifier and relationship type. These checks do not constitute independent biological validation or a complete comparison of every graph property. Dashes indicate that this table does not quantify the earlier property coverage.
+
+\textbf{External-layer provenance.} External relationships record GtoPdb 2026.3.1; DGIdb 5, interactions downloaded in October 2026; ChEMBL REST API, October 2026; and Open Targets Platform 26.09. These identifiers are reproduced from graph properties. Source-specific retrieval, identifier matching, filtering and deduplication for the later external layer require the corresponding importer and source-file manifest to be archived with the resource. The metadata-recovery implementation distinguishes OptimusKG recovery from ChEMBL gap filling. The original reference-file manifest alone does not document the later external acquisitions.
+
+\textbf{Coverage interpretation.} A populated approval or withdrawal flag may be true or false. A phase field does not establish current approval, availability or efficacy for liver disease. ExternalDrug is a label on a Drug subset rather than a ninth broad entity category. Missing metadata remain missing; coverage should be evaluated against the stated denominators. Drug-stage annotations and curated gene connections do not establish therapeutic efficacy.
+\endgroup
+

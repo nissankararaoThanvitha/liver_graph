@@ -1,0 +1,1079 @@
+
+=== PAGE 1 ===
+Stage-Resolved Transcriptomic Analysis Reveals Distinct Molecular1
+Programs Associated with Liver Fibrosis Severity2
+N. Thanvitha1, V. Lakshmi Nikitha1, K. Venkata Dinesh1, Biswajit Maity1, Ashmita Dey1,*3
+1Department of Computer Science and Engineering, SRM University-AP, Amaravati 522 240, Andhra Pradesh, India4
+*Correspondence: Ashmita Dey,ashmita.de@srmap.edu.in5
+Abstract6
+Background:Fibrosis stage is the strongest histological predictor of outcome in metabolic dysfunction-7
+associated steatotic liver disease (MASLD), yet the hepatic transcriptional changes across stages F0–F4,8
+and their reproducibility across cohorts, remain incompletely characterised because most studies compare9
+broad disease categories or pool stages.10
+Methods:We integrated eight public human liver RNA-sequencing datasets comprising 1,085 samples11
+and 1,027 recorded patient identifiers and linked them to the knowledge graph. Within-study Spearman12
+correlations with fibrosis stage (610 patients) and disease group (216 patients) were combined across13
+studieswithadirection-consistencyrequirement. Fibrosis-associatedgeneswereclusteredbyF0–F4profile,14
+adjacentstageswerecomparedwithstudy-adjustedmodels,andgeneswereprioritisedwithamulti-evidence15
+score tested by leave-one-study-out (LOSO) analysis.16
+Results:We identified 3,845 fibrosis-associated genes, 1,822 shared with disease-group associations17
+(ρ= 0.702 ). Thesefollowedfivestage-dependentpatterns: elevationfromF1increasingwithstage(fibrillar18
+collagens,PDGFRB,TGFB1); elevation from F1 without further increase (proliferation markers); an19
+increaselargest between F3andF4 (basement-membraneremodelling, ductular reaction); adecrease largest20
+between F1 and F2; and a decrease largest between F3 and F4 (bile-acid, fatty-acid and drug metabolism).21
+At equal sample size, only the F3–F4 transition showed many substantial differences, although F4 included22
+only 34 patients. Prioritisation identified 447 Tier 1 genes (442 retained in every LOSO refit) and a 23-gene23
+shortlist includingPDGFRA,TREM2andCACNA1C.24
+Conclusions:Liver fibrosis severity is associated with distinct stage-dependent transcriptional programmes25
+rather than a single monotonic response. The resource provides prioritised, stage-annotated candidates for26
+cell-resolved and functional validation.27
+Keywords:Liver fibrosis; MASLD; Transcriptomics; Meta-analysis; Gene expression patterns; Knowledge28
+graph; Gene prioritisation; Fibrosis stage29
+Introduction30
+Fibrosisisthecentralconsequenceofchronicliverinjuryandthehistologicalfeaturemoststronglyassociated31
+withlong-termoutcomesinfattyliverdisease[ 1,2]. Inaprospectivecohortofadultswithnon-alcoholicfatty32
+liverdisease(NAFLD),therisksofliver-relatedeventsanddeathincreasedwitheachfibrosisstage[ 3]. The33
+disease, now termed metabolic dysfunction-associated steatotic liver disease (MASLD) and steatohepatitis34
+(MASH) [4], affects an estimated 30% of adults worldwide [5], and fibrosis is staged histologically from35
+1
+
+=== PAGE 2 ===
+Table 1. Reported features of representative liver transcriptomic studies and the present study.✓reported; ✗
+not reported for the defined feature (not proof that it was never done). Gene stage-profile clustering means clustering
+genes by their F0–F4 profiles, not clustering samples.
+Study Multiple Separate Gene stage- Adjacent- Knowledge External/exp.
+cohorts F0–F4 profile clusters stage contrasts graph follow-up
+Hoanget al., 2019 [10] ✗ ✓ ✗ ✗ ✗ ✗
+Govaereet al., 2020 [11] ✓ ✓ ✗ ✗ ✗ ✓
+Piras & DiStefano, 2024 [16] ✓ ✗ ✗ ✗ ✗ ✓
+Yanget al., 2026 [17] ✓ ✗ ✗ ✗ ✗ ✓
+Maierset al., 2026 [18] ✓ ✗ ✗ ✗ ✗ ✓
+This study ✓ ✓ ✓ ✓ ✓ ✗
+F0 to F4 [6]. Progression is nevertheless heterogeneous: in paired biopsies, fibrosis may advance, remain36
+stable or regress [7], and effective antifibrotic therapy remains a major unmet need [8]. Understanding37
+which molecular changes accompany each step in severity is therefore important both for explaining this38
+heterogeneity and for identifying stage-appropriate biomarkers and targets.39
+Liver transcriptomics has repeatedly linked gene expression to histological severity. Early microarray work40
+separated mild (F0–F1) from severe (F3–F4) NAFLD fibrosis [9]. Hoanget al.analysed 78 biopsies across41
+the severity spectrum and identified progressively regulated genes [10]; Govaereet al.profiled 206 patients,42
+derived a 25-gene signature of fibrosing steatohepatitis and evaluated it in an independent cohort [11]; and43
+other cohorts have characterised fibrosis together with cell-type composition [12] or identified circulating44
+biomarkerssuchasthrombospondin-2[ 13,14]. Becausesinglecohortsarelimitedinsizeandstagecoverage,45
+several studies have integrated public data: meta-analyses of NAFLD and MASLD progression [15,16],46
+comparisons of fibrotic and non-fibrotic liver across aetiologies [17], and a multi-cohort analysis of about47
+1,000 patients identifying 846 genes that differ between advanced (F3–F4) and mild (F0–F1) fibrosis [18].48
+These studies establish that reproducible fibrosis-associated genes exist, but they summarise progression49
+as a contrast between categories (Table 1). Pooled designs cannot show whether a gene already differs50
+at mild stages, at intermediate stages or only between F3 and F4, although this stage pattern determines51
+whether a gene is a plausible early biomarker, a marker of advanced disease or a target whose relevance52
+depends on stage. Resolving it requires several methodological safeguards: harmonising expression units,53
+gene identifiers and clinical labels across cohorts; handling repeated biopsies so that some patients do not54
+carry extra weight; correcting for unequal stage sizes; and testing whether derived patterns are robust to the55
+choices used to obtain them [19, 20, 21]. Biomedical knowledge graphs provide a complementary layer for56
+interpreting the resulting genes by linking them to pathways, diseases and drugs [22,23,24,25], but are57
+rarely combined with patient-level, stage-resolved expression evidence.58
+HereweintegratedeightpublichumanlivertranscriptomicdatasetsatthepatientlevelwiththeOptimusKG59
+knowledgegraph(Fig.1). Weasked(i)whichgenesareassociated, consistentlyacrossstudies, withfibrosis60
+stage and with ordered disease-group labels; (ii) which expression patterns characterise the progression61
+from F0 to F4, and how robust these patterns are; and (iii) which genes are best supported when associ-62
+ation strength, stage pattern, transition evidence and functional annotation are combined. The principal63
+contributions are an integrated transcriptomic and knowledge-graph resource; a cross-study map of fibrosis-64
+and disease-group-associated genes resolved into five stage patterns with explicit robustness assessment; a65
+transparent multi-evidence prioritisation framework; and a biological interpretation linking each pattern to66
+2
+
+=== PAGE 3 ===
+Liver Knowledge Graph Workflow
+Dataset 1
+Dataset 2
+Dataset 3
+Dataset 4
+Dataset 5
+Dataset 6
+Dataset 7
+Dataset 8
+Transcriptome Data Processing
+Gene Identity
+Alignment
+Sample
+Matching
+Disease Stage
+Annotation
+Expression Scaling
+Gene Expression Layer
+OptimusKG Biological Evidence
+Liver Knowledge Integration
+Fibrosis-Stage and Disease-Group Associations
+Disease-Linked
+Gene Groups
+Fibrosis
+Expression Patterns
+Adjacent-Stage
+Expression Differences
+Functional
+Interpretation
+Candidate Gene Prioritisation
+Biological Network Interpretation
+Figure 1. Study workflow.Eight public liver transcriptomic datasets undergo transcriptome processing, gene-
+identifier harmonisation, sample matching, clinical (disease-stage) annotation and within-study expression scaling to
+form the gene-expression layer, which is integrated with OptimusKG biological evidence into the liver knowledge
+graph. Cross-study fibrosis-stage and disease-group association analysis then informs disease-linked gene grouping,
+fibrosis-stage expression-pattern clustering, adjacent-stage expression comparisons and functional interpretation,
+followed by multi-evidence candidate-gene prioritisation and biological-network interpretation of the prioritised
+genes.
+the cell types and processes of the fibrotic liver.67
+Methods68
+Study design and data sources69
+WeconductedaretrospectivecomputationalstudyofhumanlivertranscriptomicdatadepositedintheNCBI70
+Gene Expression Omnibus (GEO) [26]. Eight datasets were analysed: GSE126848 [27], GSE130970 [10],71
+GSE135251 [11], GSE162694 [12], GSE167523 [13], GSE193066 [28], GSE240729 [14] and GSE26941272
+[29] (Table 2). Datasets were identified by a targeted search of GEO for human liver transcriptomic studies73
+of NAFLD/MASLD with histological fibrosis staging or disease-group annotation. Inclusion criteria were:74
+3
+
+=== PAGE 4 ===
+Table 2. Public liver transcriptomic datasets and clinical annotation coverage.Counts are before repeat-biopsy
+resolution; recorded patient identifiers are counted within studies and do not establish distinct participants across
+accessions.
+Accession Ref. Samples Patient IDs Staged biopsies Disease labelsa Used inb
+GSE126848 [27] 57 57 0 57 D
+GSE130970 [10] 78 78 78 73c F, D
+GSE135251 [11] 216 216 216 216 F
+GSE162694 [12] 143 143 143 143 F
+GSE167523 [13] 98 98 0 98 D
+GSE193066 [28] 164 106 164 0 F
+GSE240729 [14] 67 67 67 0 F
+GSE269412 [29] 262 262 0 0 Graph
+Total 1,085 1,027 668 587
+aIncludes broad NAFLD and obese-only labels excluded from the ordered analysis.bF, fibrosis-stage analysis (610
+patients); D, ordered disease-group analysis (216 patients: 45 from GSE126848 after excluding 12 obese-only samples,
+73fromGSE130970and98fromGSE167523);Graph,knowledgegraphonly. cHistology-derivedlabels;fiveambiguous
+samples set to unclassified.
+(i) human liver tissue; (ii) bulk RNA-sequencing data deposited as sample-level expression files; (iii)75
+metadata linking each measurement to a sample and, where available, to a patient and biopsy; and (iv)76
+for an association analysis, fibrosis stage (F0–F4) or ordered control/NAFL/NASH labels for at least 2577
+patients with variation on that clinical axis. Series of non-human, cell-line, organoid or single-cell data,78
+non-liver tissue, or without linkable sample-level expression were excluded. Datasets meeting criteria79
+(i)–(iii) but lacking clinical annotation (GSE269412) were retained only in the knowledge graph. Because80
+the search was targeted rather than a formal systematic review, the cohorts are not claimed to be exhaustive.81
+Deposited expression matrices (gene counts, TPM, per-sample files or GCT; Additional file 1: Table S5)82
+and series-matrix metadata were used without realignment or requantification. No new human data were83
+collected.84
+Clinical annotation and patient handling85
+Expression samples were linked to GEO records using study-specific identifier, title and description fields,86
+and clinical information was harmonised into a common structure (study, sample, patient, biopsy order,87
+fibrosisstage, diseasegroup)withoriginalfieldsandprovenanceretained. Fibrosisseveritywasrepresented88
+by ordinal stages F0–F4 [6]. Disease groups were ordered as control (0), non-alcoholic fatty liver (NAFL;89
+1) and non-alcoholic steatohepatitis (NASH; 2). Broad NAFLD labels without an informative subtype,90
+obese-only labels and unclassified records were excluded from the disease-group analysis, and original91
+diagnoses were not assumed equivalent to contemporary MASLD/MASH criteria [4]. For GSE130970,92
+individual author-assigned diagnoses were not available; disease groups were therefore derived from de-93
+positedhistologicalscores(steatosisgrade0,control; steatosiswithhepatocyteballooning,NASH;steatosis94
+without ballooning, NAFL) [10]. Five ambiguous samples (GSM3758028, GSM3758038, GSM3758039,95
+GSM3758073 and GSM3758074) were set to unclassified for this axis but retained their fibrosis stages.96
+A common patient-level policy was applied to repeated biopsies in all analyses. When all recorded fibrosis97
+stagesofapatientwereknownandidentical,standardisedexpressionwasaveragedacrossbiopsies;otherwise98
+4
+
+=== PAGE 5 ===
+only the first biopsy was retained. Biopsy selection preceded filtering for individual stage comparisons,99
+so a later biopsy could not enter a comparison solely because the first fell outside the stages compared.100
+In GSE193066, 164 biopsies from 106 patients included 58 repeat pairs [28]: 28 had matching stages101
+and were averaged, and 30 contributed only their first biopsy. Studies required at least 25 patient-level102
+observations and variation in the relevant clinical variable. The fibrosis analysis comprised 610 patients103
+from GSE130970, GSE135251, GSE162694, GSE193066 and GSE240729, and the disease-group analysis104
+216 patients from GSE126848, GSE130970 and GSE167523 (Additional file 1: Table S2).105
+Gene harmonisation and expression preprocessing106
+Matrix, GCT and per-sample inputs were parsed into sample–gene measurements. Missing and non-107
+numeric values were removed, measured zeros were retained and the first occurrence of duplicate raw108
+identifiers was kept. The HGNC complete set was used to map approved symbols, Entrez identifiers and109
+unambiguous previous symbols or aliases to Ensembl gene identifiers; version suffixes and_PAR_Yrows110
+were removed, and measurements from distinct raw identifiers mapping to the same gene were summed.111
+Count matrices were transformed tolog2(CPM + 1), with library sizes calculated before mapping and112
+filtering; the GSE130970 TPM matrix tolog2(TPM + 1); and the deposited DESeq2 [30] relative-log-113
+expression-normalised GSE193066 counts tolog2(count + 1)without additional rescaling. Each gene was114
+then standardised within each study (mean 0, SD 1;ddof = 1; set to 0 when the SD was undefined), so115
+effects are expressed in within-study SD units rather than fold changes; GSE193066 was standardised over116
+all 164 biopsies before patient-level handling. No cross-study batch-correction model was fitted; instead,117
+inference was performed within studies and combined across them [19]. The graph retained all 53,993118
+measured genes, whereas association testing used the 14,794 genes measured in all eight studies.119
+Cross-study association analysis120
+Within each eligible study, Spearman’sρ (average ranks for ties) was computed between patient-level121
+standardised expression and fibrosis stage or disease group; rank correlation was used because both clinical122
+axes are ordinal and expression changes need not be linear. Two-sidedp-values were obtained from123
+t=ρ
+√︁
+(n−2)/(1−ρ 2) on n−2 degrees of freedom, withρclipped to±0.9999999. Genes testable in124
+at least three studies were retained; the median study correlation summarised effect size and direction, and125
+studyp-values were combined by Fisher’s method [31],126
+X 2
+g =−2
+Dg∑︂
+d=1
+lnp gd ∼χ 2
+2Dg ,(1)
+where Dg is the number of testable studies andp-values were bounded below at10−300. Benjamini–127
+Hochberg (BH) correction [32] was applied separately to the fibrosis (14,794 genes) and disease-group128
+(14,784 genes) families; ten genes with constant expression among the 45 eligible GSE126848 patients129
+failed the three-study requirement on the latter axis. Because Fisher’s statistic ignores direction, genes with130
+q <0.05 were additionally required to share the sign of the median correlation in every testable study, a131
+conservative filter against associations driven by a single cohort [20]. No minimum effect size was imposed132
+at this stage. Genes were labelled fibrosis-only, disease-group-only or shared (concordant or discordant);133
+these labels describe selection outcomes across different study sets rather than biological specificity.134
+5
+
+=== PAGE 6 ===
+Fibrosis-stage expression profiles and clustering135
+For each fibrosis-associated gene, mean standardised expression was calculated at each stage and the136
+five-point profile was standardised across stages (ddof = 0), so that clustering reflected profile shape rather137
+than magnitude. Profiles were clustered byk-means (50 initialisations; random seed 42). Fork= 3 –8 we138
+computed the silhouette score [33] and the adjusted Rand index (ARI) [34] over 50 refits on random 80%139
+gene subsets and over 50 refits resampling patients within studies (10 initialisations each); the largestk140
+with mean gene-subset ARI≥0.95 was selected (Additional file 1: Table S1). Membership confidence was141
+estimated from 100 further patient bootstraps: bootstrap centroids were matched to reference centroids by142
+Hungarian assignment [35] on centroid correlation, a gene was assessable in a bootstrap when the centroid143
+matched to its reference cluster hadr≥0.5 , and confidence was the fraction of assessable bootstraps in144
+which the gene returned to its cluster. Genes with confidence≥0.8 formed the confidence core. Three145
+sensitivity analyses were performed: profiles were re-estimated by ordinary least squares with categorical146
+stage and study terms and reclustered; thek= 3 solution was recomputed with identical settings to assess147
+nesting of the five patterns; and cluster assignments were compared with the transition at which each gene’s148
+study-adjusted coefficient was largest (next section).149
+Adjacent-stage comparisons and matched refits150
+Foreachtransition(F0–F1,F1–F2,F2–F3,F3–F4),studiescontainingpatientsatbothstagesweremodelled151
+by ordinary least squares with study-specific intercepts:152
+zig =α g +β gHi +
+D∑︂
+d=2
+γgd I(study i =d) +ε ig,(2)
+where zig is the standardised expression of geneg in patienti and Hi indicates the higher stage.βg was153
+tested by two-sidedt-test with BH correction across the fibrosis-associated genes within each contrast;154
+differences withq <0.05 and |βg| ≥0.2 were termed substantial. To assess sensitivity to unequal stage155
+sizes, 30 patients per stage were drawn from the four studies represented at every stage (2 from GSE130970,156
+14 from GSE135251, 8 from GSE162694 and 6 from GSE240729), without replacement, in 50 draws (seed157
+42), and the models were refitted; reproducibility was the fraction of draws with|β| ≥0.2and the sign of158
+the full-data coefficient. Study adjustment did not control for demographic, clinical or cell-composition159
+differences.160
+Functional enrichment analysis161
+Over-representation was tested with GSEApy [36] (one-sided hypergeometric test) for MSigDB 2024.1.Hs162
+GO Biological Process, KEGG legacy, Reactome and Hallmark collections [37, 38]. The background163
+comprised the 14,794 genes in the common universe; gene sets were intersected with it and retained when164
+they contained 10–500 background genes, and input groups required at least five genes. BH correction165
+was applied within each group and collection (q <0.05 ). Tests covered six concordant direction groups166
+(fibrosis-only, disease-group-only and shared, each rising or falling; discordant shared genes excluded), the167
+five clusters and their five confidence cores. Enrichment was interpreted as annotation over-representation,168
+not measured pathway activity.169
+6
+
+=== PAGE 7 ===
+Gene prioritisation and robustness170
+Each fibrosis-associated gene received a scoreSg =P g +T g +X g +F g +B g (maximum 9; full rules in171
+Additional file 1: Table S3).Pg (association magnitude) awarded 2 points for|medianρ| ≥0.40 and 1 for172
+0.30≤ |medianρ|<0.40 . Tg (endpointseparation)awarded2pointsfor |¯zF4 −¯zF0 | ≥1 and1for ≥0.5 ,173
+provided that its sign agreed with the median correlation.Xg (transition evidence), for the transition with174
+the largest absolute full-data coefficient, awarded one point for a substantial full-data difference and one for175
+same-sign |β| ≥0.2 in at least 50% of matched draws.Fg awarded one point for fibrosis-only selection.176
+Bg (functional support) awarded 2 or 1 points when the gene belonged to a significant term in at least two177
+or in one annotation collection, through its direction group or full cluster. Tier 1 requiredSg ≥7 and178
+Tier 25≤S g <7 ; up to five Tier 1 genes per cluster were shortlisted by score and then absolute median179
+correlation. Because the components share expression and annotation evidence, tiers are prioritisation180
+categories rather than independent confirmations.181
+LOSOanalysisomittedeachofthefivefibrosisstudiesinturn,repeatedthepatient-levelassociationanalysis182
+and applied BH correction across all 14,794 genes; for Tier 1 genes we recorded retention ofq <0.05 ,183
+directionand |medianρ| ≥0.30 . Sensitivityanalysescomparedfourlabelandnormalisationconfigurations:184
+originalorunclassifiedlabelsforthefiveambiguousGSE130970samples,crossedwithCPM-stylerescaling185
+or the deposited normalisation of GSE193066. The combined configuration (unclassified labels; deposited186
+normalisation) was used for all primary analyses. We also examined threshold changes, removal of each187
+score component and an alternative shortlist rule.188
+Knowledge-graph construction and annotation analysis189
+The expression layer and the biomedical knowledge layer were integrated in Neo4j by matching Ensembl190
+identifierstoOptimusKGentities[ 25](sourcedepositdoi:10.7910/DVN/IYNGEV).Theschemacomprised191
+Gene, Sample, Dataset, Disease, Drug, Pathway, BioProcess and Phenotype nodes and 15 relationship192
+types. Sample–gene relationships stored raw and standardised measurements, and patient identity and193
+biopsy order were stored as sample properties. The curated layer included Open Targets [39] gene–disease194
+associations (score≥0.1 ), deduplicated gene interactions, pathway and biological-process membership,195
+disease hierarchy and phenotypes, and drug–gene and drug–disease relations, further enriched with drug196
+annotations from ChEMBL, DGIdb, GtoPdb and Open Targets, KEGG and Hallmark pathways (MSigDB197
+2024.1), pathway–NAFLD links supported by both this study’s enrichment results and CTD, and ChEMBL198
+drug indications. These additions were not used in the analyses reported here (Additional file 1: Table S4).199
+Selected associations were stored with their direction, correlation, adjustedp-value and number of studies,200
+and automated checks confirmed that all 8,044 progression links matched the analysis exports. For the201
+annotation analysis, each Pathway or BioProcess node linked to at least one Tier 1 gene (3,980 nodes) was202
+tested for over-representation of Tier 1 genes by hypergeometric test against the 14,794-gene background,203
+with BH correction across all 3,980. Annotations with 10–500 background genes, at least ten Tier 1 genes204
+and q <0.05 were ranked byq, and an annotation was skipped if its Tier 1 members overlapped an already205
+retained annotation with Jaccard similarity>0.5.206
+7
+
+=== PAGE 8 ===
+Software207
+Analyses used Python 3.12.14 with pandas 2.3.3, NumPy 2.2.4, SciPy 1.16.3, scikit-learn 1.7.2 [40],208
+matplotlib 3.10.7 and GSEApy 1.3.1, and Neo4j Enterprise 2026.09.0. Random seed 42 was used for209
+clustering and matched refits. Reference-file versions and checksums are listed in Additional file 1.210
+Results211
+An integrated, patient-level resource of eight liver transcriptomic cohorts212
+The integrated resource comprised 1,085 samples and 1,027 recorded patient identifiers (Table 2). Five213
+studies provided fibrosis stage for 668 biopsies, which yielded 610 patient-level observations after repeat-214
+biopsy handling (F0–F4: 152, 160, 152, 112 and 34 patients), and three studies provided 216 observations215
+with ordered disease-group labels. Gene harmonisation retained 53,993 measured genes, 14,794 of them216
+measured in all eight studies. The integrated graph contained 126,999 nodes across eight entity types and217
+35,160,254 relationships across 15 types, including 32,471,042 expression measurements, 12,544 drug218
+nodes, 25,890 drug–gene relationships and 8,044 gene–disease progression links (Additional file 1: Table219
+S4).220
+Fibrosis and disease-group associations largely overlap221
+Cross-study testing identified 3,845 genes associated with fibrosis stage (of 14,794 tested) and 4,199222
+associated with disease group (of 14,784). The sets shared 1,822 genes and formed a union of 6,222, with223
+2,023 fibrosis-only and 2,377 disease-group-only genes (Fig. 2a). Fibrosis-only genes were balanced in224
+direction (1,040 rising, 983 falling), whereas disease-group-only genes were predominantly rising (2,042 vs225
+335). Among shared genes, the median correlations on the two axes were strongly concordant (Spearman226
+ρ= 0.702 , p= 1.9×10 −270): 1,408 genes rose and 384 fell on both axes, and only 30 were discordant227
+(falling with fibrosis but rising with disease group; Fig. 2b). Individual associations were moderate, as228
+expected for bulk tissue from heterogeneous cohorts (median|ρ|= 0.226 , interquartile range 0.167–0.294;229
+890 genes with|ρ| ≥0.30 and 165 with|ρ| ≥0.40 ), so the analysis derives its power from consistency230
+across cohorts rather than from large single-gene effects.231
+Fibrosis-associated genes follow five stage-dependent expression patterns232
+Clustering of the F0–F4 profiles of the 3,845 fibrosis-associated genes resolved five patterns (Fig. 3a,b;233
+Table 3). C1 (857 genes) was higher at F1 than at F0 and higher again at each subsequent stage; C2 (1,367234
+genes), the largest cluster, increased mainly at higher stages, with its largest difference between F3 and F4;235
+andC3(226genes)washigheratF1thanatF0butdidnotincreasefurtheratlaterstages. Ofthedecreasing236
+patterns, C4 (397 genes) decreased mainly between F1 and F2 and C5 (998 genes) mainly between F3237
+and F4. Because each patient contributes one stage, these profiles describe differences between patients at238
+different stages rather than trajectories within individuals; throughout, “early” and “late” refer to lower and239
+higher fibrosis stages, not to time.240
+8
+
+=== PAGE 9 ===
+0 500 1000 1500 2000 2500
+Genes (q < 0.05, same direction in every study)
+Fibrosis only
+Shared
+Disease-group only
+1,040 983 2,023
+1,408 384 1,822
+30 discordant
+2,042 335 2,377
+increases with severity decreases
+a 6,222 progression-associated genes
+−0.4 −0.2 0.0 0.2 0.4 0.6
+Median ρ with fibrosis stage
+−0.6
+−0.4
+−0.2
+0.0
+0.2
+0.4
+0.6
+0.8
+Median ρ with disease group
+Spearman ρ = 0.702
+n = 1,822 shared genes
+1,408 ↑↑384 ↓↓
+30 discordant
+b Shared genes move together
+Figure 2. Cross-study gene associations.(a) Genes associated with fibrosis stage and/or ordered disease group
+(BH q <0.05 ; same direction in every testable study;≥3 studies), by direction. (b) Median within-study Spearman
+correlations of the 1,822 shared genes; red, concordant rising; blue, concordant falling; black, discordant. The
+disease-group axis orders source control, NAFL and NASH labels and is not a direct measure of inflammation.
+Table 3. Fibrosis-stage expression clusters and their contribution to prioritisation.Mean F0 and F4 expression
+are in within-study SD units; core, membership confidence≥0.8.
+Cluster Pattern Genes Core Tier 1 Shortlist Mean F0 Mean F4
+C1 Higher from F1, increasing with stage 857 90 93 5 −0.295 0.515
+C2 Increase, largest F3→F4 1,367 806 262 5 −0.227 0.860
+C3 Higher from F1, no further increase 226 74 7 5 −0.270 0.136
+C4 Decrease, largest F1→F2 397 126 3 3 0.161 −0.279
+C5 Decrease, largest F3→F4 998 742 82 5 0.184 −0.658
+Total 3,845 1,838 447 23
+The five-cluster patterns are reproducible at the profile level, although individual gene assignments241
+vary with patient resampling242
+The five-cluster solution was the largestk meeting the stability criterion (mean gene-subset ARI 0.983, SD243
+0.011), whereas patient resampling was more disruptive (ARI 0.592, SD 0.062) and the silhouette score244
+was highest atk= 3 (0.587 vs 0.352 atk= 5 ; Additional file 1: Fig. S1a,b and Table S1). Because a245
+reviewer could reasonably prefer the better-separated three-cluster solution, we tested how the two relate.246
+The five patterns are refinements of the three-cluster solution rather than an alternative to it: re-running the247
+clustering reproduced the published five-cluster labels exactly (ARI 1.000), and 91.9% of genes fell in the248
+k= 3 cluster that contained most of theirk= 5 cluster. C4 and C5 merged into a single falling group, C3249
+joined a group increasing at lower stages and C2 a group increasing at higher stages, and only C1 divided250
+between the two rising groups (311 and 546 genes; Additional file 1: Fig. S1c). The five-cluster resolution251
+therefore separates genes decreasing at intermediate stages from those decreasing between F3 and F4, and252
+genes elevated from F1 without further increase from those increasing at higher stages, distinctions that the253
+three-cluster solution conceals.254
+Cluster shapes also agreed with an independently specified model. For each gene, the adjacent-stage255
+transitionwiththelargeststudy-adjustedcoefficient(Eq.2)matcheditscluster’sdefiningtransition: F3 →F4256
+for94%ofC2genes,F0 →F1for73%ofC3genesandF1 →F2for58%ofC4genes(Fig.3d). Re-estimating257
+9
+
+=== PAGE 10 ===
+F0 F1 F2 F3 F4
+−2
+−1
+0
+1
+2
+Stage profile (z)
+C1  ·  n = 857
+Higher from F1, increasing
+core 11%
+a
+F0 F1 F2 F3 F4
+C2  ·  n = 1,367
+Increase largest F3→F4
+core 59%
+F0 F1 F2 F3 F4
+C3  ·  n = 226
+Higher from F1, stable
+core 33%
+F0 F1 F2 F3 F4
+C4  ·  n = 397
+Decrease largest F1→F2
+core 32%
+F0 F1 F2 F3 F4
+C5  ·  n = 998
+Decrease largest F3→F4
+core 74%
+F0 F1 F2 F3 F4
+b 3,845 genes
+C1
+C2
+C3
+C4
+C5
+−1
+0
+1
+C1 C2 C3 C4 C5
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+Membership confidence
+11% 59% 33% 32% 74%
+c Bootstrap membership (% core ≥ 0.8)
+0 50% 100%
+Genes (by largest study-adjusted step)
+C5
+C4
+C3
+C2
+C1 32% 50%
+94%
+73%
+58% 31%
+31% 29% 37%
+0→1 1→2 2→3 3→4d
+Agreement with stage models
+Figure 3. Five fibrosis-stage expression patterns and their robustness.(a) Gene profiles standardised across
+F0–F4: thin lines, individual genes (250 sampled per cluster); band, interquartile range; bold line, mean; “core”, share
+of genes with membership confidence≥0.8 . (b) All 3,845 profiles grouped by cluster and ordered by membership
+confidence. (c)Membershipconfidenceacross100patientbootstraps(bar,interquartilerange; dot,median). (d)Share
+of genes in each cluster by the adjacent-stage transition with the largest study-adjusted coefficient (Eq. 2). Profiles are
+cross-sectional stage associations, not longitudinal trajectories. Cluster-number diagnostics and nesting within the
+three-cluster solution are shown in Additional file 1: Fig. S1.
+profiles with study terms reproduced the clustering (ARI 0.901; median per-gene profile correlation 0.999).258
+Average shapes were robust—median bootstrap centroid correlations ranged from 0.967 to 0.996—whereas259
+individual assignments were less stable: 1,838 genes (48%) met the 0.8 confidence threshold, ranging from260
+11% of C1 to 74% of C5 (Fig. 3c). Confident genes had stronger stage associations (median|ρ| 0.241 vs261
+0.214; Mann–Whitneyp= 2.9×10 −19), indicating that uncertain assignments arise mainly among weakly262
+associated genes with intermediate profiles, such as the C1 genes that lie between the groups increasing at263
+lower and at higher stages.264
+Expression differences concentrate at the transition to cirrhosis265
+Study-adjusted models identified substantial differences (q <0.05 and |β| ≥0.2 ) for 857, 1,048, 1,116 and266
+781 genes at the F0–F1, F1–F2, F2–F3 and F3–F4 transitions (Fig. 4b). Increasing/decreasing counts were267
+822/35, 459/589, 792/324 and 723/58: increases dominated the first and last transitions, whereas decreases268
+predominated between F1 and F2, consistent with the timing of C4. The median absolute coefficient rose269
+monotonicallyfrom0.160to0.186,0.224and0.352(Fig.4d). Thefirstthreecomparisonsincluded152/160,270
+160/152 and 152/112 patients across five studies, and F3–F4 included 86/34 patients across four studies271
+(Fig. 4a). In matched refits with 30 patients per stage, mean counts of substantial genes were 12.42, 10.22,272
+77.02 and 369.46 (SDs 67.6, 34.4, 154.2 and 383.4; medians 0, 0, 1 and 232.5; Fig. 4c). Thus, the large273
+full-data counts for lower-stage transitions reflected their larger samples, whereas the F3–F4 transition274
+10
+
+=== PAGE 11 ===
+F0 F1 F2 F3 F4
+0
+25
+50
+75
+100
+125
+150
+175
+Patients
+152
+160
+152
+112
+34
+a
+few
+F4
+Patients per stage
+F0→1 F1→2 F2→3 F3→4
+500
+0
+500
+Genes changing (full data)
+822
+35
+459
+589
+792
+324
+723
+58
+b
+↑ higher
+↓ lower
+Full data
+F0→1F1→2F2→3F3→4
+0
+50
+100
+150
+200
+250
+300
+350
+400
+Genes changing (median of 50)
+0 0
+1
+232.5
+c 30 patients per stage
+mean
+median
+F0→1 F1→2 F2→3 F3→4
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+Median |β| (SD units)
+0.160
+0.186
+0.224
+0.352
+d Effect size
+Figure 4. Adjacent-stage comparisons.(a) Patients per stage after repeat-biopsy handling. (b) Fibrosis-associated
+genes with substantial study-adjusted differences (q <0.05 , |β| ≥0.2 ), higher (up) or lower (down) at the later stage.
+(c) Median (bars) and mean (diamonds) substantial-gene counts across 50 refits with 30 patients per stage and fixed
+study composition. (d) Median absolute study-adjusted coefficient (within-study SD units).
+remained prominent at equal power. This conclusion should be interpreted cautiously: the F3–F4 contrast275
+rested on only 34 F4 patients from four studies, and because each matched draw required 30 of these276
+34 patients, successive draws shared most F4 observations, so the matched-refit distribution understates277
+sampling uncertainty at F4. Estimates for the cirrhosis stage, including the F4 values of the C2 and C5278
+profiles, are therefore the least precise in the study.279
+Each pattern maps to a distinct functional programme280
+Functional enrichment distinguished immune, matrix-associated, proliferative and metabolic programmes281
+(Fig.5). Fibrosis-onlyrisinggeneswereenrichedforT-cellactivation(80overlappinggenes;foldenrichment282
+2.281; q= 8.19×10 −9) and Hallmark IL-6/JAK/STAT3 signalling (19 genes; 3.556;q= 2.14×10 −5).283
+Genes rising on both axes were enriched for matrix biology: collagen fibril organisation (GO Biological284
+Process; 29 genes; 5.165;q= 1.40×10 −11), collagen formation (Reactome; 32 genes; 4.151;q=285
+1.47×10 −10) and extracellular-matrix organisation (Reactome; 74 genes; 2.956;q= 3.80×10 −15).286
+Among clusters, C2 was enriched for the Hallmark epithelial–mesenchymal transition set (74 genes; 4.215;287
+q= 5.25×10 −27),C3forE2Ftargets(25genes; 8.307; q= 1.24×10 −14),andC5forbile-acid(37genes;288
+4.986; q= 2.66×10 −15) and fatty-acid metabolism (36 genes; 3.606;q= 1.42×10 −10). C1 and C2289
+had the broadest profiles (370 and 518 significant GO Biological Process terms; 18 and 20 Hallmark sets).290
+Enrichment of C2 and C5 was robust to restricting the analysis to confidence-core genes (19 of 21 and all291
+5 core Hallmark sets also significant in the full clusters), whereas C4’s single Reactome result changed292
+from intrinsic fibrin-clot formation (full cluster;q= 0.0114 ) to BMP signalling (core;q= 0.00150 ), so its293
+functional interpretation is tentative.294
+Canonical cell-type marker genes localise to specific patterns295
+To relate the patterns to the cellular events of fibrosis, we examined where established marker genes fell296
+(Table 4). Fibrillar collagens (COL1A1,COL1A2,COL3A1,COL5A1), the stellate-cell receptorPDGFRB297
+andTGFB1belonged to C1 (higher from F1 and at each later stage), and all reached Tier 1. Basement-298
+membrane collagens (COL4A1,COL4A2), matrix-remodelling genes (TIMP1,MMP2,LUM,DCN,VCAN,299
+11
+
+=== PAGE 12 ===
+0 2 4 6 8
+Fold enrichment
+T-cell activation
+IL-6/JAK/STAT3 signalling
+Collagen fibril organisation
+Collagen formation
+Extracellular-matrix organisation
+Epithelial–mesenchymal transition
+E2F targets
+Bile-acid metabolism
+Fatty-acid metabolism
+80
+19
+29
+32
+74
+74
+25
+37
+36
+Fibrosis-only ↑ · GO BP
+Fibrosis-only ↑ · Hallmark
+Shared ↑ · GO BP
+Shared ↑ · Reactome
+Shared ↑ · Reactome
+C2 · Hallmark
+C3 · Hallmark
+C5 · Hallmark
+C5 · Hallmark
+a
+Gene set · collection
+Association groups and clusters
+0 10
+Fold enrichment
+ECM organisation
+Cell–cell adhesion
+Angiogenesis
+Integrin interactions
+PDGF signalling
+27
+32
+36
+20
+12
+b Tier 1 · graph annotations
+10 20
+−log10 q
+10 40 80
+Overlapping genes
+Figure 5. Functional enrichment and knowledge-graph context.(a) Representative gene sets over-represented in
+association groups and clusters (one-sided hypergeometric test against the 14,794-gene background; BH correction
+within each group and collection). (b) Knowledge-graph Pathway/BioProcess annotations over-represented among the
+447Tier1genes(BHcorrectionacross3,980annotations; redundantannotationsremoved). Position,foldenrichment;
+colour,−log 10 q; dot area and number, overlapping genes; dashed line, no enrichment.
+Table 4. Cluster membership of established marker genes.ρ, median within-study correlation with fibrosis stage;
+conf., membership confidence; T1, Tier 1 (T2, Tier 2; T3, Tier 3).
+Process Cluster Genes (ρ; conf.; tier)
+Fibrillar matrix, stellate activationC1 COL1A1(0.460; 0.78; T1),COL1A2(0.424; 0.60; T1),COL3A1
+(0.411;0.77;T1),COL5A1(0.447;0.56;T1),PDGFRB(0.313;0.75;
+T1),TGFB1(0.338; 0.69; T1)
+Basement membrane, remodelling C2 COL4A1(0.388; 0.95; T1),COL4A2(0.400; 0.94; T1),TIMP1
+(0.440; 0.94; T1),MMP2(0.346; 0.93; T1),LUM(0.488; 0.68; T1),
+VCAN(0.464;0.88;T1),THBS2(0.514;0.79;T1),PDGFRA(0.417;
+0.68; T1)
+Ductular reaction C2 EPCAM(0.365; 0.94; T1),SOX9(0.433; 0.91; T1),KRT7(0.341;
+0.95; T1)
+Macrophage, chemokine C2/C3 CCL2(0.414;0.97;T1;C2),LGALS3(0.427;0.63;T1;C2),TREM2
+(0.469; 0.67; T1; C3)
+Proliferation C3 CDC45(0.401; 0.75; T1),TYMS(0.489; 0.61; T1),TOP2A(0.281;
+0.86; T2),MKI67(0.305; 0.80; T2)
+Hepatocyte metabolism C5 CYP2C19( −0.443; 0.76; T1),CYP2C8( −0.310; 0.89; T1),
+SULT1E1( −0.414;0.99;T1),ACADSB( −0.447;0.89;T1),CYP2E1
+(−0.270;0.99;T2),CYP1A2( −0.186;0.95;T2),ALB( −0.128;0.92;
+T2)
+EFEMP1),THBS2,CCL2,LGALS3and the ductular-reaction markersEPCAM,SOX9andKRT7belonged300
+to C2, which increased most between F3 and F4, mostly with high membership confidence. Proliferation301
+markers (MKI67,TOP2A,CDC45,TYMS) andTREM2belonged to C3, elevated from F1 without further302
+increase, whereas cytochrome P450 genes (CYP2E1,CYP1A2,CYP2C8,CYP2C19),SULT1E1,ACADSB303
+andALBbelonged to C5, which decreased most between F3 and F4.304
+Multi-evidence prioritisation identifies 23 representative candidates305
+The multi-evidence score identified 447 Tier 1 genes: 93 in C1, 262 in C2, 7 in C3, 3 in C4 and 82 in C5306
+(Fig. 6a). Tier 1 genes had more reliable cluster assignments than other fibrosis-associated genes (71% vs307
+48% in confidence cores), although membership confidence was not part of the score. Selecting up to five308
+12
+
+=== PAGE 13 ===
+0 500 1000 1500
+Genes
+C1
+C2
+C3
+C4
+C5
+857
+93 Tier 1
+1,367
+262 Tier 1
+226
+7 Tier 1
+397
+3 Tier 1
+998
+82 Tier 1
+Tier 1 Tier 2 Tier 3
+a Tier composition per cluster Gene Score (of 9) Median ρ Membership conf. Largest step
+IL32
+ +0.52 0.83
+EPHA3
+ +0.50 0.46
+L YZ
+ +0.49 0.83
+NFASC
+ +0.53 0.54
+PLPP4
+ +0.53 0.58
+PDGFRA
+ +0.42 0.68
+CACNA1C
+ +0.45 0.89
+TPM4
+ +0.40 0.89
+PLK3
+ +0.41 0.89
+TAX1BP3
+ +0.41 0.92
+TREM2
+ +0.47 0.67
+CDC45
+ +0.40 0.75
+HTR7
+ +0.44 0.71
+FABP5
+ +0.46 0.73
+TYMS
+ +0.49 0.61
+OA T
+ -0.40 0.38
+KNG1
+ -0.31 0.71
+F2
+ -0.31 0.56
+SUL T1E1
+ -0.41 0.99
+SLC38A4
+ -0.43 0.99
+CYP2C19
+ -0.44 0.76
+ACADSB
+ -0.45 0.89
+MME
+ -0.42 0.99
+→F1→F2→F3→F40.80
+C1
+C2
+C3
+C4
+C5
+23-gene cluster-representative shortlist
+b
+Figure 6. Multi-evidence gene prioritisation.(a) Tier composition per cluster (Tier 1, score≥7 ; Tier 2, 5–6; Tier
+3, <5 ). (b) The 23-gene cluster-representative shortlist: total score (filled dots; bold, maximum score), median
+within-study correlation with fibrosis stage, membership confidence (black,≥0.8 ; red line, core threshold) and the
+adjacent-stagetransitionwiththelargeststudy-adjustedcoefficient,whichneednotcoincidewiththecluster’sdefining
+transition.
+Tier 1 genes per cluster produced a 23-gene shortlist representing all five patterns (Fig. 6b; Table 5); C4309
+contributed three candidates because only three of its genes reached Tier 1.PDGFRA,CACNA1C,TPM4,310
+PLK3andTAX1BP3achievedthemaximumscoreofnine. Membershipconfidenceamongshortlistedgenes311
+ranged from 0.38 (OAT) to 0.99 (SULT1E1,SLC38A4,MME), so a high score did not guarantee confident312
+stage timing.313
+LOSO analysis retained significance for 442 of 447 Tier 1 genes in all five refits, whereas 247 retained314
+|medianρ| ≥0.30 throughout; all 23 shortlisted genes remained significant, and 18 retained the magnitude315
+threshold. Significance retention was therefore more robust than effect-size stability. Sixteen shortlisted316
+genes were selected under all four label and normalisation configurations, and removing the fibrosis-only317
+component while keeping the threshold of seven yielded 286 Tier 1 genes and a 21-gene shortlist (with a318
+lower maximum achievable score).319
+Knowledge-graph annotations converge on matrix, adhesion and PDGF signalling320
+The enrichment-ranked subgraph connected 42 Tier 1 genes to 12 non-redundant Pathway/BioProcess321
+annotations through 154 relationships (Additional file 1: Fig. S2). Tier 1 genes were over-represented in322
+extracellular-matrix organisation (27 genes; fold enrichment 7.77;q= 1.06×10 −13), cell–cell adhesion323
+(32 genes; 5.35;q= 8.60×10 −12), angiogenesis (36 genes; 4.69;q= 8.60×10 −12), integrin cell-surface324
+interactions(20genes;8.38; q= 1.08×10 −10)andsignallingbyPDGF(12genes;12.81; q= 1.28×10 −8)325
+(Fig. 5b). Four shortlisted genes appeared in the subgraph:PDGFRAlinked to five annotations andEPHA3,326
+NFASCandTREM2to one each. The remaining displayed genes came from the wider Tier 1 set, so the327
+network illustrates annotation sharing within a subset of prioritised genes; these curated links provide328
+biological context and do not establish causal mechanisms.329
+13
+
+=== PAGE 14 ===
+Table 5. Final 23-gene shortlist.Biological functions and prior liver-disease evidence for each gene are summarised
+in Additional file 1: Table S6. Medianρ, median within-study Spearman correlation with fibrosis stage; valid
+bootstraps, denominator for membership confidence; largest contrast, adjacent-stage comparison with the largest
+absolute study-adjusted coefficient.
+Gene Cluster Score /9 Medianρ Membership conf. Valid bootstraps Largest contrast
+IL32 C1 8 0.522 0.83 100 F0→F1
+EPHA3 C1 8 0.498 0.46 100 F2→F3
+LYZ C1 8 0.487 0.83 100 F0→F1
+NFASC C1 8 0.532 0.54 100 F2→F3
+PLPP4 C1 8 0.533 0.58 100 F2→F3
+PDGFRA C2 9 0.417 0.68 97 F2→F3
+CACNA1C C2 9 0.447 0.89 97 F3→F4
+TPM4 C2 9 0.403 0.89 97 F3→F4
+PLK3 C2 9 0.414 0.89 97 F3→F4
+TAX1BP3 C2 9 0.408 0.92 97 F3→F4
+TREM2 C3 8 0.469 0.67 99 F0→F1
+CDC45 C3 7 0.401 0.75 99 F0→F1
+HTR7 C3 7 0.440 0.71 99 F2→F3
+FABP5 C3 7 0.464 0.73 99 F0→F1
+TYMS C3 7 0.489 0.61 99 F0→F1
+OAT C4 7 −0.398 0.38 100 F2→F3
+KNG1 C4 7 −0.312 0.71 100 F1→F2
+F2 C4 7 −0.307 0.56 100 F1→F2
+SULT1E1 C5 8 −0.414 0.99 96 F3→F4
+SLC38A4 C5 8 −0.430 0.99 96 F3→F4
+CYP2C19 C5 8 −0.443 0.76 96 F1→F2
+ACADSB C5 8 −0.447 0.89 96 F1→F2
+MME C5 8 −0.421 0.99 96 F3→F4
+Discussion330
+This study shows that liver fibrosis severity is associated with distinct stage-dependent transcriptional331
+programmes rather than a single monotonic expression response. By integrating eight cohorts at the patient332
+level and requiring the same direction of association in every study, we identified 3,845 fibrosis-associated333
+genes and resolved their F0–F4 profiles into five patterns with different timing, functional content and334
+cellular correlates. Three features distinguish these results from earlier grouped-stage analyses: the patterns335
+were reproduced by study-adjusted stage models fitted directly to patient-level data; they nested coherently336
+within the coarser three-cluster solution; and the transition to cirrhosis was the only step that retained many337
+substantial differences at equal sample size, although this transition was also the one represented by the338
+fewest patients (34 at F4). Together, they indicate that higher fibrosis stages are associated with a fibrogenic339
+matrixprogrammealreadyelevatedatF1,aproliferativesignatureelevatedfromF1withoutfurtherincrease,340
+and remodelling and metabolic differences that, in the available data, are most pronounced between F3 and341
+F4.342
+ThefibrillarmatrixprogrammewasalreadyelevatedatF1andwashigherateachsubsequentstage. Fibrillar343
+collagens (COL1A1,COL1A2,COL3A1,COL5A1),PDGFRBandTGFB1belonged to C1, which already344
+differed between F0 and F1 and was higher at each subsequent stage up to F4. Lineage-tracing studies345
+have identified activated hepatic stellate cells as the dominant source of fibrillar collagen across aetiologies346
+14
+
+=== PAGE 15 ===
+[41], with TGF-β and PDGF signalling as principal drivers of their activation [42]. The elevation of this347
+clusteratF1thereforesuggeststhatthefibrogenicprogrammeofstellate-cellactivationisalreadydetectable348
+transcriptionally in patients at F1, before histologically significant (≥F2) fibrosis. In parallel, fibrosis-only349
+rising genes were enriched for T-cell activation and IL-6/JAK/STAT3 signalling, pathways that regulate350
+stellate-cell activation and hepatocyte survival in fibrosis [43]. Because these genes were selected on the351
+fibrosis axis but not on the disease-group axis, they are candidates for immune processes that track scar352
+formation more closely than steatohepatitis activity, although the different cohorts contributing to each axis353
+prevent a claim of specificity.354
+A second, distinct programme was elevated from F1 onward but did not increase further at higher stages.355
+C3 was enriched for E2F targets and contained proliferation markers (MKI67,TOP2A,CDC45,TYMS)356
+together withTREM2. A higher proliferative signal at mild stages is consistent with regenerative and357
+ductular responses to injury, and the absence of further increase at higher stages would be compatible with358
+the replicative arrest and senescence of hepatocytes reported with advancing NAFLD [44], although bulk359
+data cannot identify which cells proliferate.TREM2marks the NASH-associated macrophages that expand360
+in experimental steatohepatitis [45] and the scar-associated macrophages that populate the fibrotic niche in361
+cirrhosis [46]. Its higher expression from F1 without further increase at higher stages may indicate that362
+this macrophage state is already present in patients with mild fibrosis; because the data are cross-sectional,363
+longitudinal and cell-resolved studies are needed to test this.364
+The C2 programme, the largest cluster and the strongest functional signal in the study, changed most steeply365
+between F3 and F4; because F4 was represented by 34 patients, the magnitude and stage location of this366
+change should be regarded as provisional. Its Hallmark epithelial–mesenchymal transition enrichment367
+should not be read as evidence of hepatocyte EMT, which lineage tracing has not supported [47]. Instead,368
+the cluster’s composition—basement-membrane collagens,TIMP1,MMP2, proteoglycans,PDGFRAand369
+the ductular-reaction markersEPCAM,SOX9andKRT7—points to mesenchymal expansion, vascular370
+and basement-membrane remodelling and ductular reaction, all of which increase with fibrosis severity371
+in human NAFLD [48]. Knowledge-graph analysis converged on the same biology: Tier 1 genes were372
+over-represented in extracellular-matrix organisation, cell adhesion, angiogenesis, integrin interactions and373
+PDGF signalling. Integrin-mediated activation of latent TGF-β in PDGFRβ+ mesenchymal cells is a core374
+fibrogenic mechanism across organs [49], and PDGFRα+ scar-associated mesenchymal cells expand in375
+human cirrhosis [46].PDGFRA, which scored maximally and was the shortlisted gene most connected to376
+these annotations, is therefore a strong candidate for cell-resolved follow-up. Notably,THBS2was among377
+themoststronglyfibrosis-associatedC2genes( ρ= 0.514 );thrombospondin-2wasindependentlyidentified378
+as a circulating biomarker of NASH and advanced fibrosis [13], illustrating how secreted C2 products that379
+increase at advanced stages could be evaluated as non-invasive markers of advanced disease.380
+The falling programmes describe the loss of hepatocyte function. C5, which fell most steeply between F3381
+and F4, was enriched for bile-acid and fatty-acid metabolism and contained drug-metabolising enzymes382
+(CYP2E1,CYP1A2,CYP2C8,CYP2C19),SULT1E1andALB.AlteredhepaticcytochromeP450expression383
+and activity across the stages of NAFLD have been documented directly [50]; our results place the decline384
+of these genes predominantly at the advanced stages, which is relevant to drug metabolism in patients with385
+advanced fibrosis. In bulk tissue, such decreases may reflect reduced hepatocyte content as much as altered386
+regulation; deconvolution approaches [51] or single-cell data would be required to separate the two. The387
+mid-stage falling cluster C4 was small, and its enrichment did not replicate in confidence-core genes, so we388
+15
+
+=== PAGE 16 ===
+refrain from interpreting it beyond noting its coagulation-related genes (F2,KNG1).389
+Although no independent cohort was analysed here, several key findings agree with evidence generated390
+independently of our fibrosis analysis.TREM2+ macrophages and PDGFRα+ mesenchymal cells were391
+identified in human cirrhotic liver by single-cell sequencing [46]; thrombospondin-2, encoded by the C2392
+geneTHBS2, was identified as a circulating biomarker of NASH and advanced fibrosis [13] in a cohort393
+(GSE167523)thatcontributednofibrosisstagestoourfibrosis-axisanalysis;andstage-dependentalterations394
+of hepatic cytochrome P450 enzymes, matching the C5 genes, were measured directly at the protein and395
+activity level [50]. These concordances support, but do not substitute for, replication of the stage patterns in396
+independent cohorts.397
+These findings complement previous transcriptomic studies. The matrix and collagen programmes that398
+dominated our shared rising genes agree with the fibrosis signatures of Govaereet al.and Hoanget al.399
+[11, 10] and with the fibrogenic programmes shared across aetiologies [17]. Comparisons of advanced400
+with mild fibrosis [18, 16] necessarily pool C1 and C2 genes, whose largest changes occur at different401
+stages; separating them shows that the fibrillar matrix programme already differs at mild stages, whereas402
+basement-membrane remodelling, ductular reaction and metabolic loss differ most between F3 and F4.403
+The strong concordance between the fibrosis and disease-group axes (1,792 of 1,822 shared genes) further404
+indicates that much of the transcriptional response is common to steatohepatitis and fibrosis.405
+The framework also has methodological implications. Combining heterogeneous public cohorts without406
+a fitted batch-correction model relied on within-study standardisation, rank-based tests that respect the407
+ordinal stage scale and a requirement that every testable study agree in direction, an approach that limits the408
+influence of study-specific artefacts [21, 19, 20]. Resolving repeat biopsies before stage filtering prevented409
+over-weighting of patients with several biopsies, and size-matched refits separated biological from power-410
+driven differences between transitions. The cluster analysis illustrates why stability should be reported411
+at two levels: average shapes were highly reproducible, but fewer than half of the genes had confident412
+assignments, and confident genes were those with stronger stage associations. Reporting membership413
+confidence, LOSO retention and preprocessing sensitivity alongside each gene makes the strength of each414
+typeofevidenceexplicit, andintegratingtheseresultsinaknowledgegraphkeepseverycandidatetraceable415
+from its expression in individual biopsies to its curated pathway, disease and drug relationships [22, 39].416
+The stage-resolved view has implications for translational work. Genes that already differ between F0417
+and F1 (C1 and C3) are candidate markers of mild fibrosis, whereas C2 and C5 genes, which differ most418
+between F3 and F4, are more likely to mark advanced disease. Because individual early differences were419
+small at equal sample size, early staging may require multi-gene scores rather than single markers. The420
+prioritised genes, each annotated with its pattern, confidence and robustness, provide a ranked starting point421
+for such studies, and the 16 shortlisted genes stable across all preprocessing variants are the most defensible422
+candidates.423
+This study has limitations. First, the cohorts were identified by a targeted rather than a formal systematic424
+search, so other eligible datasets may exist. Second, participant overlap across accessions cannot be425
+fully excluded from metadata; overlap between two cohorts would make them non-independent, inflating426
+combined p-values and directional agreement, although LOSO retention limits the dependence of any result427
+on a single cohort. Third, clinical confounding remains possible: age and sex were available for only 327 of428
+the 610 staged patients, metabolic and alcohol data were incomplete, which also prevented reclassification429
+16
+
+=== PAGE 17 ===
+under MASLD/MASH criteria [4], and study adjustment did not account for clinical covariates or cell430
+composition; disease-group labels for GSE130970 were histology-derived proxies. Fourth, the cirrhosis431
+stage was represented by only 34 patients, so conclusions about the F3–F4 transition and F4 expression432
+levels are the least certain. All analyses were cross-sectional, so stage patterns describe differences between433
+patients rather than trajectories within them. An additional preprocessing limitation concerns GSE193066,434
+in which expression standardisation was performed across all 164 deposited biopsies before repeated435
+biopsies were resolved to patient-level observations. Although repeated biopsies were subsequently handled436
+using the common patient-level policy, this preprocessing sequence may have influenced the resulting437
+standardised expression values. A sensitivity analysis using standardisation after patient-level resolution438
+would help assess its potential impact. Finally, the score components share expression and annotation439
+evidence, candidate selection was not nested within the robustness analyses, and independent, longitudinal440
+and functional validation remain to be performed. The findings should therefore be regarded as prioritised441
+hypotheses and a structured resource for their evaluation.442
+Conclusions443
+Liver fibrosis severity is associated with at least five distinct expression patterns across fibrosis stages: a444
+fibrogenic matrix programme elevated from F1 and higher at each later stage, a proliferative signature445
+elevated from F1 without further increase, and basement-membrane remodelling, ductular reaction and446
+metabolic loss that are most pronounced between F3 and F4, a transition represented by few patients and447
+therefore estimated least precisely. The average expression profiles were reproducible across alternative448
+clusteringandmodellingconfigurations,althoughindividualgeneassignmentsshowedgreatersensitivityto449
+patient resampling. The integrated, uncertainty-aware resource allows each candidate gene to be examined450
+together with the evidence for its ranking and its stage assignment. Three priorities follow: testing the451
+stage patterns and prioritised genes in independent and longitudinal cohorts with harmonised clinical452
+labels and covariates, with larger numbers of patients with cirrhosis; using single-cell or spatial data to453
+separate changes in cell state from changes in cell composition, particularly forPDGFRA,TREM2and the454
+C2 ductular programme; and public release of the code, graph exports and complete outputs to support455
+independent reproduction.456
+Abbreviations457
+ARI: adjusted Rand index; BH: Benjamini–Hochberg; CPM: counts per million; EMT: epithelial–458
+mesenchymal transition; GEO: Gene Expression Omnibus; GO: Gene Ontology; HGNC: HUGO Gene459
+Nomenclature Committee; LOSO: leave-one-study-out; MASH: metabolic dysfunction-associated460
+steatohepatitis; MASLD: metabolic dysfunction-associated steatotic liver disease; NAFL: non-alcoholic461
+fatty liver; NAFLD: non-alcoholic fatty liver disease; NASH: non-alcoholic steatohepatitis; SD: standard462
+deviation; TPM: transcripts per million.463
+Supplementary Information464
+Additional file 1: Supplementary Figs. S1–S2, Tables S1–S6 and Supplementary Methods (cluster-number465
+diagnostics and nesting analysis, biological context of the 23 shortlisted genes, knowledge-graph sub-466
+17
+
+=== PAGE 18 ===
+graph, dataset-specific preprocessing and eligibility, scoring rules, graph composition, expression files,467
+implementation checks and reference-file provenance).468
+Declarations469
+Ethics approval and consent to participate.Not applicable.470
+Consent for publication.Not applicable.471
+Availability of data and materials.Analysis code and result tables are available on GitHub:https:472
+//github.com/nissankararaoThanvitha/liver_graph.473
+Competing interests.The authors declare that they have no competing interests.474
+Funding.Not applicable475
+Authors’contributions.NT:datacuration, formalanalysis, software, visualisation, writing—originaldraft.476
+VLN: data curation, formal analysis, investigation, validation, writing—original draft. KVD: software,477
+methodology, knowledge-graph integration, visualisation, writing—original draft. BM: conceptualisation,478
+methodology, supervision, writing—review and editing. AD: conceptualisation, supervision, project479
+administration, writing—review and editing. All authors read and approved the final manuscript.480
+References481
+[1] Angulo P, et al. Liver fibrosis, but no other histologic features, is associated with long-term outcomes of patients482
+with nonalcoholic fatty liver disease. Gastroenterology. 2015;149:389–97. doi:10.1053/j.gastro.2015.04.043.483
+[2] TaylorRS,etal.Associationbetweenfibrosisstageandoutcomesofpatientswithnonalcoholicfattyliverdisease:484
+a systematic review and meta-analysis. Gastroenterology. 2020;158:1611–25. doi:10.1053/j.gastro.2020.01.043.485
+[3] Sanyal AJ, et al. Prospective study of outcomes in adults with nonalcoholic fatty liver disease. N Engl J Med.486
+2021;385:1559–69. doi:10.1056/NEJMoa2029349.487
+[4] RinellaME,etal.AmultisocietyDelphiconsensusstatementonnewfattyliverdiseasenomenclature.Hepatology.488
+2023;78:1966–86. doi:10.1097/HEP.0000000000000520.489
+[5] Younossi ZM, et al. The global epidemiology of nonalcoholic fatty liver disease (NAFLD)490
+and nonalcoholic steatohepatitis (NASH): a systematic review. Hepatology. 2023;77:1335–47.491
+doi:10.1097/HEP.0000000000000004.492
+[6] Kleiner DE, et al. Design and validation of a histological scoring system for nonalcoholic fatty liver disease.493
+Hepatology. 2005;41:1313–21. doi:10.1002/hep.20701.494
+[7] Singh S, et al. Fibrosis progression in nonalcoholic fatty liver vs nonalcoholic steatohepatitis: a sys-495
+tematic review and meta-analysis of paired-biopsy studies. Clin Gastroenterol Hepatol. 2015;13:643–54.496
+doi:10.1016/j.cgh.2014.04.014.497
+[8] Friedman SL, Pinzani M. Hepatic fibrosis 2022: unmet needs and a blueprint for the future. Hepatology.498
+2022;75:473–88. doi:10.1002/hep.32285.499
+[9] MoylanCA,etal.Hepaticgeneexpressionprofilesdifferentiatepresymptomaticpatientswithmildversussevere500
+nonalcoholic fatty liver disease. Hepatology. 2014;59:471–82. doi:10.1002/hep.26661.501
+[10] Hoang SA, et al. Gene expression predicts histological severity and reveals distinct molecular profiles of502
+nonalcoholic fatty liver disease. Sci Rep. 2019;9:12541. doi:10.1038/s41598-019-48746-5.503
+18
+
+=== PAGE 19 ===
+[11] Govaere O, et al. Transcriptomic profiling across the nonalcoholic fatty liver disease spectrum reveals gene504
+signaturesforsteatohepatitisandfibrosis.SciTranslMed.2020;12:eaba4448.doi:10.1126/scitranslmed.aba4448.505
+[12] Pantano L, et al. Molecular characterization and cell type composition deconvolution of fibrosis in NAFLD. Sci506
+Rep. 2021;11:18045. doi:10.1038/s41598-021-96966-5.507
+[13] Kozumi K, et al. Transcriptomics identify thrombospondin-2 as a biomarker for NASH and advanced liver508
+fibrosis. Hepatology. 2021;74:2452–66. doi:10.1002/hep.31995.509
+[14] Verschuren L, et al. Development of a novel non-invasive biomarker panel for hepatic fibrosis in MASLD. Nat510
+Commun. 2024;15:4564. doi:10.1038/s41467-024-48956-0.511
+[15] Ryaboshapkina M, Hammar M. Human hepatic gene expression signature of non-alcoholic fatty liver disease512
+progression, a meta-analysis. Sci Rep. 2017;7:12361. doi:10.1038/s41598-017-10930-w.513
+[16] Piras IS, DiStefano JK. Comprehensive meta-analysis reveals distinct gene expression signatures of MASLD514
+progression. Life Sci Alliance. 2024;7:e202302517. doi:10.26508/lsa.202302517.515
+[17] Yang W, et al. Integrative transcriptomics across etiologies reveals common and disease-specific fibrogenic516
+signatures in liver fibrosis. Can J Gastroenterol Hepatol. 2026;2026:9254321. doi:10.1155/cjgh/9254321.517
+[18] Maiers JL, et al. Conserved hepatic RNA signatures across multiple cohorts reveal novel mechanistic clues for518
+advanced fibrosis in human MASLD. Hepatol Commun. 2026;10:e0991. doi:10.1097/HC9.0000000000000991.519
+[19] Ramasamy A, et al. Key issues in conducting a meta-analysis of gene expression microarray datasets. PLoS520
+Med. 2008;5:e184. doi:10.1371/journal.pmed.0050184.521
+[20] SweeneyTE,etal.Methodstoincreasereproducibilityindifferentialgeneexpressionviameta-analysis.Nucleic522
+Acids Res. 2017;45:e1. doi:10.1093/nar/gkw797.523
+[21] Leek JT, et al. Tackling the widespread and critical impact of batch effects in high-throughput data. Nat Rev524
+Genet. 2010;11:733–9. doi:10.1038/nrg2825.525
+[22] Nicholson DN, Greene CS. Constructing knowledge graphs and their biomedical applications. Comput Struct526
+Biotechnol J. 2020;18:1414–28. doi:10.1016/j.csbj.2020.05.017.527
+[23] Himmelstein DS, et al. Systematic integration of biomedical knowledge prioritizes drugs for repurposing. eLife.528
+2017;6:e26726. doi:10.7554/eLife.26726.529
+[24] ChandakP,HuangK,ZitnikM.Buildingaknowledgegraphtoenableprecisionmedicine.SciData.2023;10:67.530
+doi:10.1038/s41597-023-01960-3.531
+[25] Vittor L, et al. OptimusKG: unifying biomedical knowledge in a modern multimodal graph. arXiv. 2026;532
+arXiv:2604.27269. doi:10.48550/arXiv.2604.27269.533
+[26] Edgar R, Domrachev M, Lash AE. Gene Expression Omnibus: NCBI gene expression and hybridization array534
+data repository. Nucleic Acids Res. 2002;30:207–10. doi:10.1093/nar/30.1.207.535
+[27] Suppli MP, et al. Hepatic transcriptome signatures in patients with varying degrees of nonalcoholic fatty536
+liver disease compared with healthy normal-weight individuals. Am J Physiol Gastrointest Liver Physiol.537
+2019;316:G462–72. doi:10.1152/ajpgi.00358.2018.538
+[28] Fujiwara N, et al. Molecular signatures of long-term hepatocellular carcinoma risk in nonalcoholic fatty liver539
+disease. Sci Transl Med. 2022;14:eabo4474. doi:10.1126/scitranslmed.abo4474.540
+[29] Steinhauser S, et al. The transcription factor ZNF469 regulates collagen production in liver fibrosis. JCI Insight.541
+2025;10:e182232. doi:10.1172/jci.insight.182232.542
+[30] Love MI, Huber W, Anders S. Moderated estimation of fold change and dispersion for RNA-seq data with543
+DESeq2. Genome Biol. 2014;15:550. doi:10.1186/s13059-014-0550-8.544
+[31] Fisher RA. Statistical methods for research workers. Edinburgh: Oliver and Boyd; 1925.545
+19
+
+=== PAGE 20 ===
+[32] Benjamini Y, Hochberg Y. Controlling the false discovery rate: a practical and powerful approach to multiple546
+testing. J R Stat Soc Series B. 1995;57:289–300. doi:10.1111/j.2517-6161.1995.tb02031.x.547
+[33] Rousseeuw PJ. Silhouettes: a graphical aid to the interpretation and validation of cluster analysis. J Comput548
+Appl Math. 1987;20:53–65. doi:10.1016/0377-0427(87)90125-7.549
+[34] Hubert L, Arabie P. Comparing partitions. J Classif. 1985;2:193–218. doi:10.1007/BF01908075.550
+[35] Kuhn HW. The Hungarian method for the assignment problem. Nav Res Logist Q. 1955;2:83–97.551
+doi:10.1002/nav.3800020109.552
+[36] Fang Z, Liu X, Peltz G. GSEApy: a comprehensive package for performing gene set enrichment analysis in553
+Python. Bioinformatics. 2023;39:btac757. doi:10.1093/bioinformatics/btac757.554
+[37] Subramanian A, et al. Gene set enrichment analysis: a knowledge-based approach for interpreting genome-wide555
+expression profiles. Proc Natl Acad Sci USA. 2005;102:15545–50. doi:10.1073/pnas.0506580102.556
+[38] Liberzon A, et al. The Molecular Signatures Database (MSigDB) hallmark gene set collection. Cell Syst.557
+2015;1:417–25. doi:10.1016/j.cels.2015.12.004.558
+[39] Ochoa D, et al. The next-generation Open Targets Platform: reimagined, redesigned, rebuilt. Nucleic Acids Res.559
+2023;51:D1353–9. doi:10.1093/nar/gkac1046.560
+[40] Pedregosa F, et al. Scikit-learn: machine learning in Python. J Mach Learn Res. 2011;12:2825–30.561
+[41] MederackeI,etal.Fatetracingrevealshepaticstellatecellsasdominantcontributorstoliverfibrosisindependent562
+of its aetiology. Nat Commun. 2013;4:2823. doi:10.1038/ncomms3823.563
+[42] Kisseleva T, Brenner D. Molecular and cellular mechanisms of liver fibrosis and its regression. Nat Rev564
+Gastroenterol Hepatol. 2021;18:151–66. doi:10.1038/s41575-020-00372-7.565
+[43] Kong X, Horiguchi N, Mori M, Gao B. Cytokines and STATs in liver fibrosis. Front Physiol. 2012;3:69.566
+doi:10.3389/fphys.2012.00069.567
+[44] Aravinthan A, et al. Hepatocyte senescence predicts progression in non-alcohol-related fatty liver disease. J568
+Hepatol. 2013;58:549–56. doi:10.1016/j.jhep.2012.10.031.569
+[45] Xiong X, et al. Landscape of intercellular crosstalk in healthy and NASH liver revealed by single-cell secretome570
+gene analysis. Mol Cell. 2019;75:644–60. doi:10.1016/j.molcel.2019.07.028.571
+[46] Ramachandran P, et al. Resolving the fibrotic niche of human liver cirrhosis at single-cell level. Nature.572
+2019;575:512–8. doi:10.1038/s41586-019-1631-3.573
+[47] TauraK,etal.Hepatocytesdonotundergoepithelial-mesenchymaltransitioninliverfibrosisinmice.Hepatology.574
+2010;51:1027–36. doi:10.1002/hep.23368.575
+[48] GaddVL,etal.Theportalinflammatoryinfiltrateandductularreactioninhumannonalcoholicfattyliverdisease.576
+Hepatology. 2014;59:1393–405. doi:10.1002/hep.26937.577
+[49] Henderson NC, et al. Targeting ofαv integrin identifies a core molecular pathway that regulates fibrosis in578
+several organs. Nat Med. 2013;19:1617–24. doi:10.1038/nm.3282.579
+[50] FisherCD,etal.HepaticcytochromeP450enzymealterationsinhumanswithprogressivestagesofnonalcoholic580
+fatty liver disease. Drug Metab Dispos. 2009;37:2087–94. doi:10.1124/dmd.109.027466.581
+[51] Avila Cobos F, et al. Benchmarking of cell type deconvolution pipelines for transcriptomics data. Nat Commun.582
+2020;11:5650. doi:10.1038/s41467-020-19015-1.583
+20

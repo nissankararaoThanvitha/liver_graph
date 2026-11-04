@@ -3,7 +3,7 @@
 P/T/X/F/B scores and cutoff constants are unchanged. Input discovery, stage
 profiles, clusters, transitions and enrichment use corrected patient handling.
 These features share data and are not independent validation experiments.
-Select Tier1 at score>=7. Top25 is five Tier1 genes per cluster, descending
+Select Tier1 at score>=7. Select up to five Tier1 genes per cluster, descending
 score then absolute rho; alternative cluster-top-score list is not selected.
 LOSO is merged after refitting and is deliberately not part of the score.
 """
@@ -43,7 +43,7 @@ ENRICHMENT_FILE = RESULTS / "Task4/task4_all_significant.csv"
 
 STAGES = ["F0", "F1", "F2", "F3", "F4"]
 # Derived from the input, not hardcoded. The literal 3645 was the v1
-# count; the corrected pipeline gives 3,681 and the assertion below
+# count; the corrected pipeline gives 3,845 and the assertion below
 # then fired on a correct run. The check still does its job -- it
 # catches a join that silently drops or duplicates genes -- but the
 # expected number now comes from the data rather than from memory.
@@ -58,10 +58,8 @@ def master_table():
     they just live in different files. This is the single sheet every scoring
     step afterwards reads from.
 
-    The fibrosis set is ladder in {fibrosis_only, both} -- 1,953 + 1,692 =
-    3,645. Those are the same genes the TRACKS_FIBROSIS edges carry in the
-    graph and the same genes Task 2 clustered. The 1,047 inflammation-only
-    genes are left out: they do not track fibrosis.
+    The selected fibrosis set is ladder in {fibrosis_only, both}: 2,023 +
+    1,822 = 3,845 genes. Disease-group-only genes are outside this score.
 
     A silent bad join here would corrupt every later score while still looking
     like a valid table, so the three assertions below stop the run instead.
@@ -105,7 +103,7 @@ def assign_direction(t):
     Three numbers in the table hint at direction and they can disagree, so
     they are ranked rather than combined:
 
-      1. sign(fibrosis_rho)  DECIDES. Fitted across all 668 staged patients
+      1. sign(fibrosis_rho)  DECIDES. Fitted across all 610 staged patients
          within study, so it is the steadiest estimate available.
       2. sign(Delta_F0_F4)   CHECKS. Reads only the stage-0 and stage-4 means
          and ignores the three stages between them; F4 is the smallest stage
@@ -235,7 +233,7 @@ def delta_sensitivity(t):
 # ---------------------------------------------------------------- step 5
 # FROZEN before any ranked list was inspected. The first two are Task 3's own
 # thresholds for "substantially changing", so X does not invent a second
-# standard. The third is a simple majority of the 50 equal-power draws.
+# standard. The third is a simple majority of the 50 sample-size-matched draws.
 TRANS_Q, TRANS_BETA, MATCHED_FRAC = 0.05, 0.2, 0.5
 
 
@@ -246,12 +244,12 @@ def score_transition(t):
     move happens. X finds the largest of the four consecutive jumps -- F0->F1,
     F1->F2, F2->F3, F3->F4 -- and asks whether it holds up.
 
-    Two independent pieces of evidence about that jump:
+    Two related evidence features about that contrast:
 
       full-patient fit   value_z ~ stage + study on all available patients:
                          is it statistically real and substantial
                          (q < 0.05 and |beta| >= 0.2)?
-      matched draws      in >= 50% of 50 equal-power redraws, did the jump
+      matched draws      in >= 50% of 50 sample-size-matched redraws, did the jump
                          stay big and keep its direction?
 
         both            ->  2
@@ -259,16 +257,9 @@ def score_transition(t):
         neither         ->  0
 
     Why reproducibility rather than matched significance. The matched design
-    cuts every stage to 30 patients to make the comparison fair, then corrects
-    across 3,645 genes. Measured, not assumed: significance in >= 50% of draws
-    is reached by 0, 0, 0 and 297 genes at the four transitions. Scoring on it
-    would hand every available point to F3->F4 and exclude the earlier
-    transitions outright, which is the opposite of preserving early biology.
-    Reproducibility answers the same question -- a fluke depends on which
-    patients were drawn, so redrawing kills it -- and the design can deliver
-    it: 1,522 / 1,856 / 1,713 / 2,790 genes. The strict count is carried into
-    the final table as its own column, scoring nothing: it is evidence about
-    this study's power, not about these genes.
+    uses 30 patients per stage with matched study allocation. Significance
+    fractions are retained as an additional output, not as a score component.
+    Equal sample counts do not guarantee equal statistical power.
 
     The winning transition is kept as a column so step 9 can check the
     shortlist did not collapse onto F3->F4.
@@ -343,7 +334,7 @@ def score_biology(t):
         none            ->  0
 
     Enriched, not merely present. Almost every gene in the genome belongs to
-    some GO term, so membership of any pathway would score 3,645 genes at 2
+    some GO term, so membership of any pathway would score 3,845 genes at 2
     and separate nothing. Task 4 found the processes that are
     over-represented among fibrosis genes against the 14,794-gene eligible
     background; only those count.
@@ -492,7 +483,7 @@ def audit_tier1(t):
     both increasing and decreasing programmes and several trajectory
     patterns, and only then to select. So this reports composition and
     selects nothing. The scoring rules are already frozen and cannot move;
-    what is still open is how to sample from the 507.
+    what is still open is how to sample from the 447.
 
     Pathway dominance is counted here too, against the brief's specific
     worry: a shortlist that is entirely extracellular matrix would be true
@@ -750,7 +741,7 @@ if __name__ == "__main__":
 
     t = score_transition(t)
     print(f"\nstep 5  transition X  (real in the full fit AND reproducible in "
-          f">= {MATCHED_FRAC:.0%} of 50 equal-power draws -> 2, one -> 1)")
+          f">= {MATCHED_FRAC:.0%} of 50 sample-size-matched draws -> 2, one -> 1)")
     for s in (2, 1, 0):
         n = (t.X == s).sum()
         print(f"          X={s}  {n:>5,}  ({100 * n / len(t):4.1f}%)")

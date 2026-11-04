@@ -1,0 +1,35 @@
+{
+  "already_identical": [
+    ".latexmkrc",
+    "Paper1_Results/Task4/hallmark_heatmap_readable.pdf",
+    "Paper1_Results/Task4/hallmark_heatmap_readable.png",
+    "Paper1_Results/Task3/task3_transition_comparison.png",
+    "Paper1_Results/Task2/task2_heatmap.png",
+    "Paper1_Results/Task2/task2_cluster_trajectories.png",
+    "Paper1_Results/Task2/task2_choosing_k.png",
+    "Paper1_Results/Task1/task1_venn.png",
+    "Paper1_Results/Task1/task1_shared_rho_scatter.png",
+    "Paper1_Results/Figure1/research_project_pipeline.pdf",
+    "Paper1_Results/Figure1/figure1_pipeline.png",
+    "Paper1_HighConfidence/12_mechanistic_subgraph.pdf",
+    "Paper1_HighConfidence/12_mechanistic_subgraph.png",
+    "UPLOAD_INSTRUCTIONS.txt"
+  ],
+  "upload": [
+    "task3_transition_comparison.pdf",
+    "task2_heatmap.pdf",
+    "task2_choosing_k.pdf",
+    "task2_cluster_trajectories.pdf",
+    "task4_heatmap_hallmark.pdf",
+    "task1_shared_rho_scatter.pdf",
+    "task1_venn.png",
+    "12_mechanistic_subgraph.pdf",
+    "manuscript_v3_pipeline.pdf",
+    "task1_venn.pdf",
+    "source_checksums.txt",
+    "reference_source_inventory_2026-10-22.json",
+    "retained_artifact_checksums_2026-10-21.json",
+    "manuscript_v3_pipeline.png",
+    "main.tex"
+  ]
+}

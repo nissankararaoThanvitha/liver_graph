@@ -1,0 +1,115 @@
+{
+  "ACTS_ON": {
+    "count": 20674,
+    "keys": {
+      "external_action_added": 297,
+      "external_action_direction": 297,
+      "relation_conflict": 20674,
+      "n_sources": 20674,
+      "sources_direct": 20674,
+      "action": 20674,
+      "relation_assertions": 20674,
+      "external_action_sources": 297,
+      "external_action_label": 297,
+      "evidence_level": 20674,
+      "external_action_release": 297,
+      "mechanisms_of_action": 2898,
+      "source_urls": 2893,
+      "sources_indirect": 2896
+    },
+    "examples": [
+      {
+        "external_action_added": "2026-10-21",
+        "external_action_direction": "down",
+        "relation_conflict": false,
+        "n_sources": 1,
+        "sources_direct": "DRUG_BANK",
+        "action": "TARGET",
+        "relation_assertions": "DRUG_BANK:TARGET",
+        "external_action_sources": "DGIdb",
+        "external_action_label": "inhibitor",
+        "evidence_level": "single-source",
+        "external_action_release": "Guide to Pharmacology 2026.3.1; DGIdb 5 (API, Oct 2026); ChEMBL REST API (Oct 2026)"
+      },
+      {
+        "relation_conflict": false,
+        "n_sources": 2,
+        "sources_direct": "DRUG_BANK;OPEN_TARGETS",
+        "mechanisms_of_action": "Stem cell growth factor receptor inhibitor",
+        "action": "INHIBITOR",
+        "relation_assertions": "DRUG_BANK:TARGET;OPEN_TARGETS:INHIBITOR",
+        "evidence_level": "multi-source",
+        "source_urls": "http://europepmc.org/abstract/MED/16424037 http://europepmc.org/abstract/MED/23403628",
+        "sources_indirect": "PUBMED"
+      },
+      {
+        "relation_conflict": false,
+        "n_sources": 2,
+        "sources_direct": "DRUG_BANK;OPEN_TARGETS",
+        "mechanisms_of_action": "Vascular endothelial growth factor receptor inhibitor",
+        "action": "INHIBITOR",
+        "relation_assertions": "DRUG_BANK:TARGET;OPEN_TARGETS:INHIBITOR",
+        "evidence_level": "multi-source",
+        "source_urls": "http://europepmc.org/abstract/MED/16424037 http://europepmc.org/abstract/MED/23403628",
+        "sources_indirect": "PUBMED"
+      }
+    ]
+  },
+  "EXTERNAL_ACTS_ON": {
+    "count": 5216,
+    "keys": {
+      "source_detail": 5216,
+      "drug_stage": 5216,
+      "n_sources": 5216,
+      "sources": 5216,
+      "evidence": 5216,
+      "added": 5216,
+      "release": 5216,
+      "mechanism": 5216,
+      "action_labels": 5216,
+      "push": 5216,
+      "layer": 5216
+    },
+    "examples": [
+      {
+        "source_detail": "ChEMBL;DGIdb/TTD;DGIdb/TdgClinicalTrial;GtoPdb;OpenTargets",
+        "drug_stage": "clinical trial",
+        "n_sources": 4,
+        "sources": "ChEMBL;DGIdb;GtoPdb;OpenTargets",
+        "evidence": "curated drug-target",
+        "added": "2026-10-21",
+        "release": "GtoPdb 2026.3.1; DGIdb 5 (interactions.tsv, downloaded Oct 2026); ChEMBL REST API (Oct 2026); OpenTargets Open Targets Platform 26.09",
+        "mechanism": "Vascular endothelial growth factor receptor inhibitor",
+        "action_labels": "INHIBITOR; Inhibitor / Inhibition",
+        "push": "down",
+        "layer": "external (Idea 4)"
+      },
+      {
+        "source_detail": "ChEMBL;DGIdb/TTD;OpenTargets",
+        "drug_stage": "clinical trial",
+        "n_sources": 3,
+        "sources": "ChEMBL;DGIdb;OpenTargets",
+        "evidence": "curated drug-target",
+        "added": "2026-10-21",
+        "release": "GtoPdb 2026.3.1; DGIdb 5 (interactions.tsv, downloaded Oct 2026); ChEMBL REST API (Oct 2026); OpenTargets Open Targets Platform 26.09",
+        "mechanism": "c-Jun N-terminal kinase 1 inhibitor",
+        "action_labels": "INHIBITOR",
+        "push": "down",
+        "layer": "external (Idea 4)"
+      },
+      {
+        "source_detail": "ChEMBL;OpenTargets",
+        "drug_stage": "clinical trial",
+        "n_sources": 2,
+        "sources": "ChEMBL;OpenTargets",
+        "evidence": "curated drug-target",
+        "added": "2026-10-21",
+        "release": "GtoPdb 2026.3.1; DGIdb 5 (interactions.tsv, downloaded Oct 2026); ChEMBL REST API (Oct 2026); OpenTargets Open Targets Platform 26.09",
+        "mechanism": "c-Jun N-terminal kinase 3 inhibitor",
+        "action_labels": "INHIBITOR",
+        "push": "down",
+        "layer": "external (Idea 4)"
+      }
+    ]
+  }
+}

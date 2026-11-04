@@ -46,7 +46,7 @@ The shortlist takes up to five Tier1 genes per cluster (C4 has only three, givin
 
 ## 10. OptimusKG and mechanism subgraph
 
-Gene–disease score≥.1; matched measured genes; symmetric interactions deduplicated; source drug indications/actions preserved. Eight node types/fourteen relationship types. Knowledge-loader MERGE does not remove obsolete edges automatically. Raw measurement CREATE loaders need full source exports; the core recovery is not suitable for reloading all measurements.
+Gene–disease score≥.1; matched measured genes; symmetric interactions deduplicated; source drug indications/actions preserved. The original integrated layer had eight node types/fourteen relationship types; the current extended resource has eight/fifteen (see docs/provenance/extended_graph_verification.json). Knowledge-loader MERGE does not remove obsolete edges automatically. Raw measurement CREATE loaders need full source exports; the core recovery is not suitable for reloading all measurements.
 
 Pathway and BioProcess each attach directly to Gene. Test Tier1 enrichment against Ensembl background14,794 with BH over Tier1-reached mechanism nodes. Eligible mechanism size10–500,at least10 Tier1 members,q<.05. Rank byq; check Jaccard>.5 redundancy; select12. Draw genes reaching≥3 selected nodes plus shortlisted genes reaching any. No top25/top12 selection rule changed. Annotation connectivity is not causal validation.
 

@@ -27,8 +27,8 @@ in *_kegg.csv (not committed: KEGG data may not be redistributed). counts.json
 records the row counts of both.
 
 Run from the project root:
-    python scripts/add_msigdb_pathways.py            # write CSVs and load
-    python scripts/add_msigdb_pathways.py --dry-run  # write CSVs only
+    python scripts/add_msigdb_pathways.py            # write CSVs only
+    python scripts/add_msigdb_pathways.py --apply    # write CSVs and load
 
 Password: NEO4J_PASSWORD, or else the neo4j-liver-kg entry in .mcp.json.
 """
@@ -92,7 +92,9 @@ def password():
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--dry-run", action="store_true")
+    mode = ap.add_mutually_exclusive_group()
+    mode.add_argument("--apply", action="store_true", help="explicitly write to Neo4j")
+    mode.add_argument("--dry-run", action="store_true", help="write CSVs only (the default)")
     ap.add_argument("--uri", default=os.environ.get("NEO4J_URI", "bolt://localhost:7687"))
     ap.add_argument("--user", default=os.environ.get("NEO4J_USERNAME", "neo4j"))
     args = ap.parse_args()
@@ -115,7 +117,7 @@ def main():
             print(f"{src:12s} pathways {int((nodes.source == src).sum()):4d}  "
                   f"links {int((edges.source == src).sum()):6,d}  "
                   f"unmatched {int((unmatched.source == src).sum()):4d}")
-        if args.dry_run:
+        if not args.apply:
             print("dry run: CSVs written to", OUT.relative_to(ROOT), "- nothing loaded")
             return
 

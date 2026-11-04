@@ -31,9 +31,8 @@ CLUSTERS = None  # set below from --clusters; see the argparse block
 BACKGROUND = Path("data/progression_full/progression_fibrosis.csv")
 GMT_DIR = Path("data/genesets")
 # Below this a group cannot support an enrichment test. The
-# corrected membership-confidence metric leaves C1_core and
-# C3_core at 3 and 1 genes, which is a finding in itself rather
-# than something to test.
+# Groups below this threshold are recorded as untested, rather
+# than interpreted as tested with no significant enrichment.
 MIN_GROUP_GENES = 5
 DATABASES = {"GO_BP": "c5.go.bp", "KEGG": "c2.cp.kegg_legacy",
              "Reactome": "c2.cp.reactome", "Hallmark": "h.all"}

@@ -1,0 +1,209 @@
+[
+  {
+    "gene": "IL32",
+    "cluster": "C1",
+    "score": 8,
+    "rho": 0.522,
+    "confidence": 0.83,
+    "denominator": 100,
+    "contrast": "F0\u2013F1"
+  },
+  {
+    "gene": "EPHA3",
+    "cluster": "C1",
+    "score": 8,
+    "rho": 0.498,
+    "confidence": 0.46,
+    "denominator": 100,
+    "contrast": "F2\u2013F3"
+  },
+  {
+    "gene": "LYZ",
+    "cluster": "C1",
+    "score": 8,
+    "rho": 0.487,
+    "confidence": 0.83,
+    "denominator": 100,
+    "contrast": "F0\u2013F1"
+  },
+  {
+    "gene": "NFASC",
+    "cluster": "C1",
+    "score": 8,
+    "rho": 0.532,
+    "confidence": 0.54,
+    "denominator": 100,
+    "contrast": "F2\u2013F3"
+  },
+  {
+    "gene": "PLPP4",
+    "cluster": "C1",
+    "score": 8,
+    "rho": 0.533,
+    "confidence": 0.58,
+    "denominator": 100,
+    "contrast": "F2\u2013F3"
+  },
+  {
+    "gene": "PDGFRA",
+    "cluster": "C2",
+    "score": 9,
+    "rho": 0.417,
+    "confidence": 0.68,
+    "denominator": 97,
+    "contrast": "F2\u2013F3"
+  },
+  {
+    "gene": "CACNA1C",
+    "cluster": "C2",
+    "score": 9,
+    "rho": 0.447,
+    "confidence": 0.89,
+    "denominator": 97,
+    "contrast": "F3\u2013F4"
+  },
+  {
+    "gene": "TPM4",
+    "cluster": "C2",
+    "score": 9,
+    "rho": 0.403,
+    "confidence": 0.89,
+    "denominator": 97,
+    "contrast": "F3\u2013F4"
+  },
+  {
+    "gene": "PLK3",
+    "cluster": "C2",
+    "score": 9,
+    "rho": 0.414,
+    "confidence": 0.89,
+    "denominator": 97,
+    "contrast": "F3\u2013F4"
+  },
+  {
+    "gene": "TAX1BP3",
+    "cluster": "C2",
+    "score": 9,
+    "rho": 0.408,
+    "confidence": 0.92,
+    "denominator": 97,
+    "contrast": "F3\u2013F4"
+  },
+  {
+    "gene": "TREM2",
+    "cluster": "C3",
+    "score": 8,
+    "rho": 0.469,
+    "confidence": 0.67,
+    "denominator": 99,
+    "contrast": "F0\u2013F1"
+  },
+  {
+    "gene": "CDC45",
+    "cluster": "C3",
+    "score": 7,
+    "rho": 0.401,
+    "confidence": 0.75,
+    "denominator": 99,
+    "contrast": "F0\u2013F1"
+  },
+  {
+    "gene": "HTR7",
+    "cluster": "C3",
+    "score": 7,
+    "rho": 0.44,
+    "confidence": 0.71,
+    "denominator": 99,
+    "contrast": "F2\u2013F3"
+  },
+  {
+    "gene": "FABP5",
+    "cluster": "C3",
+    "score": 7,
+    "rho": 0.464,
+    "confidence": 0.73,
+    "denominator": 99,
+    "contrast": "F0\u2013F1"
+  },
+  {
+    "gene": "TYMS",
+    "cluster": "C3",
+    "score": 7,
+    "rho": 0.489,
+    "confidence": 0.61,
+    "denominator": 99,
+    "contrast": "F0\u2013F1"
+  },
+  {
+    "gene": "OAT",
+    "cluster": "C4",
+    "score": 7,
+    "rho": -0.398,
+    "confidence": 0.38,
+    "denominator": 100,
+    "contrast": "F2\u2013F3"
+  },
+  {
+    "gene": "KNG1",
+    "cluster": "C4",
+    "score": 7,
+    "rho": -0.312,
+    "confidence": 0.71,
+    "denominator": 100,
+    "contrast": "F1\u2013F2"
+  },
+  {
+    "gene": "F2",
+    "cluster": "C4",
+    "score": 7,
+    "rho": -0.307,
+    "confidence": 0.56,
+    "denominator": 100,
+    "contrast": "F1\u2013F2"
+  },
+  {
+    "gene": "SULT1E1",
+    "cluster": "C5",
+    "score": 8,
+    "rho": -0.414,
+    "confidence": 0.99,
+    "denominator": 96,
+    "contrast": "F3\u2013F4"
+  },
+  {
+    "gene": "SLC38A4",
+    "cluster": "C5",
+    "score": 8,
+    "rho": -0.43,
+    "confidence": 0.99,
+    "denominator": 96,
+    "contrast": "F3\u2013F4"
+  },
+  {
+    "gene": "CYP2C19",
+    "cluster": "C5",
+    "score": 8,
+    "rho": -0.443,
+    "confidence": 0.76,
+    "denominator": 96,
+    "contrast": "F1\u2013F2"
+  },
+  {
+    "gene": "ACADSB",
+    "cluster": "C5",
+    "score": 8,
+    "rho": -0.447,
+    "confidence": 0.89,
+    "denominator": 96,
+    "contrast": "F1\u2013F2"
+  },
+  {
+    "gene": "MME",
+    "cluster": "C5",
+    "score": 8,
+    "rho": -0.421,
+    "confidence": 0.99,
+    "denominator": 96,
+    "contrast": "F3\u2013F4"
+  }
+]

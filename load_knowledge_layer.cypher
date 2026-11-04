@@ -35,7 +35,7 @@
 // Statement 5 is the long one at 1.8M rows. Expect several minutes.
 //
 // AFTERWARDS
-//   python scripts/verify_extended_graph_counts.py --live
+//   python scripts/verify_extended_graph_counts.py --live  // after all graph additions
 // which reconciles every relationship type against the CSVs and names any
 // that is still short.
 // =======================================================================
@@ -183,7 +183,7 @@ CALL { WITH row
 
 
 // ------------------------------------------- 11/11 the project's own edges
-// TRACKS_FIBROSIS 3,681 · TRACKS_INFLAMMATION 4,018.
+// TRACKS_FIBROSIS 3,845 · TRACKS_INFLAMMATION 4,199.
 // The only edges here derived from these patients rather than imported, so
 // they carry their own evidence: the cross-study median rho, the combined
 // q, how many studies contributed, and the direction.
@@ -223,8 +223,8 @@ CALL { WITH row
 //   MATCH ()-[r:OFF_LABEL_FOR]->()      RETURN count(r);   //  1,061
 //   MATCH ()-[r:PARENT_OF]->()          RETURN count(r);   // 44,215
 //   MATCH ()-[r:HAS_PHENOTYPE]->()      RETURN count(r);   // 157,144
-//   MATCH ()-[r:TRACKS_FIBROSIS]->()    RETURN count(r);   //  3,681
-//   MATCH ()-[r:TRACKS_INFLAMMATION]->() RETURN count(r);  //  4,018
+//   MATCH ()-[r:TRACKS_FIBROSIS]->()    RETURN count(r);   //  3,845
+//   MATCH ()-[r:TRACKS_INFLAMMATION]->() RETURN count(r);  //  4,199
 //
 // Or check the lot at once, from the shell:
 //
@@ -237,8 +237,8 @@ CALL { WITH row
 //   ASSOCIATED_WITH    1,832,441      TREATS                57,601
 //   INVOLVED_IN          157,081      CONTRAINDICATED_IN    11,718
 //   IN_PATHWAY            46,751      OFF_LABEL_FOR          1,061
-//   HAS_PHENOTYPE        157,144      TRACKS_FIBROSIS        3,681
-//   PARENT_OF             44,073      TRACKS_INFLAMMATION    4,018
+//   HAS_PHENOTYPE        157,144      TRACKS_FIBROSIS        3,845
+//   PARENT_OF             44,073      TRACKS_INFLAMMATION    4,199
 //
 // Every type loads complete except PARENT_OF, which lands at 44,073 rather
 // than 44,215: 142 of its rows point at a disease id that is not a node in

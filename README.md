@@ -33,7 +33,7 @@ Eight public human liver RNA-sequencing studies (1,085 samples; 1,027 recorded p
 
 ## Running it
 
-Python 3.12 with the versions in `requirements.txt` (pandas 2.3.3, NumPy 2.2.4, SciPy 1.16.3, scikit-learn 1.7.2, matplotlib 3.10.7, GSEApy 1.3.1). Run every script from the repository root. Raw downloads (GEO, HGNC, OptimusKG, MSigDB) are not committed; [docs/provenance/DATA_SOURCES.md](docs/provenance/DATA_SOURCES.md) lists them and [docs/provenance/REBUILD.md](docs/provenance/REBUILD.md) gives the order of the scripts. The result tables can be read without running anything or installing Neo4j.
+Python 3.12 with the versions in `requirements.txt` (pandas 2.3.3, NumPy 2.2.4, SciPy 1.16.3, scikit-learn 1.7.2, matplotlib 3.10.7, GSEApy 1.3.1). Run every script from the repository root. Raw downloads (GEO, HGNC, OptimusKG, MSigDB) are not committed; [docs/provenance/DATA_SOURCES.md](docs/provenance/DATA_SOURCES.md) lists them and [docs/provenance/REBUILD.md](docs/provenance/REBUILD.md) gives fresh-clone input preparation and the order of the scripts. The graph ZIP can be converted into analysis inputs with `scripts/prepare_analysis_core.py`, without loading Neo4j. The result tables can be read without running anything or installing Neo4j.
 
 ```bash
 pip install -r requirements.txt

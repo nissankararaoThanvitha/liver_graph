@@ -4,6 +4,10 @@ Paper: *Stage-Resolved Transcriptomic Analysis Reveals Distinct Molecular Progra
 
 ## Methods
 
+Fresh-clone preparation from the published CSV ZIP: `scripts/prepare_analysis_core.py`
+recovers the complete eligible expression core; `--annotations-only` recovers
+the original annotation layer. See `provenance/REBUILD.md` before rerunning.
+
 | Paper section | Code | Output / record |
 |---|---|---|
 | Study design and data sources (Table 2) | — | [provenance/DATA_SOURCES.md](provenance/DATA_SOURCES.md) (accessions and exact files); `data/processed/samples_metadata.csv` |
@@ -22,7 +26,7 @@ Paper: *Stage-Resolved Transcriptomic Analysis Reveals Distinct Molecular Progra
 | Sensitivity: four label/normalisation configurations | — (runs recorded) | `final_combined_2026-10-10/SENSITIVITY_REPORT.md`, `candidate_stability.csv` |
 | Sensitivity: thresholds, score components, shortlist rule | `scripts/high_confidence_genes.py` | `Paper1_HighConfidence/03_rho_sensitivity.csv`, `04_delta_sensitivity.csv`, `08_tier_sensitivity.csv`, `08_leave_one_score_out.csv`, `09b_option_*.csv` |
 | Knowledge-graph construction | `build_optimuskg_layer.py`, `create_kg_constraints.cypher`, `load_knowledge_layer.cypher`, `reload_expression.cypher`, `build_progression_edges.py` | `final_combined_2026-10-10/graph_verification.json` (8,044 progression links match the exports) |
-| Graph additions (ChEMBL, DGIdb, GtoPdb, Open Targets; KEGG/Hallmark; pathway–NAFLD; ChEMBL indications) | `scripts/write_new_links_to_graph.py`, `write_external_directions_to_graph.py`, `add_msigdb_pathways.py`, `build_pathway_nafld_links.py`, `write_added_drug_indications_to_graph.py` | `data/graph_drug_layer/`, `data/graph_msigdb/`, `data/graph_pathway_disease/` |
+| Graph additions (ChEMBL, DGIdb, GtoPdb, Open Targets; KEGG/Hallmark; pathway–NAFLD; ChEMBL indications) | `scripts/write_new_links_to_graph.py`, `scripts/unify_drug_schema.py`, `write_external_directions_to_graph.py`, `add_msigdb_pathways.py`, `build_pathway_nafld_links.py`, `write_added_drug_indications_to_graph.py` | `data/graph_drug_layer/`, `data/graph_msigdb/`, `data/graph_pathway_disease/` |
 | Graph composition (126,999 nodes; 35,160,254 relationships; 15 types) | `scripts/verify_extended_graph_counts.py` | `docs/provenance/extended_graph_verification.json` (live check) |
 | Knowledge-graph annotation analysis (3,980 annotations; 42 genes, 12 annotations, 154 links) | `scripts/kg_subgraph.py`, `scripts/verify_against_neo4j.py` | `Paper1_HighConfidence/12_KG_supplementary.xlsx`, `12_mechanistic_subgraph.png` |
 | Software versions | — | `requirements.txt` |

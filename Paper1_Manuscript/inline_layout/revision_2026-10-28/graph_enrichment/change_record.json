@@ -1,0 +1,27 @@
+{
+  "scope": "Current Overleaf project 6ad8b6a41dd49bb3a3dd139f",
+  "changes": [
+    "Separate original analysis and enriched resource snapshots",
+    "Drug metadata recovery and field-level provenance",
+    "EXTERNAL_ACTS_ON and Drug/ExternalDrug label semantics",
+    "New totals in Results and contribution statement",
+    "Supplementary Table S4, property coverage and source strings",
+    "Availability and limitation statements"
+  ],
+  "verified_core_results": {
+    "gene_key": "ensembl_id",
+    "association_baseline_rows": 8044,
+    "association_live_rows": 8044,
+    "association_endpoint_sets_equal": true,
+    "association_property_mismatches": 0,
+    "figure_expected_edges": 154,
+    "figure_live_edges": 154,
+    "figure_memberships_equal": true,
+    "figure_genes": 42,
+    "figure_annotations": 12
+  },
+  "source_code_commit": "565863549d7f2cde147d022b51f0dc65495b4ea3",
+  "source_code_scope": "OptimusKG recovery, ChEMBL gap fill and recovered-property writer reviewed in origin/main and historical paper2-repurposing; later EXTERNAL_ACTS_ON importer not found in available paper2-results refs",
+  "graph_mutations": false,
+  "analysis_reruns": false
+}

@@ -42,7 +42,7 @@ aggregate, which is why that study carries no usable clinical labels).
 **HGNC complete set** — `hgnc_complete_set.txt`, 16.2 MB, from
 `https://www.genenames.org/download/archive/`.
 
-Used by `02_map_gene_ids.py` to translate every symbol, Entrez ID and
+Used by `map_gene_ids.py` to translate every symbol, Entrez ID and
 Ensembl ID onto one canonical Ensembl gene ID with the version stripped.
 
 ---
@@ -77,7 +77,7 @@ Four collections, 5.7 MB total:
 
 **These are not committed.** The KEGG-derived sets may not be
 redistributed. Download them from the URL above into `data/genesets/` before
-re-running `task4_enrichment.py`.
+re-running `paper1_task4_enrichment.py`.
 
 A free MSigDB registration may be required. The version matters: MSigDB
 2024.1 renamed some GO terms relative to earlier releases, which is itself a
@@ -88,7 +88,7 @@ note on name matching in `docs/paper1/02_METHODS.md`.
 
 ## Software and recovered expression inputs
 
-Historical upstream results documented Python3.13.7. Corrected analyses used Python3.12.14 with pandas2.3.3,numpy2.2.4,scipy1.16.3,scikit-learn1.7.2,matplotlib3.10.7,gseapy1.3.1. Baseline tested gene IDs/rhos/p/q and agreement counts reproduced before correction. Exact corrected environment is retained in biopsy_correction_2026-10-10/runtime_requirements.txt.
+Historical upstream results documented Python3.13.7. Corrected analyses used Python3.12.14 with pandas2.3.3,numpy2.2.4,scipy1.16.3,scikit-learn1.7.2,matplotlib3.10.7,gseapy1.3.1. Baseline tested gene IDs/rhos/p/q and agreement counts reproduced before correction. Exact corrected environment is retained in final_combined_2026-10-10/runtime_requirements.txt.
 
 Graph at correction verification: Neo4j Enterprise2026.09.0. No raw expression or curated links were modified by the biopsy correction; only patient-derived progression links were updated with backup and verified identities/properties.
 

@@ -1,0 +1,1 @@
+Figure 3c replaced by the approved side-by-side layout with bottom legend. Canonical task2_choosing_k.pdf regenerated directly as vector PDF; embedded TrueType fonts and no raster images verified. Renderer and main export entry point updated. Analysis inputs match existing manifest hashes; no analyses rerun.

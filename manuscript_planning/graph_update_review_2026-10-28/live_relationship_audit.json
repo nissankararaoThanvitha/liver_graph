@@ -1,0 +1,278 @@
+{
+  "EXPRESSES": {
+    "columns": [
+      "count"
+    ],
+    "rows": [
+      [
+        32471042
+      ]
+    ]
+  },
+  "IN_DATASET": {
+    "columns": [
+      "count"
+    ],
+    "rows": [
+      [
+        1085
+      ]
+    ]
+  },
+  "TREATS": {
+    "columns": [
+      "count"
+    ],
+    "rows": [
+      [
+        57601
+      ]
+    ]
+  },
+  "IN_PATHWAY": {
+    "columns": [
+      "count"
+    ],
+    "rows": [
+      [
+        46751
+      ]
+    ]
+  },
+  "ASSOCIATED_WITH": {
+    "columns": [
+      "count"
+    ],
+    "rows": [
+      [
+        1832441
+      ]
+    ]
+  },
+  "CONTRAINDICATED_IN": {
+    "columns": [
+      "count"
+    ],
+    "rows": [
+      [
+        11718
+      ]
+    ]
+  },
+  "OFF_LABEL_FOR": {
+    "columns": [
+      "count"
+    ],
+    "rows": [
+      [
+        1061
+      ]
+    ]
+  },
+  "HAS_PHENOTYPE": {
+    "columns": [
+      "count"
+    ],
+    "rows": [
+      [
+        157144
+      ]
+    ]
+  },
+  "INVOLVED_IN": {
+    "columns": [
+      "count"
+    ],
+    "rows": [
+      [
+        157081
+      ]
+    ]
+  },
+  "INTERACTS_WITH": {
+    "columns": [
+      "count"
+    ],
+    "rows": [
+      [
+        324116
+      ]
+    ]
+  },
+  "ACTS_ON": {
+    "columns": [
+      "count"
+    ],
+    "rows": [
+      [
+        20674
+      ]
+    ]
+  },
+  "PARENT_OF": {
+    "columns": [
+      "count"
+    ],
+    "rows": [
+      [
+        44073
+      ]
+    ]
+  },
+  "TRACKS_FIBROSIS": {
+    "columns": [
+      "count"
+    ],
+    "rows": [
+      [
+        3845
+      ]
+    ]
+  },
+  "TRACKS_INFLAMMATION": {
+    "columns": [
+      "count"
+    ],
+    "rows": [
+      [
+        4199
+      ]
+    ]
+  },
+  "EXTERNAL_ACTS_ON": {
+    "columns": [
+      "count"
+    ],
+    "rows": [
+      [
+        5216
+      ]
+    ]
+  },
+  "external_edge_properties": {
+    "columns": [
+      "property",
+      "populated"
+    ],
+    "rows": [
+      [
+        "action_labels",
+        5216
+      ],
+      [
+        "added",
+        5216
+      ],
+      [
+        "drug_stage",
+        5216
+      ],
+      [
+        "evidence",
+        5216
+      ],
+      [
+        "layer",
+        5216
+      ],
+      [
+        "mechanism",
+        5216
+      ],
+      [
+        "n_sources",
+        5216
+      ],
+      [
+        "push",
+        5216
+      ],
+      [
+        "release",
+        5216
+      ],
+      [
+        "source_detail",
+        5216
+      ],
+      [
+        "sources",
+        5216
+      ]
+    ]
+  },
+  "acts_on_properties": {
+    "columns": [
+      "property",
+      "populated"
+    ],
+    "rows": [
+      [
+        "action",
+        20674
+      ],
+      [
+        "evidence_level",
+        20674
+      ],
+      [
+        "external_action_added",
+        297
+      ],
+      [
+        "external_action_direction",
+        297
+      ],
+      [
+        "external_action_label",
+        297
+      ],
+      [
+        "external_action_release",
+        297
+      ],
+      [
+        "external_action_sources",
+        297
+      ],
+      [
+        "mechanisms_of_action",
+        2898
+      ],
+      [
+        "n_sources",
+        20674
+      ],
+      [
+        "relation_assertions",
+        20674
+      ],
+      [
+        "relation_conflict",
+        20674
+      ],
+      [
+        "source_urls",
+        2893
+      ],
+      [
+        "sources_direct",
+        20674
+      ],
+      [
+        "sources_indirect",
+        2896
+      ]
+    ]
+  },
+  "core_counts": {
+    "columns": [
+      "original_drug_nodes"
+    ],
+    "rows": [
+      [
+        12025
+      ]
+    ]
+  }
+}

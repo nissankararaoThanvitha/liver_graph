@@ -1,0 +1,35 @@
+\clearpage
+\begingroup
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\theHtable}{S\arabic{table}}
+\setcounter{table}{1}
+\fontsize{9}{11}\selectfont
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.13\textwidth}>{\raggedright\arraybackslash}p{0.23\textwidth}>{\raggedright\arraybackslash}p{0.39\textwidth}>{\centering\arraybackslash}p{0.075\textwidth}>{\centering\arraybackslash}p{0.075\textwidth}}
+\caption{Dataset-specific preprocessing and final analysis eligibility}\label{tab:S2}\\
+\toprule
+\textbf{Dataset} & \textbf{Expression processing} & \textbf{Sample handling and eligibility} & \textbf{Fibrosis\newline n} & \textbf{Disease\newline group n} \\
+\midrule\endfirsthead
+\multicolumn{5}{l}{\textbf{Table S2 continued}}\\
+\toprule
+\textbf{Dataset} & \textbf{Expression processing} & \textbf{Sample handling and eligibility} & \textbf{Fibrosis\newline n} & \textbf{Disease\newline group n} \\
+\midrule\endhead
+\bottomrule\endfoot
+GSE126848 & Raw counts; CPM rescaling; $\log_2(\mathrm{CPM}+1)$ & Twelve obese-only samples excluded from ordered disease-group analysis. Fibrosis stages unavailable. & 0 & 45 \\
+GSE130970 & TPM; $\log_2(\mathrm{TPM}+1)$ & Five ambiguous disease classifications marked unclassified; fibrosis stages retained. Remaining disease labels are histology-derived proxies. & 78 & 73 \\
+GSE135251 & Deposited counts; CPM rescaling; $\log_2(\mathrm{CPM}+1)$ & Fibrosis annotations retained. Broad NAFLD labels excluded from ordered disease-group analysis, leaving only controls and no variation on that axis. & 216 & 0 \\
+GSE162694 & Raw counts; CPM rescaling; $\log_2(\mathrm{CPM}+1)$ & Fibrosis annotations retained. Broad NAFLD labels excluded from ordered disease-group analysis, leaving only controls and no variation on that axis. & 143 & 0 \\
+GSE167523 & Raw counts; CPM rescaling; $\log_2(\mathrm{CPM}+1)$ & All 98 NAFL/NASH-labelled observations eligible. Fibrosis stages unavailable. & 0 & 98 \\
+GSE193066 & Deposited RLE-normalised counts; $\log_2(\mathrm{count}+1)$; no additional CPM rescaling & 164 biopsies resolved to 106 patient observations: 28 same-stage pairs averaged; 30 different-stage pairs represented by the first biopsy. No usable disease-group labels. & 106 & 0 \\
+GSE240729 & Raw counts; CPM rescaling; $\log_2(\mathrm{CPM}+1)$ & All fibrosis-staged observations retained. No usable disease-group labels. & 67 & 0 \\
+GSE269412 & Raw counts; CPM rescaling; $\log_2(\mathrm{CPM}+1)$ & Included in the expression resource; required clinical annotations unavailable for either association analysis. & 0 & 0 \\
+\midrule
+\textbf{Total} & --- & Final analytical observations within studies & \textbf{610} & \textbf{216} \\
+\end{longtable}
+\small
+Counts refer to patient-level analytical observations within each study. Participant independence across accessions was not established. The two analysis populations overlap and must not be added together. Zero indicates no contribution to the specified association analysis, rather than exclusion from the expression resource. Input sample counts and source filenames are listed in Table~\ref{tab:1}.
+
+For all datasets, duplicate raw gene identifiers were resolved by retaining the first occurrence. Gene identifiers were harmonised to Ensembl identifiers, and measurements from distinct identifiers mapping to the same sample--gene pair were summed before transformation. CPM library totals were calculated before mapping and filtering. Transformed expression was standardised per gene within each study ($\mathrm{ddof}=1$), followed by patient-level biopsy selection or averaging. GSE193066 standardisation used all 164 source biopsies before repeat-biopsy resolution. Study eligibility required at least 25 patient observations and variation on the relevant clinical axis.
+\endgroup
+

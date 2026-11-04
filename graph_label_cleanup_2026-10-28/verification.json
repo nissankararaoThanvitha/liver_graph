@@ -1,0 +1,9 @@
+{
+  "nodes_cleaned": 519,
+  "remaining_ExternalDrug_nodes": 0,
+  "properties_unchanged": true,
+  "all_846_incident_edges_unchanged": true,
+  "total_nodes": 126763,
+  "total_relationships": 35138047,
+  "Drug_nodes": 12544
+}

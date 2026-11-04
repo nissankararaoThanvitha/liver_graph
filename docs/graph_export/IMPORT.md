@@ -77,8 +77,14 @@ Per-file counts are in MANIFEST.csv.
 With your own copy of the MSigDB 2024.1 file `c2.cp.kegg_legacy.v2024.1.Hs.symbols.gmt` in `data/genesets/` of the code repository, these commands rebuild the left-out parts. You also need the CTD download for the second one.
 
 ```bash
-python scripts/add_msigdb_pathways.py
+python scripts/add_msigdb_pathways.py --apply
 python scripts/build_pathway_nafld_links.py --load
 ```
 
 The first command loads KEGG and Hallmark; the Hallmark rows already exist, and it merges onto them. The second rebuilds all 89 `IMPLICATED_IN` links, including the 61 KEGG ones. Both read `NEO4J_PASSWORD` and connect to `bolt://localhost:7687` by default.
+
+## Re-running the expression analyses
+
+The release CSVs are import files, not the per-study analysis CSV format. See
+[the repository rebuild guide](https://github.com/nissankararaoThanvitha/liver_graph/blob/main/docs/provenance/REBUILD.md)
+for `scripts/prepare_analysis_core.py`, including the original annotation-layer recovery.
