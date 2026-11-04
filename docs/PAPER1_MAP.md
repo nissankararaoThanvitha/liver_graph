@@ -13,6 +13,7 @@ Paper: *Stage-Resolved Transcriptomic Analysis Reveals Distinct Molecular Progra
 | Cross-study association analysis | `find_progression_genes.py` | `data/progression_full/progression_fibrosis.csv`, `progression_disease.csv` |
 | Patient-level stage and group summaries | `export_for_mentor.py` | `data/for_mentor/` |
 | Fibrosis-stage profiles and clustering; choice of k, stability, membership bootstraps | `paper1_task2_trajectories.py` | `Paper1_Results/Task2/`; study-adjusted reclustering (ARI 0.901) in `final_combined_2026-10-10/logs/clustering.log` |
+| Nesting of the five clusters in the k = 3 solution (91.9%; C1 split 311 / 546) | `scripts/cluster_nesting_k3.py` | `Paper1_Results/Task2/task2_nesting_k3.csv`, `task2_nesting_k3_summary.json` |
 | Adjacent-stage comparisons | `paper1_task3_transitions.py` | `Paper1_Results/Task3/` |
 | Matched refits (30 patients per stage) | `scripts/powermatched_transitions.py` | `Paper1_HighConfidence/05_powermatched_per_gene.csv` |
 | Functional enrichment (MSigDB 2024.1) | `paper1_task4_enrichment.py` | `Paper1_Results/Task4/` |
@@ -32,6 +33,7 @@ Paper: *Stage-Resolved Transcriptomic Analysis Reveals Distinct Molecular Progra
 |---|---|
 | Fig. 2a–b, gene groups and shared-gene agreement | `Paper1_Results/Task1/` (`task1_summary.csv`, `task1_venn.png`, `task1_shared_rho_scatter.png`) |
 | Fig. 3, Table 3, Additional file 1 Table S1 and Fig. S1 | `Paper1_Results/Task2/` (`task2_gene_clusters.csv`, `task2_cluster_sizes.csv`, `task2_choosing_k.csv`, `task2_robustness*.csv`, `task2_bootstrap_shape_stability.csv`) |
+| Additional file 1 Fig. S1c, nesting in k = 3 | `Paper1_Results/Task2/task2_nesting_k3.csv` |
 | Fig. 3d, cluster vs largest study-adjusted step | `Paper1_Results/Task3/task3_cluster_by_transition.csv` |
 | Fig. 4, adjacent-stage counts and effect sizes | `Paper1_Results/Task3/`; matched refits in `Paper1_HighConfidence/05_powermatched_per_gene.csv` |
 | Fig. 5a, enrichment | `Paper1_Results/Task4/task4_all_significant.csv` (per-group tables in `enrichment_tables/`) |
@@ -47,7 +49,6 @@ Paper: *Stage-Resolved Transcriptomic Analysis Reveals Distinct Molecular Progra
 ## Not in this repository
 
 - **The final paper figures** (Figs. 1–6, S1–S2) were laid out in the manuscript project. The PNG figures in `Paper1_Results/` are the analysis figures they were built from.
-- **The k = 3 nesting analysis** (91.9% of genes in the matching k = 3 cluster; C1 split 311 / 546; Fig. S1c) has no script or saved output here yet.
 - **Raw downloads** (GEO matrices, HGNC, OptimusKG parquet, MSigDB, CTD) are not committed; [provenance/DATA_SOURCES.md](provenance/DATA_SOURCES.md) and `.gitignore` say where each comes from.
 - **The full expression layer** (32,471,042 measurements) is in the graph export release, not in git.
 - **The Paper 2 drug-repurposing analysis** is on the `paper2-rerun-newgraph` branch.

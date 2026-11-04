@@ -1,0 +1,41 @@
+{
+  "genes": 3845,
+  "ari_rerun_k5_vs_published": 1.0,
+  "nesting_concordance": 0.9189,
+  "genes_in_dominant_k3_cluster": 3533,
+  "dominant_k3_cluster_per_k5_cluster": {
+    "C1": "rising, mainly at higher stages",
+    "C2": "rising, mainly at higher stages",
+    "C3": "rising, mainly at lower stages",
+    "C4": "falling",
+    "C5": "falling"
+  },
+  "k5_by_k3_counts": {
+    "C1": {
+      "k3_0 (rising, mainly at lower stages)": 311,
+      "k3_1 (falling)": 0,
+      "k3_2 (rising, mainly at higher stages)": 546
+    },
+    "C2": {
+      "k3_0 (rising, mainly at lower stages)": 0,
+      "k3_1 (falling)": 0,
+      "k3_2 (rising, mainly at higher stages)": 1367
+    },
+    "C3": {
+      "k3_0 (rising, mainly at lower stages)": 226,
+      "k3_1 (falling)": 0,
+      "k3_2 (rising, mainly at higher stages)": 0
+    },
+    "C4": {
+      "k3_0 (rising, mainly at lower stages)": 0,
+      "k3_1 (falling)": 396,
+      "k3_2 (rising, mainly at higher stages)": 1
+    },
+    "C5": {
+      "k3_0 (rising, mainly at lower stages)": 0,
+      "k3_1 (falling)": 998,
+      "k3_2 (rising, mainly at higher stages)": 0
+    }
+  },
+  "settings": "profiles standardised across F0-F4 (ddof=0); KMeans n_init=50, random_state=42; same input and row order as paper1_task2_trajectories.py"
+}
