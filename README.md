@@ -1,30 +1,48 @@
-# Stage-informed liver knowledge graph
+# Stage-resolved transcriptomic analysis of liver fibrosis
 
-Final combined active version: 10 October 2026. Eight human liver transcriptome studies contain1,085 samples from1,027 patient IDs. Fibrosis analysis uses610 independent staged patients; the disease-group axis uses216 patients from three studies. Repeat biopsies are averaged only if fibrosis stage matches; otherwise biopsy1 is retained before any stage filtering.
+Code, result tables and graph exports for the paper *Stage-Resolved Transcriptomic Analysis Reveals Distinct Molecular Programs Associated with Liver Fibrosis Severity* (N. Thanvitha, V. Lakshmi Nikitha, K. Venkata Dinesh).
 
-Selected genes: **3,845 fibrosis**, **4,199 disease**, **1,822 shared**, **6,222 union**. Tier1 has **447 genes**, with23 shortlisted. The network displays **42 genes**, **12 mechanisms**, **154 connections**, with4 shortlisted genes shown.
+Eight public human liver RNA-sequencing studies (1,085 samples; 1,027 recorded patients) are integrated at the patient level and linked to the OptimusKG biomedical knowledge graph. Within-study Spearman correlations with fibrosis stage (610 patients) and ordered control–NAFL–NASH labels (216 patients) are combined across studies. Fibrosis-associated genes are clustered by their F0–F4 profiles, adjacent stages are compared, and genes are prioritised with a nine-point score checked by leave-one-study-out and sensitivity analyses.
 
-The final objective is to support the next team’s drug repurposing for interrupting disease progression at different stages. Curated biology from OptimusKG connects stage-associated genes to drugs, diseases, pathways and processes. No therapeutic efficacy or validated clinical stage predictor is established.
+| Result | Value |
+|---|---|
+| Fibrosis-associated / disease-group-associated / shared / union genes | 3,845 / 4,199 / 1,822 / 6,222 |
+| Stage-pattern clusters C1–C5 | 857 / 1,367 / 226 / 397 / 998 genes |
+| Tier 1 genes / shortlist | 447 / 23 |
+| Tier 1 genes significant in every LOSO refit | 442 |
+| Knowledge-graph subgraph | 42 genes, 12 annotations, 154 connections |
+| Graph | 126,999 nodes, 35,160,254 relationships, 8 entity types, 15 relationship types |
 
-## Graph versions
+**[docs/PAPER1_MAP.md](docs/PAPER1_MAP.md) maps every section, figure and table of the paper to its code and result file.**
 
-| Version | Nodes | Relationships | Types | Record |
-|---|---|---|---|---|
-| Paper 1 final (10 Oct 2026) | 126,244 | 35,132,831 | 14 | final_combined_2026-10-10/graph_verification.json |
-| Extended for Paper 2 (3 Nov 2026) | 126,999 | 35,160,254 | 15 | docs/provenance/extended_graph_verification.json |
+## Repository layout
 
-The extended graph adds, on top of Paper 1 (nothing from Paper 1 is changed or removed):
+| Folder / file | Contents |
+|---|---|
+| root `*.py`, `*.cypher` | Pipeline: parsing, gene-ID mapping, clinical labels, association analysis, the four analyses (`paper1_task1`–`task4`), graph building |
+| `scripts/` | Prioritisation, LOSO, matched refits, knowledge-graph subgraph, graph additions, graph export and count checks |
+| `Paper1_Results/` | Task 1 gene groups, Task 2 stage-pattern clusters, Task 3 adjacent-stage comparisons, Task 4 enrichment |
+| `Paper1_HighConfidence/` | Scores, tiers, 23-gene shortlist, LOSO, sensitivity tables, knowledge-graph subgraph |
+| `data/` | Processed inputs and association results the scripts read; graph-addition tables |
+| `final_combined_2026-10-10/` | Record of the final run: selection, label/normalisation sensitivity, graph synchronisation checks |
+| `label_audit_GSE130970_2026-10-10/`, `unit_audit_GSE193066_2026-10-10/` | Checks behind the GSE130970 labels and GSE193066 expression units |
+| `docs/paper1/` | Overview, methods, statistics, limitations, how to verify, data dictionary |
+| `docs/provenance/` | Data sources, rebuild steps, graph count verification |
+| `docs/graph_export/` | Import guide and data terms for the graph release |
+| `tests/` | Repeat-biopsy policy tests |
 
-- 519 Drug nodes and 5,216 drug–gene `ACTS_ON` links from ChEMBL, DGIdb, GtoPdb and Open Targets, plus action directions on 297 existing `ACTS_ON` links (data/graph_drug_layer);
-- 236 KEGG legacy and Hallmark Pathway nodes with 20,031 `IN_PATHWAY` links, from the MSigDB 2024.1 files Paper 1 used for enrichment (data/graph_msigdb holds the Hallmark rows; KEGG rows are not redistributed);
-- 89 Pathway → NAFLD `IMPLICATED_IN` links, kept only where Paper 1 enrichment (BH-FDR < 0.05, fibrosis groups) and CTD agree (data/graph_pathway_disease);
-- 2,087 `TREATS` links from ChEMBL_37 indications for the added drugs (data/graph_drug_layer).
+## Running it
 
-The Paper 2 drug-repurposing analysis that uses this graph is on the paper2-rerun-newgraph branch.
+Python 3.12 with the versions in `requirements.txt` (pandas 2.3.3, NumPy 2.2.4, SciPy 1.16.3, scikit-learn 1.7.2, matplotlib 3.10.7, GSEApy 1.3.1). Run every script from the repository root. Raw downloads (GEO, HGNC, OptimusKG, MSigDB) are not committed; [docs/provenance/DATA_SOURCES.md](docs/provenance/DATA_SOURCES.md) lists them and [docs/provenance/REBUILD.md](docs/provenance/REBUILD.md) gives the order of the scripts. The result tables can be read without running anything or installing Neo4j.
+
+```bash
+pip install -r requirements.txt
+python -m unittest discover -s tests
+```
 
 ## Download the graph
 
-The extended graph is available as a GitHub release, **without the KEGG pathways**. KEGG data may not be redistributed, so the release is not the complete graph:
+The knowledge graph is available as a GitHub release, **without the KEGG pathways**. KEGG data may not be redistributed, so the release is not the complete graph:
 
 - **Release page:** https://github.com/nissankararaoThanvitha/liver_graph/releases/tag/graph-export-2026-11-03
 - **CSV files** (all nodes, relationships and properties, neo4j-admin import format): [liver_kg_graph_export_2026-11-03.zip](https://github.com/nissankararaoThanvitha/liver_graph/releases/download/graph-export-2026-11-03/liver_kg_graph_export_2026-11-03.zip)
@@ -36,30 +54,23 @@ The extended graph is available as a GitHub release, **without the KEGG pathways
 | Relationships | 35,160,254 | 35,147,469 |
 | Entity / relationship types | 8 / 15 | 8 / 15 |
 
-Left out: 186 KEGG Pathway nodes, their 12,724 `IN_PATHWAY` links and the 61 `IMPLICATED_IN` links whose pathway is KEGG. With your own MSigDB download they can be added back with scripts/add_msigdb_pathways.py and scripts/build_pathway_nafld_links.py.
+Left out: 186 KEGG Pathway nodes, their 12,724 `IN_PATHWAY` links and the 61 `IMPLICATED_IN` links whose pathway is KEGG. With your own MSigDB download they can be added back with `scripts/add_msigdb_pathways.py` and `scripts/build_pathway_nafld_links.py`.
 
-The release includes import instructions (IMPORT.md), constraints, a manifest with row counts and SHA-256 checksums (MANIFEST.csv, SHA256SUMS.txt), the count check (VERIFICATION.json) and each source's terms (DATA_TERMS.md). Use the data non-commercially, credit the sources, and share derived data under the same terms (OptimusKG is CC BY-NC-SA 4.0). The export is made with scripts/export_graph.py and scripts/package_graph_release.py; their documents are in docs/graph_export.
+The release includes import instructions, constraints, a manifest with row counts and SHA-256 checksums, the count check and each source's terms. Use the data non-commercially, credit the sources, and share derived data under the same terms (OptimusKG is CC BY-NC-SA 4.0).
 
-## Active files
+### How the graph was built
 
-- Paper1_Package: current data, methods, figures, tables and evidence boundaries.
-- Paper1_Results: corrected Tasks1–4.
-- Paper1_HighConfidence: corrected scores, shortlist, LOSO and network.
-- data/progression_full and data/for_mentor: corrected association/group summaries.
-- data/graph_full and data/graph_okg: current node/knowledge/progression CSVs.
-- data/expression_analysis_core: core-only recovery for analysis; never use to replace all graph expression measurements.
-- manuscript_planning: current inventory/workflow/evidence map/missing information.
-- data/graph_msigdb, data/graph_pathway_disease and data/graph_drug_layer: the graph extensions above, with write logs and undo files.
-- final_combined_2026-10-10: final selection, sensitivity evidence and graph verification.
-- biopsy_correction_2026-10-10: historical biopsy correction record; numerical results there are superseded.
-- archives: checksum-verified recovery copy of superseded results/draft; excluded from Git by default.
+The graph integrates the expression layer, the OptimusKG knowledge layer and the 8,044 progression links from this study. It was then extended (nothing removed or changed) with:
 
-## Rebuild and checks
+- 519 Drug nodes and 5,216 drug–gene links from ChEMBL, DGIdb, GtoPdb and Open Targets, plus action directions on 297 existing drug–gene links (`data/graph_drug_layer`);
+- 236 KEGG legacy and Hallmark pathways with 20,031 gene links from MSigDB 2024.1 (`data/graph_msigdb` holds the Hallmark rows; KEGG rows are not redistributed);
+- 89 Pathway → NAFLD links, kept only where this study's enrichment and CTD agree (`data/graph_pathway_disease`);
+- 2,087 ChEMBL_37 indications for the added drugs (`data/graph_drug_layer`).
 
-Read docs/provenance/REBUILD.md. Run scripts from repository root with explicit outputs. Requirements cover Paper1; requirements-link-prediction.txt is optional and unrelated to the verified Paper1 results. Patient-policy tests are in tests/. `python scripts/verify_extended_graph_counts.py` checks the extended graph counts (add `--live` to compare with a running database).
+As the paper states, these additions were not used in its analyses. `python scripts/verify_extended_graph_counts.py --live` checks the counts against a running database; the saved result is in `docs/provenance/extended_graph_verification.json`.
+
+The drug-repurposing study that uses this graph (Paper 2) is on the `paper2-rerun-newgraph` branch.
 
 ## Licence
 
-Code is released under the MIT licence (LICENSE). Data from outside sources keeps its own terms: OptimusKG, GEO, MSigDB (KEGG-derived sets have redistribution limits), CTD (cite CTD when using the pathway–NAFLD links), ChEMBL, DGIdb, GtoPdb and Open Targets.
-
-Historical Claude sessions under handover/ preserve rationale and rejected branches; their counts/method descriptions are not current results.
+Code: MIT ([LICENSE](LICENSE)). Data from outside sources keeps its own terms: GEO, OptimusKG (CC BY-NC-SA 4.0), MSigDB (KEGG-derived sets may not be redistributed), CTD, ChEMBL, DGIdb, GtoPdb and Open Targets. See [docs/graph_export/DATA_TERMS.md](docs/graph_export/DATA_TERMS.md).

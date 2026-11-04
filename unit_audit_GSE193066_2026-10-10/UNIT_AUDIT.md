@@ -1,3 +1,5 @@
+> The downloaded source files (GSE193066 GCT and series matrix) are not committed; fetch_sources.py downloads them again from NCBI.
+
 # GSE193066 expression-unit audit
 
 10 October 2026. This audit resolves the deposited units and checks the implemented transformation. Disease labels remain unchanged as requested. Active expression CSVs, analysis results and graph relationships were not modified.

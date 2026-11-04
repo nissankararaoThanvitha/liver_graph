@@ -1,6 +1,6 @@
 # Rebuild current outputs
 
-Run source scripts from the repository root; packaged copies retain relative-path assumptions. Keep outputs paired and archive a current run before replacing it. The correction audit records the actual verified run, inputs, timings and environment.
+Run scripts from the repository root. Keep outputs paired and archive a current run before replacing it. The correction audit records the actual verified run, inputs, timings and environment.
 
 ## Inputs and limits
 
@@ -27,7 +27,6 @@ python scripts/high_confidence_genes.py --out Paper1_HighConfidence --results Pa
 python scripts/kg_subgraph.py --out Paper1_HighConfidence --results Paper1_Results
 python build_progression_edges.py --progression data/progression_full --knowledge data/graph_okg --out data/graph_full
 python scripts/make_fig1.py
-python build_paper1_package.py
 ```
 
 The historical source name00_all_4692_progression_genes.py remains for caller compatibility; its output is now00_all_progression_genes.csv and contains6,222 genes. Old first/average discovery options remain only for explicit historical comparisons. Neither top25 nor top12 selection rules changed.
@@ -38,9 +37,9 @@ The selected final approach is documented in final_combined_2026-10-10/FINAL_SEL
 
 Mechanism CSVs and current selected memberships match the live graph at final verification. Source-node constraints and imported annotations are preserved. The archive holds historical outputs and is excluded from normal analysis paths.
 
-## Graph extensions for Paper 2
+## Graph additions (drug, pathway and indication data)
 
-These steps take the Paper 1 graph (126,244 nodes; 35,132,831 relationships; 14 types) to the extended graph (126,999; 35,160,254; 15). Run them in this order from the repository root. Each one does a dry run unless told to write.
+These steps take the graph of 10 October 2026 (126,244 nodes; 35,132,831 relationships; 14 types) to the extended graph (126,999; 35,160,254; 15). Run them in this order from the repository root. Each one does a dry run unless told to write.
 
 ```bash
 python scripts/write_new_links_to_graph.py --apply
@@ -59,4 +58,4 @@ python scripts/verify_extended_graph_counts.py --live
 
 ## Final combined inputs
 
-Five flagged GSE130970 disease labels are unclassified (fibrosis/histology retained); normalize_clinical.py reproduces this policy. GSE193066 uses deposited linear RLE counts without CPM rescaling; build_graph_all.py preserves this transform. The active core contains the matching final value_z measurements. The verified raw GCT is retained in unit_audit_GSE193066_2026-10-10. Final shortlist23: up to five Tier1 genes per cluster, C4 only three. Alternative sensitivity outputs are removed from active folders and retained in a local recovery archive. Retained comparison evidence and original commands are in final_combined_2026-10-10.
+Five flagged GSE130970 disease labels are unclassified (fibrosis/histology retained); normalize_clinical.py reproduces this policy. GSE193066 uses deposited linear RLE counts without CPM rescaling; build_graph_all.py preserves this transform. The active core contains the matching final value_z measurements. The raw GCT was checked in unit_audit_GSE193066_2026-10-10 (fetch_sources.py downloads it again). Final shortlist23: up to five Tier1 genes per cluster, C4 only three. Alternative sensitivity outputs are removed from active folders and retained in a local recovery archive. Retained comparison evidence and original commands are in final_combined_2026-10-10.

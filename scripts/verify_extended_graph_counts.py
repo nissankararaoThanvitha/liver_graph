@@ -1,7 +1,7 @@
 """Check the node and relationship counts of the extended graph (3 Nov 2026).
 
-The Paper 1 graph (126,244 nodes; 35,132,831 relationships; 14 types) was
-extended for Paper 2 in these steps:
+The graph of 10 October 2026 (126,244 nodes; 35,132,831 relationships;
+14 types) was extended in these steps:
 
   0.4  5,216 drug-gene links and 519 new Drug nodes       data/graph_drug_layer/new_drug_gene_links
   0.5  action directions on 297 existing ACTS_ON links    data/graph_drug_layer/external_action_directions

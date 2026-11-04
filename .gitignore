@@ -34,8 +34,7 @@ data/graph_okg/
 data/interim_full/
 # data/graph_full  2.1G  rebuild: python build_graph_all.py --interim data/interim_full --out data/graph_full
 data/graph_full/
-# data/kg_triples  138M  rebuild: python export_triples.py --min-assoc 0.3
-# data/prediction   54M  rebuild: python train_link_prediction.py
+# data/kg_triples, data/prediction: outputs of discontinued link-prediction work (code removed).
 data/kg_triples/
 data/prediction/
 # data/genesets  5.7M  MSigDB v2024.1 gene sets (h.all, c5.go.bp, c2.cp.kegg_legacy,
@@ -60,9 +59,13 @@ Paper1_Results.zip
 data/paper2/
 
 # Verified historical recovery archives and regenerated analysis-core measurements.
-archives/*.tar.gz
+archives/
 data/expression_analysis_core/
 
 # Local rollback of derived graph properties; do not ship bulk graph backups.
 final_combined_2026-10-10/graph_rollback/
-handover_exports/*.zip
+handover_exports/
+# Local AI-assistant notes.
+CLAUDE.md
+.claude/
+.mcp.json

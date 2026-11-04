@@ -4,4 +4,4 @@ Final combined active version: 10 October 2026. Eight human liver transcriptome 
 
 Selected genes: **3,845 fibrosis**, **4,199 disease**, **1,822 shared**, **6,222 union**. Tier1 has **447 genes**, with23 shortlisted. The network displays **42 genes**, **12 mechanisms**, **154 connections**, with4 shortlisted genes shown.
 
-Use11_final_tier1_genes.csv and11_FINAL_shortlist_25_genes.csv for exact scores. Table6 uses shortlist_with_membership_confidence.csv. The original numerical filenames are descriptive run artifacts, not evidence of their row count.
+Use11_final_tier1_genes.csv and11_FINAL_shortlist_23_genes.csv for exact scores. Paper Table 5 (shortlist with membership confidence) uses shortlist_with_membership_confidence.csv.

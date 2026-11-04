@@ -33,7 +33,8 @@ from pathlib import Path as _Path
 
 _ROOT = _Path(__file__).resolve().parent.parent
 _RES = _ROOT / "Paper1_Results"
-_PG = _RES / "00_progression_genes"
+_PG = _ROOT / "data" / "progression_full"
+_FM = _ROOT / "data" / "for_mentor"
 
 
 def _rows(path):
@@ -48,13 +49,13 @@ N_FIB_ONLY, N_INFL_ONLY, N_SHARED = (_g["fibrosis_only"],
 N_PROGRESSION = N_FIB_ONLY + N_INFL_ONLY + N_SHARED
 N_FIBROSIS = N_FIB_ONLY + N_SHARED
 N_ELIGIBLE = len(_rows(_PG / "progression_fibrosis.csv"))
-_samples = _rows(_PG / "sample_demographics.csv")
+_samples = _rows(_FM / "sample_demographics.csv")
 N_SAMPLES = len(_samples)
 N_PATIENTS = len({r["patient_id"] for r in _samples})
 N_STAGED = sum(1 for r in _samples if r["fibrosis_stage"])
 N_STAGED_PATIENTS = len({r["patient_id"] for r in _samples if r["fibrosis_stage"]})
 N_TIER1 = len(_rows(_ROOT / "Paper1_HighConfidence/11_final_tier1_genes.csv"))
-N_SHORTLIST = len(_rows(_ROOT / "Paper1_HighConfidence/11_FINAL_shortlist_25_genes.csv"))
+N_SHORTLIST = len(_rows(_ROOT / "Paper1_HighConfidence/11_FINAL_shortlist_23_genes.csv"))
 N_CLUSTERS = len(_rows(_RES / "Task2/task2_cluster_sizes.csv"))
 N_GENES = len(_rows(_ROOT / "data/graph_full/nodes_gene.csv"))
 

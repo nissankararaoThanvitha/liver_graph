@@ -1,3 +1,5 @@
+> The downloaded source files (GSE130970 series matrix and article XML) are not committed; fetch_sources.py downloads them again from NCBI.
+
 > Follow-up search: all six original supplements have now been retrieved and inspected through BioStudies. Supplemental Table1 reports6 normal controls,72 NAFLD patients and58 steatohepatitis cases, but contains no sample-ID diagnosis mapping. Some aggregate component scores disagree with GEO. See ../label_source_search_2026-10-10/SEARCH_RESULTS.md; earlier access limitations below are historical. Active labels remain unchanged.
 
 # GSE130970 diagnosis-label audit

@@ -868,12 +868,12 @@ if __name__ == "__main__":
         sel["__c"] = sel.Cluster
         sel = sel.sort_values(["__c", "Total_score"],
                               ascending=[True, False]).drop(columns="__c")
-        sel.to_csv(HERE / "11_FINAL_shortlist_25_genes.csv", index=False)
+        sel.to_csv(HERE / "11_FINAL_shortlist_23_genes.csv", index=False)
         ft[ft.Ensembl_ID.isin(tier1_ids)].to_csv(
             HERE / "11_final_tier1_genes.csv", index=False)
         ft.to_csv(HERE / f"11_final_all_{len(ft):,}_genes.csv".replace(",", ""), index=False)
         print(f"\nstep 11  final tables ({len(sel.columns)} columns)")
-        print(f"          11_FINAL_shortlist_25_genes.csv   {len(sel):>5}")
+        print(f"          11_FINAL_shortlist_23_genes.csv   {len(sel):>5}")
         print(f"          11_final_tier1_genes.csv          "
               f"{ft.Ensembl_ID.isin(tier1_ids).sum():>5}")
         print(f"          11_final_all_<n>_genes.csv         {len(ft):>5}")

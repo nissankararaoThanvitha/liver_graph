@@ -35,7 +35,7 @@
 // Statement 5 is the long one at 1.8M rows. Expect several minutes.
 //
 // AFTERWARDS
-//   python verify_graph_counts.py --live
+//   python scripts/verify_extended_graph_counts.py --live
 // which reconciles every relationship type against the CSVs and names any
 // that is still short.
 // =======================================================================
@@ -228,11 +228,10 @@ CALL { WITH row
 //
 // Or check the lot at once, from the shell:
 //
-//   NEO4J_PASSWORD=... python verify_graph_counts.py --live
+//   NEO4J_PASSWORD=... python scripts/verify_extended_graph_counts.py --live
 //
-// EXPECTED COUNTS, measured rather than assumed. scripts/
-// expected_graph_counts.py checks every edge's endpoints against the node
-// files and reports what a MATCH-based load can actually create:
+// EXPECTED COUNTS, measured by checking every edge's endpoints against the
+// node files (what a MATCH-based load can actually create):
 //
 //   INTERACTS_WITH       324,116      ACTS_ON               20,674
 //   ASSOCIATED_WITH    1,832,441      TREATS                57,601

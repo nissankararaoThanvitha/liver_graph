@@ -113,7 +113,7 @@ RESULTS = pathlib.Path(_args.results) if _args.results else ROOT / "Paper1_Resul
 
 KG = ROOT / "data/graph_okg"   # the layer actually loaded into Neo4j
 
-SHORTLIST = HERE / "11_FINAL_shortlist_25_genes.csv"
+SHORTLIST = HERE / "11_FINAL_shortlist_23_genes.csv"
 # No count in the name: Tier 1 held 507 genes in v1 and 525 in v2, and
 # a filename that disagrees with its contents is how stale numbers
 # spread into a manuscript.

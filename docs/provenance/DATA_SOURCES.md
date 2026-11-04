@@ -75,14 +75,14 @@ Four collections, 5.7 MB total:
 | `c2.cp.reactome.v2024.1.Hs.symbols.gmt` | Reactome |
 | `h.all.v2024.1.Hs.symbols.gmt` | Hallmark |
 
-**These are not shipped in this package.** The KEGG-derived sets may not be
+**These are not committed.** The KEGG-derived sets may not be
 redistributed. Download them from the URL above into `data/genesets/` before
 re-running `task4_enrichment.py`.
 
 A free MSigDB registration may be required. The version matters: MSigDB
 2024.1 renamed some GO terms relative to earlier releases, which is itself a
-documented finding in this project — see `00_START_HERE/04_LIMITATIONS.md` and the
-note on name matching in `00_START_HERE/02_METHODS.md`.
+documented finding in this project — see `docs/paper1/04_LIMITATIONS.md` and the
+note on name matching in `docs/paper1/02_METHODS.md`.
 
 ---
 

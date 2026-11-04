@@ -7,7 +7,7 @@ WHY THIS SCRIPT EXISTS
 These edges were previously produced interactively, and nothing in the
 pipeline regenerated them. The file therefore kept the gene counts of an
 earlier progression run while every other output moved on, and three scripts
-read it without noticing -- including export_triples.py, which feeds the
+read it without noticing -- including the (since removed) export_triples.py, which fed the
 drug-repurposing work. An edge file that nothing regenerates is a result that
 cannot be re-derived.
 
