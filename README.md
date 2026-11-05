@@ -29,7 +29,7 @@ Eight public human liver RNA-sequencing studies (1,085 samples; 1,027 recorded p
 | `docs/paper1/` | Overview, methods, statistics, limitations, how to verify, data dictionary |
 | `docs/provenance/` | Data sources, rebuild steps, graph count verification |
 | `docs/graph_export/` | Import guide and data terms for the graph release |
-| `tests/` | Repeat-biopsy policy tests |
+| `tests/` | Repeat-biopsy policy, input recovery, schema migration and graph-verification tests |
 
 ## Running it
 
@@ -54,7 +54,7 @@ The knowledge graph is available as a GitHub release, **without the KEGG pathway
 | Relationships | 35,152,951 | 35,140,166 |
 | Entity / relationship types | 8 / 15 | 8 / 15 |
 
-Left out: 186 KEGG Pathway nodes, their 12,724 `IN_PATHWAY` links and the 61 `IMPLICATED_IN` links whose pathway is KEGG. With your own MSigDB download they can be added back with `scripts/add_msigdb_pathways.py` and `scripts/build_pathway_nafld_links.py`.
+Left out: 186 KEGG Pathway nodes, their 12,724 `IN_PATHWAY` links and the 61 `IMPLICATED_IN` links whose pathway is KEGG. To restore them in a Paper 1 working copy, follow the complete prerequisites and commands in [docs/graph_export/IMPORT.md](docs/graph_export/IMPORT.md#adding-the-kegg-pathways-back). The original restoration scripts require two GMT files, CTD, the retained enrichment table and original OptimusKG pathway inputs. To build the enriched Paper 2 graph instead, follow [Paper 2’s rebuild guide](https://github.com/knarendrakumar187/Drug_Repurposing/blob/main/docs/REBUILD.md) in a separate database.
 
 The release includes import instructions, constraints, a manifest with row counts and SHA-256 checksums, the count check and each source's terms. Use the data non-commercially, credit the sources, and share derived data under the same terms (OptimusKG is CC BY-NC-SA 4.0).
 

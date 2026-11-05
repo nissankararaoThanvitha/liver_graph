@@ -125,7 +125,7 @@ python scripts/build_pathway_nafld_links.py --load
 python scripts/verify_extended_graph_counts.py --live
 ```
 
-The first command requires the four MSigDB 2024.1 GMT files in `data/genesets`. Hallmark rows are committed; KEGG rows are written to ignored `*_kegg.csv` files. The second command additionally requires the CTD download and original OptimusKG pathway files; see `DATA_SOURCES.md`. Both graph-writing commands must target the intended instance. Do not replay additions over an unrelated graph.
+The pathway loader requires **two** MSigDB 2024.1 GMT files in `data/genesets`: `c2.cp.kegg_legacy.v2024.1.Hs.symbols.gmt` and `h.all.v2024.1.Hs.symbols.gmt`. The four GMT files listed earlier are needed for the expression-enrichment analysis, not this loader. KEGG rows are written to ignored `*_kegg.csv` files; the loader also regenerates Hallmark rows locally. The pathway–disease builder additionally reads `data/ctd/CTD_diseases_pathways.csv.gz`, `data/optimuskg/pathway.parquet`, `data/graph_okg/nodes_pathway.csv` and the committed `Paper1_Results/Task4/task4_all_significant.csv`. Prepare them first; see [DATA_SOURCES.md](DATA_SOURCES.md) and [the import guide](../graph_export/IMPORT.md#adding-the-kegg-pathways-back). These original writers use database `neo4j` and do not honor `NEO4J_DATABASE`; select a separate intended instance with `NEO4J_URI`. For Paper 2, follow its own `docs/REBUILD.md` rather than replaying these commands and the historical drug steps.
 
 The retired drug-addition inputs and writers are absent from the active tree. Historical release assets and Git history retain their provenance. They are not dependencies of the current graph and must not be replayed during a current rebuild.
 
