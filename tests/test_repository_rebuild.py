@@ -85,6 +85,47 @@ class VerificationTests(unittest.TestCase):
         self.assertFalse(needs_migration({'nodes':[{'labels':['Drug']}],'links':[]}))
 
 
+class CurrentGraphScopeTests(unittest.TestCase):
+    def test_export_rejects_retired_drug_data_and_preserves_optimuskg(self):
+        from scripts.export_graph import node_split, rel_split
+        self.assertEqual(node_split('Drug', {'max_phase_source':'OptimusKG'}), 'OptimusKG')
+        self.assertEqual(rel_split('ACTS_ON', {'action':'TARGET'}), 'OptimusKG')
+        for props in ({'source':'external (Idea 4)'}, {'max_phase_source':'ChEMBL'},
+                      {'recovered_name_source':'ChEMBL'}):
+            with self.assertRaises(ValueError): node_split('Drug', props)
+        with self.assertRaises(ValueError): rel_split('ACTS_ON', {'external_action_direction':'down'})
+        with self.assertRaises(ValueError): rel_split('TREATS', {'source':'ChEMBL indication'})
+
+    def test_dump_update_keeps_zip_and_asset_verification_identical(self):
+        from contextlib import redirect_stdout
+        from scripts.package_graph_release import add_dump, VERSION
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            verification = {'released': {'nodes': 1, 'relationships': 0}, 'checks': {'initial': True}}
+            (root/'VERIFICATION.json').write_text(json.dumps(verification))
+            archive = root/f'liver_kg_graph_export_{VERSION}.zip'
+            with zipfile.ZipFile(archive, 'w') as z:
+                z.writestr('VERIFICATION.json', json.dumps(verification))
+                z.writestr('fixture.txt', 'unit-test fixture only')
+            dump = root/'test-only.dump'; dump.write_bytes(b'unit-test dump fixture')
+            with redirect_stdout(io.StringIO()):
+                self.assertEqual(add_dump(root, dump, 1, 0), 0)
+            with zipfile.ZipFile(archive) as z:
+                self.assertEqual(z.read('VERIFICATION.json'), (root/'VERIFICATION.json').read_bytes())
+                self.assertEqual(z.namelist().count('VERIFICATION.json'), 1)
+            self.assertIn(archive.name, (root/'SHA256SUMS.txt').read_text())
+
+    def test_current_counts_require_only_original_drugs_and_pathway_inputs(self):
+        from scripts.verify_extended_graph_counts import expected, TARGET
+        nodes, counts, steps, checks = expected()
+        self.assertEqual((nodes, sum(counts.values()), len(counts)),
+                         (TARGET['nodes'], TARGET['relationships'], TARGET['relationship_types']))
+        self.assertEqual(counts['ACTS_ON'], 20674)
+        self.assertEqual(counts['TREATS'], 57601)
+        self.assertTrue(all(checks.values()))
+        self.assertEqual(len(steps), 2)
+
+
 @unittest.skipUnless(os.environ.get('TEST_NEO4J_URI') == 'bolt://127.0.0.1:17689', 'isolated Neo4j integration test only')
 class MigrationIntegrationTests(unittest.TestCase):
     def test_atomic_preservation_and_repeat_run(self):

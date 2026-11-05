@@ -31,7 +31,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs/graph_export"
-VERSION = "2026-11-03"
+VERSION = "2026-11-05"
 EXCLUDE = {  # file -> reason
     "nodes/Pathway__KEGG_legacy.csv.gz": "KEGG pathways (MSigDB KEGG legacy): KEGG data may not be redistributed",
     "relationships/IN_PATHWAY__Gene__Pathway__KEGG_legacy.csv.gz": "gene memberships of the KEGG pathways",
@@ -39,12 +39,11 @@ EXCLUDE = {  # file -> reason
 }
 LABELS = 8
 TYPES = 15
-TARGET = {"nodes": 126999, "relationships": 35160254}
+TARGET = {"nodes": 126480, "relationships": 35152951}
 
 SOURCE_TEXT = {
     "Reactome": "Reactome", "Hallmark": "MSigDB Hallmark", "OptimusKG": "from OptimusKG",
-    "external": "added from ChEMBL, DGIdb, GtoPdb and Open Targets",
-    "ChEMBL_indication": "ChEMBL_37 indications of the added drugs", "KEGG_legacy": "KEGG legacy", "KEGG": "KEGG",
+    "KEGG_legacy": "KEGG legacy", "KEGG": "KEGG",
 }
 
 
@@ -83,6 +82,17 @@ def add_dump(rel_dir, dump, nodes, rels):
     v["checks"]["test import of the CSV files gives the released counts"] = v["test_import"]["matches_release"]
     v["verified"] = all(v["checks"].values())
     (rel_dir / "VERIFICATION.json").write_text(json.dumps(v, indent=2) + "\n", encoding="utf-8")
+    # Keep the verification embedded in the ZIP identical to the release asset.
+    archive = rel_dir / f"liver_kg_graph_export_{VERSION}.zip"
+    updated = archive.with_suffix(".zip.partial")
+    with zipfile.ZipFile(archive) as src, zipfile.ZipFile(updated, "w", compression=zipfile.ZIP_STORED) as dst:
+        for entry in src.infolist():
+            if entry.filename == "VERIFICATION.json":
+                continue
+            with src.open(entry) as a, dst.open(entry, "w") as b:
+                shutil.copyfileobj(a, b, length=1 << 20)
+        dst.write(rel_dir / "VERIFICATION.json", "VERIFICATION.json")
+    updated.replace(archive)
     print(json.dumps(v["test_import"], indent=2), "\nverified:", v["verified"])
     print("assets:", ", ".join(write_sums(rel_dir) + ["SHA256SUMS.txt"]))
     return 0 if v["verified"] else 1
@@ -110,6 +120,9 @@ def main():
     missing = [f for f in EXCLUDE if f not in rows]
     assert not missing, f"expected files not in export: {missing}"
 
+    forbidden = [f for f in rows if "__external" in f or "__ChEMBL_indication" in f
+                 or "EXTERNAL_ACTS_ON" in f or "ExternalDrug" in f]
+    assert not forbidden, f"Retired drug layer is outside this release: {forbidden}"
     included = {f: n for f, n in rows.items() if f not in EXCLUDE}
     excluded = {f: rows[f] for f in EXCLUDE}
 
@@ -132,7 +145,7 @@ def main():
     }
     v = verification
     v["checks"] = {
-        "live graph: 126,999 nodes, 35,160,254 relationships, 8 entity types, 15 relationship types":
+        "live graph: 126,480 nodes, 35,152,951 relationships, 8 entity types, 15 relationship types":
             (v["live_graph"]["nodes"], v["live_graph"]["relationships"], v["live_graph"]["entity_types"],
              v["live_graph"]["relationship_types"]) == (TARGET["nodes"], TARGET["relationships"], LABELS, TYPES),
         "released + excluded = live graph":

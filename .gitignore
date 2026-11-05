@@ -81,3 +81,6 @@ CLAUDE.md
 /source_checksums.txt
 /scripts/render_cluster_number_figure.py
 /scripts/render_stage_heatmap_figure.py
+
+# Retired separately sourced drug-layer inputs; current drugs come through OptimusKG.
+/data/graph_drug_layer/

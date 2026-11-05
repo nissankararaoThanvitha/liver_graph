@@ -13,16 +13,16 @@ commands below until preparation is complete.
 ### Fresh clone: recover the analysis inputs from the published graph
 
 1. Install Python 3.12 and `pip install -r requirements.txt`.
-2. Download `liver_kg_graph_export_2026-11-03.zip` and `SHA256SUMS.txt` from
-   https://github.com/nissankararaoThanvitha/liver_graph/releases/tag/graph-export-2026-11-03 .
+2. Download `liver_kg_graph_export_2026-11-05.zip` and `SHA256SUMS.txt` from
+   https://github.com/nissankararaoThanvitha/liver_graph/releases/tag/graph-export-2026-11-05 .
    Keep them outside the repository. Verify the ZIP against its entry in the
    published checksum file before using it; the checksum file also lists other
    release assets, which must be downloaded if checking all entries together.
 3. From the repository root, prepare NEW output directories:
 
 ```bash
-python scripts/prepare_analysis_core.py --archive /path/to/liver_kg_graph_export_2026-11-03.zip
-python scripts/prepare_analysis_core.py --archive /path/to/liver_kg_graph_export_2026-11-03.zip --annotations-only
+python scripts/prepare_analysis_core.py --archive /path/to/liver_kg_graph_export_2026-11-05.zip
+python scripts/prepare_analysis_core.py --archive /path/to/liver_kg_graph_export_2026-11-05.zip --annotations-only
 ```
 
 The first command streams the release into `data/expression_analysis_core`:
@@ -113,34 +113,23 @@ The selected final approach is documented in final_combined_2026-10-10/FINAL_SEL
 
 Mechanism CSVs and current selected memberships match the live graph at final verification. Source-node constraints and imported annotations are preserved. The archive holds historical outputs and is excluded from normal analysis paths.
 
-## Graph additions (drug, pathway and indication data)
+## Current knowledge-graph scope and pathway additions
 
-These steps take the graph of 10 October 2026 (126,244 nodes; 35,132,831 relationships; 14 types) to the extended graph (126,999; 35,160,254; 15). Run them in this order from the repository root. Graph writes are opt-in. The commands below explicitly write to the selected database; they are not needed just to read result tables or import the published graph. Set NEO4J_URI, NEO4J_DATABASE and credentials for the intended instance before using the migration/verifier. The historical HTTP drug writers target database neo4j on port 7474; do not run them against a different instance without configuring/inspecting their connection code.
+The current graph combines the original OptimusKG drug layer with 236 KEGG/Hallmark pathways, 20,031 gene memberships and 89 pathway--NAFLD links. The result has 126,480 nodes, 35,152,951 relationships and 15 active relationship types. Drug nodes, molecular/clinical annotations and drug--gene/disease evidence come through OptimusKG. Use the current release to recover the retained molecular and evidence properties exactly; `build_optimuskg_layer.py` constructs the initial knowledge layer and does not itself recreate the subsequent OptimusKG metadata-recovery step.
+
+For a graph built from the initial knowledge layer, only the following graph additions are part of the current build:
 
 ```bash
-python scripts/write_new_links_to_graph.py --apply
-# Complete the historical layer in one backed-up, verified transaction.
-python scripts/unify_drug_schema.py --apply --backup /path/outside/repo/drug-schema-before.json
-python scripts/write_external_directions_to_graph.py --apply
 python scripts/add_msigdb_pathways.py --apply
 python scripts/build_pathway_nafld_links.py --load
-python scripts/write_added_drug_indications_to_graph.py --apply
 python scripts/verify_extended_graph_counts.py --live
 ```
 
-- Step 0.4 (new drug–gene links) and 0.5 (action directions) read the committed tables in data/graph_drug_layer. The API search scripts that made those tables are in the Paper 2 repository (https://github.com/knarendrakumar187/Drug_Repurposing).
-- add_msigdb_pathways.py needs the MSigDB 2024.1 GMT files in data/genesets. It writes Hallmark rows to the committed data/graph_msigdb/*_msigdb.csv and KEGG rows to *_kegg.csv, which are not committed because KEGG data may not be redistributed (counts in data/graph_msigdb/counts.json). build_pathway_nafld_links.py reads both, so run add_msigdb_pathways.py first. build_pathway_nafld_links.py needs data/ctd/CTD_diseases_pathways.csv.gz, data/optimuskg/pathway.parquet and data/graph_okg/nodes_pathway.csv. None of these are committed (see .gitignore for sources). The Hallmark CSVs and the pathway–NAFLD CSVs these scripts wrote are committed in data/graph_msigdb and data/graph_pathway_disease.
-- `unify_drug_schema.py` is read-only by default. `--apply` requires a new
-  backup path. It converts each legacy relationship separately (never collapses
-  duplicate evidence), retains all properties/endpoints, removes the auxiliary
-  ExternalDrug label and verifies preservation before committing. It refuses
-  ambiguous drug IDs. A repeated run on a unified graph makes no changes. Stop
-  other writers during migration; a Neo4j relationship-type token can remain
-  listed after its last relationship is removed, so check actual edge counts.
-- Run `python scripts/verify_against_neo4j.py` for original annotation memberships;
-  `--workbook`, `--knowledge`, `--uri` and `--database` select the inputs. This
-  verifier is read-only and does not compare the old layer with expanded totals.
-- Without `--live`, verify_extended_graph_counts.py rebuilds the expected counts from the committed tables and write logs. It writes docs/provenance/extended_graph_verification.json.
+The first command requires the four MSigDB 2024.1 GMT files in `data/genesets`. Hallmark rows are committed; KEGG rows are written to ignored `*_kegg.csv` files. The second command additionally requires the CTD download and original OptimusKG pathway files; see `DATA_SOURCES.md`. Both graph-writing commands must target the intended instance. Do not replay additions over an unrelated graph.
+
+The retired drug-addition inputs and writers are absent from the active tree. Historical release assets and Git history retain their provenance. They are not dependencies of the current graph and must not be replayed during a current rebuild.
+
+`verify_extended_graph_counts.py` calculates expected counts from the original per-type counts and retained pathway tables, without retired drug-layer inputs. `--live` also checks each active relationship type. `verify_against_neo4j.py` checks the original Reactome/GO memberships only, excluding added pathways; input and database options are described by `--help`.
 
 ## Final combined inputs
 

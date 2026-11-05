@@ -1,20 +1,20 @@
 # Rebuild the graph in Neo4j from this export
 
-Graph version 2026-11-03, exported from Neo4j 2026.10.1. The export leaves out the KEGG pathways (see DATA_TERMS.md), so it is not the complete graph. VERIFICATION.json gives the counts.
+Graph version 2026-11-05, exported from Neo4j 2026.10.1. The export leaves out the KEGG pathways (see DATA_TERMS.md), so it is not the complete graph. VERIFICATION.json gives the counts.
 
 | | Live graph | This export |
 |---|---|---|
-| Nodes | 126,999 | 126,813 (186 KEGG Pathway nodes left out) |
-| Relationships | 35,160,254 | 35,147,469 (12,724 KEGG `IN_PATHWAY` and 61 KEGG `IMPLICATED_IN` left out) |
+| Nodes | 126,480 | 126,294 (186 KEGG Pathway nodes left out) |
+| Relationships | 35,152,951 | 35,140,166 (12,724 KEGG `IN_PATHWAY` and 61 KEGG `IMPLICATED_IN` left out) |
 | Entity types | 8 | 8 |
 | Relationship types | 15 | 15 |
 
 ## Quickest route: the dump file
 
-`liver_kg_2026-11-03.dump` (a separate release asset) is a Neo4j 2026.10.1 database built from these CSV files, with the same content. It needs Neo4j 2026.10 or newer. Rename it to the database name you want, put it in an empty folder, and load it:
+`liver_kg_2026-11-05.dump` (a separate release asset) is a Neo4j 5.26.0 database built from these CSV files, with the same content. It needs Neo4j 5.26 or newer. Rename it to the database name you want, put it in an empty folder, and load it:
 
 ```bash
-mv liver_kg_2026-11-03.dump liverkg.dump
+mv liver_kg_2026-11-05.dump liverkg.dump
 neo4j-admin database load liverkg --from-path=<that folder>
 ```
 
@@ -42,8 +42,9 @@ Use neo4j-admin from Neo4j 5.x or later (Community or Enterprise). Unzip into an
 args=()
 for f in nodes/*.csv.gz;         do args+=("--nodes=$f"); done
 for f in relationships/*.csv.gz; do args+=("--relationships=$f"); done
-neo4j-admin database import full liverkg \
+HEAP_SIZE=2G neo4j-admin database import full liverkg \
   --id-type=string --array-delimiter=";" --multiline-fields=true \
+  --ignore-empty-strings=false --bad-tolerance=0 --max-off-heap-memory=1G \
   "${args[@]}"
 ```
 
@@ -52,7 +53,8 @@ PowerShell:
 ```powershell
 $a = @(Get-ChildItem nodes\*.csv.gz | ForEach-Object { "--nodes=$($_.FullName)" }) +
      @(Get-ChildItem relationships\*.csv.gz | ForEach-Object { "--relationships=$($_.FullName)" })
-neo4j-admin database import full liverkg --id-type=string --array-delimiter=";" --multiline-fields=true @a
+$env:HEAP_SIZE = "2G"
+neo4j-admin database import full liverkg --id-type=string --array-delimiter=";" --multiline-fields=true --ignore-empty-strings=false --bad-tolerance=0 --max-off-heap-memory=1G @a
 ```
 
 On Community edition, import into the default database `neo4j` (stop the server first, and add `--overwrite-destination` if it already exists). On Enterprise, start the server and run `CREATE DATABASE liverkg`.
@@ -64,8 +66,8 @@ Run `constraints.cypher` in the new database, for example with `cypher-shell -d 
 ## 4. Check the counts
 
 ```cypher
-MATCH (n) RETURN count(n);                     // 126,813
-MATCH ()-[r]->() RETURN count(r);              // 35,147,469
+MATCH (n) RETURN count(n);                     // 126,294
+MATCH ()-[r]->() RETURN count(r);              // 35,140,166
 CALL db.labels() YIELD label RETURN count(*);  // 8
 CALL db.relationshipTypes() YIELD relationshipType RETURN count(*);  // 15
 ```

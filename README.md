@@ -11,7 +11,7 @@ Eight public human liver RNA-sequencing studies (1,085 samples; 1,027 recorded p
 | Tier 1 genes / shortlist | 447 / 23 |
 | Tier 1 genes significant in every LOSO refit | 442 |
 | Knowledge-graph subgraph | 42 genes, 12 annotations, 154 connections |
-| Graph | 126,999 nodes, 35,160,254 relationships, 8 entity types, 15 relationship types |
+| Graph | 126,480 nodes, 35,152,951 relationships, 8 entity types, 15 relationship types |
 
 **[docs/PAPER1_MAP.md](docs/PAPER1_MAP.md) maps every section, figure and table of the paper to its code and result file.**
 
@@ -44,14 +44,14 @@ python -m unittest discover -s tests
 
 The knowledge graph is available as a GitHub release, **without the KEGG pathways**. KEGG data may not be redistributed, so the release is not the complete graph:
 
-- **Release page:** https://github.com/nissankararaoThanvitha/liver_graph/releases/tag/graph-export-2026-11-03
-- **CSV files** (all nodes, relationships and properties, neo4j-admin import format): [liver_kg_graph_export_2026-11-03.zip](https://github.com/nissankararaoThanvitha/liver_graph/releases/download/graph-export-2026-11-03/liver_kg_graph_export_2026-11-03.zip)
-- **Neo4j dump** (load with `neo4j-admin database load`, Neo4j 2026.10 or newer): [liver_kg_2026-11-03.dump](https://github.com/nissankararaoThanvitha/liver_graph/releases/download/graph-export-2026-11-03/liver_kg_2026-11-03.dump)
+- **Release page:** https://github.com/nissankararaoThanvitha/liver_graph/releases/tag/graph-export-2026-11-05
+- **CSV files** (all nodes, relationships and properties, neo4j-admin import format): [liver_kg_graph_export_2026-11-05.zip](https://github.com/nissankararaoThanvitha/liver_graph/releases/download/graph-export-2026-11-05/liver_kg_graph_export_2026-11-05.zip)
+- **Neo4j dump** (load with `neo4j-admin database load`, Neo4j 5.26 or newer): [liver_kg_2026-11-05.dump](https://github.com/nissankararaoThanvitha/liver_graph/releases/download/graph-export-2026-11-05/liver_kg_2026-11-05.dump)
 
 | | Full graph | Release |
 |---|---|---|
-| Nodes | 126,999 | 126,813 |
-| Relationships | 35,160,254 | 35,147,469 |
+| Nodes | 126,480 | 126,294 |
+| Relationships | 35,152,951 | 35,140,166 |
 | Entity / relationship types | 8 / 15 | 8 / 15 |
 
 Left out: 186 KEGG Pathway nodes, their 12,724 `IN_PATHWAY` links and the 61 `IMPLICATED_IN` links whose pathway is KEGG. With your own MSigDB download they can be added back with `scripts/add_msigdb_pathways.py` and `scripts/build_pathway_nafld_links.py`.
@@ -60,17 +60,17 @@ The release includes import instructions, constraints, a manifest with row count
 
 ### How the graph was built
 
-The graph integrates the expression layer, the OptimusKG knowledge layer and the 8,044 progression links from this study. It was then extended (nothing removed or changed) with:
+The graph integrates the expression layer, OptimusKG biological knowledge and the 8,044 progression links from this study. Drug nodes, drug molecular/clinical annotations and drug--gene/disease evidence are retained from OptimusKG. The graph also contains:
 
-- 519 Drug nodes and 5,216 drug–gene links from ChEMBL, DGIdb, GtoPdb and Open Targets, plus action directions on 297 existing drug–gene links (`data/graph_drug_layer`);
 - 236 KEGG legacy and Hallmark pathways with 20,031 gene links from MSigDB 2024.1 (`data/graph_msigdb` holds the Hallmark rows; KEGG rows are not redistributed);
-- 89 Pathway → NAFLD links, kept only where this study's enrichment and CTD agree (`data/graph_pathway_disease`);
-- 2,087 ChEMBL_37 indications for the added drugs (`data/graph_drug_layer`).
+- 89 Pathway → NAFLD links supported by both this study's enrichment results and CTD (`data/graph_pathway_disease`).
 
-As the paper states, these additions were not used in its analyses. `python scripts/verify_extended_graph_counts.py --live` checks the counts against a running database; the saved result is in `docs/provenance/extended_graph_verification.json`.
+The added graph memberships and pathway--NAFLD links were not inputs to the transcriptomic or original Reactome/GO graph-annotation analyses. `python scripts/verify_extended_graph_counts.py --live` checks the current counts; the saved verification is in `docs/provenance/extended_graph_verification.json`. Original drug coverage is 12,025 nodes, 20,674 `ACTS_ON` links and 57,601 `TREATS` links.
+
+Earlier releases remain historical snapshots; use the release linked above for the current manuscript. Import the current release for the retained OptimusKG molecular/evidence properties; the primary processing commands rebuild the initial knowledge layer before metadata recovery.
 
 The drug-repurposing study that uses this graph (Paper 2) is in its own repository: https://github.com/knarendrakumar187/Drug_Repurposing.
 
 ## Licence
 
-Code: MIT ([LICENSE](LICENSE)). Data from outside sources keeps its own terms: GEO, OptimusKG (CC BY-NC-SA 4.0), MSigDB (KEGG-derived sets may not be redistributed), CTD, ChEMBL, DGIdb, GtoPdb and Open Targets. See [docs/graph_export/DATA_TERMS.md](docs/graph_export/DATA_TERMS.md).
+Code: MIT ([LICENSE](LICENSE)). Data from outside sources keeps its own terms: GEO, OptimusKG (CC BY-NC-SA 4.0), MSigDB (KEGG-derived sets may not be redistributed), CTD and the upstream resources represented in OptimusKG. See [docs/graph_export/DATA_TERMS.md](docs/graph_export/DATA_TERMS.md).

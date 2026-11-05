@@ -14,7 +14,7 @@ Fibrosis is F0–F4. Disease-group ordering is control→NAFL→NASH. Broad NAFL
 
 ## Current graph
 
-Eight entity types, 126,999 nodes and 35,160,254 relationships across 15 types (live check: docs/provenance/extended_graph_verification.json). The graph of 10 October 2026 (126,244 nodes; 35,132,831 relationships; 14 types) was later extended with drug, pathway and indication data that the analyses do not use. Patient identity is a Sample property, not a Patient node. Curated gene/disease/drug/annotation relationships remain unchanged; 8,044 patient-derived progression links represent the final combined analysis. Five derived disease labels are unclassified; GSE193066 derived expression preserves deposited RLE normalisation. Raw expression values and curated knowledge are preserved. The graph is not trimmed to liver diseases only.
+Eight entity types, 126,480 nodes and 35,152,951 relationships across 15 types (live check: docs/provenance/extended_graph_verification.json). The graph of 10 October 2026 (126,244 nodes; 35,132,831 relationships; 14 types) is supplemented by the retained KEGG/Hallmark memberships and pathway–NAFLD links, which are not inputs to the reported transcriptomic or original graph-annotation analyses. Drug information is obtained through OptimusKG only. Patient identity is a Sample property, not a Patient node. Curated gene/disease/drug/annotation relationships remain unchanged; 8,044 patient-derived progression links represent the final combined analysis. Five derived disease labels are unclassified; GSE193066 derived expression preserves deposited RLE normalisation. Raw expression values and curated knowledge are preserved. The graph is not trimmed to liver diseases only.
 
 ## Outputs
 

@@ -14,7 +14,7 @@ KEGG is not an openly licensed database, and its terms say non-academic use need
 | `relationships/IN_PATHWAY__Gene__Pathway__KEGG_legacy.csv.gz`: their gene memberships | 12,724 |
 | `relationships/IMPLICATED_IN__Pathway__Disease__KEGG.csv.gz`: Pathway -> NAFLD links whose pathway is KEGG | 61 |
 
-That leaves 126,813 of 126,999 nodes and 35,147,469 of 35,160,254 relationships. IMPORT.md explains how to add them back from your own MSigDB download.
+That leaves 126,294 of 126,480 nodes and 35,140,166 of 35,152,951 relationships. IMPORT.md explains how to add them back from your own MSigDB download.
 
 ## Included parts and their sources
 
@@ -25,8 +25,6 @@ That leaves 126,813 of 126,999 nodes and 35,147,469 of 35,160,254 relationships.
 | within those: gene–disease scores, indications | Open Targets Platform; DrugCentral, via OptimusKG | Open Targets: CC0. DrugCentral: not confirmed. |
 | within those: phenotypes, GO processes, Reactome pathways | HPO, Gene Ontology, Reactome, via OptimusKG | HPO: not confirmed (listed as CC0 by Open Targets). Reactome: CC BY 4.0. |
 | Hallmark Pathway nodes and `IN_PATHWAY __Hallmark` | MSigDB 2024.1 Hallmark | CC BY 4.0 (MSigDB terms) |
-| Drug nodes `__external`, `ACTS_ON __external` | ChEMBL, DGIdb 5, GtoPdb 2026.3.1, Open Targets 26.09 | ChEMBL: CC BY-SA 3.0. GtoPdb: CC BY-SA 4.0. Open Targets: CC0. DGIdb data: not confirmed. |
-| `TREATS __ChEMBL_indication` | ChEMBL_37 | CC BY-SA 3.0 |
 | `IMPLICATED_IN __Reactome` | This project's enrichment results, checked against CTD | CTD: not confirmed; cite CTD. |
 | Sample, Dataset nodes; `EXPRESSES`, `IN_DATASET` | Eight NCBI GEO studies (GSE126848, GSE130970, GSE135251, GSE162694, GSE167523, GSE193066, GSE240729, GSE269412), processed by this project | GEO submitter data: not confirmed. Samples carry derived clinical labels only, no direct identifiers. |
 | Gene nodes; `TRACKS_FIBROSIS`, `TRACKS_INFLAMMATION` | This project (gene IDs from HGNC/Ensembl) | Project results. HGNC: CC0. |

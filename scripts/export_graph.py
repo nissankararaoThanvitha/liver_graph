@@ -11,8 +11,7 @@ release file by file:
 Splits by source:
     Pathway nodes, IN_PATHWAY     Reactome / KEGG_legacy / Hallmark
     IMPLICATED_IN                 Reactome / KEGG (pathway database)
-    Drug nodes, ACTS_ON           OptimusKG / external (ChEMBL, DGIdb, GtoPdb, Open Targets)
-    TREATS                        OptimusKG / ChEMBL_indication
+    Drug nodes, ACTS_ON, TREATS   OptimusKG
 
 Header format is neo4j-admin import (name:type, :ID(Label), :START_ID(Label),
 :END_ID(Label), :TYPE, :LABEL). Strings are always quoted, so an empty string
@@ -82,7 +81,12 @@ def node_split(label, p):
     if label == "Pathway":
         return p.get("source") or "Reactome"
     if label == "Drug":
-        return "external" if p.get("source") else "OptimusKG"
+        if p.get("source") not in (None, "OptimusKG"):
+            raise ValueError("Drug node outside the current OptimusKG-only scope")
+        for field in ("smiles_source", "max_phase_source", "molecule_type_source", "recovered_name_source"):
+            if p.get(field) not in (None, "OptimusKG"):
+                raise ValueError(f"Drug field outside the current scope: {field}")
+        return "OptimusKG"
     return None
 
 
@@ -92,9 +96,13 @@ def rel_split(t, p):
     if t == "IMPLICATED_IN":
         return p.get("database")
     if t == "ACTS_ON":
-        return "external" if p.get("layer") else "OptimusKG"
+        if p.get("layer") or any(k.startswith("external_action_") for k in p):
+            raise ValueError("Drug-gene annotation outside the current OptimusKG-only scope")
+        return "OptimusKG"
     if t == "TREATS":
-        return "ChEMBL_indication" if p.get("source") else "OptimusKG"
+        if p.get("layer") or p.get("source"):
+            raise ValueError("Drug indication outside the current OptimusKG-only scope")
+        return "OptimusKG"
     return None
 
 
@@ -142,6 +150,9 @@ def main():
         nprops, rprops = schema(s)
         labels = [r["l"] for r in s.run("CALL db.labels() YIELD label AS l RETURN l ORDER BY l")]
         types = [r["t"] for r in s.run("CALL db.relationshipTypes() YIELD relationshipType AS t RETURN t ORDER BY t")]
+        # Neo4j retains label/type tokens after their last record is removed.
+        labels = [label for label in labels if s.run(f"MATCH (n:`{label}`) RETURN count(n) AS n").single()["n"]]
+        types = [rel for rel in types if s.run(f"MATCH ()-[r:`{rel}`]->() RETURN count(r) AS n").single()["n"]]
 
         for label in labels:
             key = KEY.get(label, "node_id")

@@ -1,14 +1,14 @@
 {
-  "date": "2026-11-04",
+  "date": "2026-11-05",
   "mode": "live",
   "target": {
-    "nodes": 126999,
-    "relationships": 35160254,
+    "nodes": 126480,
+    "relationships": 35152951,
     "relationship_types": 15
   },
   "expected_from_files": {
-    "nodes": 126999,
-    "relationships": 35160254,
+    "nodes": 126480,
+    "relationships": 35152951,
     "relationship_types": 15,
     "counts": {
       "EXPRESSES": 32471042,
@@ -17,8 +17,8 @@
       "INTERACTS_WITH": 324116,
       "INVOLVED_IN": 157081,
       "IN_PATHWAY": 66782,
-      "ACTS_ON": 25890,
-      "TREATS": 59688,
+      "ACTS_ON": 20674,
+      "TREATS": 57601,
       "CONTRAINDICATED_IN": 11718,
       "OFF_LABEL_FOR": 1061,
       "HAS_PHENOTYPE": 157144,
@@ -30,66 +30,39 @@
   },
   "steps": [
     {
-      "step": "0.4 drug-gene links",
-      "nodes_added": 519,
-      "relationships_added": {
-        "ACTS_ON": 5216
-      },
-      "nodes_after": 126763,
-      "relationships_after": 35138047
-    },
-    {
-      "step": "0.5 action directions",
-      "nodes_added": 0,
-      "relationships_added": {},
-      "nodes_after": 126763,
-      "relationships_after": 35138047
-    },
-    {
-      "step": "0.6 KEGG/Hallmark pathways",
+      "step": "KEGG/Hallmark pathways",
       "nodes_added": 236,
       "relationships_added": {
         "IN_PATHWAY": 20031
       },
-      "nodes_after": 126999,
-      "relationships_after": 35158078
+      "nodes_after": 126480,
+      "relationships_after": 35152862
     },
     {
-      "step": "0.7 pathway-NAFLD links",
+      "step": "pathway-NAFLD links",
       "nodes_added": 0,
       "relationships_added": {
         "IMPLICATED_IN": 89
       },
-      "nodes_after": 126999,
-      "relationships_after": 35158167
-    },
-    {
-      "step": "0.8 added-drug indications",
-      "nodes_added": 0,
-      "relationships_added": {
-        "TREATS": 2087
-      },
-      "nodes_after": 126999,
-      "relationships_after": 35160254
+      "nodes_after": 126480,
+      "relationships_after": 35152951
     }
   ],
-  "write_log_checks": {
-    "0.4 log after = files": true,
-    "0.4 log links/new drugs = files": true,
-    "0.5 log links = files, ACTS_ON count unchanged": true,
-    "0.8 log before = files after 0.7": true,
-    "0.8 log after = files": true,
-    "0.8 log TREATS after = files": true
+  "input_checks": {
+    "Hallmark node/link CSVs match the source counts": true,
+    "original OptimusKG drug-gene count retained": true,
+    "original OptimusKG indication count retained": true,
+    "pathway-disease rows have unique endpoints": true
   },
   "files_match_target": true,
   "live": {
-    "nodes": 126999,
-    "relationships": 35160254,
+    "nodes": 126480,
+    "relationships": 35152951,
     "relationship_types": 15,
     "counts": {
       "EXPRESSES": 32471042,
       "IN_DATASET": 1085,
-      "TREATS": 59688,
+      "TREATS": 57601,
       "IN_PATHWAY": 66782,
       "ASSOCIATED_WITH": 1832441,
       "CONTRAINDICATED_IN": 11718,
@@ -97,7 +70,7 @@
       "HAS_PHENOTYPE": 157144,
       "INVOLVED_IN": 157081,
       "INTERACTS_WITH": 324116,
-      "ACTS_ON": 25890,
+      "ACTS_ON": 20674,
       "PARENT_OF": 44073,
       "TRACKS_FIBROSIS": 3845,
       "TRACKS_INFLAMMATION": 4199,

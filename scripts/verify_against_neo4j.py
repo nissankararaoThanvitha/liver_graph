@@ -36,18 +36,25 @@ def load_reference(kg, workbook):
 
 def compare(session, reference):
     failures = []
-    for offset in range(0, len(reference), 500):
-        batch = reference[offset:offset + 500]
-        actual = session.run('''UNWIND $rows AS row
-            OPTIONAL MATCH (m {node_id: row.id}) WHERE row.label IN labels(m)
-            OPTIONAL MATCH (g:Gene)-[r:IN_PATHWAY|INVOLVED_IN]->(m) WHERE type(r) = row.rel
-            RETURN row.id AS id, count(DISTINCT m) AS nodes,
-                   collect(DISTINCT g.ensembl_id) AS members, count(r) AS links''', rows=batch).data()
-        found = {r['id']: r for r in actual}
-        for row in batch:
-            a = found.get(row['id'], {})
-            if a.get('nodes') != 1 or set(a.get('members', [])) != set(row['members']) or a.get('links') != len(row['members']):
-                failures.append(row['id'])
+    scopes = {"Pathway": "IN_PATHWAY", "BioProcess": "INVOLVED_IN"}
+    if any(scopes.get(row["label"]) != row["rel"] for row in reference):
+        raise ValueError("Unexpected annotation label/relationship scope")
+    for label, rel in scopes.items():
+        scoped = [row for row in reference if row["label"] == label]
+        for offset in range(0, len(scoped), 500):
+            batch = scoped[offset:offset + 500]
+            # Static labels use the node_id uniqueness indexes. An unlabelled
+            # MATCH would scan every graph node for every reference annotation.
+            actual = session.run(f'''UNWIND $rows AS row
+                OPTIONAL MATCH (m:{label} {{node_id: row.id}})
+                OPTIONAL MATCH (g:Gene)-[r:{rel}]->(m)
+                RETURN row.id AS id, count(DISTINCT m) AS nodes,
+                       collect(DISTINCT g.ensembl_id) AS members, count(r) AS links''', rows=batch).data()
+            found = {r['id']: r for r in actual}
+            for row in batch:
+                a = found.get(row['id'], {})
+                if a.get('nodes') != 1 or set(a.get('members', [])) != set(row['members']) or a.get('links') != len(row['members']):
+                    failures.append(row['id'])
     return failures
 
 
