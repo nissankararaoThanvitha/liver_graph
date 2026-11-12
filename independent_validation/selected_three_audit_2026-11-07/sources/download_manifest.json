@@ -1,0 +1,51 @@
+[
+  {
+    "accession": "GSE213621",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE213nnn/GSE213621/soft/GSE213621_family.soft.gz",
+    "path": "GSE213621/GSE213621_family.soft.gz",
+    "bytes": 15398,
+    "sha256": "ec3254d9091fe213350dbf724a894b9087624bbfd4d9deceae43da66a9cf54e1"
+  },
+  {
+    "accession": "GSE213621",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE213nnn/GSE213621/matrix/GSE213621_series_matrix.txt.gz",
+    "path": "GSE213621/GSE213621_series_matrix.txt.gz",
+    "bytes": 11880,
+    "sha256": "aa9f7b6771080832fe202367b9e2022a126f97beae691a5415a676477d5beb3e"
+  },
+  {
+    "accession": "GSE213621",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE213nnn/GSE213621/suppl/GSE213621_FPKMs_allsamples.txt.gz",
+    "path": "GSE213621/GSE213621_FPKMs_allsamples.txt.gz",
+    "bytes": 33224068,
+    "sha256": "ccd861c61a7f1f2d9f4de1c2e8c3a9bc1ff0fe6316a4ee69128fcee8ed703453"
+  },
+  {
+    "accession": "GSE268273",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE268nnn/GSE268273/soft/GSE268273_family.soft.gz",
+    "path": "GSE268273/GSE268273_family.soft.gz",
+    "bytes": 12415,
+    "sha256": "1a0dc624b9afd65db28fa091b8cdb55c772461c66d57d1cd801444ea60c99e64"
+  },
+  {
+    "accession": "GSE268273",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE268nnn/GSE268273/matrix/GSE268273_series_matrix.txt.gz",
+    "path": "GSE268273/GSE268273_series_matrix.txt.gz",
+    "bytes": 8639,
+    "sha256": "76bd5405e8523e7682b059382bcdd406234ee9dc5f5c6fe3f158fee6cd6b0af0"
+  },
+  {
+    "accession": "GSE268273",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE268nnn/GSE268273/suppl/GSE268273_EGN_RNAseq_Normalized_data.xlsx",
+    "path": "GSE268273/GSE268273_EGN_RNAseq_Normalized_data.xlsx",
+    "bytes": 21040030,
+    "sha256": "056948c9824d4b75263ec9870ad407f404a99ea4ababdd5f5d5d01f9584f3d18"
+  },
+  {
+    "accession": "GSE225740",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE225nnn/GSE225740/matrix/GSE225740_series_matrix.txt.gz",
+    "path": "GSE225740/GSE225740_series_matrix.txt.gz",
+    "bytes": 4766,
+    "sha256": "60f09f2a14723916e51a12950d6e956e4e7957d3c08dd6e21aa24078957bfcdd"
+  }
+]

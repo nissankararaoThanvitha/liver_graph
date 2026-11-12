@@ -1,0 +1,23 @@
+[
+  {
+    "accession": "GSE49541",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE49nnn/GSE49541/matrix/GSE49541_series_matrix.txt.gz",
+    "file": "GSE49541/GSE49541_series_matrix.txt.gz",
+    "bytes": 5094390,
+    "sha256": "036f2282875c54164e5798ab608b050ab0e52ab514e1af15ce591cf29d61b2b2"
+  },
+  {
+    "accession": "GSE89632",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE89nnn/GSE89632/matrix/GSE89632_series_matrix.txt.gz",
+    "file": "GSE89632/GSE89632_series_matrix.txt.gz",
+    "bytes": 7588773,
+    "sha256": "b8184cd4331823183d1c63232dbd0372bdffa6f847bb0f2830de84f5315d88da"
+  },
+  {
+    "accession": "GSE207310",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE207nnn/GSE207310/suppl/GSE207310_RAW.tar",
+    "file": "GSE207310/GSE207310_RAW.tar",
+    "bytes": 8151040,
+    "sha256": "23143384da15c28c67e31f354c19e779b01c485b3a4302cd3be4a658788e560c"
+  }
+]

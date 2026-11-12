@@ -1,0 +1,18 @@
+GSE213621: 368 expression columns, 368 GEO samples
+  raw IDs 19,787 -> unique 19,782 -> _PAR_Y dropped 0 -> mapped 16,863 (unmapped dropped 2,919)
+  Ensembl genes 16,837; transform FPKM
+  GSE213621 [all]: 299 staged patients (mild 97, advanced 95); testable universe genes 13,358
+GSE225740: 93 expression columns, 93 GEO samples
+  raw IDs 19,101 -> unique 19,101 -> _PAR_Y dropped 0 -> mapped 18,002 (unmapped dropped 1,099)
+  Ensembl genes 18,002; transform raw_count
+  GSE225740 [all]: 87 staged patients (mild 53, advanced 19); testable universe genes 13,790
+GSE268273: 109 expression columns, 109 GEO samples
+  raw IDs 14,149 -> unique 14,149 -> _PAR_Y dropped 11 -> mapped 14,138 (unmapped dropped 0)
+  Ensembl genes 14,138; transform log2_voom
+  GSE268273 [all]: 109 staged patients (mild 77, advanced 19); testable universe genes 11,871
+GSE276114: 177 expression columns, 177 GEO samples
+  raw IDs 19,983 -> unique 19,983 -> _PAR_Y dropped 0 -> mapped 19,320 (unmapped dropped 663)
+  Ensembl genes 19,318; transform raw_count
+  GSE276114 [all]: 177 staged patients (mild 39, advanced 138); testable universe genes 14,763
+  GSE276114 [MASLD]: 81 staged patients (mild 26, advanced 55); testable universe genes 14,760
+  GSE276114 [CVH]: 82 staged patients (mild 13, advanced 69); testable universe genes 14,756

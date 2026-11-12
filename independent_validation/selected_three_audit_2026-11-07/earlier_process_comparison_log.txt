@@ -1,0 +1,20 @@
+GSE213621 earlier-process comparison complete
+GSE225740 earlier-process comparison complete
+GSE268273 earlier-process comparison complete
+   cohort    gene_set                      mapping correction  testable  same_direction  concordant_significant  opposite_significant
+GSE213621 shortlist23 earlier_frozen_discovery_map   targeted        19              19                      15                     0
+GSE213621 shortlist23 earlier_frozen_discovery_map   universe        19              19                      15                     0
+GSE213621       Tier1 earlier_frozen_discovery_map   targeted       387             382                     336                     0
+GSE213621       Tier1 earlier_frozen_discovery_map   universe       387             382                     312                     0
+GSE225740 shortlist23 earlier_frozen_discovery_map   targeted        23              23                      21                     0
+GSE225740 shortlist23 earlier_frozen_discovery_map   universe        23              23                      19                     0
+GSE225740       Tier1 earlier_frozen_discovery_map   targeted       445             439                     387                     0
+GSE225740       Tier1 earlier_frozen_discovery_map   universe       445             439                     367                     0
+GSE268273 shortlist23 earlier_frozen_discovery_map   targeted        18              18                      17                     0
+GSE268273 shortlist23 earlier_frozen_discovery_map   universe        18              18                      16                     0
+GSE268273       Tier1 earlier_frozen_discovery_map   targeted       366             356                     295                     1
+GSE268273       Tier1 earlier_frozen_discovery_map   universe       366             356                     272                     0
+   cohort  earlier_testable_universe  friend_testable_universe  common_genes  max_rho_difference_common  max_p_difference_common  earlier_only_genes  friend_only_genes
+GSE213621                      13107                     13358         13107               1.626251e-02             1.505196e-01                   0                251
+GSE225740                      13790                     13790         13790               9.996344e-17             1.110223e-16                   0                  0
+GSE268273                      11871                     11871         11871               9.931292e-17             1.110223e-16                   0                  0

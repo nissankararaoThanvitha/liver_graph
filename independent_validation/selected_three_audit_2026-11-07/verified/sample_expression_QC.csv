@@ -1,0 +1,4 @@
+cohort,raw_rows,raw_duplicate_rows,all_columns,staged_columns,excluded_unstaged_or_control,raw_min,raw_max,nonfinite_values,identical_profiles,mapped_genes,testable_universe,unit
+GSE213621,19787,5,368,299,69,0.0,1543365.0,0,0,16843,13358,FPKM
+GSE225740,19101,0,93,87,6,0.0,42767140.0,0,0,18004,13790,raw_count
+GSE268273,14149,0,109,109,0,-6.91754295107409,17.1894395712921,0,0,14138,11871,log2_voom

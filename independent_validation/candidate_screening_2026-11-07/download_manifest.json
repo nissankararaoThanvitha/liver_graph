@@ -1,0 +1,110 @@
+[
+  {
+    "accession": "GSE281797",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE281nnn/GSE281797/soft/GSE281797_family.soft.gz",
+    "file": "GSE281797/GSE281797_family.soft.gz",
+    "bytes": 6918,
+    "sha256": "8561356296b8a02f174f4d235b3e763b66179e2f37b10d385f94e659d8cdbb17",
+    "series": [
+      "!Series_title = Transcriptomic profiles of liver biopsies in obese patients with metabolic dysfunction-associated steatotic liver disease",
+      "!Series_pubmed_id = 41870035",
+      "!Series_summary = The molecular mechanisms underlying early-stage metabolic dysfunction-associated steatotic liver disease (MASLD) is poorly understood. This study characterized the transcriptomic alterations in obese patients with no pathology or early-stage MASLD.  94 snap-frozen liver biopsies were analyzed through high-throughput RNA sequencing. Distinct features involved in the development of hepatic steatosis and fibrosis were identified. This study also provided novel insights in mechanisms involved in the onset of fibrosis, highlighting potential therapeutic targets.",
+      "!Series_overall_design = 94 snap-frozen liver biopsies were processe for RNA sequencing on the NoveSeq6000 platform.",
+      "!Series_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE281nnn/GSE281797/suppl/GSE281797_GeneCount.txt.gz",
+      "!Series_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE281nnn/GSE281797/suppl/GSE281797_tpm.txt.gz"
+    ]
+  },
+  {
+    "accession": "GSE225740",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE225nnn/GSE225740/soft/GSE225740_family.soft.gz",
+    "file": "GSE225740/GSE225740_family.soft.gz",
+    "bytes": 5920,
+    "sha256": "9edf2fe12927f6a1df266112f36c52e6b5902dc9f8a94629ec28d53735b21874",
+    "series": [
+      "!Series_title = Clinically Important Alterations in Pharmacogene Expression in Histologically Severe Nonalcoholic Fatty Liver Disease",
+      "!Series_pubmed_id = 36927865",
+      "!Series_pubmed_id = 42748406",
+      "!Series_summary = This study aims to determine if patients with NAFLD are at risk for altered drug response by characterizing changes in hepatic mRNA expression of genes mediating drug disposition (pharmacogenes) across the histological NAFLD severity spectrum.",
+      "!Series_overall_design = We utilize RNA-seq for 93 liver biopsies with histologically staged NAFLD Activity Score (NAS), fibrosis stage, and steatohepatitis (NASH).",
+      "!Series_overall_design = NOTE FROM SUBMITTER: We cannot upload raw data files due to research participant privacy concerns.",
+      "!Series_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE225nnn/GSE225740/suppl/GSE225740_NAFLD_RNA_counts.csv.gz",
+      "!Series_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE225nnn/GSE225740/suppl/GSE225740_NAFLD_phenotypes.csv.gz"
+    ]
+  },
+  {
+    "accession": "GSE185051",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE185nnn/GSE185051/soft/GSE185051_family.soft.gz",
+    "file": "GSE185051/GSE185051_family.soft.gz",
+    "bytes": 5824,
+    "sha256": "4b1c3f483cccff6b17d7d394bbe574d79bf2eefbc608bd64c980ea9fb66186a5",
+    "series": [
+      "!Series_title = Hepatic Transcriptome Profiling of A Multiethnic Cohort of Pediatric Non-Alcoholic Fatty Liver Disease Patients Reveals Novel Genes and Pathways Associated With Disease Stages",
+      "!Series_pubmed_id = 35312185",
+      "!Series_summary = Non-alcoholic Fatty Liver Disease (NAFLD) is the most common type of chronic liver disease in children. The mechanisms that drive NAFLD disease progression in this specific patient population remains poorly defined. In this study, we gathered liver biopsy samples from a multiethnic cohort (71% Hispanic) of pediatric NAFLD patients (n=52, mean age=13.6 years) plus healthy liver controls (n=5). We analyzed transcriptomic changes associated with NAFLD disease progression using high-throughput RNA-sequencing. Unsupervised clustering as well as pairwise transcriptome comparison distinguished NAFLD from healthy livers. We identified perturbations in calcium and insulin/glucose signaling occurring early in NAFLD disease, prior to the presence of histopathologic evidence of advanced disease. Transcriptomic comparisons between low and advanced fibrosis identified a 25-gene signature associated with pediatric fibrotic liver progression. We also identified expression of the IGFBP gene family (1/2/3/7) as correlating with disease progression and it has the potential to be used as a peripheral biomarker in NAFLD. Comparing our dataset with publicly available adult transcriptomic data, we identified similarities and differences in pathway enrichment and gene expression profiles between adult and pediatric NAFLD patients. Regulation of genes including IL32, IGFBP1, IGFBP2, IGFBP7 was consistently found in both NAFLD populations, while IGFBP3 was specific to pediatric NAFLD. Conclusions: This paper expands our knowledge on the molecular mechanisms driving NAFLD and fibrosis in the pediatric population and aids future biomarker and therapeutics discovery.",
+      "!Series_overall_design = In this study, we gathered liver biopsy samples from a multiethnic cohort (71% Hispanic) of pediatric NAFLD patients (n=52, mean age=13.6 years) plus healthy liver controls (n=5). We analyzed transcriptomic changes associated with NAFLD disease progression using high-throughput RNA-sequencing.",
+      "!Series_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE185nnn/GSE185051/suppl/GSE185051_Gene_count.csv.gz",
+      "!Series_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE185nnn/GSE185051/suppl/GSE185051_RAW.tar"
+    ]
+  },
+  {
+    "accession": "GSE49541",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE49nnn/GSE49541/soft/GSE49541_family.soft.gz",
+    "file": "GSE49541/GSE49541_family.soft.gz",
+    "bytes": 29122659,
+    "sha256": "0b10baa8feace997b58fb80279a159dcf5bde176e1bae88164629ea600794605",
+    "series": [
+      "!Series_title = Expression data for Nonalcoholic fatty liver disease patients",
+      "!Series_pubmed_id = 23913408",
+      "!Series_pubmed_id = 23916847",
+      "!Series_summary = Nonalcoholic fatty liver disease represents a spectrum of pathology that ranges from benign steatosis to potentially-progressive steatohepatitis and affects more than 30% of US adults. Advanced NAFLD is associated with increased morbidity and mortality from cirrhosis, primary liver cancer, cardiovascular disease and extrahepatic cancers.",
+      "!Series_summary = Accurate identification of patients at risk for advanced NAFLD is challenging.  The aims of this study were to define the liver gene expression patterns that distinguish mild from advanced NAFLD and to develop a gene expression profile associated with advanced NAFLD.",
+      "!Series_overall_design = We analyzed total RNA from 72 patients with NAFLD (40 with mild NAFLD, fibrosis stage 0-1 and 32 with advanced NAFLD, fibrosis stage 3-4) and developed a gene profile associated with advanced NAFLD.",
+      "!Series_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE49nnn/GSE49541/suppl/GSE49541_RAW.tar"
+    ]
+  },
+  {
+    "accession": "GSE89632",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE89nnn/GSE89632/soft/GSE89632_family.soft.gz",
+    "file": "GSE89632/GSE89632_family.soft.gz",
+    "bytes": 27840447,
+    "sha256": "af156f5d764f2b552ca00b94bf76543db911a55af64d67afe25e870447bc8902",
+    "series": [
+      "!Series_title = Genome-wide analysis of hepatic gene expression in patients with non-alcoholic fatty liver disease  and in healthy donors in relation to hepatic fatty acid composition and other nutritional factors",
+      "!Series_pubmed_id = 25581263",
+      "!Series_pubmed_id = 35166723",
+      "!Series_summary = In nonalcoholic fatty liver disease (NAFLD), hepatic gene expression and fatty acid (FA) composition have been reported independently but a comprehensive gene expression profiling in relation to FA composition is lacking. The aim was to assess this relationship.",
+      "!Series_summary = In a cross-sectional study, hepatic gene expression (Illumina Microarray) was first compared among 20 patients with simple steatosis (SS), 19 with nonalcoholic steatohepatitis (NASH), and 24 healthy controls (HC). FA composition in hepatic total lipids was compared between SS and NASH, and associations between gene expression and FA were examined. Gene expression differed mainly between HC and patients (SS and NASH), including genes related to unsaturated FA metabolism. Twenty-two genes were differentially expressed between NASH and SS; most of them correlated with disease severity and related more to cancer progression than to lipid metabolism. Biologically long-chain polyunsaturated FA (PUFA) (eicosapentaenoic acid + docosahexaenoic acid, arachidonic acid) in hepatic total lipids were lower in NASH than in SS. This may be related to overexpression of FADS1, FADS2, and PNPLA3. The degree and direction of correlations between PUFA and gene expression were different among SS and NASH which may suggest that low PUFA content in NASH modulates gene expression in a different way compared with SS or, alternatively, gene expression influences PUFA content differently depending on disease severity (SS versus NASH). Conclusion: Well-defined subjects with either healthy liver, SS or NASH showed distinct hepatic gene expression profiles including genes involved in unsaturated FA metabolism. In NASH, hepatic PUFA were lower and associations with gene expression were different than in SS.",
+      "!Series_overall_design = Cross-sectional study, including patients with non-alcoholic fatty liver disease (25 SS, 23 NASH) and 24 healthy living liver donors as HC. Nine samples (5 SS, 4 NASH) were excluded during quality control. The final analysis inclulded 63 participants (20 SS, 19 NASH, 24 HC).",
+      "!Series_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE89nnn/GSE89632/suppl/GSE89632_RAW.tar"
+    ]
+  },
+  {
+    "accession": "GSE192959",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE192nnn/GSE192959/soft/GSE192959_family.soft.gz",
+    "file": "GSE192959/GSE192959_family.soft.gz",
+    "bytes": 4530,
+    "sha256": "0ae97c9753ed0debd9943af949d0d07a206cf9d02c9cd1b765d59a69ae623178",
+    "series": [
+      "!Series_title = Transcriptome profile of liver biopsy tissues from patients with non-alcoholic fatty liver disease (derivation set).",
+      "!Series_pubmed_id = 35731891",
+      "!Series_summary = Non-alcoholic fatty liver disease (NAFLD) is a major global health problem with its high prevalence and risk of developing lethal complications, progressive liver fibrosis and hepatocellular carcinoma (HCC), the only rising cancer mortality in the U.S. For early HCC detection to improve the dismal prognosis, there is an urgent unmet need to identify a subset of NAFLD patients with elevated risk of HCC. Herein, we derived a hepatic-transcriptome-based NAFLD-specific HCC risk biomarker, PLS-NAFLD, and validated it in two independent cohorts of HCC-naive and experienced NAFLD patients..",
+      "!Series_overall_design = Liver biopsy tissues were obtained at the time of ablating NAFLD-related HCC tumors and subjected for RNA isolation and genome-wide transcriptome profiling with RNA-Seq.",
+      "!Series_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE192nnn/GSE192959/suppl/GSE192959_NAFLD.TUn48.gct.gz"
+    ]
+  },
+  {
+    "accession": "GSE193080",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE193nnn/GSE193080/soft/GSE193080_family.soft.gz",
+    "file": "GSE193080/GSE193080_family.soft.gz",
+    "bytes": 5132,
+    "sha256": "6413f844762030b367b3b7b28afafcc8be1e8caad9881c4b7aba48a60152a401",
+    "series": [
+      "!Series_title = Transcriptome profile of liver biopsy tissues from patients with non-alcoholic fatty liver disease (tissue validation set 2).",
+      "!Series_pubmed_id = 35731891",
+      "!Series_pubmed_id = 37621719",
+      "!Series_summary = Non-alcoholic fatty liver disease (NAFLD) is a major global health problem with its high prevalence and risk of developing lethal complications, progressive liver fibrosis and hepatocellular carcinoma (HCC), the only rising cancer mortality in the U.S. For early HCC detection to improve the dismal prognosis, there is an urgent unmet need to identify a subset of NAFLD patients with elevated risk of HCC. Herein, we derived a hepatic-transcriptome-based NAFLD-specific HCC risk biomarker, PLS-NAFLD, and validated it in two independent cohorts of HCC-naive and experienced NAFLD patients..",
+      "!Series_overall_design = Total RNA for genome-wide transcriptome profiling by RNA-Seq was extracted from formalin-fixed paraffin embedded tissues of tumor-adjacent liver tissues obtained at the time of curative surgical resection for NAFLD-related HCC.",
+      "!Series_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE193nnn/GSE193080/suppl/GSE193080_NAFLD.KUTHn59.gct.gz"
+    ]
+  }
+]

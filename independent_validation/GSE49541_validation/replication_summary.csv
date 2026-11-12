@@ -1,0 +1,5 @@
+family,method,original_genes,testable_genes,same_direction,concordant_significant,opposite_significant,same_direction_nonsignificant,opposite_nonsignificant,untestable
+shortlist23,primary_mean,23,22,19,13,0,6,3,1
+shortlist23,sensitivity_median,23,22,18,10,0,8,4,1
+Tier1,primary_mean,447,439,397,220,0,177,42,8
+Tier1,sensitivity_median,447,433,369,175,0,194,64,14

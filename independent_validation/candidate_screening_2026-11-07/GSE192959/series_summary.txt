@@ -1,0 +1,5 @@
+!Series_title = Transcriptome profile of liver biopsy tissues from patients with non-alcoholic fatty liver disease (derivation set).
+!Series_pubmed_id = 35731891
+!Series_summary = Non-alcoholic fatty liver disease (NAFLD) is a major global health problem with its high prevalence and risk of developing lethal complications, progressive liver fibrosis and hepatocellular carcinoma (HCC), the only rising cancer mortality in the U.S. For early HCC detection to improve the dismal prognosis, there is an urgent unmet need to identify a subset of NAFLD patients with elevated risk of HCC. Herein, we derived a hepatic-transcriptome-based NAFLD-specific HCC risk biomarker, PLS-NAFLD, and validated it in two independent cohorts of HCC-naive and experienced NAFLD patients..
+!Series_overall_design = Liver biopsy tissues were obtained at the time of ablating NAFLD-related HCC tumors and subjected for RNA isolation and genome-wide transcriptome profiling with RNA-Seq.
+!Series_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE192nnn/GSE192959/suppl/GSE192959_NAFLD.TUn48.gct.gz

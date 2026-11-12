@@ -1,0 +1,34 @@
+HGNC loaded: 42,637 approved genes with Ensembl IDs
+  entrez keys : 41,872
+  symbol keys : 42,640
+  prev keys   : 14,509  (unambiguous only)
+  alias keys  : 40,003  (unambiguous only)
+  discarded   : 1,318 ambiguous prev/alias entries
+
+GSE213621 all   Top 23 shortlist  n=299 genes=  19 agree=100.0% rep= 78.9% (rand 22.1%) score rho=0.42 AUC=0.79 [0.72-0.85]
+GSE213621 all   Tier 1 (447)      n=299 genes= 387 agree= 98.7% rep= 80.6% (rand 20.7%) score rho=0.47 AUC=0.82 [0.75-0.88]
+GSE213621 all   Tier 2 (1,403)    n=299 genes=1211 agree= 94.0% rep= 60.0% (rand 20.5%) score rho=0.38 AUC=0.76 [0.69-0.83]
+GSE213621 all   Tier 3 (1,995)    n=299 genes=1768 agree= 86.1% rep= 41.5% (rand 19.8%) score rho=0.32 AUC=0.72 [0.65-0.79]
+GSE213621 all   All 3,845         n=299 genes=3366 agree= 90.4% rep= 52.6% (rand 20.2%) score rho=0.37 AUC=0.75 [0.68-0.81]
+GSE225740 all   Top 23 shortlist  n= 87 genes=  23 agree=100.0% rep= 82.6% (rand 20.1%) score rho=0.64 AUC=0.84 [0.73-0.92]
+GSE225740 all   Tier 1 (447)      n= 87 genes= 445 agree= 98.7% rep= 82.5% (rand 22.3%) score rho=0.61 AUC=0.86 [0.76-0.95]
+GSE225740 all   Tier 2 (1,403)    n= 87 genes=1373 agree= 92.6% rep= 58.5% (rand 21.7%) score rho=0.56 AUC=0.84 [0.73-0.92]
+GSE225740 all   Tier 3 (1,995)    n= 87 genes=1908 agree= 78.7% rep= 39.1% (rand 22.1%) score rho=0.49 AUC=0.79 [0.67-0.89]
+GSE225740 all   All 3,845         n= 87 genes=3726 agree= 86.2% rep= 51.4% (rand 21.9%) score rho=0.54 AUC=0.82 [0.71-0.91]
+GSE268273 all   Top 23 shortlist  n=109 genes=  18 agree=100.0% rep= 88.9% (rand 15.4%) score rho=0.62 AUC=0.86 [0.78-0.94]
+GSE268273 all   Tier 1 (447)      n=109 genes= 366 agree= 97.3% rep= 74.3% (rand 15.1%) score rho=0.62 AUC=0.86 [0.78-0.94]
+GSE268273 all   Tier 2 (1,403)    n=109 genes=1140 agree= 90.2% rep= 52.2% (rand 15.0%) score rho=0.55 AUC=0.82 [0.70-0.91]
+GSE268273 all   Tier 3 (1,995)    n=109 genes=1628 agree= 91.1% rep= 46.4% (rand 14.9%) score rho=0.53 AUC=0.80 [0.69-0.90]
+GSE268273 all   All 3,845         n=109 genes=3134 agree= 91.5% rep= 51.8% (rand 15.0%) score rho=0.56 AUC=0.82 [0.70-0.92]
+GSE213621: 368 expression columns, 368 GEO samples
+  raw IDs 19,787 -> unique 19,782 -> _PAR_Y dropped 0 -> mapped 16,869 (unmapped dropped 2,913)
+  Ensembl genes 16,843; transform FPKM
+  GSE213621 [all]: 299 staged patients (mild 97, advanced 95); testable universe genes 13,358
+GSE225740: 93 expression columns, 93 GEO samples
+  raw IDs 19,101 -> unique 19,101 -> _PAR_Y dropped 0 -> mapped 18,004 (unmapped dropped 1,097)
+  Ensembl genes 18,004; transform raw_count
+  GSE225740 [all]: 87 staged patients (mild 53, advanced 19); testable universe genes 13,790
+GSE268273: 109 expression columns, 109 GEO samples
+  raw IDs 14,149 -> unique 14,149 -> _PAR_Y dropped 11 -> mapped 14,138 (unmapped dropped 0)
+  Ensembl genes 14,138; transform log2_voom
+  GSE268273 [all]: 109 staged patients (mild 77, advanced 19); testable universe genes 11,871

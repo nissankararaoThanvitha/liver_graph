@@ -1,0 +1,98 @@
+{
+  "accession": "GSE49541",
+  "n_patients": 72,
+  "groups": {
+    "mild_F0_F1": 40,
+    "advanced_F3_F4": 32
+  },
+  "deposited_processing": "GC-RMA; already logarithmic; no second transform or CPM",
+  "probe_rows": 54675,
+  "expression_quantiles_0_1_50_99_100_percent": [
+    2.358,
+    2.358,
+    2.437,
+    11.621,
+    15.556
+  ],
+  "mapping_status_counts": {
+    "retained": 40525,
+    "no_single_Entrez": 12841,
+    "unmapped_or_ambiguous_Entrez": 1309
+  },
+  "gene_summaries": 19382,
+  "mixed_probe_directions_Tier1_genes": 126,
+  "results": [
+    {
+      "family": "shortlist23",
+      "method": "primary_mean",
+      "original_genes": 23,
+      "testable_genes": 22,
+      "same_direction": 19,
+      "concordant_significant": 13,
+      "opposite_significant": 0,
+      "same_direction_nonsignificant": 6,
+      "opposite_nonsignificant": 3,
+      "untestable": 1
+    },
+    {
+      "family": "shortlist23",
+      "method": "sensitivity_median",
+      "original_genes": 23,
+      "testable_genes": 22,
+      "same_direction": 18,
+      "concordant_significant": 10,
+      "opposite_significant": 0,
+      "same_direction_nonsignificant": 8,
+      "opposite_nonsignificant": 4,
+      "untestable": 1
+    },
+    {
+      "family": "Tier1",
+      "method": "primary_mean",
+      "original_genes": 447,
+      "testable_genes": 439,
+      "same_direction": 397,
+      "concordant_significant": 220,
+      "opposite_significant": 0,
+      "same_direction_nonsignificant": 177,
+      "opposite_nonsignificant": 42,
+      "untestable": 8
+    },
+    {
+      "family": "Tier1",
+      "method": "sensitivity_median",
+      "original_genes": 447,
+      "testable_genes": 433,
+      "same_direction": 369,
+      "concordant_significant": 175,
+      "opposite_significant": 0,
+      "same_direction_nonsignificant": 194,
+      "opposite_nonsignificant": 64,
+      "untestable": 14
+    }
+  ],
+  "software": {
+    "python": "3.12.3",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.1"
+  },
+  "inputs_sha256": {
+    "independent_validation/candidate_screening_2026-11-07/GSE49541/GSE49541_family.soft.gz": "0b10baa8feace997b58fb80279a159dcf5bde176e1bae88164629ea600794605",
+    "independent_validation/candidate_screening_2026-11-07/GSE49541/GSE49541_series_matrix.txt.gz": "036f2282875c54164e5798ab608b050ab0e52ab514e1af15ce591cf29d61b2b2",
+    "independent_validation/candidate_screening_2026-11-07/GSE49541/sample_metadata.tsv": "27b90ff8a5c8b7864880deb644233a7286613b92b678bdee531cfda20c16108d",
+    "Paper1_HighConfidence/11_FINAL_shortlist_23_genes.csv": "44f395ea687187b8d7a804b1afe0bf7678ccf7035121c4f4b2db6d0caf28dca0",
+    "Paper1_HighConfidence/11_final_tier1_genes.csv": "83f1c2e83339f29cab9200bc1202407d0ee0cb2c134c140936ce8ad2518f63b0",
+    "data/processed/gene_id_map.csv": "33d7f34439e3bac20ffaa849492073d66eadb924d4b67a89bdc2e670b1df644f",
+    "independent_validation/GSE49541_validation/analysis_plan.md": "6a641e28f5a1c12f6ddd13a1399e2b944a3b33bc3fbcbdf1ea0dc6b7dce39455",
+    "independent_validation/scripts/validate_gse49541.py": "ec1961f429e803b7d0cd26ed01ea825616395cffb51bd3d2c5c2ce35f4bffa8d"
+  },
+  "limitations": [
+    "Grouped-stage severity comparison only; no individual F0\u2013F4 stage inference.",
+    "Unique legacy probe annotation is not a demonstration of probe specificity; no detection p-values or raw CEL reprocessing.",
+    "Unadjusted group contrasts: age, sex and metabolic confounding cannot be excluded.",
+    "GSE31803 and GSE49541 reuse specimens; do not count them as independent cohorts.",
+    "Provenance supports distinct recruitment but public identifiers cannot prove donor-level nonoverlap."
+  ]
+}

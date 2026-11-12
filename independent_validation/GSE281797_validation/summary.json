@@ -1,0 +1,170 @@
+{
+  "dataset": "GSE281797",
+  "primary_n": 94,
+  "MASLD_sensitivity_n": 64,
+  "stage_n": {
+    "0": 42,
+    "1": 26,
+    "2": 20,
+    "3": 6
+  },
+  "MASLD_subset_stage_n": {
+    "0": 18,
+    "1": 20,
+    "2": 20,
+    "3": 6
+  },
+  "raw_rows": 60668,
+  "fractional_values_preserved": 351075,
+  "PAR_Y_rows_excluded": 45,
+  "other_noncanonical_rows_excluded": 0,
+  "retained_versionless_ensembl_genes": 60623,
+  "additional_mapping_collapses": 0,
+  "all_zero_genes": 24587,
+  "duplicate_expression_samples": 0,
+  "gene_replication_summary": [
+    {
+      "population": "primary_all94",
+      "family": "shortlist23",
+      "original_n": 23,
+      "testable_n": 23,
+      "same_direction": 21,
+      "concordant_significant": 14,
+      "opposite_significant": 0,
+      "same_direction_nonsignificant": 7,
+      "opposite_nonsignificant": 2,
+      "unavailable_or_constant": 0
+    },
+    {
+      "population": "primary_all94",
+      "family": "Tier1",
+      "original_n": 447,
+      "testable_n": 447,
+      "same_direction": 399,
+      "concordant_significant": 161,
+      "opposite_significant": 4,
+      "same_direction_nonsignificant": 238,
+      "opposite_nonsignificant": 44,
+      "unavailable_or_constant": 0
+    },
+    {
+      "population": "primary_all94",
+      "family": "common3845",
+      "original_n": 3845,
+      "testable_n": 3842,
+      "same_direction": 3035,
+      "concordant_significant": 981,
+      "opposite_significant": 82,
+      "same_direction_nonsignificant": 2054,
+      "opposite_nonsignificant": 725,
+      "unavailable_or_constant": 3
+    },
+    {
+      "population": "sensitivity_MASLD64",
+      "family": "shortlist23",
+      "original_n": 23,
+      "testable_n": 23,
+      "same_direction": 21,
+      "concordant_significant": 13,
+      "opposite_significant": 0,
+      "same_direction_nonsignificant": 8,
+      "opposite_nonsignificant": 2,
+      "unavailable_or_constant": 0
+    },
+    {
+      "population": "sensitivity_MASLD64",
+      "family": "Tier1",
+      "original_n": 447,
+      "testable_n": 447,
+      "same_direction": 402,
+      "concordant_significant": 164,
+      "opposite_significant": 1,
+      "same_direction_nonsignificant": 238,
+      "opposite_nonsignificant": 44,
+      "unavailable_or_constant": 0
+    },
+    {
+      "population": "sensitivity_MASLD64",
+      "family": "common3845",
+      "original_n": 3845,
+      "testable_n": 3842,
+      "same_direction": 3078,
+      "concordant_significant": 808,
+      "opposite_significant": 49,
+      "same_direction_nonsignificant": 2270,
+      "opposite_nonsignificant": 715,
+      "unavailable_or_constant": 3
+    }
+  ],
+  "cluster_summary": [
+    {
+      "Cluster": "C1",
+      "original_genes": 857,
+      "testable_genes": 857,
+      "centroid_shape_r_F0_F3": 0.9395491843953162,
+      "score_rho_F0_F3": 0.4104488323581274,
+      "score_p": 3.9774507814755546e-05,
+      "F4_assessable": false,
+      "score_q_BH5": 9.943626953688886e-05
+    },
+    {
+      "Cluster": "C2",
+      "original_genes": 1367,
+      "testable_genes": 1367,
+      "centroid_shape_r_F0_F3": 0.9915963797675492,
+      "score_rho_F0_F3": 0.2618893075218812,
+      "score_p": 0.010778273471941048,
+      "F4_assessable": false,
+      "score_q_BH5": 0.01347284183992631
+    },
+    {
+      "Cluster": "C3",
+      "original_genes": 226,
+      "testable_genes": 226,
+      "centroid_shape_r_F0_F3": 0.8944383872619193,
+      "score_rho_F0_F3": 0.4288724316638254,
+      "score_p": 1.612189454107864e-05,
+      "F4_assessable": false,
+      "score_q_BH5": 8.06094727053932e-05
+    },
+    {
+      "Cluster": "C4",
+      "original_genes": 397,
+      "testable_genes": 397,
+      "centroid_shape_r_F0_F3": 0.4284653170428526,
+      "score_rho_F0_F3": -0.052636654538101756,
+      "score_p": 0.6143649600396403,
+      "F4_assessable": false,
+      "score_q_BH5": 0.6143649600396403
+    },
+    {
+      "Cluster": "C5",
+      "original_genes": 998,
+      "testable_genes": 995,
+      "centroid_shape_r_F0_F3": 0.8959251085849694,
+      "score_rho_F0_F3": -0.27827953299116426,
+      "score_p": 0.006611865827013672,
+      "F4_assessable": false,
+      "score_q_BH5": 0.01101977637835612
+    }
+  ],
+  "input_hashes": {
+    "independent_validation/candidate_screening_2026-11-07/GSE281797/GSE281797_GeneCount.txt.gz": "c64404091edb9749129c6bee87bbb860421d654b4986ef24bae084f60b1f8745",
+    "independent_validation/candidate_screening_2026-11-07/GSE281797/sample_metadata.tsv": "d7edc61eb3970f2630ad3764ec4db63236185dfaed4545c1bbbab53cab44f567",
+    "Paper1_HighConfidence/11_final_all_3845_genes.csv": "97d5e8cfda34329420a9f61c59b2c1a2577f27781db5fdd699ef77321a1a3ffe",
+    "Paper1_HighConfidence/11_final_tier1_genes.csv": "83f1c2e83339f29cab9200bc1202407d0ee0cb2c134c140936ce8ad2518f63b0",
+    "Paper1_HighConfidence/11_FINAL_shortlist_23_genes.csv": "44f395ea687187b8d7a804b1afe0bf7678ccf7035121c4f4b2db6d0caf28dca0",
+    "data/processed/gene_id_map.csv": "33d7f34439e3bac20ffaa849492073d66eadb924d4b67a89bdc2e670b1df644f",
+    "independent_validation/GSE281797_validation/analysis_plan.md": "bc84f66cb1a82b3f47cb6781e9b857bf29d390511290e2bbb0ed2d76bee11c1c",
+    "independent_validation/GSE225740_validation/validation_all_23_genes.csv": "fa429c6cad9448ca5fdc92a25a178f4125022ec7ceedc88c8e675eb7466c2a63"
+  },
+  "script_sha256": "3c861631fd32cdb46f875993d7f79013853839cd8c161768bac3d8692d606144",
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.1"
+  },
+  "shortlist_concordant_significant_both_cohorts": 12
+}

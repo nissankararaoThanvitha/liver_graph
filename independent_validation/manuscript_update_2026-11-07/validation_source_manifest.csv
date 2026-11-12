@@ -1,0 +1,13 @@
+file,bytes,sha256,retrieval_date,source_url
+reference/hgnc_complete_set.txt,16994064,3944cdad7affce5bc2c7d63d7079d7e68762ed28ef414fc287cc0f57c4b0d78f,2026-11-07,https://storage.googleapis.com/public-download-files/hgnc/tsv/tsv/hgnc_complete_set.txt
+GSE213621/GSE213621_series_matrix.txt.gz,11880,aa9f7b6771080832fe202367b9e2022a126f97beae691a5415a676477d5beb3e,2026-11-07,https://ftp.ncbi.nlm.nih.gov/geo/series/GSE213nnn/GSE213621/matrix/GSE213621_series_matrix.txt.gz
+GSE213621/GSE213621_FPKMs_allsamples.txt.gz,33224068,ccd861c61a7f1f2d9f4de1c2e8c3a9bc1ff0fe6316a4ee69128fcee8ed703453,2026-11-07,https://ftp.ncbi.nlm.nih.gov/geo/series/GSE213nnn/GSE213621/suppl/GSE213621_FPKMs_allsamples.txt.gz
+GSE213621/GSE213621_family.soft.gz,15398,ec3254d9091fe213350dbf724a894b9087624bbfd4d9deceae43da66a9cf54e1,2026-11-07,https://ftp.ncbi.nlm.nih.gov/geo/series/GSE213nnn/GSE213621/soft/GSE213621_family.soft.gz
+GSE268273/GSE268273_EGN_RNAseq_Normalized_data.xlsx,21040030,056948c9824d4b75263ec9870ad407f404a99ea4ababdd5f5d5d01f9584f3d18,2026-11-07,https://ftp.ncbi.nlm.nih.gov/geo/series/GSE268nnn/GSE268273/suppl/GSE268273_EGN_RNAseq_Normalized_data.xlsx
+GSE268273/GSE268273_series_matrix.txt.gz,8639,76bd5405e8523e7682b059382bcdd406234ee9dc5f5c6fe3f158fee6cd6b0af0,2026-11-07,https://ftp.ncbi.nlm.nih.gov/geo/series/GSE268nnn/GSE268273/matrix/GSE268273_series_matrix.txt.gz
+GSE268273/GSE268273_family.soft.gz,12415,1a0dc624b9afd65db28fa091b8cdb55c772461c66d57d1cd801444ea60c99e64,2026-11-07,https://ftp.ncbi.nlm.nih.gov/geo/series/GSE268nnn/GSE268273/soft/GSE268273_family.soft.gz
+GSE225740/GSE225740_NAFLD_phenotypes.csv.gz,412,d0bb9cfc6d835224e260749b54460c72217437394210f6ac45f729cc6bd700d2,2026-11-07,https://ftp.ncbi.nlm.nih.gov/geo/series/GSE225nnn/GSE225740/suppl/GSE225740_NAFLD_phenotypes.csv.gz
+GSE225740/GSE225740_series_matrix.txt.gz,4766,60f09f2a14723916e51a12950d6e956e4e7957d3c08dd6e21aa24078957bfcdd,2026-11-07,https://ftp.ncbi.nlm.nih.gov/geo/series/GSE225nnn/GSE225740/matrix/GSE225740_series_matrix.txt.gz
+GSE225740/GSE225740_NAFLD_RNA_counts.csv.gz,3207122,76f1d94b92cd742e13c623835727b0ad6596f3ebde70c678877ed17667e84a44,2026-11-07,https://ftp.ncbi.nlm.nih.gov/geo/series/GSE225nnn/GSE225740/suppl/GSE225740_NAFLD_RNA_counts.csv.gz
+11_final_all_3845_genes.csv,1017003,97d5e8cfda34329420a9f61c59b2c1a2577f27781db5fdd699ef77321a1a3ffe,frozen discovery input,Frozen discovery analysis output
+11_FINAL_shortlist_23_genes.csv,6916,44f395ea687187b8d7a804b1afe0bf7678ccf7035121c4f4b2db6d0caf28dca0,frozen discovery input,Frozen discovery analysis output

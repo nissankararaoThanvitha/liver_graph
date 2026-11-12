@@ -1,0 +1,61 @@
+{
+  "status": "preprocessing complete; no association tests performed",
+  "input_genes": 19101,
+  "input_samples": 93,
+  "staged_samples": 87,
+  "missing_stage_samples": 6,
+  "stage_counts": {
+    "0": 27,
+    "1": 26,
+    "2": 15,
+    "3": 13,
+    "4": 6
+  },
+  "mapping_status_counts": {
+    "mapped": 17917,
+    "unmapped": 1184
+  },
+  "mapped_ensembl_genes": 17917,
+  "mapping_collapses": 0,
+  "shortlist_genes_mapped": 23,
+  "shortlist_nonconstant_staged": 23,
+  "duplicate_expression_columns": 0,
+  "library_total_min": 53590932,
+  "library_total_median": 118090230.0,
+  "library_total_max": 229856594,
+  "all_values_nonnegative_integer_finite": true,
+  "automatic_sample_exclusions_for_expression_qc": 0,
+  "normalization": "log2(count / sum of all 19101 deposited genes in the sample * 1e6 + 1)",
+  "mapping": "retained discovery gene_id_map.csv; unambiguous Entrez to Ensembl; sum before logarithm",
+  "zscore_reference": "all 93 deposited samples independently of discovery data; ddof=1; constant genes -> 0",
+  "gene_filter": "none; zero/low expression and nonconstant flags retained for later testability decisions",
+  "patient_independence": "deposited-ID overlap screened; independent patient provenance still unresolved",
+  "versions": {
+    "python": "3.12.3",
+    "pandas": "3.0.5",
+    "numpy": "2.5.3"
+  },
+  "inputs": [
+    {
+      "path": "independent_validation/candidate_screening_2026-11-07/GSE225740/GSE225740_NAFLD_RNA_counts.csv.gz",
+      "sha256": "76f1d94b92cd742e13c623835727b0ad6596f3ebde70c678877ed17667e84a44"
+    },
+    {
+      "path": "independent_validation/candidate_screening_2026-11-07/GSE225740/GSE225740_NAFLD_phenotypes.csv.gz",
+      "sha256": "d0bb9cfc6d835224e260749b54460c72217437394210f6ac45f729cc6bd700d2"
+    },
+    {
+      "path": "independent_validation/candidate_screening_2026-11-07/GSE225740/sample_metadata.tsv",
+      "sha256": "c9d7387c39ec88f98e693481e1da36635d0db77780f7825fa8176b79663bf953"
+    },
+    {
+      "path": "data/processed/gene_id_map.csv",
+      "sha256": "33d7f34439e3bac20ffaa849492073d66eadb924d4b67a89bdc2e670b1df644f"
+    },
+    {
+      "path": "Paper1_HighConfidence/11_FINAL_shortlist_23_genes.csv",
+      "sha256": "44f395ea687187b8d7a804b1afe0bf7678ccf7035121c4f4b2db6d0caf28dca0"
+    }
+  ],
+  "script_sha256": "f051f1123604b1e830f3540731894f4240aa71f3ebbb5e3d98de842ab7093a67"
+}

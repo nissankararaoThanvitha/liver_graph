@@ -1,0 +1,4 @@
+group,original_n,available_n,testable_n,unavailable_n,constant_n,same_direction_n,same_direction_fraction_testable,concordant_significant_common_BH_n,concordant_significant_common_BH_fraction_testable,opposite_significant_common_BH_n,median_abs_rho,median_profile_shape_r,positive_profile_shape_r_fraction
+Tier 1 - high confidence,447,445,445,2,0,439,0.986516853933,379,0.851685393258,0,0.400016524905,0.957500156735,0.988764044944
+Tier 2 - moderate confidence,1403,1373,1373,30,0,1271,0.925710123816,855,0.622723962127,1,0.291623734226,0.91574660392,0.923525127458
+Tier 3,1995,1908,1908,87,0,1502,0.787211740042,841,0.440775681342,25,0.216036257283,0.781216361933,0.753668763103

@@ -1,0 +1,11 @@
+other_accession	GSM_candidate_available	GSM_other_available	GSM_overlap	BioSample_candidate_available	BioSample_other_available	BioSample_overlap	SRA_experiment_candidate_available	SRA_experiment_other_available	SRA_experiment_overlap
+GSE225740	72	93	0	0	0	not_assessable_missing_identifiers	0	0	not_assessable_missing_identifiers
+GSE281797	72	94	0	0	94	not_assessable_missing_identifiers	0	94	not_assessable_missing_identifiers
+GSE126848	72	57	0	0	57	not_assessable_missing_identifiers	0	57	not_assessable_missing_identifiers
+GSE130970	72	78	0	0	78	not_assessable_missing_identifiers	0	78	not_assessable_missing_identifiers
+GSE135251	72	216	0	0	216	not_assessable_missing_identifiers	0	216	not_assessable_missing_identifiers
+GSE162694	72	143	0	0	143	not_assessable_missing_identifiers	0	143	not_assessable_missing_identifiers
+GSE167523	72	98	0	0	98	not_assessable_missing_identifiers	0	98	not_assessable_missing_identifiers
+GSE193066	72	164	0	0	164	not_assessable_missing_identifiers	0	164	not_assessable_missing_identifiers
+GSE240729	72	67	0	0	67	not_assessable_missing_identifiers	0	67	not_assessable_missing_identifiers
+GSE269412	72	262	0	0	262	not_assessable_missing_identifiers	0	262	not_assessable_missing_identifiers

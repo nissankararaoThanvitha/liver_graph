@@ -1,0 +1,65 @@
+[
+  {
+    "accession": "GSE239422",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE239nnn/GSE239422/soft/GSE239422_family.soft.gz",
+    "file": "GSE239422/GSE239422_family.soft.gz",
+    "bytes": 8493,
+    "sha256": "16d8456266de50be79d88836c4fe1c74cc3edd7c98e51d0a51cb4588e565a628"
+  },
+  {
+    "accession": "GSE207310",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE207nnn/GSE207310/soft/GSE207310_family.soft.gz",
+    "file": "GSE207310/GSE207310_family.soft.gz",
+    "bytes": 4667,
+    "sha256": "b4844c3b268dcaf22fe9b5b77770b47d4422dafa729d6bfd3890a7ac8ae7e936"
+  },
+  {
+    "accession": "GSE281797",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE281nnn/GSE281797/suppl/GSE281797_GeneCount.txt.gz",
+    "file": "GSE281797/GSE281797_GeneCount.txt.gz",
+    "bytes": 4124521,
+    "sha256": "c64404091edb9749129c6bee87bbb860421d654b4986ef24bae084f60b1f8745"
+  },
+  {
+    "accession": "GSE281797",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE281nnn/GSE281797/suppl/GSE281797_tpm.txt.gz",
+    "file": "GSE281797/GSE281797_tpm.txt.gz",
+    "bytes": 5617754,
+    "sha256": "22820a90304ef12a1be30ba1cf4205212a0349069c1eaf12bc29aac706d73324"
+  },
+  {
+    "accession": "GSE225740",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE225nnn/GSE225740/suppl/GSE225740_NAFLD_RNA_counts.csv.gz",
+    "file": "GSE225740/GSE225740_NAFLD_RNA_counts.csv.gz",
+    "bytes": 3207122,
+    "sha256": "76f1d94b92cd742e13c623835727b0ad6596f3ebde70c678877ed17667e84a44"
+  },
+  {
+    "accession": "GSE225740",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE225nnn/GSE225740/suppl/GSE225740_NAFLD_phenotypes.csv.gz",
+    "file": "GSE225740/GSE225740_NAFLD_phenotypes.csv.gz",
+    "bytes": 412,
+    "sha256": "d0bb9cfc6d835224e260749b54460c72217437394210f6ac45f729cc6bd700d2"
+  },
+  {
+    "accession": "GSE185051",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE185nnn/GSE185051/suppl/GSE185051_Gene_count.csv.gz",
+    "file": "GSE185051/GSE185051_Gene_count.csv.gz",
+    "bytes": 1963606,
+    "sha256": "2e9a97e17e4c41cb98d5cdd3405a97c47ca4644464b2398b655a06cd029e14f4"
+  },
+  {
+    "accession": "GSE192959",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE192nnn/GSE192959/suppl/GSE192959_NAFLD.TUn48.gct.gz",
+    "file": "GSE192959/GSE192959_NAFLD.TUn48.gct.gz",
+    "bytes": 4128832,
+    "sha256": "ed8180296eb63ef5002611ab99f2ac1858bf0ccb93dbb9a98d403069865ff303"
+  },
+  {
+    "accession": "GSE193080",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE193nnn/GSE193080/suppl/GSE193080_NAFLD.KUTHn59.gct.gz",
+    "file": "GSE193080/GSE193080_NAFLD.KUTHn59.gct.gz",
+    "bytes": 7255244,
+    "sha256": "096b17c331cdca753830b688318e8b1f5e808584d4a311696f28e8325464a40b"
+  }
+]

@@ -1,0 +1,212 @@
+{
+  "transition_summary_all": [
+    {
+      "transition": "F0\u2192F1",
+      "scope": "all3845",
+      "n_lower": 27,
+      "n_higher": 26,
+      "original_substantial": 857,
+      "original_substantial_testable": 853,
+      "original_substantial_untestable": 4,
+      "same_direction_original_substantial": 811,
+      "replicated_original_substantial": 17,
+      "replication_fraction_testable": 0.01992966002344666
+    },
+    {
+      "transition": "F1\u2192F2",
+      "scope": "all3845",
+      "n_lower": 26,
+      "n_higher": 15,
+      "original_substantial": 1048,
+      "original_substantial_testable": 1033,
+      "original_substantial_untestable": 15,
+      "same_direction_original_substantial": 550,
+      "replicated_original_substantial": 0,
+      "replication_fraction_testable": 0.0
+    },
+    {
+      "transition": "F2\u2192F3",
+      "scope": "all3845",
+      "n_lower": 15,
+      "n_higher": 13,
+      "original_substantial": 1116,
+      "original_substantial_testable": 1082,
+      "original_substantial_untestable": 34,
+      "same_direction_original_substantial": 786,
+      "replicated_original_substantial": 0,
+      "replication_fraction_testable": 0.0
+    },
+    {
+      "transition": "F3\u2192F4",
+      "scope": "all3845",
+      "n_lower": 13,
+      "n_higher": 6,
+      "original_substantial": 781,
+      "original_substantial_testable": 767,
+      "original_substantial_untestable": 14,
+      "same_direction_original_substantial": 749,
+      "replicated_original_substantial": 0,
+      "replication_fraction_testable": 0.0
+    }
+  ],
+  "shortlist_frozen23_testable": 23,
+  "shortlist_frozen23_direction_concordant": 18,
+  "shortlist_frozen23_concordant_significant": 3,
+  "shortlist_frozen23_concordant_substantial": 3,
+  "validation_background_n": 13790,
+  "validation_up_n": 4416,
+  "validation_down_n": 214,
+  "frozen_pathway_pairs": 145,
+  "frozen_pathway_pairs_testable": 145,
+  "frozen_pathway_pairs_enriched": 87,
+  "pathway_summary": [
+    {
+      "group": "C1_all",
+      "database": "GO_BP",
+      "original_top_terms": 10,
+      "testable": 10,
+      "enriched_validation": 0
+    },
+    {
+      "group": "C1_all",
+      "database": "Hallmark",
+      "original_top_terms": 10,
+      "testable": 10,
+      "enriched_validation": 10
+    },
+    {
+      "group": "C1_all",
+      "database": "KEGG",
+      "original_top_terms": 10,
+      "testable": 10,
+      "enriched_validation": 4
+    },
+    {
+      "group": "C1_all",
+      "database": "Reactome",
+      "original_top_terms": 10,
+      "testable": 10,
+      "enriched_validation": 3
+    },
+    {
+      "group": "C2_all",
+      "database": "GO_BP",
+      "original_top_terms": 10,
+      "testable": 10,
+      "enriched_validation": 8
+    },
+    {
+      "group": "C2_all",
+      "database": "Hallmark",
+      "original_top_terms": 10,
+      "testable": 10,
+      "enriched_validation": 10
+    },
+    {
+      "group": "C2_all",
+      "database": "KEGG",
+      "original_top_terms": 10,
+      "testable": 10,
+      "enriched_validation": 8
+    },
+    {
+      "group": "C2_all",
+      "database": "Reactome",
+      "original_top_terms": 10,
+      "testable": 10,
+      "enriched_validation": 9
+    },
+    {
+      "group": "C3_all",
+      "database": "GO_BP",
+      "original_top_terms": 10,
+      "testable": 10,
+      "enriched_validation": 0
+    },
+    {
+      "group": "C3_all",
+      "database": "Hallmark",
+      "original_top_terms": 3,
+      "testable": 3,
+      "enriched_validation": 3
+    },
+    {
+      "group": "C3_all",
+      "database": "KEGG",
+      "original_top_terms": 2,
+      "testable": 2,
+      "enriched_validation": 1
+    },
+    {
+      "group": "C3_all",
+      "database": "Reactome",
+      "original_top_terms": 10,
+      "testable": 10,
+      "enriched_validation": 2
+    },
+    {
+      "group": "C4_all",
+      "database": "Hallmark",
+      "original_top_terms": 3,
+      "testable": 3,
+      "enriched_validation": 1
+    },
+    {
+      "group": "C4_all",
+      "database": "KEGG",
+      "original_top_terms": 1,
+      "testable": 1,
+      "enriched_validation": 1
+    },
+    {
+      "group": "C4_all",
+      "database": "Reactome",
+      "original_top_terms": 1,
+      "testable": 1,
+      "enriched_validation": 1
+    },
+    {
+      "group": "C5_all",
+      "database": "GO_BP",
+      "original_top_terms": 10,
+      "testable": 10,
+      "enriched_validation": 9
+    },
+    {
+      "group": "C5_all",
+      "database": "Hallmark",
+      "original_top_terms": 5,
+      "testable": 5,
+      "enriched_validation": 2
+    },
+    {
+      "group": "C5_all",
+      "database": "KEGG",
+      "original_top_terms": 10,
+      "testable": 10,
+      "enriched_validation": 9
+    },
+    {
+      "group": "C5_all",
+      "database": "Reactome",
+      "original_top_terms": 10,
+      "testable": 10,
+      "enriched_validation": 6
+    }
+  ],
+  "input_hashes": {
+    "Paper1_HighConfidence/11_final_all_3845_genes.csv": "97d5e8cfda34329420a9f61c59b2c1a2577f27781db5fdd699ef77321a1a3ffe",
+    "Paper1_HighConfidence/11_FINAL_shortlist_23_genes.csv": "44f395ea687187b8d7a804b1afe0bf7678ccf7035121c4f4b2db6d0caf28dca0",
+    "Paper1_Results/Task3/task3_all_genes_all_transitions.csv": "217229221f533e93d8c84d0e57788071db43049a31dad16705093ea19e3bfef3",
+    "Paper1_Results/Task4/task4_top_pathways_per_group.csv": "2a52f24b8a63abd0c69f406fd5b328ecbe7c7c5291e01a0aa62d5a03f47f048b",
+    "data/progression_full/progression_fibrosis.csv": "2edf3e6dc59a89bce4a5df959057939caf5585165346ccee83190764073725a0",
+    "independent_validation/GSE225740_validation/transition_pathway_plan.md": "18d4cb2e8bbd6c1ebc64f26ec523e88d989a41090ca0f439928768996c8d86a9",
+    "data/genesets/c5.go.bp.v2024.1.Hs.symbols.gmt": "71df041c352cc810c11847db328bb94925c5448a009f310d224f2e8baa60b792",
+    "data/genesets/c2.cp.kegg_legacy.v2024.1.Hs.symbols.gmt": "06a5d7f82d90a0a6a2e464579d049fc42d279fc23fa9f79a956e56c4a442447f",
+    "data/genesets/c2.cp.reactome.v2024.1.Hs.symbols.gmt": "9ea1b5e656597daf423e41c5ebcaa9892bfedf3292fff768605d7b0d5e5e9703",
+    "data/genesets/h.all.v2024.1.Hs.symbols.gmt": "ee2463540042078bfa3f67828e1e223bb354446d9fbb4d22845866835ba5c772",
+    "independent_validation/GSE225740_preprocessed/zscore_mapped_staged_87.tsv.gz": "1b5782202d511243da3d58fb97ca04ff5e405cf14c67cfeaf12c4f0b0f960075",
+    "independent_validation/GSE225740_preprocessed/log2cpm_mapped_staged_87.tsv.gz": "21caa0e41063e293bcee28c0cdd6dde1a3e50e54dcbf37f3c93376bd66ef2001"
+  },
+  "script_sha256": "5b0711a06ca8766ddcc7c358203d47c8762fdb9588602067cfcba3c1f1b58d83"
+}

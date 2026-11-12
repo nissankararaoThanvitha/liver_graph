@@ -1,0 +1,8 @@
+!Series_title = Clinically Important Alterations in Pharmacogene Expression in Histologically Severe Nonalcoholic Fatty Liver Disease
+!Series_pubmed_id = 36927865
+!Series_pubmed_id = 42748406
+!Series_summary = This study aims to determine if patients with NAFLD are at risk for altered drug response by characterizing changes in hepatic mRNA expression of genes mediating drug disposition (pharmacogenes) across the histological NAFLD severity spectrum.
+!Series_overall_design = We utilize RNA-seq for 93 liver biopsies with histologically staged NAFLD Activity Score (NAS), fibrosis stage, and steatohepatitis (NASH).
+!Series_overall_design = NOTE FROM SUBMITTER: We cannot upload raw data files due to research participant privacy concerns.
+!Series_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE225nnn/GSE225740/suppl/GSE225740_NAFLD_RNA_counts.csv.gz
+!Series_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE225nnn/GSE225740/suppl/GSE225740_NAFLD_phenotypes.csv.gz

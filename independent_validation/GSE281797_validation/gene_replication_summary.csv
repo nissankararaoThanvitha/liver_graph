@@ -1,0 +1,7 @@
+population,family,original_n,testable_n,same_direction,concordant_significant,opposite_significant,same_direction_nonsignificant,opposite_nonsignificant,unavailable_or_constant
+primary_all94,shortlist23,23,23,21,14,0,7,2,0
+primary_all94,Tier1,447,447,399,161,4,238,44,0
+primary_all94,common3845,3845,3842,3035,981,82,2054,725,3
+sensitivity_MASLD64,shortlist23,23,23,21,13,0,8,2,0
+sensitivity_MASLD64,Tier1,447,447,402,164,1,238,44,0
+sensitivity_MASLD64,common3845,3845,3842,3078,808,49,2270,715,3

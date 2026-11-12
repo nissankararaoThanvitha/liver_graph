@@ -1,0 +1,6 @@
+!Series_title = Transcriptomic profiles of liver biopsies in obese patients with metabolic dysfunction-associated steatotic liver disease
+!Series_pubmed_id = 41870035
+!Series_summary = The molecular mechanisms underlying early-stage metabolic dysfunction-associated steatotic liver disease (MASLD) is poorly understood. This study characterized the transcriptomic alterations in obese patients with no pathology or early-stage MASLD.  94 snap-frozen liver biopsies were analyzed through high-throughput RNA sequencing. Distinct features involved in the development of hepatic steatosis and fibrosis were identified. This study also provided novel insights in mechanisms involved in the onset of fibrosis, highlighting potential therapeutic targets.
+!Series_overall_design = 94 snap-frozen liver biopsies were processe for RNA sequencing on the NoveSeq6000 platform.
+!Series_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE281nnn/GSE281797/suppl/GSE281797_GeneCount.txt.gz
+!Series_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE281nnn/GSE281797/suppl/GSE281797_tpm.txt.gz

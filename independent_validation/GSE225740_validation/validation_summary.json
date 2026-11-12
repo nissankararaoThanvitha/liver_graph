@@ -1,0 +1,58 @@
+{
+  "dataset": "GSE225740",
+  "n_staged": 87,
+  "fixed_gene_family": 23,
+  "same_direction": 23,
+  "primary_status_counts": {
+    "concordant_significant": 21,
+    "concordant_not_significant": 2
+  },
+  "permutation_concordant_significant": 22,
+  "primary_permutation_significance_disagreements": 1,
+  "concordant_significant_genes": [
+    "IL32",
+    "EPHA3",
+    "LYZ",
+    "NFASC",
+    "PLPP4",
+    "PDGFRA",
+    "CACNA1C",
+    "TPM4",
+    "PLK3",
+    "TAX1BP3",
+    "TREM2",
+    "CDC45",
+    "HTR7",
+    "FABP5",
+    "TYMS",
+    "OAT",
+    "F2",
+    "SLC38A4",
+    "CYP2C19",
+    "ACADSB",
+    "MME"
+  ],
+  "opposite_significant_genes": [],
+  "stage_n": {
+    "0": 27,
+    "1": 26,
+    "2": 15,
+    "3": 13,
+    "4": 6
+  },
+  "versions": {
+    "python": "3.12.3",
+    "scipy": "1.18.1",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "matplotlib": "3.11.1"
+  },
+  "input_hashes": {
+    "Paper1_HighConfidence/11_FINAL_shortlist_23_genes.csv": "44f395ea687187b8d7a804b1afe0bf7678ccf7035121c4f4b2db6d0caf28dca0",
+    "independent_validation/GSE225740_preprocessed/shortlist23_log2cpm_staged_87.tsv": "54982dd8a874a34e5913bd7912f9d6a73edcfa510f8ed23de86a9d4a1f1dfc7f",
+    "independent_validation/GSE225740_preprocessed/sample_metadata_staged.tsv": "d475fa4726be2e56d879a4ce3a5a93ad16c8a089f1fc73080512f02082989582",
+    "independent_validation/GSE225740_preprocessed/shortlist23_availability_qc.tsv": "378b70da1c6ec3c61b76b423c8363880bb8f88c60ec066b00a4647bf16f3ea47",
+    "independent_validation/GSE225740_validation/analysis_plan.md": "f14b7da5c96f7605ae2d6c112ed57028dcd1635bbed7b364fd96cdebd3d0b94a"
+  },
+  "script_sha256": "b81c818d36ed0e6bc2e850fed1027f0b214d40d96eeddda0d45f21e339bdeeef"
+}

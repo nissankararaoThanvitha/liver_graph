@@ -1,0 +1,7 @@
+patient_id	nas	fibrosis	steatohep	gsm	dataset_id	fibrosis_stage_raw	fibrosis_stage	eligible_for_stage_analysis	exclusion_reason
+4	4	NA	NA	GSM7055065	GSE225740	NA		False	missing_fibrosis_stage
+19	5	NA	2	GSM7055080	GSE225740	NA		False	missing_fibrosis_stage
+20	0	NA	NA	GSM7055081	GSE225740	NA		False	missing_fibrosis_stage
+31	6	NA	2	GSM7055092	GSE225740	NA		False	missing_fibrosis_stage
+32	5	NA	2	GSM7055093	GSE225740	NA		False	missing_fibrosis_stage
+47	2	NA	NA	GSM7055108	GSE225740	NA		False	missing_fibrosis_stage

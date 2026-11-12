@@ -1,0 +1,7 @@
+!Series_title = Expression data for Nonalcoholic fatty liver disease patients
+!Series_pubmed_id = 23913408
+!Series_pubmed_id = 23916847
+!Series_summary = Nonalcoholic fatty liver disease represents a spectrum of pathology that ranges from benign steatosis to potentially-progressive steatohepatitis and affects more than 30% of US adults. Advanced NAFLD is associated with increased morbidity and mortality from cirrhosis, primary liver cancer, cardiovascular disease and extrahepatic cancers.
+!Series_summary = Accurate identification of patients at risk for advanced NAFLD is challenging.  The aims of this study were to define the liver gene expression patterns that distinguish mild from advanced NAFLD and to develop a gene expression profile associated with advanced NAFLD.
+!Series_overall_design = We analyzed total RNA from 72 patients with NAFLD (40 with mild NAFLD, fibrosis stage 0-1 and 32 with advanced NAFLD, fibrosis stage 3-4) and developed a gene profile associated with advanced NAFLD.
+!Series_supplementary_file = ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE49nnn/GSE49541/suppl/GSE49541_RAW.tar

@@ -1,0 +1,9 @@
+discovery_accession	GSM_validation_available	GSM_discovery_available	GSM_intersection	BioSample_validation_available	BioSample_discovery_available	BioSample_intersection	SRA_experiment_validation_available	SRA_experiment_discovery_available	SRA_experiment_intersection
+GSE126848	93	57	0	0	57	NOT_ASSESSABLE_missing_identifiers	0	57	NOT_ASSESSABLE_missing_identifiers
+GSE130970	93	78	0	0	78	NOT_ASSESSABLE_missing_identifiers	0	78	NOT_ASSESSABLE_missing_identifiers
+GSE135251	93	216	0	0	216	NOT_ASSESSABLE_missing_identifiers	0	216	NOT_ASSESSABLE_missing_identifiers
+GSE162694	93	143	0	0	143	NOT_ASSESSABLE_missing_identifiers	0	143	NOT_ASSESSABLE_missing_identifiers
+GSE167523	93	98	0	0	98	NOT_ASSESSABLE_missing_identifiers	0	98	NOT_ASSESSABLE_missing_identifiers
+GSE193066	93	164	0	0	164	NOT_ASSESSABLE_missing_identifiers	0	164	NOT_ASSESSABLE_missing_identifiers
+GSE240729	93	67	0	0	67	NOT_ASSESSABLE_missing_identifiers	0	67	NOT_ASSESSABLE_missing_identifiers
+GSE269412	93	262	0	0	262	NOT_ASSESSABLE_missing_identifiers	0	263	NOT_ASSESSABLE_missing_identifiers

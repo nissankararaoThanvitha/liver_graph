@@ -1,0 +1,11 @@
+HGNC loaded: 42,637 approved genes with Ensembl IDs
+  entrez keys : 41,872
+  symbol keys : 42,640
+  prev keys   : 14,509  (unambiguous only)
+  alias keys  : 40,003  (unambiguous only)
+  discarded   : 1,318 ambiguous prev/alias entries
+
+GSE213621 QC, scalar Spearman, BH, frozen-gene counts, scores/AUC checked
+GSE225740 QC, scalar Spearman, BH, frozen-gene counts, scores/AUC checked
+GSE268273 QC, scalar Spearman, BH, frozen-gene counts, scores/AUC checked
+Completed audit files: /home/nikitha07/Projects/liver_graph/independent_validation/selected_three_audit_2026-11-07/verified

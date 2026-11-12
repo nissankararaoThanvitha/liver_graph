@@ -1,0 +1,10 @@
+other_accession	GSM_candidate_available	GSM_other_available	GSM_intersection	BioSample_candidate_available	BioSample_other_available	BioSample_intersection	SRA_experiment_candidate_available	SRA_experiment_other_available	SRA_experiment_intersection
+GSE225740	94	93	0	94	0	not_assessable_missing_identifiers	94	0	not_assessable_missing_identifiers
+GSE126848	94	57	0	94	57	0	94	57	0
+GSE130970	94	78	0	94	78	0	94	78	0
+GSE135251	94	216	0	94	216	0	94	216	0
+GSE162694	94	143	0	94	143	0	94	143	0
+GSE167523	94	98	0	94	98	0	94	98	0
+GSE193066	94	164	0	94	164	0	94	164	0
+GSE240729	94	67	0	94	67	0	94	67	0
+GSE269412	94	262	0	94	262	0	94	263	0

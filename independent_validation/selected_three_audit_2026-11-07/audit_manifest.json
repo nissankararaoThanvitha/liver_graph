@@ -1,0 +1,133 @@
+{
+  "software": {
+    "python": "3.12.3",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "scipy": "1.18.1",
+    "openpyxl": "3.1.5",
+    "et_xmlfile": "2.0.0"
+  },
+  "files": [
+    {
+      "path": "/home/nikitha07/Projects/liver_graph/independent_validation/selected_three_audit_2026-11-07/sources/download_manifest.json",
+      "bytes": 2160,
+      "sha256": "177b596b9f5933dd8f3e036db04d3ed9f5784f6ae358cfd2fe90dc828fa97881"
+    },
+    {
+      "path": "/home/nikitha07/Projects/liver_graph/independent_validation/selected_three_audit_2026-11-07/sources/reference/hgnc_complete_set.txt",
+      "bytes": 16994064,
+      "sha256": "3944cdad7affce5bc2c7d63d7079d7e68762ed28ef414fc287cc0f57c4b0d78f"
+    },
+    {
+      "path": "/home/nikitha07/Projects/liver_graph/independent_validation/selected_three_audit_2026-11-07/sources/reference/retrieval.json",
+      "bytes": 317,
+      "sha256": "39a5e779475fa71b46554b9bf0c7ba7884c2cb5afc80a60a9669f4b51710b0e9"
+    },
+    {
+      "path": "/home/nikitha07/Projects/liver_graph/independent_validation/selected_three_audit_2026-11-07/sources/GSE213621/GSE213621_series_matrix.txt.gz",
+      "bytes": 11880,
+      "sha256": "aa9f7b6771080832fe202367b9e2022a126f97beae691a5415a676477d5beb3e"
+    },
+    {
+      "path": "/home/nikitha07/Projects/liver_graph/independent_validation/selected_three_audit_2026-11-07/sources/GSE213621/GSE213621_FPKMs_allsamples.txt.gz",
+      "bytes": 33224068,
+      "sha256": "ccd861c61a7f1f2d9f4de1c2e8c3a9bc1ff0fe6316a4ee69128fcee8ed703453"
+    },
+    {
+      "path": "/home/nikitha07/Projects/liver_graph/independent_validation/selected_three_audit_2026-11-07/sources/GSE213621/GSE213621_family.soft.gz",
+      "bytes": 15398,
+      "sha256": "ec3254d9091fe213350dbf724a894b9087624bbfd4d9deceae43da66a9cf54e1"
+    },
+    {
+      "path": "/home/nikitha07/Projects/liver_graph/independent_validation/selected_three_audit_2026-11-07/sources/GSE268273/GSE268273_EGN_RNAseq_Normalized_data.xlsx",
+      "bytes": 21040030,
+      "sha256": "056948c9824d4b75263ec9870ad407f404a99ea4ababdd5f5d5d01f9584f3d18"
+    },
+    {
+      "path": "/home/nikitha07/Projects/liver_graph/independent_validation/selected_three_audit_2026-11-07/sources/GSE268273/GSE268273_series_matrix.txt.gz",
+      "bytes": 8639,
+      "sha256": "76bd5405e8523e7682b059382bcdd406234ee9dc5f5c6fe3f158fee6cd6b0af0"
+    },
+    {
+      "path": "/home/nikitha07/Projects/liver_graph/independent_validation/selected_three_audit_2026-11-07/sources/GSE268273/GSE268273_family.soft.gz",
+      "bytes": 12415,
+      "sha256": "1a0dc624b9afd65db28fa091b8cdb55c772461c66d57d1cd801444ea60c99e64"
+    },
+    {
+      "path": "/home/nikitha07/Projects/liver_graph/independent_validation/selected_three_audit_2026-11-07/sources/GSE225740/GSE225740_NAFLD_phenotypes.csv.gz",
+      "bytes": 412,
+      "sha256": "d0bb9cfc6d835224e260749b54460c72217437394210f6ac45f729cc6bd700d2"
+    },
+    {
+      "path": "/home/nikitha07/Projects/liver_graph/independent_validation/selected_three_audit_2026-11-07/sources/GSE225740/GSE225740_series_matrix.txt.gz",
+      "bytes": 4766,
+      "sha256": "60f09f2a14723916e51a12950d6e956e4e7957d3c08dd6e21aa24078957bfcdd"
+    },
+    {
+      "path": "/home/nikitha07/Projects/liver_graph/independent_validation/selected_three_audit_2026-11-07/sources/GSE225740/GSE225740_NAFLD_RNA_counts.csv.gz",
+      "bytes": 3207122,
+      "sha256": "76f1d94b92cd742e13c623835727b0ad6596f3ebde70c678877ed17667e84a44"
+    },
+    {
+      "path": "/home/nikitha07/Projects/liver_graph/map_gene_ids.py",
+      "bytes": 8748,
+      "sha256": "1dbe0fc3671545fe29982b64e7f5a786c5e160eeb4345377b2e59986ee294e54"
+    },
+    {
+      "path": "/home/nikitha07/Projects/liver_graph/build_graph_all.py",
+      "bytes": 7594,
+      "sha256": "a4736742660fab25503652b3e7f02c6e442f5b960e6f34b4b436247f65f4ad7d"
+    },
+    {
+      "path": "/home/nikitha07/Projects/liver_graph/data/processed/gene_id_map.csv",
+      "bytes": 16819870,
+      "sha256": "33d7f34439e3bac20ffaa849492073d66eadb924d4b67a89bdc2e670b1df644f"
+    },
+    {
+      "path": "/home/nikitha07/Projects/liver_graph/data/progression_full/progression_fibrosis.csv",
+      "bytes": 1915295,
+      "sha256": "2edf3e6dc59a89bce4a5df959057939caf5585165346ccee83190764073725a0"
+    },
+    {
+      "path": "/home/nikitha07/Projects/liver_graph/Paper1_HighConfidence/11_final_all_3845_genes.csv",
+      "bytes": 1017003,
+      "sha256": "97d5e8cfda34329420a9f61c59b2c1a2577f27781db5fdd699ef77321a1a3ffe"
+    },
+    {
+      "path": "/home/nikitha07/Projects/liver_graph/Paper1_HighConfidence/11_FINAL_shortlist_23_genes.csv",
+      "bytes": 6916,
+      "sha256": "44f395ea687187b8d7a804b1afe0bf7678ccf7035121c4f4b2db6d0caf28dca0"
+    },
+    {
+      "path": "/home/nikitha07/Projects/liver_graph/independent_validation/selected_three_audit_2026-11-07/audit_selected.py",
+      "bytes": 12717,
+      "sha256": "12299070c98c59227d617fcc8de723ef61e71631deba6fe33d73aa9fb7d27146"
+    },
+    {
+      "path": "/home/nikitha07/Projects/liver_graph/independent_validation/selected_three_audit_2026-11-07/reproduce_friend.py",
+      "bytes": 874,
+      "sha256": "549d6db0673d436fc650439b45e73b3f91499157334c1504a69a3d65a44edac1"
+    },
+    {
+      "path": "/home/nikitha07/Projects/liver_graph/independent_validation/selected_three_audit_2026-11-07/audit_plan.md",
+      "bytes": 2026,
+      "sha256": "a4d006898a64b8182b208dd7382ec12a22128bcb674e1b1c7cbb3e6d483d00d7"
+    },
+    {
+      "path": "/home/nikitha07/Downloads/Paper1_Validation.zip",
+      "bytes": 493646,
+      "sha256": "1b8b68547a98c1b67469ac0655a7d13e571df3cf1b037d8d2c9adc5cfce9642c"
+    },
+    {
+      "path": "/home/nikitha07/Projects/liver_graph/independent_validation/selected_three_audit_2026-11-07/EVIDENCE_PACK.md",
+      "bytes": 16777,
+      "sha256": "d269fa51b39101bf54752f1d43ac44da245494d7fbdd05e633c39ae509a36208"
+    },
+    {
+      "path": "/home/nikitha07/Projects/liver_graph/independent_validation/selected_three_audit_2026-11-07/compare_earlier_process.py",
+      "bytes": 3990,
+      "sha256": "602cbe73f6f7ee69591596514b8d2214bec07972ac3257982ab67eca66e96fe6"
+    }
+  ],
+  "retrieval_date_client_timezone": "2026-11-07 Asia/Calcutta"
+}
